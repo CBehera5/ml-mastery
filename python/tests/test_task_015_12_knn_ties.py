@@ -40,7 +40,9 @@ def test_repaired_ms_e2_fixture_is_unambiguous_across_authored_cv_fits() -> None
 
     manifest = json.loads(payloads["ms-e2.manifest.v1.json"])
     fixture = manifest["fixture"]
-    assert fixture["fixtureId"] == "MS-E2-GROUPED-CHURN-V2"
-    changed = next(row for row in fixture["rows"] if row["rowId"] == "E2-00-00")
-    assert changed["features"]["monthly_charge"] == 40.000001
+    assert fixture["fixtureId"] == "MS-E2-GROUPED-CHURN-V3"
+    charges = {row["rowId"]: row["features"]["monthly_charge"] for row in fixture["rows"]}
+    assert charges["E2-00-00"] == 40.0
+    assert charges["E2-00-02"] == 44.001
+    assert charges["E2-06-02"] == 74.001
     assert GENERATOR.KNN_DISTANCE_EQUALITY_TOLERANCE == 0.0

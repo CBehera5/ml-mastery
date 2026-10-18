@@ -1,5 +1,5 @@
 {
-  "fixtureId": "MS-E2-GROUPED-CHURN-V2",
+  "fixtureId": "MS-E2-GROUPED-CHURN-V3",
   "metricsAndCost": {
     "confusion": {
       "FN": 0,
@@ -70,7 +70,7 @@
     1,
     1
   ],
-  "referenceId": "TASK-015.12-MS-E2-FINAL-TEST-REFERENCE-V2",
+  "referenceId": "TASK-015.12-MS-E2-FINAL-TEST-REFERENCE-V3",
   "refitPreprocessing": {
     "fitRowIds": [
       "E2-00-00",

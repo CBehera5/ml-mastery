@@ -24,12 +24,8 @@ env:
 
 jobs:
   portability:
-    name: Pre-freeze KNN portability (${{ matrix.os }})
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [macos-15, ubuntu-24.04]
-    runs-on: ${{ matrix.os }}
+    name: Canonical macOS ARM64 KNN ranking audit
+    runs-on: macos-15
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -51,7 +47,7 @@ jobs:
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
-          name: task-015-12-portability-${{ matrix.os }}-${{ github.run_id }}
+          name: task-015-12-portability-macos-15-${{ github.run_id }}
           path: .task01512-evidence/portability/
           include-hidden-files: true
           retention-days: 14

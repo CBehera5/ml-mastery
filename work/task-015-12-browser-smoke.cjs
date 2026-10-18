@@ -47,7 +47,8 @@ async function main() {
   }
   assert.equal(focused, true, "native config selector must be reachable using Tab");
   assert.equal(await configuration.evaluate(element => element.matches(":focus-visible")), true, "keyboard focus should have a visible indicator");
-  await configuration.selectOption({ index: 1 });
+  await page.keyboard.press("ArrowDown");
+  await page.keyboard.press("Enter");
   await page.waitForFunction(previous => document.querySelector('select[aria-label="MS-E1 configuration"]').value !== previous, initial);
   const selected = await configuration.inputValue();
   assert.notEqual(selected, initial, "ArrowDown must change the native selected configuration");
@@ -64,9 +65,37 @@ async function main() {
   await page.getByRole("button", { name: "Reveal reference outcome" }).click();
   await page.getByRole("heading", { name: "Reference outcome" }).waitFor();
   await page.getByText(/Accessible numerical and textual reference trace/).waitFor();
+  await page.reload({ waitUntil: "networkidle" });
+  assert.equal(await configuration.inputValue(), selected, "experiment selection should restore after reload");
+  await page.getByRole("heading", { name: "Reference outcome" }).waitFor();
   await page.getByRole("link", { name: /Independent assessment/ }).first().click();
   await page.getByRole("alert").getByText(/mastery remains unavailable/).waitFor();
   assert.equal(await page.getByRole("button", { name: "Review all 24 objective families" }).isDisabled(), true);
+
+  await page.goto(`${process.env.MODEL_SELECTION_PREVIEW_URL}/supervised/model-selection/ms04`, { waitUntil: "networkidle" });
+  const e2Configuration = page.getByRole("combobox", { name: "MS-E2 configuration" });
+  const e2Initial = await e2Configuration.inputValue();
+  await e2Configuration.focus();
+  await page.keyboard.press("ArrowDown");
+  await page.keyboard.press("Enter");
+  await page.waitForFunction(previous => document.querySelector('select[aria-label="MS-E2 configuration"]').value !== previous, e2Initial);
+  const e2Selected = await e2Configuration.inputValue();
+  const e2Response = await page.request.get(`${process.env.MODEL_SELECTION_PREVIEW_URL}/api/supervised/model-selection/experiment?lab=1&id=${e2Selected}`);
+  assert.equal(e2Response.status(), 200);
+  const e2Payload = await e2Response.json();
+  assert.equal(e2Payload.id, "TASK-015.12-MS-E2-V3");
+  assert.equal(e2Payload.fixture_version, "MS-reference-v3-2");
+  assert.equal(e2Payload.dataset.rows.find(row => row.rowId === "E2-00-02").features.monthly_charge, 44.001);
+  assert.equal(e2Payload.dataset.rows.find(row => row.rowId === "E2-06-02").features.monthly_charge, 74.001);
+  assert.equal(JSON.stringify(e2Payload).includes("E2-09-00"), false, "sealed test row IDs must not reach the browser");
+  await page.getByText(e2Payload.config.predictionQuestion, { exact: true }).waitFor();
+  await page.getByRole("combobox", { name: "Predict comparison outcome" }).selectOption("fair");
+  await page.getByRole("combobox", { name: "Predict why this result is valid" }).selectOption("mechanism");
+  await page.getByRole("button", { name: "Reveal reference outcome" }).click();
+  await page.getByRole("heading", { name: "Reference outcome" }).waitFor();
+  await page.reload({ waitUntil: "networkidle" });
+  assert.equal(await e2Configuration.inputValue(), e2Selected, "MS-E2 configuration should restore after reload");
+  await page.getByRole("heading", { name: "Reference outcome" }).waitFor();
 
   await page.setViewportSize({ width: 320, height: 860 });
   await page.goto(`${process.env.MODEL_SELECTION_PREVIEW_URL}/supervised/model-selection/ms04`, { waitUntil: "networkidle" });
@@ -74,7 +103,7 @@ async function main() {
   assert.ok(dimensions.content <= dimensions.viewport + 1, `horizontal overflow at 320px: ${JSON.stringify(dimensions)}`);
   await page.screenshot({ path: path.join(evidenceDir, "model-selection-mobile-320.png"), fullPage: true });
   assert.deepEqual(errors, [], "browser console should have no page errors");
-  console.log(JSON.stringify({ status: "PASS", keyboardFocus: "Tab reaches the native selector with visible focus", configurationChange: "Playwright selectOption functional check; not keyboard-selection evidence", initial, selected, authoredReferenceChanged: true, assessment: "mastery remains disabled", viewport320: dimensions, browserErrors: errors.length }));
+  console.log(JSON.stringify({ status: "PASS", keyboardFocus: "Tab reaches the native selector with visible focus", configurationChange: "Native ArrowDown and Enter change both experiment selectors without selectOption", initial, selected, e2Initial, e2Selected, e2Fixture: "V3", authoredReferenceChanged: true, persistenceRestoration: true, assessment: "mastery remains disabled", viewport320: dimensions, browserErrors: errors.length }));
   } catch (error) {
     let state = { url: "unavailable", selectedConfiguration: null, focusedElement: null, viewport: null };
     try {

@@ -1,0 +1,342 @@
+[
+  {
+    "after": 60.50008333333333,
+    "before": 60.50000004166666,
+    "path": "/configurations/0/expected/outerFolds/0/outerFitPreprocessing/steps/0/mean/1"
+  },
+  {
+    "after": 12.698415258463903,
+    "before": 12.698425031934736,
+    "path": "/configurations/0/expected/outerFolds/0/outerFitPreprocessing/steps/0/scale/1"
+  },
+  {
+    "after": 0.01809527630284446,
+    "before": 0.018095478518958628,
+    "path": "/configurations/0/expected/outerFolds/0/outerValidation/positiveProbabilities/0"
+  },
+  {
+    "after": 0.08082665926328844,
+    "before": 0.08082731737385064,
+    "path": "/configurations/0/expected/outerFolds/0/outerValidation/positiveProbabilities/1"
+  },
+  {
+    "after": 0.2955681016216919,
+    "before": 0.2955694207082286,
+    "path": "/configurations/0/expected/outerFolds/0/outerValidation/positiveProbabilities/2"
+  },
+  {
+    "after": 0.8020946809566913,
+    "before": 0.8020951462110814,
+    "path": "/configurations/0/expected/outerFolds/0/outerValidation/positiveProbabilities/3"
+  },
+  {
+    "after": 0.12860864723460141,
+    "before": 0.12860853433568217,
+    "path": "/configurations/0/expected/outerFolds/0/outerValidation/positiveProbabilities/4"
+  },
+  {
+    "after": 0.2580944219881258,
+    "before": 0.25809391485829497,
+    "path": "/configurations/0/expected/outerFolds/0/outerValidation/positiveProbabilities/5"
+  },
+  {
+    "after": 0.6240510930381657,
+    "before": 0.6240498798115571,
+    "path": "/configurations/0/expected/outerFolds/0/outerValidation/positiveProbabilities/6"
+  },
+  {
+    "after": 0.8878986748058201,
+    "before": 0.8878979089862312,
+    "path": "/configurations/0/expected/outerFolds/0/outerValidation/positiveProbabilities/7"
+  },
+  {
+    "after": 0.012919737213598705,
+    "before": 0.01291942067613686,
+    "path": "/configurations/0/expected/outerFolds/0/outerValidation/positiveProbabilities/8"
+  },
+  {
+    "after": 0.05878307233373022,
+    "before": 0.05878155947092058,
+    "path": "/configurations/0/expected/outerFolds/0/outerValidation/positiveProbabilities/9"
+  },
+  {
+    "after": 0.3762749783753406,
+    "before": 0.3762677619648611,
+    "path": "/configurations/0/expected/outerFolds/0/outerValidation/positiveProbabilities/10"
+  },
+  {
+    "after": 0.587110065691131,
+    "before": 0.587102214053111,
+    "path": "/configurations/0/expected/outerFolds/0/outerValidation/positiveProbabilities/11"
+  },
+  {
+    "after": 63.00008333333333,
+    "before": 63.00000004166666,
+    "path": "/configurations/0/expected/outerFolds/1/outerFitPreprocessing/steps/0/mean/1"
+  },
+  {
+    "after": 13.416383022622835,
+    "before": 13.41640779356879,
+    "path": "/configurations/0/expected/outerFolds/1/outerFitPreprocessing/steps/0/scale/1"
+  },
+  {
+    "after": 0.10236277053559022,
+    "before": 0.10236471554788847,
+    "path": "/configurations/0/expected/outerFolds/1/outerValidation/positiveProbabilities/0"
+  },
+  {
+    "after": 0.40385226311566846,
+    "before": 0.4038571334341176,
+    "path": "/configurations/0/expected/outerFolds/1/outerValidation/positiveProbabilities/1"
+  },
+  {
+    "after": 0.80096939810726,
+    "before": 0.8009724733670355,
+    "path": "/configurations/0/expected/outerFolds/1/outerValidation/positiveProbabilities/2"
+  },
+  {
+    "after": 0.9598505052446028,
+    "before": 0.959851212486214,
+    "path": "/configurations/0/expected/outerFolds/1/outerValidation/positiveProbabilities/3"
+  },
+  {
+    "after": 0.013973353820718105,
+    "before": 0.013973343823718466,
+    "path": "/configurations/0/expected/outerFolds/1/outerValidation/positiveProbabilities/4"
+  },
+  {
+    "after": 0.08799384174154495,
+    "before": 0.08799387146573401,
+    "path": "/configurations/0/expected/outerFolds/1/outerValidation/positiveProbabilities/5"
+  },
+  {
+    "after": 0.3333829135914747,
+    "before": 0.333382335181796,
+    "path": "/configurations/0/expected/outerFolds/1/outerValidation/positiveProbabilities/6"
+  },
+  {
+    "after": 0.7481706586657979,
+    "before": 0.7481699914647787,
+    "path": "/configurations/0/expected/outerFolds/1/outerValidation/positiveProbabilities/7"
+  },
+  {
+    "after": 0.05856018617806222,
+    "before": 0.058559650152279756,
+    "path": "/configurations/0/expected/outerFolds/1/outerValidation/positiveProbabilities/8"
+  },
+  {
+    "after": 0.26981688311235225,
+    "before": 0.2698147826606687,
+    "path": "/configurations/0/expected/outerFolds/1/outerValidation/positiveProbabilities/9"
+  },
+  {
+    "after": 0.6870259344259656,
+    "before": 0.6870234401937761,
+    "path": "/configurations/0/expected/outerFolds/1/outerValidation/positiveProbabilities/10"
+  },
+  {
+    "after": 0.9372859533196969,
+    "before": 0.9372853358846378,
+    "path": "/configurations/0/expected/outerFolds/1/outerValidation/positiveProbabilities/11"
+  },
+  {
+    "after": 0.07740442424823606,
+    "before": 0.07740442462368971,
+    "path": "/configurations/0/expected/outerFolds/2/outerValidation/positiveProbabilities/0"
+  },
+  {
+    "after": 0.19579794438376497,
+    "before": 0.19579711653348983,
+    "path": "/configurations/0/expected/outerFolds/2/outerValidation/positiveProbabilities/2"
+  },
+  {
+    "after": 0.21781540339703628,
+    "before": 0.21781450766854404,
+    "path": "/configurations/0/expected/outerFolds/2/outerValidation/positiveProbabilities/10"
+  },
+  {
+    "after": 60.50008333333333,
+    "before": 60.50000004166666,
+    "path": "/configurations/3/expected/fitRecords/0/pipeline/steps/0/mean/1"
+  },
+  {
+    "after": 12.698415258463903,
+    "before": 12.698425031934736,
+    "path": "/configurations/3/expected/fitRecords/0/pipeline/steps/0/scale/1"
+  },
+  {
+    "after": 63.00008333333333,
+    "before": 63.00000004166666,
+    "path": "/configurations/3/expected/fitRecords/1/pipeline/steps/0/mean/1"
+  },
+  {
+    "after": 13.416383022622835,
+    "before": 13.41640779356879,
+    "path": "/configurations/3/expected/fitRecords/1/pipeline/steps/0/scale/1"
+  },
+  {
+    "after": 0.004567054582928685,
+    "before": 0.004567054665285193,
+    "path": "/configurations/3/expected/positiveProbabilities/0"
+  },
+  {
+    "after": 0.0760322716513992,
+    "before": 0.07603099902441239,
+    "path": "/configurations/3/expected/positiveProbabilities/2"
+  },
+  {
+    "after": 0.10236277053559022,
+    "before": 0.10236471554788847,
+    "path": "/configurations/3/expected/positiveProbabilities/4"
+  },
+  {
+    "after": 0.40385226311566846,
+    "before": 0.4038571334341176,
+    "path": "/configurations/3/expected/positiveProbabilities/5"
+  },
+  {
+    "after": 0.80096939810726,
+    "before": 0.8009724733670355,
+    "path": "/configurations/3/expected/positiveProbabilities/6"
+  },
+  {
+    "after": 0.9598505052446028,
+    "before": 0.959851212486214,
+    "path": "/configurations/3/expected/positiveProbabilities/7"
+  },
+  {
+    "after": 0.01809527630284446,
+    "before": 0.018095478518958628,
+    "path": "/configurations/3/expected/positiveProbabilities/8"
+  },
+  {
+    "after": 0.08082665926328844,
+    "before": 0.08082731737385064,
+    "path": "/configurations/3/expected/positiveProbabilities/9"
+  },
+  {
+    "after": 0.2955681016216919,
+    "before": 0.2955694207082286,
+    "path": "/configurations/3/expected/positiveProbabilities/10"
+  },
+  {
+    "after": 0.8020946809566913,
+    "before": 0.8020951462110814,
+    "path": "/configurations/3/expected/positiveProbabilities/11"
+  },
+  {
+    "after": 0.013973353820718105,
+    "before": 0.013973343823718466,
+    "path": "/configurations/3/expected/positiveProbabilities/16"
+  },
+  {
+    "after": 0.08799384174154495,
+    "before": 0.08799387146573401,
+    "path": "/configurations/3/expected/positiveProbabilities/17"
+  },
+  {
+    "after": 0.3333829135914747,
+    "before": 0.333382335181796,
+    "path": "/configurations/3/expected/positiveProbabilities/18"
+  },
+  {
+    "after": 0.7481706586657979,
+    "before": 0.7481699914647787,
+    "path": "/configurations/3/expected/positiveProbabilities/19"
+  },
+  {
+    "after": 0.12860864723460141,
+    "before": 0.12860853433568217,
+    "path": "/configurations/3/expected/positiveProbabilities/20"
+  },
+  {
+    "after": 0.2580944219881258,
+    "before": 0.25809391485829497,
+    "path": "/configurations/3/expected/positiveProbabilities/21"
+  },
+  {
+    "after": 0.6240510930381657,
+    "before": 0.6240498798115571,
+    "path": "/configurations/3/expected/positiveProbabilities/22"
+  },
+  {
+    "after": 0.8878986748058201,
+    "before": 0.8878979089862312,
+    "path": "/configurations/3/expected/positiveProbabilities/23"
+  },
+  {
+    "after": 0.0975710743658173,
+    "before": 0.0975694792925986,
+    "path": "/configurations/3/expected/positiveProbabilities/26"
+  },
+  {
+    "after": 0.05856018617806222,
+    "before": 0.058559650152279756,
+    "path": "/configurations/3/expected/positiveProbabilities/28"
+  },
+  {
+    "after": 0.26981688311235225,
+    "before": 0.2698147826606687,
+    "path": "/configurations/3/expected/positiveProbabilities/29"
+  },
+  {
+    "after": 0.6870259344259656,
+    "before": 0.6870234401937761,
+    "path": "/configurations/3/expected/positiveProbabilities/30"
+  },
+  {
+    "after": 0.9372859533196969,
+    "before": 0.9372853358846378,
+    "path": "/configurations/3/expected/positiveProbabilities/31"
+  },
+  {
+    "after": 0.012919737213598705,
+    "before": 0.01291942067613686,
+    "path": "/configurations/3/expected/positiveProbabilities/32"
+  },
+  {
+    "after": 0.05878307233373022,
+    "before": 0.05878155947092058,
+    "path": "/configurations/3/expected/positiveProbabilities/33"
+  },
+  {
+    "after": 0.3762749783753406,
+    "before": 0.3762677619648611,
+    "path": "/configurations/3/expected/positiveProbabilities/34"
+  },
+  {
+    "after": 0.587110065691131,
+    "before": 0.587102214053111,
+    "path": "/configurations/3/expected/positiveProbabilities/35"
+  },
+  {
+    "after": "MS-E2-GROUPED-CHURN-V3",
+    "before": "MS-E2-GROUPED-CHURN-V2",
+    "path": "/fixture/fixtureId"
+  },
+  {
+    "after": 40.0,
+    "before": 40.000001,
+    "path": "/fixture/rows/0/features/monthly_charge"
+  },
+  {
+    "after": 44.001,
+    "before": 44.0,
+    "path": "/fixture/rows/2/features/monthly_charge"
+  },
+  {
+    "after": 74.001,
+    "before": 74.0,
+    "path": "/fixture/rows/26/features/monthly_charge"
+  },
+  {
+    "after": "TASK-015.12-MS-E2-V3",
+    "before": "TASK-015.12-MS-E2-V2",
+    "path": "/manifestId"
+  },
+  {
+    "after": 3,
+    "before": 2,
+    "path": "/version"
+  }
+]
