@@ -51,10 +51,11 @@ describe("Task 015.12 authored objective and assessment coverage", () => {
       }
     }
   });
-  it("keeps mastery unavailable during implementation verification", () => {
+  it("activates independent mastery only after review and explicit confirmation", () => {
     const attempt = { ...newDraft("attempt-1", 0), phase: "review" as const, answers: FORMS[0].map(item => canonical([...item.accepted[0]])) };
-    expect(MASTERY_AVAILABLE).toBe(false);
-    expect(() => confirmAttempt({ ...emptyState(), draft: attempt }, true, "2026-10-18T00:00:00.000Z")).toThrow("unavailable");
+    expect(MASTERY_AVAILABLE).toBe(true);
+    expect(() => confirmAttempt({ ...emptyState(), draft: attempt }, false, "2026-10-18T00:00:00.000Z")).toThrow("confirmation");
+    expect(confirmAttempt({ ...emptyState(), draft: attempt }, true, "2026-10-18T00:00:00.000Z").mastery?.passed).toBe(true);
   });
   it("round-trips its own scope without interpreting prior module evidence", () => {
     const state = emptyState();

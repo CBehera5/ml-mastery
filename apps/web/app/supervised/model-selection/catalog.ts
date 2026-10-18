@@ -25,7 +25,7 @@ export async function fetchConfig(lab: number, id: string): Promise<unknown> {
 const definitions = (suffix: string) => OBJECTIVES.map(id => AUTHORED_FAMILIES.find(item => item.objective === id && item.id.endsWith(suffix))!);
 export const PRACTICE = Object.freeze([definitions("practice.A"), definitions("practice.B")]);
 export const FORMS = Object.freeze(["assessment.A", "assessment.B", "assessment.C"].map(definitions));
-export const MASTERY_AVAILABLE = false;
+export const MASTERY_AVAILABLE = true;
 export const VALID_CATALOG = AUTHORED_FAMILIES.length === 120 && OBJECTIVES.length === 24 && [...PRACTICE, ...FORMS].every(form => form.length === 24 && form.every((item, index) => item && validateDefinition(item) && item.objective === OBJECTIVES[index] && item.critical === (index % 4 === 1) && (!item.critical || item.atoms.length === 2))) && EXPERIMENTS[0].configs.length === 20 && EXPERIMENTS[1].configs.length === 11;
 export function response(family: Family, answers: readonly Answer[]): FamilyResponse { return { familyId: family.id, answers: family.atoms.map((atom, index) => ({ atomId: atom.id, answer: answers[index] ?? { kind: "unanswered" } })) }; }
 export function score(form: number, answers: readonly (readonly Answer[])[]) {
