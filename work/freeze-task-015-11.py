@@ -376,7 +376,7 @@ def main():
     boundary = reference_model({"W1": [[0.], [0.]], "b1": [0.], "W2": [[0.]], "b2": [0.]}, "logistic")
     assert boundary.predict([[0., 0.]]).tolist() == [0]
     overfit = [trajectory["id"] for trajectory in trajectories if trajectory["stages"][-1]["post_update_training"]["data_log_loss"] < trajectory["stages"][31]["post_update_training"]["data_log_loss"] and trajectory["stages"][-1]["post_update_development"]["data_log_loss"] > trajectory["stages"][31]["post_update_development"]["data_log_loss"] + 1e-6]
-    report = {"schema": "mlp.parity.v1", "python": platform.python_version(), "platform": platform.platform(), "dependencies": PROFILE, "seed": SEED, "configuration_counts": {"NN-E1": len(first_configs), "NN-E2": len(second_configs)},
+    report = {"schema": "mlp.parity.v1", "python": platform.python_version(), "platform": f"{platform.system()}-{platform.machine()}", "dependencies": PROFILE, "seed": SEED, "configuration_counts": {"NN-E1": len(first_configs), "NN-E2": len(second_configs)},
               "training_runs": len(trajectories), "training_updates": sum(len(trajectory["stages"]) for trajectory in trajectories), "manual_gradient_states": len(steps),
               "finite_difference_checks": len(GRADIENT_CHECKS), "finite_difference_parameters_per_check": 9, "finite_difference_epsilons": EPSILONS,
               "max_gradient_absolute_error": max(item["max_absolute_error"] for item in GRADIENT_CHECKS), "max_parity_absolute_error": max(ERRORS),

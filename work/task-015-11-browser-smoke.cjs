@@ -62,14 +62,11 @@ async function selectByKeyboard(page, selector, value) {
   assert.ok(fromIndex >= 0 && toIndex >= 0, "keyboard selection values exist");
   await captureSelection(page, selector, "before-keyboard-selection");
   await page.keyboard.press("Space");
-  await captureSelection(page, selector, "after-space-open");
   const key = toIndex >= fromIndex ? "ArrowDown" : "ArrowUp";
   for (let index = 0; index < Math.abs(toIndex - fromIndex); index++) {
     await page.keyboard.press(key);
-    await captureSelection(page, selector, `after-${key}-${index + 1}`);
   }
   await page.keyboard.press("Enter");
-  await captureSelection(page, selector, "after-enter-commit");
   await page.waitForFunction(({ selector, value }) => document.querySelector(selector)?.value === value, { selector, value });
   const committed = await captureSelection(page, selector, "react-committed-value");
   assert.equal(committed.selectedValue, value, "keyboard selection updates the controlled experiment configuration");

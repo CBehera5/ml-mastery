@@ -45,7 +45,7 @@
   "overfit_counterexample_trajectory_ids": [
     "nn.training.relu.eta-0.5.alpha-0.0.v1"
   ],
-  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "platform": "Darwin-arm64",
   "python": "3.13.16",
   "schema": "mlp.parity.v1",
   "seed": 1729,
