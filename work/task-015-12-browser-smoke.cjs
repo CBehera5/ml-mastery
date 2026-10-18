@@ -4,17 +4,22 @@ const path = require("node:path");
 const { chromium } = require(process.env.PLAYWRIGHT_PACKAGE_DIR);
 
 async function main() {
-  const browser = await chromium.launch({ headless: true });
-  const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+  const browser = await chromium.launch({ headless: true, timeout: 15000 });
+  const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+  const evidenceDir = process.env.TASK01512_EVIDENCE || process.cwd();
+  fs.mkdirSync(evidenceDir, { recursive: true });
+  const tracePath = path.join(evidenceDir, "model-selection-browser-trace.zip");
+  await context.tracing.start({ screenshots: true, snapshots: true, sources: true });
+  const page = await context.newPage();
+  page.setDefaultTimeout(10000);
+  page.setDefaultNavigationTimeout(20000);
   const errors = [];
   page.on("pageerror", error => errors.push(error.message));
   page.on("console", message => { if (message.type() === "error") errors.push(message.text()); });
+  try {
   await page.goto(`${process.env.MODEL_SELECTION_PREVIEW_URL}/supervised/model-selection`, { waitUntil: "networkidle" });
   await page.getByRole("heading", { name: "Model Selection & Comparison" }).waitFor();
-  if (process.env.TASK01512_EVIDENCE) {
-    fs.mkdirSync(process.env.TASK01512_EVIDENCE, { recursive: true });
-    await page.screenshot({ path: path.join(process.env.TASK01512_EVIDENCE, "model-selection-desktop.png"), fullPage: true });
-  }
+  await page.screenshot({ path: path.join(evidenceDir, "model-selection-desktop.png"), fullPage: true });
   await page.getByRole("link", { name: /MS01 — Compare models fairly/i }).click();
   const firstPractice = page.getByRole("radio").first();
   await firstPractice.check();
@@ -65,13 +70,26 @@ async function main() {
   await page.goto(`${process.env.MODEL_SELECTION_PREVIEW_URL}/supervised/model-selection/ms04`, { waitUntil: "networkidle" });
   const dimensions = await page.evaluate(() => ({ viewport: document.documentElement.clientWidth, content: document.documentElement.scrollWidth }));
   assert.ok(dimensions.content <= dimensions.viewport + 1, `horizontal overflow at 320px: ${JSON.stringify(dimensions)}`);
-  if (process.env.TASK01512_EVIDENCE) {
-    fs.mkdirSync(process.env.TASK01512_EVIDENCE, { recursive: true });
-    await page.screenshot({ path: path.join(process.env.TASK01512_EVIDENCE, "model-selection-mobile-320.png"), fullPage: true });
-  }
+  await page.screenshot({ path: path.join(evidenceDir, "model-selection-mobile-320.png"), fullPage: true });
   assert.deepEqual(errors, [], "browser console should have no page errors");
   console.log(JSON.stringify({ status: "PASS", keyboard: "Tab then native ArrowDown changed experiment configuration", initial, selected, selectedPromptChanged: true, assessment: "mastery remains disabled", viewport320: dimensions, browserErrors: errors.length }));
-  await browser.close();
+  } catch (error) {
+    let state = { url: "unavailable", selectedConfiguration: null, focusedElement: null, viewport: null };
+    try {
+      state = await page.evaluate(() => ({
+        url: location.href,
+        selectedConfiguration: document.querySelector('select[aria-label="MS-E1 configuration"]')?.value ?? null,
+        focusedElement: document.activeElement ? { tag: document.activeElement.tagName, id: document.activeElement.id, label: document.activeElement.getAttribute("aria-label"), text: document.activeElement.textContent?.slice(0, 120) } : null,
+        viewport: { width: document.documentElement.clientWidth, contentWidth: document.documentElement.scrollWidth },
+      }));
+      await page.screenshot({ path: path.join(evidenceDir, "model-selection-browser-failure.png"), fullPage: true });
+    } catch {}
+    fs.writeFileSync(path.join(evidenceDir, "model-selection-browser-failure.json"), JSON.stringify({ error: String(error), state, consoleErrors: errors }, null, 2) + "\n");
+    throw error;
+  } finally {
+    try { await context.tracing.stop({ path: tracePath }); } catch {}
+    await browser.close();
+  }
 }
 
 main().catch(error => { console.error(error); process.exitCode = 1; });
