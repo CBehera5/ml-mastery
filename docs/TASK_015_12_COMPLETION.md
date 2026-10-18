@@ -1,5 +1,9 @@
 # Task 015.12 — Implementation and Verification Report
 
+## Latest disposition — portability audit, 18 October 2026
+
+The V2 repair failed independent CI. The newly authorized systematic audit found two fragile k=3 cutoffs and tested a coherent two-row charge correction while restoring the unrelated V2 edit. All 972 KNN candidate/query records pass locally and in independent macOS ARM64 and Linux x86-64 runs, with identical neighbor-label counts and predictions. macOS passes exact payload parity; Linux exposes broader MS-E1 and logistic-probability reference differences. No new cutoff ambiguity was found. No production fixture or frozen reference was changed. Stop before re-freeze for founder review of numerical portability/support policy, because changing MS-E1 or silently broadening numerical tolerance is outside this repair. See [complete portability report](TASK_015_12_KNN_PORTABILITY_REPORT.md) and [diagnostic CI](https://github.com/CBehera5/ml-mastery/actions/runs/39118535718). Local Python regression: 2,612 passed. `MASTERY_AVAILABLE=false`; 20/24, six paired gates and learner evidence are unchanged. Subsequent full acceptance/notebook checks remain gated. Earlier sections below describe historical implementation/recovery evidence.
+
 **Status: Implementation delivered; acceptance is not complete. Keep mastery disabled and stop for founder review.**
 
 ## Scope delivered
