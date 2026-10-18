@@ -39,11 +39,15 @@ describe("Task015.11 MLP objective contract", () => {
       expect(result.critical).toContain(OBJECTIVES[gate * 4 + 1]);
     }
   });
-  it("keeps mastery unavailable until the acceptance gate is explicitly released", () => {
-    const filled = { ...newDraft("pending-1", 0), phase: "review" as const, answers: FORMS[0].map(family => canonical([...family.accepted[0]])) };
+  it("activates mastery after explicit review and confirmation at the approved boundary", () => {
+    const filled = { ...newDraft("approved-1", 0), phase: "review" as const, answers: FORMS[0].map(family => canonical([...family.accepted[0]])) };
     expect(score(0, FORMS[0].map(family => [...family.accepted[0]])).passed).toBe(true);
-    expect(MASTERY_AVAILABLE).toBe(false);
-    expect(() => confirmAttempt({ ...emptyState(), draft: filled }, true, "2026-10-17T00:00:00.000Z")).toThrow("unavailable until all required checks verify");
+    expect(MASTERY_AVAILABLE).toBe(true);
+    expect(() => confirmAttempt({ ...emptyState(), draft: filled }, false, "2026-10-17T00:00:00.000Z")).toThrow("Review and explicit confirmation are required.");
+    const result = confirmAttempt({ ...emptyState(), draft: filled }, true, "2026-10-17T00:00:00.000Z");
+    expect(result.mastery?.passed).toBe(true);
+    expect(result.mastery?.score).toBe(20);
+    expect(result.history).toHaveLength(1);
     expect(emptyState().mastery).toBeNull();
   });
   it("round-trips its bounded version without crossing the protected scopes", () => {
@@ -85,12 +89,21 @@ describe("Task015.11 MLP objective contract", () => {
   it("requires explicit review/confirmation and rotates a fresh form identity", () => {
     const state = { ...emptyState(), draft: { ...newDraft("one", 0), phase: "review" as const } };
     expect(() => confirmAttempt(state, false, "2026-10-17T00:00:00.000Z")).toThrow();
-    if (!MASTERY_AVAILABLE) {
-      expect(() => confirmAttempt(state, true, "2026-10-17T00:00:00.000Z")).toThrow("unavailable until all required checks verify");
-      return;
-    }
     const result = confirmAttempt(state, true, "2026-10-17T00:00:00.000Z");
     expect(result.draft.phase).toBe("results");
     expect(retry(result, "two").draft.form).toBe(1);
+  });
+  it("retains earned mastery after a later unsuccessful attempt and round-trips that evidence in its version", () => {
+    const successfulDraft = { ...newDraft("success", 0), phase: "review" as const, answers: FORMS[0].map(family => canonical([...family.accepted[0]])) };
+    const successful = confirmAttempt({ ...emptyState(), draft: successfulDraft }, true, "2026-10-17T00:00:00.000Z");
+    const next = retry(successful, "later");
+    const failedAnswers = correct(1);
+    [0, 2, 4, 6, 8].forEach(index => { failedAnswers[index] = wrong(failedAnswers[index]); });
+    const failedDraft = { ...next.draft, phase: "review" as const, answers: failedAnswers.map(canonical) };
+    const failed = confirmAttempt({ ...next, draft: failedDraft }, true, "2026-10-18T00:00:00.000Z");
+    expect(failed.draft.result?.passed).toBe(false);
+    expect(failed.mastery?.id).toBe("success");
+    expect(load(serialize(failed)).mastery?.id).toBe("success");
+    expect(() => load(JSON.stringify({ ...failed, scope: "supervised:random-forests:full:v1" }))).toThrow();
   });
 });

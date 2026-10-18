@@ -32,7 +32,7 @@ export async function fetchConfig(lab: number, id: string): Promise<unknown> {
 const definitions = (suffix: string) => OBJECTIVES.map(id => authored.families.find(item => item.objective === id && item.id.endsWith(suffix))! as Family);
 export const PRACTICE = Object.freeze([definitions("practice.A"), definitions("practice.B")]);
 export const FORMS = Object.freeze(["assessment.A","assessment.B","assessment.C"].map(definitions));
-export const MASTERY_AVAILABLE = false;
+export const MASTERY_AVAILABLE = true;
 export const VALID_CATALOG = authored.content === CONTENT && authored.families.length === 100 && [...PRACTICE, ...FORMS].every(form => form.length === 20 && form.every((item, index) => item && validateDefinition(item) && item.objective === OBJECTIVES[index] && item.critical === (index % 4 === 1) && (!item.critical || item.atoms.length === 2))) && EXPERIMENTS[0].configs.length === 25 && EXPERIMENTS[1].configs.length === 48;
 export function response(family: Family, answers: readonly Answer[]): FamilyResponse {
   return { familyId: family.id, answers: family.atoms.map((atom, index) => ({ atomId: atom.id, answer: answers[index] ?? { kind: "unanswered" } })) };

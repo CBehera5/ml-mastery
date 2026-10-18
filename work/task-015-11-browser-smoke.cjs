@@ -140,14 +140,16 @@ async function run() {
     await page.getByRole("heading", { name: /NN01 — Beyond one neuron/ }).waitFor();
 
     await page.goto(`${baseUrl}/supervised/mlp/mastery`, { waitUntil: "networkidle" });
-    await page.getByRole("alert").filter({ hasText: "Module mastery remains unavailable" }).waitFor();
+    await page.getByRole("heading", { name: "Independent MLP assessment" }).waitFor();
+    const unavailableAlert = page.getByRole("alert").filter({ hasText: "Module mastery remains unavailable" });
+    assert.equal(await unavailableAlert.count(), 0, "approved MLP mastery assessment is available");
     const disabledAnswers = page.locator("fieldset").filter({ hasText: "Independent assessment answers" });
-    assert.equal(await disabledAnswers.getAttribute("disabled"), "", "independent submission remains disabled pending acceptance");
+    assert.equal(await disabledAnswers.getAttribute("disabled"), null, "independent assessment answers are enabled after activation");
     const before = await page.evaluate(key => JSON.parse(localStorage.getItem(key)), storageKey);
     assert.equal(before.mastery, null, "practice and labs never award mastery");
     await page.reload({ waitUntil: "networkidle" });
     const after = await page.evaluate(key => JSON.parse(localStorage.getItem(key)), storageKey);
-    assert.equal(after.mastery, null, "assessment reload preserves disabled mastery state");
+    assert.equal(after.mastery, null, "opening an available assessment does not award mastery");
     assert.equal(after.scope, "supervised:mlp:full:v1", "saved progress remains version isolated");
 
     await page.setViewportSize({ width: 320, height: 850 });
@@ -161,7 +163,7 @@ async function run() {
 
     assert.deepEqual(diagnostics.consoleErrors, [], "browser console must not report console errors");
     assert.deepEqual(errors, [], "browser console must not report uncaught page errors");
-    console.log(JSON.stringify({ result: "PASS", route: "/supervised/mlp", lesson: "/supervised/mlp/nn01", experiment: "NN-E1", persistence: "practice+lab restored", mastery: "disabled as approved", keyboard: "Tab navigation reaches the selector; config state-change verified separately with Playwright selectOption; native keyboard behavior manually verified in the interactive preview", viewport: widths, pageErrors: errors.length, screenshots: ["mlp-overview-320.png", "mlp-overview-desktop.png"] }, null, 2));
+    console.log(JSON.stringify({ result: "PASS", route: "/supervised/mlp", lesson: "/supervised/mlp/nn01", experiment: "NN-E1", persistence: "practice+lab restored", mastery: "available at approved policy; no synthetic award", keyboard: "Tab navigation reaches the selector; config state-change verified separately with Playwright selectOption; native keyboard behavior manually verified in the interactive preview", viewport: widths, pageErrors: errors.length, screenshots: ["mlp-overview-320.png", "mlp-overview-desktop.png"] }, null, 2));
   } catch (error) {
     diagnostics.failure = { message: error.message, stack: error.stack };
     if (activePage) await activePage.screenshot({ path: path.join(evidenceDir, "mlp-browser-failure.png"), fullPage: true }).catch(() => {});

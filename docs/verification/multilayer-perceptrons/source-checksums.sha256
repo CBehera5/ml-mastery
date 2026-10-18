@@ -1,8 +1,8 @@
 e1988d926810fc9aedf8d84af07a9aacffa7cb21d8e88548ce750bda6b97e346  .github/workflows/task-015-11-verification.yml
 74635ef609d51bb0206d12be6591bc2914ced4540dce4e316c26a52fdaa86e58  .gitignore
-e8803352e5903cecd1faf0149a0adc4d610658d1d8a8b0e2e4011289187b8a36  apps/web/app/supervised/mlp/catalog.ts
+98e6d82dc86e2be85e584f95083a0dea52ed5bb2fc28f1fb2d71050f4053f6ad  apps/web/app/supervised/mlp/catalog.ts
 6e59f28253f79e0b1d6ea18e5c7af3a2cdd290d527e1c25843491e4357653e35  apps/web/app/supervised/mlp/learning.test.tsx
-46295207880dc2720d1117fac52132cae3144cb1ecf276e7b307188999dc833b  apps/web/app/supervised/mlp/model.test.ts
+af217672d51f056763f05e064cac60cf1152d80631ad3046753ce576aff46c18  apps/web/app/supervised/mlp/model.test.ts
 596ef74ab6afc234f912fc513e8d80d6b0c5b27d52c6a3c3cfd0a874ccd3515f  apps/web/app/supervised/mlp/model.ts
 df392506c4b7b3be7d8257302fdfd4d27dae3427b000e302cc9464cf21510a89  apps/web/public/notebooks/supervised-mlp.ipynb
 44e717ad74cd3ec69035a26b2ec631f78fc2518f241242b35cd317c64320ae67  docs/TASK_015_11_CLEAN_ENVIRONMENT_VERIFICATION.md
@@ -23,5 +23,5 @@ fd9b67de1b1542804f8b079001e8a82ed644c82e171b29a533ba89715836c4ae  package.json
 30722e5dbca33813833366f2124d668573fc8adfe013d811a88f8e451bfe1a33  vitest.config.mts
 eb9440d9f8bcb8f4a801b1708334634545f09c27859792ebf0af406d9ec13fbe  work/check-mlp-freeze-outputs.py
 a40f6b5955c62d4240f1e6101a9782dead4b92a2b12c3ebbc9cc2a2b5d45f8bb  work/freeze-task-015-11.py
-d73d54aa2a9e9639746c345eafa59d18cde9e4ad3dd28ae727942e14757a770f  work/task-015-11-browser-smoke.cjs
+27c89a65c62f2353900c6fe1b1f8fe038adaeceb2f135162f14352e8cd8d4bb4  work/task-015-11-browser-smoke.cjs
 6e9e9c5b8718db1a1543601424fa5fe5f57c671da90745e579584a713c776bcd  work/task-015-11-record-step.sh
