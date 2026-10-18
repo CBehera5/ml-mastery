@@ -69,6 +69,7 @@ jobs:
           path: .task01511-evidence/
           if-no-files-found: warn
           retention-days: 14
+          include-hidden-files: true
 
   numerical-python:
     name: Python regressions, frozen references, gradients, and notebook
@@ -140,6 +141,7 @@ jobs:
           path: .task01511-evidence/
           if-no-files-found: warn
           retention-days: 14
+          include-hidden-files: true
 
   browser:
     name: Production preview, keyboard, persistence, and 320px browser checks
@@ -195,3 +197,4 @@ jobs:
           path: .task01511-evidence/
           if-no-files-found: warn
           retention-days: 14
+          include-hidden-files: true

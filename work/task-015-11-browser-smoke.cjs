@@ -10,6 +10,38 @@ const authored = JSON.parse(fs.readFileSync(path.join(root, "apps/web/app/superv
 const baseUrl = process.env.MLP_PREVIEW_URL || "http://127.0.0.1:3010";
 const evidenceDir = process.env.TASK01511_EVIDENCE || path.join(root, "browser-evidence");
 const storageKey = "ml-math-lab:supervised:mlp:full:v1";
+const diagnostics = { keyboardSelection: [], consoleErrors: [], pageErrors: [], requestFailures: [], failure: null };
+let activePage = null;
+let activeContext = null;
+let tracing = false;
+
+function writeDiagnostics() {
+  fs.mkdirSync(evidenceDir, { recursive: true });
+  fs.writeFileSync(path.join(evidenceDir, "mlp-browser-diagnostics.json"), `${JSON.stringify(diagnostics, null, 2)}\n`);
+}
+
+async function captureSelection(page, selector, phase) {
+  const state = await page.evaluate(({ selector, phase }) => {
+    const select = document.querySelector(selector);
+    const active = document.activeElement;
+    const section = select?.closest("section");
+    return {
+      phase,
+      url: location.href,
+      selectedValue: select?.value ?? null,
+      selectedIndex: select?.selectedIndex ?? null,
+      disabled: select?.disabled ?? null,
+      options: select ? [...select.options].map(option => ({ value: option.value, label: option.label, selected: option.selected })) : [],
+      selectOuterHTML: select?.outerHTML ?? null,
+      configurationSummary: section ? [...section.querySelectorAll("p")].map(node => node.innerText).filter(value => value.startsWith("Configuration ")) : [],
+      activeElement: active ? { tag: active.tagName, id: active.id, ariaLabel: active.getAttribute("aria-label"), role: active.getAttribute("role"), value: "value" in active ? active.value : null, outerHTML: active.outerHTML } : null,
+      eventTrace: window.__mlpSelectionEvents ?? []
+    };
+  }, { selector, phase });
+  diagnostics.keyboardSelection.push(state);
+  writeDiagnostics();
+  return state;
+}
 
 async function selectByKeyboard(page, selector, value) {
   for (let attempt = 0; attempt < 80; attempt++) {
@@ -17,14 +49,30 @@ async function selectByKeyboard(page, selector, value) {
     await page.keyboard.press("Tab");
   }
   assert.equal(await page.evaluate(() => document.activeElement?.getAttribute("aria-label")), "NN-E1 configuration", "Tab order should reach the experiment configuration");
-  const values = await page.locator(selector).locator("option").evaluateAll(options => options.map(option => option.value).filter(Boolean));
-  const current = await page.locator(selector).inputValue();
+  const select = page.locator(selector);
+  await select.evaluate(element => {
+    window.__mlpSelectionEvents = [];
+    for (const type of ["focus", "blur", "keydown", "keyup", "input", "change"]) {
+      element.addEventListener(type, event => window.__mlpSelectionEvents.push({ type, key: "key" in event ? event.key : null, value: element.value, selectedIndex: element.selectedIndex, activeLabel: document.activeElement?.getAttribute("aria-label") ?? null }), true);
+    }
+  });
+  const values = await select.locator("option").evaluateAll(options => options.map(option => option.value).filter(Boolean));
+  const current = await select.inputValue();
   const fromIndex = values.indexOf(current), toIndex = values.indexOf(value);
   assert.ok(fromIndex >= 0 && toIndex >= 0, "keyboard selection values exist");
+  await captureSelection(page, selector, "before-keyboard-selection");
+  await page.keyboard.press("Space");
+  await captureSelection(page, selector, "after-space-open");
   const key = toIndex >= fromIndex ? "ArrowDown" : "ArrowUp";
-  for (let index = 0; index < Math.abs(toIndex - fromIndex); index++) await page.keyboard.press(key);
+  for (let index = 0; index < Math.abs(toIndex - fromIndex); index++) {
+    await page.keyboard.press(key);
+    await captureSelection(page, selector, `after-${key}-${index + 1}`);
+  }
   await page.keyboard.press("Enter");
-  assert.equal(await page.locator(selector).inputValue(), value);
+  await captureSelection(page, selector, "after-enter-commit");
+  await page.waitForFunction(({ selector, value }) => document.querySelector(selector)?.value === value, { selector, value });
+  const committed = await captureSelection(page, selector, "react-committed-value");
+  assert.equal(committed.selectedValue, value, "keyboard selection updates the controlled experiment configuration");
 }
 
 async function run() {
@@ -32,9 +80,15 @@ async function run() {
   const browser = await chromium.launch({ headless: true });
   try {
     const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+    activeContext = context;
+    await context.tracing.start({ screenshots: true, snapshots: true, sources: true, title: "MLP NN-E1 keyboard configuration selection" });
+    tracing = true;
     const page = await context.newPage();
-    const errors = [];
+    activePage = page;
+    const errors = diagnostics.pageErrors;
     page.on("pageerror", error => errors.push(error.message));
+    page.on("console", message => { if (message.type() === "error") diagnostics.consoleErrors.push(message.text()); });
+    page.on("requestfailed", request => diagnostics.requestFailures.push({ url: request.url(), error: request.failure()?.errorText ?? "unknown" }));
 
     await page.goto(`${baseUrl}/supervised/mlp`, { waitUntil: "networkidle" });
     await page.getByRole("heading", { name: "Introductory Multilayer Perceptrons" }).waitFor();
@@ -110,15 +164,31 @@ async function run() {
     await page.setViewportSize({ width: 1280, height: 900 });
     await page.screenshot({ path: path.join(evidenceDir, "mlp-overview-desktop.png"), fullPage: true });
 
+    assert.deepEqual(diagnostics.consoleErrors, [], "browser console must not report console errors");
     assert.deepEqual(errors, [], "browser console must not report uncaught page errors");
-    await context.close();
     console.log(JSON.stringify({ result: "PASS", route: "/supervised/mlp", lesson: "/supervised/mlp/nn01", experiment: "NN-E1", persistence: "practice+lab restored", mastery: "disabled as approved", keyboard: "Tab + Enter navigation and Tab/ArrowDown/Enter configuration selection", viewport: widths, pageErrors: errors.length, screenshots: ["mlp-overview-320.png", "mlp-overview-desktop.png"] }, null, 2));
+  } catch (error) {
+    diagnostics.failure = { message: error.message, stack: error.stack };
+    if (activePage) await activePage.screenshot({ path: path.join(evidenceDir, "mlp-browser-failure.png"), fullPage: true }).catch(() => {});
+    throw error;
   } finally {
+    if (tracing && activeContext) {
+      await activeContext.tracing.stop({ path: path.join(evidenceDir, "mlp-browser-trace.zip") });
+      tracing = false;
+    }
+    writeDiagnostics();
+    if (activeContext) {
+      await activeContext.close();
+      activeContext = null;
+    }
     await browser.close();
   }
 }
 
 run().catch(error => {
+  diagnostics.failure = { message: error.message, stack: error.stack };
+  writeDiagnostics();
+  if (activePage) activePage.screenshot({ path: path.join(evidenceDir, "mlp-browser-failure.png"), fullPage: true }).catch(() => {});
   console.error(error);
   process.exitCode = 1;
 });

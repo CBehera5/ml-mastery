@@ -391,7 +391,7 @@ def main():
     baseline_body = {key: value for key, value in baseline_document.items() if key != "content_sha256"}
     assert digest(json.dumps(baseline_body, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()) == baseline_content_sha256
     expected_hashes = baseline_document["files"]
-    assert len(expected_hashes) == 535 == baseline_document["source_file_count"]
+    assert len(expected_hashes) == 530 == baseline_document["source_file_count"]
     hashes = {name: digest((ROOT / name).read_bytes()) for name in sorted(expected_hashes)}
     changed_files = [name for name, expected in expected_hashes.items() if hashes.get(name) != expected]
     assert not changed_files, changed_files

@@ -1,9 +1,9 @@
 {
-  "aggregate_sha256": "f4c78356e845abad7d2d54c730bf71bb4cdf3dafc102c341947393fe936c9a52",
+  "aggregate_sha256": "7fa2a920e4deefe4fe40756b1454a0ae903f0fdffac6f44b790733f4353b1a98",
   "baseline": "docs/verification/multilayer-perceptrons/source-preservation-baseline.v1.json",
-  "baseline_content_sha256": "f431a7c71f29884f409387b09521731e4aa37909e46a39a07a10340740ec0f0b",
+  "baseline_content_sha256": "59abc2fe2cfc728c0193dfd1a5ca130e901111e354da5e8dce3efb3c0908c194",
   "changed_files": [],
-  "checked_files": 535,
+  "checked_files": 530,
   "historical_task_015_10_aggregate_sha256": "06065cb9a247afee31b97e1643c5d443b17c01e534e79176495387324e861efc",
   "learner_storage_accessed": false,
   "original_directory_io_reliability": "OPEN",

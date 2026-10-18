@@ -22,7 +22,7 @@
   "aggregation": {
     "algorithm": "SHA-256",
     "serialization": "SHA-256 of UTF-8 json.dumps(sorted-key repository-relative path-to-SHA-256 mapping) using Python default separators",
-    "sha256": "f4c78356e845abad7d2d54c730bf71bb4cdf3dafc102c341947393fe936c9a52"
+    "sha256": "7fa2a920e4deefe4fe40756b1454a0ae903f0fdffac6f44b790733f4353b1a98"
   },
   "approved_discovery_changes": [
     {
@@ -36,7 +36,17 @@
       "snapshot_sha256": "99937cff7cf69246fa1a81a26f8f4c9443f2219501dd53367f7ca701750548b3"
     }
   ],
-  "content_sha256": "f431a7c71f29884f409387b09521731e4aa37909e46a39a07a10340740ec0f0b",
+  "content_sha256": "59abc2fe2cfc728c0193dfd1a5ca130e901111e354da5e8dce3efb3c0908c194",
+  "excluded_generated_paths": {
+    "reason": "Setuptools egg-info is generated during environment installation, ignored by Git, and absent from clean source checkouts; it is not authored source.",
+    "paths": [
+      "python/ml_math_lab.egg-info/PKG-INFO",
+      "python/ml_math_lab.egg-info/SOURCES.txt",
+      "python/ml_math_lab.egg-info/dependency_links.txt",
+      "python/ml_math_lab.egg-info/requires.txt",
+      "python/ml_math_lab.egg-info/top_level.txt"
+    ]
+  },
   "files": {
     "apps/web/app/beta/beta.test.tsx": "422918e91b71de878e75eb341a916910dd05d3f1f8819af8e782011bb8a7b6fe",
     "apps/web/app/beta/feedback/feedback-form.tsx": "5c1827d00f3ea82f0a5e0069da30ced15cfd4f85087d621b0746dee2fe5350f4",
@@ -496,11 +506,6 @@
     "packages/python-contracts/fixtures/preparation-learning.v1.json": "f87534b6257be1e9f92b59a19802d7fc651a368544ecd6c7ebd30ccdf5e8a5e7",
     "packages/python-contracts/fixtures/sklearn-learning.v1.json": "76515422fd10d850e07eb4dd1f0709ab291cf1ee25101be846a919d15bfe67b5",
     "packages/python-contracts/fixtures/visualization-learning.v1.json": "3f89414201bea0c9845e53a26852595e8abbda59888d120d5db3ef98937ca030",
-    "python/ml_math_lab.egg-info/PKG-INFO": "21e12962c641fa4da416bb87e516c1cd92dd894f2dce72d2000380b5c4927f08",
-    "python/ml_math_lab.egg-info/SOURCES.txt": "e98ba90bea61efd9eb6d8932fa29990a48689eca1d54042794046e00aac7deea",
-    "python/ml_math_lab.egg-info/dependency_links.txt": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-    "python/ml_math_lab.egg-info/requires.txt": "939dd7c7d1d7059d3ce9d9462e1c94f2146ec52943c92ac025e0b27107521106",
-    "python/ml_math_lab.egg-info/top_level.txt": "72f4b83dd898d06e998d6aad38ebfca091f73a3e3000702c2a7afea6e75b4b24",
     "python/mlmath/__init__.py": "8ade51034359d3ea2f1eff6b9ba365ef226f340f6d9f3cbd1100fae2cb1d98da",
     "python/mlmath/algebra.py": "7d87fc909d82002be59c8a12590c97f9f8b3700459cee6ce514ec912ec105e20",
     "python/mlmath/calculus.py": "ee96846f47b85e0ee151b40f8cde801f6e21eee18cdd208c78fa6d2ff45853c9",
@@ -586,5 +591,5 @@
     "parent_report_sha256": "2dd910cbe05dda02e6f257806c24cb9bfab06eb0858582b03a8e28c0f11cfa46"
   },
   "schema": "mlp.portable-source-preservation-baseline.v1",
-  "source_file_count": 535
+  "source_file_count": 530
 }
