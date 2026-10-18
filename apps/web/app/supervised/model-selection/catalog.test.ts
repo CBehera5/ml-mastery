@@ -8,8 +8,16 @@ import { LESSONS } from "./teaching";
 
 const answers = (form: number) => FORMS[form].map(family => [...family.accepted[0]] as Answer[]);
 const wrongAt = (form: number, answers: Answer[][], index: number, atomIndex = 0) => {
-  const item = FORMS[form][index], correct = item.accepted[0][atomIndex];
-  if (correct.kind === "choice" && item.atoms[atomIndex].kind === "choice") answers[index][atomIndex] = { kind: "choice", optionId: item.atoms[atomIndex].options.find(option => option.id !== correct.optionId)!.id };
+  const item = FORMS[form][index], correct = item.accepted[0][atomIndex], atom = item.atoms[atomIndex];
+  if (correct.kind === "choice" && atom?.kind === "choice") answers[index][atomIndex] = { kind: "choice", optionId: atom.options.find(option => option.id !== correct.optionId)!.id };
+};
+
+const acceptedChoiceLabel = (formIndex: number, itemIndex: number): string => {
+  const item = FORMS[formIndex][itemIndex], atom = item.atoms[0], answer = item.accepted[0][0];
+  if (atom.kind !== "choice" || answer.kind !== "choice") throw new Error("Expected an authored choice item.");
+  const option = atom.options.find(candidate => candidate.id === answer.optionId);
+  if (!option) throw new Error("Expected choice is not authored.");
+  return option.label;
 };
 
 describe("Task 015.12 authored objective and assessment coverage", () => {
@@ -27,8 +35,8 @@ describe("Task 015.12 authored objective and assessment coverage", () => {
       for (const item of form) expect(gradeFamily(item, { familyId: item.id, answers: item.atoms.map((atom, i) => ({ atomId: atom.id, answer: item.accepted[0][i] })) }).status).toBe("graded");
     }
     expect(FORMS[0][4].prompt).not.toBe(FORMS[1][4].prompt);
-    expect(FORMS[0][4].atoms[0].options.find(option => option.id === FORMS[0][4].accepted[0][0].optionId)?.label).toContain("24 candidate-fold fits");
-    expect(FORMS[1][4].atoms[0].options.find(option => option.id === FORMS[1][4].accepted[0][0].optionId)?.label).toContain("18 candidate-fold fits");
+    expect(acceptedChoiceLabel(0, 4)).toContain("24 candidate-fold fits");
+    expect(acceptedChoiceLabel(1, 4)).toContain("18 candidate-fold fits");
     expect(FORMS[0][2].accepted[0][0]).not.toEqual(FORMS[1][2].accepted[0][0]);
   });
   it("enforces the 19/20 boundary and all paired gates in each independent form", () => {
