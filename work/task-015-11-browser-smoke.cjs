@@ -67,14 +67,19 @@ async function selectByKeyboard(page, selector, value) {
     await page.keyboard.press(key);
   }
   await page.keyboard.press("Enter");
-  await page.waitForFunction(({ selector, value }) => document.querySelector(selector)?.value === value, { selector, value });
+  try {
+    await page.waitForFunction(({ selector, value }) => document.querySelector(selector)?.value === value, { selector, value }, { timeout: 5000 });
+  } catch (error) {
+    await captureSelection(page, selector, "keyboard-selection-timeout");
+    throw error;
+  }
   const committed = await captureSelection(page, selector, "react-committed-value");
   assert.equal(committed.selectedValue, value, "keyboard selection updates the controlled experiment configuration");
 }
 
 async function run() {
   fs.mkdirSync(evidenceDir, { recursive: true });
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ headless: process.env.MLP_BROWSER_HEADLESS === "1" });
   try {
     const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
     activeContext = context;
