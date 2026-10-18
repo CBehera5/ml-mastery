@@ -1,0 +1,395 @@
+{
+  "checks": {
+    "classification": {
+      "exact_tied_candidate_count": 2,
+      "invalid_depth_zero_rejected": true,
+      "no_split_root_valid": true,
+      "pure_root_valid": true,
+      "seed1729_selected_feature": 1
+    },
+    "contextual_entropy_only": {
+      "balanced_binary_entropy_bits": 1.0,
+      "balanced_binary_gini": 0.5,
+      "pure_entropy_bits": 0.0,
+      "zero_log_zero_convention": "0 log2(0)=0;no entropy fit or scored gate"
+    },
+    "lower_training_error_worse_development": {
+      "flexible_dev_mse": 5.0625,
+      "flexible_train_mse": 0.375,
+      "more_flexible": "DT-E1.dt.regression.base.v1.depth2.leaf1.a0.v1",
+      "simpler": "DT-E1.dt.regression.base.v1.depth1.leaf1.a0.v1",
+      "simpler_dev_mse": 3.0,
+      "simpler_train_mse": 3.0
+    },
+    "regression": {
+      "exact_tied_candidate_count": 2,
+      "invalid_depth_zero_rejected": true,
+      "no_split_root_valid": true,
+      "pure_root_valid": true,
+      "seed1729_selected_feature": 1
+    }
+  },
+  "dependencies": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  },
+  "ledger": [
+    {
+      "id": "DT-E1.dt.regression.base.v1.manual.f0.t2.0",
+      "kind": "authored-candidate-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.base.v1.manual.f0.t4.0",
+      "kind": "authored-candidate-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.base.v1.manual.f0.t6.0",
+      "kind": "authored-candidate-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.base.v1.manual.f1.t0.5",
+      "kind": "authored-candidate-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.base.v1.depth1.leaf1.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.base.v1.depth1.leaf2.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.base.v1.depth2.leaf1.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.base.v1.depth2.leaf2.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.base.v1.depth3.leaf1.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.base.v1.depth3.leaf2.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.base.v1.full.leaf1.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.base.v1.prune0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.base.v1.prune1.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.base.v1.prune2.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.base.v1.prune3.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.base.v1.prune4.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.changed-row.v1.manual.f0.t2.0",
+      "kind": "authored-candidate-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.changed-row.v1.manual.f0.t4.0",
+      "kind": "authored-candidate-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.changed-row.v1.manual.f0.t6.0",
+      "kind": "authored-candidate-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.changed-row.v1.manual.f1.t0.5",
+      "kind": "authored-candidate-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.changed-row.v1.depth1.leaf1.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.changed-row.v1.depth1.leaf2.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.changed-row.v1.depth2.leaf1.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.changed-row.v1.depth2.leaf2.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.changed-row.v1.depth3.leaf1.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.changed-row.v1.depth3.leaf2.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.changed-row.v1.full.leaf1.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.changed-row.v1.prune0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.changed-row.v1.prune1.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.changed-row.v1.prune2.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.changed-row.v1.prune3.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.tied-features.v1.edge.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.constant-features.v1.edge.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.dt.regression.pure-target.v1.edge.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.reject.test-pruning.v1",
+      "kind": "rejected-diagnostic",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.reject.target-alignment.v1",
+      "kind": "rejected-diagnostic",
+      "passed": true
+    },
+    {
+      "id": "DT-E1.reject.empty-child.v1",
+      "kind": "rejected-diagnostic",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.base.v1.manual.f0.t2.0",
+      "kind": "authored-candidate-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.base.v1.manual.f0.t4.0",
+      "kind": "authored-candidate-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.base.v1.manual.f0.t6.0",
+      "kind": "authored-candidate-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.base.v1.manual.f1.t0.5",
+      "kind": "authored-candidate-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.base.v1.depth1.leaf1.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.base.v1.depth1.leaf2.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.base.v1.depth2.leaf1.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.base.v1.depth2.leaf2.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.base.v1.depth3.leaf1.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.base.v1.depth3.leaf2.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.base.v1.full.leaf1.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.base.v1.prune0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.base.v1.prune1.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.changed-row.v1.manual.f0.t2.0",
+      "kind": "authored-candidate-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.changed-row.v1.manual.f0.t4.0",
+      "kind": "authored-candidate-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.changed-row.v1.manual.f0.t6.0",
+      "kind": "authored-candidate-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.changed-row.v1.manual.f1.t0.5",
+      "kind": "authored-candidate-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.changed-row.v1.depth1.leaf1.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.changed-row.v1.depth1.leaf2.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.changed-row.v1.depth2.leaf1.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.changed-row.v1.depth2.leaf2.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.changed-row.v1.depth3.leaf1.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.changed-row.v1.depth3.leaf2.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.changed-row.v1.full.leaf1.a0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.changed-row.v1.prune0.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.changed-row.v1.prune1.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.tied-features.v1.edge.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.constant-features.v1.edge.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.dt.classification.pure-target.v1.edge.v1",
+      "kind": "fitted-tree",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.reject.test-pruning.v1",
+      "kind": "rejected-diagnostic",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.reject.target-alignment.v1",
+      "kind": "rejected-diagnostic",
+      "passed": true
+    },
+    {
+      "id": "DT-E2.reject.empty-child.v1",
+      "kind": "rejected-diagnostic",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "python": "3.13.16",
+  "random_state": 1729,
+  "schema": "decision-trees.parity.v1",
+  "state_counts": {
+    "DT-E1": 37,
+    "DT-E2": 32
+  }
+}

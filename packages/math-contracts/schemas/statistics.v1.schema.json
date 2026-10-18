@@ -1,0 +1,630 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "statistics.v1.schema.json",
+  "title": "Statistics v1 frozen reference traces",
+  "type": "object",
+  "properties": {
+    "contract": {
+      "const": "statistics.v1"
+    },
+    "summaries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "convention": {
+            "enum": [
+              "population",
+              "sample"
+            ]
+          },
+          "trace": {
+            "type": "object",
+            "properties": {
+              "contract": {
+                "const": "statistics.v1"
+              },
+              "count": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "convention": {
+                "enum": [
+                  "population",
+                  "sample"
+                ]
+              },
+              "denominator": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "mean": {
+                "type": "number"
+              },
+              "median": {
+                "type": "number"
+              },
+              "minimum": {
+                "type": "number"
+              },
+              "maximum": {
+                "type": "number"
+              },
+              "range": {
+                "type": "number"
+              },
+              "variance": {
+                "type": "number"
+              },
+              "standardDeviation": {
+                "type": "number"
+              },
+              "q1": {
+                "type": "number"
+              },
+              "q3": {
+                "type": "number"
+              },
+              "iqr": {
+                "type": "number"
+              },
+              "lowerFence": {
+                "type": "number"
+              },
+              "upperFence": {
+                "type": "number"
+              },
+              "whiskerLow": {
+                "type": "number"
+              },
+              "whiskerHigh": {
+                "type": "number"
+              },
+              "modes": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "outliers": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              }
+            },
+            "required": [
+              "contract",
+              "count",
+              "convention",
+              "denominator",
+              "mean",
+              "median",
+              "minimum",
+              "maximum",
+              "range",
+              "variance",
+              "standardDeviation",
+              "q1",
+              "q3",
+              "iqr",
+              "lowerFence",
+              "upperFence",
+              "whiskerLow",
+              "whiskerHigh",
+              "modes",
+              "outliers"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "values",
+          "convention",
+          "trace"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "paired": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "y": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "convention": {
+            "enum": [
+              "population",
+              "sample"
+            ]
+          },
+          "trace": {
+            "type": "object",
+            "properties": {
+              "contract": {
+                "const": "statistics.v1"
+              },
+              "count": {
+                "type": "integer",
+                "minimum": 2
+              },
+              "convention": {
+                "enum": [
+                  "population",
+                  "sample"
+                ]
+              },
+              "covariance": {
+                "type": "number"
+              },
+              "correlation": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": -1,
+                    "maximum": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "contract",
+              "count",
+              "convention",
+              "covariance",
+              "correlation"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "x",
+          "y",
+          "convention",
+          "trace"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "histograms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "bins": {
+            "type": "number"
+          },
+          "trace": {
+            "type": "object",
+            "properties": {
+              "contract": {
+                "const": "statistics.v1"
+              },
+              "bins": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "lower": {
+                      "type": "number"
+                    },
+                    "upper": {
+                      "type": "number"
+                    },
+                    "includesUpper": {
+                      "type": "boolean"
+                    },
+                    "count": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "lower",
+                    "upper",
+                    "includesUpper",
+                    "count"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "contract",
+              "bins"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "values",
+          "bins",
+          "trace"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "sampling": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "size": {
+            "type": "number"
+          },
+          "repetitions": {
+            "type": "number"
+          },
+          "seed": {
+            "type": "number"
+          },
+          "biased": {
+            "type": "boolean"
+          },
+          "trace": {
+            "type": "object",
+            "properties": {
+              "contract": {
+                "const": "statistics.v1"
+              },
+              "population": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "populationMean": {
+                "type": "number"
+              },
+              "populationDeviation": {
+                "type": "number"
+              },
+              "sampleSize": {
+                "type": "number"
+              },
+              "repetitions": {
+                "type": "number"
+              },
+              "seed": {
+                "type": "number"
+              },
+              "biased": {
+                "type": "boolean"
+              },
+              "standardError": {
+                "type": "number"
+              },
+              "samples": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "mean": {
+                      "type": "number"
+                    },
+                    "lower": {
+                      "type": "number"
+                    },
+                    "upper": {
+                      "type": "number"
+                    },
+                    "covers": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "mean",
+                    "lower",
+                    "upper",
+                    "covers"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "coverage": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "meanOfMeans": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "contract",
+              "population",
+              "populationMean",
+              "populationDeviation",
+              "sampleSize",
+              "repetitions",
+              "seed",
+              "biased",
+              "standardError",
+              "samples",
+              "coverage",
+              "meanOfMeans"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "size",
+          "repetitions",
+          "seed",
+          "biased",
+          "trace"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "strength": {
+            "type": "number"
+          },
+          "effect": {
+            "type": "number"
+          },
+          "intervention": {
+            "type": "number"
+          },
+          "trace": {
+            "type": "object",
+            "properties": {
+              "contract": {
+                "const": "statistics.v1"
+              },
+              "rows": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "warm": {
+                      "type": "number"
+                    },
+                    "x": {
+                      "type": "number"
+                    },
+                    "y": {
+                      "type": "number"
+                    },
+                    "intervenedX": {
+                      "type": "number"
+                    },
+                    "intervenedY": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "warm",
+                    "x",
+                    "y",
+                    "intervenedX",
+                    "intervenedY"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "pooled": {
+                "type": "object",
+                "properties": {
+                  "contract": {
+                    "const": "statistics.v1"
+                  },
+                  "count": {
+                    "type": "integer",
+                    "minimum": 2
+                  },
+                  "convention": {
+                    "enum": [
+                      "population",
+                      "sample"
+                    ]
+                  },
+                  "covariance": {
+                    "type": "number"
+                  },
+                  "correlation": {
+                    "anyOf": [
+                      {
+                        "type": "number",
+                        "minimum": -1,
+                        "maximum": 1
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "contract",
+                  "count",
+                  "convention",
+                  "covariance",
+                  "correlation"
+                ],
+                "additionalProperties": false
+              },
+              "groups": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "contract": {
+                      "const": "statistics.v1"
+                    },
+                    "count": {
+                      "type": "integer",
+                      "minimum": 2
+                    },
+                    "convention": {
+                      "enum": [
+                        "population",
+                        "sample"
+                      ]
+                    },
+                    "covariance": {
+                      "type": "number"
+                    },
+                    "correlation": {
+                      "anyOf": [
+                        {
+                          "type": "number",
+                          "minimum": -1,
+                          "maximum": 1
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "contract",
+                    "count",
+                    "convention",
+                    "covariance",
+                    "correlation"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "causalChange": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "contract",
+              "rows",
+              "pooled",
+              "groups",
+              "causalChange"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "strength",
+          "effect",
+          "intervention",
+          "trace"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "twins": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "intervention": {
+            "type": "number"
+          },
+          "trace": {
+            "type": "object",
+            "properties": {
+              "contract": {
+                "const": "statistics.v1"
+              },
+              "observations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "z": {
+                      "type": "number"
+                    },
+                    "x": {
+                      "type": "number"
+                    },
+                    "y": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "z",
+                    "x",
+                    "y"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "observedCorrelation": {
+                "const": 1
+              },
+              "intervention": {
+                "type": "number"
+              },
+              "commonCauseY": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "directCauseY": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              }
+            },
+            "required": [
+              "contract",
+              "observations",
+              "observedCorrelation",
+              "intervention",
+              "commonCauseY",
+              "directCauseY"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "intervention",
+          "trace"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "contract",
+    "summaries",
+    "paired",
+    "histograms",
+    "sampling",
+    "relationships",
+    "twins"
+  ],
+  "additionalProperties": false
+}

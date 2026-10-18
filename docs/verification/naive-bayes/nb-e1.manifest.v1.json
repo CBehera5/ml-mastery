@@ -1,0 +1,2326 @@
+{
+  "accessibility": "Native labeled selects/buttons, visible keyboard focus, reduced motion and320px reflow. Read priors, token/density/log contributions, normalizer, posterior, predicted class or tagged rejection/undefined reason in a numerical table plus explanation. Curves/bars are redundant; no hover/color/spatial-only meaning. Extreme float underflow is explicitly distinguished from mathematical zero.",
+  "allowed_configuration_ids": [
+    "NB-E1.count.a0.5.empirical.q0.v1",
+    "NB-E1.count.a0.5.empirical.q1.v1",
+    "NB-E1.count.a0.5.empirical.q2.v1",
+    "NB-E1.count.a0.5.good70.q0.v1",
+    "NB-E1.count.a0.5.good70.q1.v1",
+    "NB-E1.count.a0.5.good70.q2.v1",
+    "NB-E1.count.a1.0.empirical.q0.v1",
+    "NB-E1.count.a1.0.empirical.q1.v1",
+    "NB-E1.count.a1.0.empirical.q2.v1",
+    "NB-E1.count.a1.0.good70.q0.v1",
+    "NB-E1.count.a1.0.good70.q1.v1",
+    "NB-E1.count.a1.0.good70.q2.v1",
+    "NB-E1.count.a2.0.empirical.q0.v1",
+    "NB-E1.count.a2.0.empirical.q1.v1",
+    "NB-E1.count.a2.0.empirical.q2.v1",
+    "NB-E1.count.a2.0.good70.q0.v1",
+    "NB-E1.count.a2.0.good70.q1.v1",
+    "NB-E1.count.a2.0.good70.q2.v1",
+    "NB-E1.supplied.0.v1",
+    "NB-E1.supplied.1.v1",
+    "NB-E1.supplied.2.v1",
+    "NB-E1.supplied.3.v1",
+    "NB-E1.supplied.allzero.v1",
+    "NB-E1.reject.negative-count.v1",
+    "NB-E1.reject.heldout-vocabulary.v1",
+    "NB-E1.reject.alpha0-conflict.v1"
+  ],
+  "comparison": "NB combines assumed class-conditional likelihoods; existing Logistic models a linear logit. Compare on identical unseen rows and costs, not unrelated accuracy figures. No new Logistic fitting or calibration algorithm is introduced by this manifest.",
+  "configurations": [
+    {
+      "controls": {
+        "alpha": 0.5,
+        "prior_mode": "empirical",
+        "query_index": 0
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.6190476190476191,
+            0.047619047619047616,
+            0.3333333333333333
+          ],
+          [
+            0.047619047619047616,
+            0.6190476190476191,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -1.6522933410837177,
+          -6.782192056006791
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.4795730802618862,
+            -3.044522437723423,
+            -1.0986122886681098
+          ],
+          [
+            -3.044522437723423,
+            -0.4795730802618862,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": -1.6463936189565294,
+        "log_posterior": [
+          -0.005899722127188367,
+          -5.135798437050262
+        ],
+        "posterior_float64": [
+          0.9941176470588234,
+          0.005882352941176469
+        ],
+        "prediction": 0,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "query_log_contributions": [
+          [
+            -0.9591461605237724,
+            -0.0,
+            -0.0
+          ],
+          [
+            -6.089044875446846,
+            -0.0,
+            -0.0
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 0
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a0.5.empirical.q0.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "alpha": 0.5,
+        "prior_mode": "empirical",
+        "query_index": 1
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.6190476190476191,
+            0.047619047619047616,
+            0.3333333333333333
+          ],
+          [
+            0.047619047619047616,
+            0.6190476190476191,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -7.880804344674901,
+          -2.7509056297518275
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.4795730802618862,
+            -3.044522437723423,
+            -1.0986122886681098
+          ],
+          [
+            -3.044522437723423,
+            -0.4795730802618862,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": -2.7450059076246394,
+        "log_posterior": [
+          -5.135798437050262,
+          -0.005899722127188145
+        ],
+        "posterior_float64": [
+          0.005882352941176469,
+          0.9941176470588237
+        ],
+        "prediction": 1,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "query_log_contributions": [
+          [
+            -0.0,
+            -6.089044875446846,
+            -1.0986122886681098
+          ],
+          [
+            -0.0,
+            -0.9591461605237724,
+            -1.0986122886681098
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 0
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a0.5.empirical.q1.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "alpha": 0.5,
+        "prior_mode": "empirical",
+        "query_index": 2
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.6190476190476191,
+            0.047619047619047616,
+            0.3333333333333333
+          ],
+          [
+            0.047619047619047616,
+            0.6190476190476191,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -0.6931471805599453,
+          -0.6931471805599453
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.4795730802618862,
+            -3.044522437723423,
+            -1.0986122886681098
+          ],
+          [
+            -3.044522437723423,
+            -0.4795730802618862,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": 0.0,
+        "log_posterior": [
+          -0.6931471805599453,
+          -0.6931471805599453
+        ],
+        "posterior_float64": [
+          0.5,
+          0.5
+        ],
+        "prediction": 0,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "query_log_contributions": [
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 1
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a0.5.empirical.q2.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "alpha": 0.5,
+        "prior_mode": "good70",
+        "query_index": 0
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.6190476190476191,
+            0.047619047619047616,
+            0.3333333333333333
+          ],
+          [
+            0.047619047619047616,
+            0.6190476190476191,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -1.315821104462505,
+          -7.293017679772782
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.4795730802618862,
+            -3.044522437723423,
+            -1.0986122886681098
+          ],
+          [
+            -3.044522437723423,
+            -0.4795730802618862,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": -1.313288388883221,
+        "log_posterior": [
+          -0.0025327155792840284,
+          -5.979729290889561
+        ],
+        "posterior_float64": [
+          0.9974704890387858,
+          0.002529510961214165
+        ],
+        "prediction": 0,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "query_log_contributions": [
+          [
+            -0.9591461605237724,
+            -0.0,
+            -0.0
+          ],
+          [
+            -6.089044875446846,
+            -0.0,
+            -0.0
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 0
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a0.5.good70.q0.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "alpha": 0.5,
+        "prior_mode": "good70",
+        "query_index": 1
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.6190476190476191,
+            0.047619047619047616,
+            0.3333333333333333
+          ],
+          [
+            0.047619047619047616,
+            0.6190476190476191,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -7.5443321080536885,
+          -3.2617312535178185
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.4795730802618862,
+            -3.044522437723423,
+            -1.0986122886681098
+          ],
+          [
+            -3.044522437723423,
+            -0.4795730802618862,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": -3.2480189916538365,
+        "log_posterior": [
+          -4.296313116399852,
+          -0.013712261863982
+        ],
+        "posterior_float64": [
+          0.013618677042801553,
+          0.9863813229571984
+        ],
+        "prediction": 1,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "query_log_contributions": [
+          [
+            -0.0,
+            -6.089044875446846,
+            -1.0986122886681098
+          ],
+          [
+            -0.0,
+            -0.9591461605237724,
+            -1.0986122886681098
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 0
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a0.5.good70.q1.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "alpha": 0.5,
+        "prior_mode": "good70",
+        "query_index": 2
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.6190476190476191,
+            0.047619047619047616,
+            0.3333333333333333
+          ],
+          [
+            0.047619047619047616,
+            0.6190476190476191,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -0.35667494393873245,
+          -1.2039728043259361
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.4795730802618862,
+            -3.044522437723423,
+            -1.0986122886681098
+          ],
+          [
+            -3.044522437723423,
+            -0.4795730802618862,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": -5.551115123125783e-17,
+        "log_posterior": [
+          -0.3566749439387324,
+          -1.2039728043259361
+        ],
+        "posterior_float64": [
+          0.7,
+          0.3
+        ],
+        "prediction": 0,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "query_log_contributions": [
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 1
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a0.5.good70.q2.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "alpha": 1.0,
+        "prior_mode": "empirical",
+        "query_index": 0
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.5833333333333334,
+            0.08333333333333333,
+            0.3333333333333333
+          ],
+          [
+            0.08333333333333333,
+            0.5833333333333334,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -1.7711401820253192,
+          -5.662960480135946
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.5389965007326869,
+            -2.4849066497880004,
+            -1.0986122886681098
+          ],
+          [
+            -2.4849066497880004,
+            -0.5389965007326869,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": -1.7509374747077997,
+        "log_posterior": [
+          -0.020202707317519497,
+          -3.9120230054281464
+        ],
+        "posterior_float64": [
+          0.98,
+          0.019999999999999993
+        ],
+        "prediction": 0,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "query_log_contributions": [
+          [
+            -1.0779930014653738,
+            -0.0,
+            -0.0
+          ],
+          [
+            -4.969813299576001,
+            -0.0,
+            -0.0
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 0
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a1.0.empirical.q0.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "alpha": 1.0,
+        "prior_mode": "empirical",
+        "query_index": 1
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.5833333333333334,
+            0.08333333333333333,
+            0.3333333333333333
+          ],
+          [
+            0.08333333333333333,
+            0.5833333333333334,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -6.761572768804056,
+          -2.869752470693429
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.5389965007326869,
+            -2.4849066497880004,
+            -1.0986122886681098
+          ],
+          [
+            -2.4849066497880004,
+            -0.5389965007326869,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": -2.8495497633759097,
+        "log_posterior": [
+          -3.9120230054281464,
+          -0.020202707317519497
+        ],
+        "posterior_float64": [
+          0.019999999999999993,
+          0.98
+        ],
+        "prediction": 1,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "query_log_contributions": [
+          [
+            -0.0,
+            -4.969813299576001,
+            -1.0986122886681098
+          ],
+          [
+            -0.0,
+            -1.0779930014653738,
+            -1.0986122886681098
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 0
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a1.0.empirical.q1.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "alpha": 1.0,
+        "prior_mode": "empirical",
+        "query_index": 2
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.5833333333333334,
+            0.08333333333333333,
+            0.3333333333333333
+          ],
+          [
+            0.08333333333333333,
+            0.5833333333333334,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -0.6931471805599453,
+          -0.6931471805599453
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.5389965007326869,
+            -2.4849066497880004,
+            -1.0986122886681098
+          ],
+          [
+            -2.4849066497880004,
+            -0.5389965007326869,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": 0.0,
+        "log_posterior": [
+          -0.6931471805599453,
+          -0.6931471805599453
+        ],
+        "posterior_float64": [
+          0.5,
+          0.5
+        ],
+        "prediction": 0,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "query_log_contributions": [
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 1
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a1.0.empirical.q2.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "alpha": 1.0,
+        "prior_mode": "good70",
+        "query_index": 0
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.5833333333333334,
+            0.08333333333333333,
+            0.3333333333333333
+          ],
+          [
+            0.08333333333333333,
+            0.5833333333333334,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -1.4346679454041062,
+          -6.173786103901937
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.5389965007326869,
+            -2.4849066497880004,
+            -1.0986122886681098
+          ],
+          [
+            -2.4849066497880004,
+            -0.5389965007326869,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": -1.425959617512322,
+        "log_posterior": [
+          -0.008708327891784329,
+          -4.747826486389615
+        ],
+        "posterior_float64": [
+          0.9913294797687862,
+          0.008670520231213872
+        ],
+        "prediction": 0,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "query_log_contributions": [
+          [
+            -1.0779930014653738,
+            -0.0,
+            -0.0
+          ],
+          [
+            -4.969813299576001,
+            -0.0,
+            -0.0
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 0
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a1.0.good70.q0.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "alpha": 1.0,
+        "prior_mode": "good70",
+        "query_index": 1
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.5833333333333334,
+            0.08333333333333333,
+            0.3333333333333333
+          ],
+          [
+            0.08333333333333333,
+            0.5833333333333334,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -6.425100532182843,
+          -3.3805780944594197
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.5389965007326869,
+            -2.4849066497880004,
+            -1.0986122886681098
+          ],
+          [
+            -2.4849066497880004,
+            -0.5389965007326869,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": -3.3340580788245266,
+        "log_posterior": [
+          -3.0910424533583165,
+          -0.04652001563489305
+        ],
+        "posterior_float64": [
+          0.04545454545454543,
+          0.9545454545454544
+        ],
+        "prediction": 1,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "query_log_contributions": [
+          [
+            -0.0,
+            -4.969813299576001,
+            -1.0986122886681098
+          ],
+          [
+            -0.0,
+            -1.0779930014653738,
+            -1.0986122886681098
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 0
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a1.0.good70.q1.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "alpha": 1.0,
+        "prior_mode": "good70",
+        "query_index": 2
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.5833333333333334,
+            0.08333333333333333,
+            0.3333333333333333
+          ],
+          [
+            0.08333333333333333,
+            0.5833333333333334,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -0.35667494393873245,
+          -1.2039728043259361
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.5389965007326869,
+            -2.4849066497880004,
+            -1.0986122886681098
+          ],
+          [
+            -2.4849066497880004,
+            -0.5389965007326869,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": -5.551115123125783e-17,
+        "log_posterior": [
+          -0.3566749439387324,
+          -1.2039728043259361
+        ],
+        "posterior_float64": [
+          0.7,
+          0.3
+        ],
+        "prediction": 0,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "query_log_contributions": [
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 1
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a1.0.good70.q2.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "alpha": 2.0,
+        "prior_mode": "empirical",
+        "query_index": 0
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.5333333333333333,
+            0.13333333333333333,
+            0.3333333333333333
+          ],
+          [
+            0.13333333333333333,
+            0.5333333333333333,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -1.9503644994046936,
+          -4.722953221644475
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.6286086594223742,
+            -2.0149030205422647,
+            -1.0986122886681098
+          ],
+          [
+            -2.0149030205422647,
+            -0.6286086594223742,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": -1.8897398775882588,
+        "log_posterior": [
+          -0.0606246218164348,
+          -2.833213344056216
+        ],
+        "posterior_float64": [
+          0.9411764705882353,
+          0.0588235294117647
+        ],
+        "prediction": 0,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "query_log_contributions": [
+          [
+            -1.2572173188447484,
+            -0.0,
+            -0.0
+          ],
+          [
+            -4.029806041084529,
+            -0.0,
+            -0.0
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 0
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a2.0.empirical.q0.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "alpha": 2.0,
+        "prior_mode": "empirical",
+        "query_index": 1
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.5333333333333333,
+            0.13333333333333333,
+            0.3333333333333333
+          ],
+          [
+            0.13333333333333333,
+            0.5333333333333333,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -5.821565510312585,
+          -3.0489767880728036
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.6286086594223742,
+            -2.0149030205422647,
+            -1.0986122886681098
+          ],
+          [
+            -2.0149030205422647,
+            -0.6286086594223742,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": -2.9883521662563686,
+        "log_posterior": [
+          -2.833213344056216,
+          -0.06062462181643502
+        ],
+        "posterior_float64": [
+          0.0588235294117647,
+          0.9411764705882352
+        ],
+        "prediction": 1,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "query_log_contributions": [
+          [
+            -0.0,
+            -4.029806041084529,
+            -1.0986122886681098
+          ],
+          [
+            -0.0,
+            -1.2572173188447484,
+            -1.0986122886681098
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 0
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a2.0.empirical.q1.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "alpha": 2.0,
+        "prior_mode": "empirical",
+        "query_index": 2
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.5333333333333333,
+            0.13333333333333333,
+            0.3333333333333333
+          ],
+          [
+            0.13333333333333333,
+            0.5333333333333333,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -0.6931471805599453,
+          -0.6931471805599453
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.6286086594223742,
+            -2.0149030205422647,
+            -1.0986122886681098
+          ],
+          [
+            -2.0149030205422647,
+            -0.6286086594223742,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": 0.0,
+        "log_posterior": [
+          -0.6931471805599453,
+          -0.6931471805599453
+        ],
+        "posterior_float64": [
+          0.5,
+          0.5
+        ],
+        "prediction": 0,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "query_log_contributions": [
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 1
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a2.0.empirical.q2.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "alpha": 2.0,
+        "prior_mode": "good70",
+        "query_index": 0
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.5333333333333333,
+            0.13333333333333333,
+            0.3333333333333333
+          ],
+          [
+            0.13333333333333333,
+            0.5333333333333333,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -1.6138922627834809,
+          -5.233778845410465
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.6286086594223742,
+            -2.0149030205422647,
+            -1.0986122886681098
+          ],
+          [
+            -2.0149030205422647,
+            -0.6286086594223742,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": -1.5874590057153253,
+        "log_posterior": [
+          -0.02643325706815558,
+          -3.64631983969514
+        ],
+        "posterior_float64": [
+          0.9739130434782608,
+          0.026086956521739136
+        ],
+        "prediction": 0,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "query_log_contributions": [
+          [
+            -1.2572173188447484,
+            -0.0,
+            -0.0
+          ],
+          [
+            -4.029806041084529,
+            -0.0,
+            -0.0
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 0
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a2.0.good70.q0.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "alpha": 2.0,
+        "prior_mode": "good70",
+        "query_index": 1
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.5333333333333333,
+            0.13333333333333333,
+            0.3333333333333333
+          ],
+          [
+            0.13333333333333333,
+            0.5333333333333333,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -5.485093273691372,
+          -3.5598024118387945
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.6286086594223742,
+            -2.0149030205422647,
+            -1.0986122886681098
+          ],
+          [
+            -2.0149030205422647,
+            -0.6286086594223742,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": -3.4236702375142145,
+        "log_posterior": [
+          -2.0614230361771573,
+          -0.13613217432458002
+        ],
+        "posterior_float64": [
+          0.12727272727272732,
+          0.8727272727272727
+        ],
+        "prediction": 1,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "query_log_contributions": [
+          [
+            -0.0,
+            -4.029806041084529,
+            -1.0986122886681098
+          ],
+          [
+            -0.0,
+            -1.2572173188447484,
+            -1.0986122886681098
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 0
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a2.0.good70.q1.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "alpha": 2.0,
+        "prior_mode": "good70",
+        "query_index": 2
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The same document count prior can coexist with different token totals. Never substitute number of documents for a token denominator or fit vocabulary on held-out text.",
+      "expected": {
+        "class_document_counts": [
+          3,
+          3
+        ],
+        "class_token_counts": [
+          [
+            6,
+            0,
+            3
+          ],
+          [
+            0,
+            6,
+            3
+          ]
+        ],
+        "class_token_totals": [
+          9,
+          9
+        ],
+        "feature_likelihoods": [
+          [
+            0.5333333333333333,
+            0.13333333333333333,
+            0.3333333333333333
+          ],
+          [
+            0.13333333333333333,
+            0.5333333333333333,
+            0.3333333333333333
+          ]
+        ],
+        "log_class_scores": [
+          -0.35667494393873245,
+          -1.2039728043259361
+        ],
+        "log_feature_likelihoods": [
+          [
+            -0.6286086594223742,
+            -2.0149030205422647,
+            -1.0986122886681098
+          ],
+          [
+            -2.0149030205422647,
+            -0.6286086594223742,
+            -1.0986122886681098
+          ]
+        ],
+        "log_normalizer": -5.551115123125783e-17,
+        "log_posterior": [
+          -0.3566749439387324,
+          -1.2039728043259361
+        ],
+        "posterior_float64": [
+          0.7,
+          0.3
+        ],
+        "prediction": 0,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "query_log_contributions": [
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        ],
+        "status": "defined",
+        "underflowed_positive_components": [],
+        "unknown_tokens_ignored": 1
+      },
+      "explanation": "Multiply token likelihoods once per occurrence (or add their logs) with class priors, then normalize. Alpha smooths class-token counts, not document counts. Empty known evidence leaves the prior; ignoring an unknown token does not prove it uninformative in reality.",
+      "fixture_id": "nb.count.documents.v1",
+      "id": "NB-E1.count.a2.0.good70.q2.v1",
+      "kind": "fitted-multinomial"
+    },
+    {
+      "controls": {
+        "likelihood": [
+          0.5,
+          0.25
+        ],
+        "prior": [
+          0.6,
+          0.4
+        ]
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "A predictive evidence update is not an intervention or causal quality effect. A zero supplied prior excludes a class here; all-zero evidence instead has undefined normalization.",
+      "expected": {
+        "class_scores": [
+          0.3,
+          0.1
+        ],
+        "likelihoods": [
+          0.5,
+          0.25
+        ],
+        "log_class_scores": [
+          -1.2039728043259361,
+          -2.3025850929940455
+        ],
+        "log_normalizer": -0.9162907318741551,
+        "log_posterior": [
+          -0.287682072451781,
+          -1.3862943611198904
+        ],
+        "posterior_float64": [
+          0.7499999999999999,
+          0.25000000000000006
+        ],
+        "prediction": 0,
+        "priors": [
+          0.6,
+          0.4
+        ],
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "A likelihood conditions evidence on a class; the posterior reverses that conditioning using the prior and normalization. This supplied arithmetic is not claimed to be a fitted classifier.",
+      "fixture_id": "nb.supplied.0.v1",
+      "id": "NB-E1.supplied.0.v1",
+      "kind": "supplied-bayes-not-fitted"
+    },
+    {
+      "controls": {
+        "likelihood": [
+          0.5,
+          0.25
+        ],
+        "prior": [
+          0.2,
+          0.8
+        ]
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "A predictive evidence update is not an intervention or causal quality effect. A zero supplied prior excludes a class here; all-zero evidence instead has undefined normalization.",
+      "expected": {
+        "class_scores": [
+          0.1,
+          0.2
+        ],
+        "likelihoods": [
+          0.5,
+          0.25
+        ],
+        "log_class_scores": [
+          -2.3025850929940455,
+          -1.6094379124341003
+        ],
+        "log_normalizer": -1.203972804325936,
+        "log_posterior": [
+          -1.0986122886681096,
+          -0.4054651081081644
+        ],
+        "posterior_float64": [
+          0.33333333333333337,
+          0.6666666666666666
+        ],
+        "prediction": 1,
+        "priors": [
+          0.2,
+          0.8
+        ],
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "A likelihood conditions evidence on a class; the posterior reverses that conditioning using the prior and normalization. This supplied arithmetic is not claimed to be a fitted classifier.",
+      "fixture_id": "nb.supplied.1.v1",
+      "id": "NB-E1.supplied.1.v1",
+      "kind": "supplied-bayes-not-fitted"
+    },
+    {
+      "controls": {
+        "likelihood": [
+          0.25,
+          0.25
+        ],
+        "prior": [
+          0.5,
+          0.5
+        ]
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "A predictive evidence update is not an intervention or causal quality effect. A zero supplied prior excludes a class here; all-zero evidence instead has undefined normalization.",
+      "expected": {
+        "class_scores": [
+          0.125,
+          0.125
+        ],
+        "likelihoods": [
+          0.25,
+          0.25
+        ],
+        "log_class_scores": [
+          -2.0794415416798357,
+          -2.0794415416798357
+        ],
+        "log_normalizer": -1.3862943611198904,
+        "log_posterior": [
+          -0.6931471805599454,
+          -0.6931471805599454
+        ],
+        "posterior_float64": [
+          0.49999999999999994,
+          0.49999999999999994
+        ],
+        "prediction": 0,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "A likelihood conditions evidence on a class; the posterior reverses that conditioning using the prior and normalization. This supplied arithmetic is not claimed to be a fitted classifier.",
+      "fixture_id": "nb.supplied.2.v1",
+      "id": "NB-E1.supplied.2.v1",
+      "kind": "supplied-bayes-not-fitted"
+    },
+    {
+      "controls": {
+        "likelihood": [
+          0.5,
+          0.25
+        ],
+        "prior": [
+          0.0,
+          1.0
+        ]
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "A predictive evidence update is not an intervention or causal quality effect. A zero supplied prior excludes a class here; all-zero evidence instead has undefined normalization.",
+      "expected": {
+        "class_scores": [
+          0.0,
+          0.25
+        ],
+        "likelihoods": [
+          0.5,
+          0.25
+        ],
+        "log_class_scores": [
+          {
+            "sign": "negative",
+            "tag": "infinity"
+          },
+          -1.3862943611198906
+        ],
+        "log_normalizer": -1.3862943611198906,
+        "log_posterior": [
+          {
+            "sign": "negative",
+            "tag": "infinity"
+          },
+          0.0
+        ],
+        "posterior_float64": [
+          0.0,
+          1.0
+        ],
+        "prediction": 1,
+        "priors": [
+          0.0,
+          1.0
+        ],
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "A likelihood conditions evidence on a class; the posterior reverses that conditioning using the prior and normalization. This supplied arithmetic is not claimed to be a fitted classifier.",
+      "fixture_id": "nb.supplied.3.v1",
+      "id": "NB-E1.supplied.3.v1",
+      "kind": "supplied-bayes-not-fitted"
+    },
+    {
+      "controls": {
+        "likelihood": [
+          0.0,
+          0.0
+        ],
+        "prior": [
+          0.5,
+          0.5
+        ]
+      },
+      "correct_prediction": "Undefined evidence normalization",
+      "correct_reason_id": "boundary",
+      "counterexample": "A predictive evidence update is not an intervention or causal quality effect. A zero supplied prior excludes a class here; all-zero evidence instead has undefined normalization.",
+      "expected": {
+        "class_scores": [
+          0.0,
+          0.0
+        ],
+        "likelihoods": [
+          0.0,
+          0.0
+        ],
+        "log_class_scores": [
+          {
+            "sign": "negative",
+            "tag": "infinity"
+          },
+          {
+            "sign": "negative",
+            "tag": "infinity"
+          }
+        ],
+        "posterior": null,
+        "prediction": null,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "reason": "all-class-evidence-zero",
+        "status": "undefined"
+      },
+      "explanation": "A likelihood conditions evidence on a class; the posterior reverses that conditioning using the prior and normalization. This supplied arithmetic is not claimed to be a fitted classifier.",
+      "fixture_id": "nb.supplied.allzero.v1",
+      "id": "NB-E1.supplied.allzero.v1",
+      "kind": "supplied-bayes-not-fitted"
+    },
+    {
+      "controls": {
+        "diagnostic": "NB-E1.reject.negative-count.v1"
+      },
+      "correct_prediction": "Reject configuration",
+      "correct_reason_id": "boundary",
+      "counterexample": "A library may accept provenance-blind data or emit NaN; neither is permission to invent a defined educational posterior or a class0 answer.",
+      "expected": {
+        "posterior": null,
+        "prediction": null,
+        "reason": "Negative token counts are invalid; signed continuous values belong to a different representation.",
+        "status": "rejected"
+      },
+      "explanation": "Negative token counts are invalid; signed continuous values belong to a different representation.",
+      "fixture_id": "nb.count.negative.v1",
+      "id": "NB-E1.reject.negative-count.v1",
+      "kind": "rejected-diagnostic"
+    },
+    {
+      "controls": {
+        "diagnostic": "NB-E1.reject.heldout-vocabulary.v1"
+      },
+      "correct_prediction": "Reject configuration",
+      "correct_reason_id": "boundary",
+      "counterexample": "A library may accept provenance-blind data or emit NaN; neither is permission to invent a defined educational posterior or a class0 answer.",
+      "expected": {
+        "posterior": null,
+        "prediction": null,
+        "reason": "Vocabulary must be constructed inside training and separately per training fold; held-out tokens cannot define it.",
+        "status": "rejected"
+      },
+      "explanation": "Vocabulary must be constructed inside training and separately per training fold; held-out tokens cannot define it.",
+      "fixture_id": "nb.count.heldout-vocabulary.v1",
+      "id": "NB-E1.reject.heldout-vocabulary.v1",
+      "kind": "rejected-diagnostic"
+    },
+    {
+      "controls": {
+        "diagnostic": "NB-E1.reject.alpha0-conflict.v1"
+      },
+      "correct_prediction": "Reject configuration",
+      "correct_reason_id": "boundary",
+      "counterexample": "A library may accept provenance-blind data or emit NaN; neither is permission to invent a defined educational posterior or a class0 answer.",
+      "expected": {
+        "posterior": null,
+        "prediction": null,
+        "reason": "Unsmoothed class-exclusive token evidence gives all classes zero likelihood here; undefined posterior, not uniform. Library alpha0 also emits NaN for an empty query because its dense dot includes zero times negative infinity.",
+        "status": "rejected"
+      },
+      "explanation": "Unsmoothed class-exclusive token evidence gives all classes zero likelihood here; undefined posterior, not uniform. Library alpha0 also emits NaN for an empty query because its dense dot includes zero times negative infinity.",
+      "fixture_id": "nb.count.alpha0.v1",
+      "id": "NB-E1.reject.alpha0-conflict.v1",
+      "kind": "rejected-diagnostic"
+    }
+  ],
+  "controls": "Only complete listed configuration tuples; no unrestricted text, counts, queries, priors, alpha, variances or Cartesian expansion.",
+  "fixtures": [
+    {
+      "development_ids": [
+        "nb-count-dev-0",
+        "nb-count-dev-1",
+        "nb-count-dev-2"
+      ],
+      "feature_semantics": "Token occurrences, not document frequencies; vocabulary sorted from training tokens only.",
+      "id": "nb.count.documents.v1",
+      "queries": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "query_tokens": [
+        [
+          "clear",
+          "clear"
+        ],
+        [
+          "error",
+          "error",
+          "example"
+        ],
+        [
+          "unseen"
+        ]
+      ],
+      "query_unknown_counts": [
+        0,
+        0,
+        1
+      ],
+      "training_document_tokens": [
+        [
+          "clear",
+          "clear",
+          "example"
+        ],
+        [
+          "clear",
+          "example",
+          "example"
+        ],
+        [
+          "clear",
+          "clear",
+          "clear"
+        ],
+        [
+          "error",
+          "error",
+          "example"
+        ],
+        [
+          "error",
+          "example",
+          "example"
+        ],
+        [
+          "error",
+          "error",
+          "error"
+        ]
+      ],
+      "training_ids": [
+        "nb-count-train-0",
+        "nb-count-train-1",
+        "nb-count-train-2",
+        "nb-count-train-3",
+        "nb-count-train-4",
+        "nb-count-train-5"
+      ],
+      "training_labels": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "training_rows": [
+        [
+          2,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          0
+        ]
+      ],
+      "unknown_policy": "Ignore tokens absent from frozen training vocabulary; report unknown count. Unknown-only query is empty evidence, not impossible evidence.",
+      "vocabulary": [
+        "clear",
+        "error",
+        "example"
+      ]
+    },
+    {
+      "id": "nb.supplied.0.v1",
+      "likelihoods": [
+        0.5,
+        0.25
+      ],
+      "priors": [
+        0.6,
+        0.4
+      ]
+    },
+    {
+      "id": "nb.supplied.1.v1",
+      "likelihoods": [
+        0.5,
+        0.25
+      ],
+      "priors": [
+        0.2,
+        0.8
+      ]
+    },
+    {
+      "id": "nb.supplied.2.v1",
+      "likelihoods": [
+        0.25,
+        0.25
+      ],
+      "priors": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "nb.supplied.3.v1",
+      "likelihoods": [
+        0.5,
+        0.25
+      ],
+      "priors": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": "nb.supplied.allzero.v1",
+      "likelihoods": [
+        0,
+        0
+      ],
+      "priors": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "nb.count.negative.v1",
+      "query": [
+        -1,
+        2,
+        0
+      ]
+    },
+    {
+      "forbidden_candidate_vocabulary": [
+        "clear",
+        "error",
+        "example",
+        "unseen"
+      ],
+      "forbidden_fit_ids": [
+        "nb-count-dev-2"
+      ],
+      "id": "nb.count.heldout-vocabulary.v1",
+      "training_vocabulary": [
+        "clear",
+        "error",
+        "example"
+      ]
+    },
+    {
+      "alpha": 0,
+      "force_alpha": true,
+      "id": "nb.count.alpha0.v1",
+      "queries": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "training_ids": [
+        "nb.count.alpha0.v1.train.0",
+        "nb.count.alpha0.v1.train.1",
+        "nb.count.alpha0.v1.train.2",
+        "nb.count.alpha0.v1.train.3"
+      ],
+      "training_labels": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "training_rows": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  ],
+  "id": "NB-E1",
+  "interaction": "Record prediction and bounded reason before reveal; show fixture inputs first, then numerical/text evidence. Change one listed configuration and explain a changed transfer case. Wrong initial predictions can recover. No experiment credit awards mastery.",
+  "labels": {
+    "0": "Good",
+    "1": "Needs Improvement (positive class)"
+  },
+  "learning_goals": [
+    "Distinguish prior, likelihood and posterior; normalize class-conditional evidence",
+    "Explain conditional independence as an assumption, not causality",
+    "Distinguish token smoothing from document-count priors"
+  ],
+  "learning_question": "How do priors, word evidence and additive smoothing change a documentation class posterior?",
+  "objectives": [
+    "NB01",
+    "NB02"
+  ],
+  "prediction_options": [
+    "Class0",
+    "Class1",
+    "Undefined evidence normalization",
+    "Reject configuration"
+  ],
+  "prerequisites": [
+    "Conditional probability and Bayes",
+    "EV",
+    "LG01\u201303",
+    "Training-only/fold-only fitting",
+    "Array row alignment"
+  ],
+  "provenance": "Wholly fictional human-label placeholders for teaching, not production labels or LLM ground truth. No data collection.",
+  "reason_options": [
+    {
+      "id": "normalize",
+      "label": "Normalize class-conditional evidence with the declared prior and representation"
+    },
+    {
+      "id": "boundary",
+      "label": "Invalid representation/variance/provenance or zero evidence prevents a defined prediction"
+    },
+    {
+      "id": "causal",
+      "label": "Accuracy proves causal effects and calibrated confidence"
+    }
+  ],
+  "related_objective_ids": [
+    "NB01.O1",
+    "NB01.O2",
+    "NB01.O3",
+    "NB01.O4",
+    "NB02.O1",
+    "NB02.O2",
+    "NB02.O3",
+    "NB02.O4"
+  ],
+  "schema": "supervised.naive-bayes.experiment.v1",
+  "version": "1.0.0"
+}

@@ -1,0 +1,143 @@
+{
+  "contract": "python-p01-reference.v1",
+  "environment": "macos-arm64-cpython-3.13.16-reference.1",
+  "author": "python/mlmath/python_p01_reference.py",
+  "groups": {
+    "practice": [
+      {
+        "variant": 0,
+        "type": "str",
+        "area": 2,
+        "weight": 100,
+        "bias": 50,
+        "prediction": 250,
+        "repeated": "222",
+        "final": 3,
+        "comparison": false,
+        "grouped": 300.0,
+        "distributed": 300.0,
+        "ungrouped": 102.0
+      },
+      {
+        "variant": 1,
+        "type": "bool",
+        "area": 4,
+        "weight": 100,
+        "bias": 50,
+        "prediction": 450,
+        "repeated": "444",
+        "final": 7,
+        "comparison": false,
+        "grouped": 400.0,
+        "distributed": 400.0,
+        "ungrouped": 103.0
+      }
+    ],
+    "independent_test_only": [
+      {
+        "variant": 0,
+        "type": "float",
+        "area": 3,
+        "weight": 80,
+        "bias": 20,
+        "prediction": 260,
+        "repeated": "333",
+        "final": 9,
+        "comparison": false,
+        "grouped": 500.0,
+        "distributed": 500.0,
+        "ungrouped": 104.0
+      },
+      {
+        "variant": 1,
+        "type": "bool",
+        "area": 5,
+        "weight": 60,
+        "bias": 30,
+        "prediction": 330,
+        "repeated": "555",
+        "final": 7,
+        "comparison": false,
+        "grouped": 700.0,
+        "distributed": 700.0,
+        "ungrouped": 106.0
+      },
+      {
+        "variant": 2,
+        "type": "int",
+        "area": 6,
+        "weight": 40,
+        "bias": 10,
+        "prediction": 250,
+        "repeated": "666",
+        "final": 16,
+        "comparison": false,
+        "grouped": 900.0,
+        "distributed": 900.0,
+        "ungrouped": 108.0
+      }
+    ]
+  },
+  "experiments": [
+    {
+      "id": "numeric-2",
+      "value": "250",
+      "type": "int"
+    },
+    {
+      "id": "numeric-4",
+      "value": "450",
+      "type": "int"
+    },
+    {
+      "id": "decimal",
+      "value": "300.0",
+      "type": "float"
+    },
+    {
+      "id": "text",
+      "value": "'222'",
+      "type": "str"
+    },
+    {
+      "id": "convert",
+      "value": "250.0",
+      "type": "float"
+    },
+    {
+      "id": "invalid",
+      "value": "ValueError",
+      "type": "error"
+    }
+  ],
+  "probes": {
+    "broadcast": {
+      "prediction": [
+        230.0,
+        140.0
+      ],
+      "column_shift": [
+        [
+          3.0,
+          12.0
+        ],
+        [
+          2.0,
+          7.0
+        ]
+      ]
+    },
+    "join": {
+      "left": 3,
+      "inner": 2,
+      "null_keys_match": true
+    },
+    "training_only": {
+      "median": 20.0,
+      "held_out": [
+        1000,
+        20.0
+      ]
+    }
+  }
+}

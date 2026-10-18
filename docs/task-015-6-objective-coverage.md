@@ -1,0 +1,32 @@
+# Task015.6 objective and assessment coverage
+
+16 essential families;32 practice;48 independent;four paired O2 gates. One family point regardless of one/two required atoms.
+
+| Objective | Teaching and remediation | Practice | Independent | Gate status |
+|---|---|---|---|---|
+| NB01.O1 | teaching.ts lesson1: motivation, intuition, worked/changed cases, symbols, trusted Python, comparison, objective notes, targeted feedback/recall | NB01.O1.practice.A/B | NB01.O1.assessment.A/B/C | Essential,noncritical; any required atom wrong loses the family point |
+| NB01.O2 | teaching.ts lesson1: motivation, intuition, worked/changed cases, symbols, trusted Python, comparison, objective notes, targeted feedback/recall | NB01.O2.practice.A/B | NB01.O2.assessment.A/B/C | Paired decision+reason mandatory; six valid-wrong component failures over three forms |
+| NB01.O3 | teaching.ts lesson1: motivation, intuition, worked/changed cases, symbols, trusted Python, comparison, objective notes, targeted feedback/recall | NB01.O3.practice.A/B | NB01.O3.assessment.A/B/C | Essential,noncritical; any required atom wrong loses the family point |
+| NB01.O4 | teaching.ts lesson1: motivation, intuition, worked/changed cases, symbols, trusted Python, comparison, objective notes, targeted feedback/recall | NB01.O4.practice.A/B | NB01.O4.assessment.A/B/C | Essential,noncritical; any required atom wrong loses the family point |
+| NB02.O1 | teaching.ts lesson2: motivation, intuition, worked/changed cases, symbols, trusted Python, comparison, objective notes, targeted feedback/recall | NB02.O1.practice.A/B | NB02.O1.assessment.A/B/C | Essential,noncritical; any required atom wrong loses the family point |
+| NB02.O2 | teaching.ts lesson2: motivation, intuition, worked/changed cases, symbols, trusted Python, comparison, objective notes, targeted feedback/recall | NB02.O2.practice.A/B | NB02.O2.assessment.A/B/C | Paired decision+reason mandatory; six valid-wrong component failures over three forms |
+| NB02.O3 | teaching.ts lesson2: motivation, intuition, worked/changed cases, symbols, trusted Python, comparison, objective notes, targeted feedback/recall | NB02.O3.practice.A/B | NB02.O3.assessment.A/B/C | Essential,noncritical; any required atom wrong loses the family point |
+| NB02.O4 | teaching.ts lesson2: motivation, intuition, worked/changed cases, symbols, trusted Python, comparison, objective notes, targeted feedback/recall | NB02.O4.practice.A/B | NB02.O4.assessment.A/B/C | Essential,noncritical; any required atom wrong loses the family point |
+| NB03.O1 | teaching.ts lesson3: motivation, intuition, worked/changed cases, symbols, trusted Python, comparison, objective notes, targeted feedback/recall | NB03.O1.practice.A/B | NB03.O1.assessment.A/B/C | Essential,noncritical; any required atom wrong loses the family point |
+| NB03.O2 | teaching.ts lesson3: motivation, intuition, worked/changed cases, symbols, trusted Python, comparison, objective notes, targeted feedback/recall | NB03.O2.practice.A/B | NB03.O2.assessment.A/B/C | Paired decision+reason mandatory; six valid-wrong component failures over three forms |
+| NB03.O3 | teaching.ts lesson3: motivation, intuition, worked/changed cases, symbols, trusted Python, comparison, objective notes, targeted feedback/recall | NB03.O3.practice.A/B | NB03.O3.assessment.A/B/C | Essential,noncritical; any required atom wrong loses the family point |
+| NB03.O4 | teaching.ts lesson3: motivation, intuition, worked/changed cases, symbols, trusted Python, comparison, objective notes, targeted feedback/recall | NB03.O4.practice.A/B | NB03.O4.assessment.A/B/C | Essential,noncritical; any required atom wrong loses the family point |
+| NB04.O1 | teaching.ts lesson4: motivation, intuition, worked/changed cases, symbols, trusted Python, comparison, objective notes, targeted feedback/recall | NB04.O1.practice.A/B | NB04.O1.assessment.A/B/C | Essential,noncritical; any required atom wrong loses the family point |
+| NB04.O2 | teaching.ts lesson4: motivation, intuition, worked/changed cases, symbols, trusted Python, comparison, objective notes, targeted feedback/recall | NB04.O2.practice.A/B | NB04.O2.assessment.A/B/C | Paired decision+reason mandatory; six valid-wrong component failures over three forms |
+| NB04.O3 | teaching.ts lesson4: motivation, intuition, worked/changed cases, symbols, trusted Python, comparison, objective notes, targeted feedback/recall | NB04.O3.practice.A/B | NB04.O3.assessment.A/B/C | Essential,noncritical; any required atom wrong loses the family point |
+| NB04.O4 | teaching.ts lesson4: motivation, intuition, worked/changed cases, symbols, trusted Python, comparison, objective notes, targeted feedback/recall | NB04.O4.practice.A/B | NB04.O4.assessment.A/B/C | Essential,noncritical; any required atom wrong loses the family point |
+
+NB02.O1 smoothing arithmetic remains noncritical;NB02.O2 count validity/vocabulary provenance remains critical. NB03.O1 requires density calculation AND prior-times-density comparison without becoming critical. NB02.O4 checks document prior arithmetic AND token-normalizer reasoning. All other gates retain approved meanings.
+
+## Verification ownership
+
+Python test_naive_bayes_reference.py independently verifies all80 authored numerical/semantic instances and all56 frozen lab states,plus edge/hash/vocabulary tests. Model tests verify80 correct/valid-wrong/unsafe submissions,all24 valid-wrong gate-component failures,12/16 and13/16 boundaries in each form,malformed/equivalent answers,retries/remediation,confirmation,idempotence,corruption/quota/stale tabs and prior-mastery retention. Raw frozen expected objects are compared exactly; interaction reason IDs are separate so they cannot overwrite mathematical reason tags.
+
+Synthetic passing attempts use in-memory test states; the test-only verification mock never activates learner-facing mastery. Module activation remains a separate verified release flag. No passing synthetic record is written to browser learner storage. Live QA uses its own localhost origin.
+
+Practice requires four correct families per lesson,meaningful changed-lab explanation and correct transfer; it does not award mastery. Independent mastery needs13/16 plus all four paired gates in one confirmed attempt. No combination across attempts/modules;later failure preserves prior mastery;missed noncritical gaps remain gaps. Finite authored banks are formative,not proof against memorization.

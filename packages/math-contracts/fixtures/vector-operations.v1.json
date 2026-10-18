@@ -1,0 +1,335 @@
+{
+  "schemaVersion": "1.0.0",
+  "cases": [
+    {
+      "input": {
+        "left": [
+          3,
+          4
+        ],
+        "right": [
+          1,
+          0
+        ],
+        "scale": -2
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "left": [
+            3,
+            4
+          ],
+          "right": [
+            1,
+            0
+          ],
+          "scale": -2
+        },
+        "sum": [
+          4,
+          4
+        ],
+        "scaled": [
+          -6,
+          -8
+        ],
+        "leftMagnitude": 5.0,
+        "rightMagnitude": 1.0,
+        "dot": 3.0,
+        "unitDirection": [
+          0.6,
+          0.8
+        ],
+        "cosine": 0.6,
+        "angleDegrees": 53.13010235415599,
+        "projection": [
+          3.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "left": [
+          1,
+          0
+        ],
+        "right": [
+          0,
+          2
+        ],
+        "scale": 1
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "left": [
+            1,
+            0
+          ],
+          "right": [
+            0,
+            2
+          ],
+          "scale": 1
+        },
+        "sum": [
+          1,
+          2
+        ],
+        "scaled": [
+          1,
+          0
+        ],
+        "leftMagnitude": 1.0,
+        "rightMagnitude": 2.0,
+        "dot": 0.0,
+        "unitDirection": [
+          1.0,
+          0.0
+        ],
+        "cosine": 0.0,
+        "angleDegrees": 90.0,
+        "projection": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "left": [
+          2,
+          0
+        ],
+        "right": [
+          -3,
+          0
+        ],
+        "scale": 0
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "left": [
+            2,
+            0
+          ],
+          "right": [
+            -3,
+            0
+          ],
+          "scale": 0
+        },
+        "sum": [
+          -1,
+          0
+        ],
+        "scaled": [
+          0,
+          0
+        ],
+        "leftMagnitude": 2.0,
+        "rightMagnitude": 3.0,
+        "dot": -6.0,
+        "unitDirection": [
+          1.0,
+          0.0
+        ],
+        "cosine": -1,
+        "angleDegrees": 180.0,
+        "projection": [
+          2.0,
+          -0.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "left": [
+          0,
+          0
+        ],
+        "right": [
+          1,
+          0
+        ],
+        "scale": 1
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "left": [
+            0,
+            0
+          ],
+          "right": [
+            1,
+            0
+          ],
+          "scale": 1
+        },
+        "sum": [
+          1,
+          0
+        ],
+        "scaled": [
+          0,
+          0
+        ],
+        "leftMagnitude": 0.0,
+        "rightMagnitude": 1.0,
+        "dot": 0.0,
+        "unitDirection": null,
+        "cosine": null,
+        "angleDegrees": null,
+        "projection": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "input": {
+        "left": [
+          1,
+          2
+        ],
+        "right": [
+          0,
+          0
+        ],
+        "scale": 1
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "left": [
+            1,
+            2
+          ],
+          "right": [
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "sum": [
+          1,
+          2
+        ],
+        "scaled": [
+          1,
+          2
+        ],
+        "leftMagnitude": 2.23606797749979,
+        "rightMagnitude": 0.0,
+        "dot": 0.0,
+        "unitDirection": [
+          0.4472135954999579,
+          0.8944271909999159
+        ],
+        "cosine": null,
+        "angleDegrees": null,
+        "projection": null
+      }
+    },
+    {
+      "input": {
+        "left": [
+          -2,
+          3
+        ],
+        "right": [
+          4,
+          -1
+        ],
+        "scale": 0.5
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "left": [
+            -2,
+            3
+          ],
+          "right": [
+            4,
+            -1
+          ],
+          "scale": 0.5
+        },
+        "sum": [
+          2,
+          2
+        ],
+        "scaled": [
+          -1.0,
+          1.5
+        ],
+        "leftMagnitude": 3.605551275463989,
+        "rightMagnitude": 4.123105625617661,
+        "dot": -11.0,
+        "unitDirection": [
+          -0.5547001962252291,
+          0.8320502943378437
+        ],
+        "cosine": -0.7399400733959438,
+        "angleDegrees": 137.72631099390628,
+        "projection": [
+          -2.588235294117647,
+          0.6470588235294118
+        ]
+      }
+    },
+    {
+      "input": {
+        "left": [
+          100,
+          100
+        ],
+        "right": [
+          -100,
+          100
+        ],
+        "scale": 10
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "left": [
+            100,
+            100
+          ],
+          "right": [
+            -100,
+            100
+          ],
+          "scale": 10
+        },
+        "sum": [
+          0,
+          200
+        ],
+        "scaled": [
+          1000,
+          1000
+        ],
+        "leftMagnitude": 141.4213562373095,
+        "rightMagnitude": 141.4213562373095,
+        "dot": 0.0,
+        "unitDirection": [
+          0.7071067811865475,
+          0.7071067811865475
+        ],
+        "cosine": 0.0,
+        "angleDegrees": 90.0,
+        "projection": [
+          -0.0,
+          0.0
+        ]
+      }
+    }
+  ]
+}

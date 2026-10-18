@@ -1,0 +1,21 @@
+{
+  "mode": "check",
+  "configurations": [
+    12,
+    24
+  ],
+  "hashes": {
+    "rg-e1.manifest.v1.json": "d6e642b4c559b136187febf0c8d1294561dddeb276012f35fc45c48a12db69bc",
+    "rg-e2.manifest.v1.json": "bf74e0f2fb801cff82cc629d40b108b5d1675a671d4d80b0a76b07886204a1df"
+  },
+  "profile": {
+    "python": "3.13.16",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2",
+    "scikit-learn": "1.9.1"
+  },
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "parity": "all states: sklearn, manual predictions/metrics, KKT, intercept stationarity; Ridge independent linear solve",
+  "colab": "UNVERIFIED"
+}

@@ -1,0 +1,12 @@
+{
+  "states": 36,
+  "fold_boundary_checks": 108,
+  "valid_states": 24,
+  "explicit_invalid_global_scaling_states": 12,
+  "unique_ids": true,
+  "reason_ids_valid": true,
+  "zero_tags_exact": true,
+  "aligned_column_swap_predictions_match": true,
+  "application_implementation": "not performed",
+  "notebook_execution": "not performed; fixture reference execution only"
+}

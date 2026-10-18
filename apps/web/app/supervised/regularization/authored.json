@@ -1,0 +1,5065 @@
+{
+  "content": "supervised.regularization.1.0.0",
+  "families": [
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Accurate training predictions guarantee stable individual coefficients"
+            },
+            {
+              "id": "supported",
+              "label": "Individual coefficients may be weakly identified even when predictions are similar"
+            },
+            {
+              "id": "wrong0",
+              "label": "The larger coefficient proves the feature causes price"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Similar predictions do not uniquely establish which correlated feature matters",
+      "id": "RG01.O1.practice.A",
+      "objective": "RG01.O1",
+      "prompt": "A small housing sample: two correlated columns have large opposing coefficients but similar predictions. What is unstable?",
+      "remediation": "Recall RG01.O1 and its changed-condition example. Similar predictions do not uniquely establish which correlated feature matters"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Individual coefficients may be weakly identified even when predictions are similar"
+            },
+            {
+              "id": "wrong0",
+              "label": "The larger coefficient proves the feature causes price"
+            },
+            {
+              "id": "wrong1",
+              "label": "Accurate training predictions guarantee stable individual coefficients"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Similar predictions do not uniquely establish which correlated feature matters",
+      "id": "RG01.O1.practice.B",
+      "objective": "RG01.O1",
+      "prompt": "A new district housing sample: two correlated columns have large opposing coefficients but similar predictions. What is unstable?",
+      "remediation": "Recall RG01.O1 and its changed-condition example. Similar predictions do not uniquely establish which correlated feature matters"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "The larger coefficient proves the feature causes price"
+            },
+            {
+              "id": "wrong1",
+              "label": "Accurate training predictions guarantee stable individual coefficients"
+            },
+            {
+              "id": "supported",
+              "label": "Individual coefficients may be weakly identified even when predictions are similar"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Similar predictions do not uniquely establish which correlated feature matters",
+      "id": "RG01.O1.assessment.A",
+      "objective": "RG01.O1",
+      "prompt": "A held-out housing development sample: two correlated columns have large opposing coefficients but similar predictions. What is unstable?",
+      "remediation": "Recall RG01.O1 and its changed-condition example. Similar predictions do not uniquely establish which correlated feature matters"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Accurate training predictions guarantee stable individual coefficients"
+            },
+            {
+              "id": "supported",
+              "label": "Individual coefficients may be weakly identified even when predictions are similar"
+            },
+            {
+              "id": "wrong0",
+              "label": "The larger coefficient proves the feature causes price"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Similar predictions do not uniquely establish which correlated feature matters",
+      "id": "RG01.O1.assessment.B",
+      "objective": "RG01.O1",
+      "prompt": "A housing sample with changed units: two correlated columns have large opposing coefficients but similar predictions. What is unstable?",
+      "remediation": "Recall RG01.O1 and its changed-condition example. Similar predictions do not uniquely establish which correlated feature matters"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Individual coefficients may be weakly identified even when predictions are similar"
+            },
+            {
+              "id": "wrong0",
+              "label": "The larger coefficient proves the feature causes price"
+            },
+            {
+              "id": "wrong1",
+              "label": "Accurate training predictions guarantee stable individual coefficients"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Similar predictions do not uniquely establish which correlated feature matters",
+      "id": "RG01.O1.assessment.C",
+      "objective": "RG01.O1",
+      "prompt": "A new correlated housing feature set: two correlated columns have large opposing coefficients but similar predictions. What is unstable?",
+      "remediation": "Recall RG01.O1 and its changed-condition example. Similar predictions do not uniquely establish which correlated feature matters"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No: separate residual loss and penalty, then compare unseen-row errors"
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes: the penalty term is validation error"
+            },
+            {
+              "id": "wrong1",
+              "label": "Compare penalized objectives with different normalizations as if they were MAE"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "The training objective expresses a preference; generalization must be evaluated on permitted unseen data"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "The training objective expresses a preference; generalization must be evaluated on permitted unseen data",
+      "id": "RG01.O2.practice.A",
+      "objective": "RG01.O2",
+      "prompt": "A small housing sample: a fit has lower penalized objective. Does that guarantee smaller validation error?",
+      "remediation": "Recall RG01.O2 and its changed-condition example. The training objective expresses a preference; generalization must be evaluated on permitted unseen data"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Yes: the penalty term is validation error"
+            },
+            {
+              "id": "wrong1",
+              "label": "Compare penalized objectives with different normalizations as if they were MAE"
+            },
+            {
+              "id": "supported",
+              "label": "No: separate residual loss and penalty, then compare unseen-row errors"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            },
+            {
+              "id": "mechanism",
+              "label": "The training objective expresses a preference; generalization must be evaluated on permitted unseen data"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "The training objective expresses a preference; generalization must be evaluated on permitted unseen data",
+      "id": "RG01.O2.practice.B",
+      "objective": "RG01.O2",
+      "prompt": "A new district housing sample: a fit has lower penalized objective. Does that guarantee smaller validation error?",
+      "remediation": "Recall RG01.O2 and its changed-condition example. The training objective expresses a preference; generalization must be evaluated on permitted unseen data"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Compare penalized objectives with different normalizations as if they were MAE"
+            },
+            {
+              "id": "supported",
+              "label": "No: separate residual loss and penalty, then compare unseen-row errors"
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes: the penalty term is validation error"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "The training objective expresses a preference; generalization must be evaluated on permitted unseen data"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "The training objective expresses a preference; generalization must be evaluated on permitted unseen data",
+      "id": "RG01.O2.assessment.A",
+      "objective": "RG01.O2",
+      "prompt": "A held-out housing development sample: a fit has lower penalized objective. Does that guarantee smaller validation error?",
+      "remediation": "Recall RG01.O2 and its changed-condition example. The training objective expresses a preference; generalization must be evaluated on permitted unseen data"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No: separate residual loss and penalty, then compare unseen-row errors"
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes: the penalty term is validation error"
+            },
+            {
+              "id": "wrong1",
+              "label": "Compare penalized objectives with different normalizations as if they were MAE"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            },
+            {
+              "id": "mechanism",
+              "label": "The training objective expresses a preference; generalization must be evaluated on permitted unseen data"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "The training objective expresses a preference; generalization must be evaluated on permitted unseen data",
+      "id": "RG01.O2.assessment.B",
+      "objective": "RG01.O2",
+      "prompt": "A housing sample with changed units: a fit has lower penalized objective. Does that guarantee smaller validation error?",
+      "remediation": "Recall RG01.O2 and its changed-condition example. The training objective expresses a preference; generalization must be evaluated on permitted unseen data"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Yes: the penalty term is validation error"
+            },
+            {
+              "id": "wrong1",
+              "label": "Compare penalized objectives with different normalizations as if they were MAE"
+            },
+            {
+              "id": "supported",
+              "label": "No: separate residual loss and penalty, then compare unseen-row errors"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "The training objective expresses a preference; generalization must be evaluated on permitted unseen data"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "The training objective expresses a preference; generalization must be evaluated on permitted unseen data",
+      "id": "RG01.O2.assessment.C",
+      "objective": "RG01.O2",
+      "prompt": "A new correlated housing feature set: a fit has lower penalized objective. Does that guarantee smaller validation error?",
+      "remediation": "Recall RG01.O2 and its changed-condition example. The training objective expresses a preference; generalization must be evaluated on permitted unseen data"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 8
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "L1 sums absolute coefficients; squared L2 sums their squares; intercept is unpenalized",
+      "id": "RG01.O3.practice.A",
+      "objective": "RG01.O3",
+      "prompt": "A small housing sample: w=(1,−2), intercept10. Calculate L1+L2-squared, excluding intercept.",
+      "remediation": "Recall RG01.O3 and its changed-condition example. L1 sums absolute coefficients; squared L2 sums their squares; intercept is unpenalized"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 12
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "L1 sums absolute coefficients; squared L2 sums their squares; intercept is unpenalized",
+      "id": "RG01.O3.practice.B",
+      "objective": "RG01.O3",
+      "prompt": "A new district housing sample: w=(2,−2), intercept10. Calculate L1+L2-squared, excluding intercept.",
+      "remediation": "Recall RG01.O3 and its changed-condition example. L1 sums absolute coefficients; squared L2 sums their squares; intercept is unpenalized"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 18
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "L1 sums absolute coefficients; squared L2 sums their squares; intercept is unpenalized",
+      "id": "RG01.O3.assessment.A",
+      "objective": "RG01.O3",
+      "prompt": "A held-out housing development sample: w=(3,−2), intercept10. Calculate L1+L2-squared, excluding intercept.",
+      "remediation": "Recall RG01.O3 and its changed-condition example. L1 sums absolute coefficients; squared L2 sums their squares; intercept is unpenalized"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 26
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "L1 sums absolute coefficients; squared L2 sums their squares; intercept is unpenalized",
+      "id": "RG01.O3.assessment.B",
+      "objective": "RG01.O3",
+      "prompt": "A housing sample with changed units: w=(4,−2), intercept10. Calculate L1+L2-squared, excluding intercept.",
+      "remediation": "Recall RG01.O3 and its changed-condition example. L1 sums absolute coefficients; squared L2 sums their squares; intercept is unpenalized"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 36
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "L1 sums absolute coefficients; squared L2 sums their squares; intercept is unpenalized",
+      "id": "RG01.O3.assessment.C",
+      "objective": "RG01.O3",
+      "prompt": "A new correlated housing feature set: w=(5,−2), intercept10. Calculate L1+L2-squared, excluding intercept.",
+      "remediation": "Recall RG01.O3 and its changed-condition example. L1 sums absolute coefficients; squared L2 sums their squares; intercept is unpenalized"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Fit a new scaler on each prediction row"
+            },
+            {
+              "id": "supported",
+              "label": "Only from the current training rows, separately inside each CV training fold"
+            },
+            {
+              "id": "wrong0",
+              "label": "From all rows because scaling does not use target labels"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Scaling is learned preprocessing; held-out feature values must not influence its fitted statistics",
+      "id": "RG01.O4.practice.A",
+      "objective": "RG01.O4",
+      "prompt": "A small housing sample: when may the scaler learn its mean and variance?",
+      "remediation": "Recall RG01.O4 and its changed-condition example. Scaling is learned preprocessing; held-out feature values must not influence its fitted statistics"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Only from the current training rows, separately inside each CV training fold"
+            },
+            {
+              "id": "wrong0",
+              "label": "From all rows because scaling does not use target labels"
+            },
+            {
+              "id": "wrong1",
+              "label": "Fit a new scaler on each prediction row"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Scaling is learned preprocessing; held-out feature values must not influence its fitted statistics",
+      "id": "RG01.O4.practice.B",
+      "objective": "RG01.O4",
+      "prompt": "A new district housing sample: when may the scaler learn its mean and variance?",
+      "remediation": "Recall RG01.O4 and its changed-condition example. Scaling is learned preprocessing; held-out feature values must not influence its fitted statistics"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "From all rows because scaling does not use target labels"
+            },
+            {
+              "id": "wrong1",
+              "label": "Fit a new scaler on each prediction row"
+            },
+            {
+              "id": "supported",
+              "label": "Only from the current training rows, separately inside each CV training fold"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Scaling is learned preprocessing; held-out feature values must not influence its fitted statistics",
+      "id": "RG01.O4.assessment.A",
+      "objective": "RG01.O4",
+      "prompt": "A held-out housing development sample: when may the scaler learn its mean and variance?",
+      "remediation": "Recall RG01.O4 and its changed-condition example. Scaling is learned preprocessing; held-out feature values must not influence its fitted statistics"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Fit a new scaler on each prediction row"
+            },
+            {
+              "id": "supported",
+              "label": "Only from the current training rows, separately inside each CV training fold"
+            },
+            {
+              "id": "wrong0",
+              "label": "From all rows because scaling does not use target labels"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Scaling is learned preprocessing; held-out feature values must not influence its fitted statistics",
+      "id": "RG01.O4.assessment.B",
+      "objective": "RG01.O4",
+      "prompt": "A housing sample with changed units: when may the scaler learn its mean and variance?",
+      "remediation": "Recall RG01.O4 and its changed-condition example. Scaling is learned preprocessing; held-out feature values must not influence its fitted statistics"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Only from the current training rows, separately inside each CV training fold"
+            },
+            {
+              "id": "wrong0",
+              "label": "From all rows because scaling does not use target labels"
+            },
+            {
+              "id": "wrong1",
+              "label": "Fit a new scaler on each prediction row"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Scaling is learned preprocessing; held-out feature values must not influence its fitted statistics",
+      "id": "RG01.O4.assessment.C",
+      "objective": "RG01.O4",
+      "prompt": "A new correlated housing feature set: when may the scaler learn its mean and variance?",
+      "remediation": "Recall RG01.O4 and its changed-condition example. Scaling is learned preprocessing; held-out feature values must not influence its fitted statistics"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 9
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Ridge uses SSE+alpha times squared L2; squared norm5; do not divide data loss by2n here",
+      "id": "RG02.O1.practice.A",
+      "objective": "RG02.O1",
+      "prompt": "A small housing sample: Ridge SSE4, alpha=1, w=(1,−2), unpenalized intercept10. Compute its objective.",
+      "remediation": "Recall RG02.O1 and its changed-condition example. Ridge uses SSE+alpha times squared L2; squared norm5; do not divide data loss by2n here"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 14
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Ridge uses SSE+alpha times squared L2; squared norm5; do not divide data loss by2n here",
+      "id": "RG02.O1.practice.B",
+      "objective": "RG02.O1",
+      "prompt": "A new district housing sample: Ridge SSE4, alpha=2, w=(1,−2), unpenalized intercept10. Compute its objective.",
+      "remediation": "Recall RG02.O1 and its changed-condition example. Ridge uses SSE+alpha times squared L2; squared norm5; do not divide data loss by2n here"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 19
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Ridge uses SSE+alpha times squared L2; squared norm5; do not divide data loss by2n here",
+      "id": "RG02.O1.assessment.A",
+      "objective": "RG02.O1",
+      "prompt": "A held-out housing development sample: Ridge SSE4, alpha=3, w=(1,−2), unpenalized intercept10. Compute its objective.",
+      "remediation": "Recall RG02.O1 and its changed-condition example. Ridge uses SSE+alpha times squared L2; squared norm5; do not divide data loss by2n here"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 24
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Ridge uses SSE+alpha times squared L2; squared norm5; do not divide data loss by2n here",
+      "id": "RG02.O1.assessment.B",
+      "objective": "RG02.O1",
+      "prompt": "A housing sample with changed units: Ridge SSE4, alpha=4, w=(1,−2), unpenalized intercept10. Compute its objective.",
+      "remediation": "Recall RG02.O1 and its changed-condition example. Ridge uses SSE+alpha times squared L2; squared norm5; do not divide data loss by2n here"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 29
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Ridge uses SSE+alpha times squared L2; squared norm5; do not divide data loss by2n here",
+      "id": "RG02.O1.assessment.C",
+      "objective": "RG02.O1",
+      "prompt": "A new correlated housing feature set: Ridge SSE4, alpha=5, w=(1,−2), unpenalized intercept10. Compute its objective.",
+      "remediation": "Recall RG02.O1 and its changed-condition example. Ridge uses SSE+alpha times squared L2; squared norm5; do not divide data loss by2n here"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Yes: every positive alpha sets a coefficient exactly to zero"
+            },
+            {
+              "id": "wrong1",
+              "label": "A displayed zero always proves exact elimination"
+            },
+            {
+              "id": "supported",
+              "label": "No: it shrinks coefficients; special zero-signal cases can be zero"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "A small or rounded coefficient is not an exact-zero feature-selection guarantee"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "A small or rounded coefficient is not an exact-zero feature-selection guarantee",
+      "id": "RG02.O2.practice.A",
+      "objective": "RG02.O2",
+      "prompt": "A small housing sample: does L2 regularization generally eliminate features exactly?",
+      "remediation": "Recall RG02.O2 and its changed-condition example. A small or rounded coefficient is not an exact-zero feature-selection guarantee"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A displayed zero always proves exact elimination"
+            },
+            {
+              "id": "supported",
+              "label": "No: it shrinks coefficients; special zero-signal cases can be zero"
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes: every positive alpha sets a coefficient exactly to zero"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            },
+            {
+              "id": "mechanism",
+              "label": "A small or rounded coefficient is not an exact-zero feature-selection guarantee"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "A small or rounded coefficient is not an exact-zero feature-selection guarantee",
+      "id": "RG02.O2.practice.B",
+      "objective": "RG02.O2",
+      "prompt": "A new district housing sample: does L2 regularization generally eliminate features exactly?",
+      "remediation": "Recall RG02.O2 and its changed-condition example. A small or rounded coefficient is not an exact-zero feature-selection guarantee"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No: it shrinks coefficients; special zero-signal cases can be zero"
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes: every positive alpha sets a coefficient exactly to zero"
+            },
+            {
+              "id": "wrong1",
+              "label": "A displayed zero always proves exact elimination"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "A small or rounded coefficient is not an exact-zero feature-selection guarantee"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "A small or rounded coefficient is not an exact-zero feature-selection guarantee",
+      "id": "RG02.O2.assessment.A",
+      "objective": "RG02.O2",
+      "prompt": "A held-out housing development sample: does L2 regularization generally eliminate features exactly?",
+      "remediation": "Recall RG02.O2 and its changed-condition example. A small or rounded coefficient is not an exact-zero feature-selection guarantee"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Yes: every positive alpha sets a coefficient exactly to zero"
+            },
+            {
+              "id": "wrong1",
+              "label": "A displayed zero always proves exact elimination"
+            },
+            {
+              "id": "supported",
+              "label": "No: it shrinks coefficients; special zero-signal cases can be zero"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            },
+            {
+              "id": "mechanism",
+              "label": "A small or rounded coefficient is not an exact-zero feature-selection guarantee"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "A small or rounded coefficient is not an exact-zero feature-selection guarantee",
+      "id": "RG02.O2.assessment.B",
+      "objective": "RG02.O2",
+      "prompt": "A housing sample with changed units: does L2 regularization generally eliminate features exactly?",
+      "remediation": "Recall RG02.O2 and its changed-condition example. A small or rounded coefficient is not an exact-zero feature-selection guarantee"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A displayed zero always proves exact elimination"
+            },
+            {
+              "id": "supported",
+              "label": "No: it shrinks coefficients; special zero-signal cases can be zero"
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes: every positive alpha sets a coefficient exactly to zero"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "A small or rounded coefficient is not an exact-zero feature-selection guarantee"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "A small or rounded coefficient is not an exact-zero feature-selection guarantee",
+      "id": "RG02.O2.assessment.C",
+      "objective": "RG02.O2",
+      "prompt": "A new correlated housing feature set: does L2 regularization generally eliminate features exactly?",
+      "remediation": "Recall RG02.O2 and its changed-condition example. A small or rounded coefficient is not an exact-zero feature-selection guarantee"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Increasing alpha guarantees better predictions in a new population"
+            },
+            {
+              "id": "supported",
+              "label": "Stronger penalty trades training fit for smaller norm; validation may improve or worsen"
+            },
+            {
+              "id": "wrong0",
+              "label": "Every individual coefficient and validation error must decrease monotonically"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Read the actual held-out errors; individual coordinates and validation error need not vary monotonically",
+      "id": "RG02.O3.practice.A",
+      "objective": "RG02.O3",
+      "prompt": "A small housing sample: a frozen Ridge path has smaller coefficient-vector norm at larger alpha. What follows?",
+      "remediation": "Recall RG02.O3 and its changed-condition example. Read the actual held-out errors; individual coordinates and validation error need not vary monotonically"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Stronger penalty trades training fit for smaller norm; validation may improve or worsen"
+            },
+            {
+              "id": "wrong0",
+              "label": "Every individual coefficient and validation error must decrease monotonically"
+            },
+            {
+              "id": "wrong1",
+              "label": "Increasing alpha guarantees better predictions in a new population"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Read the actual held-out errors; individual coordinates and validation error need not vary monotonically",
+      "id": "RG02.O3.practice.B",
+      "objective": "RG02.O3",
+      "prompt": "A new district housing sample: a frozen Ridge path has smaller coefficient-vector norm at larger alpha. What follows?",
+      "remediation": "Recall RG02.O3 and its changed-condition example. Read the actual held-out errors; individual coordinates and validation error need not vary monotonically"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Every individual coefficient and validation error must decrease monotonically"
+            },
+            {
+              "id": "wrong1",
+              "label": "Increasing alpha guarantees better predictions in a new population"
+            },
+            {
+              "id": "supported",
+              "label": "Stronger penalty trades training fit for smaller norm; validation may improve or worsen"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Read the actual held-out errors; individual coordinates and validation error need not vary monotonically",
+      "id": "RG02.O3.assessment.A",
+      "objective": "RG02.O3",
+      "prompt": "A held-out housing development sample: a frozen Ridge path has smaller coefficient-vector norm at larger alpha. What follows?",
+      "remediation": "Recall RG02.O3 and its changed-condition example. Read the actual held-out errors; individual coordinates and validation error need not vary monotonically"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Increasing alpha guarantees better predictions in a new population"
+            },
+            {
+              "id": "supported",
+              "label": "Stronger penalty trades training fit for smaller norm; validation may improve or worsen"
+            },
+            {
+              "id": "wrong0",
+              "label": "Every individual coefficient and validation error must decrease monotonically"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Read the actual held-out errors; individual coordinates and validation error need not vary monotonically",
+      "id": "RG02.O3.assessment.B",
+      "objective": "RG02.O3",
+      "prompt": "A housing sample with changed units: a frozen Ridge path has smaller coefficient-vector norm at larger alpha. What follows?",
+      "remediation": "Recall RG02.O3 and its changed-condition example. Read the actual held-out errors; individual coordinates and validation error need not vary monotonically"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Stronger penalty trades training fit for smaller norm; validation may improve or worsen"
+            },
+            {
+              "id": "wrong0",
+              "label": "Every individual coefficient and validation error must decrease monotonically"
+            },
+            {
+              "id": "wrong1",
+              "label": "Increasing alpha guarantees better predictions in a new population"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Read the actual held-out errors; individual coordinates and validation error need not vary monotonically",
+      "id": "RG02.O3.assessment.C",
+      "objective": "RG02.O3",
+      "prompt": "A new correlated housing feature set: a frozen Ridge path has smaller coefficient-vector norm at larger alpha. What follows?",
+      "remediation": "Recall RG02.O3 and its changed-condition example. Read the actual held-out errors; individual coordinates and validation error need not vary monotonically"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Compare the same development rows and metric, including the baseline"
+            },
+            {
+              "id": "wrong0",
+              "label": "Ridge must dominate unregularized regression"
+            },
+            {
+              "id": "wrong1",
+              "label": "Select whichever has the smaller training objective despite different definitions"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A penalty may reduce variance or increase bias; regularization can hurt when shrinkage is excessive",
+      "id": "RG02.O4.practice.A",
+      "objective": "RG02.O4",
+      "prompt": "A small housing sample: compare Ridge to existing unregularized regression.",
+      "remediation": "Recall RG02.O4 and its changed-condition example. A penalty may reduce variance or increase bias; regularization can hurt when shrinkage is excessive"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Ridge must dominate unregularized regression"
+            },
+            {
+              "id": "wrong1",
+              "label": "Select whichever has the smaller training objective despite different definitions"
+            },
+            {
+              "id": "supported",
+              "label": "Compare the same development rows and metric, including the baseline"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A penalty may reduce variance or increase bias; regularization can hurt when shrinkage is excessive",
+      "id": "RG02.O4.practice.B",
+      "objective": "RG02.O4",
+      "prompt": "A new district housing sample: compare Ridge to existing unregularized regression.",
+      "remediation": "Recall RG02.O4 and its changed-condition example. A penalty may reduce variance or increase bias; regularization can hurt when shrinkage is excessive"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Select whichever has the smaller training objective despite different definitions"
+            },
+            {
+              "id": "supported",
+              "label": "Compare the same development rows and metric, including the baseline"
+            },
+            {
+              "id": "wrong0",
+              "label": "Ridge must dominate unregularized regression"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A penalty may reduce variance or increase bias; regularization can hurt when shrinkage is excessive",
+      "id": "RG02.O4.assessment.A",
+      "objective": "RG02.O4",
+      "prompt": "A held-out housing development sample: compare Ridge to existing unregularized regression.",
+      "remediation": "Recall RG02.O4 and its changed-condition example. A penalty may reduce variance or increase bias; regularization can hurt when shrinkage is excessive"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Compare the same development rows and metric, including the baseline"
+            },
+            {
+              "id": "wrong0",
+              "label": "Ridge must dominate unregularized regression"
+            },
+            {
+              "id": "wrong1",
+              "label": "Select whichever has the smaller training objective despite different definitions"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A penalty may reduce variance or increase bias; regularization can hurt when shrinkage is excessive",
+      "id": "RG02.O4.assessment.B",
+      "objective": "RG02.O4",
+      "prompt": "A housing sample with changed units: compare Ridge to existing unregularized regression.",
+      "remediation": "Recall RG02.O4 and its changed-condition example. A penalty may reduce variance or increase bias; regularization can hurt when shrinkage is excessive"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Ridge must dominate unregularized regression"
+            },
+            {
+              "id": "wrong1",
+              "label": "Select whichever has the smaller training objective despite different definitions"
+            },
+            {
+              "id": "supported",
+              "label": "Compare the same development rows and metric, including the baseline"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A penalty may reduce variance or increase bias; regularization can hurt when shrinkage is excessive",
+      "id": "RG02.O4.assessment.C",
+      "objective": "RG02.O4",
+      "prompt": "A new correlated housing feature set: compare Ridge to existing unregularized regression.",
+      "remediation": "Recall RG02.O4 and its changed-condition example. A penalty may reduce variance or increase bias; regularization can hurt when shrinkage is excessive"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 2.5
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Lasso uses SSE/(2n)+alpha times L1; intercept is excluded",
+      "id": "RG03.O1.practice.A",
+      "objective": "RG03.O1",
+      "prompt": "A small housing sample: Lasso n=2, SSE4, alpha=.5, w=(1,−2), intercept10. Compute objective.",
+      "remediation": "Recall RG03.O1 and its changed-condition example. Lasso uses SSE/(2n)+alpha times L1; intercept is excluded"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 3.0
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Lasso uses SSE/(2n)+alpha times L1; intercept is excluded",
+      "id": "RG03.O1.practice.B",
+      "objective": "RG03.O1",
+      "prompt": "A new district housing sample: Lasso n=2, SSE4, alpha=.5, w=(2,−2), intercept10. Compute objective.",
+      "remediation": "Recall RG03.O1 and its changed-condition example. Lasso uses SSE/(2n)+alpha times L1; intercept is excluded"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 3.5
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Lasso uses SSE/(2n)+alpha times L1; intercept is excluded",
+      "id": "RG03.O1.assessment.A",
+      "objective": "RG03.O1",
+      "prompt": "A held-out housing development sample: Lasso n=2, SSE4, alpha=.5, w=(3,−2), intercept10. Compute objective.",
+      "remediation": "Recall RG03.O1 and its changed-condition example. Lasso uses SSE/(2n)+alpha times L1; intercept is excluded"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 4.0
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Lasso uses SSE/(2n)+alpha times L1; intercept is excluded",
+      "id": "RG03.O1.assessment.B",
+      "objective": "RG03.O1",
+      "prompt": "A housing sample with changed units: Lasso n=2, SSE4, alpha=.5, w=(4,−2), intercept10. Compute objective.",
+      "remediation": "Recall RG03.O1 and its changed-condition example. Lasso uses SSE/(2n)+alpha times L1; intercept is excluded"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 4.5
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Lasso uses SSE/(2n)+alpha times L1; intercept is excluded",
+      "id": "RG03.O1.assessment.C",
+      "objective": "RG03.O1",
+      "prompt": "A new correlated housing feature set: Lasso n=2, SSE4, alpha=.5, w=(5,−2), intercept10. Compute objective.",
+      "remediation": "Recall RG03.O1 and its changed-condition example. Lasso uses SSE/(2n)+alpha times L1; intercept is excluded"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "The same feature must remain zero in all resamples"
+            },
+            {
+              "id": "supported",
+              "label": "Conditional sparsity for this fitted model, not proof of causal irrelevance"
+            },
+            {
+              "id": "wrong0",
+              "label": "The feature has no real-world effect"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Correlated alternatives, scaling or alpha can alter selection; zero is not a causal judgment"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Correlated alternatives, scaling or alpha can alter selection; zero is not a causal judgment",
+      "id": "RG03.O2.practice.A",
+      "objective": "RG03.O2",
+      "prompt": "A small housing sample: a converged Lasso coefficient equals0. What is supported?",
+      "remediation": "Recall RG03.O2 and its changed-condition example. Correlated alternatives, scaling or alpha can alter selection; zero is not a causal judgment"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Conditional sparsity for this fitted model, not proof of causal irrelevance"
+            },
+            {
+              "id": "wrong0",
+              "label": "The feature has no real-world effect"
+            },
+            {
+              "id": "wrong1",
+              "label": "The same feature must remain zero in all resamples"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            },
+            {
+              "id": "mechanism",
+              "label": "Correlated alternatives, scaling or alpha can alter selection; zero is not a causal judgment"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Correlated alternatives, scaling or alpha can alter selection; zero is not a causal judgment",
+      "id": "RG03.O2.practice.B",
+      "objective": "RG03.O2",
+      "prompt": "A new district housing sample: a converged Lasso coefficient equals0. What is supported?",
+      "remediation": "Recall RG03.O2 and its changed-condition example. Correlated alternatives, scaling or alpha can alter selection; zero is not a causal judgment"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "The feature has no real-world effect"
+            },
+            {
+              "id": "wrong1",
+              "label": "The same feature must remain zero in all resamples"
+            },
+            {
+              "id": "supported",
+              "label": "Conditional sparsity for this fitted model, not proof of causal irrelevance"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Correlated alternatives, scaling or alpha can alter selection; zero is not a causal judgment"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Correlated alternatives, scaling or alpha can alter selection; zero is not a causal judgment",
+      "id": "RG03.O2.assessment.A",
+      "objective": "RG03.O2",
+      "prompt": "A held-out housing development sample: a converged Lasso coefficient equals0. What is supported?",
+      "remediation": "Recall RG03.O2 and its changed-condition example. Correlated alternatives, scaling or alpha can alter selection; zero is not a causal judgment"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "The same feature must remain zero in all resamples"
+            },
+            {
+              "id": "supported",
+              "label": "Conditional sparsity for this fitted model, not proof of causal irrelevance"
+            },
+            {
+              "id": "wrong0",
+              "label": "The feature has no real-world effect"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            },
+            {
+              "id": "mechanism",
+              "label": "Correlated alternatives, scaling or alpha can alter selection; zero is not a causal judgment"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Correlated alternatives, scaling or alpha can alter selection; zero is not a causal judgment",
+      "id": "RG03.O2.assessment.B",
+      "objective": "RG03.O2",
+      "prompt": "A housing sample with changed units: a converged Lasso coefficient equals0. What is supported?",
+      "remediation": "Recall RG03.O2 and its changed-condition example. Correlated alternatives, scaling or alpha can alter selection; zero is not a causal judgment"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Conditional sparsity for this fitted model, not proof of causal irrelevance"
+            },
+            {
+              "id": "wrong0",
+              "label": "The feature has no real-world effect"
+            },
+            {
+              "id": "wrong1",
+              "label": "The same feature must remain zero in all resamples"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Correlated alternatives, scaling or alpha can alter selection; zero is not a causal judgment"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Correlated alternatives, scaling or alpha can alter selection; zero is not a causal judgment",
+      "id": "RG03.O2.assessment.C",
+      "objective": "RG03.O2",
+      "prompt": "A new correlated housing feature set: a converged Lasso coefficient equals0. What is supported?",
+      "remediation": "Recall RG03.O2 and its changed-condition example. Correlated alternatives, scaling or alpha can alter selection; zero is not a causal judgment"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Align coefficients with feature names before comparing predictions and selection"
+            },
+            {
+              "id": "wrong0",
+              "label": "Compare positions without names and infer changed causal importance"
+            },
+            {
+              "id": "wrong1",
+              "label": "A swapped column guarantees a different prediction"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Column order alone is not changed semantics; similar correlated columns can redistribute weights in other samples",
+      "id": "RG03.O3.practice.A",
+      "objective": "RG03.O3",
+      "prompt": "A small housing sample: swap two correlated columns and their names consistently. What must comparison preserve?",
+      "remediation": "Recall RG03.O3 and its changed-condition example. Column order alone is not changed semantics; similar correlated columns can redistribute weights in other samples"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Compare positions without names and infer changed causal importance"
+            },
+            {
+              "id": "wrong1",
+              "label": "A swapped column guarantees a different prediction"
+            },
+            {
+              "id": "supported",
+              "label": "Align coefficients with feature names before comparing predictions and selection"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Column order alone is not changed semantics; similar correlated columns can redistribute weights in other samples",
+      "id": "RG03.O3.practice.B",
+      "objective": "RG03.O3",
+      "prompt": "A new district housing sample: swap two correlated columns and their names consistently. What must comparison preserve?",
+      "remediation": "Recall RG03.O3 and its changed-condition example. Column order alone is not changed semantics; similar correlated columns can redistribute weights in other samples"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A swapped column guarantees a different prediction"
+            },
+            {
+              "id": "supported",
+              "label": "Align coefficients with feature names before comparing predictions and selection"
+            },
+            {
+              "id": "wrong0",
+              "label": "Compare positions without names and infer changed causal importance"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Column order alone is not changed semantics; similar correlated columns can redistribute weights in other samples",
+      "id": "RG03.O3.assessment.A",
+      "objective": "RG03.O3",
+      "prompt": "A held-out housing development sample: swap two correlated columns and their names consistently. What must comparison preserve?",
+      "remediation": "Recall RG03.O3 and its changed-condition example. Column order alone is not changed semantics; similar correlated columns can redistribute weights in other samples"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Align coefficients with feature names before comparing predictions and selection"
+            },
+            {
+              "id": "wrong0",
+              "label": "Compare positions without names and infer changed causal importance"
+            },
+            {
+              "id": "wrong1",
+              "label": "A swapped column guarantees a different prediction"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Column order alone is not changed semantics; similar correlated columns can redistribute weights in other samples",
+      "id": "RG03.O3.assessment.B",
+      "objective": "RG03.O3",
+      "prompt": "A housing sample with changed units: swap two correlated columns and their names consistently. What must comparison preserve?",
+      "remediation": "Recall RG03.O3 and its changed-condition example. Column order alone is not changed semantics; similar correlated columns can redistribute weights in other samples"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Compare positions without names and infer changed causal importance"
+            },
+            {
+              "id": "wrong1",
+              "label": "A swapped column guarantees a different prediction"
+            },
+            {
+              "id": "supported",
+              "label": "Align coefficients with feature names before comparing predictions and selection"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Column order alone is not changed semantics; similar correlated columns can redistribute weights in other samples",
+      "id": "RG03.O3.assessment.C",
+      "objective": "RG03.O3",
+      "prompt": "A new correlated housing feature set: swap two correlated columns and their names consistently. What must comparison preserve?",
+      "remediation": "Recall RG03.O3 and its changed-condition example. Column order alone is not changed semantics; similar correlated columns can redistribute weights in other samples"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "The printed coefficients prove convergence"
+            },
+            {
+              "id": "wrong1",
+              "label": "Replace uncertain coefficients with zeros and call the solution sparse"
+            },
+            {
+              "id": "supported",
+              "label": "Do not treat it as a verified optimum; inspect scaling, settings and convergence"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A numeric coefficient vector is not a convergence certificate; report the warning and repair before relying on it",
+      "id": "RG03.O4.practice.A",
+      "objective": "RG03.O4",
+      "prompt": "A small housing sample: an authored fit reports ConvergenceWarning and an excessive dual gap. What can be claimed?",
+      "remediation": "Recall RG03.O4 and its changed-condition example. A numeric coefficient vector is not a convergence certificate; report the warning and repair before relying on it"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Replace uncertain coefficients with zeros and call the solution sparse"
+            },
+            {
+              "id": "supported",
+              "label": "Do not treat it as a verified optimum; inspect scaling, settings and convergence"
+            },
+            {
+              "id": "wrong0",
+              "label": "The printed coefficients prove convergence"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A numeric coefficient vector is not a convergence certificate; report the warning and repair before relying on it",
+      "id": "RG03.O4.practice.B",
+      "objective": "RG03.O4",
+      "prompt": "A new district housing sample: an authored fit reports ConvergenceWarning and an excessive dual gap. What can be claimed?",
+      "remediation": "Recall RG03.O4 and its changed-condition example. A numeric coefficient vector is not a convergence certificate; report the warning and repair before relying on it"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Do not treat it as a verified optimum; inspect scaling, settings and convergence"
+            },
+            {
+              "id": "wrong0",
+              "label": "The printed coefficients prove convergence"
+            },
+            {
+              "id": "wrong1",
+              "label": "Replace uncertain coefficients with zeros and call the solution sparse"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A numeric coefficient vector is not a convergence certificate; report the warning and repair before relying on it",
+      "id": "RG03.O4.assessment.A",
+      "objective": "RG03.O4",
+      "prompt": "A held-out housing development sample: an authored fit reports ConvergenceWarning and an excessive dual gap. What can be claimed?",
+      "remediation": "Recall RG03.O4 and its changed-condition example. A numeric coefficient vector is not a convergence certificate; report the warning and repair before relying on it"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "The printed coefficients prove convergence"
+            },
+            {
+              "id": "wrong1",
+              "label": "Replace uncertain coefficients with zeros and call the solution sparse"
+            },
+            {
+              "id": "supported",
+              "label": "Do not treat it as a verified optimum; inspect scaling, settings and convergence"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A numeric coefficient vector is not a convergence certificate; report the warning and repair before relying on it",
+      "id": "RG03.O4.assessment.B",
+      "objective": "RG03.O4",
+      "prompt": "A housing sample with changed units: an authored fit reports ConvergenceWarning and an excessive dual gap. What can be claimed?",
+      "remediation": "Recall RG03.O4 and its changed-condition example. A numeric coefficient vector is not a convergence certificate; report the warning and repair before relying on it"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Replace uncertain coefficients with zeros and call the solution sparse"
+            },
+            {
+              "id": "supported",
+              "label": "Do not treat it as a verified optimum; inspect scaling, settings and convergence"
+            },
+            {
+              "id": "wrong0",
+              "label": "The printed coefficients prove convergence"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A numeric coefficient vector is not a convergence certificate; report the warning and repair before relying on it",
+      "id": "RG03.O4.assessment.C",
+      "objective": "RG03.O4",
+      "prompt": "A new correlated housing feature set: an authored fit reports ConvergenceWarning and an excessive dual gap. What can be claimed?",
+      "remediation": "Recall RG03.O4 and its changed-condition example. A numeric coefficient vector is not a convergence certificate; report the warning and repair before relying on it"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 2.75
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Penalty is alpha*q*L1 + alpha*(1−q)*L2-squared/2, without the data-loss term",
+      "id": "RG04.O1.practice.A",
+      "objective": "RG04.O1",
+      "prompt": "A small housing sample: Elastic Net alpha=1,q=.5,w=(1,2). Compute the penalty only.",
+      "remediation": "Recall RG04.O1 and its changed-condition example. Penalty is alpha*q*L1 + alpha*(1−q)*L2-squared/2, without the data-loss term"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 4.0
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Penalty is alpha*q*L1 + alpha*(1−q)*L2-squared/2, without the data-loss term",
+      "id": "RG04.O1.practice.B",
+      "objective": "RG04.O1",
+      "prompt": "A new district housing sample: Elastic Net alpha=1,q=.5,w=(2,2). Compute the penalty only.",
+      "remediation": "Recall RG04.O1 and its changed-condition example. Penalty is alpha*q*L1 + alpha*(1−q)*L2-squared/2, without the data-loss term"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 5.75
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Penalty is alpha*q*L1 + alpha*(1−q)*L2-squared/2, without the data-loss term",
+      "id": "RG04.O1.assessment.A",
+      "objective": "RG04.O1",
+      "prompt": "A held-out housing development sample: Elastic Net alpha=1,q=.5,w=(3,2). Compute the penalty only.",
+      "remediation": "Recall RG04.O1 and its changed-condition example. Penalty is alpha*q*L1 + alpha*(1−q)*L2-squared/2, without the data-loss term"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 8.0
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Penalty is alpha*q*L1 + alpha*(1−q)*L2-squared/2, without the data-loss term",
+      "id": "RG04.O1.assessment.B",
+      "objective": "RG04.O1",
+      "prompt": "A housing sample with changed units: Elastic Net alpha=1,q=.5,w=(4,2). Compute the penalty only.",
+      "remediation": "Recall RG04.O1 and its changed-condition example. Penalty is alpha*q*L1 + alpha*(1−q)*L2-squared/2, without the data-loss term"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 10.75
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Penalty is alpha*q*L1 + alpha*(1−q)*L2-squared/2, without the data-loss term",
+      "id": "RG04.O1.assessment.C",
+      "objective": "RG04.O1",
+      "prompt": "A new correlated housing feature set: Elastic Net alpha=1,q=.5,w=(5,2). Compute the penalty only.",
+      "remediation": "Recall RG04.O1 and its changed-condition example. Penalty is alpha*q*L1 + alpha*(1−q)*L2-squared/2, without the data-loss term"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Alpha controls overall penalty; q mixes L1 and L2 contributions"
+            },
+            {
+              "id": "wrong0",
+              "label": "q averages two already fitted predictions"
+            },
+            {
+              "id": "wrong1",
+              "label": "Equal numeric alpha is the same penalty strength in every solver"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Mixing penalties is not averaging final predictions; equal alpha across Ridge and normalized objectives is not equivalent strength"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Mixing penalties is not averaging final predictions; equal alpha across Ridge and normalized objectives is not equivalent strength",
+      "id": "RG04.O2.practice.A",
+      "objective": "RG04.O2",
+      "prompt": "A small housing sample: what do alpha and q control in Elastic Net?",
+      "remediation": "Recall RG04.O2 and its changed-condition example. Mixing penalties is not averaging final predictions; equal alpha across Ridge and normalized objectives is not equivalent strength"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "q averages two already fitted predictions"
+            },
+            {
+              "id": "wrong1",
+              "label": "Equal numeric alpha is the same penalty strength in every solver"
+            },
+            {
+              "id": "supported",
+              "label": "Alpha controls overall penalty; q mixes L1 and L2 contributions"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            },
+            {
+              "id": "mechanism",
+              "label": "Mixing penalties is not averaging final predictions; equal alpha across Ridge and normalized objectives is not equivalent strength"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Mixing penalties is not averaging final predictions; equal alpha across Ridge and normalized objectives is not equivalent strength",
+      "id": "RG04.O2.practice.B",
+      "objective": "RG04.O2",
+      "prompt": "A new district housing sample: what do alpha and q control in Elastic Net?",
+      "remediation": "Recall RG04.O2 and its changed-condition example. Mixing penalties is not averaging final predictions; equal alpha across Ridge and normalized objectives is not equivalent strength"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Equal numeric alpha is the same penalty strength in every solver"
+            },
+            {
+              "id": "supported",
+              "label": "Alpha controls overall penalty; q mixes L1 and L2 contributions"
+            },
+            {
+              "id": "wrong0",
+              "label": "q averages two already fitted predictions"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Mixing penalties is not averaging final predictions; equal alpha across Ridge and normalized objectives is not equivalent strength"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Mixing penalties is not averaging final predictions; equal alpha across Ridge and normalized objectives is not equivalent strength",
+      "id": "RG04.O2.assessment.A",
+      "objective": "RG04.O2",
+      "prompt": "A held-out housing development sample: what do alpha and q control in Elastic Net?",
+      "remediation": "Recall RG04.O2 and its changed-condition example. Mixing penalties is not averaging final predictions; equal alpha across Ridge and normalized objectives is not equivalent strength"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Alpha controls overall penalty; q mixes L1 and L2 contributions"
+            },
+            {
+              "id": "wrong0",
+              "label": "q averages two already fitted predictions"
+            },
+            {
+              "id": "wrong1",
+              "label": "Equal numeric alpha is the same penalty strength in every solver"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            },
+            {
+              "id": "mechanism",
+              "label": "Mixing penalties is not averaging final predictions; equal alpha across Ridge and normalized objectives is not equivalent strength"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Mixing penalties is not averaging final predictions; equal alpha across Ridge and normalized objectives is not equivalent strength",
+      "id": "RG04.O2.assessment.B",
+      "objective": "RG04.O2",
+      "prompt": "A housing sample with changed units: what do alpha and q control in Elastic Net?",
+      "remediation": "Recall RG04.O2 and its changed-condition example. Mixing penalties is not averaging final predictions; equal alpha across Ridge and normalized objectives is not equivalent strength"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "q averages two already fitted predictions"
+            },
+            {
+              "id": "wrong1",
+              "label": "Equal numeric alpha is the same penalty strength in every solver"
+            },
+            {
+              "id": "supported",
+              "label": "Alpha controls overall penalty; q mixes L1 and L2 contributions"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Mixing penalties is not averaging final predictions; equal alpha across Ridge and normalized objectives is not equivalent strength"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Mixing penalties is not averaging final predictions; equal alpha across Ridge and normalized objectives is not equivalent strength",
+      "id": "RG04.O2.assessment.C",
+      "objective": "RG04.O2",
+      "prompt": "A new correlated housing feature set: what do alpha and q control in Elastic Net?",
+      "remediation": "Recall RG04.O2 and its changed-condition example. Mixing penalties is not averaging final predictions; equal alpha across Ridge and normalized objectives is not equivalent strength"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": ".25"
+            },
+            {
+              "id": "wrong1",
+              "label": ".75"
+            },
+            {
+              "id": "supported",
+              "label": ".5"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Use development-fold evidence to select q; keep final-test feedback out of the choice",
+      "id": "RG04.O3.practice.A",
+      "objective": "RG04.O3",
+      "prompt": "A small housing sample: finite candidates q=.25/.5/.75 have same-fold CV MAE [3,1,2]. Select the minimum-error candidate.",
+      "remediation": "Recall RG04.O3 and its changed-condition example. Use development-fold evidence to select q; keep final-test feedback out of the choice"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": ".75"
+            },
+            {
+              "id": "supported",
+              "label": ".5"
+            },
+            {
+              "id": "wrong0",
+              "label": ".25"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Use development-fold evidence to select q; keep final-test feedback out of the choice",
+      "id": "RG04.O3.practice.B",
+      "objective": "RG04.O3",
+      "prompt": "A new district housing sample: finite candidates q=.25/.5/.75 have same-fold CV MAE [4,2,3]. Select the minimum-error candidate.",
+      "remediation": "Recall RG04.O3 and its changed-condition example. Use development-fold evidence to select q; keep final-test feedback out of the choice"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": ".5"
+            },
+            {
+              "id": "wrong0",
+              "label": ".25"
+            },
+            {
+              "id": "wrong1",
+              "label": ".75"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Use development-fold evidence to select q; keep final-test feedback out of the choice",
+      "id": "RG04.O3.assessment.A",
+      "objective": "RG04.O3",
+      "prompt": "A held-out housing development sample: finite candidates q=.25/.5/.75 have same-fold CV MAE [5,3,4]. Select the minimum-error candidate.",
+      "remediation": "Recall RG04.O3 and its changed-condition example. Use development-fold evidence to select q; keep final-test feedback out of the choice"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": ".25"
+            },
+            {
+              "id": "wrong1",
+              "label": ".75"
+            },
+            {
+              "id": "supported",
+              "label": ".5"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Use development-fold evidence to select q; keep final-test feedback out of the choice",
+      "id": "RG04.O3.assessment.B",
+      "objective": "RG04.O3",
+      "prompt": "A housing sample with changed units: finite candidates q=.25/.5/.75 have same-fold CV MAE [6,4,5]. Select the minimum-error candidate.",
+      "remediation": "Recall RG04.O3 and its changed-condition example. Use development-fold evidence to select q; keep final-test feedback out of the choice"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": ".75"
+            },
+            {
+              "id": "supported",
+              "label": ".5"
+            },
+            {
+              "id": "wrong0",
+              "label": ".25"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Use development-fold evidence to select q; keep final-test feedback out of the choice",
+      "id": "RG04.O3.assessment.C",
+      "objective": "RG04.O3",
+      "prompt": "A new correlated housing feature set: finite candidates q=.25/.5/.75 have same-fold CV MAE [7,5,6]. Select the minimum-error candidate.",
+      "remediation": "Recall RG04.O3 and its changed-condition example. Use development-fold evidence to select q; keep final-test feedback out of the choice"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Equal coefficient magnitude proves equal feature importance"
+            },
+            {
+              "id": "supported",
+              "label": "No: compare held-out error, conditional sparsity and stability on the same protocol"
+            },
+            {
+              "id": "wrong0",
+              "label": "Elastic Net always beats both endpoints"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Elastic Net can help correlated groups but is not universally superior; preserve normalization and convergence caveats",
+      "id": "RG04.O4.practice.A",
+      "objective": "RG04.O4",
+      "prompt": "A small housing sample: does mixing L1 and L2 guarantee a better or more stable model?",
+      "remediation": "Recall RG04.O4 and its changed-condition example. Elastic Net can help correlated groups but is not universally superior; preserve normalization and convergence caveats"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No: compare held-out error, conditional sparsity and stability on the same protocol"
+            },
+            {
+              "id": "wrong0",
+              "label": "Elastic Net always beats both endpoints"
+            },
+            {
+              "id": "wrong1",
+              "label": "Equal coefficient magnitude proves equal feature importance"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Elastic Net can help correlated groups but is not universally superior; preserve normalization and convergence caveats",
+      "id": "RG04.O4.practice.B",
+      "objective": "RG04.O4",
+      "prompt": "A new district housing sample: does mixing L1 and L2 guarantee a better or more stable model?",
+      "remediation": "Recall RG04.O4 and its changed-condition example. Elastic Net can help correlated groups but is not universally superior; preserve normalization and convergence caveats"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Elastic Net always beats both endpoints"
+            },
+            {
+              "id": "wrong1",
+              "label": "Equal coefficient magnitude proves equal feature importance"
+            },
+            {
+              "id": "supported",
+              "label": "No: compare held-out error, conditional sparsity and stability on the same protocol"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Elastic Net can help correlated groups but is not universally superior; preserve normalization and convergence caveats",
+      "id": "RG04.O4.assessment.A",
+      "objective": "RG04.O4",
+      "prompt": "A held-out housing development sample: does mixing L1 and L2 guarantee a better or more stable model?",
+      "remediation": "Recall RG04.O4 and its changed-condition example. Elastic Net can help correlated groups but is not universally superior; preserve normalization and convergence caveats"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Equal coefficient magnitude proves equal feature importance"
+            },
+            {
+              "id": "supported",
+              "label": "No: compare held-out error, conditional sparsity and stability on the same protocol"
+            },
+            {
+              "id": "wrong0",
+              "label": "Elastic Net always beats both endpoints"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Elastic Net can help correlated groups but is not universally superior; preserve normalization and convergence caveats",
+      "id": "RG04.O4.assessment.B",
+      "objective": "RG04.O4",
+      "prompt": "A housing sample with changed units: does mixing L1 and L2 guarantee a better or more stable model?",
+      "remediation": "Recall RG04.O4 and its changed-condition example. Elastic Net can help correlated groups but is not universally superior; preserve normalization and convergence caveats"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No: compare held-out error, conditional sparsity and stability on the same protocol"
+            },
+            {
+              "id": "wrong0",
+              "label": "Elastic Net always beats both endpoints"
+            },
+            {
+              "id": "wrong1",
+              "label": "Equal coefficient magnitude proves equal feature importance"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Elastic Net can help correlated groups but is not universally superior; preserve normalization and convergence caveats",
+      "id": "RG04.O4.assessment.C",
+      "objective": "RG04.O4",
+      "prompt": "A new correlated housing feature set: does mixing L1 and L2 guarantee a better or more stable model?",
+      "remediation": "Recall RG04.O4 and its changed-condition example. Elastic Net can help correlated groups but is not universally superior; preserve normalization and convergence caveats"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Scaler and estimator fit h1,h2; transform h3 with that saved scaler"
+            },
+            {
+              "id": "wrong0",
+              "label": "Scaler fits h1,h2,h3 while estimator fits h1,h2"
+            },
+            {
+              "id": "wrong1",
+              "label": "Refit the scaler on h3 before predicting"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Fit inside each fold, not once globally before CV; no external validation in fitted statistics",
+      "id": "RG05.O1.practice.A",
+      "objective": "RG05.O1",
+      "prompt": "A small housing sample: fold training IDs h1,h2; held-out h3; external validation v1. Which fit trace is valid?",
+      "remediation": "Recall RG05.O1 and its changed-condition example. Fit inside each fold, not once globally before CV; no external validation in fitted statistics"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Scaler fits h1,h2,h3 while estimator fits h1,h2"
+            },
+            {
+              "id": "wrong1",
+              "label": "Refit the scaler on h3 before predicting"
+            },
+            {
+              "id": "supported",
+              "label": "Scaler and estimator fit h1,h2; transform h3 with that saved scaler"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Fit inside each fold, not once globally before CV; no external validation in fitted statistics",
+      "id": "RG05.O1.practice.B",
+      "objective": "RG05.O1",
+      "prompt": "A new district housing sample: fold training IDs h1,h2; held-out h3; external validation v1. Which fit trace is valid?",
+      "remediation": "Recall RG05.O1 and its changed-condition example. Fit inside each fold, not once globally before CV; no external validation in fitted statistics"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Refit the scaler on h3 before predicting"
+            },
+            {
+              "id": "supported",
+              "label": "Scaler and estimator fit h1,h2; transform h3 with that saved scaler"
+            },
+            {
+              "id": "wrong0",
+              "label": "Scaler fits h1,h2,h3 while estimator fits h1,h2"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Fit inside each fold, not once globally before CV; no external validation in fitted statistics",
+      "id": "RG05.O1.assessment.A",
+      "objective": "RG05.O1",
+      "prompt": "A held-out housing development sample: fold training IDs h1,h2; held-out h3; external validation v1. Which fit trace is valid?",
+      "remediation": "Recall RG05.O1 and its changed-condition example. Fit inside each fold, not once globally before CV; no external validation in fitted statistics"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Scaler and estimator fit h1,h2; transform h3 with that saved scaler"
+            },
+            {
+              "id": "wrong0",
+              "label": "Scaler fits h1,h2,h3 while estimator fits h1,h2"
+            },
+            {
+              "id": "wrong1",
+              "label": "Refit the scaler on h3 before predicting"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Fit inside each fold, not once globally before CV; no external validation in fitted statistics",
+      "id": "RG05.O1.assessment.B",
+      "objective": "RG05.O1",
+      "prompt": "A housing sample with changed units: fold training IDs h1,h2; held-out h3; external validation v1. Which fit trace is valid?",
+      "remediation": "Recall RG05.O1 and its changed-condition example. Fit inside each fold, not once globally before CV; no external validation in fitted statistics"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Scaler fits h1,h2,h3 while estimator fits h1,h2"
+            },
+            {
+              "id": "wrong1",
+              "label": "Refit the scaler on h3 before predicting"
+            },
+            {
+              "id": "supported",
+              "label": "Scaler and estimator fit h1,h2; transform h3 with that saved scaler"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Fit inside each fold, not once globally before CV; no external validation in fitted statistics",
+      "id": "RG05.O1.assessment.C",
+      "objective": "RG05.O1",
+      "prompt": "A new correlated housing feature set: fold training IDs h1,h2; held-out h3; external validation v1. Which fit trace is valid?",
+      "remediation": "Recall RG05.O1 and its changed-condition example. Fit inside each fold, not once globally before CV; no external validation in fitted statistics"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Yes: only target fitting can leak information"
+            },
+            {
+              "id": "wrong1",
+              "label": "Use final-test scores to choose the safest alpha"
+            },
+            {
+              "id": "supported",
+              "label": "No: fit learned preprocessing/selection only on each fold training set"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Held-out information can leak without target fitting; select within development boundaries then freeze before final test"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Held-out information can leak without target fitting; select within development boundaries then freeze before final test",
+      "id": "RG05.O2.practice.A",
+      "objective": "RG05.O2",
+      "prompt": "A small housing sample: global scaling or feature selection precedes CV. Is the candidate selection valid?",
+      "remediation": "Recall RG05.O2 and its changed-condition example. Held-out information can leak without target fitting; select within development boundaries then freeze before final test"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Use final-test scores to choose the safest alpha"
+            },
+            {
+              "id": "supported",
+              "label": "No: fit learned preprocessing/selection only on each fold training set"
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes: only target fitting can leak information"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            },
+            {
+              "id": "mechanism",
+              "label": "Held-out information can leak without target fitting; select within development boundaries then freeze before final test"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Held-out information can leak without target fitting; select within development boundaries then freeze before final test",
+      "id": "RG05.O2.practice.B",
+      "objective": "RG05.O2",
+      "prompt": "A new district housing sample: global scaling or feature selection precedes CV. Is the candidate selection valid?",
+      "remediation": "Recall RG05.O2 and its changed-condition example. Held-out information can leak without target fitting; select within development boundaries then freeze before final test"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No: fit learned preprocessing/selection only on each fold training set"
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes: only target fitting can leak information"
+            },
+            {
+              "id": "wrong1",
+              "label": "Use final-test scores to choose the safest alpha"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Held-out information can leak without target fitting; select within development boundaries then freeze before final test"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Held-out information can leak without target fitting; select within development boundaries then freeze before final test",
+      "id": "RG05.O2.assessment.A",
+      "objective": "RG05.O2",
+      "prompt": "A held-out housing development sample: global scaling or feature selection precedes CV. Is the candidate selection valid?",
+      "remediation": "Recall RG05.O2 and its changed-condition example. Held-out information can leak without target fitting; select within development boundaries then freeze before final test"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Yes: only target fitting can leak information"
+            },
+            {
+              "id": "wrong1",
+              "label": "Use final-test scores to choose the safest alpha"
+            },
+            {
+              "id": "supported",
+              "label": "No: fit learned preprocessing/selection only on each fold training set"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            },
+            {
+              "id": "mechanism",
+              "label": "Held-out information can leak without target fitting; select within development boundaries then freeze before final test"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Held-out information can leak without target fitting; select within development boundaries then freeze before final test",
+      "id": "RG05.O2.assessment.B",
+      "objective": "RG05.O2",
+      "prompt": "A housing sample with changed units: global scaling or feature selection precedes CV. Is the candidate selection valid?",
+      "remediation": "Recall RG05.O2 and its changed-condition example. Held-out information can leak without target fitting; select within development boundaries then freeze before final test"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Use final-test scores to choose the safest alpha"
+            },
+            {
+              "id": "supported",
+              "label": "No: fit learned preprocessing/selection only on each fold training set"
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes: only target fitting can leak information"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Held-out information can leak without target fitting; select within development boundaries then freeze before final test"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Held-out information can leak without target fitting; select within development boundaries then freeze before final test",
+      "id": "RG05.O2.assessment.C",
+      "objective": "RG05.O2",
+      "prompt": "A new correlated housing feature set: global scaling or feature selection precedes CV. Is the candidate selection valid?",
+      "remediation": "Recall RG05.O2 and its changed-condition example. Held-out information can leak without target fitting; select within development boundaries then freeze before final test"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "entries": [
+              {
+                "optionId": "scale",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step2"
+              }
+            ],
+            "kind": "slots"
+          }
+        ],
+        [
+          {
+            "entries": [
+              {
+                "optionId": "scale_alias",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step2"
+              }
+            ],
+            "kind": "slots"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "slots",
+          "label": "Decision or calculation",
+          "slots": [
+            {
+              "id": "step1",
+              "label": "Pipeline step1",
+              "options": [
+                {
+                  "id": "scale",
+                  "label": "Fold-training StandardScaler fit"
+                },
+                {
+                  "id": "scale_alias",
+                  "label": "The identical fold-training scaler fit (alias)"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final-test rows"
+                }
+              ]
+            },
+            {
+              "id": "step2",
+              "label": "Pipeline step2",
+              "options": [
+                {
+                  "id": "scale",
+                  "label": "Fold-training StandardScaler fit"
+                },
+                {
+                  "id": "scale_alias",
+                  "label": "The identical fold-training scaler fit (alias)"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final-test rows"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Scale inside fold training, then fit the estimator; pass the whole unfitted pipeline into CV",
+      "id": "RG05.O3.practice.A",
+      "objective": "RG05.O3",
+      "prompt": "A small housing sample: Repair the whole CV pipeline order using the supplied finite slots.",
+      "remediation": "Recall RG05.O3 and its changed-condition example. Scale inside fold training, then fit the estimator; pass the whole unfitted pipeline into CV"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "entries": [
+              {
+                "optionId": "scale",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step2"
+              }
+            ],
+            "kind": "slots"
+          }
+        ],
+        [
+          {
+            "entries": [
+              {
+                "optionId": "scale_alias",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step2"
+              }
+            ],
+            "kind": "slots"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "slots",
+          "label": "Decision or calculation",
+          "slots": [
+            {
+              "id": "step1",
+              "label": "Pipeline step1",
+              "options": [
+                {
+                  "id": "scale",
+                  "label": "Fold-training StandardScaler fit"
+                },
+                {
+                  "id": "scale_alias",
+                  "label": "The identical fold-training scaler fit (alias)"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final-test rows"
+                }
+              ]
+            },
+            {
+              "id": "step2",
+              "label": "Pipeline step2",
+              "options": [
+                {
+                  "id": "scale",
+                  "label": "Fold-training StandardScaler fit"
+                },
+                {
+                  "id": "scale_alias",
+                  "label": "The identical fold-training scaler fit (alias)"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final-test rows"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Scale inside fold training, then fit the estimator; pass the whole unfitted pipeline into CV",
+      "id": "RG05.O3.practice.B",
+      "objective": "RG05.O3",
+      "prompt": "A new district housing sample: Repair the whole CV pipeline order using the supplied finite slots.",
+      "remediation": "Recall RG05.O3 and its changed-condition example. Scale inside fold training, then fit the estimator; pass the whole unfitted pipeline into CV"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "entries": [
+              {
+                "optionId": "scale",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step2"
+              }
+            ],
+            "kind": "slots"
+          }
+        ],
+        [
+          {
+            "entries": [
+              {
+                "optionId": "scale_alias",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step2"
+              }
+            ],
+            "kind": "slots"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "slots",
+          "label": "Decision or calculation",
+          "slots": [
+            {
+              "id": "step1",
+              "label": "Pipeline step1",
+              "options": [
+                {
+                  "id": "scale",
+                  "label": "Fold-training StandardScaler fit"
+                },
+                {
+                  "id": "scale_alias",
+                  "label": "The identical fold-training scaler fit (alias)"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final-test rows"
+                }
+              ]
+            },
+            {
+              "id": "step2",
+              "label": "Pipeline step2",
+              "options": [
+                {
+                  "id": "scale",
+                  "label": "Fold-training StandardScaler fit"
+                },
+                {
+                  "id": "scale_alias",
+                  "label": "The identical fold-training scaler fit (alias)"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final-test rows"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Scale inside fold training, then fit the estimator; pass the whole unfitted pipeline into CV",
+      "id": "RG05.O3.assessment.A",
+      "objective": "RG05.O3",
+      "prompt": "A held-out housing development sample: Repair the whole CV pipeline order using the supplied finite slots.",
+      "remediation": "Recall RG05.O3 and its changed-condition example. Scale inside fold training, then fit the estimator; pass the whole unfitted pipeline into CV"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "entries": [
+              {
+                "optionId": "scale",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step2"
+              }
+            ],
+            "kind": "slots"
+          }
+        ],
+        [
+          {
+            "entries": [
+              {
+                "optionId": "scale_alias",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step2"
+              }
+            ],
+            "kind": "slots"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "slots",
+          "label": "Decision or calculation",
+          "slots": [
+            {
+              "id": "step1",
+              "label": "Pipeline step1",
+              "options": [
+                {
+                  "id": "scale",
+                  "label": "Fold-training StandardScaler fit"
+                },
+                {
+                  "id": "scale_alias",
+                  "label": "The identical fold-training scaler fit (alias)"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final-test rows"
+                }
+              ]
+            },
+            {
+              "id": "step2",
+              "label": "Pipeline step2",
+              "options": [
+                {
+                  "id": "scale",
+                  "label": "Fold-training StandardScaler fit"
+                },
+                {
+                  "id": "scale_alias",
+                  "label": "The identical fold-training scaler fit (alias)"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final-test rows"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Scale inside fold training, then fit the estimator; pass the whole unfitted pipeline into CV",
+      "id": "RG05.O3.assessment.B",
+      "objective": "RG05.O3",
+      "prompt": "A housing sample with changed units: Repair the whole CV pipeline order using the supplied finite slots.",
+      "remediation": "Recall RG05.O3 and its changed-condition example. Scale inside fold training, then fit the estimator; pass the whole unfitted pipeline into CV"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "entries": [
+              {
+                "optionId": "scale",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step2"
+              }
+            ],
+            "kind": "slots"
+          }
+        ],
+        [
+          {
+            "entries": [
+              {
+                "optionId": "scale_alias",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step2"
+              }
+            ],
+            "kind": "slots"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "slots",
+          "label": "Decision or calculation",
+          "slots": [
+            {
+              "id": "step1",
+              "label": "Pipeline step1",
+              "options": [
+                {
+                  "id": "scale",
+                  "label": "Fold-training StandardScaler fit"
+                },
+                {
+                  "id": "scale_alias",
+                  "label": "The identical fold-training scaler fit (alias)"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final-test rows"
+                }
+              ]
+            },
+            {
+              "id": "step2",
+              "label": "Pipeline step2",
+              "options": [
+                {
+                  "id": "scale",
+                  "label": "Fold-training StandardScaler fit"
+                },
+                {
+                  "id": "scale_alias",
+                  "label": "The identical fold-training scaler fit (alias)"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final-test rows"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Scale inside fold training, then fit the estimator; pass the whole unfitted pipeline into CV",
+      "id": "RG05.O3.assessment.C",
+      "objective": "RG05.O3",
+      "prompt": "A new correlated housing feature set: Repair the whole CV pipeline order using the supplied finite slots.",
+      "remediation": "Recall RG05.O3 and its changed-condition example. Scale inside fold training, then fit the estimator; pass the whole unfitted pipeline into CV"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Use dedicated Ridge with declared normalization and verify convergence"
+            },
+            {
+              "id": "wrong0",
+              "label": "All endpoint solvers are numerically interchangeable"
+            },
+            {
+              "id": "wrong1",
+              "label": "Ignore warnings because the mathematical objective is convex"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Matching objective endpoints is not a solver-support guarantee; do not silently equate alpha conventions",
+      "id": "RG05.O4.practice.A",
+      "objective": "RG05.O4",
+      "prompt": "A small housing sample: a pure-L2 q=0 ElasticNet fit returns a vector with a warning. What is safe?",
+      "remediation": "Recall RG05.O4 and its changed-condition example. Matching objective endpoints is not a solver-support guarantee; do not silently equate alpha conventions"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "All endpoint solvers are numerically interchangeable"
+            },
+            {
+              "id": "wrong1",
+              "label": "Ignore warnings because the mathematical objective is convex"
+            },
+            {
+              "id": "supported",
+              "label": "Use dedicated Ridge with declared normalization and verify convergence"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Matching objective endpoints is not a solver-support guarantee; do not silently equate alpha conventions",
+      "id": "RG05.O4.practice.B",
+      "objective": "RG05.O4",
+      "prompt": "A new district housing sample: a pure-L2 q=0 ElasticNet fit returns a vector with a warning. What is safe?",
+      "remediation": "Recall RG05.O4 and its changed-condition example. Matching objective endpoints is not a solver-support guarantee; do not silently equate alpha conventions"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Ignore warnings because the mathematical objective is convex"
+            },
+            {
+              "id": "supported",
+              "label": "Use dedicated Ridge with declared normalization and verify convergence"
+            },
+            {
+              "id": "wrong0",
+              "label": "All endpoint solvers are numerically interchangeable"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Matching objective endpoints is not a solver-support guarantee; do not silently equate alpha conventions",
+      "id": "RG05.O4.assessment.A",
+      "objective": "RG05.O4",
+      "prompt": "A held-out housing development sample: a pure-L2 q=0 ElasticNet fit returns a vector with a warning. What is safe?",
+      "remediation": "Recall RG05.O4 and its changed-condition example. Matching objective endpoints is not a solver-support guarantee; do not silently equate alpha conventions"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Use dedicated Ridge with declared normalization and verify convergence"
+            },
+            {
+              "id": "wrong0",
+              "label": "All endpoint solvers are numerically interchangeable"
+            },
+            {
+              "id": "wrong1",
+              "label": "Ignore warnings because the mathematical objective is convex"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Matching objective endpoints is not a solver-support guarantee; do not silently equate alpha conventions",
+      "id": "RG05.O4.assessment.B",
+      "objective": "RG05.O4",
+      "prompt": "A housing sample with changed units: a pure-L2 q=0 ElasticNet fit returns a vector with a warning. What is safe?",
+      "remediation": "Recall RG05.O4 and its changed-condition example. Matching objective endpoints is not a solver-support guarantee; do not silently equate alpha conventions"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "All endpoint solvers are numerically interchangeable"
+            },
+            {
+              "id": "wrong1",
+              "label": "Ignore warnings because the mathematical objective is convex"
+            },
+            {
+              "id": "supported",
+              "label": "Use dedicated Ridge with declared normalization and verify convergence"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Matching objective endpoints is not a solver-support guarantee; do not silently equate alpha conventions",
+      "id": "RG05.O4.assessment.C",
+      "objective": "RG05.O4",
+      "prompt": "A new correlated housing feature set: a pure-L2 q=0 ElasticNet fit returns a vector with a warning. What is safe?",
+      "remediation": "Recall RG05.O4 and its changed-condition example. Matching objective endpoints is not a solver-support guarantee; do not silently equate alpha conventions"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 1
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Divide standardized coefficient by training scale; full intercept also needs the centering correction",
+      "id": "RG06.O1.practice.A",
+      "objective": "RG06.O1",
+      "prompt": "A small housing sample: standardized coefficient=3, training scale3 raw units. Calculate raw slope.",
+      "remediation": "Recall RG06.O1 and its changed-condition example. Divide standardized coefficient by training scale; full intercept also needs the centering correction"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 2
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Divide standardized coefficient by training scale; full intercept also needs the centering correction",
+      "id": "RG06.O1.practice.B",
+      "objective": "RG06.O1",
+      "prompt": "A new district housing sample: standardized coefficient=6, training scale3 raw units. Calculate raw slope.",
+      "remediation": "Recall RG06.O1 and its changed-condition example. Divide standardized coefficient by training scale; full intercept also needs the centering correction"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 3
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Divide standardized coefficient by training scale; full intercept also needs the centering correction",
+      "id": "RG06.O1.assessment.A",
+      "objective": "RG06.O1",
+      "prompt": "A held-out housing development sample: standardized coefficient=9, training scale3 raw units. Calculate raw slope.",
+      "remediation": "Recall RG06.O1 and its changed-condition example. Divide standardized coefficient by training scale; full intercept also needs the centering correction"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 4
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Divide standardized coefficient by training scale; full intercept also needs the centering correction",
+      "id": "RG06.O1.assessment.B",
+      "objective": "RG06.O1",
+      "prompt": "A housing sample with changed units: standardized coefficient=12, training scale3 raw units. Calculate raw slope.",
+      "remediation": "Recall RG06.O1 and its changed-condition example. Divide standardized coefficient by training scale; full intercept also needs the centering correction"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 5
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Divide standardized coefficient by training scale; full intercept also needs the centering correction",
+      "id": "RG06.O1.assessment.C",
+      "objective": "RG06.O1",
+      "prompt": "A new correlated housing feature set: standardized coefficient=15, training scale3 raw units. Calculate raw slope.",
+      "remediation": "Recall RG06.O1 and its changed-condition example. Divide standardized coefficient by training scale; full intercept also needs the centering correction"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Regularization makes observational coefficients causal"
+            },
+            {
+              "id": "supported",
+              "label": "No: restore units and account for correlated features and observational limits"
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes: the largest raw coefficient causes the largest price change"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Changing units changes coefficients without changing predictions; regression association is not an intervention effect"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Changing units changes coefficients without changing predictions; regression association is not an intervention effect",
+      "id": "RG06.O2.practice.A",
+      "objective": "RG06.O2",
+      "prompt": "A small housing sample: a raw coefficient is larger than another. Does that establish scale-free causal importance?",
+      "remediation": "Recall RG06.O2 and its changed-condition example. Changing units changes coefficients without changing predictions; regression association is not an intervention effect"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No: restore units and account for correlated features and observational limits"
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes: the largest raw coefficient causes the largest price change"
+            },
+            {
+              "id": "wrong1",
+              "label": "Regularization makes observational coefficients causal"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            },
+            {
+              "id": "mechanism",
+              "label": "Changing units changes coefficients without changing predictions; regression association is not an intervention effect"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Changing units changes coefficients without changing predictions; regression association is not an intervention effect",
+      "id": "RG06.O2.practice.B",
+      "objective": "RG06.O2",
+      "prompt": "A new district housing sample: a raw coefficient is larger than another. Does that establish scale-free causal importance?",
+      "remediation": "Recall RG06.O2 and its changed-condition example. Changing units changes coefficients without changing predictions; regression association is not an intervention effect"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Yes: the largest raw coefficient causes the largest price change"
+            },
+            {
+              "id": "wrong1",
+              "label": "Regularization makes observational coefficients causal"
+            },
+            {
+              "id": "supported",
+              "label": "No: restore units and account for correlated features and observational limits"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Changing units changes coefficients without changing predictions; regression association is not an intervention effect"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Changing units changes coefficients without changing predictions; regression association is not an intervention effect",
+      "id": "RG06.O2.assessment.A",
+      "objective": "RG06.O2",
+      "prompt": "A held-out housing development sample: a raw coefficient is larger than another. Does that establish scale-free causal importance?",
+      "remediation": "Recall RG06.O2 and its changed-condition example. Changing units changes coefficients without changing predictions; regression association is not an intervention effect"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Regularization makes observational coefficients causal"
+            },
+            {
+              "id": "supported",
+              "label": "No: restore units and account for correlated features and observational limits"
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes: the largest raw coefficient causes the largest price change"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            },
+            {
+              "id": "mechanism",
+              "label": "Changing units changes coefficients without changing predictions; regression association is not an intervention effect"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Changing units changes coefficients without changing predictions; regression association is not an intervention effect",
+      "id": "RG06.O2.assessment.B",
+      "objective": "RG06.O2",
+      "prompt": "A housing sample with changed units: a raw coefficient is larger than another. Does that establish scale-free causal importance?",
+      "remediation": "Recall RG06.O2 and its changed-condition example. Changing units changes coefficients without changing predictions; regression association is not an intervention effect"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No: restore units and account for correlated features and observational limits"
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes: the largest raw coefficient causes the largest price change"
+            },
+            {
+              "id": "wrong1",
+              "label": "Regularization makes observational coefficients causal"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Changing units changes coefficients without changing predictions; regression association is not an intervention effect"
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score proves stable coefficients, causal importance and valid held-out evaluation."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Changing units changes coefficients without changing predictions; regression association is not an intervention effect",
+      "id": "RG06.O2.assessment.C",
+      "objective": "RG06.O2",
+      "prompt": "A new correlated housing feature set: a raw coefficient is larger than another. Does that establish scale-free causal importance?",
+      "remediation": "Recall RG06.O2 and its changed-condition example. Changing units changes coefficients without changing predictions; regression association is not an intervention effect"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Compare error, sparsity and stability separately, with the evaluation protocol"
+            },
+            {
+              "id": "wrong0",
+              "label": "Always choose the sparsest model regardless of error"
+            },
+            {
+              "id": "wrong1",
+              "label": "Choose by training objective alone"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "These criteria answer different questions; sparsity alone does not establish better unseen predictions",
+      "id": "RG06.O3.practice.A",
+      "objective": "RG06.O3",
+      "prompt": "A small housing sample: candidate A has lower CV MAE but denser coefficients than B. What should be reported?",
+      "remediation": "Recall RG06.O3 and its changed-condition example. These criteria answer different questions; sparsity alone does not establish better unseen predictions"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Always choose the sparsest model regardless of error"
+            },
+            {
+              "id": "wrong1",
+              "label": "Choose by training objective alone"
+            },
+            {
+              "id": "supported",
+              "label": "Compare error, sparsity and stability separately, with the evaluation protocol"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "These criteria answer different questions; sparsity alone does not establish better unseen predictions",
+      "id": "RG06.O3.practice.B",
+      "objective": "RG06.O3",
+      "prompt": "A new district housing sample: candidate A has lower CV MAE but denser coefficients than B. What should be reported?",
+      "remediation": "Recall RG06.O3 and its changed-condition example. These criteria answer different questions; sparsity alone does not establish better unseen predictions"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Choose by training objective alone"
+            },
+            {
+              "id": "supported",
+              "label": "Compare error, sparsity and stability separately, with the evaluation protocol"
+            },
+            {
+              "id": "wrong0",
+              "label": "Always choose the sparsest model regardless of error"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "These criteria answer different questions; sparsity alone does not establish better unseen predictions",
+      "id": "RG06.O3.assessment.A",
+      "objective": "RG06.O3",
+      "prompt": "A held-out housing development sample: candidate A has lower CV MAE but denser coefficients than B. What should be reported?",
+      "remediation": "Recall RG06.O3 and its changed-condition example. These criteria answer different questions; sparsity alone does not establish better unseen predictions"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Compare error, sparsity and stability separately, with the evaluation protocol"
+            },
+            {
+              "id": "wrong0",
+              "label": "Always choose the sparsest model regardless of error"
+            },
+            {
+              "id": "wrong1",
+              "label": "Choose by training objective alone"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "These criteria answer different questions; sparsity alone does not establish better unseen predictions",
+      "id": "RG06.O3.assessment.B",
+      "objective": "RG06.O3",
+      "prompt": "A housing sample with changed units: candidate A has lower CV MAE but denser coefficients than B. What should be reported?",
+      "remediation": "Recall RG06.O3 and its changed-condition example. These criteria answer different questions; sparsity alone does not establish better unseen predictions"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Always choose the sparsest model regardless of error"
+            },
+            {
+              "id": "wrong1",
+              "label": "Choose by training objective alone"
+            },
+            {
+              "id": "supported",
+              "label": "Compare error, sparsity and stability separately, with the evaluation protocol"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "These criteria answer different questions; sparsity alone does not establish better unseen predictions",
+      "id": "RG06.O3.assessment.C",
+      "objective": "RG06.O3",
+      "prompt": "A new correlated housing feature set: candidate A has lower CV MAE but denser coefficients than B. What should be reported?",
+      "remediation": "Recall RG06.O3 and its changed-condition example. These criteria answer different questions; sparsity alone does not establish better unseen predictions"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Claim universal superiority and causal interpretation"
+            },
+            {
+              "id": "wrong1",
+              "label": "Repeatedly inspect the final test until a clear winner appears"
+            },
+            {
+              "id": "supported",
+              "label": "Prefer an adequate simpler model with uncertainty and deployment caveats"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A small development difference is not universal superiority; document selection, support and final-test permission",
+      "id": "RG06.O4.practice.A",
+      "objective": "RG06.O4",
+      "prompt": "A small housing sample: two models have similar development errors on a small fictional dataset. What is defensible?",
+      "remediation": "Recall RG06.O4 and its changed-condition example. A small development difference is not universal superiority; document selection, support and final-test permission"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Repeatedly inspect the final test until a clear winner appears"
+            },
+            {
+              "id": "supported",
+              "label": "Prefer an adequate simpler model with uncertainty and deployment caveats"
+            },
+            {
+              "id": "wrong0",
+              "label": "Claim universal superiority and causal interpretation"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A small development difference is not universal superiority; document selection, support and final-test permission",
+      "id": "RG06.O4.practice.B",
+      "objective": "RG06.O4",
+      "prompt": "A new district housing sample: two models have similar development errors on a small fictional dataset. What is defensible?",
+      "remediation": "Recall RG06.O4 and its changed-condition example. A small development difference is not universal superiority; document selection, support and final-test permission"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Prefer an adequate simpler model with uncertainty and deployment caveats"
+            },
+            {
+              "id": "wrong0",
+              "label": "Claim universal superiority and causal interpretation"
+            },
+            {
+              "id": "wrong1",
+              "label": "Repeatedly inspect the final test until a clear winner appears"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A small development difference is not universal superiority; document selection, support and final-test permission",
+      "id": "RG06.O4.assessment.A",
+      "objective": "RG06.O4",
+      "prompt": "A held-out housing development sample: two models have similar development errors on a small fictional dataset. What is defensible?",
+      "remediation": "Recall RG06.O4 and its changed-condition example. A small development difference is not universal superiority; document selection, support and final-test permission"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Claim universal superiority and causal interpretation"
+            },
+            {
+              "id": "wrong1",
+              "label": "Repeatedly inspect the final test until a clear winner appears"
+            },
+            {
+              "id": "supported",
+              "label": "Prefer an adequate simpler model with uncertainty and deployment caveats"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A small development difference is not universal superiority; document selection, support and final-test permission",
+      "id": "RG06.O4.assessment.B",
+      "objective": "RG06.O4",
+      "prompt": "A housing sample with changed units: two models have similar development errors on a small fictional dataset. What is defensible?",
+      "remediation": "Recall RG06.O4 and its changed-condition example. A small development difference is not universal superiority; document selection, support and final-test permission"
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Repeatedly inspect the final test until a clear winner appears"
+            },
+            {
+              "id": "supported",
+              "label": "Prefer an adequate simpler model with uncertainty and deployment caveats"
+            },
+            {
+              "id": "wrong0",
+              "label": "Claim universal superiority and causal interpretation"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A small development difference is not universal superiority; document selection, support and final-test permission",
+      "id": "RG06.O4.assessment.C",
+      "objective": "RG06.O4",
+      "prompt": "A new correlated housing feature set: two models have similar development errors on a small fictional dataset. What is defensible?",
+      "remediation": "Recall RG06.O4 and its changed-condition example. A small development difference is not universal superiority; document selection, support and final-test permission"
+    }
+  ]
+}

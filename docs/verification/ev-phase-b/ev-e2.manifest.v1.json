@@ -1,0 +1,4667 @@
+{
+  "configuration_rule": "Only listed IDs and their complete control tuple are supported; no Cartesian-product inference",
+  "configurations": [
+    {
+      "controls": {
+        "probability_set": "balanced",
+        "threshold": 0
+      },
+      "expected": {
+        "accuracy": 0.5,
+        "average_precision": 1.0,
+        "balanced_accuracy": 0.5,
+        "brier": 0.08500000000000002,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.25,
+            "observed_positive_fraction": 0.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.75,
+            "observed_positive_fraction": 1.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.6666666666666666,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 0,
+        "fp": 2,
+        "fpr": 1.0,
+        "library_float64_clipped_log_loss": 0.30809306971190853,
+        "mean_cost": 0.5,
+        "mean_log_loss": 0.30809306971190853,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.1,
+            "tp": 2
+          },
+          {
+            "fp": 1,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "threshold": 0.4,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "threshold": 0.6,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.5,
+            "threshold": 0.9,
+            "tp": 1
+          }
+        ],
+        "precision": 0.5,
+        "predicted": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 1.0,
+        "roc_auc": 1.0,
+        "row_loss_contributions": [
+          {
+            "brier": 0.010000000000000002,
+            "log_loss": 0.10536051565782628
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          },
+          {
+            "brier": 0.009999999999999995,
+            "log_loss": 0.10536051565782628
+          }
+        ],
+        "specificity": 0.0,
+        "tn": 0,
+        "total_cost": 2,
+        "tp": 2
+      },
+      "fixture": "ev-e2.balanced.v1",
+      "id": "EV-E2.balanced.t0",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0 predicts positive on equality. TP=2, FP=2, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0 predicts positive on equality. TP=2, FP=2, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "balanced",
+        "threshold": 0.5
+      },
+      "expected": {
+        "accuracy": 1.0,
+        "average_precision": 1.0,
+        "balanced_accuracy": 1.0,
+        "brier": 0.08500000000000002,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.25,
+            "observed_positive_fraction": 0.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.75,
+            "observed_positive_fraction": 1.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 1.0,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 0,
+        "fp": 0,
+        "fpr": 0.0,
+        "library_float64_clipped_log_loss": 0.30809306971190853,
+        "mean_cost": 0.0,
+        "mean_log_loss": 0.30809306971190853,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.1,
+            "tp": 2
+          },
+          {
+            "fp": 1,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "threshold": 0.4,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "threshold": 0.6,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.5,
+            "threshold": 0.9,
+            "tp": 1
+          }
+        ],
+        "precision": 1.0,
+        "predicted": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 1.0,
+        "roc_auc": 1.0,
+        "row_loss_contributions": [
+          {
+            "brier": 0.010000000000000002,
+            "log_loss": 0.10536051565782628
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          },
+          {
+            "brier": 0.009999999999999995,
+            "log_loss": 0.10536051565782628
+          }
+        ],
+        "specificity": 1.0,
+        "tn": 2,
+        "total_cost": 0,
+        "tp": 2
+      },
+      "fixture": "ev-e2.balanced.v1",
+      "id": "EV-E2.balanced.t0_5",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0.5 predicts positive on equality. TP=2, FP=0, TN=2, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0.5 predicts positive on equality. TP=2, FP=0, TN=2, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "balanced",
+        "threshold": 0.75
+      },
+      "expected": {
+        "accuracy": 0.75,
+        "average_precision": 1.0,
+        "balanced_accuracy": 0.75,
+        "brier": 0.08500000000000002,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.25,
+            "observed_positive_fraction": 0.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.75,
+            "observed_positive_fraction": 1.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.6666666666666666,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 1,
+        "fp": 0,
+        "fpr": 0.0,
+        "library_float64_clipped_log_loss": 0.30809306971190853,
+        "mean_cost": 0.25,
+        "mean_log_loss": 0.30809306971190853,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.1,
+            "tp": 2
+          },
+          {
+            "fp": 1,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "threshold": 0.4,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "threshold": 0.6,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.5,
+            "threshold": 0.9,
+            "tp": 1
+          }
+        ],
+        "precision": 1.0,
+        "predicted": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 0.5,
+        "roc_auc": 1.0,
+        "row_loss_contributions": [
+          {
+            "brier": 0.010000000000000002,
+            "log_loss": 0.10536051565782628
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          },
+          {
+            "brier": 0.009999999999999995,
+            "log_loss": 0.10536051565782628
+          }
+        ],
+        "specificity": 1.0,
+        "tn": 2,
+        "total_cost": 1,
+        "tp": 1
+      },
+      "fixture": "ev-e2.balanced.v1",
+      "id": "EV-E2.balanced.t0_75",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0.75 predicts positive on equality. TP=1, FP=0, TN=2, FN=1. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0.75 predicts positive on equality. TP=1, FP=0, TN=2, FN=1. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "balanced",
+        "threshold": 1
+      },
+      "expected": {
+        "accuracy": 0.5,
+        "average_precision": 1.0,
+        "balanced_accuracy": 0.5,
+        "brier": 0.08500000000000002,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.25,
+            "observed_positive_fraction": 0.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.75,
+            "observed_positive_fraction": 1.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.0,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 2,
+        "fp": 0,
+        "fpr": 0.0,
+        "library_float64_clipped_log_loss": 0.30809306971190853,
+        "mean_cost": 0.5,
+        "mean_log_loss": 0.30809306971190853,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.1,
+            "tp": 2
+          },
+          {
+            "fp": 1,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "threshold": 0.4,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "threshold": 0.6,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.5,
+            "threshold": 0.9,
+            "tp": 1
+          }
+        ],
+        "precision": {
+          "reason": "no-predicted-positives",
+          "tag": "undefined"
+        },
+        "predicted": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 0.0,
+        "roc_auc": 1.0,
+        "row_loss_contributions": [
+          {
+            "brier": 0.010000000000000002,
+            "log_loss": 0.10536051565782628
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          },
+          {
+            "brier": 0.009999999999999995,
+            "log_loss": 0.10536051565782628
+          }
+        ],
+        "specificity": 1.0,
+        "tn": 2,
+        "total_cost": 2,
+        "tp": 0
+      },
+      "fixture": "ev-e2.balanced.v1",
+      "id": "EV-E2.balanced.t1",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 1 predicts positive on equality. TP=0, FP=0, TN=2, FN=2. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 1 predicts positive on equality. TP=0, FP=0, TN=2, FN=2. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "same-ranking",
+        "threshold": 0
+      },
+      "expected": {
+        "accuracy": 0.5,
+        "average_precision": 1.0,
+        "balanced_accuracy": 0.5,
+        "brier": 0.12009999999999998,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.25,
+            "observed_positive_fraction": 0.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.75,
+            "observed_positive_fraction": 1.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.6666666666666666,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 0,
+        "fp": 2,
+        "fpr": 1.0,
+        "library_float64_clipped_log_loss": 0.34169744455863355,
+        "mean_cost": 0.5,
+        "mean_log_loss": 0.34169744455863355,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.01,
+            "tp": 2
+          },
+          {
+            "fp": 1,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "threshold": 0.49,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "threshold": 0.51,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.5,
+            "threshold": 0.99,
+            "tp": 1
+          }
+        ],
+        "precision": 0.5,
+        "predicted": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 1.0,
+        "roc_auc": 1.0,
+        "row_loss_contributions": [
+          {
+            "brier": 0.0001,
+            "log_loss": 0.01005033585350145
+          },
+          {
+            "brier": 0.24009999999999998,
+            "log_loss": 0.6733445532637656
+          },
+          {
+            "brier": 0.24009999999999998,
+            "log_loss": 0.6733445532637656
+          },
+          {
+            "brier": 0.00010000000000000018,
+            "log_loss": 0.01005033585350145
+          }
+        ],
+        "specificity": 0.0,
+        "tn": 0,
+        "total_cost": 2,
+        "tp": 2
+      },
+      "fixture": "ev-e2.same-ranking.v1",
+      "id": "EV-E2.same-ranking.t0",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0 predicts positive on equality. TP=2, FP=2, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0 predicts positive on equality. TP=2, FP=2, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "same-ranking",
+        "threshold": 0.5
+      },
+      "expected": {
+        "accuracy": 1.0,
+        "average_precision": 1.0,
+        "balanced_accuracy": 1.0,
+        "brier": 0.12009999999999998,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.25,
+            "observed_positive_fraction": 0.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.75,
+            "observed_positive_fraction": 1.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 1.0,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 0,
+        "fp": 0,
+        "fpr": 0.0,
+        "library_float64_clipped_log_loss": 0.34169744455863355,
+        "mean_cost": 0.0,
+        "mean_log_loss": 0.34169744455863355,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.01,
+            "tp": 2
+          },
+          {
+            "fp": 1,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "threshold": 0.49,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "threshold": 0.51,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.5,
+            "threshold": 0.99,
+            "tp": 1
+          }
+        ],
+        "precision": 1.0,
+        "predicted": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 1.0,
+        "roc_auc": 1.0,
+        "row_loss_contributions": [
+          {
+            "brier": 0.0001,
+            "log_loss": 0.01005033585350145
+          },
+          {
+            "brier": 0.24009999999999998,
+            "log_loss": 0.6733445532637656
+          },
+          {
+            "brier": 0.24009999999999998,
+            "log_loss": 0.6733445532637656
+          },
+          {
+            "brier": 0.00010000000000000018,
+            "log_loss": 0.01005033585350145
+          }
+        ],
+        "specificity": 1.0,
+        "tn": 2,
+        "total_cost": 0,
+        "tp": 2
+      },
+      "fixture": "ev-e2.same-ranking.v1",
+      "id": "EV-E2.same-ranking.t0_5",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0.5 predicts positive on equality. TP=2, FP=0, TN=2, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0.5 predicts positive on equality. TP=2, FP=0, TN=2, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "same-ranking",
+        "threshold": 0.75
+      },
+      "expected": {
+        "accuracy": 0.75,
+        "average_precision": 1.0,
+        "balanced_accuracy": 0.75,
+        "brier": 0.12009999999999998,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.25,
+            "observed_positive_fraction": 0.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.75,
+            "observed_positive_fraction": 1.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.6666666666666666,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 1,
+        "fp": 0,
+        "fpr": 0.0,
+        "library_float64_clipped_log_loss": 0.34169744455863355,
+        "mean_cost": 0.25,
+        "mean_log_loss": 0.34169744455863355,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.01,
+            "tp": 2
+          },
+          {
+            "fp": 1,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "threshold": 0.49,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "threshold": 0.51,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.5,
+            "threshold": 0.99,
+            "tp": 1
+          }
+        ],
+        "precision": 1.0,
+        "predicted": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 0.5,
+        "roc_auc": 1.0,
+        "row_loss_contributions": [
+          {
+            "brier": 0.0001,
+            "log_loss": 0.01005033585350145
+          },
+          {
+            "brier": 0.24009999999999998,
+            "log_loss": 0.6733445532637656
+          },
+          {
+            "brier": 0.24009999999999998,
+            "log_loss": 0.6733445532637656
+          },
+          {
+            "brier": 0.00010000000000000018,
+            "log_loss": 0.01005033585350145
+          }
+        ],
+        "specificity": 1.0,
+        "tn": 2,
+        "total_cost": 1,
+        "tp": 1
+      },
+      "fixture": "ev-e2.same-ranking.v1",
+      "id": "EV-E2.same-ranking.t0_75",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0.75 predicts positive on equality. TP=1, FP=0, TN=2, FN=1. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0.75 predicts positive on equality. TP=1, FP=0, TN=2, FN=1. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "same-ranking",
+        "threshold": 1
+      },
+      "expected": {
+        "accuracy": 0.5,
+        "average_precision": 1.0,
+        "balanced_accuracy": 0.5,
+        "brier": 0.12009999999999998,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.25,
+            "observed_positive_fraction": 0.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.75,
+            "observed_positive_fraction": 1.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.0,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 2,
+        "fp": 0,
+        "fpr": 0.0,
+        "library_float64_clipped_log_loss": 0.34169744455863355,
+        "mean_cost": 0.5,
+        "mean_log_loss": 0.34169744455863355,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.01,
+            "tp": 2
+          },
+          {
+            "fp": 1,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "threshold": 0.49,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "threshold": 0.51,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.5,
+            "threshold": 0.99,
+            "tp": 1
+          }
+        ],
+        "precision": {
+          "reason": "no-predicted-positives",
+          "tag": "undefined"
+        },
+        "predicted": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 0.0,
+        "roc_auc": 1.0,
+        "row_loss_contributions": [
+          {
+            "brier": 0.0001,
+            "log_loss": 0.01005033585350145
+          },
+          {
+            "brier": 0.24009999999999998,
+            "log_loss": 0.6733445532637656
+          },
+          {
+            "brier": 0.24009999999999998,
+            "log_loss": 0.6733445532637656
+          },
+          {
+            "brier": 0.00010000000000000018,
+            "log_loss": 0.01005033585350145
+          }
+        ],
+        "specificity": 1.0,
+        "tn": 2,
+        "total_cost": 2,
+        "tp": 0
+      },
+      "fixture": "ev-e2.same-ranking.v1",
+      "id": "EV-E2.same-ranking.t1",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 1 predicts positive on equality. TP=0, FP=0, TN=2, FN=2. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 1 predicts positive on equality. TP=0, FP=0, TN=2, FN=2. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "imbalanced",
+        "threshold": 0
+      },
+      "expected": {
+        "accuracy": 0.125,
+        "average_precision": 1.0,
+        "balanced_accuracy": 0.5,
+        "brier": 0.07500000000000001,
+        "calibration_bins": [
+          {
+            "count": 7,
+            "lower_inclusive": 0,
+            "mean_probability": 0.2285714285714286,
+            "observed_positive_fraction": 0.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 1,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.6,
+            "observed_positive_fraction": 1.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.2222222222222222,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 0,
+        "fp": 7,
+        "fpr": 1.0,
+        "library_float64_clipped_log_loss": 0.2990011586691898,
+        "mean_cost": 0.875,
+        "mean_log_loss": 0.2990011586691898,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 7,
+            "precision": 0.125,
+            "recall": 1.0,
+            "threshold": 0.1,
+            "tp": 1
+          },
+          {
+            "fp": 5,
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "threshold": 0.2,
+            "tp": 1
+          },
+          {
+            "fp": 3,
+            "precision": 0.25,
+            "recall": 1.0,
+            "threshold": 0.3,
+            "tp": 1
+          },
+          {
+            "fp": 1,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.4,
+            "tp": 1
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "threshold": 0.6,
+            "tp": 1
+          }
+        ],
+        "precision": 0.125,
+        "predicted": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "prevalence": 0.125,
+        "reason": "threshold-not-retraining",
+        "recall": 1.0,
+        "roc_auc": 1.0,
+        "row_loss_contributions": [
+          {
+            "brier": 0.010000000000000002,
+            "log_loss": 0.10536051565782628
+          },
+          {
+            "brier": 0.04000000000000001,
+            "log_loss": 0.2231435513142097
+          },
+          {
+            "brier": 0.09,
+            "log_loss": 0.35667494393873245
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          },
+          {
+            "brier": 0.04000000000000001,
+            "log_loss": 0.2231435513142097
+          },
+          {
+            "brier": 0.010000000000000002,
+            "log_loss": 0.10536051565782628
+          },
+          {
+            "brier": 0.09,
+            "log_loss": 0.35667494393873245
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          }
+        ],
+        "specificity": 0.0,
+        "tn": 0,
+        "total_cost": 7,
+        "tp": 1
+      },
+      "fixture": "ev-e2.imbalanced.v1",
+      "id": "EV-E2.imbalanced.t0",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0 predicts positive on equality. TP=1, FP=7, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0 predicts positive on equality. TP=1, FP=7, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "imbalanced",
+        "threshold": 0.5
+      },
+      "expected": {
+        "accuracy": 1.0,
+        "average_precision": 1.0,
+        "balanced_accuracy": 1.0,
+        "brier": 0.07500000000000001,
+        "calibration_bins": [
+          {
+            "count": 7,
+            "lower_inclusive": 0,
+            "mean_probability": 0.2285714285714286,
+            "observed_positive_fraction": 0.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 1,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.6,
+            "observed_positive_fraction": 1.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 1.0,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 0,
+        "fp": 0,
+        "fpr": 0.0,
+        "library_float64_clipped_log_loss": 0.2990011586691898,
+        "mean_cost": 0.0,
+        "mean_log_loss": 0.2990011586691898,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 7,
+            "precision": 0.125,
+            "recall": 1.0,
+            "threshold": 0.1,
+            "tp": 1
+          },
+          {
+            "fp": 5,
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "threshold": 0.2,
+            "tp": 1
+          },
+          {
+            "fp": 3,
+            "precision": 0.25,
+            "recall": 1.0,
+            "threshold": 0.3,
+            "tp": 1
+          },
+          {
+            "fp": 1,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.4,
+            "tp": 1
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "threshold": 0.6,
+            "tp": 1
+          }
+        ],
+        "precision": 1.0,
+        "predicted": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "prevalence": 0.125,
+        "reason": "threshold-not-retraining",
+        "recall": 1.0,
+        "roc_auc": 1.0,
+        "row_loss_contributions": [
+          {
+            "brier": 0.010000000000000002,
+            "log_loss": 0.10536051565782628
+          },
+          {
+            "brier": 0.04000000000000001,
+            "log_loss": 0.2231435513142097
+          },
+          {
+            "brier": 0.09,
+            "log_loss": 0.35667494393873245
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          },
+          {
+            "brier": 0.04000000000000001,
+            "log_loss": 0.2231435513142097
+          },
+          {
+            "brier": 0.010000000000000002,
+            "log_loss": 0.10536051565782628
+          },
+          {
+            "brier": 0.09,
+            "log_loss": 0.35667494393873245
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          }
+        ],
+        "specificity": 1.0,
+        "tn": 7,
+        "total_cost": 0,
+        "tp": 1
+      },
+      "fixture": "ev-e2.imbalanced.v1",
+      "id": "EV-E2.imbalanced.t0_5",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0.5 predicts positive on equality. TP=1, FP=0, TN=7, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0.5 predicts positive on equality. TP=1, FP=0, TN=7, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "imbalanced",
+        "threshold": 0.75
+      },
+      "expected": {
+        "accuracy": 0.875,
+        "average_precision": 1.0,
+        "balanced_accuracy": 0.5,
+        "brier": 0.07500000000000001,
+        "calibration_bins": [
+          {
+            "count": 7,
+            "lower_inclusive": 0,
+            "mean_probability": 0.2285714285714286,
+            "observed_positive_fraction": 0.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 1,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.6,
+            "observed_positive_fraction": 1.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.0,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 1,
+        "fp": 0,
+        "fpr": 0.0,
+        "library_float64_clipped_log_loss": 0.2990011586691898,
+        "mean_cost": 0.625,
+        "mean_log_loss": 0.2990011586691898,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 7,
+            "precision": 0.125,
+            "recall": 1.0,
+            "threshold": 0.1,
+            "tp": 1
+          },
+          {
+            "fp": 5,
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "threshold": 0.2,
+            "tp": 1
+          },
+          {
+            "fp": 3,
+            "precision": 0.25,
+            "recall": 1.0,
+            "threshold": 0.3,
+            "tp": 1
+          },
+          {
+            "fp": 1,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.4,
+            "tp": 1
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "threshold": 0.6,
+            "tp": 1
+          }
+        ],
+        "precision": {
+          "reason": "no-predicted-positives",
+          "tag": "undefined"
+        },
+        "predicted": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "prevalence": 0.125,
+        "reason": "threshold-not-retraining",
+        "recall": 0.0,
+        "roc_auc": 1.0,
+        "row_loss_contributions": [
+          {
+            "brier": 0.010000000000000002,
+            "log_loss": 0.10536051565782628
+          },
+          {
+            "brier": 0.04000000000000001,
+            "log_loss": 0.2231435513142097
+          },
+          {
+            "brier": 0.09,
+            "log_loss": 0.35667494393873245
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          },
+          {
+            "brier": 0.04000000000000001,
+            "log_loss": 0.2231435513142097
+          },
+          {
+            "brier": 0.010000000000000002,
+            "log_loss": 0.10536051565782628
+          },
+          {
+            "brier": 0.09,
+            "log_loss": 0.35667494393873245
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          }
+        ],
+        "specificity": 1.0,
+        "tn": 7,
+        "total_cost": 5,
+        "tp": 0
+      },
+      "fixture": "ev-e2.imbalanced.v1",
+      "id": "EV-E2.imbalanced.t0_75",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0.75 predicts positive on equality. TP=0, FP=0, TN=7, FN=1. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0.75 predicts positive on equality. TP=0, FP=0, TN=7, FN=1. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "imbalanced",
+        "threshold": 1
+      },
+      "expected": {
+        "accuracy": 0.875,
+        "average_precision": 1.0,
+        "balanced_accuracy": 0.5,
+        "brier": 0.07500000000000001,
+        "calibration_bins": [
+          {
+            "count": 7,
+            "lower_inclusive": 0,
+            "mean_probability": 0.2285714285714286,
+            "observed_positive_fraction": 0.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 1,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.6,
+            "observed_positive_fraction": 1.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.0,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 1,
+        "fp": 0,
+        "fpr": 0.0,
+        "library_float64_clipped_log_loss": 0.2990011586691898,
+        "mean_cost": 0.625,
+        "mean_log_loss": 0.2990011586691898,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 7,
+            "precision": 0.125,
+            "recall": 1.0,
+            "threshold": 0.1,
+            "tp": 1
+          },
+          {
+            "fp": 5,
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "threshold": 0.2,
+            "tp": 1
+          },
+          {
+            "fp": 3,
+            "precision": 0.25,
+            "recall": 1.0,
+            "threshold": 0.3,
+            "tp": 1
+          },
+          {
+            "fp": 1,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.4,
+            "tp": 1
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "threshold": 0.6,
+            "tp": 1
+          }
+        ],
+        "precision": {
+          "reason": "no-predicted-positives",
+          "tag": "undefined"
+        },
+        "predicted": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "prevalence": 0.125,
+        "reason": "threshold-not-retraining",
+        "recall": 0.0,
+        "roc_auc": 1.0,
+        "row_loss_contributions": [
+          {
+            "brier": 0.010000000000000002,
+            "log_loss": 0.10536051565782628
+          },
+          {
+            "brier": 0.04000000000000001,
+            "log_loss": 0.2231435513142097
+          },
+          {
+            "brier": 0.09,
+            "log_loss": 0.35667494393873245
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          },
+          {
+            "brier": 0.04000000000000001,
+            "log_loss": 0.2231435513142097
+          },
+          {
+            "brier": 0.010000000000000002,
+            "log_loss": 0.10536051565782628
+          },
+          {
+            "brier": 0.09,
+            "log_loss": 0.35667494393873245
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          }
+        ],
+        "specificity": 1.0,
+        "tn": 7,
+        "total_cost": 5,
+        "tp": 0
+      },
+      "fixture": "ev-e2.imbalanced.v1",
+      "id": "EV-E2.imbalanced.t1",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 1 predicts positive on equality. TP=0, FP=0, TN=7, FN=1. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 1 predicts positive on equality. TP=0, FP=0, TN=7, FN=1. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "no-positives",
+        "threshold": 0
+      },
+      "expected": {
+        "accuracy": 0.0,
+        "average_precision": {
+          "reason": "no-actual-positives",
+          "tag": "undefined"
+        },
+        "balanced_accuracy": {
+          "reason": "both-classes-required",
+          "tag": "undefined"
+        },
+        "brier": 0.2625,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.15000000000000002,
+            "observed_positive_fraction": 0.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.7,
+            "observed_positive_fraction": 0.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.0,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 0,
+        "fp": 4,
+        "fpr": 1.0,
+        "library_float64_clipped_log_loss": 0.7135581778200728,
+        "mean_cost": 1.0,
+        "mean_log_loss": 0.7135581778200729,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": {
+            "reason": "no-actual-positives",
+            "tag": "undefined"
+          }
+        },
+        "pr_points": [
+          {
+            "fp": 4,
+            "precision": 0.0,
+            "recall": {
+              "reason": "no-actual-positives",
+              "tag": "undefined"
+            },
+            "threshold": 0.1,
+            "tp": 0
+          },
+          {
+            "fp": 3,
+            "precision": 0.0,
+            "recall": {
+              "reason": "no-actual-positives",
+              "tag": "undefined"
+            },
+            "threshold": 0.2,
+            "tp": 0
+          },
+          {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": {
+              "reason": "no-actual-positives",
+              "tag": "undefined"
+            },
+            "threshold": 0.6,
+            "tp": 0
+          },
+          {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": {
+              "reason": "no-actual-positives",
+              "tag": "undefined"
+            },
+            "threshold": 0.8,
+            "tp": 0
+          }
+        ],
+        "precision": 0.0,
+        "predicted": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "prevalence": 0.0,
+        "reason": "threshold-not-retraining",
+        "recall": {
+          "reason": "no-actual-positives",
+          "tag": "undefined"
+        },
+        "roc_auc": {
+          "reason": "both-classes-required",
+          "tag": "undefined"
+        },
+        "row_loss_contributions": [
+          {
+            "brier": 0.010000000000000002,
+            "log_loss": 0.10536051565782628
+          },
+          {
+            "brier": 0.04000000000000001,
+            "log_loss": 0.2231435513142097
+          },
+          {
+            "brier": 0.36,
+            "log_loss": 0.916290731874155
+          },
+          {
+            "brier": 0.6400000000000001,
+            "log_loss": 1.6094379124341005
+          }
+        ],
+        "specificity": 0.0,
+        "tn": 0,
+        "total_cost": 4,
+        "tp": 0
+      },
+      "fixture": "ev-e2.no-positives.v1",
+      "id": "EV-E2.no-positives.t0",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0 predicts positive on equality. TP=0, FP=4, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0 predicts positive on equality. TP=0, FP=4, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "no-positives",
+        "threshold": 0.5
+      },
+      "expected": {
+        "accuracy": 0.5,
+        "average_precision": {
+          "reason": "no-actual-positives",
+          "tag": "undefined"
+        },
+        "balanced_accuracy": {
+          "reason": "both-classes-required",
+          "tag": "undefined"
+        },
+        "brier": 0.2625,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.15000000000000002,
+            "observed_positive_fraction": 0.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.7,
+            "observed_positive_fraction": 0.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.0,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 0,
+        "fp": 2,
+        "fpr": 0.5,
+        "library_float64_clipped_log_loss": 0.7135581778200728,
+        "mean_cost": 0.5,
+        "mean_log_loss": 0.7135581778200729,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": {
+            "reason": "no-actual-positives",
+            "tag": "undefined"
+          }
+        },
+        "pr_points": [
+          {
+            "fp": 4,
+            "precision": 0.0,
+            "recall": {
+              "reason": "no-actual-positives",
+              "tag": "undefined"
+            },
+            "threshold": 0.1,
+            "tp": 0
+          },
+          {
+            "fp": 3,
+            "precision": 0.0,
+            "recall": {
+              "reason": "no-actual-positives",
+              "tag": "undefined"
+            },
+            "threshold": 0.2,
+            "tp": 0
+          },
+          {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": {
+              "reason": "no-actual-positives",
+              "tag": "undefined"
+            },
+            "threshold": 0.6,
+            "tp": 0
+          },
+          {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": {
+              "reason": "no-actual-positives",
+              "tag": "undefined"
+            },
+            "threshold": 0.8,
+            "tp": 0
+          }
+        ],
+        "precision": 0.0,
+        "predicted": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "prevalence": 0.0,
+        "reason": "threshold-not-retraining",
+        "recall": {
+          "reason": "no-actual-positives",
+          "tag": "undefined"
+        },
+        "roc_auc": {
+          "reason": "both-classes-required",
+          "tag": "undefined"
+        },
+        "row_loss_contributions": [
+          {
+            "brier": 0.010000000000000002,
+            "log_loss": 0.10536051565782628
+          },
+          {
+            "brier": 0.04000000000000001,
+            "log_loss": 0.2231435513142097
+          },
+          {
+            "brier": 0.36,
+            "log_loss": 0.916290731874155
+          },
+          {
+            "brier": 0.6400000000000001,
+            "log_loss": 1.6094379124341005
+          }
+        ],
+        "specificity": 0.5,
+        "tn": 2,
+        "total_cost": 2,
+        "tp": 0
+      },
+      "fixture": "ev-e2.no-positives.v1",
+      "id": "EV-E2.no-positives.t0_5",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0.5 predicts positive on equality. TP=0, FP=2, TN=2, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0.5 predicts positive on equality. TP=0, FP=2, TN=2, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "no-positives",
+        "threshold": 0.75
+      },
+      "expected": {
+        "accuracy": 0.75,
+        "average_precision": {
+          "reason": "no-actual-positives",
+          "tag": "undefined"
+        },
+        "balanced_accuracy": {
+          "reason": "both-classes-required",
+          "tag": "undefined"
+        },
+        "brier": 0.2625,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.15000000000000002,
+            "observed_positive_fraction": 0.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.7,
+            "observed_positive_fraction": 0.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.0,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 0,
+        "fp": 1,
+        "fpr": 0.25,
+        "library_float64_clipped_log_loss": 0.7135581778200728,
+        "mean_cost": 0.25,
+        "mean_log_loss": 0.7135581778200729,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": {
+            "reason": "no-actual-positives",
+            "tag": "undefined"
+          }
+        },
+        "pr_points": [
+          {
+            "fp": 4,
+            "precision": 0.0,
+            "recall": {
+              "reason": "no-actual-positives",
+              "tag": "undefined"
+            },
+            "threshold": 0.1,
+            "tp": 0
+          },
+          {
+            "fp": 3,
+            "precision": 0.0,
+            "recall": {
+              "reason": "no-actual-positives",
+              "tag": "undefined"
+            },
+            "threshold": 0.2,
+            "tp": 0
+          },
+          {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": {
+              "reason": "no-actual-positives",
+              "tag": "undefined"
+            },
+            "threshold": 0.6,
+            "tp": 0
+          },
+          {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": {
+              "reason": "no-actual-positives",
+              "tag": "undefined"
+            },
+            "threshold": 0.8,
+            "tp": 0
+          }
+        ],
+        "precision": 0.0,
+        "predicted": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "prevalence": 0.0,
+        "reason": "threshold-not-retraining",
+        "recall": {
+          "reason": "no-actual-positives",
+          "tag": "undefined"
+        },
+        "roc_auc": {
+          "reason": "both-classes-required",
+          "tag": "undefined"
+        },
+        "row_loss_contributions": [
+          {
+            "brier": 0.010000000000000002,
+            "log_loss": 0.10536051565782628
+          },
+          {
+            "brier": 0.04000000000000001,
+            "log_loss": 0.2231435513142097
+          },
+          {
+            "brier": 0.36,
+            "log_loss": 0.916290731874155
+          },
+          {
+            "brier": 0.6400000000000001,
+            "log_loss": 1.6094379124341005
+          }
+        ],
+        "specificity": 0.75,
+        "tn": 3,
+        "total_cost": 1,
+        "tp": 0
+      },
+      "fixture": "ev-e2.no-positives.v1",
+      "id": "EV-E2.no-positives.t0_75",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0.75 predicts positive on equality. TP=0, FP=1, TN=3, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0.75 predicts positive on equality. TP=0, FP=1, TN=3, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "no-positives",
+        "threshold": 1
+      },
+      "expected": {
+        "accuracy": 1.0,
+        "average_precision": {
+          "reason": "no-actual-positives",
+          "tag": "undefined"
+        },
+        "balanced_accuracy": {
+          "reason": "both-classes-required",
+          "tag": "undefined"
+        },
+        "brier": 0.2625,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.15000000000000002,
+            "observed_positive_fraction": 0.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.7,
+            "observed_positive_fraction": 0.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": {
+          "reason": "no-actual-or-predicted-positives",
+          "tag": "undefined"
+        },
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 0,
+        "fp": 0,
+        "fpr": 0.0,
+        "library_float64_clipped_log_loss": 0.7135581778200728,
+        "mean_cost": 0.0,
+        "mean_log_loss": 0.7135581778200729,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": {
+            "reason": "no-actual-positives",
+            "tag": "undefined"
+          }
+        },
+        "pr_points": [
+          {
+            "fp": 4,
+            "precision": 0.0,
+            "recall": {
+              "reason": "no-actual-positives",
+              "tag": "undefined"
+            },
+            "threshold": 0.1,
+            "tp": 0
+          },
+          {
+            "fp": 3,
+            "precision": 0.0,
+            "recall": {
+              "reason": "no-actual-positives",
+              "tag": "undefined"
+            },
+            "threshold": 0.2,
+            "tp": 0
+          },
+          {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": {
+              "reason": "no-actual-positives",
+              "tag": "undefined"
+            },
+            "threshold": 0.6,
+            "tp": 0
+          },
+          {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": {
+              "reason": "no-actual-positives",
+              "tag": "undefined"
+            },
+            "threshold": 0.8,
+            "tp": 0
+          }
+        ],
+        "precision": {
+          "reason": "no-predicted-positives",
+          "tag": "undefined"
+        },
+        "predicted": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "prevalence": 0.0,
+        "reason": "threshold-not-retraining",
+        "recall": {
+          "reason": "no-actual-positives",
+          "tag": "undefined"
+        },
+        "roc_auc": {
+          "reason": "both-classes-required",
+          "tag": "undefined"
+        },
+        "row_loss_contributions": [
+          {
+            "brier": 0.010000000000000002,
+            "log_loss": 0.10536051565782628
+          },
+          {
+            "brier": 0.04000000000000001,
+            "log_loss": 0.2231435513142097
+          },
+          {
+            "brier": 0.36,
+            "log_loss": 0.916290731874155
+          },
+          {
+            "brier": 0.6400000000000001,
+            "log_loss": 1.6094379124341005
+          }
+        ],
+        "specificity": 1.0,
+        "tn": 4,
+        "total_cost": 0,
+        "tp": 0
+      },
+      "fixture": "ev-e2.no-positives.v1",
+      "id": "EV-E2.no-positives.t1",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 1 predicts positive on equality. TP=0, FP=0, TN=4, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 1 predicts positive on equality. TP=0, FP=0, TN=4, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "no-negatives",
+        "threshold": 0
+      },
+      "expected": {
+        "accuracy": 1.0,
+        "average_precision": 1.0,
+        "balanced_accuracy": {
+          "reason": "both-classes-required",
+          "tag": "undefined"
+        },
+        "brier": 0.41250000000000003,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.15000000000000002,
+            "observed_positive_fraction": 1.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.7,
+            "observed_positive_fraction": 1.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 1.0,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 0,
+        "fp": 0,
+        "fpr": {
+          "reason": "no-actual-negatives",
+          "tag": "undefined"
+        },
+        "library_float64_clipped_log_loss": 1.1614980451270864,
+        "mean_cost": 0.0,
+        "mean_log_loss": 1.1614980451270864,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "threshold": 0.1,
+            "tp": 4
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.75,
+            "threshold": 0.2,
+            "tp": 3
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.5,
+            "threshold": 0.6,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.25,
+            "threshold": 0.8,
+            "tp": 1
+          }
+        ],
+        "precision": 1.0,
+        "predicted": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "prevalence": 1.0,
+        "reason": "threshold-not-retraining",
+        "recall": 1.0,
+        "roc_auc": {
+          "reason": "both-classes-required",
+          "tag": "undefined"
+        },
+        "row_loss_contributions": [
+          {
+            "brier": 0.81,
+            "log_loss": 2.3025850929940455
+          },
+          {
+            "brier": 0.6400000000000001,
+            "log_loss": 1.6094379124341003
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          },
+          {
+            "brier": 0.03999999999999998,
+            "log_loss": 0.2231435513142097
+          }
+        ],
+        "specificity": {
+          "reason": "no-actual-negatives",
+          "tag": "undefined"
+        },
+        "tn": 0,
+        "total_cost": 0,
+        "tp": 4
+      },
+      "fixture": "ev-e2.no-negatives.v1",
+      "id": "EV-E2.no-negatives.t0",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0 predicts positive on equality. TP=4, FP=0, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0 predicts positive on equality. TP=4, FP=0, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "no-negatives",
+        "threshold": 0.5
+      },
+      "expected": {
+        "accuracy": 0.5,
+        "average_precision": 1.0,
+        "balanced_accuracy": {
+          "reason": "both-classes-required",
+          "tag": "undefined"
+        },
+        "brier": 0.41250000000000003,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.15000000000000002,
+            "observed_positive_fraction": 1.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.7,
+            "observed_positive_fraction": 1.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.6666666666666666,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 2,
+        "fp": 0,
+        "fpr": {
+          "reason": "no-actual-negatives",
+          "tag": "undefined"
+        },
+        "library_float64_clipped_log_loss": 1.1614980451270864,
+        "mean_cost": 2.5,
+        "mean_log_loss": 1.1614980451270864,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "threshold": 0.1,
+            "tp": 4
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.75,
+            "threshold": 0.2,
+            "tp": 3
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.5,
+            "threshold": 0.6,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.25,
+            "threshold": 0.8,
+            "tp": 1
+          }
+        ],
+        "precision": 1.0,
+        "predicted": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "prevalence": 1.0,
+        "reason": "threshold-not-retraining",
+        "recall": 0.5,
+        "roc_auc": {
+          "reason": "both-classes-required",
+          "tag": "undefined"
+        },
+        "row_loss_contributions": [
+          {
+            "brier": 0.81,
+            "log_loss": 2.3025850929940455
+          },
+          {
+            "brier": 0.6400000000000001,
+            "log_loss": 1.6094379124341003
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          },
+          {
+            "brier": 0.03999999999999998,
+            "log_loss": 0.2231435513142097
+          }
+        ],
+        "specificity": {
+          "reason": "no-actual-negatives",
+          "tag": "undefined"
+        },
+        "tn": 0,
+        "total_cost": 10,
+        "tp": 2
+      },
+      "fixture": "ev-e2.no-negatives.v1",
+      "id": "EV-E2.no-negatives.t0_5",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0.5 predicts positive on equality. TP=2, FP=0, TN=0, FN=2. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0.5 predicts positive on equality. TP=2, FP=0, TN=0, FN=2. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "no-negatives",
+        "threshold": 0.75
+      },
+      "expected": {
+        "accuracy": 0.25,
+        "average_precision": 1.0,
+        "balanced_accuracy": {
+          "reason": "both-classes-required",
+          "tag": "undefined"
+        },
+        "brier": 0.41250000000000003,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.15000000000000002,
+            "observed_positive_fraction": 1.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.7,
+            "observed_positive_fraction": 1.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.4,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 3,
+        "fp": 0,
+        "fpr": {
+          "reason": "no-actual-negatives",
+          "tag": "undefined"
+        },
+        "library_float64_clipped_log_loss": 1.1614980451270864,
+        "mean_cost": 3.75,
+        "mean_log_loss": 1.1614980451270864,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "threshold": 0.1,
+            "tp": 4
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.75,
+            "threshold": 0.2,
+            "tp": 3
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.5,
+            "threshold": 0.6,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.25,
+            "threshold": 0.8,
+            "tp": 1
+          }
+        ],
+        "precision": 1.0,
+        "predicted": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "prevalence": 1.0,
+        "reason": "threshold-not-retraining",
+        "recall": 0.25,
+        "roc_auc": {
+          "reason": "both-classes-required",
+          "tag": "undefined"
+        },
+        "row_loss_contributions": [
+          {
+            "brier": 0.81,
+            "log_loss": 2.3025850929940455
+          },
+          {
+            "brier": 0.6400000000000001,
+            "log_loss": 1.6094379124341003
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          },
+          {
+            "brier": 0.03999999999999998,
+            "log_loss": 0.2231435513142097
+          }
+        ],
+        "specificity": {
+          "reason": "no-actual-negatives",
+          "tag": "undefined"
+        },
+        "tn": 0,
+        "total_cost": 15,
+        "tp": 1
+      },
+      "fixture": "ev-e2.no-negatives.v1",
+      "id": "EV-E2.no-negatives.t0_75",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0.75 predicts positive on equality. TP=1, FP=0, TN=0, FN=3. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0.75 predicts positive on equality. TP=1, FP=0, TN=0, FN=3. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "no-negatives",
+        "threshold": 1
+      },
+      "expected": {
+        "accuracy": 0.0,
+        "average_precision": 1.0,
+        "balanced_accuracy": {
+          "reason": "both-classes-required",
+          "tag": "undefined"
+        },
+        "brier": 0.41250000000000003,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.15000000000000002,
+            "observed_positive_fraction": 1.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.7,
+            "observed_positive_fraction": 1.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.0,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 4,
+        "fp": 0,
+        "fpr": {
+          "reason": "no-actual-negatives",
+          "tag": "undefined"
+        },
+        "library_float64_clipped_log_loss": 1.1614980451270864,
+        "mean_cost": 5.0,
+        "mean_log_loss": 1.1614980451270864,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "threshold": 0.1,
+            "tp": 4
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.75,
+            "threshold": 0.2,
+            "tp": 3
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.5,
+            "threshold": 0.6,
+            "tp": 2
+          },
+          {
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.25,
+            "threshold": 0.8,
+            "tp": 1
+          }
+        ],
+        "precision": {
+          "reason": "no-predicted-positives",
+          "tag": "undefined"
+        },
+        "predicted": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "prevalence": 1.0,
+        "reason": "threshold-not-retraining",
+        "recall": 0.0,
+        "roc_auc": {
+          "reason": "both-classes-required",
+          "tag": "undefined"
+        },
+        "row_loss_contributions": [
+          {
+            "brier": 0.81,
+            "log_loss": 2.3025850929940455
+          },
+          {
+            "brier": 0.6400000000000001,
+            "log_loss": 1.6094379124341003
+          },
+          {
+            "brier": 0.16000000000000003,
+            "log_loss": 0.5108256237659907
+          },
+          {
+            "brier": 0.03999999999999998,
+            "log_loss": 0.2231435513142097
+          }
+        ],
+        "specificity": {
+          "reason": "no-actual-negatives",
+          "tag": "undefined"
+        },
+        "tn": 0,
+        "total_cost": 20,
+        "tp": 0
+      },
+      "fixture": "ev-e2.no-negatives.v1",
+      "id": "EV-E2.no-negatives.t1",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 1 predicts positive on equality. TP=0, FP=0, TN=0, FN=4. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 1 predicts positive on equality. TP=0, FP=0, TN=0, FN=4. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "endpoints",
+        "threshold": 0
+      },
+      "expected": {
+        "accuracy": 0.5,
+        "average_precision": 0.5,
+        "balanced_accuracy": 0.5,
+        "brier": 0.5,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.0,
+            "observed_positive_fraction": 0.5,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 1.0,
+            "observed_positive_fraction": 0.5,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.6666666666666666,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 0,
+        "fp": 2,
+        "fpr": 1.0,
+        "library_float64_clipped_log_loss": 18.021826694558577,
+        "mean_cost": 0.5,
+        "mean_log_loss": {
+          "reason": "zero-probability-observed-outcome",
+          "sign": "positive",
+          "tag": "infinity"
+        },
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0,
+            "tp": 2
+          },
+          {
+            "fp": 1,
+            "precision": 0.5,
+            "recall": 0.5,
+            "threshold": 1,
+            "tp": 1
+          }
+        ],
+        "precision": 0.5,
+        "predicted": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 1.0,
+        "roc_auc": 0.5,
+        "row_loss_contributions": [
+          {
+            "brier": 0,
+            "log_loss": 0.0
+          },
+          {
+            "brier": 0,
+            "log_loss": 0.0
+          },
+          {
+            "brier": 1,
+            "log_loss": {
+              "reason": "zero-probability-observed-outcome",
+              "sign": "positive",
+              "tag": "infinity"
+            }
+          },
+          {
+            "brier": 1,
+            "log_loss": {
+              "reason": "zero-probability-observed-outcome",
+              "sign": "positive",
+              "tag": "infinity"
+            }
+          }
+        ],
+        "specificity": 0.0,
+        "tn": 0,
+        "total_cost": 2,
+        "tp": 2
+      },
+      "fixture": "ev-e2.endpoints.v1",
+      "id": "EV-E2.endpoints.t0",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0 predicts positive on equality. TP=2, FP=2, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0 predicts positive on equality. TP=2, FP=2, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "endpoints",
+        "threshold": 0.5
+      },
+      "expected": {
+        "accuracy": 0.5,
+        "average_precision": 0.5,
+        "balanced_accuracy": 0.5,
+        "brier": 0.5,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.0,
+            "observed_positive_fraction": 0.5,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 1.0,
+            "observed_positive_fraction": 0.5,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.5,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 1,
+        "fp": 1,
+        "fpr": 0.5,
+        "library_float64_clipped_log_loss": 18.021826694558577,
+        "mean_cost": 1.5,
+        "mean_log_loss": {
+          "reason": "zero-probability-observed-outcome",
+          "sign": "positive",
+          "tag": "infinity"
+        },
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0,
+            "tp": 2
+          },
+          {
+            "fp": 1,
+            "precision": 0.5,
+            "recall": 0.5,
+            "threshold": 1,
+            "tp": 1
+          }
+        ],
+        "precision": 0.5,
+        "predicted": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 0.5,
+        "roc_auc": 0.5,
+        "row_loss_contributions": [
+          {
+            "brier": 0,
+            "log_loss": 0.0
+          },
+          {
+            "brier": 0,
+            "log_loss": 0.0
+          },
+          {
+            "brier": 1,
+            "log_loss": {
+              "reason": "zero-probability-observed-outcome",
+              "sign": "positive",
+              "tag": "infinity"
+            }
+          },
+          {
+            "brier": 1,
+            "log_loss": {
+              "reason": "zero-probability-observed-outcome",
+              "sign": "positive",
+              "tag": "infinity"
+            }
+          }
+        ],
+        "specificity": 0.5,
+        "tn": 1,
+        "total_cost": 6,
+        "tp": 1
+      },
+      "fixture": "ev-e2.endpoints.v1",
+      "id": "EV-E2.endpoints.t0_5",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0.5 predicts positive on equality. TP=1, FP=1, TN=1, FN=1. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0.5 predicts positive on equality. TP=1, FP=1, TN=1, FN=1. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "endpoints",
+        "threshold": 0.75
+      },
+      "expected": {
+        "accuracy": 0.5,
+        "average_precision": 0.5,
+        "balanced_accuracy": 0.5,
+        "brier": 0.5,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.0,
+            "observed_positive_fraction": 0.5,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 1.0,
+            "observed_positive_fraction": 0.5,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.5,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 1,
+        "fp": 1,
+        "fpr": 0.5,
+        "library_float64_clipped_log_loss": 18.021826694558577,
+        "mean_cost": 1.5,
+        "mean_log_loss": {
+          "reason": "zero-probability-observed-outcome",
+          "sign": "positive",
+          "tag": "infinity"
+        },
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0,
+            "tp": 2
+          },
+          {
+            "fp": 1,
+            "precision": 0.5,
+            "recall": 0.5,
+            "threshold": 1,
+            "tp": 1
+          }
+        ],
+        "precision": 0.5,
+        "predicted": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 0.5,
+        "roc_auc": 0.5,
+        "row_loss_contributions": [
+          {
+            "brier": 0,
+            "log_loss": 0.0
+          },
+          {
+            "brier": 0,
+            "log_loss": 0.0
+          },
+          {
+            "brier": 1,
+            "log_loss": {
+              "reason": "zero-probability-observed-outcome",
+              "sign": "positive",
+              "tag": "infinity"
+            }
+          },
+          {
+            "brier": 1,
+            "log_loss": {
+              "reason": "zero-probability-observed-outcome",
+              "sign": "positive",
+              "tag": "infinity"
+            }
+          }
+        ],
+        "specificity": 0.5,
+        "tn": 1,
+        "total_cost": 6,
+        "tp": 1
+      },
+      "fixture": "ev-e2.endpoints.v1",
+      "id": "EV-E2.endpoints.t0_75",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0.75 predicts positive on equality. TP=1, FP=1, TN=1, FN=1. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0.75 predicts positive on equality. TP=1, FP=1, TN=1, FN=1. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "endpoints",
+        "threshold": 1
+      },
+      "expected": {
+        "accuracy": 0.5,
+        "average_precision": 0.5,
+        "balanced_accuracy": 0.5,
+        "brier": 0.5,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.0,
+            "observed_positive_fraction": 0.5,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 1.0,
+            "observed_positive_fraction": 0.5,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.5,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 1,
+        "fp": 1,
+        "fpr": 0.5,
+        "library_float64_clipped_log_loss": 18.021826694558577,
+        "mean_cost": 1.5,
+        "mean_log_loss": {
+          "reason": "zero-probability-observed-outcome",
+          "sign": "positive",
+          "tag": "infinity"
+        },
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0,
+            "tp": 2
+          },
+          {
+            "fp": 1,
+            "precision": 0.5,
+            "recall": 0.5,
+            "threshold": 1,
+            "tp": 1
+          }
+        ],
+        "precision": 0.5,
+        "predicted": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 0.5,
+        "roc_auc": 0.5,
+        "row_loss_contributions": [
+          {
+            "brier": 0,
+            "log_loss": 0.0
+          },
+          {
+            "brier": 0,
+            "log_loss": 0.0
+          },
+          {
+            "brier": 1,
+            "log_loss": {
+              "reason": "zero-probability-observed-outcome",
+              "sign": "positive",
+              "tag": "infinity"
+            }
+          },
+          {
+            "brier": 1,
+            "log_loss": {
+              "reason": "zero-probability-observed-outcome",
+              "sign": "positive",
+              "tag": "infinity"
+            }
+          }
+        ],
+        "specificity": 0.5,
+        "tn": 1,
+        "total_cost": 6,
+        "tp": 1
+      },
+      "fixture": "ev-e2.endpoints.v1",
+      "id": "EV-E2.endpoints.t1",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 1 predicts positive on equality. TP=1, FP=1, TN=1, FN=1. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 1 predicts positive on equality. TP=1, FP=1, TN=1, FN=1. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=5 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "all-tied",
+        "threshold": 0
+      },
+      "expected": {
+        "accuracy": 0.5,
+        "average_precision": 0.5,
+        "balanced_accuracy": 0.5,
+        "brier": 0.25,
+        "calibration_bins": [
+          {
+            "count": 0,
+            "lower_inclusive": 0,
+            "mean_probability": {
+              "reason": "empty-bin",
+              "tag": "undefined"
+            },
+            "observed_positive_fraction": {
+              "reason": "empty-bin",
+              "tag": "undefined"
+            },
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 4,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.5,
+            "observed_positive_fraction": 0.5,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.6666666666666666,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 0,
+        "fp": 2,
+        "fpr": 1.0,
+        "library_float64_clipped_log_loss": 0.6931471805599453,
+        "mean_cost": 0.5,
+        "mean_log_loss": 0.6931471805599453,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.5,
+            "tp": 2
+          }
+        ],
+        "precision": 0.5,
+        "predicted": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 1.0,
+        "roc_auc": 0.5,
+        "row_loss_contributions": [
+          {
+            "brier": 0.25,
+            "log_loss": 0.6931471805599453
+          },
+          {
+            "brier": 0.25,
+            "log_loss": 0.6931471805599453
+          },
+          {
+            "brier": 0.25,
+            "log_loss": 0.6931471805599453
+          },
+          {
+            "brier": 0.25,
+            "log_loss": 0.6931471805599453
+          }
+        ],
+        "specificity": 0.0,
+        "tn": 0,
+        "total_cost": 2,
+        "tp": 2
+      },
+      "fixture": "ev-e2.all-tied.v1",
+      "id": "EV-E2.all-tied.t0",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0 predicts positive on equality. TP=2, FP=2, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0 predicts positive on equality. TP=2, FP=2, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "all-tied",
+        "threshold": 0.5
+      },
+      "expected": {
+        "accuracy": 0.5,
+        "average_precision": 0.5,
+        "balanced_accuracy": 0.5,
+        "brier": 0.25,
+        "calibration_bins": [
+          {
+            "count": 0,
+            "lower_inclusive": 0,
+            "mean_probability": {
+              "reason": "empty-bin",
+              "tag": "undefined"
+            },
+            "observed_positive_fraction": {
+              "reason": "empty-bin",
+              "tag": "undefined"
+            },
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 4,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.5,
+            "observed_positive_fraction": 0.5,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.6666666666666666,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 0,
+        "fp": 2,
+        "fpr": 1.0,
+        "library_float64_clipped_log_loss": 0.6931471805599453,
+        "mean_cost": 0.5,
+        "mean_log_loss": 0.6931471805599453,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.5,
+            "tp": 2
+          }
+        ],
+        "precision": 0.5,
+        "predicted": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 1.0,
+        "roc_auc": 0.5,
+        "row_loss_contributions": [
+          {
+            "brier": 0.25,
+            "log_loss": 0.6931471805599453
+          },
+          {
+            "brier": 0.25,
+            "log_loss": 0.6931471805599453
+          },
+          {
+            "brier": 0.25,
+            "log_loss": 0.6931471805599453
+          },
+          {
+            "brier": 0.25,
+            "log_loss": 0.6931471805599453
+          }
+        ],
+        "specificity": 0.0,
+        "tn": 0,
+        "total_cost": 2,
+        "tp": 2
+      },
+      "fixture": "ev-e2.all-tied.v1",
+      "id": "EV-E2.all-tied.t0_5",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0.5 predicts positive on equality. TP=2, FP=2, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0.5 predicts positive on equality. TP=2, FP=2, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "all-tied",
+        "threshold": 0.75
+      },
+      "expected": {
+        "accuracy": 0.5,
+        "average_precision": 0.5,
+        "balanced_accuracy": 0.5,
+        "brier": 0.25,
+        "calibration_bins": [
+          {
+            "count": 0,
+            "lower_inclusive": 0,
+            "mean_probability": {
+              "reason": "empty-bin",
+              "tag": "undefined"
+            },
+            "observed_positive_fraction": {
+              "reason": "empty-bin",
+              "tag": "undefined"
+            },
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 4,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.5,
+            "observed_positive_fraction": 0.5,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.0,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 2,
+        "fp": 0,
+        "fpr": 0.0,
+        "library_float64_clipped_log_loss": 0.6931471805599453,
+        "mean_cost": 0.5,
+        "mean_log_loss": 0.6931471805599453,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.5,
+            "tp": 2
+          }
+        ],
+        "precision": {
+          "reason": "no-predicted-positives",
+          "tag": "undefined"
+        },
+        "predicted": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 0.0,
+        "roc_auc": 0.5,
+        "row_loss_contributions": [
+          {
+            "brier": 0.25,
+            "log_loss": 0.6931471805599453
+          },
+          {
+            "brier": 0.25,
+            "log_loss": 0.6931471805599453
+          },
+          {
+            "brier": 0.25,
+            "log_loss": 0.6931471805599453
+          },
+          {
+            "brier": 0.25,
+            "log_loss": 0.6931471805599453
+          }
+        ],
+        "specificity": 1.0,
+        "tn": 2,
+        "total_cost": 2,
+        "tp": 0
+      },
+      "fixture": "ev-e2.all-tied.v1",
+      "id": "EV-E2.all-tied.t0_75",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0.75 predicts positive on equality. TP=0, FP=0, TN=2, FN=2. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0.75 predicts positive on equality. TP=0, FP=0, TN=2, FN=2. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "all-tied",
+        "threshold": 1
+      },
+      "expected": {
+        "accuracy": 0.5,
+        "average_precision": 0.5,
+        "balanced_accuracy": 0.5,
+        "brier": 0.25,
+        "calibration_bins": [
+          {
+            "count": 0,
+            "lower_inclusive": 0,
+            "mean_probability": {
+              "reason": "empty-bin",
+              "tag": "undefined"
+            },
+            "observed_positive_fraction": {
+              "reason": "empty-bin",
+              "tag": "undefined"
+            },
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 4,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.5,
+            "observed_positive_fraction": 0.5,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.0,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 2,
+        "fp": 0,
+        "fpr": 0.0,
+        "library_float64_clipped_log_loss": 0.6931471805599453,
+        "mean_cost": 0.5,
+        "mean_log_loss": 0.6931471805599453,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.5,
+            "tp": 2
+          }
+        ],
+        "precision": {
+          "reason": "no-predicted-positives",
+          "tag": "undefined"
+        },
+        "predicted": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 0.0,
+        "roc_auc": 0.5,
+        "row_loss_contributions": [
+          {
+            "brier": 0.25,
+            "log_loss": 0.6931471805599453
+          },
+          {
+            "brier": 0.25,
+            "log_loss": 0.6931471805599453
+          },
+          {
+            "brier": 0.25,
+            "log_loss": 0.6931471805599453
+          },
+          {
+            "brier": 0.25,
+            "log_loss": 0.6931471805599453
+          }
+        ],
+        "specificity": 1.0,
+        "tn": 2,
+        "total_cost": 2,
+        "tp": 0
+      },
+      "fixture": "ev-e2.all-tied.v1",
+      "id": "EV-E2.all-tied.t1",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 1 predicts positive on equality. TP=0, FP=0, TN=2, FN=2. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 1 predicts positive on equality. TP=0, FP=0, TN=2, FN=2. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "reversed-ranking",
+        "threshold": 0
+      },
+      "expected": {
+        "accuracy": 0.5,
+        "average_precision": 0.41666666666666663,
+        "balanced_accuracy": 0.5,
+        "brier": 0.585,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.25,
+            "observed_positive_fraction": 1.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.75,
+            "observed_positive_fraction": 0.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.6666666666666666,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 0,
+        "fp": 2,
+        "fpr": 1.0,
+        "library_float64_clipped_log_loss": 1.6094379124341005,
+        "mean_cost": 0.5,
+        "mean_log_loss": 1.6094379124341003,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.1,
+            "tp": 2
+          },
+          {
+            "fp": 2,
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "threshold": 0.4,
+            "tp": 1
+          },
+          {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": 0.0,
+            "threshold": 0.6,
+            "tp": 0
+          },
+          {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "threshold": 0.9,
+            "tp": 0
+          }
+        ],
+        "precision": 0.5,
+        "predicted": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 1.0,
+        "roc_auc": 0.0,
+        "row_loss_contributions": [
+          {
+            "brier": 0.81,
+            "log_loss": 2.302585092994046
+          },
+          {
+            "brier": 0.36,
+            "log_loss": 0.916290731874155
+          },
+          {
+            "brier": 0.36,
+            "log_loss": 0.916290731874155
+          },
+          {
+            "brier": 0.81,
+            "log_loss": 2.3025850929940455
+          }
+        ],
+        "specificity": 0.0,
+        "tn": 0,
+        "total_cost": 2,
+        "tp": 2
+      },
+      "fixture": "ev-e2.reversed-ranking.v1",
+      "id": "EV-E2.reversed-ranking.t0",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0 predicts positive on equality. TP=2, FP=2, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0 predicts positive on equality. TP=2, FP=2, TN=0, FN=0. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "reversed-ranking",
+        "threshold": 0.5
+      },
+      "expected": {
+        "accuracy": 0.0,
+        "average_precision": 0.41666666666666663,
+        "balanced_accuracy": 0.0,
+        "brier": 0.585,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.25,
+            "observed_positive_fraction": 1.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.75,
+            "observed_positive_fraction": 0.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.0,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 2,
+        "fp": 2,
+        "fpr": 1.0,
+        "library_float64_clipped_log_loss": 1.6094379124341005,
+        "mean_cost": 1.0,
+        "mean_log_loss": 1.6094379124341003,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.1,
+            "tp": 2
+          },
+          {
+            "fp": 2,
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "threshold": 0.4,
+            "tp": 1
+          },
+          {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": 0.0,
+            "threshold": 0.6,
+            "tp": 0
+          },
+          {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "threshold": 0.9,
+            "tp": 0
+          }
+        ],
+        "precision": 0.0,
+        "predicted": [
+          1,
+          1,
+          0,
+          0
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 0.0,
+        "roc_auc": 0.0,
+        "row_loss_contributions": [
+          {
+            "brier": 0.81,
+            "log_loss": 2.302585092994046
+          },
+          {
+            "brier": 0.36,
+            "log_loss": 0.916290731874155
+          },
+          {
+            "brier": 0.36,
+            "log_loss": 0.916290731874155
+          },
+          {
+            "brier": 0.81,
+            "log_loss": 2.3025850929940455
+          }
+        ],
+        "specificity": 0.0,
+        "tn": 0,
+        "total_cost": 4,
+        "tp": 0
+      },
+      "fixture": "ev-e2.reversed-ranking.v1",
+      "id": "EV-E2.reversed-ranking.t0_5",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0.5 predicts positive on equality. TP=0, FP=2, TN=0, FN=2. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0.5 predicts positive on equality. TP=0, FP=2, TN=0, FN=2. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "reversed-ranking",
+        "threshold": 0.75
+      },
+      "expected": {
+        "accuracy": 0.25,
+        "average_precision": 0.41666666666666663,
+        "balanced_accuracy": 0.25,
+        "brier": 0.585,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.25,
+            "observed_positive_fraction": 1.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.75,
+            "observed_positive_fraction": 0.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.0,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 2,
+        "fp": 1,
+        "fpr": 0.5,
+        "library_float64_clipped_log_loss": 1.6094379124341005,
+        "mean_cost": 0.75,
+        "mean_log_loss": 1.6094379124341003,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.1,
+            "tp": 2
+          },
+          {
+            "fp": 2,
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "threshold": 0.4,
+            "tp": 1
+          },
+          {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": 0.0,
+            "threshold": 0.6,
+            "tp": 0
+          },
+          {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "threshold": 0.9,
+            "tp": 0
+          }
+        ],
+        "precision": 0.0,
+        "predicted": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 0.0,
+        "roc_auc": 0.0,
+        "row_loss_contributions": [
+          {
+            "brier": 0.81,
+            "log_loss": 2.302585092994046
+          },
+          {
+            "brier": 0.36,
+            "log_loss": 0.916290731874155
+          },
+          {
+            "brier": 0.36,
+            "log_loss": 0.916290731874155
+          },
+          {
+            "brier": 0.81,
+            "log_loss": 2.3025850929940455
+          }
+        ],
+        "specificity": 0.5,
+        "tn": 1,
+        "total_cost": 3,
+        "tp": 0
+      },
+      "fixture": "ev-e2.reversed-ranking.v1",
+      "id": "EV-E2.reversed-ranking.t0_75",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 0.75 predicts positive on equality. TP=0, FP=1, TN=1, FN=2. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 0.75 predicts positive on equality. TP=0, FP=1, TN=1, FN=2. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    },
+    {
+      "controls": {
+        "probability_set": "reversed-ranking",
+        "threshold": 1
+      },
+      "expected": {
+        "accuracy": 0.5,
+        "average_precision": 0.41666666666666663,
+        "balanced_accuracy": 0.5,
+        "brier": 0.585,
+        "calibration_bins": [
+          {
+            "count": 2,
+            "lower_inclusive": 0,
+            "mean_probability": 0.25,
+            "observed_positive_fraction": 1.0,
+            "upper": 0.5,
+            "upper_inclusive": false
+          },
+          {
+            "count": 2,
+            "lower_inclusive": 0.5,
+            "mean_probability": 0.75,
+            "observed_positive_fraction": 0.0,
+            "upper": 1,
+            "upper_inclusive": true
+          }
+        ],
+        "f1": 0.0,
+        "final_test_permission": "not-yet-threshold-and-workflow-not-frozen",
+        "fn": 2,
+        "fp": 0,
+        "fpr": 0.0,
+        "library_float64_clipped_log_loss": 1.6094379124341005,
+        "mean_cost": 0.5,
+        "mean_log_loss": 1.6094379124341003,
+        "no_prediction_endpoint": {
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "recall": 0
+        },
+        "pr_points": [
+          {
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "threshold": 0.1,
+            "tp": 2
+          },
+          {
+            "fp": 2,
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "threshold": 0.4,
+            "tp": 1
+          },
+          {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": 0.0,
+            "threshold": 0.6,
+            "tp": 0
+          },
+          {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "threshold": 0.9,
+            "tp": 0
+          }
+        ],
+        "precision": {
+          "reason": "no-predicted-positives",
+          "tag": "undefined"
+        },
+        "predicted": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "prevalence": 0.5,
+        "reason": "threshold-not-retraining",
+        "recall": 0.0,
+        "roc_auc": 0.0,
+        "row_loss_contributions": [
+          {
+            "brier": 0.81,
+            "log_loss": 2.302585092994046
+          },
+          {
+            "brier": 0.36,
+            "log_loss": 0.916290731874155
+          },
+          {
+            "brier": 0.36,
+            "log_loss": 0.916290731874155
+          },
+          {
+            "brier": 0.81,
+            "log_loss": 2.3025850929940455
+          }
+        ],
+        "specificity": 1.0,
+        "tn": 2,
+        "total_cost": 2,
+        "tp": 0
+      },
+      "fixture": "ev-e2.reversed-ranking.v1",
+      "id": "EV-E2.reversed-ranking.t1",
+      "objectives": [
+        "EV03.O1",
+        "EV03.O2",
+        "EV03.O3",
+        "EV03.O4",
+        "EV04.O1",
+        "EV04.O2",
+        "EV04.O3",
+        "EV04.O4"
+      ],
+      "prediction_question": "How will threshold change confusion counts and cost? Will ranking or probability loss change?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Fixed probabilities; threshold 1 predicts positive on equality. TP=0, FP=0, TN=2, FN=2. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+      },
+      "why": "Fixed probabilities; threshold 1 predicts positive on equality. TP=0, FP=0, TN=2, FN=2. Changing threshold changes actions and cost, not fitted parameters, probabilities, ranking or probability losses. Costs FP=1, FN=1 are illustrative development assumptions, not universal values. No accuracy, ranking or tiny calibration table establishes causal effects or calibrated future risk."
+    }
+  ],
+  "fixture_provenance": "Original fictional teaching fixtures only; no credentials, uploads, remote data or production annotation",
+  "fixtures": [
+    {
+      "cost_fn": 1,
+      "cost_fp": 1,
+      "cost_unit": "illustrative review-cost units",
+      "id": "ev-e2.balanced.v1",
+      "kind": "fixed-probability-replay",
+      "negative": {
+        "label": "Good",
+        "value": 0
+      },
+      "population": "fictional documentation review items",
+      "positive": {
+        "label": "Needs Improvement",
+        "value": 1
+      },
+      "provenance": "original fictional teaching values; not production labels or evidence of calibration",
+      "rows": [
+        {
+          "id": "d1",
+          "probability_positive": 0.1,
+          "target": 0
+        },
+        {
+          "id": "d2",
+          "probability_positive": 0.4,
+          "target": 0
+        },
+        {
+          "id": "d3",
+          "probability_positive": 0.6,
+          "target": 1
+        },
+        {
+          "id": "d4",
+          "probability_positive": 0.9,
+          "target": 1
+        }
+      ],
+      "split": "development-only; final test withheld"
+    },
+    {
+      "cost_fn": 1,
+      "cost_fp": 1,
+      "cost_unit": "illustrative review-cost units",
+      "id": "ev-e2.same-ranking.v1",
+      "kind": "fixed-probability-replay",
+      "negative": {
+        "label": "Good",
+        "value": 0
+      },
+      "population": "fictional documentation review items",
+      "positive": {
+        "label": "Needs Improvement",
+        "value": 1
+      },
+      "provenance": "original fictional teaching values; not production labels or evidence of calibration",
+      "rows": [
+        {
+          "id": "d1",
+          "probability_positive": 0.01,
+          "target": 0
+        },
+        {
+          "id": "d2",
+          "probability_positive": 0.49,
+          "target": 0
+        },
+        {
+          "id": "d3",
+          "probability_positive": 0.51,
+          "target": 1
+        },
+        {
+          "id": "d4",
+          "probability_positive": 0.99,
+          "target": 1
+        }
+      ],
+      "split": "development-only; final test withheld"
+    },
+    {
+      "cost_fn": 5,
+      "cost_fp": 1,
+      "cost_unit": "illustrative review-cost units",
+      "id": "ev-e2.imbalanced.v1",
+      "kind": "fixed-probability-replay",
+      "negative": {
+        "label": "Good",
+        "value": 0
+      },
+      "population": "fictional documentation review items",
+      "positive": {
+        "label": "Needs Improvement",
+        "value": 1
+      },
+      "provenance": "original fictional teaching values; not production labels or evidence of calibration",
+      "rows": [
+        {
+          "id": "d1",
+          "probability_positive": 0.1,
+          "target": 0
+        },
+        {
+          "id": "d2",
+          "probability_positive": 0.2,
+          "target": 0
+        },
+        {
+          "id": "d3",
+          "probability_positive": 0.3,
+          "target": 0
+        },
+        {
+          "id": "d4",
+          "probability_positive": 0.4,
+          "target": 0
+        },
+        {
+          "id": "d5",
+          "probability_positive": 0.2,
+          "target": 0
+        },
+        {
+          "id": "d6",
+          "probability_positive": 0.1,
+          "target": 0
+        },
+        {
+          "id": "d7",
+          "probability_positive": 0.3,
+          "target": 0
+        },
+        {
+          "id": "d8",
+          "probability_positive": 0.6,
+          "target": 1
+        }
+      ],
+      "split": "development-only; final test withheld"
+    },
+    {
+      "cost_fn": 5,
+      "cost_fp": 1,
+      "cost_unit": "illustrative review-cost units",
+      "id": "ev-e2.no-positives.v1",
+      "kind": "fixed-probability-replay",
+      "negative": {
+        "label": "Good",
+        "value": 0
+      },
+      "population": "fictional documentation review items",
+      "positive": {
+        "label": "Needs Improvement",
+        "value": 1
+      },
+      "provenance": "original fictional teaching values; not production labels or evidence of calibration",
+      "rows": [
+        {
+          "id": "d1",
+          "probability_positive": 0.1,
+          "target": 0
+        },
+        {
+          "id": "d2",
+          "probability_positive": 0.2,
+          "target": 0
+        },
+        {
+          "id": "d3",
+          "probability_positive": 0.6,
+          "target": 0
+        },
+        {
+          "id": "d4",
+          "probability_positive": 0.8,
+          "target": 0
+        }
+      ],
+      "split": "development-only; final test withheld"
+    },
+    {
+      "cost_fn": 5,
+      "cost_fp": 1,
+      "cost_unit": "illustrative review-cost units",
+      "id": "ev-e2.no-negatives.v1",
+      "kind": "fixed-probability-replay",
+      "negative": {
+        "label": "Good",
+        "value": 0
+      },
+      "population": "fictional documentation review items",
+      "positive": {
+        "label": "Needs Improvement",
+        "value": 1
+      },
+      "provenance": "original fictional teaching values; not production labels or evidence of calibration",
+      "rows": [
+        {
+          "id": "d1",
+          "probability_positive": 0.1,
+          "target": 1
+        },
+        {
+          "id": "d2",
+          "probability_positive": 0.2,
+          "target": 1
+        },
+        {
+          "id": "d3",
+          "probability_positive": 0.6,
+          "target": 1
+        },
+        {
+          "id": "d4",
+          "probability_positive": 0.8,
+          "target": 1
+        }
+      ],
+      "split": "development-only; final test withheld"
+    },
+    {
+      "cost_fn": 5,
+      "cost_fp": 1,
+      "cost_unit": "illustrative review-cost units",
+      "id": "ev-e2.endpoints.v1",
+      "kind": "fixed-probability-replay",
+      "negative": {
+        "label": "Good",
+        "value": 0
+      },
+      "population": "fictional documentation review items",
+      "positive": {
+        "label": "Needs Improvement",
+        "value": 1
+      },
+      "provenance": "original fictional teaching values; not production labels or evidence of calibration",
+      "rows": [
+        {
+          "id": "d1",
+          "probability_positive": 0,
+          "target": 0
+        },
+        {
+          "id": "d2",
+          "probability_positive": 1,
+          "target": 1
+        },
+        {
+          "id": "d3",
+          "probability_positive": 1,
+          "target": 0
+        },
+        {
+          "id": "d4",
+          "probability_positive": 0,
+          "target": 1
+        }
+      ],
+      "split": "development-only; final test withheld"
+    },
+    {
+      "cost_fn": 1,
+      "cost_fp": 1,
+      "cost_unit": "illustrative review-cost units",
+      "id": "ev-e2.all-tied.v1",
+      "kind": "fixed-probability-replay",
+      "negative": {
+        "label": "Good",
+        "value": 0
+      },
+      "population": "fictional documentation review items",
+      "positive": {
+        "label": "Needs Improvement",
+        "value": 1
+      },
+      "provenance": "original fictional teaching values; not production labels or evidence of calibration",
+      "rows": [
+        {
+          "id": "d1",
+          "probability_positive": 0.5,
+          "target": 0
+        },
+        {
+          "id": "d2",
+          "probability_positive": 0.5,
+          "target": 1
+        },
+        {
+          "id": "d3",
+          "probability_positive": 0.5,
+          "target": 0
+        },
+        {
+          "id": "d4",
+          "probability_positive": 0.5,
+          "target": 1
+        }
+      ],
+      "split": "development-only; final test withheld"
+    },
+    {
+      "cost_fn": 1,
+      "cost_fp": 1,
+      "cost_unit": "illustrative review-cost units",
+      "id": "ev-e2.reversed-ranking.v1",
+      "kind": "fixed-probability-replay",
+      "negative": {
+        "label": "Good",
+        "value": 0
+      },
+      "population": "fictional documentation review items",
+      "positive": {
+        "label": "Needs Improvement",
+        "value": 1
+      },
+      "provenance": "original fictional teaching values; not production labels or evidence of calibration",
+      "rows": [
+        {
+          "id": "d1",
+          "probability_positive": 0.9,
+          "target": 0
+        },
+        {
+          "id": "d2",
+          "probability_positive": 0.6,
+          "target": 0
+        },
+        {
+          "id": "d3",
+          "probability_positive": 0.4,
+          "target": 1
+        },
+        {
+          "id": "d4",
+          "probability_positive": 0.1,
+          "target": 1
+        }
+      ],
+      "split": "development-only; final test withheld"
+    }
+  ],
+  "id": "EV-E2",
+  "initial_configuration": "EV-E2.balanced.t0_5",
+  "interaction_spec": "EV_E2_MANIFEST.md",
+  "lesson_ids": [
+    "EV03",
+    "EV04"
+  ],
+  "metric_conventions": "supervised.ev.metrics.1.0.0",
+  "prerequisites": [
+    "existing Regression residuals",
+    "Math Statistics and Probability",
+    "Python Data Preparation fit boundaries",
+    "EV01 prediction moment"
+  ],
+  "reference_profile": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "python": "3.13.16",
+    "scikit-learn": "1.9.1"
+  },
+  "schema": "supervised.ev.experiment-manifest.v1",
+  "status": "frozen-specification-not-implemented",
+  "tolerance": {
+    "absolute": 1e-09,
+    "display_significant_digits": 6,
+    "relative": 1e-09
+  },
+  "version": "1.0.0"
+}

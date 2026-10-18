@@ -1,0 +1,44 @@
+{
+  "all_fit_status_zero": true,
+  "checks": [
+    "independent scaler population means/variances",
+    "manual linear/RBF kernels versus sklearn",
+    "manual dual score versus all decision functions",
+    "binary class sign including exact-zero native tie",
+    "dual feasibility,KKT and primal-dual objective checks",
+    "exact support IDs and coordinates",
+    "manual geometry,hinge and zero-normal undefined state",
+    "balanced accuracy and confusion arithmetic",
+    "validation-only candidate/tie selection",
+    "sealed test never predicted or evaluated"
+  ],
+  "dependencies": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  },
+  "experiment_counts": {
+    "SV-E1": 15,
+    "SV-E2": 43
+  },
+  "fitted_states": 46,
+  "manual_states": 6,
+  "max_kkt_violation": 6.941857584319422e-07,
+  "max_primal_dual_gap": 2.489253009585468e-05,
+  "not_verified": [
+    "application implementation",
+    "100 future scored exercise instances",
+    "notebook kernels",
+    "screen reader",
+    "browser zoom",
+    "Google Colab",
+    "original-directory I/O reliability"
+  ],
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "python": "3.13.16",
+  "rejection_states": 6,
+  "schema": "svm.parity.v1",
+  "seed": 1729
+}

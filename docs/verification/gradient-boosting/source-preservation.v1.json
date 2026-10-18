@@ -1,0 +1,8 @@
+{
+  "baseline": "outputs/task-015-8/source-equality.json",
+  "changed_files": [],
+  "checked_files": 503,
+  "original_directory_io_reliability": "OPEN",
+  "schema": "gradient-boosting.source-preservation.v1",
+  "scope": "Accepted application/public/package/Python sources; no learner storage accessed. Documentation and offline authoring only; not exhaustive filesystem equality."
+}

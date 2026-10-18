@@ -1,0 +1,10 @@
+{
+  "conventions_sha256": "74a3353f99be72993ec3b15a684ada8e3a1b311511da6e120718ce5c74ac3981",
+  "generator_sha256": "3d62c243bedb64016915bd29c79545e5ffd38e409cb567b45fce2bd03b0f9d88",
+  "schema": "knn.freeze.v1",
+  "sha256": {
+    "kn-e1.manifest.v1.json": "619683ec9f91d1c94d5ff16bc7d5b5ce70e4d28892c434ce8af36701946c0224",
+    "kn-e2.manifest.v1.json": "68e0a1d20e68286cd44582ef8e69713cda4224ea6b89ccb879c0f9ebf2fa596c",
+    "parity-report.v1.json": "64eed2ba801a67fd741ea6faa60a1f233e2fbf96cede30b6144c12633f87566d"
+  }
+}

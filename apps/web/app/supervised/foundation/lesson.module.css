@@ -1,0 +1,25 @@
+.page { max-width: 1050px; margin: auto; padding: 1rem; color: #e9edf6; }
+.page * { box-sizing: border-box; min-width: 0; }
+.page h1 { font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1.15; }
+.page h2 { font-size: 1.45rem; margin-top: 0; }
+.page p, .page li { line-height: 1.7; }
+.page a { color: #a8d5ff; text-decoration: underline; text-underline-offset: .2em; }
+.nav { display: flex; flex-wrap: wrap; gap: .8rem; margin: 1rem 0; }
+.card { border: 1px solid #4c5e76; border-radius: .8rem; padding: clamp(.8rem, 3vw, 1.5rem); background: #131e30; margin: 1.2rem 0; overflow-wrap: anywhere; }
+.page fieldset { border: 1px solid #71839d; border-radius: .4rem; margin: 1rem 0; padding: .75rem; }
+.page legend { max-width: 100%; padding: 0 .25rem; overflow-wrap: anywhere; }
+.page label { display: block; margin: .6rem 0; line-height: 1.6; }
+.page select, .page input[type=number] { display: block; width: 100%; max-width: 100%; padding: .7rem; font: inherit; background: #0b1423; color: #f3f6fb; border: 1px solid #8da2be; border-radius: .3rem; }
+.page button { padding: .7rem 1rem; margin: .35rem .4rem .35rem 0; font: inherit; color: #f7f9ff; border: 1px solid #8da2be; background: #23466c; border-radius: .35rem; white-space: normal; cursor: pointer; }
+.page button:disabled { opacity: .6; cursor: not-allowed; }
+.page :focus-visible { outline: 3px solid #ffdc7b; outline-offset: 3px; }
+.page pre { padding: .8rem; background: #081322; white-space: pre-wrap; overflow-wrap: anywhere; font-size: .9rem; line-height: 1.6; }
+.page table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: .9rem; }
+.page th, .page td { padding: .5rem .3rem; border-bottom: 1px solid #52667f; text-align: left; overflow-wrap: anywhere; }
+.page caption { text-align: left; line-height: 1.6; padding: .6rem 0; font-weight: 600; }
+.timeline { display: grid; grid-template-columns: repeat(3, 1fr); list-style: none; padding: 0; gap: .5rem; }
+.timeline li { border: 1px solid #8da2be; padding: .6rem; border-top: .3rem solid #a8d5ff; }
+.timeline strong { display: block; }
+.notice { border-left: .3rem solid #ffdc7b; padding: .7rem; background: #253047; }
+@media (max-width: 420px) { .page { padding: .65rem; } .timeline { grid-template-columns: 1fr; } .page fieldset { padding: .5rem; } }
+@media (prefers-reduced-motion: reduce) { .page *, .page *::before, .page *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }

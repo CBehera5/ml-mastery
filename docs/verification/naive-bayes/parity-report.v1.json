@@ -1,0 +1,415 @@
+{
+  "checks": {
+    "alpha0_library_posteriors": [
+      [
+        {
+          "reason": "library-nan-not-a-posterior",
+          "tag": "undefined"
+        },
+        {
+          "reason": "library-nan-not-a-posterior",
+          "tag": "undefined"
+        }
+      ],
+      [
+        {
+          "reason": "library-nan-not-a-posterior",
+          "tag": "undefined"
+        },
+        {
+          "reason": "library-nan-not-a-posterior",
+          "tag": "undefined"
+        }
+      ]
+    ],
+    "alpha0_warning_categories": [
+      "RuntimeWarning"
+    ],
+    "global_constant_epsilon": 0.0,
+    "global_constant_library_posterior": [
+      {
+        "reason": "library-nan-not-a-posterior",
+        "tag": "undefined"
+      },
+      {
+        "reason": "library-nan-not-a-posterior",
+        "tag": "undefined"
+      }
+    ],
+    "global_constant_warning_categories": [
+      "RuntimeWarning"
+    ],
+    "negative_count_library_rejected": true,
+    "repeated_wrong_evidence": {
+      "base_log_loss": 5.255233775302893,
+      "base_positive_probability": 0.005220125812832269,
+      "duplicate_log_loss": 9.7500582503109,
+      "duplicate_positive_probability": 5.829126814748052e-05,
+      "label": 1
+    },
+    "zero_class_variance_positive_global_variance": {
+      "class_means": [
+        [
+          0
+        ],
+        [
+          2
+        ]
+      ],
+      "density_float64": [
+        [
+          8.988125218733285e-217
+        ],
+        [
+          8.988125218733285e-217
+        ]
+      ],
+      "effective_class_variances": [
+        [
+          0.001
+        ],
+        [
+          0.001
+        ]
+      ],
+      "epsilon": 0.001,
+      "log_class_scores": [
+        -498.15820807427355,
+        -498.15820807427355
+      ],
+      "log_feature_densities": [
+        [
+          -497.4650608937136
+        ],
+        [
+          -497.4650608937136
+        ]
+      ],
+      "log_normalizer": -497.4650608937136,
+      "log_posterior": [
+        -0.6931471805599472,
+        -0.6931471805599472
+      ],
+      "population_class_variances": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "posterior_float64": [
+        0.49999999999999906,
+        0.49999999999999906
+      ],
+      "prediction": 0,
+      "priors": [
+        0.5,
+        0.5
+      ],
+      "status": "defined",
+      "underflowed_positive_components": []
+    }
+  },
+  "dependencies": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  },
+  "ledger": [
+    {
+      "id": "NB-E1.count.a0.5.empirical.q0.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.count.a0.5.empirical.q1.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.count.a0.5.empirical.q2.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.count.a0.5.good70.q0.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.count.a0.5.good70.q1.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.count.a0.5.good70.q2.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.count.a1.0.empirical.q0.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.count.a1.0.empirical.q1.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.count.a1.0.empirical.q2.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.count.a1.0.good70.q0.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.count.a1.0.good70.q1.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.count.a1.0.good70.q2.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.count.a2.0.empirical.q0.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.count.a2.0.empirical.q1.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.count.a2.0.empirical.q2.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.count.a2.0.good70.q0.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.count.a2.0.good70.q1.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.count.a2.0.good70.q2.v1",
+      "kind": "fitted-multinomial",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.supplied.0.v1",
+      "kind": "supplied-bayes-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.supplied.1.v1",
+      "kind": "supplied-bayes-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.supplied.2.v1",
+      "kind": "supplied-bayes-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.supplied.3.v1",
+      "kind": "supplied-bayes-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.supplied.allzero.v1",
+      "kind": "supplied-bayes-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.reject.negative-count.v1",
+      "kind": "rejected-diagnostic",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.reject.heldout-vocabulary.v1",
+      "kind": "rejected-diagnostic",
+      "passed": true
+    },
+    {
+      "id": "NB-E1.reject.alpha0-conflict.v1",
+      "kind": "rejected-diagnostic",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.base.v1e-09.empirical.q0.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.base.v1e-09.empirical.q1.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.base.v1e-09.empirical.q2.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.base.v1e-09.good70.q0.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.base.v1e-09.good70.q1.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.base.v1e-09.good70.q2.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.base.v0.1.empirical.q0.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.base.v0.1.empirical.q1.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.base.v0.1.empirical.q2.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.base.v0.1.good70.q0.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.base.v0.1.good70.q1.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.base.v0.1.good70.q2.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.duplicate.v1e-09.empirical.q0.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.duplicate.v1e-09.empirical.q1.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.duplicate.v1e-09.empirical.q2.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.duplicate.v1e-09.good70.q0.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.duplicate.v1e-09.good70.q1.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.duplicate.v1e-09.good70.q2.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.duplicate.v0.1.empirical.q0.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.duplicate.v0.1.empirical.q1.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.duplicate.v0.1.empirical.q2.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.duplicate.v0.1.good70.q0.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.duplicate.v0.1.good70.q1.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.gaussian.duplicate.v0.1.good70.q2.v1",
+      "kind": "fitted-gaussian",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.supplied-density.0.v1",
+      "kind": "supplied-gaussian-density-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.supplied-density.1.v1",
+      "kind": "supplied-gaussian-density-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.zero-class-variance.smoothed.v1",
+      "kind": "fitted-gaussian-zero-class-variance",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.reject.count-representation.v1",
+      "kind": "rejected-diagnostic",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.reject.zero-variance.v1",
+      "kind": "rejected-diagnostic",
+      "passed": true
+    },
+    {
+      "id": "NB-E2.reject.global-constant.v1",
+      "kind": "rejected-diagnostic",
+      "passed": true
+    }
+  ],
+  "library_source_hashes": {
+    "GaussianNB._partial_fit": "0365db5d22e2c7bf6e97574714cf90cb36396f0f3c70c91f25c6cf604efcd9b0",
+    "MultinomialNB._update_feature_log_prob": "4cccb245c1f81c2ee9e5d9cfb8daf33ba157000f8c367c3df30b9c9d7a2f78eb"
+  },
+  "passed": true,
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "python": "3.13.16",
+  "schema": "naive-bayes.parity.v1",
+  "state_counts": {
+    "NB-E1": 26,
+    "NB-E2": 30
+  }
+}

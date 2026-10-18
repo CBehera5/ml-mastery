@@ -1,0 +1,242 @@
+{
+  "schemaVersion": "1.0.0",
+  "assessmentId": "linear-regression.mastery.v1",
+  "assessmentVersion": "1.0.0",
+  "minimumPercent": 80,
+  "criticalRule": "Every designated critical objective must pass in the same successful attempt. No mastery is awarded by a failed attempt.",
+  "pointsPerQuestion": 1,
+  "variantIds": [
+    "v01",
+    "v02",
+    "v03",
+    "v04",
+    "v05",
+    "v06",
+    "v07",
+    "v08",
+    "v09",
+    "v10",
+    "v11",
+    "v12"
+  ],
+  "competencies": [
+    {
+      "id": "conceptual",
+      "title": "Conceptual understanding"
+    },
+    {
+      "id": "mathematical",
+      "title": "Mathematical reasoning"
+    },
+    {
+      "id": "optimization",
+      "title": "Optimization"
+    },
+    {
+      "id": "multiple",
+      "title": "Multiple features"
+    },
+    {
+      "id": "python",
+      "title": "Python implementation"
+    },
+    {
+      "id": "judgment",
+      "title": "Applied judgment"
+    }
+  ],
+  "questions": [
+    {
+      "key": "q01",
+      "objectiveId": "linear-regression.mastery.q01",
+      "competency": "conceptual",
+      "statement": "Identify features, numeric targets and predictions",
+      "critical": true,
+      "remediationRoute": "/learn/linear-regression/why"
+    },
+    {
+      "key": "q02",
+      "objectiveId": "linear-regression.mastery.q02",
+      "competency": "conceptual",
+      "statement": "Distinguish learned parameters from prediction inputs",
+      "critical": false,
+      "remediationRoute": "/learn/linear-regression/equation"
+    },
+    {
+      "key": "q03",
+      "objectiveId": "linear-regression.mastery.q03",
+      "competency": "conceptual",
+      "statement": "Predict a bias shift without changing slope",
+      "critical": false,
+      "remediationRoute": "/learn/linear-regression/equation"
+    },
+    {
+      "key": "q04",
+      "objectiveId": "linear-regression.mastery.q04",
+      "competency": "conceptual",
+      "statement": "Calculate and interpret signed residuals",
+      "critical": true,
+      "remediationRoute": "/learn/linear-regression/errors"
+    },
+    {
+      "key": "q05",
+      "objectiveId": "linear-regression.mastery.q05",
+      "competency": "mathematical",
+      "statement": "Calculate a prediction with units",
+      "critical": false,
+      "remediationRoute": "/learn/linear-regression/equation"
+    },
+    {
+      "key": "q06",
+      "objectiveId": "linear-regression.mastery.q06",
+      "competency": "mathematical",
+      "statement": "Calculate MSE without cancellation",
+      "critical": true,
+      "remediationRoute": "/learn/linear-regression/errors"
+    },
+    {
+      "key": "q07",
+      "objectiveId": "linear-regression.mastery.q07",
+      "competency": "mathematical",
+      "statement": "Calculate MAE from residuals",
+      "critical": false,
+      "remediationRoute": "/learn/linear-regression/errors"
+    },
+    {
+      "key": "q08",
+      "objectiveId": "linear-regression.mastery.q08",
+      "competency": "mathematical",
+      "statement": "Calculate a dataset weight gradient",
+      "critical": false,
+      "remediationRoute": "/learn/linear-regression/gradient-descent"
+    },
+    {
+      "key": "q09",
+      "objectiveId": "linear-regression.mastery.q09",
+      "competency": "optimization",
+      "statement": "Apply a parameter update numerically",
+      "critical": false,
+      "remediationRoute": "/learn/linear-regression/gradient-descent"
+    },
+    {
+      "key": "q10",
+      "objectiveId": "linear-regression.mastery.q10",
+      "competency": "optimization",
+      "statement": "Choose movement opposite the loss gradient",
+      "critical": true,
+      "remediationRoute": "/learn/linear-regression/gradient-descent"
+    },
+    {
+      "key": "q11",
+      "objectiveId": "linear-regression.mastery.q11",
+      "competency": "optimization",
+      "statement": "Diagnose learning-rate behavior from evidence",
+      "critical": false,
+      "remediationRoute": "/learn/linear-regression/gradient-descent"
+    },
+    {
+      "key": "q12",
+      "objectiveId": "linear-regression.mastery.q12",
+      "competency": "optimization",
+      "statement": "Distinguish optimization from generalization",
+      "critical": false,
+      "remediationRoute": "/learn/linear-regression/gradient-descent"
+    },
+    {
+      "key": "q13",
+      "objectiveId": "linear-regression.mastery.q13",
+      "competency": "multiple",
+      "statement": "Calculate a multiple-feature weighted sum",
+      "critical": false,
+      "remediationRoute": "/learn/linear-regression/multiple-features"
+    },
+    {
+      "key": "q14",
+      "objectiveId": "linear-regression.mastery.q14",
+      "competency": "multiple",
+      "statement": "Apply training-only scaling and reject invalid scales",
+      "critical": true,
+      "remediationRoute": "/learn/linear-regression/project"
+    },
+    {
+      "key": "q15",
+      "objectiveId": "linear-regression.mastery.q15",
+      "competency": "multiple",
+      "statement": "Interpret coefficients under correlated inputs",
+      "critical": false,
+      "remediationRoute": "/learn/linear-regression/multiple-features"
+    },
+    {
+      "key": "q16",
+      "objectiveId": "linear-regression.mastery.q16",
+      "competency": "multiple",
+      "statement": "Predict a conditional feature effect",
+      "critical": false,
+      "remediationRoute": "/learn/linear-regression/multiple-features"
+    },
+    {
+      "key": "q17",
+      "objectiveId": "linear-regression.mastery.q17",
+      "competency": "python",
+      "statement": "Repair a Python prediction function",
+      "critical": true,
+      "remediationRoute": "/learn/linear-regression/implementation"
+    },
+    {
+      "key": "q18",
+      "objectiveId": "linear-regression.mastery.q18",
+      "competency": "python",
+      "statement": "Repair Python MSE calculation",
+      "critical": true,
+      "remediationRoute": "/learn/linear-regression/implementation"
+    },
+    {
+      "key": "q19",
+      "objectiveId": "linear-regression.mastery.q19",
+      "competency": "python",
+      "statement": "Trace a simultaneous update and inference",
+      "critical": false,
+      "remediationRoute": "/learn/linear-regression/implementation"
+    },
+    {
+      "key": "q20",
+      "objectiveId": "linear-regression.mastery.q20",
+      "competency": "python",
+      "statement": "Correct both gradient-descent update signs",
+      "critical": true,
+      "remediationRoute": "/learn/linear-regression/implementation"
+    },
+    {
+      "key": "q21",
+      "objectiveId": "linear-regression.mastery.q21",
+      "competency": "judgment",
+      "statement": "Reject information leakage in a realistic workflow",
+      "critical": true,
+      "remediationRoute": "/learn/linear-regression/failure-modes"
+    },
+    {
+      "key": "q22",
+      "objectiveId": "linear-regression.mastery.q22",
+      "competency": "judgment",
+      "statement": "Choose a defensible outlier investigation",
+      "critical": false,
+      "remediationRoute": "/learn/linear-regression/failure-modes"
+    },
+    {
+      "key": "q23",
+      "objectiveId": "linear-regression.mastery.q23",
+      "competency": "judgment",
+      "statement": "Distinguish underfitting from overfitting",
+      "critical": false,
+      "remediationRoute": "/learn/linear-regression/failure-modes"
+    },
+    {
+      "key": "q24",
+      "objectiveId": "linear-regression.mastery.q24",
+      "competency": "judgment",
+      "statement": "Qualify evaluation and deployment claims",
+      "critical": true,
+      "remediationRoute": "/learn/linear-regression/project"
+    }
+  ]
+}

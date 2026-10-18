@@ -1,0 +1,42 @@
+{
+  "bagging_comparison_fits": 12,
+  "boosting_fits": 12,
+  "checks": [
+    "manual float32 tree traversal versus estimator",
+    "independent negative gradients and leaf means/Newton updates",
+    "candidate gradient SSE optimality",
+    "additive score versus every sklearn staged output on train and validation",
+    "independent loss versus sklearn metrics",
+    "forest probability/prediction averaging",
+    "stage-selection tie chooses earliest within1e-12",
+    "actual validation worsening in both experiments",
+    "test split never evaluated"
+  ],
+  "dependencies": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  },
+  "experiments": {
+    "GB-E1": 27,
+    "GB-E2": 27
+  },
+  "not_verified": [
+    "application implementation",
+    "120 future scored exercise instances",
+    "notebook kernels",
+    "screen reader",
+    "browser zoom",
+    "Google Colab",
+    "original-directory I/O reliability"
+  ],
+  "platform_verified": "macOS15.6.1 ARM64",
+  "python": "3.13.16",
+  "rejected_states": 6,
+  "schema": "gradient-boosting.parity.v1",
+  "seed": 1729,
+  "valid_prediction_states": 48,
+  "verified_tree_stages": 96
+}

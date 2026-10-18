@@ -1,0 +1,10 @@
+{
+  "conventions_sha256": "c0c899c421e51ac801a0a57db4a9352fbe8b7fa4956d7422608ed193c7269c9d",
+  "generator_sha256": "6b6adac59bc0125198f41d689b6c15981697f0b0fe30bae6ca8b8fd2b7ff20b3",
+  "schema": "random-forests.freeze.v1",
+  "sha256": {
+    "parity-report.v1.json": "9124c7ba41aeee035d66b1c7ffc1cd9209532e276d7c81328a09c0797d734a07",
+    "rf-e1.manifest.v1.json": "fe434b0df04c34f8d8403e0c3433675489321e17fa7875069988917912ce438d",
+    "rf-e2.manifest.v1.json": "7b044db72cdf7d654ade82aa514f2216238399c0485be5053bf5b7abddf3dd1c"
+  }
+}

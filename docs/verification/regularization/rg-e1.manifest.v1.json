@@ -1,0 +1,3327 @@
+{
+  "allowed_controls": "Only the complete listed configuration IDs; no arbitrary values or Cartesian expansion.",
+  "completion": "Initial prediction may be wrong; changed state plus correct post-observation reasoning is required. No independent mastery.",
+  "configurations": [
+    {
+      "controls": {
+        "alpha": 0.1,
+        "l1_ratio": null,
+        "model": "ridge",
+        "scale_provenance": "training-only"
+      },
+      "correct_explanation": "Shrinkage is not automatic elimination; sparsity is conditional and validation, not training objective, informs selection.",
+      "counterexample": "The alternative only swaps correlated feature columns and their names; compare aligned coefficients, never assume changed semantics or guaranteed changed selection.",
+      "cv_folds": [
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "fold": 0,
+          "held_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5"
+          ],
+          "held_mae": 1.0326647253848502,
+          "held_predictions": [
+            16.47236839409498,
+            19.25212598629159,
+            24.626500204232016
+          ],
+          "scaler_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            5.4,
+            5.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "fold": 1,
+          "held_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h8"
+          ],
+          "held_mae": 1.0893726715475385,
+          "held_predictions": [
+            15.676577025983336,
+            25.232080444302845,
+            36.28738540367689
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "scaler_mean": [
+            4.4,
+            3.8,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "fold": 2,
+          "held_ids": [
+            "rg-h6",
+            "rg-h7"
+          ],
+          "held_mae": 0.6348269441216345,
+          "held_predictions": [
+            29.901829623931725,
+            30.171483512174994
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            3.8333333333333335,
+            3.6666666666666665,
+            1.3333333333333333
+          ]
+        }
+      ],
+      "cv_mean_mae": 0.9189547803513411,
+      "expected": {
+        "all_training_predictions": [
+          15.564862513994846,
+          17.274168354539718,
+          18.720043626871757,
+          24.6935023634584,
+          24.42478235243518,
+          29.82670932790341,
+          29.557989316880185,
+          36.93794214391651
+        ],
+        "coefficient_states": [
+          "nonzero",
+          "nonzero",
+          "nonzero"
+        ],
+        "coefficients_raw": [
+          0.8743435112136162,
+          1.9780258515680957,
+          0.571531761118419
+        ],
+        "coefficients_standardized": [
+          2.0033726617649332,
+          4.920277181455948,
+          0.5533832481600581
+        ],
+        "convergence": {
+          "dual_gap": null,
+          "iterations": null,
+          "status": "verified-kkt-and-intercept-stationarity",
+          "warnings": []
+        },
+        "estimator_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "intercept_raw": 11.569429628976296,
+        "intercept_standardized": 24.625,
+        "loss_terms": {
+          "data_loss": 2.134413117432168,
+          "l1_norm": 7.477033091380939,
+          "l1_penalty": 0.0,
+          "l2_penalty": 2.852886258360737,
+          "l2_squared": 28.52886258360737,
+          "objective": 4.9872993757929045,
+          "sse": 2.134413117432168
+        },
+        "query_prediction": 24.27337647738758,
+        "scaler_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "scaler_mean": [
+          4.5,
+          4.25,
+          1.25
+        ],
+        "scaler_scale": [
+          2.29128784747792,
+          2.48746859276655,
+          0.9682458365518543
+        ],
+        "training_metrics": {
+          "mae": 0.46072386443669666,
+          "mse": 0.266801639679021,
+          "rmse": 0.5165284500189907
+        },
+        "training_predictions": [
+          15.564862513994846,
+          17.274168354539718,
+          18.720043626871757,
+          24.6935023634584,
+          24.42478235243518,
+          29.82670932790341,
+          29.557989316880185,
+          36.93794214391651
+        ],
+        "validation_metrics": {
+          "mae": 0.9032211082144617,
+          "mse": 1.0147018292000776,
+          "rmse": 1.0073240934277694
+        },
+        "validation_predictions": [
+          17.40852836005133,
+          21.70677299516508,
+          31.67037517395989,
+          37.2407538940117
+        ]
+      },
+      "explanation_id": "conditional-shrinkage",
+      "fixture": "RG.housing.original.v1",
+      "id": "RG-E1.RG.housing.original.v1.ridge.a0.1.q1.training-only",
+      "selection_valid": true,
+      "text_alternative": "Read the ordered coefficient table with exact-zero tags, units, training/development errors, objective components and explicit fold fit IDs; no graphic is required."
+    },
+    {
+      "controls": {
+        "alpha": 1,
+        "l1_ratio": null,
+        "model": "ridge",
+        "scale_provenance": "training-only"
+      },
+      "correct_explanation": "Shrinkage is not automatic elimination; sparsity is conditional and validation, not training objective, informs selection.",
+      "counterexample": "The alternative only swaps correlated feature columns and their names; compare aligned coefficients, never assume changed semantics or guaranteed changed selection.",
+      "cv_folds": [
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "fold": 0,
+          "held_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5"
+          ],
+          "held_mae": 1.6335476077788644,
+          "held_predictions": [
+            17.272047780846684,
+            20.313882511673242,
+            25.314712530816667
+          ],
+          "scaler_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            5.4,
+            5.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "fold": 1,
+          "held_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h8"
+          ],
+          "held_mae": 1.1348533205664875,
+          "held_predictions": [
+            17.15816201899466,
+            24.274598377496545,
+            35.16267964180933
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "scaler_mean": [
+            4.4,
+            3.8,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "fold": 2,
+          "held_ids": [
+            "rg-h6",
+            "rg-h7"
+          ],
+          "held_mae": 0.8062038813407568,
+          "held_predictions": [
+            29.45029405872834,
+            30.062701821409853
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            3.8333333333333335,
+            3.6666666666666665,
+            1.3333333333333333
+          ]
+        }
+      ],
+      "cv_mean_mae": 1.1915349365620362,
+      "expected": {
+        "all_training_predictions": [
+          15.858965067823508,
+          17.474632718731094,
+          19.270624220996368,
+          24.6082989911142,
+          24.731862934564646,
+          29.5120618517442,
+          29.635625795194645,
+          35.907928419831336
+        ],
+        "coefficient_states": [
+          "nonzero",
+          "nonzero",
+          "nonzero"
+        ],
+        "coefficients_raw": [
+          1.238515649326998,
+          1.4921037074571404,
+          0.557475852938276
+        ],
+        "coefficients_standardized": [
+          2.8377958562141754,
+          3.7115611094501646,
+          0.5397736735856795
+        ],
+        "convergence": {
+          "dual_gap": null,
+          "iterations": null,
+          "status": "verified-kkt-and-intercept-stationarity",
+          "warnings": []
+        },
+        "estimator_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "intercept_raw": 12.013394005162816,
+        "intercept_standardized": 24.625,
+        "loss_terms": {
+          "data_loss": 4.688368969426197,
+          "l1_norm": 7.089130639250019,
+          "l1_penalty": 0.0,
+          "l2_penalty": 22.12012680942546,
+          "l2_squared": 22.12012680942546,
+          "objective": 26.808495778851658,
+          "sse": 4.688368969426197
+        },
+        "query_prediction": 24.391343036370284,
+        "scaler_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "scaler_mean": [
+          4.5,
+          4.25,
+          1.25
+        ],
+        "scaler_scale": [
+          2.29128784747792,
+          2.48746859276655,
+          0.9682458365518543
+        ],
+        "training_metrics": {
+          "mae": 0.6913037710036307,
+          "mse": 0.5860461211782746,
+          "rmse": 0.7655364923883606
+        },
+        "training_predictions": [
+          15.858965067823508,
+          17.474632718731094,
+          19.270624220996368,
+          24.6082989911142,
+          24.731862934564646,
+          29.5120618517442,
+          29.635625795194645,
+          35.907928419831336
+        ],
+        "validation_metrics": {
+          "mae": 0.5320762220243029,
+          "mse": 0.5877611917522996,
+          "rmse": 0.7666558496172188
+        },
+        "validation_predictions": [
+          17.41285074700587,
+          21.939461606055282,
+          31.065947530926564,
+          36.58896821622006
+        ]
+      },
+      "explanation_id": "conditional-shrinkage",
+      "fixture": "RG.housing.original.v1",
+      "id": "RG-E1.RG.housing.original.v1.ridge.a1.q1.training-only",
+      "selection_valid": true,
+      "text_alternative": "Read the ordered coefficient table with exact-zero tags, units, training/development errors, objective components and explicit fold fit IDs; no graphic is required."
+    },
+    {
+      "controls": {
+        "alpha": 10,
+        "l1_ratio": null,
+        "model": "ridge",
+        "scale_provenance": "training-only"
+      },
+      "correct_explanation": "Shrinkage is not automatic elimination; sparsity is conditional and validation, not training objective, informs selection.",
+      "counterexample": "The alternative only swaps correlated feature columns and their names; compare aligned coefficients, never assume changed semantics or guaranteed changed selection.",
+      "cv_folds": [
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "fold": 0,
+          "held_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5"
+          ],
+          "held_mae": 4.756010897520329,
+          "held_predictions": [
+            21.967218983314037,
+            23.779609713489496,
+            26.521203995757453
+          ],
+          "scaler_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            5.4,
+            5.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "fold": 1,
+          "held_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h8"
+          ],
+          "held_mae": 4.174083641744971,
+          "held_predictions": [
+            20.878922270079443,
+            22.752504743978008,
+            29.60416660086652
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "scaler_mean": [
+            4.4,
+            3.8,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "fold": 2,
+          "held_ids": [
+            "rg-h6",
+            "rg-h7"
+          ],
+          "held_mae": 2.469576954606758,
+          "held_predictions": [
+            26.72971392126589,
+            27.331132169520593
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            3.8333333333333335,
+            3.6666666666666665,
+            1.3333333333333333
+          ]
+        }
+      ],
+      "cv_mean_mae": 3.799890497957353,
+      "expected": {
+        "all_training_predictions": [
+          18.770449546933037,
+          20.215373086580332,
+          21.27104819910238,
+          24.243840383616593,
+          24.811535402820784,
+          27.621667556229042,
+          28.189362575433236,
+          31.876723249284595
+        ],
+        "coefficient_states": [
+          "nonzero",
+          "nonzero",
+          "nonzero"
+        ],
+        "coefficients_raw": [
+          0.8930150814160988,
+          0.8772285204431027,
+          0.1626600311059529
+        ],
+        "coefficients_standardized": [
+          2.0461546036632123,
+          2.1820783932812873,
+          0.157494897891734
+        ],
+        "convergence": {
+          "dual_gap": null,
+          "iterations": null,
+          "status": "verified-kkt-and-intercept-stationarity",
+          "warnings": []
+        },
+        "estimator_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "intercept_raw": 16.67488588286193,
+        "intercept_standardized": 24.625,
+        "loss_terms": {
+          "data_loss": 62.992783201024736,
+          "l1_norm": 4.385727894836234,
+          "l1_penalty": 0.0,
+          "l2_penalty": 89.73019419379128,
+          "l2_squared": 8.973019419379128,
+          "objective": 152.722977394816,
+          "sse": 62.992783201024736
+        },
+        "query_prediction": 24.44635787766571,
+        "scaler_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "scaler_mean": [
+          4.5,
+          4.25,
+          1.25
+        ],
+        "scaler_scale": [
+          2.29128784747792,
+          2.48746859276655,
+          0.9682458365518543
+        ],
+        "training_metrics": {
+          "mae": 2.3142177081539375,
+          "mse": 7.874097900128092,
+          "rmse": 2.8060823045891032
+        },
+        "training_predictions": [
+          18.770449546933037,
+          20.215373086580332,
+          21.27104819910238,
+          24.243840383616593,
+          24.811535402820784,
+          27.621667556229042,
+          28.189362575433236,
+          31.876723249284595
+        ],
+        "validation_metrics": {
+          "mae": 2.5747869956171847,
+          "mse": 8.11468972155901,
+          "rmse": 2.848629446165122
+        },
+        "validation_predictions": [
+          19.931525576978235,
+          22.757444291359487,
+          28.782743586274243,
+          32.60707829959474
+        ]
+      },
+      "explanation_id": "conditional-shrinkage",
+      "fixture": "RG.housing.original.v1",
+      "id": "RG-E1.RG.housing.original.v1.ridge.a10.q1.training-only",
+      "selection_valid": true,
+      "text_alternative": "Read the ordered coefficient table with exact-zero tags, units, training/development errors, objective components and explicit fold fit IDs; no graphic is required."
+    },
+    {
+      "controls": {
+        "alpha": 0.1,
+        "l1_ratio": null,
+        "model": "lasso",
+        "scale_provenance": "training-only"
+      },
+      "correct_explanation": "Shrinkage is not automatic elimination; sparsity is conditional and validation, not training objective, informs selection.",
+      "counterexample": "The alternative only swaps correlated feature columns and their names; compare aligned coefficients, never assume changed semantics or guaranteed changed selection.",
+      "cv_folds": [
+        {
+          "convergence": {
+            "dual_gap": 2.6662059227078314e-10,
+            "iterations": 298,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "fold": 0,
+          "held_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5"
+          ],
+          "held_mae": 1.108315948773522,
+          "held_predictions": [
+            16.593736502171733,
+            18.983631317908433,
+            24.2524199737596
+          ],
+          "scaler_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            5.4,
+            5.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": 8.402770923510161e-10,
+            "iterations": 1725,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "fold": 1,
+          "held_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h8"
+          ],
+          "held_mae": 0.5474129163378478,
+          "held_predictions": [
+            17.07447768933052,
+            24.528831270400275,
+            37.24554770874434
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "scaler_mean": [
+            4.4,
+            3.8,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": 9.03443246140038e-10,
+            "iterations": 351,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "fold": 2,
+          "held_ids": [
+            "rg-h6",
+            "rg-h7"
+          ],
+          "held_mae": 0.6054583366741824,
+          "held_predictions": [
+            29.735760804058227,
+            29.946677477406592
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            3.8333333333333335,
+            3.6666666666666665,
+            1.3333333333333333
+          ]
+        }
+      ],
+      "cv_mean_mae": 0.7537290672618507,
+      "expected": {
+        "all_training_predictions": [
+          15.709091306147045,
+          17.71203018330322,
+          18.640151209237786,
+          24.485233320575972,
+          24.227357753813227,
+          29.677107667585638,
+          29.41923210082289,
+          37.12979645851422
+        ],
+        "coefficient_states": [
+          "nonzero",
+          "nonzero",
+          "nonzero"
+        ],
+        "coefficients_raw": [
+          0.5327888283687973,
+          2.2608144439189215,
+          0.3953321975657722
+        ],
+        "coefficients_standardized": [
+          1.2207725677134245,
+          5.62370492332129,
+          0.38277875434795405
+        ],
+        "convergence": {
+          "dual_gap": 6.353007009352041e-10,
+          "iterations": 327,
+          "status": "verified-kkt-and-intercept-stationarity",
+          "warnings": []
+        },
+        "estimator_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "intercept_raw": 12.124823638727781,
+        "intercept_standardized": 24.625,
+        "loss_terms": {
+          "data_loss": 0.13464709841520464,
+          "l1_norm": 7.2272562453826685,
+          "l1_penalty": 0.7227256245382669,
+          "l2_penalty": 0.0,
+          "l2_squared": 33.262862301449914,
+          "objective": 0.8573727229534716,
+          "sse": 2.1543535746432743
+        },
+        "query_prediction": 24.15862943841171,
+        "scaler_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "scaler_mean": [
+          4.5,
+          4.25,
+          1.25
+        ],
+        "scaler_scale": [
+          2.29128784747792,
+          2.48746859276655,
+          0.9682458365518543
+        ],
+        "training_metrics": {
+          "mae": 0.47456776868048545,
+          "mse": 0.2692941968304093,
+          "rmse": 0.518935638427743
+        },
+        "training_predictions": [
+          15.709091306147045,
+          17.71203018330322,
+          18.640151209237786,
+          24.485233320575972,
+          24.227357753813227,
+          29.677107667585638,
+          29.41923210082289,
+          37.12979645851422
+        ],
+        "validation_metrics": {
+          "mae": 1.0886282798045368,
+          "mse": 1.4601967862660272,
+          "rmse": 1.2083860253520093
+        },
+        "validation_predictions": [
+          17.84096796668459,
+          21.56269226490688,
+          31.808984328123184,
+          37.26725308931725
+        ]
+      },
+      "explanation_id": "conditional-shrinkage",
+      "fixture": "RG.housing.original.v1",
+      "id": "RG-E1.RG.housing.original.v1.lasso.a0.1.q1.training-only",
+      "selection_valid": true,
+      "text_alternative": "Read the ordered coefficient table with exact-zero tags, units, training/development errors, objective components and explicit fold fit IDs; no graphic is required."
+    },
+    {
+      "controls": {
+        "alpha": 1,
+        "l1_ratio": null,
+        "model": "lasso",
+        "scale_provenance": "training-only"
+      },
+      "correct_explanation": "Shrinkage is not automatic elimination; sparsity is conditional and validation, not training objective, informs selection.",
+      "counterexample": "The alternative only swaps correlated feature columns and their names; compare aligned coefficients, never assume changed semantics or guaranteed changed selection.",
+      "cv_folds": [
+        {
+          "convergence": {
+            "dual_gap": -7.105427357601002e-16,
+            "iterations": 34,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "fold": 0,
+          "held_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5"
+          ],
+          "held_mae": 1.8362277482110276,
+          "held_predictions": [
+            17.974719730685244,
+            20.207737973711325,
+            24.673774459763486
+          ],
+          "scaler_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            5.4,
+            5.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": 1.4210854715202005e-15,
+            "iterations": 51,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "fold": 1,
+          "held_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h8"
+          ],
+          "held_mae": 1.074132708265001,
+          "held_predictions": [
+            19.05559953119875,
+            23.88271116320014,
+            35.95049024320361
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "scaler_mean": [
+            4.4,
+            3.8,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": 6.005365094097215e-10,
+            "iterations": 345,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "fold": 2,
+          "held_ids": [
+            "rg-h6",
+            "rg-h7"
+          ],
+          "held_mae": 0.7825947144536425,
+          "held_predictions": [
+            28.664990442866323,
+            29.230179871773608
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            3.8333333333333335,
+            3.6666666666666665,
+            1.3333333333333333
+          ]
+        }
+      ],
+      "cv_mean_mae": 1.230985056976557,
+      "expected": {
+        "all_training_predictions": [
+          16.888958432379013,
+          19.261216000523884,
+          19.366033885124516,
+          24.005731136813626,
+          24.110549021414254,
+          28.750246273103365,
+          28.855064157703996,
+          35.762201092937346
+        ],
+        "coefficient_states": [
+          "nonzero",
+          "nonzero",
+          "exact-zero"
+        ],
+        "coefficients_raw": [
+          0.10481788460063031,
+          2.26743968354424,
+          0.0
+        ],
+        "coefficients_standardized": [
+          0.24016794518376722,
+          5.640184998808822,
+          0.0
+        ],
+        "convergence": {
+          "dual_gap": 1.1787282261366272e-10,
+          "iterations": 288,
+          "status": "verified-kkt-and-intercept-stationarity",
+          "warnings": []
+        },
+        "estimator_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "intercept_raw": 14.516700864234144,
+        "intercept_standardized": 24.625,
+        "loss_terms": {
+          "data_loss": 0.7449755537968918,
+          "l1_norm": 5.880352943992589,
+          "l1_penalty": 5.880352943992589,
+          "l2_penalty": 0.0,
+          "l2_squared": 31.869367462681865,
+          "objective": 6.625328497789481,
+          "sse": 11.91960886075027
+        },
+        "query_prediction": 24.05814007911394,
+        "scaler_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "scaler_mean": [
+          4.5,
+          4.25,
+          1.25
+        ],
+        "scaler_scale": [
+          2.29128784747792,
+          2.48746859276655,
+          0.9682458365518543
+        ],
+        "training_metrics": {
+          "mae": 1.1290520795068533,
+          "mse": 1.4899511075937837,
+          "rmse": 1.220635534299155
+        },
+        "training_predictions": [
+          16.888958432379013,
+          19.261216000523884,
+          19.366033885124516,
+          24.005731136813626,
+          24.110549021414254,
+          28.750246273103365,
+          28.855064157703996,
+          35.762201092937346
+        ],
+        "validation_metrics": {
+          "mae": 0.9315001171661121,
+          "mse": 2.604427445253516,
+          "rmse": 1.613823858186982
+        },
+        "validation_predictions": [
+          19.20880705822357,
+          21.68588251096907,
+          31.07009489894792,
+          35.867018977537974
+        ]
+      },
+      "explanation_id": "conditional-shrinkage",
+      "fixture": "RG.housing.original.v1",
+      "id": "RG-E1.RG.housing.original.v1.lasso.a1.q1.training-only",
+      "selection_valid": true,
+      "text_alternative": "Read the ordered coefficient table with exact-zero tags, units, training/development errors, objective components and explicit fold fit IDs; no graphic is required."
+    },
+    {
+      "controls": {
+        "alpha": 10,
+        "l1_ratio": null,
+        "model": "lasso",
+        "scale_provenance": "training-only"
+      },
+      "correct_explanation": "Shrinkage is not automatic elimination; sparsity is conditional and validation, not training objective, informs selection.",
+      "counterexample": "The alternative only swaps correlated feature columns and their names; compare aligned coefficients, never assume changed semantics or guaranteed changed selection.",
+      "cv_folds": [
+        {
+          "convergence": {
+            "dual_gap": 0.0,
+            "iterations": 0,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "fold": 0,
+          "held_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5"
+          ],
+          "held_mae": 8.466666666666667,
+          "held_predictions": [
+            27.8,
+            27.8,
+            27.8
+          ],
+          "scaler_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            5.4,
+            5.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": 0.0,
+            "iterations": 0,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "fold": 1,
+          "held_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h8"
+          ],
+          "held_mae": 6.866666666666667,
+          "held_predictions": [
+            23.4,
+            23.4,
+            23.4
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "scaler_mean": [
+            4.4,
+            3.8,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": 0.0,
+            "iterations": 0,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "fold": 2,
+          "held_ids": [
+            "rg-h6",
+            "rg-h7"
+          ],
+          "held_mae": 6.5,
+          "held_predictions": [
+            23.0,
+            23.0
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            3.8333333333333335,
+            3.6666666666666665,
+            1.3333333333333333
+          ]
+        }
+      ],
+      "cv_mean_mae": 7.277777777777779,
+      "expected": {
+        "all_training_predictions": [
+          24.625,
+          24.625,
+          24.625,
+          24.625,
+          24.625,
+          24.625,
+          24.625,
+          24.625
+        ],
+        "coefficient_states": [
+          "exact-zero",
+          "exact-zero",
+          "exact-zero"
+        ],
+        "coefficients_raw": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coefficients_standardized": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "convergence": {
+          "dual_gap": 0.0,
+          "iterations": 0,
+          "status": "verified-kkt-and-intercept-stationarity",
+          "warnings": []
+        },
+        "estimator_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "intercept_raw": 24.625,
+        "intercept_standardized": 24.625,
+        "loss_terms": {
+          "data_loss": 23.8671875,
+          "l1_norm": 0.0,
+          "l1_penalty": 0.0,
+          "l2_penalty": 0.0,
+          "l2_squared": 0.0,
+          "objective": 23.8671875,
+          "sse": 381.875
+        },
+        "query_prediction": 24.625,
+        "scaler_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "scaler_mean": [
+          4.5,
+          4.25,
+          1.25
+        ],
+        "scaler_scale": [
+          2.29128784747792,
+          2.48746859276655,
+          0.9682458365518543
+        ],
+        "training_metrics": {
+          "mae": 5.71875,
+          "mse": 47.734375,
+          "rmse": 6.909006802717739
+        },
+        "training_predictions": [
+          24.625,
+          24.625,
+          24.625,
+          24.625,
+          24.625,
+          24.625,
+          24.625,
+          24.625
+        ],
+        "validation_metrics": {
+          "mae": 7.25,
+          "mse": 62.828125,
+          "rmse": 7.926419431243845
+        },
+        "validation_predictions": [
+          24.625,
+          24.625,
+          24.625,
+          24.625
+        ]
+      },
+      "explanation_id": "conditional-shrinkage",
+      "fixture": "RG.housing.original.v1",
+      "id": "RG-E1.RG.housing.original.v1.lasso.a10.q1.training-only",
+      "selection_valid": true,
+      "text_alternative": "Read the ordered coefficient table with exact-zero tags, units, training/development errors, objective components and explicit fold fit IDs; no graphic is required."
+    },
+    {
+      "controls": {
+        "alpha": 0.1,
+        "l1_ratio": null,
+        "model": "ridge",
+        "scale_provenance": "training-only"
+      },
+      "correct_explanation": "Shrinkage is not automatic elimination; sparsity is conditional and validation, not training objective, informs selection.",
+      "counterexample": "The alternative only swaps correlated feature columns and their names; compare aligned coefficients, never assume changed semantics or guaranteed changed selection.",
+      "cv_folds": [
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "fold": 0,
+          "held_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5"
+          ],
+          "held_mae": 1.0326647253848538,
+          "held_predictions": [
+            16.472368394094985,
+            19.252125986291592,
+            24.626500204232016
+          ],
+          "scaler_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            5.4,
+            5.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "fold": 1,
+          "held_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h8"
+          ],
+          "held_mae": 1.0893726715475356,
+          "held_predictions": [
+            15.676577025983338,
+            25.232080444302838,
+            36.28738540367689
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "scaler_mean": [
+            3.8,
+            4.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "fold": 2,
+          "held_ids": [
+            "rg-h6",
+            "rg-h7"
+          ],
+          "held_mae": 0.634826944121631,
+          "held_predictions": [
+            29.901829623931732,
+            30.171483512174994
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            3.6666666666666665,
+            3.8333333333333335,
+            1.3333333333333333
+          ]
+        }
+      ],
+      "cv_mean_mae": 0.9189547803513402,
+      "expected": {
+        "all_training_predictions": [
+          15.564862513994846,
+          17.27416835453972,
+          18.720043626871757,
+          24.6935023634584,
+          24.42478235243518,
+          29.826709327903405,
+          29.557989316880185,
+          36.93794214391651
+        ],
+        "coefficient_states": [
+          "nonzero",
+          "nonzero",
+          "nonzero"
+        ],
+        "coefficients_raw": [
+          1.9780258515680957,
+          0.8743435112136164,
+          0.5715317611184183
+        ],
+        "coefficients_standardized": [
+          4.920277181455948,
+          2.0033726617649337,
+          0.5533832481600575
+        ],
+        "convergence": {
+          "dual_gap": null,
+          "iterations": null,
+          "status": "verified-kkt-and-intercept-stationarity",
+          "warnings": []
+        },
+        "estimator_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "intercept_raw": 11.569429628976295,
+        "intercept_standardized": 24.625,
+        "loss_terms": {
+          "data_loss": 2.134413117432164,
+          "l1_norm": 7.477033091380938,
+          "l1_penalty": 0.0,
+          "l2_penalty": 2.8528862583607375,
+          "l2_squared": 28.528862583607374,
+          "objective": 4.987299375792901,
+          "sse": 2.134413117432164
+        },
+        "query_prediction": 24.27337647738758,
+        "scaler_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "scaler_mean": [
+          4.25,
+          4.5,
+          1.25
+        ],
+        "scaler_scale": [
+          2.48746859276655,
+          2.29128784747792,
+          0.9682458365518543
+        ],
+        "training_metrics": {
+          "mae": 0.46072386443669666,
+          "mse": 0.2668016396790205,
+          "rmse": 0.5165284500189903
+        },
+        "training_predictions": [
+          15.564862513994846,
+          17.27416835453972,
+          18.720043626871757,
+          24.6935023634584,
+          24.42478235243518,
+          29.826709327903405,
+          29.557989316880185,
+          36.93794214391651
+        ],
+        "validation_metrics": {
+          "mae": 0.9032211082144617,
+          "mse": 1.0147018292000776,
+          "rmse": 1.0073240934277694
+        },
+        "validation_predictions": [
+          17.40852836005133,
+          21.70677299516508,
+          31.67037517395989,
+          37.2407538940117
+        ]
+      },
+      "explanation_id": "conditional-shrinkage",
+      "fixture": "RG.housing.swapped-correlated-columns.v1",
+      "id": "RG-E1.RG.housing.swapped-correlated-columns.v1.ridge.a0.1.q1.training-only",
+      "selection_valid": true,
+      "text_alternative": "Read the ordered coefficient table with exact-zero tags, units, training/development errors, objective components and explicit fold fit IDs; no graphic is required."
+    },
+    {
+      "controls": {
+        "alpha": 1,
+        "l1_ratio": null,
+        "model": "ridge",
+        "scale_provenance": "training-only"
+      },
+      "correct_explanation": "Shrinkage is not automatic elimination; sparsity is conditional and validation, not training objective, informs selection.",
+      "counterexample": "The alternative only swaps correlated feature columns and their names; compare aligned coefficients, never assume changed semantics or guaranteed changed selection.",
+      "cv_folds": [
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "fold": 0,
+          "held_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5"
+          ],
+          "held_mae": 1.6335476077788644,
+          "held_predictions": [
+            17.272047780846687,
+            20.313882511673242,
+            25.314712530816664
+          ],
+          "scaler_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            5.4,
+            5.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "fold": 1,
+          "held_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h8"
+          ],
+          "held_mae": 1.1348533205664886,
+          "held_predictions": [
+            17.15816201899466,
+            24.27459837749654,
+            35.16267964180933
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "scaler_mean": [
+            3.8,
+            4.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "fold": 2,
+          "held_ids": [
+            "rg-h6",
+            "rg-h7"
+          ],
+          "held_mae": 0.8062038813407604,
+          "held_predictions": [
+            29.450294058728346,
+            30.062701821409867
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            3.6666666666666665,
+            3.8333333333333335,
+            1.3333333333333333
+          ]
+        }
+      ],
+      "cv_mean_mae": 1.1915349365620378,
+      "expected": {
+        "all_training_predictions": [
+          15.858965067823506,
+          17.474632718731094,
+          19.270624220996368,
+          24.608298991114196,
+          24.731862934564646,
+          29.5120618517442,
+          29.635625795194645,
+          35.90792841983134
+        ],
+        "coefficient_states": [
+          "nonzero",
+          "nonzero",
+          "nonzero"
+        ],
+        "coefficients_raw": [
+          1.4921037074571404,
+          1.2385156493269982,
+          0.5574758529382757
+        ],
+        "coefficients_standardized": [
+          3.7115611094501646,
+          2.837795856214176,
+          0.5397736735856793
+        ],
+        "convergence": {
+          "dual_gap": null,
+          "iterations": null,
+          "status": "verified-kkt-and-intercept-stationarity",
+          "warnings": []
+        },
+        "estimator_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "intercept_raw": 12.013394005162816,
+        "intercept_standardized": 24.625,
+        "loss_terms": {
+          "data_loss": 4.688368969426181,
+          "l1_norm": 7.08913063925002,
+          "l1_penalty": 0.0,
+          "l2_penalty": 22.120126809425464,
+          "l2_squared": 22.120126809425464,
+          "objective": 26.808495778851643,
+          "sse": 4.688368969426181
+        },
+        "query_prediction": 24.391343036370284,
+        "scaler_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "scaler_mean": [
+          4.25,
+          4.5,
+          1.25
+        ],
+        "scaler_scale": [
+          2.48746859276655,
+          2.29128784747792,
+          0.9682458365518543
+        ],
+        "training_metrics": {
+          "mae": 0.69130377100363,
+          "mse": 0.5860461211782726,
+          "rmse": 0.7655364923883594
+        },
+        "training_predictions": [
+          15.858965067823506,
+          17.474632718731094,
+          19.270624220996368,
+          24.608298991114196,
+          24.731862934564646,
+          29.5120618517442,
+          29.635625795194645,
+          35.90792841983134
+        ],
+        "validation_metrics": {
+          "mae": 0.5320762220243029,
+          "mse": 0.5877611917522996,
+          "rmse": 0.7666558496172188
+        },
+        "validation_predictions": [
+          17.41285074700587,
+          21.939461606055282,
+          31.065947530926564,
+          36.58896821622006
+        ]
+      },
+      "explanation_id": "conditional-shrinkage",
+      "fixture": "RG.housing.swapped-correlated-columns.v1",
+      "id": "RG-E1.RG.housing.swapped-correlated-columns.v1.ridge.a1.q1.training-only",
+      "selection_valid": true,
+      "text_alternative": "Read the ordered coefficient table with exact-zero tags, units, training/development errors, objective components and explicit fold fit IDs; no graphic is required."
+    },
+    {
+      "controls": {
+        "alpha": 10,
+        "l1_ratio": null,
+        "model": "ridge",
+        "scale_provenance": "training-only"
+      },
+      "correct_explanation": "Shrinkage is not automatic elimination; sparsity is conditional and validation, not training objective, informs selection.",
+      "counterexample": "The alternative only swaps correlated feature columns and their names; compare aligned coefficients, never assume changed semantics or guaranteed changed selection.",
+      "cv_folds": [
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "fold": 0,
+          "held_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5"
+          ],
+          "held_mae": 4.756010897520331,
+          "held_predictions": [
+            21.96721898331404,
+            23.779609713489496,
+            26.521203995757457
+          ],
+          "scaler_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            5.4,
+            5.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "fold": 1,
+          "held_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h8"
+          ],
+          "held_mae": 4.174083641744969,
+          "held_predictions": [
+            20.878922270079443,
+            22.75250474397801,
+            29.604166600866524
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "scaler_mean": [
+            3.8,
+            4.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": null,
+            "iterations": null,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "fold": 2,
+          "held_ids": [
+            "rg-h6",
+            "rg-h7"
+          ],
+          "held_mae": 2.4695769546067563,
+          "held_predictions": [
+            26.72971392126589,
+            27.331132169520597
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            3.6666666666666665,
+            3.8333333333333335,
+            1.3333333333333333
+          ]
+        }
+      ],
+      "cv_mean_mae": 3.799890497957352,
+      "expected": {
+        "all_training_predictions": [
+          18.770449546933037,
+          20.215373086580332,
+          21.27104819910238,
+          24.243840383616593,
+          24.811535402820788,
+          27.621667556229042,
+          28.189362575433236,
+          31.876723249284595
+        ],
+        "coefficient_states": [
+          "nonzero",
+          "nonzero",
+          "nonzero"
+        ],
+        "coefficients_raw": [
+          0.8772285204431025,
+          0.893015081416099,
+          0.16266003110595254
+        ],
+        "coefficients_standardized": [
+          2.182078393281287,
+          2.046154603663213,
+          0.15749489789173365
+        ],
+        "convergence": {
+          "dual_gap": null,
+          "iterations": null,
+          "status": "verified-kkt-and-intercept-stationarity",
+          "warnings": []
+        },
+        "estimator_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "intercept_raw": 16.67488588286193,
+        "intercept_standardized": 24.625,
+        "loss_terms": {
+          "data_loss": 62.992783201024736,
+          "l1_norm": 4.385727894836233,
+          "l1_penalty": 0.0,
+          "l2_penalty": 89.73019419379128,
+          "l2_squared": 8.973019419379128,
+          "objective": 152.722977394816,
+          "sse": 62.992783201024736
+        },
+        "query_prediction": 24.44635787766571,
+        "scaler_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "scaler_mean": [
+          4.25,
+          4.5,
+          1.25
+        ],
+        "scaler_scale": [
+          2.48746859276655,
+          2.29128784747792,
+          0.9682458365518543
+        ],
+        "training_metrics": {
+          "mae": 2.314217708153937,
+          "mse": 7.874097900128092,
+          "rmse": 2.8060823045891032
+        },
+        "training_predictions": [
+          18.770449546933037,
+          20.215373086580332,
+          21.27104819910238,
+          24.243840383616593,
+          24.811535402820788,
+          27.621667556229042,
+          28.189362575433236,
+          31.876723249284595
+        ],
+        "validation_metrics": {
+          "mae": 2.5747869956171847,
+          "mse": 8.11468972155901,
+          "rmse": 2.848629446165122
+        },
+        "validation_predictions": [
+          19.931525576978235,
+          22.757444291359487,
+          28.782743586274243,
+          32.60707829959474
+        ]
+      },
+      "explanation_id": "conditional-shrinkage",
+      "fixture": "RG.housing.swapped-correlated-columns.v1",
+      "id": "RG-E1.RG.housing.swapped-correlated-columns.v1.ridge.a10.q1.training-only",
+      "selection_valid": true,
+      "text_alternative": "Read the ordered coefficient table with exact-zero tags, units, training/development errors, objective components and explicit fold fit IDs; no graphic is required."
+    },
+    {
+      "controls": {
+        "alpha": 0.1,
+        "l1_ratio": null,
+        "model": "lasso",
+        "scale_provenance": "training-only"
+      },
+      "correct_explanation": "Shrinkage is not automatic elimination; sparsity is conditional and validation, not training objective, informs selection.",
+      "counterexample": "The alternative only swaps correlated feature columns and their names; compare aligned coefficients, never assume changed semantics or guaranteed changed selection.",
+      "cv_folds": [
+        {
+          "convergence": {
+            "dual_gap": 2.764333295601773e-09,
+            "iterations": 265,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "fold": 0,
+          "held_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5"
+          ],
+          "held_mae": 1.1083159496559485,
+          "held_predictions": [
+            16.59373650374698,
+            18.98363131294765,
+            24.252419967726787
+          ],
+          "scaler_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            5.4,
+            5.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": 2.011754585140579e-09,
+            "iterations": 1625,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "fold": 1,
+          "held_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h8"
+          ],
+          "held_mae": 0.547412923368294,
+          "held_predictions": [
+            17.074477743797118,
+            24.52883125034228,
+            37.24554776424428
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "scaler_mean": [
+            3.8,
+            4.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": 2.5663178249146767e-09,
+            "iterations": 333,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "fold": 2,
+          "held_ids": [
+            "rg-h6",
+            "rg-h7"
+          ],
+          "held_mae": 0.6054583334870856,
+          "held_predictions": [
+            29.735760802567178,
+            29.94667746954135
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            3.6666666666666665,
+            3.8333333333333335,
+            1.3333333333333333
+          ]
+        }
+      ],
+      "cv_mean_mae": 0.7537290688371093,
+      "expected": {
+        "all_training_predictions": [
+          15.709091308915086,
+          17.712030188617096,
+          18.640151205602418,
+          24.485233319775546,
+          24.227357748866112,
+          29.67710766707432,
+          29.419232096164887,
+          37.12979646498454
+        ],
+        "coefficient_states": [
+          "nonzero",
+          "nonzero",
+          "nonzero"
+        ],
+        "coefficients_raw": [
+          2.260814450611443,
+          0.5327888210204035,
+          0.3953321959649186
+        ],
+        "coefficients_standardized": [
+          5.623704939968727,
+          1.2207725508761391,
+          0.38277875279793416
+        ],
+        "convergence": {
+          "dual_gap": 2.9973508119951475e-09,
+          "iterations": 302,
+          "status": "verified-kkt-and-intercept-stationarity",
+          "warnings": []
+        },
+        "estimator_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "intercept_raw": 12.124823645353404,
+        "intercept_standardized": 24.625,
+        "loss_terms": {
+          "data_loss": 0.13464709858919174,
+          "l1_norm": 7.227256243642801,
+          "l1_penalty": 0.7227256243642801,
+          "l2_penalty": 0.0,
+          "l2_squared": 33.26286244639484,
+          "objective": 0.8573727229534719,
+          "sse": 2.154353577427068
+        },
+        "query_prediction": 24.15862943633837,
+        "scaler_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "scaler_mean": [
+          4.25,
+          4.5,
+          1.25
+        ],
+        "scaler_scale": [
+          2.48746859276655,
+          2.29128784747792,
+          0.9682458365518543
+        ],
+        "training_metrics": {
+          "mae": 0.4745677689167318,
+          "mse": 0.26929419717838354,
+          "rmse": 0.51893563876302
+        },
+        "training_predictions": [
+          15.709091308915086,
+          17.712030188617096,
+          18.640151205602418,
+          24.485233319775546,
+          24.227357748866112,
+          29.67710766707432,
+          29.419232096164887,
+          37.12979646498454
+        ],
+        "validation_metrics": {
+          "mae": 1.088628283413474,
+          "mse": 1.4601967956703623,
+          "rmse": 1.2083860292432889
+        },
+        "validation_predictions": [
+          17.840967974071813,
+          21.562692262688984,
+          31.808984332231045,
+          37.26725309004002
+        ]
+      },
+      "explanation_id": "conditional-shrinkage",
+      "fixture": "RG.housing.swapped-correlated-columns.v1",
+      "id": "RG-E1.RG.housing.swapped-correlated-columns.v1.lasso.a0.1.q1.training-only",
+      "selection_valid": true,
+      "text_alternative": "Read the ordered coefficient table with exact-zero tags, units, training/development errors, objective components and explicit fold fit IDs; no graphic is required."
+    },
+    {
+      "controls": {
+        "alpha": 1,
+        "l1_ratio": null,
+        "model": "lasso",
+        "scale_provenance": "training-only"
+      },
+      "correct_explanation": "Shrinkage is not automatic elimination; sparsity is conditional and validation, not training objective, informs selection.",
+      "counterexample": "The alternative only swaps correlated feature columns and their names; compare aligned coefficients, never assume changed semantics or guaranteed changed selection.",
+      "cv_folds": [
+        {
+          "convergence": {
+            "dual_gap": 7.105427357601002e-16,
+            "iterations": 2,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "fold": 0,
+          "held_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5"
+          ],
+          "held_mae": 1.8362277482110276,
+          "held_predictions": [
+            17.974719730685244,
+            20.207737973711325,
+            24.673774459763486
+          ],
+          "scaler_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            5.4,
+            5.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": 2.842170943040401e-15,
+            "iterations": 2,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "fold": 1,
+          "held_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h8"
+          ],
+          "held_mae": 1.074132708265001,
+          "held_predictions": [
+            19.05559953119875,
+            23.88271116320014,
+            35.95049024320361
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "scaler_mean": [
+            3.8,
+            4.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": 2.317195916627194e-09,
+            "iterations": 322,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "fold": 2,
+          "held_ids": [
+            "rg-h6",
+            "rg-h7"
+          ],
+          "held_mae": 0.7825947108978415,
+          "held_predictions": [
+            28.6649904417876,
+            29.230179863583285
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            3.6666666666666665,
+            3.8333333333333335,
+            1.3333333333333333
+          ]
+        }
+      ],
+      "cv_mean_mae": 1.23098505579129,
+      "expected": {
+        "all_training_predictions": [
+          16.888958435539227,
+          19.26121600319441,
+          19.36603388152012,
+          24.005731138504775,
+          24.110549016830486,
+          28.750246273815144,
+          28.855064152140855,
+          35.76220109845498
+        ],
+        "coefficient_states": [
+          "nonzero",
+          "nonzero",
+          "exact-zero"
+        ],
+        "coefficients_raw": [
+          2.267439689329472,
+          0.10481787832571117,
+          0.0
+        ],
+        "coefficients_standardized": [
+          5.640185013199405,
+          0.24016793080612125,
+          0.0
+        ],
+        "convergence": {
+          "dual_gap": 2.9115518884736957e-09,
+          "iterations": 243,
+          "status": "verified-kkt-and-intercept-stationarity",
+          "warnings": []
+        },
+        "estimator_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "intercept_raw": 14.516700867884044,
+        "intercept_standardized": 24.625,
+        "loss_terms": {
+          "data_loss": 0.7449755537839549,
+          "l1_norm": 5.880352944005526,
+          "l1_penalty": 5.880352944005526,
+          "l2_penalty": 0.0,
+          "l2_squared": 31.869367618106864,
+          "objective": 6.625328497789481,
+          "sse": 11.919608860543278
+        },
+        "query_prediction": 24.05814007766763,
+        "scaler_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "scaler_mean": [
+          4.25,
+          4.5,
+          1.25
+        ],
+        "scaler_scale": [
+          2.48746859276655,
+          2.29128784747792,
+          0.9682458365518543
+        ],
+        "training_metrics": {
+          "mae": 1.1290520800634396,
+          "mse": 1.4899511075679097,
+          "rmse": 1.2206355342885564
+        },
+        "training_predictions": [
+          16.888958435539227,
+          19.26121600319441,
+          19.36603388152012,
+          24.005731138504775,
+          24.110549016830486,
+          28.750246273815144,
+          28.855064152140855,
+          35.76220109845498
+        ],
+        "validation_metrics": {
+          "mae": 0.9315001198864712,
+          "mse": 2.604427454890207,
+          "rmse": 1.613823861172652
+        },
+        "validation_predictions": [
+          19.208807064031554,
+          21.685882510012448,
+          31.07009490230747,
+          35.86701897678069
+        ]
+      },
+      "explanation_id": "conditional-shrinkage",
+      "fixture": "RG.housing.swapped-correlated-columns.v1",
+      "id": "RG-E1.RG.housing.swapped-correlated-columns.v1.lasso.a1.q1.training-only",
+      "selection_valid": true,
+      "text_alternative": "Read the ordered coefficient table with exact-zero tags, units, training/development errors, objective components and explicit fold fit IDs; no graphic is required."
+    },
+    {
+      "controls": {
+        "alpha": 10,
+        "l1_ratio": null,
+        "model": "lasso",
+        "scale_provenance": "training-only"
+      },
+      "correct_explanation": "Shrinkage is not automatic elimination; sparsity is conditional and validation, not training objective, informs selection.",
+      "counterexample": "The alternative only swaps correlated feature columns and their names; compare aligned coefficients, never assume changed semantics or guaranteed changed selection.",
+      "cv_folds": [
+        {
+          "convergence": {
+            "dual_gap": 0.0,
+            "iterations": 0,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "fold": 0,
+          "held_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5"
+          ],
+          "held_mae": 8.466666666666667,
+          "held_predictions": [
+            27.8,
+            27.8,
+            27.8
+          ],
+          "scaler_fit_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h6",
+            "rg-h7",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            5.4,
+            5.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": 0.0,
+            "iterations": 0,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "fold": 1,
+          "held_ids": [
+            "rg-h2",
+            "rg-h4",
+            "rg-h8"
+          ],
+          "held_mae": 6.866666666666667,
+          "held_predictions": [
+            23.4,
+            23.4,
+            23.4
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h3",
+            "rg-h5",
+            "rg-h6",
+            "rg-h7"
+          ],
+          "scaler_mean": [
+            3.8,
+            4.4,
+            1.2
+          ]
+        },
+        {
+          "convergence": {
+            "dual_gap": 0.0,
+            "iterations": 0,
+            "status": "verified-kkt-and-intercept-stationarity",
+            "warnings": []
+          },
+          "estimator_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "fold": 2,
+          "held_ids": [
+            "rg-h6",
+            "rg-h7"
+          ],
+          "held_mae": 6.5,
+          "held_predictions": [
+            23.0,
+            23.0
+          ],
+          "scaler_fit_ids": [
+            "rg-h1",
+            "rg-h2",
+            "rg-h3",
+            "rg-h4",
+            "rg-h5",
+            "rg-h8"
+          ],
+          "scaler_mean": [
+            3.6666666666666665,
+            3.8333333333333335,
+            1.3333333333333333
+          ]
+        }
+      ],
+      "cv_mean_mae": 7.277777777777779,
+      "expected": {
+        "all_training_predictions": [
+          24.625,
+          24.625,
+          24.625,
+          24.625,
+          24.625,
+          24.625,
+          24.625,
+          24.625
+        ],
+        "coefficient_states": [
+          "exact-zero",
+          "exact-zero",
+          "exact-zero"
+        ],
+        "coefficients_raw": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coefficients_standardized": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "convergence": {
+          "dual_gap": 0.0,
+          "iterations": 0,
+          "status": "verified-kkt-and-intercept-stationarity",
+          "warnings": []
+        },
+        "estimator_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "intercept_raw": 24.625,
+        "intercept_standardized": 24.625,
+        "loss_terms": {
+          "data_loss": 23.8671875,
+          "l1_norm": 0.0,
+          "l1_penalty": 0.0,
+          "l2_penalty": 0.0,
+          "l2_squared": 0.0,
+          "objective": 23.8671875,
+          "sse": 381.875
+        },
+        "query_prediction": 24.625,
+        "scaler_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "scaler_mean": [
+          4.25,
+          4.5,
+          1.25
+        ],
+        "scaler_scale": [
+          2.48746859276655,
+          2.29128784747792,
+          0.9682458365518543
+        ],
+        "training_metrics": {
+          "mae": 5.71875,
+          "mse": 47.734375,
+          "rmse": 6.909006802717739
+        },
+        "training_predictions": [
+          24.625,
+          24.625,
+          24.625,
+          24.625,
+          24.625,
+          24.625,
+          24.625,
+          24.625
+        ],
+        "validation_metrics": {
+          "mae": 7.25,
+          "mse": 62.828125,
+          "rmse": 7.926419431243845
+        },
+        "validation_predictions": [
+          24.625,
+          24.625,
+          24.625,
+          24.625
+        ]
+      },
+      "explanation_id": "conditional-shrinkage",
+      "fixture": "RG.housing.swapped-correlated-columns.v1",
+      "id": "RG-E1.RG.housing.swapped-correlated-columns.v1.lasso.a10.q1.training-only",
+      "selection_valid": true,
+      "text_alternative": "Read the ordered coefficient table with exact-zero tags, units, training/development errors, objective components and explicit fold fit IDs; no graphic is required."
+    }
+  ],
+  "explanation_options": [
+    "conditional-shrinkage",
+    "fold-local-comparison",
+    "reject-global-scaling",
+    "lower-training-error-guarantees-generalization",
+    "zero-proves-causal-irrelevance"
+  ],
+  "fixtures": [
+    {
+      "counterexample": "The alternative only swaps correlated feature columns and their names; compare aligned coefficients, never assume changed semantics or guaranteed changed selection.",
+      "feature_order": [
+        "area_100m2",
+        "room_index",
+        "age_decades"
+      ],
+      "fictional": true,
+      "id": "RG.housing.original.v1",
+      "query": [
+        4.5,
+        4.0,
+        1.5
+      ],
+      "target_unit": "ten_thousand_USD",
+      "training": {
+        "ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "x": [
+          [
+            1.0,
+            1.0,
+            2.0
+          ],
+          [
+            2.0,
+            2.0,
+            0.0
+          ],
+          [
+            3.0,
+            2.0,
+            1.0
+          ],
+          [
+            4.0,
+            4.0,
+            3.0
+          ],
+          [
+            5.0,
+            4.0,
+            1.0
+          ],
+          [
+            6.0,
+            6.0,
+            2.0
+          ],
+          [
+            7.0,
+            6.0,
+            0.0
+          ],
+          [
+            8.0,
+            9.0,
+            1.0
+          ]
+        ],
+        "y": [
+          15.0,
+          18.0,
+          18.0,
+          25.0,
+          25.0,
+          30.0,
+          29.0,
+          37.0
+        ]
+      },
+      "unregularized_baseline": {
+        "all_training_predictions": [
+          15.605008077544426,
+          17.39472267097469,
+          18.556812062466342,
+          24.68147549811524,
+          24.254711900915456,
+          29.849757673667206,
+          29.422994076467422,
+          37.23451803984922
+        ],
+        "coefficient_states": [
+          "nonzero",
+          "nonzero",
+          "nonzero"
+        ],
+        "coefficients_raw": [
+          0.6324717285945077,
+          2.216478190630048,
+          0.5296176628971456
+        ],
+        "coefficients_standardized": [
+          1.4491747856019488,
+          5.513419885744274,
+          0.5128000970644847
+        ],
+        "convergence": {
+          "dual_gap": null,
+          "iterations": null,
+          "status": "verified-kkt-and-intercept-stationarity",
+          "warnings": []
+        },
+        "estimator_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "intercept_raw": 11.696822832525578,
+        "intercept_standardized": 24.625,
+        "loss_terms": {
+          "data_loss": 0.12224017232094753,
+          "l1_norm": 7.475394768410708,
+          "l1_penalty": 0.0,
+          "l2_penalty": 0.0,
+          "l2_squared": 32.7608703352942,
+          "objective": 0.12224017232094753,
+          "sse": 1.9558427571351604
+        },
+        "query_prediction": 24.203284868066774,
+        "scaler_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "scaler_mean": [
+          4.5,
+          4.25,
+          1.25
+        ],
+        "scaler_scale": [
+          2.29128784747792,
+          2.48746859276655,
+          0.9682458365518543
+        ],
+        "training_metrics": {
+          "mae": 0.4548330640818521,
+          "mse": 0.24448034464189505,
+          "rmse": 0.4944495370024074
+        },
+        "training_predictions": [
+          15.605008077544426,
+          17.39472267097469,
+          18.556812062466342,
+          24.68147549811524,
+          24.254711900915456,
+          29.849757673667206,
+          29.422994076467422,
+          37.23451803984922
+        ],
+        "validation_metrics": {
+          "mae": 1.0447967151319322,
+          "mse": 1.3117439128068848,
+          "rmse": 1.1453138926979296
+        },
+        "validation_predictions": [
+          17.60810446957458,
+          21.61914378029079,
+          31.85285406569736,
+          37.33737210554658
+        ]
+      },
+      "validation": {
+        "ids": [
+          "rg-v1",
+          "rg-v2",
+          "rg-v3",
+          "rg-v4"
+        ],
+        "x": [
+          [
+            1.5,
+            2.0,
+            1.0
+          ],
+          [
+            3.5,
+            3.0,
+            2.0
+          ],
+          [
+            6.5,
+            7.0,
+            1.0
+          ],
+          [
+            9.0,
+            9.0,
+            0.0
+          ]
+        ],
+        "y": [
+          16.0,
+          22.0,
+          31.0,
+          36.0
+        ]
+      }
+    },
+    {
+      "counterexample": "The alternative only swaps correlated feature columns and their names; compare aligned coefficients, never assume changed semantics or guaranteed changed selection.",
+      "feature_order": [
+        "room_index",
+        "area_100m2",
+        "age_decades"
+      ],
+      "fictional": true,
+      "id": "RG.housing.swapped-correlated-columns.v1",
+      "query": [
+        4.0,
+        4.5,
+        1.5
+      ],
+      "target_unit": "ten_thousand_USD",
+      "training": {
+        "ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "x": [
+          [
+            1.0,
+            1.0,
+            2.0
+          ],
+          [
+            2.0,
+            2.0,
+            0.0
+          ],
+          [
+            2.0,
+            3.0,
+            1.0
+          ],
+          [
+            4.0,
+            4.0,
+            3.0
+          ],
+          [
+            4.0,
+            5.0,
+            1.0
+          ],
+          [
+            6.0,
+            6.0,
+            2.0
+          ],
+          [
+            6.0,
+            7.0,
+            0.0
+          ],
+          [
+            9.0,
+            8.0,
+            1.0
+          ]
+        ],
+        "y": [
+          15.0,
+          18.0,
+          18.0,
+          25.0,
+          25.0,
+          30.0,
+          29.0,
+          37.0
+        ]
+      },
+      "unregularized_baseline": {
+        "all_training_predictions": [
+          15.605008077544424,
+          17.394722670974687,
+          18.556812062466342,
+          24.68147549811524,
+          24.254711900915456,
+          29.849757673667206,
+          29.422994076467422,
+          37.23451803984922
+        ],
+        "coefficient_states": [
+          "nonzero",
+          "nonzero",
+          "nonzero"
+        ],
+        "coefficients_raw": [
+          2.216478190630049,
+          0.6324717285945073,
+          0.5296176628971457
+        ],
+        "coefficients_standardized": [
+          5.513419885744277,
+          1.4491747856019477,
+          0.5128000970644848
+        ],
+        "convergence": {
+          "dual_gap": null,
+          "iterations": null,
+          "status": "verified-kkt-and-intercept-stationarity",
+          "warnings": []
+        },
+        "estimator_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "intercept_raw": 11.696822832525578,
+        "intercept_standardized": 24.625,
+        "loss_terms": {
+          "data_loss": 0.12224017232094765,
+          "l1_norm": 7.475394768410709,
+          "l1_penalty": 0.0,
+          "l2_penalty": 0.0,
+          "l2_squared": 32.760870335294236,
+          "objective": 0.12224017232094765,
+          "sse": 1.9558427571351624
+        },
+        "query_prediction": 24.203284868066774,
+        "scaler_fit_ids": [
+          "rg-h1",
+          "rg-h2",
+          "rg-h3",
+          "rg-h4",
+          "rg-h5",
+          "rg-h6",
+          "rg-h7",
+          "rg-h8"
+        ],
+        "scaler_mean": [
+          4.25,
+          4.5,
+          1.25
+        ],
+        "scaler_scale": [
+          2.48746859276655,
+          2.29128784747792,
+          0.9682458365518543
+        ],
+        "training_metrics": {
+          "mae": 0.4548330640818523,
+          "mse": 0.24448034464189533,
+          "rmse": 0.4944495370024077
+        },
+        "training_predictions": [
+          15.605008077544424,
+          17.394722670974687,
+          18.556812062466342,
+          24.68147549811524,
+          24.254711900915456,
+          29.849757673667206,
+          29.422994076467422,
+          37.23451803984922
+        ],
+        "validation_metrics": {
+          "mae": 1.0447967151319348,
+          "mse": 1.311743912806891,
+          "rmse": 1.1453138926979325
+        },
+        "validation_predictions": [
+          17.60810446957458,
+          21.61914378029079,
+          31.852854065697365,
+          37.337372105546585
+        ]
+      },
+      "validation": {
+        "ids": [
+          "rg-v1",
+          "rg-v2",
+          "rg-v3",
+          "rg-v4"
+        ],
+        "x": [
+          [
+            2.0,
+            1.5,
+            1.0
+          ],
+          [
+            3.0,
+            3.5,
+            2.0
+          ],
+          [
+            7.0,
+            6.5,
+            1.0
+          ],
+          [
+            9.0,
+            9.0,
+            0.0
+          ]
+        ],
+        "y": [
+          16.0,
+          22.0,
+          31.0,
+          36.0
+        ]
+      }
+    }
+  ],
+  "id": "RG-E1",
+  "initial_configuration": "RG-E1.RG.housing.original.v1.ridge.a0.1.q1.training-only",
+  "interaction": [
+    "Record a finite prediction before reveal",
+    "Change at least one listed meaningful configuration",
+    "Reveal numerical and visual reference outputs",
+    "Choose the correct post-observation explanation",
+    "Apply a bounded changed-scenario transfer"
+  ],
+  "objectives": [
+    "RG01.O1",
+    "RG01.O2",
+    "RG01.O3",
+    "RG01.O4",
+    "RG02.O1",
+    "RG02.O2",
+    "RG02.O3",
+    "RG02.O4",
+    "RG03.O1",
+    "RG03.O2",
+    "RG03.O3",
+    "RG03.O4"
+  ],
+  "prediction_options": [
+    "Smaller training error need not mean smaller validation error",
+    "Exact zero and a small coefficient are different",
+    "Global scaling invalidates the selection claim even if its score is good"
+  ],
+  "prerequisites": [
+    "Evaluation Foundations",
+    "multiple Linear Regression",
+    "norms and Optimization",
+    "training-only scaling"
+  ],
+  "profile": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "python": "3.13.16",
+    "scikit-learn": "1.9.1"
+  },
+  "question": "What does coefficient shrinkage or sparsity establish?",
+  "rejection": "Unknown ID, altered dataset, unsupported model/alpha/mix/provenance or nonfinite input is rejected; no interpolation or execution.",
+  "schema": "supervised.regularization.manifest.v1",
+  "seed": 1729,
+  "version": "supervised.regularization.experiment.1.0.0"
+}

@@ -1,0 +1,6020 @@
+{
+  "accessibility": "Native labeled selectors/buttons;visible focus;wrapping numeric tables of input/score/class/hinge/support or kernel similarity;concise result summary. No color,hover or animation-only meaning. Exact labels/units/fit IDs accompany every diagram. At most25 plotted query points plus training/validation inputs;no21x21 mesh.",
+  "configurations": [
+    {
+      "canonical_margin_slab_width_in_fitted_space": 4.0,
+      "class_order": [
+        0,
+        1
+      ],
+      "class_weights_in_class_order": [
+        1.0,
+        1.0
+      ],
+      "coefficient": [
+        0.5,
+        0.0
+      ],
+      "controls": {
+        "C": 0.1,
+        "class_weight": "none",
+        "gamma": 1.0,
+        "kernel": "linear",
+        "scaling": "none"
+      },
+      "correct_prediction_id": "class-1",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Larger C or more local gamma need not improve validation. A high score or large margin does not certify calibrated risk or reliability under shift.",
+      "dual_coefficients": [
+        -0.024999999999999994,
+        -0.1,
+        -0.1,
+        0.1,
+        0.1,
+        0.024999999999999994
+      ],
+      "dual_objective": 0.32500000000000007,
+      "explanation": "C weights hinge violations relative to the norm penalty;support vectors have nonzero dual coefficients. Linear scores define geometric distances after norm normalization. RBF scores combine similarities to supports in the declared scaled space. Training fits parameters;validation compares them;test remains sealed.",
+      "fit_ids": [
+        "sv.linear.clean.v1.train.0",
+        "sv.linear.clean.v1.train.1",
+        "sv.linear.clean.v1.train.2",
+        "sv.linear.clean.v1.train.3",
+        "sv.linear.clean.v1.train.4",
+        "sv.linear.clean.v1.train.5",
+        "sv.linear.clean.v1.train.6",
+        "sv.linear.clean.v1.train.7"
+      ],
+      "fit_status": 0,
+      "fixture_id": "sv.linear.clean.v1",
+      "id": "sv.linear.clean.v1.linear.C-0.1.gamma-1.0.raw.weights-none",
+      "intercept": -0.0,
+      "iterations": [
+        3
+      ],
+      "kind": "fitted",
+      "kkt_rows": [
+        {
+          "C_i": 0.1,
+          "alpha": 0.0,
+          "functional_margin": 1.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.0",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 0.1,
+          "alpha": 0.024999999999999994,
+          "functional_margin": 1.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.1",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "free-support"
+        },
+        {
+          "C_i": 0.1,
+          "alpha": 0.1,
+          "functional_margin": 0.5,
+          "hinge": 0.5,
+          "id": "sv.linear.clean.v1.train.2",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "at-C-bound"
+        },
+        {
+          "C_i": 0.1,
+          "alpha": 0.1,
+          "functional_margin": 0.5,
+          "hinge": 0.5,
+          "id": "sv.linear.clean.v1.train.3",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "at-C-bound"
+        },
+        {
+          "C_i": 0.1,
+          "alpha": 0.1,
+          "functional_margin": 0.5,
+          "hinge": 0.5,
+          "id": "sv.linear.clean.v1.train.4",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "at-C-bound"
+        },
+        {
+          "C_i": 0.1,
+          "alpha": 0.1,
+          "functional_margin": 0.5,
+          "hinge": 0.5,
+          "id": "sv.linear.clean.v1.train.5",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "at-C-bound"
+        },
+        {
+          "C_i": 0.1,
+          "alpha": 0.0,
+          "functional_margin": 1.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.6",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 0.1,
+          "alpha": 0.024999999999999994,
+          "functional_margin": 1.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.7",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "free-support"
+        }
+      ],
+      "margin_presentation": "True geometric distance in declared fitted feature units;not an arbitrary pixel width. Manual score rescaling changes canonical F=\u00b11 slab,not the F=0 boundary.",
+      "outputs": {
+        "plot_queries": {
+          "decision_scores": [
+            -1.0,
+            -1.0,
+            -0.9999999999999999,
+            -1.0,
+            -1.0,
+            -0.5,
+            -0.5,
+            -0.49999999999999994,
+            -0.5,
+            -0.5,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.5,
+            0.5,
+            0.49999999999999994,
+            0.5,
+            0.5,
+            1.0,
+            1.0,
+            0.9999999999999999,
+            1.0,
+            1.0
+          ],
+          "ids": [
+            "sv.linear.clean.v1.query.0",
+            "sv.linear.clean.v1.query.1",
+            "sv.linear.clean.v1.query.2",
+            "sv.linear.clean.v1.query.3",
+            "sv.linear.clean.v1.query.4",
+            "sv.linear.clean.v1.query.5",
+            "sv.linear.clean.v1.query.6",
+            "sv.linear.clean.v1.query.7",
+            "sv.linear.clean.v1.query.8",
+            "sv.linear.clean.v1.query.9",
+            "sv.linear.clean.v1.query.10",
+            "sv.linear.clean.v1.query.11",
+            "sv.linear.clean.v1.query.12",
+            "sv.linear.clean.v1.query.13",
+            "sv.linear.clean.v1.query.14",
+            "sv.linear.clean.v1.query.15",
+            "sv.linear.clean.v1.query.16",
+            "sv.linear.clean.v1.query.17",
+            "sv.linear.clean.v1.query.18",
+            "sv.linear.clean.v1.query.19",
+            "sv.linear.clean.v1.query.20",
+            "sv.linear.clean.v1.query.21",
+            "sv.linear.clean.v1.query.22",
+            "sv.linear.clean.v1.query.23",
+            "sv.linear.clean.v1.query.24"
+          ],
+          "manual_kernel_scores": [
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -0.5000000000000001,
+            -0.5,
+            -0.5,
+            -0.5,
+            -0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5000000000000001,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "near_boundary_indices": [
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -2.0,
+              -2.0
+            ],
+            [
+              -2.0,
+              -1.0
+            ],
+            [
+              -2.0,
+              0.0
+            ],
+            [
+              -2.0,
+              1.0
+            ],
+            [
+              -2.0,
+              2.0
+            ],
+            [
+              -1.0,
+              -2.0
+            ],
+            [
+              -1.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              2.0
+            ],
+            [
+              0.0,
+              -2.0
+            ],
+            [
+              0.0,
+              -1.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              2.0
+            ],
+            [
+              1.0,
+              -2.0
+            ],
+            [
+              1.0,
+              -1.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              2.0
+            ],
+            [
+              2.0,
+              -2.0
+            ],
+            [
+              2.0,
+              -1.0
+            ],
+            [
+              2.0,
+              0.0
+            ],
+            [
+              2.0,
+              1.0
+            ],
+            [
+              2.0,
+              2.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -2.0,
+            -2.0,
+            -1.9999999999999998,
+            -2.0,
+            -2.0,
+            -1.0,
+            -1.0,
+            -0.9999999999999999,
+            -1.0,
+            -1.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            1.0,
+            1.0,
+            0.9999999999999999,
+            1.0,
+            1.0,
+            2.0,
+            2.0,
+            1.9999999999999998,
+            2.0,
+            2.0
+          ]
+        },
+        "training": {
+          "decision_scores": [
+            -1.0,
+            -1.0,
+            -0.5,
+            -0.5,
+            0.5,
+            0.5,
+            1.0,
+            1.0
+          ],
+          "ids": [
+            "sv.linear.clean.v1.train.0",
+            "sv.linear.clean.v1.train.1",
+            "sv.linear.clean.v1.train.2",
+            "sv.linear.clean.v1.train.3",
+            "sv.linear.clean.v1.train.4",
+            "sv.linear.clean.v1.train.5",
+            "sv.linear.clean.v1.train.6",
+            "sv.linear.clean.v1.train.7"
+          ],
+          "manual_kernel_scores": [
+            -1.0,
+            -1.0,
+            -0.5,
+            -0.5,
+            0.5,
+            0.5,
+            1.0,
+            1.0
+          ],
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "confusion_actual_rows_predicted_columns": [
+              [
+                4,
+                0
+              ],
+              [
+                0,
+                4
+              ]
+            ]
+          },
+          "near_boundary_indices": [],
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -2.0,
+              -1.0
+            ],
+            [
+              -2.0,
+              1.0
+            ],
+            [
+              -1.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              1.0,
+              -1.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              2.0,
+              -1.0
+            ],
+            [
+              2.0,
+              1.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -2.0,
+            -2.0,
+            -1.0,
+            -1.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0
+          ]
+        },
+        "validation": {
+          "decision_scores": [
+            -0.7500000000000001,
+            -0.25,
+            0.25,
+            0.7500000000000001,
+            0.12499999999999999,
+            1.5
+          ],
+          "ids": [
+            "sv.linear.clean.v1.validation.0",
+            "sv.linear.clean.v1.validation.1",
+            "sv.linear.clean.v1.validation.2",
+            "sv.linear.clean.v1.validation.3",
+            "sv.linear.clean.v1.validation.4",
+            "sv.linear.clean.v1.validation.5"
+          ],
+          "manual_kernel_scores": [
+            -0.75,
+            -0.25,
+            0.25,
+            0.75,
+            0.125,
+            1.5
+          ],
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "confusion_actual_rows_predicted_columns": [
+              [
+                2,
+                0
+              ],
+              [
+                0,
+                4
+              ]
+            ]
+          },
+          "near_boundary_indices": [],
+          "predictions": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -1.5,
+              -0.5
+            ],
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              0.5,
+              -0.5
+            ],
+            [
+              1.5,
+              0.5
+            ],
+            [
+              0.25,
+              0.0
+            ],
+            [
+              3.0,
+              0.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -1.5000000000000002,
+            -0.5,
+            0.5,
+            1.5000000000000002,
+            0.24999999999999997,
+            3.0
+          ]
+        }
+      },
+      "prediction_input": [
+        0.5,
+        -0.5
+      ],
+      "prediction_options": [
+        {
+          "id": "class-0",
+          "label": "Class0:stays"
+        },
+        {
+          "id": "class-1",
+          "label": "Class1:churns"
+        },
+        {
+          "id": "invalid",
+          "label": "Unsupported configuration"
+        }
+      ],
+      "prediction_query_id": "sv.linear.clean.v1.validation.2",
+      "prediction_question": "For validation querysv.linear.clean.v1.validation.2 at[0.5, -0.5],predict class0 or class1 before revealing scores,margin/kernel evidence and validation errors.",
+      "preprocessing": {
+        "fit_ids": [],
+        "kind": "identity",
+        "mean": [
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "primal_dual_gap": -5.551115123125783e-17,
+      "primal_objective": 0.325,
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Use the fitted decision sign in its declared feature space;C/kernel/scaling change the fit,not calibrated probabilities."
+        },
+        {
+          "id": "probability",
+          "label": "The decision score is automatically P(churn)."
+        },
+        {
+          "id": "test",
+          "label": "Use final-test labels to choose the boundary."
+        }
+      ],
+      "rkhs_norm_squared": 0.25,
+      "settings": {
+        "break_ties": false,
+        "cache_size_mb": 64,
+        "decision_function_shape": "ovr",
+        "max_iter": 200000,
+        "probability": false,
+        "random_state": 1729,
+        "shrinking": false,
+        "tol": 1e-06
+      },
+      "support_coordinates_fitted_space": [
+        [
+          -2.0,
+          1.0
+        ],
+        [
+          -1.0,
+          -1.0
+        ],
+        [
+          -1.0,
+          1.0
+        ],
+        [
+          1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          2.0,
+          1.0
+        ]
+      ],
+      "support_counts_by_class": [
+        3,
+        3
+      ],
+      "support_ids": [
+        "sv.linear.clean.v1.train.1",
+        "sv.linear.clean.v1.train.2",
+        "sv.linear.clean.v1.train.3",
+        "sv.linear.clean.v1.train.4",
+        "sv.linear.clean.v1.train.5",
+        "sv.linear.clean.v1.train.7"
+      ],
+      "support_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "training_class_counts": [
+        4,
+        4
+      ],
+      "training_kernel_gram": [
+        [
+          5.0,
+          3.0,
+          3.0,
+          1.0,
+          -1.0,
+          -3.0,
+          -3.0,
+          -5.0
+        ],
+        [
+          3.0,
+          5.0,
+          1.0,
+          3.0,
+          -3.0,
+          -1.0,
+          -5.0,
+          -3.0
+        ],
+        [
+          3.0,
+          1.0,
+          2.0,
+          0.0,
+          0.0,
+          -2.0,
+          -1.0,
+          -3.0
+        ],
+        [
+          1.0,
+          3.0,
+          0.0,
+          2.0,
+          -2.0,
+          0.0,
+          -3.0,
+          -1.0
+        ],
+        [
+          -1.0,
+          -3.0,
+          0.0,
+          -2.0,
+          2.0,
+          0.0,
+          3.0,
+          1.0
+        ],
+        [
+          -3.0,
+          -1.0,
+          -2.0,
+          0.0,
+          0.0,
+          2.0,
+          1.0,
+          3.0
+        ],
+        [
+          -3.0,
+          -5.0,
+          -1.0,
+          -3.0,
+          3.0,
+          1.0,
+          5.0,
+          3.0
+        ],
+        [
+          -5.0,
+          -3.0,
+          -3.0,
+          -1.0,
+          1.0,
+          3.0,
+          3.0,
+          5.0
+        ]
+      ],
+      "warnings": [
+        "The `probability` parameter was deprecated in 1.9 and will be removed in version 1.11. Use `CalibratedClassifierCV(SVC(), ensemble=False)` instead of `SVC(probability=True)`"
+      ]
+    },
+    {
+      "canonical_margin_slab_width_in_fitted_space": 2.0,
+      "class_order": [
+        0,
+        1
+      ],
+      "class_weights_in_class_order": [
+        1.0,
+        1.0
+      ],
+      "coefficient": [
+        1.0,
+        0.0
+      ],
+      "controls": {
+        "C": 1.0,
+        "class_weight": "none",
+        "gamma": 1.0,
+        "kernel": "linear",
+        "scaling": "none"
+      },
+      "correct_prediction_id": "class-1",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Larger C or more local gamma need not improve validation. A high score or large margin does not certify calibrated risk or reliability under shift.",
+      "dual_coefficients": [
+        -0.5,
+        0.5
+      ],
+      "dual_objective": 0.5,
+      "explanation": "C weights hinge violations relative to the norm penalty;support vectors have nonzero dual coefficients. Linear scores define geometric distances after norm normalization. RBF scores combine similarities to supports in the declared scaled space. Training fits parameters;validation compares them;test remains sealed.",
+      "fit_ids": [
+        "sv.linear.clean.v1.train.0",
+        "sv.linear.clean.v1.train.1",
+        "sv.linear.clean.v1.train.2",
+        "sv.linear.clean.v1.train.3",
+        "sv.linear.clean.v1.train.4",
+        "sv.linear.clean.v1.train.5",
+        "sv.linear.clean.v1.train.6",
+        "sv.linear.clean.v1.train.7"
+      ],
+      "fit_status": 0,
+      "fixture_id": "sv.linear.clean.v1",
+      "id": "sv.linear.clean.v1.linear.C-1.0.gamma-1.0.raw.weights-none",
+      "intercept": -0.0,
+      "iterations": [
+        1
+      ],
+      "kind": "fitted",
+      "kkt_rows": [
+        {
+          "C_i": 1.0,
+          "alpha": 0.0,
+          "functional_margin": 2.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.0",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 1.0,
+          "alpha": 0.0,
+          "functional_margin": 2.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.1",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 1.0,
+          "alpha": 0.0,
+          "functional_margin": 1.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.2",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 1.0,
+          "alpha": 0.5,
+          "functional_margin": 1.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.3",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "free-support"
+        },
+        {
+          "C_i": 1.0,
+          "alpha": 0.0,
+          "functional_margin": 1.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.4",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 1.0,
+          "alpha": 0.5,
+          "functional_margin": 1.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.5",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "free-support"
+        },
+        {
+          "C_i": 1.0,
+          "alpha": 0.0,
+          "functional_margin": 2.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.6",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 1.0,
+          "alpha": 0.0,
+          "functional_margin": 2.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.7",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        }
+      ],
+      "margin_presentation": "True geometric distance in declared fitted feature units;not an arbitrary pixel width. Manual score rescaling changes canonical F=\u00b11 slab,not the F=0 boundary.",
+      "outputs": {
+        "plot_queries": {
+          "decision_scores": [
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "ids": [
+            "sv.linear.clean.v1.query.0",
+            "sv.linear.clean.v1.query.1",
+            "sv.linear.clean.v1.query.2",
+            "sv.linear.clean.v1.query.3",
+            "sv.linear.clean.v1.query.4",
+            "sv.linear.clean.v1.query.5",
+            "sv.linear.clean.v1.query.6",
+            "sv.linear.clean.v1.query.7",
+            "sv.linear.clean.v1.query.8",
+            "sv.linear.clean.v1.query.9",
+            "sv.linear.clean.v1.query.10",
+            "sv.linear.clean.v1.query.11",
+            "sv.linear.clean.v1.query.12",
+            "sv.linear.clean.v1.query.13",
+            "sv.linear.clean.v1.query.14",
+            "sv.linear.clean.v1.query.15",
+            "sv.linear.clean.v1.query.16",
+            "sv.linear.clean.v1.query.17",
+            "sv.linear.clean.v1.query.18",
+            "sv.linear.clean.v1.query.19",
+            "sv.linear.clean.v1.query.20",
+            "sv.linear.clean.v1.query.21",
+            "sv.linear.clean.v1.query.22",
+            "sv.linear.clean.v1.query.23",
+            "sv.linear.clean.v1.query.24"
+          ],
+          "manual_kernel_scores": [
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "near_boundary_indices": [
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -2.0,
+              -2.0
+            ],
+            [
+              -2.0,
+              -1.0
+            ],
+            [
+              -2.0,
+              0.0
+            ],
+            [
+              -2.0,
+              1.0
+            ],
+            [
+              -2.0,
+              2.0
+            ],
+            [
+              -1.0,
+              -2.0
+            ],
+            [
+              -1.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              2.0
+            ],
+            [
+              0.0,
+              -2.0
+            ],
+            [
+              0.0,
+              -1.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              2.0
+            ],
+            [
+              1.0,
+              -2.0
+            ],
+            [
+              1.0,
+              -1.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              2.0
+            ],
+            [
+              2.0,
+              -2.0
+            ],
+            [
+              2.0,
+              -1.0
+            ],
+            [
+              2.0,
+              0.0
+            ],
+            [
+              2.0,
+              1.0
+            ],
+            [
+              2.0,
+              2.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        "training": {
+          "decision_scores": [
+            -2.0,
+            -2.0,
+            -1.0,
+            -1.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0
+          ],
+          "ids": [
+            "sv.linear.clean.v1.train.0",
+            "sv.linear.clean.v1.train.1",
+            "sv.linear.clean.v1.train.2",
+            "sv.linear.clean.v1.train.3",
+            "sv.linear.clean.v1.train.4",
+            "sv.linear.clean.v1.train.5",
+            "sv.linear.clean.v1.train.6",
+            "sv.linear.clean.v1.train.7"
+          ],
+          "manual_kernel_scores": [
+            -2.0,
+            -2.0,
+            -1.0,
+            -1.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0
+          ],
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "confusion_actual_rows_predicted_columns": [
+              [
+                4,
+                0
+              ],
+              [
+                0,
+                4
+              ]
+            ]
+          },
+          "near_boundary_indices": [],
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -2.0,
+              -1.0
+            ],
+            [
+              -2.0,
+              1.0
+            ],
+            [
+              -1.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              1.0,
+              -1.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              2.0,
+              -1.0
+            ],
+            [
+              2.0,
+              1.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -2.0,
+            -2.0,
+            -1.0,
+            -1.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0
+          ]
+        },
+        "validation": {
+          "decision_scores": [
+            -1.5,
+            -0.5,
+            0.5,
+            1.5,
+            0.25,
+            3.0
+          ],
+          "ids": [
+            "sv.linear.clean.v1.validation.0",
+            "sv.linear.clean.v1.validation.1",
+            "sv.linear.clean.v1.validation.2",
+            "sv.linear.clean.v1.validation.3",
+            "sv.linear.clean.v1.validation.4",
+            "sv.linear.clean.v1.validation.5"
+          ],
+          "manual_kernel_scores": [
+            -1.5,
+            -0.5,
+            0.5,
+            1.5,
+            0.25,
+            3.0
+          ],
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "confusion_actual_rows_predicted_columns": [
+              [
+                2,
+                0
+              ],
+              [
+                0,
+                4
+              ]
+            ]
+          },
+          "near_boundary_indices": [],
+          "predictions": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -1.5,
+              -0.5
+            ],
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              0.5,
+              -0.5
+            ],
+            [
+              1.5,
+              0.5
+            ],
+            [
+              0.25,
+              0.0
+            ],
+            [
+              3.0,
+              0.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -1.5,
+            -0.5,
+            0.5,
+            1.5,
+            0.25,
+            3.0
+          ]
+        }
+      },
+      "prediction_input": [
+        0.5,
+        -0.5
+      ],
+      "prediction_options": [
+        {
+          "id": "class-0",
+          "label": "Class0:stays"
+        },
+        {
+          "id": "class-1",
+          "label": "Class1:churns"
+        },
+        {
+          "id": "invalid",
+          "label": "Unsupported configuration"
+        }
+      ],
+      "prediction_query_id": "sv.linear.clean.v1.validation.2",
+      "prediction_question": "For validation querysv.linear.clean.v1.validation.2 at[0.5, -0.5],predict class0 or class1 before revealing scores,margin/kernel evidence and validation errors.",
+      "preprocessing": {
+        "fit_ids": [],
+        "kind": "identity",
+        "mean": [
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "primal_dual_gap": 0.0,
+      "primal_objective": 0.5,
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Use the fitted decision sign in its declared feature space;C/kernel/scaling change the fit,not calibrated probabilities."
+        },
+        {
+          "id": "probability",
+          "label": "The decision score is automatically P(churn)."
+        },
+        {
+          "id": "test",
+          "label": "Use final-test labels to choose the boundary."
+        }
+      ],
+      "rkhs_norm_squared": 1.0,
+      "settings": {
+        "break_ties": false,
+        "cache_size_mb": 64,
+        "decision_function_shape": "ovr",
+        "max_iter": 200000,
+        "probability": false,
+        "random_state": 1729,
+        "shrinking": false,
+        "tol": 1e-06
+      },
+      "support_coordinates_fitted_space": [
+        [
+          -1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "support_counts_by_class": [
+        1,
+        1
+      ],
+      "support_ids": [
+        "sv.linear.clean.v1.train.3",
+        "sv.linear.clean.v1.train.5"
+      ],
+      "support_indices": [
+        3,
+        5
+      ],
+      "training_class_counts": [
+        4,
+        4
+      ],
+      "training_kernel_gram": [
+        [
+          5.0,
+          3.0,
+          3.0,
+          1.0,
+          -1.0,
+          -3.0,
+          -3.0,
+          -5.0
+        ],
+        [
+          3.0,
+          5.0,
+          1.0,
+          3.0,
+          -3.0,
+          -1.0,
+          -5.0,
+          -3.0
+        ],
+        [
+          3.0,
+          1.0,
+          2.0,
+          0.0,
+          0.0,
+          -2.0,
+          -1.0,
+          -3.0
+        ],
+        [
+          1.0,
+          3.0,
+          0.0,
+          2.0,
+          -2.0,
+          0.0,
+          -3.0,
+          -1.0
+        ],
+        [
+          -1.0,
+          -3.0,
+          0.0,
+          -2.0,
+          2.0,
+          0.0,
+          3.0,
+          1.0
+        ],
+        [
+          -3.0,
+          -1.0,
+          -2.0,
+          0.0,
+          0.0,
+          2.0,
+          1.0,
+          3.0
+        ],
+        [
+          -3.0,
+          -5.0,
+          -1.0,
+          -3.0,
+          3.0,
+          1.0,
+          5.0,
+          3.0
+        ],
+        [
+          -5.0,
+          -3.0,
+          -3.0,
+          -1.0,
+          1.0,
+          3.0,
+          3.0,
+          5.0
+        ]
+      ],
+      "warnings": [
+        "The `probability` parameter was deprecated in 1.9 and will be removed in version 1.11. Use `CalibratedClassifierCV(SVC(), ensemble=False)` instead of `SVC(probability=True)`"
+      ]
+    },
+    {
+      "canonical_margin_slab_width_in_fitted_space": 2.0,
+      "class_order": [
+        0,
+        1
+      ],
+      "class_weights_in_class_order": [
+        1.0,
+        1.0
+      ],
+      "coefficient": [
+        1.0,
+        0.0
+      ],
+      "controls": {
+        "C": 10.0,
+        "class_weight": "none",
+        "gamma": 1.0,
+        "kernel": "linear",
+        "scaling": "none"
+      },
+      "correct_prediction_id": "class-1",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Larger C or more local gamma need not improve validation. A high score or large margin does not certify calibrated risk or reliability under shift.",
+      "dual_coefficients": [
+        -0.5,
+        0.5
+      ],
+      "dual_objective": 0.5,
+      "explanation": "C weights hinge violations relative to the norm penalty;support vectors have nonzero dual coefficients. Linear scores define geometric distances after norm normalization. RBF scores combine similarities to supports in the declared scaled space. Training fits parameters;validation compares them;test remains sealed.",
+      "fit_ids": [
+        "sv.linear.clean.v1.train.0",
+        "sv.linear.clean.v1.train.1",
+        "sv.linear.clean.v1.train.2",
+        "sv.linear.clean.v1.train.3",
+        "sv.linear.clean.v1.train.4",
+        "sv.linear.clean.v1.train.5",
+        "sv.linear.clean.v1.train.6",
+        "sv.linear.clean.v1.train.7"
+      ],
+      "fit_status": 0,
+      "fixture_id": "sv.linear.clean.v1",
+      "id": "sv.linear.clean.v1.linear.C-10.0.gamma-1.0.raw.weights-none",
+      "intercept": -0.0,
+      "iterations": [
+        1
+      ],
+      "kind": "fitted",
+      "kkt_rows": [
+        {
+          "C_i": 10.0,
+          "alpha": 0.0,
+          "functional_margin": 2.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.0",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 10.0,
+          "alpha": 0.0,
+          "functional_margin": 2.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.1",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 10.0,
+          "alpha": 0.0,
+          "functional_margin": 1.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.2",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 10.0,
+          "alpha": 0.5,
+          "functional_margin": 1.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.3",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "free-support"
+        },
+        {
+          "C_i": 10.0,
+          "alpha": 0.0,
+          "functional_margin": 1.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.4",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 10.0,
+          "alpha": 0.5,
+          "functional_margin": 1.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.5",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "free-support"
+        },
+        {
+          "C_i": 10.0,
+          "alpha": 0.0,
+          "functional_margin": 2.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.6",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 10.0,
+          "alpha": 0.0,
+          "functional_margin": 2.0,
+          "hinge": 0.0,
+          "id": "sv.linear.clean.v1.train.7",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        }
+      ],
+      "margin_presentation": "True geometric distance in declared fitted feature units;not an arbitrary pixel width. Manual score rescaling changes canonical F=\u00b11 slab,not the F=0 boundary.",
+      "outputs": {
+        "plot_queries": {
+          "decision_scores": [
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "ids": [
+            "sv.linear.clean.v1.query.0",
+            "sv.linear.clean.v1.query.1",
+            "sv.linear.clean.v1.query.2",
+            "sv.linear.clean.v1.query.3",
+            "sv.linear.clean.v1.query.4",
+            "sv.linear.clean.v1.query.5",
+            "sv.linear.clean.v1.query.6",
+            "sv.linear.clean.v1.query.7",
+            "sv.linear.clean.v1.query.8",
+            "sv.linear.clean.v1.query.9",
+            "sv.linear.clean.v1.query.10",
+            "sv.linear.clean.v1.query.11",
+            "sv.linear.clean.v1.query.12",
+            "sv.linear.clean.v1.query.13",
+            "sv.linear.clean.v1.query.14",
+            "sv.linear.clean.v1.query.15",
+            "sv.linear.clean.v1.query.16",
+            "sv.linear.clean.v1.query.17",
+            "sv.linear.clean.v1.query.18",
+            "sv.linear.clean.v1.query.19",
+            "sv.linear.clean.v1.query.20",
+            "sv.linear.clean.v1.query.21",
+            "sv.linear.clean.v1.query.22",
+            "sv.linear.clean.v1.query.23",
+            "sv.linear.clean.v1.query.24"
+          ],
+          "manual_kernel_scores": [
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "near_boundary_indices": [
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -2.0,
+              -2.0
+            ],
+            [
+              -2.0,
+              -1.0
+            ],
+            [
+              -2.0,
+              0.0
+            ],
+            [
+              -2.0,
+              1.0
+            ],
+            [
+              -2.0,
+              2.0
+            ],
+            [
+              -1.0,
+              -2.0
+            ],
+            [
+              -1.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              2.0
+            ],
+            [
+              0.0,
+              -2.0
+            ],
+            [
+              0.0,
+              -1.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              2.0
+            ],
+            [
+              1.0,
+              -2.0
+            ],
+            [
+              1.0,
+              -1.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              2.0
+            ],
+            [
+              2.0,
+              -2.0
+            ],
+            [
+              2.0,
+              -1.0
+            ],
+            [
+              2.0,
+              0.0
+            ],
+            [
+              2.0,
+              1.0
+            ],
+            [
+              2.0,
+              2.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        "training": {
+          "decision_scores": [
+            -2.0,
+            -2.0,
+            -1.0,
+            -1.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0
+          ],
+          "ids": [
+            "sv.linear.clean.v1.train.0",
+            "sv.linear.clean.v1.train.1",
+            "sv.linear.clean.v1.train.2",
+            "sv.linear.clean.v1.train.3",
+            "sv.linear.clean.v1.train.4",
+            "sv.linear.clean.v1.train.5",
+            "sv.linear.clean.v1.train.6",
+            "sv.linear.clean.v1.train.7"
+          ],
+          "manual_kernel_scores": [
+            -2.0,
+            -2.0,
+            -1.0,
+            -1.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0
+          ],
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "confusion_actual_rows_predicted_columns": [
+              [
+                4,
+                0
+              ],
+              [
+                0,
+                4
+              ]
+            ]
+          },
+          "near_boundary_indices": [],
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -2.0,
+              -1.0
+            ],
+            [
+              -2.0,
+              1.0
+            ],
+            [
+              -1.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              1.0,
+              -1.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              2.0,
+              -1.0
+            ],
+            [
+              2.0,
+              1.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -2.0,
+            -2.0,
+            -1.0,
+            -1.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0
+          ]
+        },
+        "validation": {
+          "decision_scores": [
+            -1.5,
+            -0.5,
+            0.5,
+            1.5,
+            0.25,
+            3.0
+          ],
+          "ids": [
+            "sv.linear.clean.v1.validation.0",
+            "sv.linear.clean.v1.validation.1",
+            "sv.linear.clean.v1.validation.2",
+            "sv.linear.clean.v1.validation.3",
+            "sv.linear.clean.v1.validation.4",
+            "sv.linear.clean.v1.validation.5"
+          ],
+          "manual_kernel_scores": [
+            -1.5,
+            -0.5,
+            0.5,
+            1.5,
+            0.25,
+            3.0
+          ],
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "confusion_actual_rows_predicted_columns": [
+              [
+                2,
+                0
+              ],
+              [
+                0,
+                4
+              ]
+            ]
+          },
+          "near_boundary_indices": [],
+          "predictions": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -1.5,
+              -0.5
+            ],
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              0.5,
+              -0.5
+            ],
+            [
+              1.5,
+              0.5
+            ],
+            [
+              0.25,
+              0.0
+            ],
+            [
+              3.0,
+              0.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -1.5,
+            -0.5,
+            0.5,
+            1.5,
+            0.25,
+            3.0
+          ]
+        }
+      },
+      "prediction_input": [
+        0.5,
+        -0.5
+      ],
+      "prediction_options": [
+        {
+          "id": "class-0",
+          "label": "Class0:stays"
+        },
+        {
+          "id": "class-1",
+          "label": "Class1:churns"
+        },
+        {
+          "id": "invalid",
+          "label": "Unsupported configuration"
+        }
+      ],
+      "prediction_query_id": "sv.linear.clean.v1.validation.2",
+      "prediction_question": "For validation querysv.linear.clean.v1.validation.2 at[0.5, -0.5],predict class0 or class1 before revealing scores,margin/kernel evidence and validation errors.",
+      "preprocessing": {
+        "fit_ids": [],
+        "kind": "identity",
+        "mean": [
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "primal_dual_gap": 0.0,
+      "primal_objective": 0.5,
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Use the fitted decision sign in its declared feature space;C/kernel/scaling change the fit,not calibrated probabilities."
+        },
+        {
+          "id": "probability",
+          "label": "The decision score is automatically P(churn)."
+        },
+        {
+          "id": "test",
+          "label": "Use final-test labels to choose the boundary."
+        }
+      ],
+      "rkhs_norm_squared": 1.0,
+      "settings": {
+        "break_ties": false,
+        "cache_size_mb": 64,
+        "decision_function_shape": "ovr",
+        "max_iter": 200000,
+        "probability": false,
+        "random_state": 1729,
+        "shrinking": false,
+        "tol": 1e-06
+      },
+      "support_coordinates_fitted_space": [
+        [
+          -1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "support_counts_by_class": [
+        1,
+        1
+      ],
+      "support_ids": [
+        "sv.linear.clean.v1.train.3",
+        "sv.linear.clean.v1.train.5"
+      ],
+      "support_indices": [
+        3,
+        5
+      ],
+      "training_class_counts": [
+        4,
+        4
+      ],
+      "training_kernel_gram": [
+        [
+          5.0,
+          3.0,
+          3.0,
+          1.0,
+          -1.0,
+          -3.0,
+          -3.0,
+          -5.0
+        ],
+        [
+          3.0,
+          5.0,
+          1.0,
+          3.0,
+          -3.0,
+          -1.0,
+          -5.0,
+          -3.0
+        ],
+        [
+          3.0,
+          1.0,
+          2.0,
+          0.0,
+          0.0,
+          -2.0,
+          -1.0,
+          -3.0
+        ],
+        [
+          1.0,
+          3.0,
+          0.0,
+          2.0,
+          -2.0,
+          0.0,
+          -3.0,
+          -1.0
+        ],
+        [
+          -1.0,
+          -3.0,
+          0.0,
+          -2.0,
+          2.0,
+          0.0,
+          3.0,
+          1.0
+        ],
+        [
+          -3.0,
+          -1.0,
+          -2.0,
+          0.0,
+          0.0,
+          2.0,
+          1.0,
+          3.0
+        ],
+        [
+          -3.0,
+          -5.0,
+          -1.0,
+          -3.0,
+          3.0,
+          1.0,
+          5.0,
+          3.0
+        ],
+        [
+          -5.0,
+          -3.0,
+          -3.0,
+          -1.0,
+          1.0,
+          3.0,
+          3.0,
+          5.0
+        ]
+      ],
+      "warnings": [
+        "The `probability` parameter was deprecated in 1.9 and will be removed in version 1.11. Use `CalibratedClassifierCV(SVC(), ensemble=False)` instead of `SVC(probability=True)`"
+      ]
+    },
+    {
+      "canonical_margin_slab_width_in_fitted_space": 4.000000000000001,
+      "class_order": [
+        0,
+        1
+      ],
+      "class_weights_in_class_order": [
+        1.0,
+        1.0
+      ],
+      "coefficient": [
+        0.4999999999999999,
+        5.551115123125783e-17
+      ],
+      "controls": {
+        "C": 0.1,
+        "class_weight": "none",
+        "gamma": 1.0,
+        "kernel": "linear",
+        "scaling": "none"
+      },
+      "correct_prediction_id": "class-1",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Larger C or more local gamma need not improve validation. A high score or large margin does not certify calibrated risk or reliability under shift.",
+      "dual_coefficients": [
+        -0.03749999999999998,
+        -0.1,
+        -0.1,
+        -0.1,
+        0.1,
+        0.1,
+        0.04999999999999997,
+        0.08750000000000002
+      ],
+      "dual_objective": 0.5499999999999999,
+      "explanation": "C weights hinge violations relative to the norm penalty;support vectors have nonzero dual coefficients. Linear scores define geometric distances after norm normalization. RBF scores combine similarities to supports in the declared scaled space. Training fits parameters;validation compares them;test remains sealed.",
+      "fit_ids": [
+        "sv.linear.noisy.v1.train.0",
+        "sv.linear.noisy.v1.train.1",
+        "sv.linear.noisy.v1.train.2",
+        "sv.linear.noisy.v1.train.3",
+        "sv.linear.noisy.v1.train.4",
+        "sv.linear.noisy.v1.train.5",
+        "sv.linear.noisy.v1.train.6",
+        "sv.linear.noisy.v1.train.7",
+        "sv.linear.noisy.v1.train.8"
+      ],
+      "fit_status": 0,
+      "fixture_id": "sv.linear.noisy.v1",
+      "id": "sv.linear.noisy.v1.linear.C-0.1.gamma-1.0.raw.weights-none",
+      "intercept": 2.3129646346357427e-18,
+      "iterations": [
+        7
+      ],
+      "kind": "fitted",
+      "kkt_rows": [
+        {
+          "C_i": 0.1,
+          "alpha": 0.0,
+          "functional_margin": 1.0,
+          "hinge": 0.0,
+          "id": "sv.linear.noisy.v1.train.0",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 0.1,
+          "alpha": 0.03749999999999998,
+          "functional_margin": 0.9999999999999999,
+          "hinge": 1.1102230246251565e-16,
+          "id": "sv.linear.noisy.v1.train.1",
+          "kkt_violation": 1.1102230246251565e-16,
+          "solver_support": true,
+          "status": "free-support"
+        },
+        {
+          "C_i": 0.1,
+          "alpha": 0.1,
+          "functional_margin": 0.5,
+          "hinge": 0.5,
+          "id": "sv.linear.noisy.v1.train.2",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "at-C-bound"
+        },
+        {
+          "C_i": 0.1,
+          "alpha": 0.1,
+          "functional_margin": 0.4999999999999999,
+          "hinge": 0.5000000000000001,
+          "id": "sv.linear.noisy.v1.train.3",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "at-C-bound"
+        },
+        {
+          "C_i": 0.1,
+          "alpha": 0.1,
+          "functional_margin": 0.4999999999999999,
+          "hinge": 0.5000000000000001,
+          "id": "sv.linear.noisy.v1.train.4",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "at-C-bound"
+        },
+        {
+          "C_i": 0.1,
+          "alpha": 0.1,
+          "functional_margin": 0.5,
+          "hinge": 0.5,
+          "id": "sv.linear.noisy.v1.train.5",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "at-C-bound"
+        },
+        {
+          "C_i": 0.1,
+          "alpha": 0.04999999999999997,
+          "functional_margin": 0.9999999999999999,
+          "hinge": 1.1102230246251565e-16,
+          "id": "sv.linear.noisy.v1.train.6",
+          "kkt_violation": 1.1102230246251565e-16,
+          "solver_support": true,
+          "status": "free-support"
+        },
+        {
+          "C_i": 0.1,
+          "alpha": 0.08750000000000002,
+          "functional_margin": 1.0,
+          "hinge": 0.0,
+          "id": "sv.linear.noisy.v1.train.7",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "free-support"
+        },
+        {
+          "C_i": 0.1,
+          "alpha": 0.1,
+          "functional_margin": -1.2499999999999998,
+          "hinge": 2.25,
+          "id": "sv.linear.noisy.v1.train.8",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "at-C-bound"
+        }
+      ],
+      "margin_presentation": "True geometric distance in declared fitted feature units;not an arbitrary pixel width. Manual score rescaling changes canonical F=\u00b11 slab,not the F=0 boundary.",
+      "outputs": {
+        "plot_queries": {
+          "decision_scores": [
+            -1.0,
+            -1.0,
+            -0.9999999999999999,
+            -0.9999999999999999,
+            -0.9999999999999998,
+            -0.5000000000000001,
+            -0.5,
+            -0.49999999999999994,
+            -0.4999999999999999,
+            -0.4999999999999998,
+            -1.6422048905913775e-16,
+            -8.095376221225099e-17,
+            2.3129646346357427e-18,
+            8.557969148152249e-17,
+            1.6884641832840922e-16,
+            0.4999999999999998,
+            0.4999999999999999,
+            0.49999999999999994,
+            0.5,
+            0.5000000000000001,
+            0.9999999999999998,
+            0.9999999999999999,
+            0.9999999999999999,
+            1.0,
+            1.0
+          ],
+          "ids": [
+            "sv.linear.noisy.v1.query.0",
+            "sv.linear.noisy.v1.query.1",
+            "sv.linear.noisy.v1.query.2",
+            "sv.linear.noisy.v1.query.3",
+            "sv.linear.noisy.v1.query.4",
+            "sv.linear.noisy.v1.query.5",
+            "sv.linear.noisy.v1.query.6",
+            "sv.linear.noisy.v1.query.7",
+            "sv.linear.noisy.v1.query.8",
+            "sv.linear.noisy.v1.query.9",
+            "sv.linear.noisy.v1.query.10",
+            "sv.linear.noisy.v1.query.11",
+            "sv.linear.noisy.v1.query.12",
+            "sv.linear.noisy.v1.query.13",
+            "sv.linear.noisy.v1.query.14",
+            "sv.linear.noisy.v1.query.15",
+            "sv.linear.noisy.v1.query.16",
+            "sv.linear.noisy.v1.query.17",
+            "sv.linear.noisy.v1.query.18",
+            "sv.linear.noisy.v1.query.19",
+            "sv.linear.noisy.v1.query.20",
+            "sv.linear.noisy.v1.query.21",
+            "sv.linear.noisy.v1.query.22",
+            "sv.linear.noisy.v1.query.23",
+            "sv.linear.noisy.v1.query.24"
+          ],
+          "manual_kernel_scores": [
+            -1.0,
+            -1.0,
+            -0.9999999999999998,
+            -0.9999999999999999,
+            -0.9999999999999998,
+            -0.5000000000000002,
+            -0.5,
+            -0.4999999999999999,
+            -0.4999999999999999,
+            -0.4999999999999998,
+            -1.0870933782787991e-16,
+            -5.3198186596622086e-17,
+            2.3129646346357427e-18,
+            5.782411586589357e-17,
+            1.133352670971514e-16,
+            0.4999999999999998,
+            0.4999999999999999,
+            0.4999999999999999,
+            0.5,
+            0.5000000000000002,
+            0.9999999999999998,
+            0.9999999999999999,
+            0.9999999999999998,
+            1.0,
+            1.0
+          ],
+          "near_boundary_indices": [
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -2.0,
+              -2.0
+            ],
+            [
+              -2.0,
+              -1.0
+            ],
+            [
+              -2.0,
+              0.0
+            ],
+            [
+              -2.0,
+              1.0
+            ],
+            [
+              -2.0,
+              2.0
+            ],
+            [
+              -1.0,
+              -2.0
+            ],
+            [
+              -1.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              2.0
+            ],
+            [
+              0.0,
+              -2.0
+            ],
+            [
+              0.0,
+              -1.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              2.0
+            ],
+            [
+              1.0,
+              -2.0
+            ],
+            [
+              1.0,
+              -1.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              2.0
+            ],
+            [
+              2.0,
+              -2.0
+            ],
+            [
+              2.0,
+              -1.0
+            ],
+            [
+              2.0,
+              0.0
+            ],
+            [
+              2.0,
+              1.0
+            ],
+            [
+              2.0,
+              2.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -2.0000000000000004,
+            -2.0000000000000004,
+            -2.0000000000000004,
+            -2.0000000000000004,
+            -2.0,
+            -1.0000000000000004,
+            -1.0000000000000002,
+            -1.0000000000000002,
+            -1.0,
+            -0.9999999999999998,
+            -3.2844097811827554e-16,
+            -1.61907524424502e-16,
+            4.625929269271486e-18,
+            1.7115938296304502e-16,
+            3.3769283665681853e-16,
+            0.9999999999999998,
+            1.0,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000004,
+            2.0,
+            2.0000000000000004,
+            2.0000000000000004,
+            2.0000000000000004,
+            2.0000000000000004
+          ]
+        },
+        "training": {
+          "decision_scores": [
+            -1.0,
+            -0.9999999999999999,
+            -0.5,
+            -0.4999999999999999,
+            0.4999999999999999,
+            0.5,
+            0.9999999999999999,
+            1.0,
+            1.25
+          ],
+          "ids": [
+            "sv.linear.noisy.v1.train.0",
+            "sv.linear.noisy.v1.train.1",
+            "sv.linear.noisy.v1.train.2",
+            "sv.linear.noisy.v1.train.3",
+            "sv.linear.noisy.v1.train.4",
+            "sv.linear.noisy.v1.train.5",
+            "sv.linear.noisy.v1.train.6",
+            "sv.linear.noisy.v1.train.7",
+            "sv.linear.noisy.v1.train.8"
+          ],
+          "manual_kernel_scores": [
+            -1.0,
+            -0.9999999999999999,
+            -0.5,
+            -0.4999999999999999,
+            0.4999999999999999,
+            0.5,
+            0.9999999999999999,
+            1.0,
+            1.2499999999999998
+          ],
+          "metrics": {
+            "accuracy": 0.8888888888888888,
+            "balanced_accuracy": 0.9,
+            "confusion_actual_rows_predicted_columns": [
+              [
+                4,
+                1
+              ],
+              [
+                0,
+                4
+              ]
+            ]
+          },
+          "near_boundary_indices": [],
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -2.0,
+              -1.0
+            ],
+            [
+              -2.0,
+              1.0
+            ],
+            [
+              -1.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              1.0,
+              -1.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              2.0,
+              -1.0
+            ],
+            [
+              2.0,
+              1.0
+            ],
+            [
+              2.5,
+              0.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -2.0000000000000004,
+            -2.0000000000000004,
+            -1.0000000000000002,
+            -1.0,
+            1.0,
+            1.0000000000000002,
+            2.0000000000000004,
+            2.0000000000000004,
+            2.5000000000000004
+          ]
+        },
+        "validation": {
+          "decision_scores": [
+            -0.75,
+            -0.24999999999999994,
+            0.24999999999999994,
+            0.75,
+            0.12499999999999999,
+            1.5
+          ],
+          "ids": [
+            "sv.linear.noisy.v1.validation.0",
+            "sv.linear.noisy.v1.validation.1",
+            "sv.linear.noisy.v1.validation.2",
+            "sv.linear.noisy.v1.validation.3",
+            "sv.linear.noisy.v1.validation.4",
+            "sv.linear.noisy.v1.validation.5"
+          ],
+          "manual_kernel_scores": [
+            -0.7499999999999999,
+            -0.24999999999999994,
+            0.24999999999999994,
+            0.7499999999999999,
+            0.12499999999999997,
+            1.5
+          ],
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "confusion_actual_rows_predicted_columns": [
+              [
+                2,
+                0
+              ],
+              [
+                0,
+                4
+              ]
+            ]
+          },
+          "near_boundary_indices": [],
+          "predictions": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -1.5,
+              -0.5
+            ],
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              0.5,
+              -0.5
+            ],
+            [
+              1.5,
+              0.5
+            ],
+            [
+              0.25,
+              0.0
+            ],
+            [
+              3.0,
+              0.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -1.5000000000000004,
+            -0.5,
+            0.5,
+            1.5000000000000004,
+            0.25000000000000006,
+            3.000000000000001
+          ]
+        }
+      },
+      "prediction_input": [
+        0.5,
+        -0.5
+      ],
+      "prediction_options": [
+        {
+          "id": "class-0",
+          "label": "Class0:stays"
+        },
+        {
+          "id": "class-1",
+          "label": "Class1:churns"
+        },
+        {
+          "id": "invalid",
+          "label": "Unsupported configuration"
+        }
+      ],
+      "prediction_query_id": "sv.linear.noisy.v1.validation.2",
+      "prediction_question": "For validation querysv.linear.noisy.v1.validation.2 at[0.5, -0.5],predict class0 or class1 before revealing scores,margin/kernel evidence and validation errors.",
+      "preprocessing": {
+        "fit_ids": [],
+        "kind": "identity",
+        "mean": [
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "primal_dual_gap": 1.1102230246251565e-16,
+      "primal_objective": 0.55,
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Use the fitted decision sign in its declared feature space;C/kernel/scaling change the fit,not calibrated probabilities."
+        },
+        {
+          "id": "probability",
+          "label": "The decision score is automatically P(churn)."
+        },
+        {
+          "id": "test",
+          "label": "Use final-test labels to choose the boundary."
+        }
+      ],
+      "rkhs_norm_squared": 0.24999999999999997,
+      "settings": {
+        "break_ties": false,
+        "cache_size_mb": 64,
+        "decision_function_shape": "ovr",
+        "max_iter": 200000,
+        "probability": false,
+        "random_state": 1729,
+        "shrinking": false,
+        "tol": 1e-06
+      },
+      "support_coordinates_fitted_space": [
+        [
+          -2.0,
+          1.0
+        ],
+        [
+          -1.0,
+          -1.0
+        ],
+        [
+          -1.0,
+          1.0
+        ],
+        [
+          2.5,
+          0.0
+        ],
+        [
+          1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          2.0,
+          -1.0
+        ],
+        [
+          2.0,
+          1.0
+        ]
+      ],
+      "support_counts_by_class": [
+        4,
+        4
+      ],
+      "support_ids": [
+        "sv.linear.noisy.v1.train.1",
+        "sv.linear.noisy.v1.train.2",
+        "sv.linear.noisy.v1.train.3",
+        "sv.linear.noisy.v1.train.8",
+        "sv.linear.noisy.v1.train.4",
+        "sv.linear.noisy.v1.train.5",
+        "sv.linear.noisy.v1.train.6",
+        "sv.linear.noisy.v1.train.7"
+      ],
+      "support_indices": [
+        1,
+        2,
+        3,
+        8,
+        4,
+        5,
+        6,
+        7
+      ],
+      "training_class_counts": [
+        5,
+        4
+      ],
+      "training_kernel_gram": [
+        [
+          5.0,
+          3.0,
+          3.0,
+          1.0,
+          -1.0,
+          -3.0,
+          -3.0,
+          -5.0,
+          -5.0
+        ],
+        [
+          3.0,
+          5.0,
+          1.0,
+          3.0,
+          -3.0,
+          -1.0,
+          -5.0,
+          -3.0,
+          -5.0
+        ],
+        [
+          3.0,
+          1.0,
+          2.0,
+          0.0,
+          0.0,
+          -2.0,
+          -1.0,
+          -3.0,
+          -2.5
+        ],
+        [
+          1.0,
+          3.0,
+          0.0,
+          2.0,
+          -2.0,
+          0.0,
+          -3.0,
+          -1.0,
+          -2.5
+        ],
+        [
+          -1.0,
+          -3.0,
+          0.0,
+          -2.0,
+          2.0,
+          0.0,
+          3.0,
+          1.0,
+          2.5
+        ],
+        [
+          -3.0,
+          -1.0,
+          -2.0,
+          0.0,
+          0.0,
+          2.0,
+          1.0,
+          3.0,
+          2.5
+        ],
+        [
+          -3.0,
+          -5.0,
+          -1.0,
+          -3.0,
+          3.0,
+          1.0,
+          5.0,
+          3.0,
+          5.0
+        ],
+        [
+          -5.0,
+          -3.0,
+          -3.0,
+          -1.0,
+          1.0,
+          3.0,
+          3.0,
+          5.0,
+          5.0
+        ],
+        [
+          -5.0,
+          -5.0,
+          -2.5,
+          -2.5,
+          2.5,
+          2.5,
+          5.0,
+          5.0,
+          6.25
+        ]
+      ],
+      "warnings": [
+        "The `probability` parameter was deprecated in 1.9 and will be removed in version 1.11. Use `CalibratedClassifierCV(SVC(), ensemble=False)` instead of `SVC(probability=True)`"
+      ]
+    },
+    {
+      "canonical_margin_slab_width_in_fitted_space": 2.9999999999999973,
+      "class_order": [
+        0,
+        1
+      ],
+      "class_weights_in_class_order": [
+        1.0,
+        1.0
+      ],
+      "coefficient": [
+        0.6666666666666665,
+        0.0
+      ],
+      "controls": {
+        "C": 1.0,
+        "class_weight": "none",
+        "gamma": 1.0,
+        "kernel": "linear",
+        "scaling": "none"
+      },
+      "correct_prediction_id": "class-1",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Larger C or more local gamma need not improve validation. A high score or large margin does not certify calibrated risk or reliability under shift.",
+      "dual_coefficients": [
+        -0.5555555555555556,
+        -0.5000000000000001,
+        -1.0,
+        1.0,
+        1.0,
+        0.05555555555555551
+      ],
+      "dual_objective": 3.888888888888888,
+      "explanation": "C weights hinge violations relative to the norm penalty;support vectors have nonzero dual coefficients. Linear scores define geometric distances after norm normalization. RBF scores combine similarities to supports in the declared scaled space. Training fits parameters;validation compares them;test remains sealed.",
+      "fit_ids": [
+        "sv.linear.noisy.v1.train.0",
+        "sv.linear.noisy.v1.train.1",
+        "sv.linear.noisy.v1.train.2",
+        "sv.linear.noisy.v1.train.3",
+        "sv.linear.noisy.v1.train.4",
+        "sv.linear.noisy.v1.train.5",
+        "sv.linear.noisy.v1.train.6",
+        "sv.linear.noisy.v1.train.7",
+        "sv.linear.noisy.v1.train.8"
+      ],
+      "fit_status": 0,
+      "fixture_id": "sv.linear.noisy.v1",
+      "id": "sv.linear.noisy.v1.linear.C-1.0.gamma-1.0.raw.weights-none",
+      "intercept": -0.33333333333333326,
+      "iterations": [
+        14
+      ],
+      "kind": "fitted",
+      "kkt_rows": [
+        {
+          "C_i": 1.0,
+          "alpha": 0.0,
+          "functional_margin": 1.6666666666666667,
+          "hinge": 0.0,
+          "id": "sv.linear.noisy.v1.train.0",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 1.0,
+          "alpha": 0.0,
+          "functional_margin": 1.6666666666666663,
+          "hinge": 0.0,
+          "id": "sv.linear.noisy.v1.train.1",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 1.0,
+          "alpha": 0.5555555555555556,
+          "functional_margin": 0.9999999999999999,
+          "hinge": 1.1102230246251565e-16,
+          "id": "sv.linear.noisy.v1.train.2",
+          "kkt_violation": 1.1102230246251565e-16,
+          "solver_support": true,
+          "status": "free-support"
+        },
+        {
+          "C_i": 1.0,
+          "alpha": 0.5000000000000001,
+          "functional_margin": 0.9999999999999998,
+          "hinge": 2.220446049250313e-16,
+          "id": "sv.linear.noisy.v1.train.3",
+          "kkt_violation": 2.220446049250313e-16,
+          "solver_support": true,
+          "status": "free-support"
+        },
+        {
+          "C_i": 1.0,
+          "alpha": 1.0,
+          "functional_margin": 0.33333333333333326,
+          "hinge": 0.6666666666666667,
+          "id": "sv.linear.noisy.v1.train.4",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "at-C-bound"
+        },
+        {
+          "C_i": 1.0,
+          "alpha": 1.0,
+          "functional_margin": 0.33333333333333337,
+          "hinge": 0.6666666666666666,
+          "id": "sv.linear.noisy.v1.train.5",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "at-C-bound"
+        },
+        {
+          "C_i": 1.0,
+          "alpha": 0.05555555555555551,
+          "functional_margin": 0.9999999999999998,
+          "hinge": 2.220446049250313e-16,
+          "id": "sv.linear.noisy.v1.train.6",
+          "kkt_violation": 2.220446049250313e-16,
+          "solver_support": true,
+          "status": "free-support"
+        },
+        {
+          "C_i": 1.0,
+          "alpha": 0.0,
+          "functional_margin": 1.0000000000000002,
+          "hinge": 0.0,
+          "id": "sv.linear.noisy.v1.train.7",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 1.0,
+          "alpha": 1.0,
+          "functional_margin": -1.3333333333333337,
+          "hinge": 2.333333333333334,
+          "id": "sv.linear.noisy.v1.train.8",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "at-C-bound"
+        }
+      ],
+      "margin_presentation": "True geometric distance in declared fitted feature units;not an arbitrary pixel width. Manual score rescaling changes canonical F=\u00b11 slab,not the F=0 boundary.",
+      "outputs": {
+        "plot_queries": {
+          "decision_scores": [
+            -1.6666666666666665,
+            -1.6666666666666667,
+            -1.666666666666667,
+            -1.6666666666666665,
+            -1.6666666666666667,
+            -0.9999999999999998,
+            -0.9999999999999999,
+            -1.0,
+            -1.0,
+            -1.0,
+            -0.33333333333333315,
+            -0.3333333333333332,
+            -0.33333333333333326,
+            -0.3333333333333333,
+            -0.33333333333333337,
+            0.3333333333333335,
+            0.3333333333333335,
+            0.3333333333333336,
+            0.33333333333333337,
+            0.33333333333333326,
+            1.0000000000000002,
+            1.0,
+            1.0000000000000004,
+            1.0000000000000002,
+            1.0
+          ],
+          "ids": [
+            "sv.linear.noisy.v1.query.0",
+            "sv.linear.noisy.v1.query.1",
+            "sv.linear.noisy.v1.query.2",
+            "sv.linear.noisy.v1.query.3",
+            "sv.linear.noisy.v1.query.4",
+            "sv.linear.noisy.v1.query.5",
+            "sv.linear.noisy.v1.query.6",
+            "sv.linear.noisy.v1.query.7",
+            "sv.linear.noisy.v1.query.8",
+            "sv.linear.noisy.v1.query.9",
+            "sv.linear.noisy.v1.query.10",
+            "sv.linear.noisy.v1.query.11",
+            "sv.linear.noisy.v1.query.12",
+            "sv.linear.noisy.v1.query.13",
+            "sv.linear.noisy.v1.query.14",
+            "sv.linear.noisy.v1.query.15",
+            "sv.linear.noisy.v1.query.16",
+            "sv.linear.noisy.v1.query.17",
+            "sv.linear.noisy.v1.query.18",
+            "sv.linear.noisy.v1.query.19",
+            "sv.linear.noisy.v1.query.20",
+            "sv.linear.noisy.v1.query.21",
+            "sv.linear.noisy.v1.query.22",
+            "sv.linear.noisy.v1.query.23",
+            "sv.linear.noisy.v1.query.24"
+          ],
+          "manual_kernel_scores": [
+            -1.6666666666666665,
+            -1.6666666666666667,
+            -1.6666666666666663,
+            -1.6666666666666663,
+            -1.6666666666666663,
+            -1.0000000000000002,
+            -0.9999999999999999,
+            -0.9999999999999998,
+            -0.9999999999999998,
+            -1.0000000000000002,
+            -0.33333333333333326,
+            -0.33333333333333326,
+            -0.33333333333333326,
+            -0.33333333333333326,
+            -0.33333333333333326,
+            0.3333333333333337,
+            0.33333333333333326,
+            0.33333333333333326,
+            0.33333333333333337,
+            0.3333333333333337,
+            0.9999999999999998,
+            0.9999999999999998,
+            0.9999999999999998,
+            1.0000000000000002,
+            1.0
+          ],
+          "near_boundary_indices": [],
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -2.0,
+              -2.0
+            ],
+            [
+              -2.0,
+              -1.0
+            ],
+            [
+              -2.0,
+              0.0
+            ],
+            [
+              -2.0,
+              1.0
+            ],
+            [
+              -2.0,
+              2.0
+            ],
+            [
+              -1.0,
+              -2.0
+            ],
+            [
+              -1.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              2.0
+            ],
+            [
+              0.0,
+              -2.0
+            ],
+            [
+              0.0,
+              -1.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              2.0
+            ],
+            [
+              1.0,
+              -2.0
+            ],
+            [
+              1.0,
+              -1.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              2.0
+            ],
+            [
+              2.0,
+              -2.0
+            ],
+            [
+              2.0,
+              -1.0
+            ],
+            [
+              2.0,
+              0.0
+            ],
+            [
+              2.0,
+              1.0
+            ],
+            [
+              2.0,
+              2.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -2.5000000000000004,
+            -2.500000000000001,
+            -2.500000000000001,
+            -2.5000000000000004,
+            -2.500000000000001,
+            -1.5,
+            -1.5000000000000002,
+            -1.5000000000000004,
+            -1.5000000000000004,
+            -1.5000000000000004,
+            -0.49999999999999983,
+            -0.4999999999999999,
+            -0.5,
+            -0.5000000000000001,
+            -0.5000000000000002,
+            0.5000000000000003,
+            0.5000000000000003,
+            0.5000000000000006,
+            0.5000000000000002,
+            0.5,
+            1.5000000000000007,
+            1.5000000000000004,
+            1.500000000000001,
+            1.5000000000000007,
+            1.5000000000000004
+          ]
+        },
+        "training": {
+          "decision_scores": [
+            -1.6666666666666667,
+            -1.6666666666666665,
+            -0.9999999999999999,
+            -1.0,
+            0.3333333333333335,
+            0.33333333333333337,
+            1.0,
+            1.0000000000000002,
+            1.3333333333333335
+          ],
+          "ids": [
+            "sv.linear.noisy.v1.train.0",
+            "sv.linear.noisy.v1.train.1",
+            "sv.linear.noisy.v1.train.2",
+            "sv.linear.noisy.v1.train.3",
+            "sv.linear.noisy.v1.train.4",
+            "sv.linear.noisy.v1.train.5",
+            "sv.linear.noisy.v1.train.6",
+            "sv.linear.noisy.v1.train.7",
+            "sv.linear.noisy.v1.train.8"
+          ],
+          "manual_kernel_scores": [
+            -1.6666666666666667,
+            -1.6666666666666663,
+            -0.9999999999999999,
+            -0.9999999999999998,
+            0.33333333333333326,
+            0.33333333333333337,
+            0.9999999999999998,
+            1.0000000000000002,
+            1.3333333333333337
+          ],
+          "metrics": {
+            "accuracy": 0.8888888888888888,
+            "balanced_accuracy": 0.9,
+            "confusion_actual_rows_predicted_columns": [
+              [
+                4,
+                1
+              ],
+              [
+                0,
+                4
+              ]
+            ]
+          },
+          "near_boundary_indices": [],
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -2.0,
+              -1.0
+            ],
+            [
+              -2.0,
+              1.0
+            ],
+            [
+              -1.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              1.0,
+              -1.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              2.0,
+              -1.0
+            ],
+            [
+              2.0,
+              1.0
+            ],
+            [
+              2.5,
+              0.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -2.500000000000001,
+            -2.5000000000000004,
+            -1.5000000000000002,
+            -1.5000000000000004,
+            0.5000000000000003,
+            0.5000000000000002,
+            1.5000000000000004,
+            1.5000000000000007,
+            2.000000000000001
+          ]
+        },
+        "validation": {
+          "decision_scores": [
+            -1.333333333333333,
+            -0.6666666666666666,
+            1.1102230246251565e-16,
+            0.6666666666666666,
+            -0.16666666666666655,
+            1.6666666666666667
+          ],
+          "ids": [
+            "sv.linear.noisy.v1.validation.0",
+            "sv.linear.noisy.v1.validation.1",
+            "sv.linear.noisy.v1.validation.2",
+            "sv.linear.noisy.v1.validation.3",
+            "sv.linear.noisy.v1.validation.4",
+            "sv.linear.noisy.v1.validation.5"
+          ],
+          "manual_kernel_scores": [
+            -1.3333333333333333,
+            -0.6666666666666665,
+            0.0,
+            0.6666666666666667,
+            -0.16666666666666663,
+            1.6666666666666667
+          ],
+          "metrics": {
+            "accuracy": 0.8333333333333334,
+            "balanced_accuracy": 0.875,
+            "confusion_actual_rows_predicted_columns": [
+              [
+                2,
+                0
+              ],
+              [
+                1,
+                3
+              ]
+            ]
+          },
+          "near_boundary_indices": [
+            2
+          ],
+          "predictions": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -1.5,
+              -0.5
+            ],
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              0.5,
+              -0.5
+            ],
+            [
+              1.5,
+              0.5
+            ],
+            [
+              0.25,
+              0.0
+            ],
+            [
+              3.0,
+              0.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -2.0,
+            -1.0000000000000002,
+            1.6653345369377353e-16,
+            1.0000000000000002,
+            -0.24999999999999986,
+            2.500000000000001
+          ]
+        }
+      },
+      "prediction_input": [
+        0.5,
+        -0.5
+      ],
+      "prediction_options": [
+        {
+          "id": "class-0",
+          "label": "Class0:stays"
+        },
+        {
+          "id": "class-1",
+          "label": "Class1:churns"
+        },
+        {
+          "id": "invalid",
+          "label": "Unsupported configuration"
+        }
+      ],
+      "prediction_query_id": "sv.linear.noisy.v1.validation.2",
+      "prediction_question": "For validation querysv.linear.noisy.v1.validation.2 at[0.5, -0.5],predict class0 or class1 before revealing scores,margin/kernel evidence and validation errors.",
+      "preprocessing": {
+        "fit_ids": [],
+        "kind": "identity",
+        "mean": [
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "primal_dual_gap": 2.6645352591003757e-15,
+      "primal_objective": 3.8888888888888906,
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Use the fitted decision sign in its declared feature space;C/kernel/scaling change the fit,not calibrated probabilities."
+        },
+        {
+          "id": "probability",
+          "label": "The decision score is automatically P(churn)."
+        },
+        {
+          "id": "test",
+          "label": "Use final-test labels to choose the boundary."
+        }
+      ],
+      "rkhs_norm_squared": 0.4444444444444453,
+      "settings": {
+        "break_ties": false,
+        "cache_size_mb": 64,
+        "decision_function_shape": "ovr",
+        "max_iter": 200000,
+        "probability": false,
+        "random_state": 1729,
+        "shrinking": false,
+        "tol": 1e-06
+      },
+      "support_coordinates_fitted_space": [
+        [
+          -1.0,
+          -1.0
+        ],
+        [
+          -1.0,
+          1.0
+        ],
+        [
+          2.5,
+          0.0
+        ],
+        [
+          1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0
+        ],
+        [
+          2.0,
+          -1.0
+        ]
+      ],
+      "support_counts_by_class": [
+        3,
+        3
+      ],
+      "support_ids": [
+        "sv.linear.noisy.v1.train.2",
+        "sv.linear.noisy.v1.train.3",
+        "sv.linear.noisy.v1.train.8",
+        "sv.linear.noisy.v1.train.4",
+        "sv.linear.noisy.v1.train.5",
+        "sv.linear.noisy.v1.train.6"
+      ],
+      "support_indices": [
+        2,
+        3,
+        8,
+        4,
+        5,
+        6
+      ],
+      "training_class_counts": [
+        5,
+        4
+      ],
+      "training_kernel_gram": [
+        [
+          5.0,
+          3.0,
+          3.0,
+          1.0,
+          -1.0,
+          -3.0,
+          -3.0,
+          -5.0,
+          -5.0
+        ],
+        [
+          3.0,
+          5.0,
+          1.0,
+          3.0,
+          -3.0,
+          -1.0,
+          -5.0,
+          -3.0,
+          -5.0
+        ],
+        [
+          3.0,
+          1.0,
+          2.0,
+          0.0,
+          0.0,
+          -2.0,
+          -1.0,
+          -3.0,
+          -2.5
+        ],
+        [
+          1.0,
+          3.0,
+          0.0,
+          2.0,
+          -2.0,
+          0.0,
+          -3.0,
+          -1.0,
+          -2.5
+        ],
+        [
+          -1.0,
+          -3.0,
+          0.0,
+          -2.0,
+          2.0,
+          0.0,
+          3.0,
+          1.0,
+          2.5
+        ],
+        [
+          -3.0,
+          -1.0,
+          -2.0,
+          0.0,
+          0.0,
+          2.0,
+          1.0,
+          3.0,
+          2.5
+        ],
+        [
+          -3.0,
+          -5.0,
+          -1.0,
+          -3.0,
+          3.0,
+          1.0,
+          5.0,
+          3.0,
+          5.0
+        ],
+        [
+          -5.0,
+          -3.0,
+          -3.0,
+          -1.0,
+          1.0,
+          3.0,
+          3.0,
+          5.0,
+          5.0
+        ],
+        [
+          -5.0,
+          -5.0,
+          -2.5,
+          -2.5,
+          2.5,
+          2.5,
+          5.0,
+          5.0,
+          6.25
+        ]
+      ],
+      "warnings": [
+        "The `probability` parameter was deprecated in 1.9 and will be removed in version 1.11. Use `CalibratedClassifierCV(SVC(), ensemble=False)` instead of `SVC(probability=True)`"
+      ]
+    },
+    {
+      "canonical_margin_slab_width_in_fitted_space": 1.9999999999999627,
+      "class_order": [
+        0,
+        1
+      ],
+      "class_weights_in_class_order": [
+        1.0,
+        1.0
+      ],
+      "coefficient": [
+        0.9999999999999982,
+        0.0
+      ],
+      "controls": {
+        "C": 10.0,
+        "class_weight": "none",
+        "gamma": 1.0,
+        "kernel": "linear",
+        "scaling": "none"
+      },
+      "correct_prediction_id": "class-1",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Larger C or more local gamma need not improve validation. A high score or large margin does not certify calibrated risk or reliability under shift.",
+      "dual_coefficients": [
+        -5.000000000000002,
+        -3.0,
+        -10.0,
+        10.0,
+        7.999999999999998
+      ],
+      "dual_objective": 35.49999999999998,
+      "explanation": "C weights hinge violations relative to the norm penalty;support vectors have nonzero dual coefficients. Linear scores define geometric distances after norm normalization. RBF scores combine similarities to supports in the declared scaled space. Training fits parameters;validation compares them;test remains sealed.",
+      "fit_ids": [
+        "sv.linear.noisy.v1.train.0",
+        "sv.linear.noisy.v1.train.1",
+        "sv.linear.noisy.v1.train.2",
+        "sv.linear.noisy.v1.train.3",
+        "sv.linear.noisy.v1.train.4",
+        "sv.linear.noisy.v1.train.5",
+        "sv.linear.noisy.v1.train.6",
+        "sv.linear.noisy.v1.train.7",
+        "sv.linear.noisy.v1.train.8"
+      ],
+      "fit_status": 0,
+      "fixture_id": "sv.linear.noisy.v1",
+      "id": "sv.linear.noisy.v1.linear.C-10.0.gamma-1.0.raw.weights-none",
+      "intercept": -7.401486830834377e-17,
+      "iterations": [
+        58
+      ],
+      "kind": "fitted",
+      "kkt_rows": [
+        {
+          "C_i": 10.0,
+          "alpha": 0.0,
+          "functional_margin": 2.0,
+          "hinge": 0.0,
+          "id": "sv.linear.noisy.v1.train.0",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 10.0,
+          "alpha": 0.0,
+          "functional_margin": 2.0,
+          "hinge": 0.0,
+          "id": "sv.linear.noisy.v1.train.1",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 10.0,
+          "alpha": 5.000000000000002,
+          "functional_margin": 1.0,
+          "hinge": 0.0,
+          "id": "sv.linear.noisy.v1.train.2",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "free-support"
+        },
+        {
+          "C_i": 10.0,
+          "alpha": 3.0,
+          "functional_margin": 1.0,
+          "hinge": 0.0,
+          "id": "sv.linear.noisy.v1.train.3",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "free-support"
+        },
+        {
+          "C_i": 10.0,
+          "alpha": 10.0,
+          "functional_margin": 0.9999999999999999,
+          "hinge": 1.1102230246251565e-16,
+          "id": "sv.linear.noisy.v1.train.4",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "at-C-bound"
+        },
+        {
+          "C_i": 10.0,
+          "alpha": 7.999999999999998,
+          "functional_margin": 0.9999999999999999,
+          "hinge": 1.1102230246251565e-16,
+          "id": "sv.linear.noisy.v1.train.5",
+          "kkt_violation": 1.1102230246251565e-16,
+          "solver_support": true,
+          "status": "free-support"
+        },
+        {
+          "C_i": 10.0,
+          "alpha": 0.0,
+          "functional_margin": 2.0,
+          "hinge": 0.0,
+          "id": "sv.linear.noisy.v1.train.6",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 10.0,
+          "alpha": 0.0,
+          "functional_margin": 2.0,
+          "hinge": 0.0,
+          "id": "sv.linear.noisy.v1.train.7",
+          "kkt_violation": 0.0,
+          "solver_support": false,
+          "status": "zero-alpha"
+        },
+        {
+          "C_i": 10.0,
+          "alpha": 10.0,
+          "functional_margin": -2.5,
+          "hinge": 3.5,
+          "id": "sv.linear.noisy.v1.train.8",
+          "kkt_violation": 0.0,
+          "solver_support": true,
+          "status": "at-C-bound"
+        }
+      ],
+      "margin_presentation": "True geometric distance in declared fitted feature units;not an arbitrary pixel width. Manual score rescaling changes canonical F=\u00b11 slab,not the F=0 boundary.",
+      "outputs": {
+        "plot_queries": {
+          "decision_scores": [
+            -2.0,
+            -2.0000000000000018,
+            -1.9999999999999964,
+            -1.9999999999999982,
+            -2.0,
+            -1.0000000000000018,
+            -1.0,
+            -0.9999999999999983,
+            -1.0,
+            -1.0000000000000018,
+            -7.401486830834377e-17,
+            -7.401486830834377e-17,
+            -7.401486830834377e-17,
+            -7.401486830834377e-17,
+            -7.401486830834377e-17,
+            1.0000000000000018,
+            0.9999999999999999,
+            0.9999999999999981,
+            0.9999999999999999,
+            1.0000000000000018,
+            2.0,
+            1.9999999999999982,
+            1.9999999999999964,
+            2.0000000000000018,
+            2.0
+          ],
+          "ids": [
+            "sv.linear.noisy.v1.query.0",
+            "sv.linear.noisy.v1.query.1",
+            "sv.linear.noisy.v1.query.2",
+            "sv.linear.noisy.v1.query.3",
+            "sv.linear.noisy.v1.query.4",
+            "sv.linear.noisy.v1.query.5",
+            "sv.linear.noisy.v1.query.6",
+            "sv.linear.noisy.v1.query.7",
+            "sv.linear.noisy.v1.query.8",
+            "sv.linear.noisy.v1.query.9",
+            "sv.linear.noisy.v1.query.10",
+            "sv.linear.noisy.v1.query.11",
+            "sv.linear.noisy.v1.query.12",
+            "sv.linear.noisy.v1.query.13",
+            "sv.linear.noisy.v1.query.14",
+            "sv.linear.noisy.v1.query.15",
+            "sv.linear.noisy.v1.query.16",
+            "sv.linear.noisy.v1.query.17",
+            "sv.linear.noisy.v1.query.18",
+            "sv.linear.noisy.v1.query.19",
+            "sv.linear.noisy.v1.query.20",
+            "sv.linear.noisy.v1.query.21",
+            "sv.linear.noisy.v1.query.22",
+            "sv.linear.noisy.v1.query.23",
+            "sv.linear.noisy.v1.query.24"
+          ],
+          "manual_kernel_scores": [
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0,
+            -0.9999999999999983,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -7.401486830834377e-17,
+            -7.401486830834377e-17,
+            -7.401486830834377e-17,
+            -7.401486830834377e-17,
+            -7.401486830834377e-17,
+            0.9999999999999999,
+            0.9999999999999999,
+            0.9999999999999999,
+            0.9999999999999999,
+            0.9999999999999981,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "near_boundary_indices": [
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -2.0,
+              -2.0
+            ],
+            [
+              -2.0,
+              -1.0
+            ],
+            [
+              -2.0,
+              0.0
+            ],
+            [
+              -2.0,
+              1.0
+            ],
+            [
+              -2.0,
+              2.0
+            ],
+            [
+              -1.0,
+              -2.0
+            ],
+            [
+              -1.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              -1.0,
+              2.0
+            ],
+            [
+              0.0,
+              -2.0
+            ],
+            [
+              0.0,
+              -1.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              2.0
+            ],
+            [
+              1.0,
+              -2.0
+            ],
+            [
+              1.0,
+              -1.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              2.0
+            ],
+            [
+              2.0,
+              -2.0
+            ],
+            [
+              2.0,
+              -1.0
+            ],
+            [
+              2.0,
+              0.0
+            ],
+            [
+              2.0,
+              1.0
+            ],
+            [
+              2.0,
+              2.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -2.0000000000000036,
+            -2.0000000000000053,
+            -2.0,
+            -2.0000000000000018,
+            -2.0000000000000036,
+            -1.0000000000000036,
+            -1.0000000000000018,
+            -1.0000000000000002,
+            -1.0000000000000018,
+            -1.0000000000000036,
+            -7.40148683083439e-17,
+            -7.40148683083439e-17,
+            -7.40148683083439e-17,
+            -7.40148683083439e-17,
+            -7.40148683083439e-17,
+            1.0000000000000036,
+            1.0000000000000018,
+            0.9999999999999999,
+            1.0000000000000018,
+            1.0000000000000036,
+            2.0000000000000036,
+            2.0000000000000018,
+            2.0,
+            2.0000000000000053,
+            2.0000000000000036
+          ]
+        },
+        "training": {
+          "decision_scores": [
+            -2.0000000000000018,
+            -1.9999999999999982,
+            -1.0,
+            -1.0,
+            0.9999999999999999,
+            0.9999999999999999,
+            1.9999999999999982,
+            2.0000000000000018,
+            2.4999999999999956
+          ],
+          "ids": [
+            "sv.linear.noisy.v1.train.0",
+            "sv.linear.noisy.v1.train.1",
+            "sv.linear.noisy.v1.train.2",
+            "sv.linear.noisy.v1.train.3",
+            "sv.linear.noisy.v1.train.4",
+            "sv.linear.noisy.v1.train.5",
+            "sv.linear.noisy.v1.train.6",
+            "sv.linear.noisy.v1.train.7",
+            "sv.linear.noisy.v1.train.8"
+          ],
+          "manual_kernel_scores": [
+            -2.0,
+            -2.0,
+            -1.0,
+            -1.0,
+            0.9999999999999999,
+            0.9999999999999999,
+            2.0,
+            2.0,
+            2.5
+          ],
+          "metrics": {
+            "accuracy": 0.8888888888888888,
+            "balanced_accuracy": 0.9,
+            "confusion_actual_rows_predicted_columns": [
+              [
+                4,
+                1
+              ],
+              [
+                0,
+                4
+              ]
+            ]
+          },
+          "near_boundary_indices": [],
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -2.0,
+              -1.0
+            ],
+            [
+              -2.0,
+              1.0
+            ],
+            [
+              -1.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              1.0
+            ],
+            [
+              1.0,
+              -1.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              2.0,
+              -1.0
+            ],
+            [
+              2.0,
+              1.0
+            ],
+            [
+              2.5,
+              0.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -2.0000000000000053,
+            -2.0000000000000018,
+            -1.0000000000000018,
+            -1.0000000000000018,
+            1.0000000000000018,
+            1.0000000000000018,
+            2.0000000000000018,
+            2.0000000000000053,
+            2.5
+          ]
+        },
+        "validation": {
+          "decision_scores": [
+            -1.5,
+            -0.5000000000000001,
+            0.49999999999999994,
+            1.5,
+            0.24999999999999947,
+            3.0000000000000018
+          ],
+          "ids": [
+            "sv.linear.noisy.v1.validation.0",
+            "sv.linear.noisy.v1.validation.1",
+            "sv.linear.noisy.v1.validation.2",
+            "sv.linear.noisy.v1.validation.3",
+            "sv.linear.noisy.v1.validation.4",
+            "sv.linear.noisy.v1.validation.5"
+          ],
+          "manual_kernel_scores": [
+            -1.5,
+            -0.5000000000000001,
+            0.49999999999999994,
+            1.5,
+            0.24999999999999992,
+            3.0
+          ],
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "confusion_actual_rows_predicted_columns": [
+              [
+                2,
+                0
+              ],
+              [
+                0,
+                4
+              ]
+            ]
+          },
+          "near_boundary_indices": [],
+          "predictions": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "scaled_inputs": [
+            [
+              -1.5,
+              -0.5
+            ],
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              0.5,
+              -0.5
+            ],
+            [
+              1.5,
+              0.5
+            ],
+            [
+              0.25,
+              0.0
+            ],
+            [
+              3.0,
+              0.0
+            ]
+          ],
+          "signed_geometric_distance_in_fitted_space": [
+            -1.5000000000000027,
+            -0.500000000000001,
+            0.5000000000000009,
+            1.5000000000000027,
+            0.24999999999999992,
+            3.000000000000007
+          ]
+        }
+      },
+      "prediction_input": [
+        0.5,
+        -0.5
+      ],
+      "prediction_options": [
+        {
+          "id": "class-0",
+          "label": "Class0:stays"
+        },
+        {
+          "id": "class-1",
+          "label": "Class1:churns"
+        },
+        {
+          "id": "invalid",
+          "label": "Unsupported configuration"
+        }
+      ],
+      "prediction_query_id": "sv.linear.noisy.v1.validation.2",
+      "prediction_question": "For validation querysv.linear.noisy.v1.validation.2 at[0.5, -0.5],predict class0 or class1 before revealing scores,margin/kernel evidence and validation errors.",
+      "preprocessing": {
+        "fit_ids": [],
+        "kind": "identity",
+        "mean": [
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "primal_dual_gap": 4.263256414560601e-14,
+      "primal_objective": 35.50000000000002,
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Use the fitted decision sign in its declared feature space;C/kernel/scaling change the fit,not calibrated probabilities."
+        },
+        {
+          "id": "probability",
+          "label": "The decision score is automatically P(churn)."
+        },
+        {
+          "id": "test",
+          "label": "Use final-test labels to choose the boundary."
+        }
+      ],
+      "rkhs_norm_squared": 1.0000000000000373,
+      "settings": {
+        "break_ties": false,
+        "cache_size_mb": 64,
+        "decision_function_shape": "ovr",
+        "max_iter": 200000,
+        "probability": false,
+        "random_state": 1729,
+        "shrinking": false,
+        "tol": 1e-06
+      },
+      "support_coordinates_fitted_space": [
+        [
+          -1.0,
+          -1.0
+        ],
+        [
+          -1.0,
+          1.0
+        ],
+        [
+          2.5,
+          0.0
+        ],
+        [
+          1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "support_counts_by_class": [
+        3,
+        2
+      ],
+      "support_ids": [
+        "sv.linear.noisy.v1.train.2",
+        "sv.linear.noisy.v1.train.3",
+        "sv.linear.noisy.v1.train.8",
+        "sv.linear.noisy.v1.train.4",
+        "sv.linear.noisy.v1.train.5"
+      ],
+      "support_indices": [
+        2,
+        3,
+        8,
+        4,
+        5
+      ],
+      "training_class_counts": [
+        5,
+        4
+      ],
+      "training_kernel_gram": [
+        [
+          5.0,
+          3.0,
+          3.0,
+          1.0,
+          -1.0,
+          -3.0,
+          -3.0,
+          -5.0,
+          -5.0
+        ],
+        [
+          3.0,
+          5.0,
+          1.0,
+          3.0,
+          -3.0,
+          -1.0,
+          -5.0,
+          -3.0,
+          -5.0
+        ],
+        [
+          3.0,
+          1.0,
+          2.0,
+          0.0,
+          0.0,
+          -2.0,
+          -1.0,
+          -3.0,
+          -2.5
+        ],
+        [
+          1.0,
+          3.0,
+          0.0,
+          2.0,
+          -2.0,
+          0.0,
+          -3.0,
+          -1.0,
+          -2.5
+        ],
+        [
+          -1.0,
+          -3.0,
+          0.0,
+          -2.0,
+          2.0,
+          0.0,
+          3.0,
+          1.0,
+          2.5
+        ],
+        [
+          -3.0,
+          -1.0,
+          -2.0,
+          0.0,
+          0.0,
+          2.0,
+          1.0,
+          3.0,
+          2.5
+        ],
+        [
+          -3.0,
+          -5.0,
+          -1.0,
+          -3.0,
+          3.0,
+          1.0,
+          5.0,
+          3.0,
+          5.0
+        ],
+        [
+          -5.0,
+          -3.0,
+          -3.0,
+          -1.0,
+          1.0,
+          3.0,
+          3.0,
+          5.0,
+          5.0
+        ],
+        [
+          -5.0,
+          -5.0,
+          -2.5,
+          -2.5,
+          2.5,
+          2.5,
+          5.0,
+          5.0,
+          6.25
+        ]
+      ],
+      "warnings": [
+        "The `probability` parameter was deprecated in 1.9 and will be removed in version 1.11. Use `CalibratedClassifierCV(SVC(), ensemble=False)` instead of `SVC(probability=True)`"
+      ]
+    },
+    {
+      "canonical_slab_width": 2.0,
+      "controls": {
+        "coefficient": [
+          1.0,
+          0.0
+        ],
+        "intercept": 0.0
+      },
+      "correct_prediction_id": "class-1",
+      "correct_reason_id": "mechanism",
+      "counterexample": "w=(1,0) and(2,0),b=0 separate the same points with equal point-to-boundary distances but different raw scores.",
+      "decision_scores": [
+        -1.5,
+        -0.5,
+        0.5,
+        1.5,
+        0.25,
+        3.0
+      ],
+      "decisions": [
+        "class-0",
+        "class-0",
+        "class-1",
+        "class-1",
+        "class-1",
+        "class-1"
+      ],
+      "explanation": "This is authored geometry,not SVC training. Rescaling w and b preserves boundary and normalized distance but changes functional scores and canonical F=\u00b11 slab. A zero normal has undefined distance. No solver support membership is invented.",
+      "fixture_id": "sv.linear.clean.v1",
+      "functional_margins": [
+        1.5,
+        0.5,
+        0.5,
+        1.5,
+        0.25,
+        3.0
+      ],
+      "hinge": [
+        0.0,
+        0.5,
+        0.5,
+        0.0,
+        0.75,
+        0.0
+      ],
+      "id": "sv-e1.manual.reference.v1",
+      "kind": "manual-geometry",
+      "prediction_input": [
+        0.5,
+        -0.5
+      ],
+      "prediction_options": [
+        {
+          "id": "class-0",
+          "label": "Negative side"
+        },
+        {
+          "id": "class-1",
+          "label": "Positive side"
+        },
+        {
+          "id": "on-boundary",
+          "label": "On the boundary"
+        },
+        {
+          "id": "undefined",
+          "label": "Undefined geometric distance:zero normal"
+        }
+      ],
+      "prediction_query_id": "sv.linear.clean.v1.validation.2",
+      "prediction_question": "For validation point(.5,-.5),predict its side of the manually supplied boundary,or undefined geometry if its normal vector is zero.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Normalize score by the nonzero normal-vector norm;manual movement is not a fitted optimum or calibrated risk."
+        },
+        {
+          "id": "probability",
+          "label": "Distance is automatically P(churn)."
+        },
+        {
+          "id": "test",
+          "label": "Use test labels to select the most attractive line."
+        }
+      ],
+      "signed_distance": [
+        -1.5,
+        -0.5,
+        0.5,
+        1.5,
+        0.25,
+        3.0
+      ],
+      "solver_support_ids": {
+        "reason": "illustration-not-a-fitted-model",
+        "tag": "unavailable"
+      },
+      "unsigned_distance": [
+        1.5,
+        0.5,
+        0.5,
+        1.5,
+        0.25,
+        3.0
+      ]
+    },
+    {
+      "canonical_slab_width": 1.0,
+      "controls": {
+        "coefficient": [
+          2.0,
+          0.0
+        ],
+        "intercept": 0.0
+      },
+      "correct_prediction_id": "class-1",
+      "correct_reason_id": "mechanism",
+      "counterexample": "w=(1,0) and(2,0),b=0 separate the same points with equal point-to-boundary distances but different raw scores.",
+      "decision_scores": [
+        -3.0,
+        -1.0,
+        1.0,
+        3.0,
+        0.5,
+        6.0
+      ],
+      "decisions": [
+        "class-0",
+        "class-0",
+        "class-1",
+        "class-1",
+        "class-1",
+        "class-1"
+      ],
+      "explanation": "This is authored geometry,not SVC training. Rescaling w and b preserves boundary and normalized distance but changes functional scores and canonical F=\u00b11 slab. A zero normal has undefined distance. No solver support membership is invented.",
+      "fixture_id": "sv.linear.clean.v1",
+      "functional_margins": [
+        3.0,
+        1.0,
+        1.0,
+        3.0,
+        0.5,
+        6.0
+      ],
+      "hinge": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0
+      ],
+      "id": "sv-e1.manual.rescaled.v1",
+      "kind": "manual-geometry",
+      "prediction_input": [
+        0.5,
+        -0.5
+      ],
+      "prediction_options": [
+        {
+          "id": "class-0",
+          "label": "Negative side"
+        },
+        {
+          "id": "class-1",
+          "label": "Positive side"
+        },
+        {
+          "id": "on-boundary",
+          "label": "On the boundary"
+        },
+        {
+          "id": "undefined",
+          "label": "Undefined geometric distance:zero normal"
+        }
+      ],
+      "prediction_query_id": "sv.linear.clean.v1.validation.2",
+      "prediction_question": "For validation point(.5,-.5),predict its side of the manually supplied boundary,or undefined geometry if its normal vector is zero.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Normalize score by the nonzero normal-vector norm;manual movement is not a fitted optimum or calibrated risk."
+        },
+        {
+          "id": "probability",
+          "label": "Distance is automatically P(churn)."
+        },
+        {
+          "id": "test",
+          "label": "Use test labels to select the most attractive line."
+        }
+      ],
+      "signed_distance": [
+        -1.5,
+        -0.5,
+        0.5,
+        1.5,
+        0.25,
+        3.0
+      ],
+      "solver_support_ids": {
+        "reason": "illustration-not-a-fitted-model",
+        "tag": "unavailable"
+      },
+      "unsigned_distance": [
+        1.5,
+        0.5,
+        0.5,
+        1.5,
+        0.25,
+        3.0
+      ]
+    },
+    {
+      "canonical_slab_width": 2.0,
+      "controls": {
+        "coefficient": [
+          1.0,
+          0.0
+        ],
+        "intercept": 1.0
+      },
+      "correct_prediction_id": "class-1",
+      "correct_reason_id": "mechanism",
+      "counterexample": "w=(1,0) and(2,0),b=0 separate the same points with equal point-to-boundary distances but different raw scores.",
+      "decision_scores": [
+        -0.5,
+        0.5,
+        1.5,
+        2.5,
+        1.25,
+        4.0
+      ],
+      "decisions": [
+        "class-0",
+        "class-1",
+        "class-1",
+        "class-1",
+        "class-1",
+        "class-1"
+      ],
+      "explanation": "This is authored geometry,not SVC training. Rescaling w and b preserves boundary and normalized distance but changes functional scores and canonical F=\u00b11 slab. A zero normal has undefined distance. No solver support membership is invented.",
+      "fixture_id": "sv.linear.clean.v1",
+      "functional_margins": [
+        0.5,
+        -0.5,
+        1.5,
+        2.5,
+        1.25,
+        4.0
+      ],
+      "hinge": [
+        0.5,
+        1.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "id": "sv-e1.manual.move-left.v1",
+      "kind": "manual-geometry",
+      "prediction_input": [
+        0.5,
+        -0.5
+      ],
+      "prediction_options": [
+        {
+          "id": "class-0",
+          "label": "Negative side"
+        },
+        {
+          "id": "class-1",
+          "label": "Positive side"
+        },
+        {
+          "id": "on-boundary",
+          "label": "On the boundary"
+        },
+        {
+          "id": "undefined",
+          "label": "Undefined geometric distance:zero normal"
+        }
+      ],
+      "prediction_query_id": "sv.linear.clean.v1.validation.2",
+      "prediction_question": "For validation point(.5,-.5),predict its side of the manually supplied boundary,or undefined geometry if its normal vector is zero.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Normalize score by the nonzero normal-vector norm;manual movement is not a fitted optimum or calibrated risk."
+        },
+        {
+          "id": "probability",
+          "label": "Distance is automatically P(churn)."
+        },
+        {
+          "id": "test",
+          "label": "Use test labels to select the most attractive line."
+        }
+      ],
+      "signed_distance": [
+        -0.5,
+        0.5,
+        1.5,
+        2.5,
+        1.25,
+        4.0
+      ],
+      "solver_support_ids": {
+        "reason": "illustration-not-a-fitted-model",
+        "tag": "unavailable"
+      },
+      "unsigned_distance": [
+        0.5,
+        0.5,
+        1.5,
+        2.5,
+        1.25,
+        4.0
+      ]
+    },
+    {
+      "canonical_slab_width": 2.0,
+      "controls": {
+        "coefficient": [
+          1.0,
+          0.0
+        ],
+        "intercept": -1.0
+      },
+      "correct_prediction_id": "class-0",
+      "correct_reason_id": "mechanism",
+      "counterexample": "w=(1,0) and(2,0),b=0 separate the same points with equal point-to-boundary distances but different raw scores.",
+      "decision_scores": [
+        -2.5,
+        -1.5,
+        -0.5,
+        0.5,
+        -0.75,
+        2.0
+      ],
+      "decisions": [
+        "class-0",
+        "class-0",
+        "class-0",
+        "class-1",
+        "class-0",
+        "class-1"
+      ],
+      "explanation": "This is authored geometry,not SVC training. Rescaling w and b preserves boundary and normalized distance but changes functional scores and canonical F=\u00b11 slab. A zero normal has undefined distance. No solver support membership is invented.",
+      "fixture_id": "sv.linear.clean.v1",
+      "functional_margins": [
+        2.5,
+        1.5,
+        -0.5,
+        0.5,
+        -0.75,
+        2.0
+      ],
+      "hinge": [
+        0.0,
+        0.0,
+        1.5,
+        0.5,
+        1.75,
+        0.0
+      ],
+      "id": "sv-e1.manual.move-right.v1",
+      "kind": "manual-geometry",
+      "prediction_input": [
+        0.5,
+        -0.5
+      ],
+      "prediction_options": [
+        {
+          "id": "class-0",
+          "label": "Negative side"
+        },
+        {
+          "id": "class-1",
+          "label": "Positive side"
+        },
+        {
+          "id": "on-boundary",
+          "label": "On the boundary"
+        },
+        {
+          "id": "undefined",
+          "label": "Undefined geometric distance:zero normal"
+        }
+      ],
+      "prediction_query_id": "sv.linear.clean.v1.validation.2",
+      "prediction_question": "For validation point(.5,-.5),predict its side of the manually supplied boundary,or undefined geometry if its normal vector is zero.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Normalize score by the nonzero normal-vector norm;manual movement is not a fitted optimum or calibrated risk."
+        },
+        {
+          "id": "probability",
+          "label": "Distance is automatically P(churn)."
+        },
+        {
+          "id": "test",
+          "label": "Use test labels to select the most attractive line."
+        }
+      ],
+      "signed_distance": [
+        -2.5,
+        -1.5,
+        -0.5,
+        0.5,
+        -0.75,
+        2.0
+      ],
+      "solver_support_ids": {
+        "reason": "illustration-not-a-fitted-model",
+        "tag": "unavailable"
+      },
+      "unsigned_distance": [
+        2.5,
+        1.5,
+        0.5,
+        0.5,
+        0.75,
+        2.0
+      ]
+    },
+    {
+      "canonical_slab_width": 1.414213562373095,
+      "controls": {
+        "coefficient": [
+          1.0,
+          1.0
+        ],
+        "intercept": 0.0
+      },
+      "correct_prediction_id": "on-boundary",
+      "correct_reason_id": "mechanism",
+      "counterexample": "w=(1,0) and(2,0),b=0 separate the same points with equal point-to-boundary distances but different raw scores.",
+      "decision_scores": [
+        -2.0,
+        0.0,
+        0.0,
+        2.0,
+        0.25,
+        3.0
+      ],
+      "decisions": [
+        "class-0",
+        "on-boundary",
+        "on-boundary",
+        "class-1",
+        "class-1",
+        "class-1"
+      ],
+      "explanation": "This is authored geometry,not SVC training. Rescaling w and b preserves boundary and normalized distance but changes functional scores and canonical F=\u00b11 slab. A zero normal has undefined distance. No solver support membership is invented.",
+      "fixture_id": "sv.linear.clean.v1",
+      "functional_margins": [
+        2.0,
+        -0.0,
+        0.0,
+        2.0,
+        0.25,
+        3.0
+      ],
+      "hinge": [
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        0.75,
+        0.0
+      ],
+      "id": "sv-e1.manual.rotated.v1",
+      "kind": "manual-geometry",
+      "prediction_input": [
+        0.5,
+        -0.5
+      ],
+      "prediction_options": [
+        {
+          "id": "class-0",
+          "label": "Negative side"
+        },
+        {
+          "id": "class-1",
+          "label": "Positive side"
+        },
+        {
+          "id": "on-boundary",
+          "label": "On the boundary"
+        },
+        {
+          "id": "undefined",
+          "label": "Undefined geometric distance:zero normal"
+        }
+      ],
+      "prediction_query_id": "sv.linear.clean.v1.validation.2",
+      "prediction_question": "For validation point(.5,-.5),predict its side of the manually supplied boundary,or undefined geometry if its normal vector is zero.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Normalize score by the nonzero normal-vector norm;manual movement is not a fitted optimum or calibrated risk."
+        },
+        {
+          "id": "probability",
+          "label": "Distance is automatically P(churn)."
+        },
+        {
+          "id": "test",
+          "label": "Use test labels to select the most attractive line."
+        }
+      ],
+      "signed_distance": [
+        -1.414213562373095,
+        0.0,
+        0.0,
+        1.414213562373095,
+        0.17677669529663687,
+        2.1213203435596424
+      ],
+      "solver_support_ids": {
+        "reason": "illustration-not-a-fitted-model",
+        "tag": "unavailable"
+      },
+      "unsigned_distance": [
+        1.414213562373095,
+        0.0,
+        0.0,
+        1.414213562373095,
+        0.17677669529663687,
+        2.1213203435596424
+      ]
+    },
+    {
+      "canonical_slab_width": {
+        "reason": "zero-normal-vector",
+        "tag": "undefined"
+      },
+      "controls": {
+        "coefficient": [
+          0.0,
+          0.0
+        ],
+        "intercept": 0.0
+      },
+      "correct_prediction_id": "undefined",
+      "correct_reason_id": "mechanism",
+      "counterexample": "w=(1,0) and(2,0),b=0 separate the same points with equal point-to-boundary distances but different raw scores.",
+      "decision_scores": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "decisions": [
+        "on-boundary",
+        "on-boundary",
+        "on-boundary",
+        "on-boundary",
+        "on-boundary",
+        "on-boundary"
+      ],
+      "explanation": "This is authored geometry,not SVC training. Rescaling w and b preserves boundary and normalized distance but changes functional scores and canonical F=\u00b11 slab. A zero normal has undefined distance. No solver support membership is invented.",
+      "fixture_id": "sv.linear.clean.v1",
+      "functional_margins": [
+        -0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hinge": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "id": "sv-e1.manual.zero-normal.v1",
+      "kind": "manual-geometry",
+      "prediction_input": [
+        0.5,
+        -0.5
+      ],
+      "prediction_options": [
+        {
+          "id": "class-0",
+          "label": "Negative side"
+        },
+        {
+          "id": "class-1",
+          "label": "Positive side"
+        },
+        {
+          "id": "on-boundary",
+          "label": "On the boundary"
+        },
+        {
+          "id": "undefined",
+          "label": "Undefined geometric distance:zero normal"
+        }
+      ],
+      "prediction_query_id": "sv.linear.clean.v1.validation.2",
+      "prediction_question": "For validation point(.5,-.5),predict its side of the manually supplied boundary,or undefined geometry if its normal vector is zero.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Normalize score by the nonzero normal-vector norm;manual movement is not a fitted optimum or calibrated risk."
+        },
+        {
+          "id": "probability",
+          "label": "Distance is automatically P(churn)."
+        },
+        {
+          "id": "test",
+          "label": "Use test labels to select the most attractive line."
+        }
+      ],
+      "signed_distance": {
+        "reason": "zero-normal-vector",
+        "tag": "undefined"
+      },
+      "solver_support_ids": {
+        "reason": "illustration-not-a-fitted-model",
+        "tag": "unavailable"
+      },
+      "unsigned_distance": {
+        "reason": "zero-normal-vector",
+        "tag": "undefined"
+      }
+    },
+    {
+      "correct_prediction_id": "invalid",
+      "correct_reason_id": "mechanism",
+      "counterexample": "A high apparent score cannot repair leaked scaling or test-tuned hyperparameters.",
+      "expected": {
+        "prediction": null,
+        "score": null,
+        "support_ids": null,
+        "tag": "invalid"
+      },
+      "explanation": "Reject unsupported numerical parameters or invalid global/test-derived fitting before replay. No prediction,score or support IDs are fabricated.",
+      "id": "sv-e1.reject.nonpositive-C.v1",
+      "kind": "rejected",
+      "prediction_options": [
+        {
+          "id": "invalid",
+          "label": "Reject before fitting"
+        },
+        {
+          "id": "class-0",
+          "label": "Invent class0"
+        },
+        {
+          "id": "class-1",
+          "label": "Invent class1"
+        }
+      ],
+      "prediction_question": "Is this configuration allowed,or must it reject before fitting?",
+      "reason": "nonpositive-C",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Only approved parameters and training/fold fit boundaries are permitted;test cannot guide selection."
+        },
+        {
+          "id": "probability",
+          "label": "SVM scores are calibrated probabilities regardless of workflow."
+        },
+        {
+          "id": "test",
+          "label": "Strong test feedback permits all configurations."
+        }
+      ]
+    },
+    {
+      "correct_prediction_id": "invalid",
+      "correct_reason_id": "mechanism",
+      "counterexample": "A high apparent score cannot repair leaked scaling or test-tuned hyperparameters.",
+      "expected": {
+        "prediction": null,
+        "score": null,
+        "support_ids": null,
+        "tag": "invalid"
+      },
+      "explanation": "Reject unsupported numerical parameters or invalid global/test-derived fitting before replay. No prediction,score or support IDs are fabricated.",
+      "id": "sv-e1.reject.nonfinite-boundary.v1",
+      "kind": "rejected",
+      "prediction_options": [
+        {
+          "id": "invalid",
+          "label": "Reject before fitting"
+        },
+        {
+          "id": "class-0",
+          "label": "Invent class0"
+        },
+        {
+          "id": "class-1",
+          "label": "Invent class1"
+        }
+      ],
+      "prediction_question": "Is this configuration allowed,or must it reject before fitting?",
+      "reason": "nonfinite-boundary",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Only approved parameters and training/fold fit boundaries are permitted;test cannot guide selection."
+        },
+        {
+          "id": "probability",
+          "label": "SVM scores are calibrated probabilities regardless of workflow."
+        },
+        {
+          "id": "test",
+          "label": "Strong test feedback permits all configurations."
+        }
+      ]
+    },
+    {
+      "correct_prediction_id": "invalid",
+      "correct_reason_id": "mechanism",
+      "counterexample": "A high apparent score cannot repair leaked scaling or test-tuned hyperparameters.",
+      "expected": {
+        "prediction": null,
+        "score": null,
+        "support_ids": null,
+        "tag": "invalid"
+      },
+      "explanation": "Reject unsupported numerical parameters or invalid global/test-derived fitting before replay. No prediction,score or support IDs are fabricated.",
+      "id": "sv-e1.reject.test-tuned-boundary.v1",
+      "kind": "rejected",
+      "prediction_options": [
+        {
+          "id": "invalid",
+          "label": "Reject before fitting"
+        },
+        {
+          "id": "class-0",
+          "label": "Invent class0"
+        },
+        {
+          "id": "class-1",
+          "label": "Invent class1"
+        }
+      ],
+      "prediction_question": "Is this configuration allowed,or must it reject before fitting?",
+      "reason": "test-tuned-boundary",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Only approved parameters and training/fold fit boundaries are permitted;test cannot guide selection."
+        },
+        {
+          "id": "probability",
+          "label": "SVM scores are calibrated probabilities regardless of workflow."
+        },
+        {
+          "id": "test",
+          "label": "Strong test feedback permits all configurations."
+        }
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "feature_order": [
+        "pre_prediction_activity_index",
+        "pre_prediction_contact_index"
+      ],
+      "feature_units": [
+        "fictional index units",
+        "fictional index units"
+      ],
+      "id": "sv.linear.clean.v1",
+      "plot_queries": {
+        "ids": [
+          "sv.linear.clean.v1.query.0",
+          "sv.linear.clean.v1.query.1",
+          "sv.linear.clean.v1.query.2",
+          "sv.linear.clean.v1.query.3",
+          "sv.linear.clean.v1.query.4",
+          "sv.linear.clean.v1.query.5",
+          "sv.linear.clean.v1.query.6",
+          "sv.linear.clean.v1.query.7",
+          "sv.linear.clean.v1.query.8",
+          "sv.linear.clean.v1.query.9",
+          "sv.linear.clean.v1.query.10",
+          "sv.linear.clean.v1.query.11",
+          "sv.linear.clean.v1.query.12",
+          "sv.linear.clean.v1.query.13",
+          "sv.linear.clean.v1.query.14",
+          "sv.linear.clean.v1.query.15",
+          "sv.linear.clean.v1.query.16",
+          "sv.linear.clean.v1.query.17",
+          "sv.linear.clean.v1.query.18",
+          "sv.linear.clean.v1.query.19",
+          "sv.linear.clean.v1.query.20",
+          "sv.linear.clean.v1.query.21",
+          "sv.linear.clean.v1.query.22",
+          "sv.linear.clean.v1.query.23",
+          "sv.linear.clean.v1.query.24"
+        ],
+        "inputs": [
+          [
+            -2.0,
+            -2.0
+          ],
+          [
+            -2.0,
+            -1.0
+          ],
+          [
+            -2.0,
+            0.0
+          ],
+          [
+            -2.0,
+            1.0
+          ],
+          [
+            -2.0,
+            2.0
+          ],
+          [
+            -1.0,
+            -2.0
+          ],
+          [
+            -1.0,
+            -1.0
+          ],
+          [
+            -1.0,
+            0.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            2.0
+          ],
+          [
+            0.0,
+            -2.0
+          ],
+          [
+            0.0,
+            -1.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            2.0
+          ],
+          [
+            1.0,
+            -2.0
+          ],
+          [
+            1.0,
+            -1.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            2.0
+          ],
+          [
+            2.0,
+            -2.0
+          ],
+          [
+            2.0,
+            -1.0
+          ],
+          [
+            2.0,
+            0.0
+          ],
+          [
+            2.0,
+            1.0
+          ],
+          [
+            2.0,
+            2.0
+          ]
+        ],
+        "policy": "25 reviewed sample points,not a dense mesh or exact continuous contour;classes/scores have numerical alternatives."
+      },
+      "provenance": "Original fictional CC0-1.0 customer activity/risk coordinates;no personal records,uploads or external data.",
+      "sealed_test": {
+        "ids": [
+          "sv.linear.clean.v1.test.0",
+          "sv.linear.clean.v1.test.1",
+          "sv.linear.clean.v1.test.2",
+          "sv.linear.clean.v1.test.3"
+        ],
+        "inputs": [
+          [
+            -1.25,
+            0.25
+          ],
+          [
+            -0.25,
+            -0.25
+          ],
+          [
+            0.25,
+            0.25
+          ],
+          [
+            1.25,
+            -0.25
+          ]
+        ],
+        "policy": "Never evaluated or used to choose parameters in this generator;strip from client replay in future implementation.",
+        "targets": [
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      "target": "0=stays;1=churns;mathematical sign encoding0->-1,1->+1",
+      "training": {
+        "ids": [
+          "sv.linear.clean.v1.train.0",
+          "sv.linear.clean.v1.train.1",
+          "sv.linear.clean.v1.train.2",
+          "sv.linear.clean.v1.train.3",
+          "sv.linear.clean.v1.train.4",
+          "sv.linear.clean.v1.train.5",
+          "sv.linear.clean.v1.train.6",
+          "sv.linear.clean.v1.train.7"
+        ],
+        "inputs": [
+          [
+            -2,
+            -1
+          ],
+          [
+            -2,
+            1
+          ],
+          [
+            -1,
+            -1
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            -1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "targets": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "validation": {
+        "ids": [
+          "sv.linear.clean.v1.validation.0",
+          "sv.linear.clean.v1.validation.1",
+          "sv.linear.clean.v1.validation.2",
+          "sv.linear.clean.v1.validation.3",
+          "sv.linear.clean.v1.validation.4",
+          "sv.linear.clean.v1.validation.5"
+        ],
+        "inputs": [
+          [
+            -1.5,
+            -0.5
+          ],
+          [
+            -0.5,
+            0.5
+          ],
+          [
+            0.5,
+            -0.5
+          ],
+          [
+            1.5,
+            0.5
+          ],
+          [
+            0.25,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "targets": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "feature_order": [
+        "pre_prediction_activity_index",
+        "pre_prediction_contact_index"
+      ],
+      "feature_units": [
+        "fictional index units",
+        "fictional index units"
+      ],
+      "id": "sv.linear.noisy.v1",
+      "plot_queries": {
+        "ids": [
+          "sv.linear.noisy.v1.query.0",
+          "sv.linear.noisy.v1.query.1",
+          "sv.linear.noisy.v1.query.2",
+          "sv.linear.noisy.v1.query.3",
+          "sv.linear.noisy.v1.query.4",
+          "sv.linear.noisy.v1.query.5",
+          "sv.linear.noisy.v1.query.6",
+          "sv.linear.noisy.v1.query.7",
+          "sv.linear.noisy.v1.query.8",
+          "sv.linear.noisy.v1.query.9",
+          "sv.linear.noisy.v1.query.10",
+          "sv.linear.noisy.v1.query.11",
+          "sv.linear.noisy.v1.query.12",
+          "sv.linear.noisy.v1.query.13",
+          "sv.linear.noisy.v1.query.14",
+          "sv.linear.noisy.v1.query.15",
+          "sv.linear.noisy.v1.query.16",
+          "sv.linear.noisy.v1.query.17",
+          "sv.linear.noisy.v1.query.18",
+          "sv.linear.noisy.v1.query.19",
+          "sv.linear.noisy.v1.query.20",
+          "sv.linear.noisy.v1.query.21",
+          "sv.linear.noisy.v1.query.22",
+          "sv.linear.noisy.v1.query.23",
+          "sv.linear.noisy.v1.query.24"
+        ],
+        "inputs": [
+          [
+            -2.0,
+            -2.0
+          ],
+          [
+            -2.0,
+            -1.0
+          ],
+          [
+            -2.0,
+            0.0
+          ],
+          [
+            -2.0,
+            1.0
+          ],
+          [
+            -2.0,
+            2.0
+          ],
+          [
+            -1.0,
+            -2.0
+          ],
+          [
+            -1.0,
+            -1.0
+          ],
+          [
+            -1.0,
+            0.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            2.0
+          ],
+          [
+            0.0,
+            -2.0
+          ],
+          [
+            0.0,
+            -1.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            2.0
+          ],
+          [
+            1.0,
+            -2.0
+          ],
+          [
+            1.0,
+            -1.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            2.0
+          ],
+          [
+            2.0,
+            -2.0
+          ],
+          [
+            2.0,
+            -1.0
+          ],
+          [
+            2.0,
+            0.0
+          ],
+          [
+            2.0,
+            1.0
+          ],
+          [
+            2.0,
+            2.0
+          ]
+        ],
+        "policy": "25 reviewed sample points,not a dense mesh or exact continuous contour;classes/scores have numerical alternatives."
+      },
+      "provenance": "Original fictional CC0-1.0 customer activity/risk coordinates;no personal records,uploads or external data.",
+      "sealed_test": {
+        "ids": [
+          "sv.linear.noisy.v1.test.0",
+          "sv.linear.noisy.v1.test.1",
+          "sv.linear.noisy.v1.test.2",
+          "sv.linear.noisy.v1.test.3"
+        ],
+        "inputs": [
+          [
+            -1.25,
+            0.25
+          ],
+          [
+            -0.25,
+            -0.25
+          ],
+          [
+            0.25,
+            0.25
+          ],
+          [
+            1.25,
+            -0.25
+          ]
+        ],
+        "policy": "Never evaluated or used to choose parameters in this generator;strip from client replay in future implementation.",
+        "targets": [
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      "target": "0=stays;1=churns;mathematical sign encoding0->-1,1->+1",
+      "training": {
+        "ids": [
+          "sv.linear.noisy.v1.train.0",
+          "sv.linear.noisy.v1.train.1",
+          "sv.linear.noisy.v1.train.2",
+          "sv.linear.noisy.v1.train.3",
+          "sv.linear.noisy.v1.train.4",
+          "sv.linear.noisy.v1.train.5",
+          "sv.linear.noisy.v1.train.6",
+          "sv.linear.noisy.v1.train.7",
+          "sv.linear.noisy.v1.train.8"
+        ],
+        "inputs": [
+          [
+            -2,
+            -1
+          ],
+          [
+            -2,
+            1
+          ],
+          [
+            -1,
+            -1
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            -1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2.5,
+            0
+          ]
+        ],
+        "targets": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      "validation": {
+        "ids": [
+          "sv.linear.noisy.v1.validation.0",
+          "sv.linear.noisy.v1.validation.1",
+          "sv.linear.noisy.v1.validation.2",
+          "sv.linear.noisy.v1.validation.3",
+          "sv.linear.noisy.v1.validation.4",
+          "sv.linear.noisy.v1.validation.5"
+        ],
+        "inputs": [
+          [
+            -1.5,
+            -0.5
+          ],
+          [
+            -0.5,
+            0.5
+          ],
+          [
+            0.5,
+            -0.5
+          ],
+          [
+            1.5,
+            0.5
+          ],
+          [
+            0.25,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "targets": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    }
+  ],
+  "id": "SV-E1.v1",
+  "interaction": [
+    "choose a reviewed finite configuration",
+    "predict before reveal",
+    "reveal numerical and visual result",
+    "change meaningful control and predict again",
+    "select supported post-observation explanation"
+  ],
+  "objectives": [
+    "SV01",
+    "SV02",
+    "SV05"
+  ],
+  "prerequisites": [
+    "dot-products",
+    "norms",
+    "regularization",
+    "classification-evaluation",
+    "training-only-and-fold-only-preparation"
+  ],
+  "schema": "svm.experiment.v1",
+  "selection": "Validation balanced accuracy,larger is better;within1e-12 ties choose the first entry in the frozen candidate order. Test is not evaluated. Selection is over the explicitly frozen candidate subset,not an unbounded search or guaranteed generalization.",
+  "validation_selection": [
+    {
+      "candidate_ids_in_tie_order": [
+        "sv.linear.clean.v1.linear.C-0.1.gamma-1.0.raw.weights-none",
+        "sv.linear.clean.v1.linear.C-1.0.gamma-1.0.raw.weights-none",
+        "sv.linear.clean.v1.linear.C-10.0.gamma-1.0.raw.weights-none"
+      ],
+      "fixture_id": "sv.linear.clean.v1",
+      "selected_id": "sv.linear.clean.v1.linear.C-0.1.gamma-1.0.raw.weights-none",
+      "test_evaluated": false,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "candidate_ids_in_tie_order": [
+        "sv.linear.noisy.v1.linear.C-0.1.gamma-1.0.raw.weights-none",
+        "sv.linear.noisy.v1.linear.C-1.0.gamma-1.0.raw.weights-none",
+        "sv.linear.noisy.v1.linear.C-10.0.gamma-1.0.raw.weights-none"
+      ],
+      "fixture_id": "sv.linear.noisy.v1",
+      "selected_id": "sv.linear.noisy.v1.linear.C-0.1.gamma-1.0.raw.weights-none",
+      "test_evaluated": false,
+      "validation_balanced_accuracy": 1.0
+    }
+  ]
+}

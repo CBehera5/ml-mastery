@@ -1,0 +1,55 @@
+{
+  "all_states_verified": true,
+  "checks": [
+    "independent scalar versus NumPy forward and gradients",
+    "exported parameters versus public MLP probabilities/classes",
+    "every smooth manual/training gradient versus central differences at two epsilons",
+    "pinned private gradient reference versus independent arithmetic;offline author tooling only",
+    "public partial_fit versus simultaneous plain SGD at every epoch",
+    "independent Glorot RNG initialization",
+    "pre-update library loss versus post-update independent losses",
+    "training-only scaler population statistics",
+    "external development checkpoint selection and tie rule",
+    "binary equality,ReLU kink,dead/saturated activations and endpoint clipping distinctions"
+  ],
+  "configuration_counts": {
+    "NN-E1": 25,
+    "NN-E2": 48
+  },
+  "dependencies": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  },
+  "finite_difference_checks": 1030,
+  "finite_difference_epsilons": [
+    1e-05,
+    3e-06
+  ],
+  "finite_difference_parameters_per_check": 9,
+  "kink_states_not_falsely_gradient_verified": 5,
+  "manual_gradient_states": 11,
+  "max_gradient_absolute_error": 1.6872304942072702e-10,
+  "max_parity_absolute_error": 3.552713678800501e-15,
+  "not_verified": [
+    "application implementation",
+    "100 future scored exercises",
+    "module notebook",
+    "genuine screen reader",
+    "genuine browser zoom",
+    "genuine Colab",
+    "original-directory I/O reliability"
+  ],
+  "overfit_counterexample_trajectory_ids": [
+    "nn.training.relu.eta-0.5.alpha-0.0.v1"
+  ],
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "python": "3.13.16",
+  "schema": "mlp.parity.v1",
+  "seed": 1729,
+  "test_predicted_or_scored": false,
+  "training_runs": 8,
+  "training_updates": 1024
+}

@@ -1,0 +1,16 @@
+{
+  "author_script_sha256": "e3ef5547254aa51e2397916c22c250badbe3b43f2ffa006d1b44527e20ec6b9d",
+  "experiment_spec_sha256": {
+    "EV_E1_MANIFEST.md": "c4a26953b89d095273cdc26ec9b3cdce61c6d2ee3ce03831adae1566a5827a61",
+    "EV_E2_MANIFEST.md": "339ec5aadeab6ea6f376e72a6c26adbd2f64063ae5f7c3ec2aaf2853eef3607b"
+  },
+  "files": {
+    "ev-e1.manifest.v1.json": "f0dd24cd73c5302b6de46eb88e43e48dacbcb33cbf370ea84d99578f406bbfd8",
+    "ev-e2.manifest.v1.json": "bb31ef06639f115d2ef8dd7e2c5e4a34fd013b1358c423f630a4104b8754d1f8"
+  },
+  "metric_conventions": "supervised.ev.metrics.1.0.0",
+  "metric_spec_sha256": "88179488362d977029271fe517b0fb0b11b4d2fb0d37a5fd6b4029c898fd167e",
+  "prototype_authored_sha256": "49a71ff5f0436efe6f4ed93e068a49ebaffc01e387d626679f72b89c46f7aa12",
+  "prototype_reference_sha256": "f728dd7dda88e1a261e8d157247b758a28d0c8fec9387fb7a18bf69a642b7ad5",
+  "schema": "supervised.ev.manifest-freeze.v1"
+}

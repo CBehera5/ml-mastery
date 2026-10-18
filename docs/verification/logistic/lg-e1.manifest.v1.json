@@ -1,0 +1,6122 @@
+{
+  "allowed_controls": "Only complete listed configuration IDs; no free-form weights, thresholds, models or datasets.",
+  "completion": "Wrong initial predictions are recoverable; changed state plus correct post-observation reasoning is required. Never module mastery.",
+  "configurations": [
+    {
+      "controls": {
+        "coefficient": 1,
+        "input": "negative-tail",
+        "target": 0
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -20.0,
+          8.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 1.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "f1": {
+            "reason": "zero-f1-denominator",
+            "tag": "undefined"
+          },
+          "fn": 0,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 2.0611535832696244e-09,
+          "mathematical_log_loss": 2.0611535832696244e-09,
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "predictions": [
+            0
+          ],
+          "prevalence": 0.0,
+          "recall": {
+            "reason": "no-actual-positives",
+            "tag": "undefined"
+          },
+          "row_log_loss": [
+            2.0611535832696244e-09
+          ],
+          "tn": 1,
+          "total_cost": 0,
+          "tp": 0
+        },
+        "gradient": {
+          "intercept": 2.0611536181902037e-09,
+          "next_intercept": -2.0611536181902038e-10,
+          "next_probability": 2.061153447831213e-09,
+          "next_score": -20.000000082652257,
+          "next_weight": 1.0000000041223072,
+          "score": 2.0611536181902037e-09,
+          "weight": -4.122307236380407e-08
+        },
+        "log_odds_from_finite_logit": -20.0,
+        "log_odds_from_stored_probability": -20.0,
+        "odds_from_finite_logit": 2.061153622438558e-09,
+        "odds_from_stored_probability": 2.061153622438558e-09,
+        "probability_float64": 2.0611536181902037e-09,
+        "probability_semantics": "interior",
+        "score": -20.0,
+        "sigmoid_samples": [
+          [
+            -20.0,
+            2.0611536181902037e-09
+          ],
+          [
+            -18.6,
+            8.358390031511923e-09
+          ],
+          [
+            -17.2,
+            3.38949421131021e-08
+          ],
+          [
+            -15.8,
+            1.3745075389942726e-07
+          ],
+          [
+            -14.4,
+            5.57390058585609e-07
+          ],
+          [
+            -13.0,
+            2.2603242979035746e-06
+          ],
+          [
+            -11.600000000000001,
+            9.166003719853315e-06
+          ],
+          [
+            -10.200000000000001,
+            3.71689371028894e-05
+          ],
+          [
+            -8.8,
+            0.0001507103580597574
+          ],
+          [
+            -7.4,
+            0.000610879359434401
+          ],
+          [
+            -6.0,
+            0.0024726231566347743
+          ],
+          [
+            -4.600000000000001,
+            0.009951801866904308
+          ],
+          [
+            -3.200000000000003,
+            0.03916572279676425
+          ],
+          [
+            -1.8000000000000007,
+            0.1418510649004877
+          ],
+          [
+            -0.40000000000000213,
+            0.4013123398875475
+          ],
+          [
+            1.0,
+            0.7310585786300049
+          ],
+          [
+            2.3999999999999986,
+            0.9168273035060774
+          ],
+          [
+            3.799999999999997,
+            0.9781187290638694
+          ],
+          [
+            5.199999999999999,
+            0.9945137011005495
+          ],
+          [
+            6.599999999999998,
+            0.9986414800495711
+          ],
+          [
+            8.0,
+            0.9996646498695336
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 2.061153620314381e-09
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w1.negative-tail.y0.v1",
+      "id": "LG-E1.LG.authored.w1.negative-tail.y0.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 1,
+        "input": "negative-tail",
+        "target": 1
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -20.0,
+          8.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 0.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 1,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 20.000000002061153,
+          "mathematical_log_loss": 20.000000002061153,
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "predictions": [
+            0
+          ],
+          "prevalence": 1.0,
+          "recall": 0.0,
+          "row_log_loss": [
+            20.000000002061153
+          ],
+          "tn": 0,
+          "total_cost": 1,
+          "tp": 0
+        },
+        "gradient": {
+          "intercept": -0.9999999979388463,
+          "next_intercept": 0.09999999979388463,
+          "next_probability": 0.999999998134991,
+          "next_score": 20.099999917347734,
+          "next_weight": -0.9999999958776926,
+          "score": -0.9999999979388463,
+          "weight": 19.999999958776925
+        },
+        "log_odds_from_finite_logit": -20.0,
+        "log_odds_from_stored_probability": -20.0,
+        "odds_from_finite_logit": 2.061153622438558e-09,
+        "odds_from_stored_probability": 2.061153622438558e-09,
+        "probability_float64": 2.0611536181902037e-09,
+        "probability_semantics": "interior",
+        "score": -20.0,
+        "sigmoid_samples": [
+          [
+            -20.0,
+            2.0611536181902037e-09
+          ],
+          [
+            -18.6,
+            8.358390031511923e-09
+          ],
+          [
+            -17.2,
+            3.38949421131021e-08
+          ],
+          [
+            -15.8,
+            1.3745075389942726e-07
+          ],
+          [
+            -14.4,
+            5.57390058585609e-07
+          ],
+          [
+            -13.0,
+            2.2603242979035746e-06
+          ],
+          [
+            -11.600000000000001,
+            9.166003719853315e-06
+          ],
+          [
+            -10.200000000000001,
+            3.71689371028894e-05
+          ],
+          [
+            -8.8,
+            0.0001507103580597574
+          ],
+          [
+            -7.4,
+            0.000610879359434401
+          ],
+          [
+            -6.0,
+            0.0024726231566347743
+          ],
+          [
+            -4.600000000000001,
+            0.009951801866904308
+          ],
+          [
+            -3.200000000000003,
+            0.03916572279676425
+          ],
+          [
+            -1.8000000000000007,
+            0.1418510649004877
+          ],
+          [
+            -0.40000000000000213,
+            0.4013123398875475
+          ],
+          [
+            1.0,
+            0.7310585786300049
+          ],
+          [
+            2.3999999999999986,
+            0.9168273035060774
+          ],
+          [
+            3.799999999999997,
+            0.9781187290638694
+          ],
+          [
+            5.199999999999999,
+            0.9945137011005495
+          ],
+          [
+            6.599999999999998,
+            0.9986414800495711
+          ],
+          [
+            8.0,
+            0.9996646498695336
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 20.000000002061153
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w1.negative-tail.y1.v1",
+      "id": "LG-E1.LG.authored.w1.negative-tail.y1.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 1,
+        "input": "negative-ln3",
+        "target": 0
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -8.0,
+          8.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 1.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "f1": {
+            "reason": "zero-f1-denominator",
+            "tag": "undefined"
+          },
+          "fn": 0,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 0.2876820724517809,
+          "mathematical_log_loss": 0.2876820724517809,
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "predictions": [
+            0
+          ],
+          "prevalence": 0.0,
+          "recall": {
+            "reason": "no-actual-positives",
+            "tag": "undefined"
+          },
+          "row_log_loss": [
+            0.2876820724517809
+          ],
+          "tn": 1,
+          "total_cost": 0,
+          "tp": 0
+        },
+        "gradient": {
+          "intercept": 0.25,
+          "next_intercept": -0.025,
+          "next_probability": 0.23979823196576916,
+          "next_score": -1.1537860126884243,
+          "next_weight": 1.0274653072167028,
+          "score": 0.25,
+          "weight": -0.27465307216702745
+        },
+        "log_odds_from_finite_logit": -1.0986122886681098,
+        "log_odds_from_stored_probability": -1.0986122886681098,
+        "odds_from_finite_logit": 0.3333333333333333,
+        "odds_from_stored_probability": 0.3333333333333333,
+        "probability_float64": 0.25,
+        "probability_semantics": "interior",
+        "score": -1.0986122886681098,
+        "sigmoid_samples": [
+          [
+            -8.0,
+            0.0003353501304664781
+          ],
+          [
+            -7.2,
+            0.000746028833836697
+          ],
+          [
+            -6.4,
+            0.0016588010801744215
+          ],
+          [
+            -5.6,
+            0.003684239899435989
+          ],
+          [
+            -4.8,
+            0.008162571153159897
+          ],
+          [
+            -4.0,
+            0.01798620996209156
+          ],
+          [
+            -3.1999999999999993,
+            0.039165722796764384
+          ],
+          [
+            -2.3999999999999995,
+            0.08317269649392241
+          ],
+          [
+            -1.5999999999999996,
+            0.16798161486607557
+          ],
+          [
+            -0.7999999999999998,
+            0.31002551887238755
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.8000000000000007,
+            0.6899744811276126
+          ],
+          [
+            1.6000000000000014,
+            0.8320183851339246
+          ],
+          [
+            2.4000000000000004,
+            0.9168273035060777
+          ],
+          [
+            3.200000000000001,
+            0.9608342772032357
+          ],
+          [
+            4.0,
+            0.9820137900379085
+          ],
+          [
+            4.800000000000001,
+            0.9918374288468401
+          ],
+          [
+            5.600000000000001,
+            0.9963157601005641
+          ],
+          [
+            6.4,
+            0.9983411989198255
+          ],
+          [
+            7.200000000000001,
+            0.9992539711661633
+          ],
+          [
+            8.0,
+            0.9996646498695336
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 0.2876820724517809
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w1.negative-ln3.y0.v1",
+      "id": "LG-E1.LG.authored.w1.negative-ln3.y0.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 1,
+        "input": "negative-ln3",
+        "target": 1
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -8.0,
+          8.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 0.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 1,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 1.3862943611198906,
+          "mathematical_log_loss": 1.3862943611198906,
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "predictions": [
+            0
+          ],
+          "prevalence": 1.0,
+          "recall": 0.0,
+          "row_log_loss": [
+            1.3862943611198906
+          ],
+          "tn": 0,
+          "total_cost": 1,
+          "tp": 0
+        },
+        "gradient": {
+          "intercept": -0.75,
+          "next_intercept": 0.07500000000000001,
+          "next_probability": 0.2822980149790568,
+          "next_score": -0.9330911166071663,
+          "next_weight": 0.9176040783498918,
+          "score": -0.75,
+          "weight": 0.8239592165010823
+        },
+        "log_odds_from_finite_logit": -1.0986122886681098,
+        "log_odds_from_stored_probability": -1.0986122886681098,
+        "odds_from_finite_logit": 0.3333333333333333,
+        "odds_from_stored_probability": 0.3333333333333333,
+        "probability_float64": 0.25,
+        "probability_semantics": "interior",
+        "score": -1.0986122886681098,
+        "sigmoid_samples": [
+          [
+            -8.0,
+            0.0003353501304664781
+          ],
+          [
+            -7.2,
+            0.000746028833836697
+          ],
+          [
+            -6.4,
+            0.0016588010801744215
+          ],
+          [
+            -5.6,
+            0.003684239899435989
+          ],
+          [
+            -4.8,
+            0.008162571153159897
+          ],
+          [
+            -4.0,
+            0.01798620996209156
+          ],
+          [
+            -3.1999999999999993,
+            0.039165722796764384
+          ],
+          [
+            -2.3999999999999995,
+            0.08317269649392241
+          ],
+          [
+            -1.5999999999999996,
+            0.16798161486607557
+          ],
+          [
+            -0.7999999999999998,
+            0.31002551887238755
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.8000000000000007,
+            0.6899744811276126
+          ],
+          [
+            1.6000000000000014,
+            0.8320183851339246
+          ],
+          [
+            2.4000000000000004,
+            0.9168273035060777
+          ],
+          [
+            3.200000000000001,
+            0.9608342772032357
+          ],
+          [
+            4.0,
+            0.9820137900379085
+          ],
+          [
+            4.800000000000001,
+            0.9918374288468401
+          ],
+          [
+            5.600000000000001,
+            0.9963157601005641
+          ],
+          [
+            6.4,
+            0.9983411989198255
+          ],
+          [
+            7.200000000000001,
+            0.9992539711661633
+          ],
+          [
+            8.0,
+            0.9996646498695336
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 1.3862943611198908
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w1.negative-ln3.y1.v1",
+      "id": "LG-E1.LG.authored.w1.negative-ln3.y1.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 1,
+        "input": "zero",
+        "target": 0
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -8.0,
+          8.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 0.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 0,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.6931471805599453,
+          "mathematical_log_loss": 0.6931471805599453,
+          "precision": 0.0,
+          "predictions": [
+            1
+          ],
+          "prevalence": 0.0,
+          "recall": {
+            "reason": "no-actual-positives",
+            "tag": "undefined"
+          },
+          "row_log_loss": [
+            0.6931471805599453
+          ],
+          "tn": 0,
+          "total_cost": 1,
+          "tp": 0
+        },
+        "gradient": {
+          "intercept": 0.5,
+          "next_intercept": -0.05,
+          "next_probability": 0.4875026035157896,
+          "next_score": -0.05,
+          "next_weight": 1.0,
+          "score": 0.5,
+          "weight": 0.0
+        },
+        "log_odds_from_finite_logit": 0.0,
+        "log_odds_from_stored_probability": 0.0,
+        "odds_from_finite_logit": 1.0,
+        "odds_from_stored_probability": 1.0,
+        "probability_float64": 0.5,
+        "probability_semantics": "interior",
+        "score": 0.0,
+        "sigmoid_samples": [
+          [
+            -8.0,
+            0.0003353501304664781
+          ],
+          [
+            -7.2,
+            0.000746028833836697
+          ],
+          [
+            -6.4,
+            0.0016588010801744215
+          ],
+          [
+            -5.6,
+            0.003684239899435989
+          ],
+          [
+            -4.8,
+            0.008162571153159897
+          ],
+          [
+            -4.0,
+            0.01798620996209156
+          ],
+          [
+            -3.1999999999999993,
+            0.039165722796764384
+          ],
+          [
+            -2.3999999999999995,
+            0.08317269649392241
+          ],
+          [
+            -1.5999999999999996,
+            0.16798161486607557
+          ],
+          [
+            -0.7999999999999998,
+            0.31002551887238755
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.8000000000000007,
+            0.6899744811276126
+          ],
+          [
+            1.6000000000000014,
+            0.8320183851339246
+          ],
+          [
+            2.4000000000000004,
+            0.9168273035060777
+          ],
+          [
+            3.200000000000001,
+            0.9608342772032357
+          ],
+          [
+            4.0,
+            0.9820137900379085
+          ],
+          [
+            4.800000000000001,
+            0.9918374288468401
+          ],
+          [
+            5.600000000000001,
+            0.9963157601005641
+          ],
+          [
+            6.4,
+            0.9983411989198255
+          ],
+          [
+            7.200000000000001,
+            0.9992539711661633
+          ],
+          [
+            8.0,
+            0.9996646498695336
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 0.6931471805599453
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w1.zero.y0.v1",
+      "id": "LG-E1.LG.authored.w1.zero.y0.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 1,
+        "input": "zero",
+        "target": 1
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -8.0,
+          8.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 1.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 0.6931471805599453,
+          "mathematical_log_loss": 0.6931471805599453,
+          "precision": 1.0,
+          "predictions": [
+            1
+          ],
+          "prevalence": 1.0,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.6931471805599453
+          ],
+          "tn": 0,
+          "total_cost": 0,
+          "tp": 1
+        },
+        "gradient": {
+          "intercept": -0.5,
+          "next_intercept": 0.05,
+          "next_probability": 0.5124973964842103,
+          "next_score": 0.05,
+          "next_weight": 1.0,
+          "score": -0.5,
+          "weight": -0.0
+        },
+        "log_odds_from_finite_logit": 0.0,
+        "log_odds_from_stored_probability": 0.0,
+        "odds_from_finite_logit": 1.0,
+        "odds_from_stored_probability": 1.0,
+        "probability_float64": 0.5,
+        "probability_semantics": "interior",
+        "score": 0.0,
+        "sigmoid_samples": [
+          [
+            -8.0,
+            0.0003353501304664781
+          ],
+          [
+            -7.2,
+            0.000746028833836697
+          ],
+          [
+            -6.4,
+            0.0016588010801744215
+          ],
+          [
+            -5.6,
+            0.003684239899435989
+          ],
+          [
+            -4.8,
+            0.008162571153159897
+          ],
+          [
+            -4.0,
+            0.01798620996209156
+          ],
+          [
+            -3.1999999999999993,
+            0.039165722796764384
+          ],
+          [
+            -2.3999999999999995,
+            0.08317269649392241
+          ],
+          [
+            -1.5999999999999996,
+            0.16798161486607557
+          ],
+          [
+            -0.7999999999999998,
+            0.31002551887238755
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.8000000000000007,
+            0.6899744811276126
+          ],
+          [
+            1.6000000000000014,
+            0.8320183851339246
+          ],
+          [
+            2.4000000000000004,
+            0.9168273035060777
+          ],
+          [
+            3.200000000000001,
+            0.9608342772032357
+          ],
+          [
+            4.0,
+            0.9820137900379085
+          ],
+          [
+            4.800000000000001,
+            0.9918374288468401
+          ],
+          [
+            5.600000000000001,
+            0.9963157601005641
+          ],
+          [
+            6.4,
+            0.9983411989198255
+          ],
+          [
+            7.200000000000001,
+            0.9992539711661633
+          ],
+          [
+            8.0,
+            0.9996646498695336
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 0.6931471805599453
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w1.zero.y1.v1",
+      "id": "LG-E1.LG.authored.w1.zero.y1.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 1,
+        "input": "positive-ln3",
+        "target": 0
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -8.0,
+          8.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 0.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 0,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 1.3862943611198906,
+          "mathematical_log_loss": 1.3862943611198906,
+          "precision": 0.0,
+          "predictions": [
+            1
+          ],
+          "prevalence": 0.0,
+          "recall": {
+            "reason": "no-actual-positives",
+            "tag": "undefined"
+          },
+          "row_log_loss": [
+            1.3862943611198906
+          ],
+          "tn": 0,
+          "total_cost": 1,
+          "tp": 0
+        },
+        "gradient": {
+          "intercept": 0.75,
+          "next_intercept": -0.07500000000000001,
+          "next_probability": 0.7177019850209432,
+          "next_score": 0.9330911166071663,
+          "next_weight": 0.9176040783498918,
+          "score": 0.75,
+          "weight": 0.8239592165010823
+        },
+        "log_odds_from_finite_logit": 1.0986122886681098,
+        "log_odds_from_stored_probability": 1.0986122886681098,
+        "odds_from_finite_logit": 3.0000000000000004,
+        "odds_from_stored_probability": 3.0,
+        "probability_float64": 0.75,
+        "probability_semantics": "interior",
+        "score": 1.0986122886681098,
+        "sigmoid_samples": [
+          [
+            -8.0,
+            0.0003353501304664781
+          ],
+          [
+            -7.2,
+            0.000746028833836697
+          ],
+          [
+            -6.4,
+            0.0016588010801744215
+          ],
+          [
+            -5.6,
+            0.003684239899435989
+          ],
+          [
+            -4.8,
+            0.008162571153159897
+          ],
+          [
+            -4.0,
+            0.01798620996209156
+          ],
+          [
+            -3.1999999999999993,
+            0.039165722796764384
+          ],
+          [
+            -2.3999999999999995,
+            0.08317269649392241
+          ],
+          [
+            -1.5999999999999996,
+            0.16798161486607557
+          ],
+          [
+            -0.7999999999999998,
+            0.31002551887238755
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.8000000000000007,
+            0.6899744811276126
+          ],
+          [
+            1.6000000000000014,
+            0.8320183851339246
+          ],
+          [
+            2.4000000000000004,
+            0.9168273035060777
+          ],
+          [
+            3.200000000000001,
+            0.9608342772032357
+          ],
+          [
+            4.0,
+            0.9820137900379085
+          ],
+          [
+            4.800000000000001,
+            0.9918374288468401
+          ],
+          [
+            5.600000000000001,
+            0.9963157601005641
+          ],
+          [
+            6.4,
+            0.9983411989198255
+          ],
+          [
+            7.200000000000001,
+            0.9992539711661633
+          ],
+          [
+            8.0,
+            0.9996646498695336
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 1.3862943611198908
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w1.positive-ln3.y0.v1",
+      "id": "LG-E1.LG.authored.w1.positive-ln3.y0.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 1,
+        "input": "positive-ln3",
+        "target": 1
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -8.0,
+          8.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 1.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 0.2876820724517809,
+          "mathematical_log_loss": 0.2876820724517809,
+          "precision": 1.0,
+          "predictions": [
+            1
+          ],
+          "prevalence": 1.0,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.2876820724517809
+          ],
+          "tn": 0,
+          "total_cost": 0,
+          "tp": 1
+        },
+        "gradient": {
+          "intercept": -0.25,
+          "next_intercept": 0.025,
+          "next_probability": 0.7602017680342308,
+          "next_score": 1.1537860126884243,
+          "next_weight": 1.0274653072167028,
+          "score": -0.25,
+          "weight": -0.27465307216702745
+        },
+        "log_odds_from_finite_logit": 1.0986122886681098,
+        "log_odds_from_stored_probability": 1.0986122886681098,
+        "odds_from_finite_logit": 3.0000000000000004,
+        "odds_from_stored_probability": 3.0,
+        "probability_float64": 0.75,
+        "probability_semantics": "interior",
+        "score": 1.0986122886681098,
+        "sigmoid_samples": [
+          [
+            -8.0,
+            0.0003353501304664781
+          ],
+          [
+            -7.2,
+            0.000746028833836697
+          ],
+          [
+            -6.4,
+            0.0016588010801744215
+          ],
+          [
+            -5.6,
+            0.003684239899435989
+          ],
+          [
+            -4.8,
+            0.008162571153159897
+          ],
+          [
+            -4.0,
+            0.01798620996209156
+          ],
+          [
+            -3.1999999999999993,
+            0.039165722796764384
+          ],
+          [
+            -2.3999999999999995,
+            0.08317269649392241
+          ],
+          [
+            -1.5999999999999996,
+            0.16798161486607557
+          ],
+          [
+            -0.7999999999999998,
+            0.31002551887238755
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.8000000000000007,
+            0.6899744811276126
+          ],
+          [
+            1.6000000000000014,
+            0.8320183851339246
+          ],
+          [
+            2.4000000000000004,
+            0.9168273035060777
+          ],
+          [
+            3.200000000000001,
+            0.9608342772032357
+          ],
+          [
+            4.0,
+            0.9820137900379085
+          ],
+          [
+            4.800000000000001,
+            0.9918374288468401
+          ],
+          [
+            5.600000000000001,
+            0.9963157601005641
+          ],
+          [
+            6.4,
+            0.9983411989198255
+          ],
+          [
+            7.200000000000001,
+            0.9992539711661633
+          ],
+          [
+            8.0,
+            0.9996646498695336
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 0.2876820724517809
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w1.positive-ln3.y1.v1",
+      "id": "LG-E1.LG.authored.w1.positive-ln3.y1.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 1,
+        "input": "positive-tail",
+        "target": 0
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -8.0,
+          20.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 0.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 0,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 19.999999966169824,
+          "mathematical_log_loss": 19.999999966169824,
+          "precision": 0.0,
+          "predictions": [
+            1
+          ],
+          "prevalence": 0.0,
+          "recall": {
+            "reason": "no-actual-positives",
+            "tag": "undefined"
+          },
+          "row_log_loss": [
+            19.999999966169824
+          ],
+          "tn": 0,
+          "total_cost": 1,
+          "tp": 0
+        },
+        "gradient": {
+          "intercept": 0.9999999979388463,
+          "next_intercept": -0.09999999979388463,
+          "next_probability": 1.8650090725717307e-09,
+          "next_score": -20.099999917347734,
+          "next_weight": -0.9999999958776926,
+          "score": 0.9999999979388463,
+          "weight": 19.999999958776925
+        },
+        "log_odds_from_finite_logit": 20.0,
+        "log_odds_from_stored_probability": 19.99999996410867,
+        "odds_from_finite_logit": 485165195.4097903,
+        "odds_from_stored_probability": 485165177.99656636,
+        "probability_float64": 0.9999999979388463,
+        "probability_semantics": "interior",
+        "score": 20.0,
+        "sigmoid_samples": [
+          [
+            -8.0,
+            0.0003353501304664781
+          ],
+          [
+            -6.6,
+            0.0013585199504289591
+          ],
+          [
+            -5.2,
+            0.005486298899450404
+          ],
+          [
+            -3.8000000000000007,
+            0.02188127093613046
+          ],
+          [
+            -2.4000000000000004,
+            0.08317269649392235
+          ],
+          [
+            -1.0,
+            0.2689414213699951
+          ],
+          [
+            0.3999999999999986,
+            0.5986876601124517
+          ],
+          [
+            1.799999999999999,
+            0.8581489350995121
+          ],
+          [
+            3.1999999999999993,
+            0.9608342772032357
+          ],
+          [
+            4.6,
+            0.9900481981330957
+          ],
+          [
+            6.0,
+            0.9975273768433653
+          ],
+          [
+            7.399999999999999,
+            0.9993891206405656
+          ],
+          [
+            8.799999999999997,
+            0.9998492896419403
+          ],
+          [
+            10.2,
+            0.9999628310628971
+          ],
+          [
+            11.599999999999998,
+            0.9999908339962802
+          ],
+          [
+            13.0,
+            0.999997739675702
+          ],
+          [
+            14.399999999999999,
+            0.9999994426099414
+          ],
+          [
+            15.799999999999997,
+            0.9999998625492461
+          ],
+          [
+            17.2,
+            0.9999999661050578
+          ],
+          [
+            18.599999999999998,
+            0.9999999916416099
+          ],
+          [
+            20.0,
+            0.9999999979388463
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 20.000000002061153
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w1.positive-tail.y0.v1",
+      "id": "LG-E1.LG.authored.w1.positive-tail.y0.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 1,
+        "input": "positive-tail",
+        "target": 1
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -8.0,
+          20.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 1.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 2.0611536942919273e-09,
+          "mathematical_log_loss": 2.0611536942919273e-09,
+          "precision": 1.0,
+          "predictions": [
+            1
+          ],
+          "prevalence": 1.0,
+          "recall": 1.0,
+          "row_log_loss": [
+            2.0611536942919273e-09
+          ],
+          "tn": 0,
+          "total_cost": 0,
+          "tp": 1
+        },
+        "gradient": {
+          "intercept": -2.0611536181902037e-09,
+          "next_intercept": 2.0611536181902038e-10,
+          "next_probability": 0.9999999979388465,
+          "next_score": 20.000000082652257,
+          "next_weight": 1.0000000041223072,
+          "score": -2.0611536181902037e-09,
+          "weight": -4.122307236380407e-08
+        },
+        "log_odds_from_finite_logit": 20.0,
+        "log_odds_from_stored_probability": 19.99999996410867,
+        "odds_from_finite_logit": 485165195.4097903,
+        "odds_from_stored_probability": 485165177.99656636,
+        "probability_float64": 0.9999999979388463,
+        "probability_semantics": "interior",
+        "score": 20.0,
+        "sigmoid_samples": [
+          [
+            -8.0,
+            0.0003353501304664781
+          ],
+          [
+            -6.6,
+            0.0013585199504289591
+          ],
+          [
+            -5.2,
+            0.005486298899450404
+          ],
+          [
+            -3.8000000000000007,
+            0.02188127093613046
+          ],
+          [
+            -2.4000000000000004,
+            0.08317269649392235
+          ],
+          [
+            -1.0,
+            0.2689414213699951
+          ],
+          [
+            0.3999999999999986,
+            0.5986876601124517
+          ],
+          [
+            1.799999999999999,
+            0.8581489350995121
+          ],
+          [
+            3.1999999999999993,
+            0.9608342772032357
+          ],
+          [
+            4.6,
+            0.9900481981330957
+          ],
+          [
+            6.0,
+            0.9975273768433653
+          ],
+          [
+            7.399999999999999,
+            0.9993891206405656
+          ],
+          [
+            8.799999999999997,
+            0.9998492896419403
+          ],
+          [
+            10.2,
+            0.9999628310628971
+          ],
+          [
+            11.599999999999998,
+            0.9999908339962802
+          ],
+          [
+            13.0,
+            0.999997739675702
+          ],
+          [
+            14.399999999999999,
+            0.9999994426099414
+          ],
+          [
+            15.799999999999997,
+            0.9999998625492461
+          ],
+          [
+            17.2,
+            0.9999999661050578
+          ],
+          [
+            18.599999999999998,
+            0.9999999916416099
+          ],
+          [
+            20.0,
+            0.9999999979388463
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 2.061153620314381e-09
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w1.positive-tail.y1.v1",
+      "id": "LG-E1.LG.authored.w1.positive-tail.y1.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 2,
+        "input": "negative-tail",
+        "target": 0
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -40.0,
+          8.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 1.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "f1": {
+            "reason": "zero-f1-denominator",
+            "tag": "undefined"
+          },
+          "fn": 0,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 2.2204460492503136e-16,
+          "mathematical_log_loss": 0.0,
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "predictions": [
+            0
+          ],
+          "prevalence": 0.0,
+          "recall": {
+            "reason": "no-actual-positives",
+            "tag": "undefined"
+          },
+          "row_log_loss": [
+            -0.0
+          ],
+          "tn": 1,
+          "total_cost": 0,
+          "tp": 0
+        },
+        "gradient": {
+          "intercept": 4.248354255291589e-18,
+          "next_intercept": -4.248354255291589e-19,
+          "next_probability": 4.248354255291589e-18,
+          "next_score": -40.0,
+          "next_weight": 2.0,
+          "score": 4.248354255291589e-18,
+          "weight": -8.496708510583178e-17
+        },
+        "log_odds_from_finite_logit": -40.0,
+        "log_odds_from_stored_probability": -40.0,
+        "odds_from_finite_logit": 4.248354255291589e-18,
+        "odds_from_stored_probability": 4.248354255291589e-18,
+        "probability_float64": 4.248354255291589e-18,
+        "probability_semantics": "interior",
+        "score": -40.0,
+        "sigmoid_samples": [
+          [
+            -40.0,
+            4.248354255291589e-18
+          ],
+          [
+            -37.6,
+            4.683035828352842e-17
+          ],
+          [
+            -35.2,
+            5.162192993279732e-16
+          ],
+          [
+            -32.8,
+            5.690376387583475e-15
+          ],
+          [
+            -30.4,
+            6.272602259256717e-14
+          ],
+          [
+            -28.0,
+            6.914400106935423e-13
+          ],
+          [
+            -25.6,
+            7.621865194454797e-12
+          ],
+          [
+            -23.2,
+            8.401716438153009e-11
+          ],
+          [
+            -20.8,
+            9.261360211990473e-10
+          ],
+          [
+            -18.400000000000002,
+            1.0208960619374724e-08
+          ],
+          [
+            -16.0,
+            1.12535162055095e-07
+          ],
+          [
+            -13.600000000000001,
+            1.2404935411305767e-06
+          ],
+          [
+            -11.200000000000003,
+            1.3674009084599687e-05
+          ],
+          [
+            -8.8,
+            0.0001507103580597574
+          ],
+          [
+            -6.399999999999999,
+            0.0016588010801744243
+          ],
+          [
+            -4.0,
+            0.01798620996209156
+          ],
+          [
+            -1.6000000000000014,
+            0.16798161486607532
+          ],
+          [
+            0.7999999999999972,
+            0.6899744811276118
+          ],
+          [
+            3.1999999999999957,
+            0.9608342772032354
+          ],
+          [
+            5.600000000000001,
+            0.9963157601005641
+          ],
+          [
+            8.0,
+            0.9996646498695336
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 4.248354255291589e-18
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w2.negative-tail.y0.v1",
+      "id": "LG-E1.LG.authored.w2.negative-tail.y0.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 2,
+        "input": "negative-tail",
+        "target": 1
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -40.0,
+          8.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 0.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 1,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 36.04365338911715,
+          "mathematical_log_loss": 40.0,
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "predictions": [
+            0
+          ],
+          "prevalence": 1.0,
+          "recall": 0.0,
+          "row_log_loss": [
+            40.0
+          ],
+          "tn": 0,
+          "total_cost": 1,
+          "tp": 0
+        },
+        "gradient": {
+          "intercept": -1.0,
+          "next_intercept": 0.1,
+          "next_probability": 0.52497918747894,
+          "next_score": 0.1,
+          "next_weight": 0.0,
+          "score": -1.0,
+          "weight": 20.0
+        },
+        "log_odds_from_finite_logit": -40.0,
+        "log_odds_from_stored_probability": -40.0,
+        "odds_from_finite_logit": 4.248354255291589e-18,
+        "odds_from_stored_probability": 4.248354255291589e-18,
+        "probability_float64": 4.248354255291589e-18,
+        "probability_semantics": "interior",
+        "score": -40.0,
+        "sigmoid_samples": [
+          [
+            -40.0,
+            4.248354255291589e-18
+          ],
+          [
+            -37.6,
+            4.683035828352842e-17
+          ],
+          [
+            -35.2,
+            5.162192993279732e-16
+          ],
+          [
+            -32.8,
+            5.690376387583475e-15
+          ],
+          [
+            -30.4,
+            6.272602259256717e-14
+          ],
+          [
+            -28.0,
+            6.914400106935423e-13
+          ],
+          [
+            -25.6,
+            7.621865194454797e-12
+          ],
+          [
+            -23.2,
+            8.401716438153009e-11
+          ],
+          [
+            -20.8,
+            9.261360211990473e-10
+          ],
+          [
+            -18.400000000000002,
+            1.0208960619374724e-08
+          ],
+          [
+            -16.0,
+            1.12535162055095e-07
+          ],
+          [
+            -13.600000000000001,
+            1.2404935411305767e-06
+          ],
+          [
+            -11.200000000000003,
+            1.3674009084599687e-05
+          ],
+          [
+            -8.8,
+            0.0001507103580597574
+          ],
+          [
+            -6.399999999999999,
+            0.0016588010801744243
+          ],
+          [
+            -4.0,
+            0.01798620996209156
+          ],
+          [
+            -1.6000000000000014,
+            0.16798161486607532
+          ],
+          [
+            0.7999999999999972,
+            0.6899744811276118
+          ],
+          [
+            3.1999999999999957,
+            0.9608342772032354
+          ],
+          [
+            5.600000000000001,
+            0.9963157601005641
+          ],
+          [
+            8.0,
+            0.9996646498695336
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 40.0
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w2.negative-tail.y1.v1",
+      "id": "LG-E1.LG.authored.w2.negative-tail.y1.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 2,
+        "input": "negative-ln3",
+        "target": 0
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -8.0,
+          8.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 1.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "f1": {
+            "reason": "zero-f1-denominator",
+            "tag": "undefined"
+          },
+          "fn": 0,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 0.10536051565782628,
+          "mathematical_log_loss": 0.10536051565782628,
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "predictions": [
+            0
+          ],
+          "prevalence": 0.0,
+          "recall": {
+            "reason": "no-actual-positives",
+            "tag": "undefined"
+          },
+          "row_log_loss": [
+            0.10536051565782628
+          ],
+          "tn": 1,
+          "total_cost": 0,
+          "tp": 0
+        },
+        "gradient": {
+          "intercept": 0.09999999999999998,
+          "next_intercept": -0.009999999999999998,
+          "next_probability": 0.09803120595694743,
+          "next_score": -2.2192940669443453,
+          "next_weight": 2.010986122886681,
+          "score": 0.09999999999999998,
+          "weight": -0.10986122886681095
+        },
+        "log_odds_from_finite_logit": -2.1972245773362196,
+        "log_odds_from_stored_probability": -2.1972245773362196,
+        "odds_from_finite_logit": 0.11111111111111109,
+        "odds_from_stored_probability": 0.11111111111111108,
+        "probability_float64": 0.09999999999999998,
+        "probability_semantics": "interior",
+        "score": -2.1972245773362196,
+        "sigmoid_samples": [
+          [
+            -8.0,
+            0.0003353501304664781
+          ],
+          [
+            -7.2,
+            0.000746028833836697
+          ],
+          [
+            -6.4,
+            0.0016588010801744215
+          ],
+          [
+            -5.6,
+            0.003684239899435989
+          ],
+          [
+            -4.8,
+            0.008162571153159897
+          ],
+          [
+            -4.0,
+            0.01798620996209156
+          ],
+          [
+            -3.1999999999999993,
+            0.039165722796764384
+          ],
+          [
+            -2.3999999999999995,
+            0.08317269649392241
+          ],
+          [
+            -1.5999999999999996,
+            0.16798161486607557
+          ],
+          [
+            -0.7999999999999998,
+            0.31002551887238755
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.8000000000000007,
+            0.6899744811276126
+          ],
+          [
+            1.6000000000000014,
+            0.8320183851339246
+          ],
+          [
+            2.4000000000000004,
+            0.9168273035060777
+          ],
+          [
+            3.200000000000001,
+            0.9608342772032357
+          ],
+          [
+            4.0,
+            0.9820137900379085
+          ],
+          [
+            4.800000000000001,
+            0.9918374288468401
+          ],
+          [
+            5.600000000000001,
+            0.9963157601005641
+          ],
+          [
+            6.4,
+            0.9983411989198255
+          ],
+          [
+            7.200000000000001,
+            0.9992539711661633
+          ],
+          [
+            8.0,
+            0.9996646498695336
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 0.10536051565782628
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w2.negative-ln3.y0.v1",
+      "id": "LG-E1.LG.authored.w2.negative-ln3.y0.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 2,
+        "input": "negative-ln3",
+        "target": 1
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -8.0,
+          8.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 0.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 1,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 2.302585092994046,
+          "mathematical_log_loss": 2.302585092994046,
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "predictions": [
+            0
+          ],
+          "prevalence": 1.0,
+          "recall": 0.0,
+          "row_log_loss": [
+            2.302585092994046
+          ],
+          "tn": 0,
+          "total_cost": 1,
+          "tp": 0
+        },
+        "gradient": {
+          "intercept": -0.8999999999999999,
+          "next_intercept": 0.09,
+          "next_probability": 0.11935007856963449,
+          "next_score": -1.998599170863087,
+          "next_weight": 1.9011248940198702,
+          "score": -0.8999999999999999,
+          "weight": 0.9887510598012987
+        },
+        "log_odds_from_finite_logit": -2.1972245773362196,
+        "log_odds_from_stored_probability": -2.1972245773362196,
+        "odds_from_finite_logit": 0.11111111111111109,
+        "odds_from_stored_probability": 0.11111111111111108,
+        "probability_float64": 0.09999999999999998,
+        "probability_semantics": "interior",
+        "score": -2.1972245773362196,
+        "sigmoid_samples": [
+          [
+            -8.0,
+            0.0003353501304664781
+          ],
+          [
+            -7.2,
+            0.000746028833836697
+          ],
+          [
+            -6.4,
+            0.0016588010801744215
+          ],
+          [
+            -5.6,
+            0.003684239899435989
+          ],
+          [
+            -4.8,
+            0.008162571153159897
+          ],
+          [
+            -4.0,
+            0.01798620996209156
+          ],
+          [
+            -3.1999999999999993,
+            0.039165722796764384
+          ],
+          [
+            -2.3999999999999995,
+            0.08317269649392241
+          ],
+          [
+            -1.5999999999999996,
+            0.16798161486607557
+          ],
+          [
+            -0.7999999999999998,
+            0.31002551887238755
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.8000000000000007,
+            0.6899744811276126
+          ],
+          [
+            1.6000000000000014,
+            0.8320183851339246
+          ],
+          [
+            2.4000000000000004,
+            0.9168273035060777
+          ],
+          [
+            3.200000000000001,
+            0.9608342772032357
+          ],
+          [
+            4.0,
+            0.9820137900379085
+          ],
+          [
+            4.800000000000001,
+            0.9918374288468401
+          ],
+          [
+            5.600000000000001,
+            0.9963157601005641
+          ],
+          [
+            6.4,
+            0.9983411989198255
+          ],
+          [
+            7.200000000000001,
+            0.9992539711661633
+          ],
+          [
+            8.0,
+            0.9996646498695336
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 2.302585092994046
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w2.negative-ln3.y1.v1",
+      "id": "LG-E1.LG.authored.w2.negative-ln3.y1.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 2,
+        "input": "zero",
+        "target": 0
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -8.0,
+          8.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 0.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 0,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.6931471805599453,
+          "mathematical_log_loss": 0.6931471805599453,
+          "precision": 0.0,
+          "predictions": [
+            1
+          ],
+          "prevalence": 0.0,
+          "recall": {
+            "reason": "no-actual-positives",
+            "tag": "undefined"
+          },
+          "row_log_loss": [
+            0.6931471805599453
+          ],
+          "tn": 0,
+          "total_cost": 1,
+          "tp": 0
+        },
+        "gradient": {
+          "intercept": 0.5,
+          "next_intercept": -0.05,
+          "next_probability": 0.4875026035157896,
+          "next_score": -0.05,
+          "next_weight": 2.0,
+          "score": 0.5,
+          "weight": 0.0
+        },
+        "log_odds_from_finite_logit": 0.0,
+        "log_odds_from_stored_probability": 0.0,
+        "odds_from_finite_logit": 1.0,
+        "odds_from_stored_probability": 1.0,
+        "probability_float64": 0.5,
+        "probability_semantics": "interior",
+        "score": 0.0,
+        "sigmoid_samples": [
+          [
+            -8.0,
+            0.0003353501304664781
+          ],
+          [
+            -7.2,
+            0.000746028833836697
+          ],
+          [
+            -6.4,
+            0.0016588010801744215
+          ],
+          [
+            -5.6,
+            0.003684239899435989
+          ],
+          [
+            -4.8,
+            0.008162571153159897
+          ],
+          [
+            -4.0,
+            0.01798620996209156
+          ],
+          [
+            -3.1999999999999993,
+            0.039165722796764384
+          ],
+          [
+            -2.3999999999999995,
+            0.08317269649392241
+          ],
+          [
+            -1.5999999999999996,
+            0.16798161486607557
+          ],
+          [
+            -0.7999999999999998,
+            0.31002551887238755
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.8000000000000007,
+            0.6899744811276126
+          ],
+          [
+            1.6000000000000014,
+            0.8320183851339246
+          ],
+          [
+            2.4000000000000004,
+            0.9168273035060777
+          ],
+          [
+            3.200000000000001,
+            0.9608342772032357
+          ],
+          [
+            4.0,
+            0.9820137900379085
+          ],
+          [
+            4.800000000000001,
+            0.9918374288468401
+          ],
+          [
+            5.600000000000001,
+            0.9963157601005641
+          ],
+          [
+            6.4,
+            0.9983411989198255
+          ],
+          [
+            7.200000000000001,
+            0.9992539711661633
+          ],
+          [
+            8.0,
+            0.9996646498695336
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 0.6931471805599453
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w2.zero.y0.v1",
+      "id": "LG-E1.LG.authored.w2.zero.y0.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 2,
+        "input": "zero",
+        "target": 1
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -8.0,
+          8.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 1.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 0.6931471805599453,
+          "mathematical_log_loss": 0.6931471805599453,
+          "precision": 1.0,
+          "predictions": [
+            1
+          ],
+          "prevalence": 1.0,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.6931471805599453
+          ],
+          "tn": 0,
+          "total_cost": 0,
+          "tp": 1
+        },
+        "gradient": {
+          "intercept": -0.5,
+          "next_intercept": 0.05,
+          "next_probability": 0.5124973964842103,
+          "next_score": 0.05,
+          "next_weight": 2.0,
+          "score": -0.5,
+          "weight": -0.0
+        },
+        "log_odds_from_finite_logit": 0.0,
+        "log_odds_from_stored_probability": 0.0,
+        "odds_from_finite_logit": 1.0,
+        "odds_from_stored_probability": 1.0,
+        "probability_float64": 0.5,
+        "probability_semantics": "interior",
+        "score": 0.0,
+        "sigmoid_samples": [
+          [
+            -8.0,
+            0.0003353501304664781
+          ],
+          [
+            -7.2,
+            0.000746028833836697
+          ],
+          [
+            -6.4,
+            0.0016588010801744215
+          ],
+          [
+            -5.6,
+            0.003684239899435989
+          ],
+          [
+            -4.8,
+            0.008162571153159897
+          ],
+          [
+            -4.0,
+            0.01798620996209156
+          ],
+          [
+            -3.1999999999999993,
+            0.039165722796764384
+          ],
+          [
+            -2.3999999999999995,
+            0.08317269649392241
+          ],
+          [
+            -1.5999999999999996,
+            0.16798161486607557
+          ],
+          [
+            -0.7999999999999998,
+            0.31002551887238755
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.8000000000000007,
+            0.6899744811276126
+          ],
+          [
+            1.6000000000000014,
+            0.8320183851339246
+          ],
+          [
+            2.4000000000000004,
+            0.9168273035060777
+          ],
+          [
+            3.200000000000001,
+            0.9608342772032357
+          ],
+          [
+            4.0,
+            0.9820137900379085
+          ],
+          [
+            4.800000000000001,
+            0.9918374288468401
+          ],
+          [
+            5.600000000000001,
+            0.9963157601005641
+          ],
+          [
+            6.4,
+            0.9983411989198255
+          ],
+          [
+            7.200000000000001,
+            0.9992539711661633
+          ],
+          [
+            8.0,
+            0.9996646498695336
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 0.6931471805599453
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w2.zero.y1.v1",
+      "id": "LG-E1.LG.authored.w2.zero.y1.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 2,
+        "input": "positive-ln3",
+        "target": 0
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -8.0,
+          8.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 0.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 0,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 2.302585092994045,
+          "mathematical_log_loss": 2.302585092994045,
+          "precision": 0.0,
+          "predictions": [
+            1
+          ],
+          "prevalence": 0.0,
+          "recall": {
+            "reason": "no-actual-positives",
+            "tag": "undefined"
+          },
+          "row_log_loss": [
+            2.302585092994045
+          ],
+          "tn": 0,
+          "total_cost": 1,
+          "tp": 0
+        },
+        "gradient": {
+          "intercept": 0.8999999999999999,
+          "next_intercept": -0.09,
+          "next_probability": 0.8806499214303655,
+          "next_score": 1.998599170863087,
+          "next_weight": 1.9011248940198702,
+          "score": 0.8999999999999999,
+          "weight": 0.9887510598012987
+        },
+        "log_odds_from_finite_logit": 2.1972245773362196,
+        "log_odds_from_stored_probability": 2.1972245773362182,
+        "odds_from_finite_logit": 9.000000000000002,
+        "odds_from_stored_probability": 8.999999999999991,
+        "probability_float64": 0.8999999999999999,
+        "probability_semantics": "interior",
+        "score": 2.1972245773362196,
+        "sigmoid_samples": [
+          [
+            -8.0,
+            0.0003353501304664781
+          ],
+          [
+            -7.2,
+            0.000746028833836697
+          ],
+          [
+            -6.4,
+            0.0016588010801744215
+          ],
+          [
+            -5.6,
+            0.003684239899435989
+          ],
+          [
+            -4.8,
+            0.008162571153159897
+          ],
+          [
+            -4.0,
+            0.01798620996209156
+          ],
+          [
+            -3.1999999999999993,
+            0.039165722796764384
+          ],
+          [
+            -2.3999999999999995,
+            0.08317269649392241
+          ],
+          [
+            -1.5999999999999996,
+            0.16798161486607557
+          ],
+          [
+            -0.7999999999999998,
+            0.31002551887238755
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.8000000000000007,
+            0.6899744811276126
+          ],
+          [
+            1.6000000000000014,
+            0.8320183851339246
+          ],
+          [
+            2.4000000000000004,
+            0.9168273035060777
+          ],
+          [
+            3.200000000000001,
+            0.9608342772032357
+          ],
+          [
+            4.0,
+            0.9820137900379085
+          ],
+          [
+            4.800000000000001,
+            0.9918374288468401
+          ],
+          [
+            5.600000000000001,
+            0.9963157601005641
+          ],
+          [
+            6.4,
+            0.9983411989198255
+          ],
+          [
+            7.200000000000001,
+            0.9992539711661633
+          ],
+          [
+            8.0,
+            0.9996646498695336
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 2.302585092994046
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w2.positive-ln3.y0.v1",
+      "id": "LG-E1.LG.authored.w2.positive-ln3.y0.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 2,
+        "input": "positive-ln3",
+        "target": 1
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -8.0,
+          8.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 1.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 0.1053605156578264,
+          "mathematical_log_loss": 0.1053605156578264,
+          "precision": 1.0,
+          "predictions": [
+            1
+          ],
+          "prevalence": 1.0,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.1053605156578264
+          ],
+          "tn": 0,
+          "total_cost": 0,
+          "tp": 1
+        },
+        "gradient": {
+          "intercept": -0.09999999999999998,
+          "next_intercept": 0.009999999999999998,
+          "next_probability": 0.9019687940430525,
+          "next_score": 2.2192940669443453,
+          "next_weight": 2.010986122886681,
+          "score": -0.09999999999999998,
+          "weight": -0.10986122886681095
+        },
+        "log_odds_from_finite_logit": 2.1972245773362196,
+        "log_odds_from_stored_probability": 2.1972245773362182,
+        "odds_from_finite_logit": 9.000000000000002,
+        "odds_from_stored_probability": 8.999999999999991,
+        "probability_float64": 0.8999999999999999,
+        "probability_semantics": "interior",
+        "score": 2.1972245773362196,
+        "sigmoid_samples": [
+          [
+            -8.0,
+            0.0003353501304664781
+          ],
+          [
+            -7.2,
+            0.000746028833836697
+          ],
+          [
+            -6.4,
+            0.0016588010801744215
+          ],
+          [
+            -5.6,
+            0.003684239899435989
+          ],
+          [
+            -4.8,
+            0.008162571153159897
+          ],
+          [
+            -4.0,
+            0.01798620996209156
+          ],
+          [
+            -3.1999999999999993,
+            0.039165722796764384
+          ],
+          [
+            -2.3999999999999995,
+            0.08317269649392241
+          ],
+          [
+            -1.5999999999999996,
+            0.16798161486607557
+          ],
+          [
+            -0.7999999999999998,
+            0.31002551887238755
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.8000000000000007,
+            0.6899744811276126
+          ],
+          [
+            1.6000000000000014,
+            0.8320183851339246
+          ],
+          [
+            2.4000000000000004,
+            0.9168273035060777
+          ],
+          [
+            3.200000000000001,
+            0.9608342772032357
+          ],
+          [
+            4.0,
+            0.9820137900379085
+          ],
+          [
+            4.800000000000001,
+            0.9918374288468401
+          ],
+          [
+            5.600000000000001,
+            0.9963157601005641
+          ],
+          [
+            6.4,
+            0.9983411989198255
+          ],
+          [
+            7.200000000000001,
+            0.9992539711661633
+          ],
+          [
+            8.0,
+            0.9996646498695336
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 0.10536051565782628
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w2.positive-ln3.y1.v1",
+      "id": "LG-E1.LG.authored.w2.positive-ln3.y1.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 2,
+        "input": "positive-tail",
+        "target": 0
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -8.0,
+          40.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 0.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 0,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 36.04365338911715,
+          "mathematical_log_loss": {
+            "reason": "zero-probability-observed-outcome",
+            "sign": "positive",
+            "tag": "infinity"
+          },
+          "precision": 0.0,
+          "predictions": [
+            1
+          ],
+          "prevalence": 0.0,
+          "recall": {
+            "reason": "no-actual-positives",
+            "tag": "undefined"
+          },
+          "row_log_loss": [
+            {
+              "reason": "zero-probability-observed-outcome",
+              "sign": "positive",
+              "tag": "infinity"
+            }
+          ],
+          "tn": 0,
+          "total_cost": 1,
+          "tp": 0
+        },
+        "gradient": {
+          "intercept": 1.0,
+          "next_intercept": -0.1,
+          "next_probability": 0.47502081252106,
+          "next_score": -0.1,
+          "next_weight": 0.0,
+          "score": 1.0,
+          "weight": 20.0
+        },
+        "log_odds_from_finite_logit": 40.0,
+        "log_odds_from_stored_probability": {
+          "reason": "probability-endpoint",
+          "sign": "positive",
+          "tag": "infinity"
+        },
+        "odds_from_finite_logit": 2.3538526683702e+17,
+        "odds_from_stored_probability": {
+          "reason": "probability-one",
+          "sign": "positive",
+          "tag": "infinity"
+        },
+        "probability_float64": 1.0,
+        "probability_semantics": "rounded-float-endpoint; finite-logit mathematical probability is interior",
+        "score": 40.0,
+        "sigmoid_samples": [
+          [
+            -8.0,
+            0.0003353501304664781
+          ],
+          [
+            -5.6,
+            0.003684239899435989
+          ],
+          [
+            -3.2,
+            0.039165722796764356
+          ],
+          [
+            -0.8000000000000007,
+            0.3100255188723874
+          ],
+          [
+            1.5999999999999996,
+            0.8320183851339245
+          ],
+          [
+            4.0,
+            0.9820137900379085
+          ],
+          [
+            6.399999999999999,
+            0.9983411989198255
+          ],
+          [
+            8.8,
+            0.9998492896419403
+          ],
+          [
+            11.2,
+            0.9999863259909154
+          ],
+          [
+            13.599999999999998,
+            0.9999987595064589
+          ],
+          [
+            16.0,
+            0.9999998874648379
+          ],
+          [
+            18.4,
+            0.9999999897910393
+          ],
+          [
+            20.799999999999997,
+            0.9999999990738639
+          ],
+          [
+            23.2,
+            0.9999999999159828
+          ],
+          [
+            25.6,
+            0.9999999999923781
+          ],
+          [
+            28.0,
+            0.9999999999993086
+          ],
+          [
+            30.4,
+            0.9999999999999374
+          ],
+          [
+            32.8,
+            0.9999999999999942
+          ],
+          [
+            35.199999999999996,
+            0.9999999999999996
+          ],
+          [
+            37.6,
+            1.0
+          ],
+          [
+            40.0,
+            1.0
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 40.0
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w2.positive-tail.y0.v1",
+      "id": "LG-E1.LG.authored.w2.positive-tail.y0.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "coefficient": 2,
+        "input": "positive-tail",
+        "target": 1
+      },
+      "counterexample": "The same hard label can have a different loss when confidence changes; a tiny training-row update is not the sklearn optimizer or proof of generalization.",
+      "expected": {
+        "curve_score_axis": [
+          -8.0,
+          40.0
+        ],
+        "evaluation_of_stored_probability": {
+          "accuracy": 1.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 2.2204460492503136e-16,
+          "mathematical_log_loss": 0.0,
+          "precision": 1.0,
+          "predictions": [
+            1
+          ],
+          "prevalence": 1.0,
+          "recall": 1.0,
+          "row_log_loss": [
+            -0.0
+          ],
+          "tn": 0,
+          "total_cost": 0,
+          "tp": 1
+        },
+        "gradient": {
+          "intercept": -4.248354255291589e-18,
+          "next_intercept": 4.248354255291589e-19,
+          "next_probability": 1.0,
+          "next_score": 40.0,
+          "next_weight": 2.0,
+          "score": -4.248354255291589e-18,
+          "weight": -8.496708510583178e-17
+        },
+        "log_odds_from_finite_logit": 40.0,
+        "log_odds_from_stored_probability": {
+          "reason": "probability-endpoint",
+          "sign": "positive",
+          "tag": "infinity"
+        },
+        "odds_from_finite_logit": 2.3538526683702e+17,
+        "odds_from_stored_probability": {
+          "reason": "probability-one",
+          "sign": "positive",
+          "tag": "infinity"
+        },
+        "probability_float64": 1.0,
+        "probability_semantics": "rounded-float-endpoint; finite-logit mathematical probability is interior",
+        "score": 40.0,
+        "sigmoid_samples": [
+          [
+            -8.0,
+            0.0003353501304664781
+          ],
+          [
+            -5.6,
+            0.003684239899435989
+          ],
+          [
+            -3.2,
+            0.039165722796764356
+          ],
+          [
+            -0.8000000000000007,
+            0.3100255188723874
+          ],
+          [
+            1.5999999999999996,
+            0.8320183851339245
+          ],
+          [
+            4.0,
+            0.9820137900379085
+          ],
+          [
+            6.399999999999999,
+            0.9983411989198255
+          ],
+          [
+            8.8,
+            0.9998492896419403
+          ],
+          [
+            11.2,
+            0.9999863259909154
+          ],
+          [
+            13.599999999999998,
+            0.9999987595064589
+          ],
+          [
+            16.0,
+            0.9999998874648379
+          ],
+          [
+            18.4,
+            0.9999999897910393
+          ],
+          [
+            20.799999999999997,
+            0.9999999990738639
+          ],
+          [
+            23.2,
+            0.9999999999159828
+          ],
+          [
+            25.6,
+            0.9999999999923781
+          ],
+          [
+            28.0,
+            0.9999999999993086
+          ],
+          [
+            30.4,
+            0.9999999999999374
+          ],
+          [
+            32.8,
+            0.9999999999999942
+          ],
+          [
+            35.199999999999996,
+            0.9999999999999996
+          ],
+          [
+            37.6,
+            1.0
+          ],
+          [
+            40.0,
+            1.0
+          ]
+        ],
+        "stable_mathematical_loss_from_finite_logit": 4.248354255291589e-18
+      },
+      "explanation": "The weighted score becomes a probability; the label determines log loss and the training signal. A threshold acts after prediction, not as parameter fitting. Finite-logit stable loss and saturated stored-probability loss are explicitly distinct.",
+      "explanation_id": "score-probability-learning",
+      "fixture": "LG.authored.w2.positive-tail.y1.v1",
+      "id": "LG-E1.LG.authored.w2.positive-tail.y1.v1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "C": 0.1,
+        "l1_ratio": 0.0,
+        "query": "q1",
+        "solver": "lbfgs"
+      },
+      "counterexample": "A small training loss does not guarantee a good unseen probability; selecting C with test labels invalidates final evaluation.",
+      "expected": {
+        "classes": [
+          0,
+          1
+        ],
+        "coefficients": [
+          0.17966883940885886,
+          0.09012320069080418
+        ],
+        "convergence": {
+          "iterations": 5,
+          "max_absolute_gradient": 4.6657122609872204e-14,
+          "mean_intercept_gradient": -2.7755575615628914e-17,
+          "warnings": []
+        },
+        "development_logits": [
+          -0.10542122778094178,
+          -0.13030762201813434,
+          0.15700190881907192,
+          0.23618082294001236
+        ],
+        "development_metrics": {
+          "accuracy": 0.5,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "f1": 0.5,
+          "fn": 1,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.689746650139806,
+          "mathematical_log_loss": 0.689746650139806,
+          "precision": 0.5,
+          "predictions": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "prevalence": 0.5,
+          "recall": 0.5,
+          "row_log_loss": [
+            0.6418251282577561,
+            0.7604220011289842,
+            0.7747261754841283,
+            0.5820132956883552
+          ],
+          "tn": 1,
+          "total_cost": 2,
+          "tp": 1
+        },
+        "development_probabilities": [
+          0.47366907456413077,
+          0.4674691128860428,
+          0.5391700497379115,
+          0.5587722595716327
+        ],
+        "estimator_fit_ids": [
+          "lg-train1",
+          "lg-train2",
+          "lg-train3",
+          "lg-train4",
+          "lg-train5",
+          "lg-train6",
+          "lg-train7",
+          "lg-train8"
+        ],
+        "folds": [
+          {
+            "convergence": {
+              "iterations": 8,
+              "max_absolute_gradient": 2.4631408024333723e-12,
+              "mean_intercept_gradient": -1.3371748153190311e-12,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train2",
+              "lg-train3",
+              "lg-train4",
+              "lg-train7",
+              "lg-train8"
+            ],
+            "fold": 0,
+            "held_ids": [
+              "lg-train1",
+              "lg-train5",
+              "lg-train6"
+            ],
+            "held_metrics": {
+              "accuracy": 0.3333333333333333,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "f1": 0.5,
+              "fn": 0,
+              "fp": 2,
+              "library_float64_clipped_log_loss": 0.7537177690975602,
+              "mathematical_log_loss": 0.7537177690975602,
+              "precision": 0.3333333333333333,
+              "predictions": [
+                1,
+                1,
+                1
+              ],
+              "prevalence": 0.3333333333333333,
+              "recall": 1.0,
+              "row_log_loss": [
+                0.7944373293644169,
+                0.49343780032422885,
+                0.9732781776040345
+              ],
+              "tn": 0,
+              "total_cost": 2,
+              "tp": 1
+            },
+            "scaler_fit_ids": [
+              "lg-train2",
+              "lg-train3",
+              "lg-train4",
+              "lg-train7",
+              "lg-train8"
+            ],
+            "scaler_mean": [
+              0.1,
+              0.0
+            ]
+          },
+          {
+            "convergence": {
+              "iterations": 8,
+              "max_absolute_gradient": 2.4631408024333723e-12,
+              "mean_intercept_gradient": 1.337263633161001e-12,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train1",
+              "lg-train2",
+              "lg-train5",
+              "lg-train6",
+              "lg-train7"
+            ],
+            "fold": 1,
+            "held_ids": [
+              "lg-train3",
+              "lg-train4",
+              "lg-train8"
+            ],
+            "held_metrics": {
+              "accuracy": 0.3333333333333333,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  0
+                ]
+              ],
+              "f1": 0.0,
+              "fn": 2,
+              "fp": 0,
+              "library_float64_clipped_log_loss": 0.7537177690975599,
+              "mathematical_log_loss": 0.7537177690975599,
+              "precision": {
+                "reason": "no-predicted-positives",
+                "tag": "undefined"
+              },
+              "predictions": [
+                0,
+                0,
+                0
+              ],
+              "prevalence": 0.6666666666666666,
+              "recall": 0.0,
+              "row_log_loss": [
+                0.9732781776040343,
+                0.49343780032422885,
+                0.7944373293644167
+              ],
+              "tn": 1,
+              "total_cost": 2,
+              "tp": 0
+            },
+            "scaler_fit_ids": [
+              "lg-train1",
+              "lg-train2",
+              "lg-train5",
+              "lg-train6",
+              "lg-train7"
+            ],
+            "scaler_mean": [
+              -0.1,
+              0.0
+            ]
+          },
+          {
+            "convergence": {
+              "iterations": 5,
+              "max_absolute_gradient": 1.6653345369377348e-16,
+              "mean_intercept_gradient": 0.0,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train1",
+              "lg-train3",
+              "lg-train4",
+              "lg-train5",
+              "lg-train6",
+              "lg-train8"
+            ],
+            "fold": 2,
+            "held_ids": [
+              "lg-train2",
+              "lg-train7"
+            ],
+            "held_metrics": {
+              "accuracy": 0.0,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0
+                ]
+              ],
+              "f1": 0.0,
+              "fn": 1,
+              "fp": 1,
+              "library_float64_clipped_log_loss": 0.7779190268064269,
+              "mathematical_log_loss": 0.7779190268064269,
+              "precision": 0.0,
+              "predictions": [
+                1,
+                0
+              ],
+              "prevalence": 0.5,
+              "recall": 0.0,
+              "row_log_loss": [
+                0.7779190268064269,
+                0.777919026806427
+              ],
+              "tn": 0,
+              "total_cost": 2,
+              "tp": 0
+            },
+            "scaler_fit_ids": [
+              "lg-train1",
+              "lg-train3",
+              "lg-train4",
+              "lg-train5",
+              "lg-train6",
+              "lg-train8"
+            ],
+            "scaler_mean": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "intercept": -1.6312341837715325e-17,
+        "objective": {
+          "l2_penalty": 0.025251926973300802,
+          "mean_log_loss": 0.6368136345755933,
+          "total": 0.6620655615488941
+        },
+        "predict_proba_shape": [
+          1,
+          2
+        ],
+        "query": [
+          0.5,
+          1
+        ],
+        "query_label_ge_half": 1,
+        "query_probability": 0.5423163040029956,
+        "query_score": 0.16967109250813633,
+        "raw_coefficients": [
+          0.13121156830000688,
+          0.10406530835813292
+        ],
+        "raw_intercept": -1.6312341837715325e-17,
+        "scaler_fit_ids": [
+          "lg-train1",
+          "lg-train2",
+          "lg-train3",
+          "lg-train4",
+          "lg-train5",
+          "lg-train6",
+          "lg-train7",
+          "lg-train8"
+        ],
+        "scaler_mean": [
+          0.0,
+          0.0
+        ],
+        "scaler_scale": [
+          1.3693063937629153,
+          0.8660254037844386
+        ],
+        "selection_permission": "development only; final-test feedback forbidden",
+        "training_logits": [
+          -0.36648844495814664,
+          -0.09275204409187736,
+          -0.13121156830000688,
+          -0.1696710925081364,
+          0.16967109250813633,
+          0.13121156830000683,
+          0.09275204409187733,
+          0.36648844495814664
+        ],
+        "training_metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              3,
+              1
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "f1": 0.75,
+          "fn": 1,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.6368136345755934,
+          "mathematical_log_loss": 0.6368136345755934,
+          "precision": 0.75,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.5,
+          "recall": 0.75,
+          "row_log_loss": [
+            0.5265990541374538,
+            0.6478461409734404,
+            0.7609034821498741,
+            0.6119058610416049,
+            0.611905861041605,
+            0.760903482149874,
+            0.6478461409734404,
+            0.5265990541374539
+          ],
+          "tn": 3,
+          "total_cost": 2,
+          "tp": 3
+        },
+        "training_probabilities": [
+          0.40938980879318404,
+          0.4768285984470285,
+          0.46724408955691416,
+          0.45768369599700437,
+          0.5423163040029956,
+          0.5327559104430858,
+          0.5231714015529715,
+          0.5906101912068159
+        ]
+      },
+      "explanation": "Larger C means weaker L2 preference under the declared normalization. Scaler/model parameters use training rows; each CV fold fits them separately. Inspect actual held-out scores, not a promise that weaker or stronger penalties always improve.",
+      "explanation_id": "inverse-c-training-only",
+      "fixture": "LG.fitted-churn.v1",
+      "id": "LG-E1.fit.C0.1.q1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "C": 0.1,
+        "l1_ratio": 0.0,
+        "query": "q2",
+        "solver": "lbfgs"
+      },
+      "counterexample": "A small training loss does not guarantee a good unseen probability; selecting C with test labels invalidates final evaluation.",
+      "expected": {
+        "classes": [
+          0,
+          1
+        ],
+        "coefficients": [
+          0.17966883940885886,
+          0.09012320069080418
+        ],
+        "convergence": {
+          "iterations": 5,
+          "max_absolute_gradient": 4.6657122609872204e-14,
+          "mean_intercept_gradient": -2.7755575615628914e-17,
+          "warnings": []
+        },
+        "development_logits": [
+          -0.10542122778094178,
+          -0.13030762201813434,
+          0.15700190881907192,
+          0.23618082294001236
+        ],
+        "development_metrics": {
+          "accuracy": 0.5,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "f1": 0.5,
+          "fn": 1,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.689746650139806,
+          "mathematical_log_loss": 0.689746650139806,
+          "precision": 0.5,
+          "predictions": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "prevalence": 0.5,
+          "recall": 0.5,
+          "row_log_loss": [
+            0.6418251282577561,
+            0.7604220011289842,
+            0.7747261754841283,
+            0.5820132956883552
+          ],
+          "tn": 1,
+          "total_cost": 2,
+          "tp": 1
+        },
+        "development_probabilities": [
+          0.47366907456413077,
+          0.4674691128860428,
+          0.5391700497379115,
+          0.5587722595716327
+        ],
+        "estimator_fit_ids": [
+          "lg-train1",
+          "lg-train2",
+          "lg-train3",
+          "lg-train4",
+          "lg-train5",
+          "lg-train6",
+          "lg-train7",
+          "lg-train8"
+        ],
+        "folds": [
+          {
+            "convergence": {
+              "iterations": 8,
+              "max_absolute_gradient": 2.4631408024333723e-12,
+              "mean_intercept_gradient": -1.3371748153190311e-12,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train2",
+              "lg-train3",
+              "lg-train4",
+              "lg-train7",
+              "lg-train8"
+            ],
+            "fold": 0,
+            "held_ids": [
+              "lg-train1",
+              "lg-train5",
+              "lg-train6"
+            ],
+            "held_metrics": {
+              "accuracy": 0.3333333333333333,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "f1": 0.5,
+              "fn": 0,
+              "fp": 2,
+              "library_float64_clipped_log_loss": 0.7537177690975602,
+              "mathematical_log_loss": 0.7537177690975602,
+              "precision": 0.3333333333333333,
+              "predictions": [
+                1,
+                1,
+                1
+              ],
+              "prevalence": 0.3333333333333333,
+              "recall": 1.0,
+              "row_log_loss": [
+                0.7944373293644169,
+                0.49343780032422885,
+                0.9732781776040345
+              ],
+              "tn": 0,
+              "total_cost": 2,
+              "tp": 1
+            },
+            "scaler_fit_ids": [
+              "lg-train2",
+              "lg-train3",
+              "lg-train4",
+              "lg-train7",
+              "lg-train8"
+            ],
+            "scaler_mean": [
+              0.1,
+              0.0
+            ]
+          },
+          {
+            "convergence": {
+              "iterations": 8,
+              "max_absolute_gradient": 2.4631408024333723e-12,
+              "mean_intercept_gradient": 1.337263633161001e-12,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train1",
+              "lg-train2",
+              "lg-train5",
+              "lg-train6",
+              "lg-train7"
+            ],
+            "fold": 1,
+            "held_ids": [
+              "lg-train3",
+              "lg-train4",
+              "lg-train8"
+            ],
+            "held_metrics": {
+              "accuracy": 0.3333333333333333,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  0
+                ]
+              ],
+              "f1": 0.0,
+              "fn": 2,
+              "fp": 0,
+              "library_float64_clipped_log_loss": 0.7537177690975599,
+              "mathematical_log_loss": 0.7537177690975599,
+              "precision": {
+                "reason": "no-predicted-positives",
+                "tag": "undefined"
+              },
+              "predictions": [
+                0,
+                0,
+                0
+              ],
+              "prevalence": 0.6666666666666666,
+              "recall": 0.0,
+              "row_log_loss": [
+                0.9732781776040343,
+                0.49343780032422885,
+                0.7944373293644167
+              ],
+              "tn": 1,
+              "total_cost": 2,
+              "tp": 0
+            },
+            "scaler_fit_ids": [
+              "lg-train1",
+              "lg-train2",
+              "lg-train5",
+              "lg-train6",
+              "lg-train7"
+            ],
+            "scaler_mean": [
+              -0.1,
+              0.0
+            ]
+          },
+          {
+            "convergence": {
+              "iterations": 5,
+              "max_absolute_gradient": 1.6653345369377348e-16,
+              "mean_intercept_gradient": 0.0,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train1",
+              "lg-train3",
+              "lg-train4",
+              "lg-train5",
+              "lg-train6",
+              "lg-train8"
+            ],
+            "fold": 2,
+            "held_ids": [
+              "lg-train2",
+              "lg-train7"
+            ],
+            "held_metrics": {
+              "accuracy": 0.0,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0
+                ]
+              ],
+              "f1": 0.0,
+              "fn": 1,
+              "fp": 1,
+              "library_float64_clipped_log_loss": 0.7779190268064269,
+              "mathematical_log_loss": 0.7779190268064269,
+              "precision": 0.0,
+              "predictions": [
+                1,
+                0
+              ],
+              "prevalence": 0.5,
+              "recall": 0.0,
+              "row_log_loss": [
+                0.7779190268064269,
+                0.777919026806427
+              ],
+              "tn": 0,
+              "total_cost": 2,
+              "tp": 0
+            },
+            "scaler_fit_ids": [
+              "lg-train1",
+              "lg-train3",
+              "lg-train4",
+              "lg-train5",
+              "lg-train6",
+              "lg-train8"
+            ],
+            "scaler_mean": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "intercept": -1.6312341837715325e-17,
+        "objective": {
+          "l2_penalty": 0.025251926973300802,
+          "mean_log_loss": 0.6368136345755933,
+          "total": 0.6620655615488941
+        },
+        "predict_proba_shape": [
+          1,
+          2
+        ],
+        "query": [
+          2,
+          -1
+        ],
+        "query_label_ge_half": 1,
+        "query_probability": 0.5395069312723366,
+        "query_score": 0.15835782824188074,
+        "raw_coefficients": [
+          0.13121156830000688,
+          0.10406530835813292
+        ],
+        "raw_intercept": -1.6312341837715325e-17,
+        "scaler_fit_ids": [
+          "lg-train1",
+          "lg-train2",
+          "lg-train3",
+          "lg-train4",
+          "lg-train5",
+          "lg-train6",
+          "lg-train7",
+          "lg-train8"
+        ],
+        "scaler_mean": [
+          0.0,
+          0.0
+        ],
+        "scaler_scale": [
+          1.3693063937629153,
+          0.8660254037844386
+        ],
+        "selection_permission": "development only; final-test feedback forbidden",
+        "training_logits": [
+          -0.36648844495814664,
+          -0.09275204409187736,
+          -0.13121156830000688,
+          -0.1696710925081364,
+          0.16967109250813633,
+          0.13121156830000683,
+          0.09275204409187733,
+          0.36648844495814664
+        ],
+        "training_metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              3,
+              1
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "f1": 0.75,
+          "fn": 1,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.6368136345755934,
+          "mathematical_log_loss": 0.6368136345755934,
+          "precision": 0.75,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.5,
+          "recall": 0.75,
+          "row_log_loss": [
+            0.5265990541374538,
+            0.6478461409734404,
+            0.7609034821498741,
+            0.6119058610416049,
+            0.611905861041605,
+            0.760903482149874,
+            0.6478461409734404,
+            0.5265990541374539
+          ],
+          "tn": 3,
+          "total_cost": 2,
+          "tp": 3
+        },
+        "training_probabilities": [
+          0.40938980879318404,
+          0.4768285984470285,
+          0.46724408955691416,
+          0.45768369599700437,
+          0.5423163040029956,
+          0.5327559104430858,
+          0.5231714015529715,
+          0.5906101912068159
+        ]
+      },
+      "explanation": "Larger C means weaker L2 preference under the declared normalization. Scaler/model parameters use training rows; each CV fold fits them separately. Inspect actual held-out scores, not a promise that weaker or stronger penalties always improve.",
+      "explanation_id": "inverse-c-training-only",
+      "fixture": "LG.fitted-churn.v1",
+      "id": "LG-E1.fit.C0.1.q2",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "C": 1,
+        "l1_ratio": 0.0,
+        "query": "q1",
+        "solver": "lbfgs"
+      },
+      "counterexample": "A small training loss does not guarantee a good unseen probability; selecting C with test labels invalidates final evaluation.",
+      "expected": {
+        "classes": [
+          0,
+          1
+        ],
+        "coefficients": [
+          0.7405075797076219,
+          0.3245357648341326
+        ],
+        "convergence": {
+          "iterations": 7,
+          "max_absolute_gradient": 7.411793401246314e-12,
+          "mean_intercept_gradient": 6.938893903907228e-18,
+          "warnings": []
+        },
+        "development_logits": [
+          -0.46157751746642334,
+          -0.4828996771531403,
+          0.6200030302920282,
+          0.9734224929826064
+        ],
+        "development_metrics": {
+          "accuracy": 0.5,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "f1": 0.5,
+          "fn": 1,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.7057880224381605,
+          "mathematical_log_loss": 0.7057880224381605,
+          "precision": 0.5,
+          "predictions": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "prevalence": 0.5,
+          "recall": 0.5,
+          "row_log_loss": [
+            0.48875703572073276,
+            0.9634671362968034,
+            1.0504487143826247,
+            0.32047920335248126
+          ],
+          "tn": 1,
+          "total_cost": 2,
+          "tp": 1
+        },
+        "development_probabilities": [
+          0.3866116596532431,
+          0.38156764287914574,
+          0.6502192377661252,
+          0.7258011473823347
+        ],
+        "estimator_fit_ids": [
+          "lg-train1",
+          "lg-train2",
+          "lg-train3",
+          "lg-train4",
+          "lg-train5",
+          "lg-train6",
+          "lg-train7",
+          "lg-train8"
+        ],
+        "folds": [
+          {
+            "convergence": {
+              "iterations": 8,
+              "max_absolute_gradient": 5.965076765868105e-10,
+              "mean_intercept_gradient": 6.361668192234049e-10,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train2",
+              "lg-train3",
+              "lg-train4",
+              "lg-train7",
+              "lg-train8"
+            ],
+            "fold": 0,
+            "held_ids": [
+              "lg-train1",
+              "lg-train5",
+              "lg-train6"
+            ],
+            "held_metrics": {
+              "accuracy": 0.6666666666666666,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "f1": 0.6666666666666666,
+              "fn": 0,
+              "fp": 1,
+              "library_float64_clipped_log_loss": 0.6899827914653973,
+              "mathematical_log_loss": 0.6899827914653973,
+              "precision": 0.5,
+              "predictions": [
+                0,
+                1,
+                1
+              ],
+              "prevalence": 0.3333333333333333,
+              "recall": 1.0,
+              "row_log_loss": [
+                0.3956915976918719,
+                0.3875021859346057,
+                1.2867545907697142
+              ],
+              "tn": 1,
+              "total_cost": 1,
+              "tp": 1
+            },
+            "scaler_fit_ids": [
+              "lg-train2",
+              "lg-train3",
+              "lg-train4",
+              "lg-train7",
+              "lg-train8"
+            ],
+            "scaler_mean": [
+              0.1,
+              0.0
+            ]
+          },
+          {
+            "convergence": {
+              "iterations": 8,
+              "max_absolute_gradient": 5.965076765868105e-10,
+              "mean_intercept_gradient": -6.361667859167142e-10,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train1",
+              "lg-train2",
+              "lg-train5",
+              "lg-train6",
+              "lg-train7"
+            ],
+            "fold": 1,
+            "held_ids": [
+              "lg-train3",
+              "lg-train4",
+              "lg-train8"
+            ],
+            "held_metrics": {
+              "accuracy": 0.6666666666666666,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ]
+              ],
+              "f1": 0.6666666666666666,
+              "fn": 1,
+              "fp": 0,
+              "library_float64_clipped_log_loss": 0.6899827914653972,
+              "mathematical_log_loss": 0.6899827914653972,
+              "precision": 1.0,
+              "predictions": [
+                0,
+                0,
+                1
+              ],
+              "prevalence": 0.6666666666666666,
+              "recall": 0.5,
+              "row_log_loss": [
+                1.2867545907697142,
+                0.3875021859346057,
+                0.3956915976918718
+              ],
+              "tn": 1,
+              "total_cost": 1,
+              "tp": 1
+            },
+            "scaler_fit_ids": [
+              "lg-train1",
+              "lg-train2",
+              "lg-train5",
+              "lg-train6",
+              "lg-train7"
+            ],
+            "scaler_mean": [
+              -0.1,
+              0.0
+            ]
+          },
+          {
+            "convergence": {
+              "iterations": 7,
+              "max_absolute_gradient": 2.291301176571281e-11,
+              "mean_intercept_gradient": -1.850371707708594e-17,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train1",
+              "lg-train3",
+              "lg-train4",
+              "lg-train5",
+              "lg-train6",
+              "lg-train8"
+            ],
+            "fold": 2,
+            "held_ids": [
+              "lg-train2",
+              "lg-train7"
+            ],
+            "held_metrics": {
+              "accuracy": 0.0,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0
+                ]
+              ],
+              "f1": 0.0,
+              "fn": 1,
+              "fp": 1,
+              "library_float64_clipped_log_loss": 1.4945285276958669,
+              "mathematical_log_loss": 1.4945285276958669,
+              "precision": 0.0,
+              "predictions": [
+                1,
+                0
+              ],
+              "prevalence": 0.5,
+              "recall": 0.0,
+              "row_log_loss": [
+                1.4945285276958669,
+                1.4945285276958669
+              ],
+              "tn": 0,
+              "total_cost": 2,
+              "tp": 0
+            },
+            "scaler_fit_ids": [
+              "lg-train1",
+              "lg-train3",
+              "lg-train4",
+              "lg-train5",
+              "lg-train6",
+              "lg-train8"
+            ],
+            "scaler_mean": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "intercept": 8.11159502913887e-18,
+        "objective": {
+          "l2_penalty": 0.04085468364130722,
+          "mean_log_loss": 0.5323655104184006,
+          "total": 0.5732201940597078
+        },
+        "predict_proba_shape": [
+          1,
+          2
+        ],
+        "query": [
+          0.5,
+          1
+        ],
+        "query_label_ge_half": 1,
+        "query_probability": 0.6559137072014022,
+        "query_score": 0.645136759316908,
+        "raw_coefficients": [
+          0.5407902738792257,
+          0.3747416223772951
+        ],
+        "raw_intercept": 8.11159502913887e-18,
+        "scaler_fit_ids": [
+          "lg-train1",
+          "lg-train2",
+          "lg-train3",
+          "lg-train4",
+          "lg-train5",
+          "lg-train6",
+          "lg-train7",
+          "lg-train8"
+        ],
+        "scaler_mean": [
+          0.0,
+          0.0
+        ],
+        "scaler_scale": [
+          1.3693063937629153,
+          0.8660254037844386
+        ],
+        "selection_permission": "development only; final-test feedback forbidden",
+        "training_logits": [
+          -1.4563221701357465,
+          -0.4364437884415435,
+          -0.5407902738792257,
+          -0.645136759316908,
+          0.645136759316908,
+          0.5407902738792257,
+          0.4364437884415435,
+          1.4563221701357465
+        ],
+        "training_metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              3,
+              1
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "f1": 0.75,
+          "fn": 1,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.5323655104184005,
+          "mathematical_log_loss": 0.5323655104184005,
+          "precision": 0.75,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.5,
+          "recall": 0.75,
+          "row_log_loss": [
+            0.20952481412373763,
+            0.49854907120157893,
+            0.9996621137572783,
+            0.4217260425910074,
+            0.4217260425910072,
+            0.9996621137572783,
+            0.49854907120157893,
+            0.2095248141237375
+          ],
+          "tn": 3,
+          "total_cost": 2,
+          "tp": 3
+        },
+        "training_probabilities": [
+          0.18903048431449293,
+          0.39258866874471127,
+          0.36800376357582654,
+          0.34408629279859787,
+          0.6559137072014022,
+          0.6319962364241735,
+          0.6074113312552887,
+          0.8109695156855071
+        ]
+      },
+      "explanation": "Larger C means weaker L2 preference under the declared normalization. Scaler/model parameters use training rows; each CV fold fits them separately. Inspect actual held-out scores, not a promise that weaker or stronger penalties always improve.",
+      "explanation_id": "inverse-c-training-only",
+      "fixture": "LG.fitted-churn.v1",
+      "id": "LG-E1.fit.C1.q1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "C": 1,
+        "l1_ratio": 0.0,
+        "query": "q2",
+        "solver": "lbfgs"
+      },
+      "counterexample": "A small training loss does not guarantee a good unseen probability; selecting C with test labels invalidates final evaluation.",
+      "expected": {
+        "classes": [
+          0,
+          1
+        ],
+        "coefficients": [
+          0.7405075797076219,
+          0.3245357648341326
+        ],
+        "convergence": {
+          "iterations": 7,
+          "max_absolute_gradient": 7.411793401246314e-12,
+          "mean_intercept_gradient": 6.938893903907228e-18,
+          "warnings": []
+        },
+        "development_logits": [
+          -0.46157751746642334,
+          -0.4828996771531403,
+          0.6200030302920282,
+          0.9734224929826064
+        ],
+        "development_metrics": {
+          "accuracy": 0.5,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "f1": 0.5,
+          "fn": 1,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.7057880224381605,
+          "mathematical_log_loss": 0.7057880224381605,
+          "precision": 0.5,
+          "predictions": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "prevalence": 0.5,
+          "recall": 0.5,
+          "row_log_loss": [
+            0.48875703572073276,
+            0.9634671362968034,
+            1.0504487143826247,
+            0.32047920335248126
+          ],
+          "tn": 1,
+          "total_cost": 2,
+          "tp": 1
+        },
+        "development_probabilities": [
+          0.3866116596532431,
+          0.38156764287914574,
+          0.6502192377661252,
+          0.7258011473823347
+        ],
+        "estimator_fit_ids": [
+          "lg-train1",
+          "lg-train2",
+          "lg-train3",
+          "lg-train4",
+          "lg-train5",
+          "lg-train6",
+          "lg-train7",
+          "lg-train8"
+        ],
+        "folds": [
+          {
+            "convergence": {
+              "iterations": 8,
+              "max_absolute_gradient": 5.965076765868105e-10,
+              "mean_intercept_gradient": 6.361668192234049e-10,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train2",
+              "lg-train3",
+              "lg-train4",
+              "lg-train7",
+              "lg-train8"
+            ],
+            "fold": 0,
+            "held_ids": [
+              "lg-train1",
+              "lg-train5",
+              "lg-train6"
+            ],
+            "held_metrics": {
+              "accuracy": 0.6666666666666666,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "f1": 0.6666666666666666,
+              "fn": 0,
+              "fp": 1,
+              "library_float64_clipped_log_loss": 0.6899827914653973,
+              "mathematical_log_loss": 0.6899827914653973,
+              "precision": 0.5,
+              "predictions": [
+                0,
+                1,
+                1
+              ],
+              "prevalence": 0.3333333333333333,
+              "recall": 1.0,
+              "row_log_loss": [
+                0.3956915976918719,
+                0.3875021859346057,
+                1.2867545907697142
+              ],
+              "tn": 1,
+              "total_cost": 1,
+              "tp": 1
+            },
+            "scaler_fit_ids": [
+              "lg-train2",
+              "lg-train3",
+              "lg-train4",
+              "lg-train7",
+              "lg-train8"
+            ],
+            "scaler_mean": [
+              0.1,
+              0.0
+            ]
+          },
+          {
+            "convergence": {
+              "iterations": 8,
+              "max_absolute_gradient": 5.965076765868105e-10,
+              "mean_intercept_gradient": -6.361667859167142e-10,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train1",
+              "lg-train2",
+              "lg-train5",
+              "lg-train6",
+              "lg-train7"
+            ],
+            "fold": 1,
+            "held_ids": [
+              "lg-train3",
+              "lg-train4",
+              "lg-train8"
+            ],
+            "held_metrics": {
+              "accuracy": 0.6666666666666666,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ]
+              ],
+              "f1": 0.6666666666666666,
+              "fn": 1,
+              "fp": 0,
+              "library_float64_clipped_log_loss": 0.6899827914653972,
+              "mathematical_log_loss": 0.6899827914653972,
+              "precision": 1.0,
+              "predictions": [
+                0,
+                0,
+                1
+              ],
+              "prevalence": 0.6666666666666666,
+              "recall": 0.5,
+              "row_log_loss": [
+                1.2867545907697142,
+                0.3875021859346057,
+                0.3956915976918718
+              ],
+              "tn": 1,
+              "total_cost": 1,
+              "tp": 1
+            },
+            "scaler_fit_ids": [
+              "lg-train1",
+              "lg-train2",
+              "lg-train5",
+              "lg-train6",
+              "lg-train7"
+            ],
+            "scaler_mean": [
+              -0.1,
+              0.0
+            ]
+          },
+          {
+            "convergence": {
+              "iterations": 7,
+              "max_absolute_gradient": 2.291301176571281e-11,
+              "mean_intercept_gradient": -1.850371707708594e-17,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train1",
+              "lg-train3",
+              "lg-train4",
+              "lg-train5",
+              "lg-train6",
+              "lg-train8"
+            ],
+            "fold": 2,
+            "held_ids": [
+              "lg-train2",
+              "lg-train7"
+            ],
+            "held_metrics": {
+              "accuracy": 0.0,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0
+                ]
+              ],
+              "f1": 0.0,
+              "fn": 1,
+              "fp": 1,
+              "library_float64_clipped_log_loss": 1.4945285276958669,
+              "mathematical_log_loss": 1.4945285276958669,
+              "precision": 0.0,
+              "predictions": [
+                1,
+                0
+              ],
+              "prevalence": 0.5,
+              "recall": 0.0,
+              "row_log_loss": [
+                1.4945285276958669,
+                1.4945285276958669
+              ],
+              "tn": 0,
+              "total_cost": 2,
+              "tp": 0
+            },
+            "scaler_fit_ids": [
+              "lg-train1",
+              "lg-train3",
+              "lg-train4",
+              "lg-train5",
+              "lg-train6",
+              "lg-train8"
+            ],
+            "scaler_mean": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "intercept": 8.11159502913887e-18,
+        "objective": {
+          "l2_penalty": 0.04085468364130722,
+          "mean_log_loss": 0.5323655104184006,
+          "total": 0.5732201940597078
+        },
+        "predict_proba_shape": [
+          1,
+          2
+        ],
+        "query": [
+          2,
+          -1
+        ],
+        "query_label_ge_half": 1,
+        "query_probability": 0.6697023020136629,
+        "query_score": 0.7068389253811563,
+        "raw_coefficients": [
+          0.5407902738792257,
+          0.3747416223772951
+        ],
+        "raw_intercept": 8.11159502913887e-18,
+        "scaler_fit_ids": [
+          "lg-train1",
+          "lg-train2",
+          "lg-train3",
+          "lg-train4",
+          "lg-train5",
+          "lg-train6",
+          "lg-train7",
+          "lg-train8"
+        ],
+        "scaler_mean": [
+          0.0,
+          0.0
+        ],
+        "scaler_scale": [
+          1.3693063937629153,
+          0.8660254037844386
+        ],
+        "selection_permission": "development only; final-test feedback forbidden",
+        "training_logits": [
+          -1.4563221701357465,
+          -0.4364437884415435,
+          -0.5407902738792257,
+          -0.645136759316908,
+          0.645136759316908,
+          0.5407902738792257,
+          0.4364437884415435,
+          1.4563221701357465
+        ],
+        "training_metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              3,
+              1
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "f1": 0.75,
+          "fn": 1,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.5323655104184005,
+          "mathematical_log_loss": 0.5323655104184005,
+          "precision": 0.75,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.5,
+          "recall": 0.75,
+          "row_log_loss": [
+            0.20952481412373763,
+            0.49854907120157893,
+            0.9996621137572783,
+            0.4217260425910074,
+            0.4217260425910072,
+            0.9996621137572783,
+            0.49854907120157893,
+            0.2095248141237375
+          ],
+          "tn": 3,
+          "total_cost": 2,
+          "tp": 3
+        },
+        "training_probabilities": [
+          0.18903048431449293,
+          0.39258866874471127,
+          0.36800376357582654,
+          0.34408629279859787,
+          0.6559137072014022,
+          0.6319962364241735,
+          0.6074113312552887,
+          0.8109695156855071
+        ]
+      },
+      "explanation": "Larger C means weaker L2 preference under the declared normalization. Scaler/model parameters use training rows; each CV fold fits them separately. Inspect actual held-out scores, not a promise that weaker or stronger penalties always improve.",
+      "explanation_id": "inverse-c-training-only",
+      "fixture": "LG.fitted-churn.v1",
+      "id": "LG-E1.fit.C1.q2",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "C": 10,
+        "l1_ratio": 0.0,
+        "query": "q1",
+        "solver": "lbfgs"
+      },
+      "counterexample": "A small training loss does not guarantee a good unseen probability; selecting C with test labels invalidates final evaluation.",
+      "expected": {
+        "classes": [
+          0,
+          1
+        ],
+        "coefficients": [
+          1.2104028818239543,
+          0.516064678654765
+        ],
+        "convergence": {
+          "iterations": 7,
+          "max_absolute_gradient": 1.2691267828324193e-10,
+          "mean_intercept_gradient": -1.3877787807814457e-17,
+          "warnings": []
+        },
+        "development_logits": [
+          -0.7627938581301968,
+          -0.7726908188263034,
+          1.0051127073211086,
+          1.591115908906175
+        ],
+        "development_metrics": {
+          "accuracy": 0.5,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "f1": 0.5,
+          "fn": 1,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.7593807281841366,
+          "mathematical_log_loss": 0.7593807281841366,
+          "precision": 0.5,
+          "predictions": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "prevalence": 0.5,
+          "recall": 0.5,
+          "row_log_loss": [
+            0.38278426941141314,
+            1.1523380683061497,
+            1.3170019437365226,
+            0.18539863128246115
+          ],
+          "tn": 1,
+          "total_cost": 2,
+          "tp": 1
+        },
+        "development_probabilities": [
+          0.31803999694912,
+          0.3158973157673889,
+          0.7320626096165799,
+          0.8307730457109236
+        ],
+        "estimator_fit_ids": [
+          "lg-train1",
+          "lg-train2",
+          "lg-train3",
+          "lg-train4",
+          "lg-train5",
+          "lg-train6",
+          "lg-train7",
+          "lg-train8"
+        ],
+        "folds": [
+          {
+            "convergence": {
+              "iterations": 10,
+              "max_absolute_gradient": 7.013903347008466e-13,
+              "mean_intercept_gradient": 1.5857204438418648e-12,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train2",
+              "lg-train3",
+              "lg-train4",
+              "lg-train7",
+              "lg-train8"
+            ],
+            "fold": 0,
+            "held_ids": [
+              "lg-train1",
+              "lg-train5",
+              "lg-train6"
+            ],
+            "held_metrics": {
+              "accuracy": 0.6666666666666666,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "f1": 0.6666666666666666,
+              "fn": 0,
+              "fp": 1,
+              "library_float64_clipped_log_loss": 0.8070046394288787,
+              "mathematical_log_loss": 0.8070046394288787,
+              "precision": 0.5,
+              "predictions": [
+                0,
+                1,
+                1
+              ],
+              "prevalence": 0.3333333333333333,
+              "recall": 1.0,
+              "row_log_loss": [
+                0.10156757475605535,
+                0.14950955594966686,
+                2.1699367875809137
+              ],
+              "tn": 1,
+              "total_cost": 1,
+              "tp": 1
+            },
+            "scaler_fit_ids": [
+              "lg-train2",
+              "lg-train3",
+              "lg-train4",
+              "lg-train7",
+              "lg-train8"
+            ],
+            "scaler_mean": [
+              0.1,
+              0.0
+            ]
+          },
+          {
+            "convergence": {
+              "iterations": 10,
+              "max_absolute_gradient": 7.014736014276934e-13,
+              "mean_intercept_gradient": -1.5857204438418648e-12,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train1",
+              "lg-train2",
+              "lg-train5",
+              "lg-train6",
+              "lg-train7"
+            ],
+            "fold": 1,
+            "held_ids": [
+              "lg-train3",
+              "lg-train4",
+              "lg-train8"
+            ],
+            "held_metrics": {
+              "accuracy": 0.6666666666666666,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ]
+              ],
+              "f1": 0.6666666666666666,
+              "fn": 1,
+              "fp": 0,
+              "library_float64_clipped_log_loss": 0.8070046394288785,
+              "mathematical_log_loss": 0.8070046394288785,
+              "precision": 1.0,
+              "predictions": [
+                0,
+                0,
+                1
+              ],
+              "prevalence": 0.6666666666666666,
+              "recall": 0.5,
+              "row_log_loss": [
+                2.1699367875809132,
+                0.14950955594966672,
+                0.10156757475605548
+              ],
+              "tn": 1,
+              "total_cost": 1,
+              "tp": 1
+            },
+            "scaler_fit_ids": [
+              "lg-train1",
+              "lg-train2",
+              "lg-train5",
+              "lg-train6",
+              "lg-train7"
+            ],
+            "scaler_mean": [
+              -0.1,
+              0.0
+            ]
+          },
+          {
+            "convergence": {
+              "iterations": 11,
+              "max_absolute_gradient": 1.6082475629008997e-11,
+              "mean_intercept_gradient": 2.7755575615628914e-17,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train1",
+              "lg-train3",
+              "lg-train4",
+              "lg-train5",
+              "lg-train6",
+              "lg-train8"
+            ],
+            "fold": 2,
+            "held_ids": [
+              "lg-train2",
+              "lg-train7"
+            ],
+            "held_metrics": {
+              "accuracy": 0.0,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0
+                ]
+              ],
+              "f1": 0.0,
+              "fn": 1,
+              "fp": 1,
+              "library_float64_clipped_log_loss": 5.247535226342497,
+              "mathematical_log_loss": 5.247535226342497,
+              "precision": 0.0,
+              "predictions": [
+                1,
+                0
+              ],
+              "prevalence": 0.5,
+              "recall": 0.0,
+              "row_log_loss": [
+                5.247535226342488,
+                5.247535226342506
+              ],
+              "tn": 0,
+              "total_cost": 2,
+              "tp": 0
+            },
+            "scaler_fit_ids": [
+              "lg-train1",
+              "lg-train3",
+              "lg-train4",
+              "lg-train5",
+              "lg-train6",
+              "lg-train8"
+            ],
+            "scaler_mean": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "intercept": -5.804416088045736e-17,
+        "objective": {
+          "l2_penalty": 0.01082123680551737,
+          "mean_log_loss": 0.5040513932268862,
+          "total": 0.5148726300324036
+        },
+        "predict_proba_shape": [
+          1,
+          2
+        ],
+        "query": [
+          0.5,
+          1
+        ],
+        "query_label_ge_half": 1,
+        "query_probability": 0.7384401262085194,
+        "query_score": 1.0378768036439991,
+        "raw_coefficients": [
+          0.8839532827256528,
+          0.5959001622811726
+        ],
+        "raw_intercept": -5.804416088045736e-17,
+        "scaler_fit_ids": [
+          "lg-train1",
+          "lg-train2",
+          "lg-train3",
+          "lg-train4",
+          "lg-train5",
+          "lg-train6",
+          "lg-train7",
+          "lg-train8"
+        ],
+        "scaler_mean": [
+          0.0,
+          0.0
+        ],
+        "scaler_scale": [
+          1.3693063937629153,
+          0.8660254037844386
+        ],
+        "selection_permission": "development only; final-test feedback forbidden",
+        "training_logits": [
+          -2.363806727732478,
+          -0.7300297618073064,
+          -0.8839532827256529,
+          -1.0378768036439991,
+          1.0378768036439991,
+          0.8839532827256527,
+          0.7300297618073062,
+          2.363806727732478
+        ],
+        "training_metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              3,
+              1
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "f1": 0.75,
+          "fn": 1,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.5040513932268862,
+          "mathematical_log_loss": 0.5040513932268862,
+          "precision": 0.75,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.5,
+          "recall": 0.75,
+          "row_log_loss": [
+            0.08989689472171787,
+            0.3933214365070397,
+            1.2297719865113594,
+            0.303215255167428,
+            0.303215255167428,
+            1.2297719865113592,
+            0.3933214365070397,
+            0.08989689472171787
+          ],
+          "tn": 3,
+          "total_cost": 2,
+          "tp": 3
+        },
+        "training_probabilities": [
+          0.08597457874155336,
+          0.3251881964279113,
+          0.29235923192994534,
+          0.2615598737914806,
+          0.7384401262085194,
+          0.7076407680700546,
+          0.6748118035720887,
+          0.9140254212584467
+        ]
+      },
+      "explanation": "Larger C means weaker L2 preference under the declared normalization. Scaler/model parameters use training rows; each CV fold fits them separately. Inspect actual held-out scores, not a promise that weaker or stronger penalties always improve.",
+      "explanation_id": "inverse-c-training-only",
+      "fixture": "LG.fitted-churn.v1",
+      "id": "LG-E1.fit.C10.q1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "C": 10,
+        "l1_ratio": 0.0,
+        "query": "q2",
+        "solver": "lbfgs"
+      },
+      "counterexample": "A small training loss does not guarantee a good unseen probability; selecting C with test labels invalidates final evaluation.",
+      "expected": {
+        "classes": [
+          0,
+          1
+        ],
+        "coefficients": [
+          1.2104028818239543,
+          0.516064678654765
+        ],
+        "convergence": {
+          "iterations": 7,
+          "max_absolute_gradient": 1.2691267828324193e-10,
+          "mean_intercept_gradient": -1.3877787807814457e-17,
+          "warnings": []
+        },
+        "development_logits": [
+          -0.7627938581301968,
+          -0.7726908188263034,
+          1.0051127073211086,
+          1.591115908906175
+        ],
+        "development_metrics": {
+          "accuracy": 0.5,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "f1": 0.5,
+          "fn": 1,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.7593807281841366,
+          "mathematical_log_loss": 0.7593807281841366,
+          "precision": 0.5,
+          "predictions": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "prevalence": 0.5,
+          "recall": 0.5,
+          "row_log_loss": [
+            0.38278426941141314,
+            1.1523380683061497,
+            1.3170019437365226,
+            0.18539863128246115
+          ],
+          "tn": 1,
+          "total_cost": 2,
+          "tp": 1
+        },
+        "development_probabilities": [
+          0.31803999694912,
+          0.3158973157673889,
+          0.7320626096165799,
+          0.8307730457109236
+        ],
+        "estimator_fit_ids": [
+          "lg-train1",
+          "lg-train2",
+          "lg-train3",
+          "lg-train4",
+          "lg-train5",
+          "lg-train6",
+          "lg-train7",
+          "lg-train8"
+        ],
+        "folds": [
+          {
+            "convergence": {
+              "iterations": 10,
+              "max_absolute_gradient": 7.013903347008466e-13,
+              "mean_intercept_gradient": 1.5857204438418648e-12,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train2",
+              "lg-train3",
+              "lg-train4",
+              "lg-train7",
+              "lg-train8"
+            ],
+            "fold": 0,
+            "held_ids": [
+              "lg-train1",
+              "lg-train5",
+              "lg-train6"
+            ],
+            "held_metrics": {
+              "accuracy": 0.6666666666666666,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "f1": 0.6666666666666666,
+              "fn": 0,
+              "fp": 1,
+              "library_float64_clipped_log_loss": 0.8070046394288787,
+              "mathematical_log_loss": 0.8070046394288787,
+              "precision": 0.5,
+              "predictions": [
+                0,
+                1,
+                1
+              ],
+              "prevalence": 0.3333333333333333,
+              "recall": 1.0,
+              "row_log_loss": [
+                0.10156757475605535,
+                0.14950955594966686,
+                2.1699367875809137
+              ],
+              "tn": 1,
+              "total_cost": 1,
+              "tp": 1
+            },
+            "scaler_fit_ids": [
+              "lg-train2",
+              "lg-train3",
+              "lg-train4",
+              "lg-train7",
+              "lg-train8"
+            ],
+            "scaler_mean": [
+              0.1,
+              0.0
+            ]
+          },
+          {
+            "convergence": {
+              "iterations": 10,
+              "max_absolute_gradient": 7.014736014276934e-13,
+              "mean_intercept_gradient": -1.5857204438418648e-12,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train1",
+              "lg-train2",
+              "lg-train5",
+              "lg-train6",
+              "lg-train7"
+            ],
+            "fold": 1,
+            "held_ids": [
+              "lg-train3",
+              "lg-train4",
+              "lg-train8"
+            ],
+            "held_metrics": {
+              "accuracy": 0.6666666666666666,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ]
+              ],
+              "f1": 0.6666666666666666,
+              "fn": 1,
+              "fp": 0,
+              "library_float64_clipped_log_loss": 0.8070046394288785,
+              "mathematical_log_loss": 0.8070046394288785,
+              "precision": 1.0,
+              "predictions": [
+                0,
+                0,
+                1
+              ],
+              "prevalence": 0.6666666666666666,
+              "recall": 0.5,
+              "row_log_loss": [
+                2.1699367875809132,
+                0.14950955594966672,
+                0.10156757475605548
+              ],
+              "tn": 1,
+              "total_cost": 1,
+              "tp": 1
+            },
+            "scaler_fit_ids": [
+              "lg-train1",
+              "lg-train2",
+              "lg-train5",
+              "lg-train6",
+              "lg-train7"
+            ],
+            "scaler_mean": [
+              -0.1,
+              0.0
+            ]
+          },
+          {
+            "convergence": {
+              "iterations": 11,
+              "max_absolute_gradient": 1.6082475629008997e-11,
+              "mean_intercept_gradient": 2.7755575615628914e-17,
+              "warnings": []
+            },
+            "estimator_fit_ids": [
+              "lg-train1",
+              "lg-train3",
+              "lg-train4",
+              "lg-train5",
+              "lg-train6",
+              "lg-train8"
+            ],
+            "fold": 2,
+            "held_ids": [
+              "lg-train2",
+              "lg-train7"
+            ],
+            "held_metrics": {
+              "accuracy": 0.0,
+              "clipping_epsilon": 2.220446049250313e-16,
+              "confusion_actual_rows_01": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0
+                ]
+              ],
+              "f1": 0.0,
+              "fn": 1,
+              "fp": 1,
+              "library_float64_clipped_log_loss": 5.247535226342497,
+              "mathematical_log_loss": 5.247535226342497,
+              "precision": 0.0,
+              "predictions": [
+                1,
+                0
+              ],
+              "prevalence": 0.5,
+              "recall": 0.0,
+              "row_log_loss": [
+                5.247535226342488,
+                5.247535226342506
+              ],
+              "tn": 0,
+              "total_cost": 2,
+              "tp": 0
+            },
+            "scaler_fit_ids": [
+              "lg-train1",
+              "lg-train3",
+              "lg-train4",
+              "lg-train5",
+              "lg-train6",
+              "lg-train8"
+            ],
+            "scaler_mean": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "intercept": -5.804416088045736e-17,
+        "objective": {
+          "l2_penalty": 0.01082123680551737,
+          "mean_log_loss": 0.5040513932268862,
+          "total": 0.5148726300324036
+        },
+        "predict_proba_shape": [
+          1,
+          2
+        ],
+        "query": [
+          2,
+          -1
+        ],
+        "query_label_ge_half": 1,
+        "query_probability": 0.7635074910318557,
+        "query_score": 1.172006403170133,
+        "raw_coefficients": [
+          0.8839532827256528,
+          0.5959001622811726
+        ],
+        "raw_intercept": -5.804416088045736e-17,
+        "scaler_fit_ids": [
+          "lg-train1",
+          "lg-train2",
+          "lg-train3",
+          "lg-train4",
+          "lg-train5",
+          "lg-train6",
+          "lg-train7",
+          "lg-train8"
+        ],
+        "scaler_mean": [
+          0.0,
+          0.0
+        ],
+        "scaler_scale": [
+          1.3693063937629153,
+          0.8660254037844386
+        ],
+        "selection_permission": "development only; final-test feedback forbidden",
+        "training_logits": [
+          -2.363806727732478,
+          -0.7300297618073064,
+          -0.8839532827256529,
+          -1.0378768036439991,
+          1.0378768036439991,
+          0.8839532827256527,
+          0.7300297618073062,
+          2.363806727732478
+        ],
+        "training_metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              3,
+              1
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "f1": 0.75,
+          "fn": 1,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.5040513932268862,
+          "mathematical_log_loss": 0.5040513932268862,
+          "precision": 0.75,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.5,
+          "recall": 0.75,
+          "row_log_loss": [
+            0.08989689472171787,
+            0.3933214365070397,
+            1.2297719865113594,
+            0.303215255167428,
+            0.303215255167428,
+            1.2297719865113592,
+            0.3933214365070397,
+            0.08989689472171787
+          ],
+          "tn": 3,
+          "total_cost": 2,
+          "tp": 3
+        },
+        "training_probabilities": [
+          0.08597457874155336,
+          0.3251881964279113,
+          0.29235923192994534,
+          0.2615598737914806,
+          0.7384401262085194,
+          0.7076407680700546,
+          0.6748118035720887,
+          0.9140254212584467
+        ]
+      },
+      "explanation": "Larger C means weaker L2 preference under the declared normalization. Scaler/model parameters use training rows; each CV fold fits them separately. Inspect actual held-out scores, not a promise that weaker or stronger penalties always improve.",
+      "explanation_id": "inverse-c-training-only",
+      "fixture": "LG.fitted-churn.v1",
+      "id": "LG-E1.fit.C10.q2",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "diagnostic": "nonpositive-C"
+      },
+      "counterexample": "A mathematical penalty does not make every solver/penalty combination supported; an error is not a zero-probability prediction.",
+      "expected": {
+        "model_fitted": false,
+        "reference_rejection_class": "InvalidParameterError",
+        "status": {
+          "reason": "nonpositive-C",
+          "tag": "unsupported"
+        }
+      },
+      "explanation": "Reject the unsupported authored solver/parameter tuple without fitting. Positive finite C and the verified L2/lbfgs combination are the only exposed trained model settings.",
+      "explanation_id": "reject-unsupported-model",
+      "fixture": "LG.fitted-churn.v1",
+      "id": "LG-E1.invalid.nonpositive-C",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "diagnostic": "lbfgs-L1-unsupported"
+      },
+      "counterexample": "A mathematical penalty does not make every solver/penalty combination supported; an error is not a zero-probability prediction.",
+      "expected": {
+        "model_fitted": false,
+        "reference_rejection_class": "ValueError",
+        "status": {
+          "reason": "lbfgs-L1-unsupported",
+          "tag": "unsupported"
+        }
+      },
+      "explanation": "Reject the unsupported authored solver/parameter tuple without fitting. Positive finite C and the verified L2/lbfgs combination are the only exposed trained model settings.",
+      "explanation_id": "reject-unsupported-model",
+      "fixture": "LG.fitted-churn.v1",
+      "id": "LG-E1.invalid.lbfgs-L1-unsupported",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    }
+  ],
+  "explanation_options": [
+    "score-probability-learning",
+    "inverse-c-training-only",
+    "reject-unsupported-model",
+    "threshold-development-only",
+    "endpoint-and-undefined",
+    "reject-leakage",
+    "training-accuracy-guarantees-risk",
+    "threshold-change-refits-model"
+  ],
+  "fixtures": [
+    {
+      "coefficients": [
+        1
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w1.negative-tail.y0.v1",
+      "input": [
+        -20.0
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 0,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        1
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w1.negative-tail.y1.v1",
+      "input": [
+        -20.0
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 1,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        1
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w1.negative-ln3.y0.v1",
+      "input": [
+        -1.0986122886681098
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 0,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        1
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w1.negative-ln3.y1.v1",
+      "input": [
+        -1.0986122886681098
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 1,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        1
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w1.zero.y0.v1",
+      "input": [
+        0.0
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 0,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        1
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w1.zero.y1.v1",
+      "input": [
+        0.0
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 1,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        1
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w1.positive-ln3.y0.v1",
+      "input": [
+        1.0986122886681098
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 0,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        1
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w1.positive-ln3.y1.v1",
+      "input": [
+        1.0986122886681098
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 1,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        1
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w1.positive-tail.y0.v1",
+      "input": [
+        20.0
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 0,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        1
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w1.positive-tail.y1.v1",
+      "input": [
+        20.0
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 1,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        2
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w2.negative-tail.y0.v1",
+      "input": [
+        -20.0
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 0,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        2
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w2.negative-tail.y1.v1",
+      "input": [
+        -20.0
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 1,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        2
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w2.negative-ln3.y0.v1",
+      "input": [
+        -1.0986122886681098
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 0,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        2
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w2.negative-ln3.y1.v1",
+      "input": [
+        -1.0986122886681098
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 1,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        2
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w2.zero.y0.v1",
+      "input": [
+        0.0
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 0,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        2
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w2.zero.y1.v1",
+      "input": [
+        0.0
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 1,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        2
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w2.positive-ln3.y0.v1",
+      "input": [
+        1.0986122886681098
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 0,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        2
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w2.positive-ln3.y1.v1",
+      "input": [
+        1.0986122886681098
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 1,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        2
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w2.positive-tail.y0.v1",
+      "input": [
+        20.0
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 0,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "coefficients": [
+        2
+      ],
+      "gradient_step": {
+        "learning_rate": 0.1,
+        "penalty": "none",
+        "training_row_only": true
+      },
+      "id": "LG.authored.w2.positive-tail.y1.v1",
+      "input": [
+        20.0
+      ],
+      "intercept": 0,
+      "kind": "authored-weights-not-fitted",
+      "label": 1,
+      "threshold": 0.5,
+      "unit": "dimensionless feature; logit dimensionless"
+    },
+    {
+      "development": {
+        "ids": [
+          "lg-dev1",
+          "lg-dev2",
+          "lg-dev3",
+          "lg-dev4"
+        ],
+        "x": [
+          [
+            -1.2,
+            0.5
+          ],
+          [
+            -0.2,
+            -1.0
+          ],
+          [
+            0.8,
+            0.5
+          ],
+          [
+            1.8,
+            0.0
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "feature_names": [
+        "usage_change",
+        "support_activity"
+      ],
+      "fictional": true,
+      "id": "LG.fitted-churn.v1",
+      "kind": "reference-trained",
+      "test_targets": "not exposed",
+      "training": {
+        "ids": [
+          "lg-train1",
+          "lg-train2",
+          "lg-train3",
+          "lg-train4",
+          "lg-train5",
+          "lg-train6",
+          "lg-train7",
+          "lg-train8"
+        ],
+        "x": [
+          [
+            -2.0,
+            -1.0
+          ],
+          [
+            -1.5,
+            1.0
+          ],
+          [
+            -1.0,
+            0.0
+          ],
+          [
+            -0.5,
+            -1.0
+          ],
+          [
+            0.5,
+            1.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.5,
+            -1.0
+          ],
+          [
+            2.0,
+            1.0
+          ]
+        ],
+        "y": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "units": [
+        "dimensionless",
+        "dimensionless"
+      ]
+    }
+  ],
+  "id": "LG-E1",
+  "initial_configuration": "LG-E1.LG.authored.w1.negative-tail.y0.v1",
+  "interaction": [
+    "Record prediction before reveal",
+    "Change a meaningful listed configuration",
+    "Reveal exact score/probability or metric tables and synchronized visual",
+    "Choose the supported explanation",
+    "Apply a changed-case bounded transfer"
+  ],
+  "learning_question": "How do score, probability, training loss and regularization differ?",
+  "objectives": [
+    "LG01.O1",
+    "LG01.O2",
+    "LG01.O3",
+    "LG01.O4",
+    "LG02.O1",
+    "LG02.O2",
+    "LG02.O3",
+    "LG02.O4",
+    "LG04.O1",
+    "LG04.O2",
+    "LG04.O3",
+    "LG04.O4"
+  ],
+  "positive_class": "1=churns;0=stays",
+  "prediction_options": [
+    "Probability changes because the linear score changes",
+    "The decision may change without refitting or changing probabilities",
+    "The score cannot justify this evaluation or probability interpretation"
+  ],
+  "prerequisites": [
+    "Evaluation Foundations",
+    "Probability and Derivatives",
+    "linear scores and training-only scaling"
+  ],
+  "profile": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "python": "3.13.16",
+    "scikit-learn": "1.9.1"
+  },
+  "rejection": "Reject unknown/altered IDs, nonfinite or out-of-domain inputs, arbitrary expressions and unsupported Cartesian tuples. Unsupported model diagnostics are explicit tagged states, never fitted outputs.",
+  "schema": "supervised.logistic.experiment.v1",
+  "seed": 1729,
+  "version": "1.0.0"
+}

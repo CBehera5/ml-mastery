@@ -1,0 +1,11 @@
+{
+  "conventions_sha256": "ba9bfdffbf0dbebc9b5baf39c9b5338eb993cbf40ff2caf5062b0d4c33acbdab",
+  "generator_sha256": "a16e810713e00956ade6c4bfca2455739635535c7cfbad77101daccd273a0de4",
+  "schema": "gradient-boosting.freeze.v1",
+  "sha256": {
+    "gb-e1.manifest.v1.json": "f987e32c047496c1d7185ae93f10b0f9442becd203b18d46489f61e44694c508",
+    "gb-e2.manifest.v1.json": "0006e34f603e23297fb599af7a0f7fbd575845a588f6b6a6586cbfe2b5c06d16",
+    "parity-report.v1.json": "6275145fc3f0e07ac5a4f434019dd62bf0b0e4078507634fbd9212233ca8ceff",
+    "source-preservation.v1.json": "2191d43a81355acb0eeb76674b02a601fe08ddf9abf4d80f0d3a18e5100c230c"
+  }
+}

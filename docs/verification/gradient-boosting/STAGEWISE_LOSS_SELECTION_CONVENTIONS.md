@@ -1,0 +1,39 @@
+# Gradient Boosting v1 — stagewise loss and selection conventions
+
+Trusted offline authored fixtures only; no learner execution. GB-E1 and GB-E2 each expose24 valid configurations (two datasets × three learning rates × four estimator budgets) and three explicit rejection diagnostics,27 total per experiment. Full eight-stage traces are immutable explanatory assets; budget restricts displayed/eligible stages to its prefix. Only these configurations are exposed; individual prefix stages are trace rows, not additional control configurations.
+
+## Inputs, partitions and fitting
+
+Exact datasets, target definitions, partitions and row IDs are in each manifest. All data are original fictional CC0-1.0 numeric examples. One numeric feature avoids feature-identity split ties; counts and tables remain bounded. Train12, validation6 and sealed test4 rows per dataset; no scaling or other learned preprocessing. Train/validation/test IDs are disjoint. Held-out partitions are pedagogical fixtures, not a claim of independent population sampling or representative performance. No test predictions, losses or selected-test winners are computed; test targets remain offline sealed metadata, not learner-visible model-selection information.
+
+CPython3.13.16, NumPy2.5.4, pandas3.0.6, Matplotlib3.11.2, scikit-learn1.9.1 and SciPy1.18.1; verified local macOS15.6.1 ARM64. No installation, external datasets or credentials. Seed1729, subsample1, unweighted observations, max_depth1, min_samples_leaf2, min_samples_split2, max_features=None, ccp_alpha0, init=None, warm_start=False; internal early stopping n_iter_no_change=None. Fit exactly eight stages per rate, expose budgets1,2,4,8 as prefixes, not repeated independent fits. Learning rates .1,.5,1; tree stage targets change with rate, so rate×stages is not an equivalence law. sklearn1.9.1 deprecated criterion parameter is not passed; its pinned internal squared-gradient split behavior is verified independently by candidate SSE checks. Fitted tree parameters/topology are version-bound; no future-library default equivalence claim.
+
+Numeric feature values convert to float32 for sklearn tree traversal, thresholds are exported float64, equality routes left (<=). Candidate thresholds are adjacent unique training-value midpoints, min-leaf constraints enforced. For these stumps, squared-gradient SSE minimum checks optimality; exact equal-gain split choice follows pinned sklearn random-state behavior and exported frozen threshold, not invented earliest-feature/threshold ordering. Leaf memberships and values are independently reconstructed. Classification trees are regression weak learners fitted to loss gradients, NOT Gini classification trees. No entropy, multiclass, subsampling, arbitrary depth/kernel/model input or new boosting library variants.
+
+## Regression
+
+GradientBoostingRegressor(loss='squared_error'). Initial F0 is training target mean. Half-squared loss is (y−F)^2/2, negative gradient y−F; reported regression loss is MSE (twice that half loss). Terminal leaf prediction is mean training residual in that leaf. F_m=F_(m−1)+eta*h_m. Full squared-error gradient has a factor2; do not mix these conventions. Outlier sensitivity is demonstrated by exact noisy fixture targets. No guarantee of monotonic validation error or universally superior boosting.
+
+## Binary classification
+
+GradientBoostingClassifier(loss='log_loss'); class order[0,1], positive1=churns. F0=log(training_prior1/training_prior0); these fixtures have both classes and prior .5. p=sigmoid(F), Bernoulli negative log-likelihood = logaddexp(0,F)−yF; negative raw-score gradient y−p. A terminal leaf uses sklearn's binary Newton adjustment sum(y−p)/sum(p(1−p)), THEN eta scaling. Thus a one-point gradient .5 is not automatically a .5 leaf correction. Export both gradient and actual leaf adjustment, explicitly distinct. All frozen Hessian sums are strictly positive; zero-Hessian fitting is unsupported, not coerced.
+
+Probability>=.5 predicts positive, including equality; this explicit threshold differs from sklearn binary predict's score>0 tie. Staged raw-score/probability parity is required independently of that intentional educational threshold. Manifest validation labels use >=.5; no claim of library predict-label parity at equality. Accuracy is not probability quality; selection uses log-loss, not accuracy. No log-odds multiplied by class labels or raw-label regression shortcut.
+
+Mathematical log-loss endpoints: correct p0/y0 or p1/y1 gives0; incorrect certain probability gives positive infinity, encoded as tagged infinity if encountered. Invalid probabilities outside[0,1] reject; undefined denominators use tagged undefined, never0. Stable score-form loss avoids finite-score endpoint rounding and never clips the mathematical definition. sklearn log_loss clips to dtype epsilon; all fitted probabilities here remain interior and parity is checked. Endpoint differences are explanatory conventions, not extra unreviewed experiment states. No interactive endpoint control is exposed.
+
+## Validation selection and invalid states
+
+For a configuration, compute validation MSE/regression or mean log-loss/classification at stages1 through its budget. Select the smallest loss; losses within absolute1e-12 of the minimum tie and choose the earliest stage. Initialization stage0 is displayed but is not a candidate. Rate is a comparison control, not a claim of automatic joint grid selection; no test feedback is allowed. A locked rate/stage would be required before a separately authorized final test evaluation. Internal patience stopping, validation_fraction and library tol are inactive and must not be described as this external argmin protocol.
+
+Validation rows never fit stages, initialize models or determine residuals. Global/cross-fold preprocessing and test stopping are invalid; no CV fitting is claimed in this bounded experiment. GB05 will later teach separate fold-only fits through scored reasoning. Three rejected diagnostics per manifest: test-based-stage-selection, validation-rows-used-for-fitting, unsupported-estimator-budget; tagged invalid, null prediction, no model fit or fabricated numeric result. Unknown IDs/unsafe input reject before replay; no arbitrary expression interpretation or unsafe-input echo.
+
+## Forest comparison and access
+
+Fixed eight-tree,depth1,min-leaf2,bootstrap=True,max_features1.0,seed1729 RandomForest baseline fits the same training partition. Regression averages predictions; classification averages per-tree class1 probabilities, not logits or hard votes. Comparison is illustrative and not tuned-cost-matched or evidence of a universal winner. No OOB metric or production performance claim.
+
+Predict → reveal → change reviewed control → predict again → explain. Text alternatives expose before/gradient/tree/update/after, loss curves as numbered tables, allowed fit IDs and selected-stage rationale. Separate tables stay at most32×8; expanded immutable traces do not enlarge learner evidence payloads. Plots optional; no decorative animation requirement. No lesson, practice or independent mastery evidence is written during reference freeze.
+
+## Precision, regeneration and stop
+
+Expected JSON stores full float64 precision; display may round to6 decimals but grading/comparison never uses displayed rounding. Parity absolute/relative1e-9; stage selection tie1e-12 is separate. Exact IDs, counts, memberships and labels must match exactly. No NaN/Infinity JSON values; explicit tags when defined. Canonical JSON sorted keys,indent2,newline,allow_nan=False. Run approved Python against work/freeze-task-015-9.py to author, then --check in a fresh process for byte-identical verification. Freeze lock hashes both manifests,parity report,generator and this document. Application implementation and notebook execution require subsequent authorization. Genuine reader/browser zoom/Colab and original-directory reliability remain open.

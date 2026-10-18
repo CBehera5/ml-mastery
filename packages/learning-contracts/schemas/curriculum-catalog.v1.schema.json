@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mlmathlab.local/schemas/curriculum-catalog.v1.schema.json",
+  "title": "Curriculum catalog v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "catalogId", "catalogVersion", "phases", "modules", "lessons", "objectives", "labs", "exerciseIds", "assessments", "projects"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "catalogId": { "type": "string", "minLength": 1 },
+    "catalogVersion": { "type": "string", "minLength": 1 },
+    "phases": { "type": "array", "items": { "$ref": "#/$defs/phase" } },
+    "modules": { "type": "array", "items": { "$ref": "#/$defs/module" } },
+    "lessons": { "type": "array", "items": { "$ref": "#/$defs/lesson" } },
+    "objectives": { "type": "array", "items": { "$ref": "#/$defs/objective" } },
+    "labs": { "type": "array", "items": { "$ref": "#/$defs/lab" } },
+    "exerciseIds": { "type": "array", "items": { "type": "string" } },
+    "assessments": { "type": "array", "items": { "$ref": "#/$defs/assessment" } },
+    "projects": { "type": "array", "items": { "$ref": "#/$defs/project" } }
+  },
+  "$defs": {
+    "status": { "enum": ["planned", "partial", "implemented", "verified"] },
+    "availability": { "enum": ["upcoming", "available", "private-preview", "retired"] },
+    "prerequisite": { "type": "object", "additionalProperties": false, "required": ["kind", "id", "recommended"], "properties": { "kind": { "enum": ["module", "lesson", "objective"] }, "id": { "type": "string", "minLength": 1 }, "recommended": { "type": "boolean" } } },
+    "phase": { "type": "object", "required": ["id", "kind", "title", "order", "estimatedMinutes", "status", "availability"], "properties": { "id": { "type": "string" }, "kind": { "enum": ["mathematics", "python", "supervised-ml", "projects"] }, "title": { "type": "string" }, "order": { "type": "integer", "minimum": 0 }, "estimatedMinutes": { "type": "number", "minimum": 0 }, "status": { "$ref": "#/$defs/status" }, "availability": { "$ref": "#/$defs/availability" } } },
+    "module": { "type": "object", "required": ["id", "phaseId", "title", "summary", "order", "estimatedMinutes", "status", "availability", "prerequisiteRefs", "objectiveIds"], "properties": { "id": { "type": "string" }, "phaseId": { "type": "string" }, "title": { "type": "string" }, "summary": { "type": "string" }, "order": { "type": "integer" }, "estimatedMinutes": { "type": "number", "minimum": 0 }, "status": { "$ref": "#/$defs/status" }, "availability": { "$ref": "#/$defs/availability" }, "prerequisiteRefs": { "type": "array", "items": { "$ref": "#/$defs/prerequisite" } }, "objectiveIds": { "type": "array", "items": { "type": "string" } } } },
+    "lesson": { "type": "object", "required": ["id", "moduleId", "title", "summary", "kind", "order", "route", "estimatedMinutes", "status", "availability", "prerequisiteRefs", "objectiveIds", "labIds", "exerciseIds", "assessmentIds", "projectIds"], "properties": { "id": { "type": "string" }, "moduleId": { "type": "string" }, "title": { "type": "string" }, "summary": { "type": "string" }, "kind": { "enum": ["learn", "lab", "practice", "debug", "project", "assessment"] }, "order": { "type": "integer" }, "route": { "type": "string" }, "estimatedMinutes": { "type": "number", "minimum": 0 }, "status": { "$ref": "#/$defs/status" }, "availability": { "$ref": "#/$defs/availability" }, "prerequisiteRefs": { "type": "array", "items": { "$ref": "#/$defs/prerequisite" } }, "objectiveIds": { "type": "array", "items": { "type": "string" } }, "labIds": { "type": "array", "items": { "type": "string" } }, "exerciseIds": { "type": "array", "items": { "type": "string" } }, "assessmentIds": { "type": "array", "items": { "type": "string" } }, "projectIds": { "type": "array", "items": { "type": "string" } } } },
+    "objective": { "type": "object", "required": ["id", "moduleId", "statement", "evidenceKinds", "masteryRequired", "remediationLessonIds"], "properties": { "id": { "type": "string" }, "moduleId": { "type": "string" }, "statement": { "type": "string" }, "evidenceKinds": { "type": "array", "items": { "enum": ["interaction", "exercise", "assessment", "project-milestone", "self-check"] } }, "masteryRequired": { "type": "boolean" }, "remediationLessonIds": { "type": "array", "items": { "type": "string" } } } },
+    "lab": { "type": "object", "required": ["id", "lessonId", "title", "status"], "properties": { "id": { "type": "string" }, "lessonId": { "type": "string" }, "title": { "type": "string" }, "status": { "$ref": "#/$defs/status" }, "runtimeContract": { "type": "string" } } },
+    "assessment": { "type": "object", "required": ["id", "lessonId", "objectiveIds", "variantIds", "status"], "properties": { "id": { "type": "string" }, "lessonId": { "type": "string" }, "objectiveIds": { "type": "array", "items": { "type": "string" } }, "variantIds": { "type": "array", "items": { "type": "string" } }, "status": { "$ref": "#/$defs/status" } } },
+    "project": { "type": "object", "required": ["id", "title", "mode", "milestoneIds", "status"], "properties": { "id": { "type": "string" }, "title": { "type": "string" }, "mode": { "enum": ["guided", "independent"] }, "milestoneIds": { "type": "array", "items": { "type": "string" } }, "status": { "$ref": "#/$defs/status" } } }
+  }
+}

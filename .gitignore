@@ -1,0 +1,53 @@
+.venv/
+**/.venv/
+node_modules/
+**/node_modules/
+dist/
+build/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+**/.pytest_cache/
+*.egg-info/
+*.tsbuildinfo
+.next/
+**/.next/
+.vercel/
+outputs/
+coverage/
+playwright-report/
+test-results/
+.task01511-evidence/
+.DS_Store
+
+# Historical generated work products; retain authored verification scripts.
+work/*.json
+work/*.ipynb
+work/*.csv
+
+# Local configuration, credentials, private keys, and learner/browser state.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
+learner-data/
+local-storage/
+browser-state.json
+
+# Preserve authored verification tools, but exclude local runtimes and logs.
+work/**/task-*-verification-venv/
+work/**/.venv/
+work/**/__pycache__/
+work/**/*.log
+
+# One-off historical helpers depend on local paths or excluded task artifacts.
+work/document-task0116.py
+work/document-task0121.py
+work/verify-task0121-docs.py
+work/stage-task-015-1-verification.py

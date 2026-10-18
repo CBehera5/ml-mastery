@@ -1,0 +1,1162 @@
+{
+  "contract": "statistics.v1",
+  "summaries": [
+    {
+      "values": [
+        1,
+        2,
+        3
+      ],
+      "convention": "population",
+      "trace": {
+        "contract": "statistics.v1",
+        "count": 3,
+        "convention": "population",
+        "denominator": 3,
+        "mean": 2.0,
+        "median": 2,
+        "modes": [],
+        "minimum": 1,
+        "maximum": 3,
+        "range": 2,
+        "variance": 0.6666666666666666,
+        "standardDeviation": 0.816496580927726,
+        "q1": 1,
+        "q3": 3,
+        "iqr": 2,
+        "lowerFence": -2.0,
+        "upperFence": 6.0,
+        "whiskerLow": 1,
+        "whiskerHigh": 3,
+        "outliers": []
+      }
+    },
+    {
+      "values": [
+        1,
+        2,
+        3
+      ],
+      "convention": "sample",
+      "trace": {
+        "contract": "statistics.v1",
+        "count": 3,
+        "convention": "sample",
+        "denominator": 2,
+        "mean": 2.0,
+        "median": 2,
+        "modes": [],
+        "minimum": 1,
+        "maximum": 3,
+        "range": 2,
+        "variance": 1.0,
+        "standardDeviation": 1.0,
+        "q1": 1,
+        "q3": 3,
+        "iqr": 2,
+        "lowerFence": -2.0,
+        "upperFence": 6.0,
+        "whiskerLow": 1,
+        "whiskerHigh": 3,
+        "outliers": []
+      }
+    },
+    {
+      "values": [
+        1,
+        1,
+        2,
+        2,
+        3
+      ],
+      "convention": "population",
+      "trace": {
+        "contract": "statistics.v1",
+        "count": 5,
+        "convention": "population",
+        "denominator": 5,
+        "mean": 1.8,
+        "median": 2,
+        "modes": [
+          1,
+          2
+        ],
+        "minimum": 1,
+        "maximum": 3,
+        "range": 2,
+        "variance": 0.56,
+        "standardDeviation": 0.7483314773547883,
+        "q1": 1.0,
+        "q3": 2.5,
+        "iqr": 1.5,
+        "lowerFence": -1.25,
+        "upperFence": 4.75,
+        "whiskerLow": 1,
+        "whiskerHigh": 3,
+        "outliers": []
+      }
+    },
+    {
+      "values": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "convention": "sample",
+      "trace": {
+        "contract": "statistics.v1",
+        "count": 5,
+        "convention": "sample",
+        "denominator": 4,
+        "mean": 3.0,
+        "median": 3,
+        "modes": [],
+        "minimum": 1,
+        "maximum": 5,
+        "range": 4,
+        "variance": 2.5,
+        "standardDeviation": 1.5811388300841898,
+        "q1": 1.5,
+        "q3": 4.5,
+        "iqr": 3.0,
+        "lowerFence": -3.0,
+        "upperFence": 9.0,
+        "whiskerLow": 1,
+        "whiskerHigh": 5,
+        "outliers": []
+      }
+    },
+    {
+      "values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        100
+      ],
+      "convention": "population",
+      "trace": {
+        "contract": "statistics.v1",
+        "count": 8,
+        "convention": "population",
+        "denominator": 8,
+        "mean": 16.0,
+        "median": 4.5,
+        "modes": [],
+        "minimum": 1,
+        "maximum": 100,
+        "range": 99,
+        "variance": 1011.5,
+        "standardDeviation": 31.804087787578503,
+        "q1": 2.5,
+        "q3": 6.5,
+        "iqr": 4.0,
+        "lowerFence": -3.5,
+        "upperFence": 12.5,
+        "whiskerLow": 1,
+        "whiskerHigh": 7,
+        "outliers": [
+          100
+        ]
+      }
+    },
+    {
+      "values": [
+        5,
+        5,
+        5
+      ],
+      "convention": "population",
+      "trace": {
+        "contract": "statistics.v1",
+        "count": 3,
+        "convention": "population",
+        "denominator": 3,
+        "mean": 5.0,
+        "median": 5,
+        "modes": [
+          5
+        ],
+        "minimum": 5,
+        "maximum": 5,
+        "range": 0,
+        "variance": 0.0,
+        "standardDeviation": 0.0,
+        "q1": 5,
+        "q3": 5,
+        "iqr": 0,
+        "lowerFence": 5.0,
+        "upperFence": 5.0,
+        "whiskerLow": 5,
+        "whiskerHigh": 5,
+        "outliers": []
+      }
+    },
+    {
+      "values": [
+        5
+      ],
+      "convention": "population",
+      "trace": {
+        "contract": "statistics.v1",
+        "count": 1,
+        "convention": "population",
+        "denominator": 1,
+        "mean": 5.0,
+        "median": 5,
+        "modes": [],
+        "minimum": 5,
+        "maximum": 5,
+        "range": 0,
+        "variance": 0.0,
+        "standardDeviation": 0.0,
+        "q1": 5,
+        "q3": 5,
+        "iqr": 0,
+        "lowerFence": 5.0,
+        "upperFence": 5.0,
+        "whiskerLow": 5,
+        "whiskerHigh": 5,
+        "outliers": []
+      }
+    },
+    {
+      "values": [
+        4,
+        5,
+        5,
+        6
+      ],
+      "convention": "population",
+      "trace": {
+        "contract": "statistics.v1",
+        "count": 4,
+        "convention": "population",
+        "denominator": 4,
+        "mean": 5.0,
+        "median": 5.0,
+        "modes": [
+          5
+        ],
+        "minimum": 4,
+        "maximum": 6,
+        "range": 2,
+        "variance": 0.5,
+        "standardDeviation": 0.7071067811865476,
+        "q1": 4.5,
+        "q3": 5.5,
+        "iqr": 1.0,
+        "lowerFence": 3.0,
+        "upperFence": 7.0,
+        "whiskerLow": 4,
+        "whiskerHigh": 6,
+        "outliers": []
+      }
+    },
+    {
+      "values": [
+        0,
+        0,
+        10,
+        10
+      ],
+      "convention": "population",
+      "trace": {
+        "contract": "statistics.v1",
+        "count": 4,
+        "convention": "population",
+        "denominator": 4,
+        "mean": 5.0,
+        "median": 5.0,
+        "modes": [
+          0,
+          10
+        ],
+        "minimum": 0,
+        "maximum": 10,
+        "range": 10,
+        "variance": 25.0,
+        "standardDeviation": 5.0,
+        "q1": 0.0,
+        "q3": 10.0,
+        "iqr": 10.0,
+        "lowerFence": -15.0,
+        "upperFence": 25.0,
+        "whiskerLow": 0,
+        "whiskerHigh": 10,
+        "outliers": []
+      }
+    }
+  ],
+  "paired": [
+    {
+      "x": [
+        1,
+        2,
+        3
+      ],
+      "y": [
+        2,
+        4,
+        6
+      ],
+      "convention": "sample",
+      "trace": {
+        "contract": "statistics.v1",
+        "count": 3,
+        "convention": "sample",
+        "covariance": 2.0,
+        "correlation": 1
+      }
+    },
+    {
+      "x": [
+        1,
+        2,
+        3
+      ],
+      "y": [
+        2,
+        4,
+        6
+      ],
+      "convention": "population",
+      "trace": {
+        "contract": "statistics.v1",
+        "count": 3,
+        "convention": "population",
+        "covariance": 1.3333333333333333,
+        "correlation": 1
+      }
+    },
+    {
+      "x": [
+        1,
+        2,
+        3
+      ],
+      "y": [
+        6,
+        4,
+        2
+      ],
+      "convention": "sample",
+      "trace": {
+        "contract": "statistics.v1",
+        "count": 3,
+        "convention": "sample",
+        "covariance": -2.0,
+        "correlation": -1
+      }
+    },
+    {
+      "x": [
+        1,
+        1,
+        1
+      ],
+      "y": [
+        1,
+        2,
+        3
+      ],
+      "convention": "sample",
+      "trace": {
+        "contract": "statistics.v1",
+        "count": 3,
+        "convention": "sample",
+        "covariance": 0.0,
+        "correlation": null
+      }
+    },
+    {
+      "x": [
+        -2,
+        -1,
+        0,
+        1,
+        2
+      ],
+      "y": [
+        4,
+        1,
+        0,
+        1,
+        4
+      ],
+      "convention": "sample",
+      "trace": {
+        "contract": "statistics.v1",
+        "count": 5,
+        "convention": "sample",
+        "covariance": 0.0,
+        "correlation": 0.0
+      }
+    }
+  ],
+  "histograms": [
+    {
+      "values": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "bins": 2,
+      "trace": {
+        "contract": "statistics.v1",
+        "bins": [
+          {
+            "lower": 1.0,
+            "upper": 2.5,
+            "includesUpper": false,
+            "count": 2
+          },
+          {
+            "lower": 2.5,
+            "upper": 4.0,
+            "includesUpper": true,
+            "count": 2
+          }
+        ]
+      }
+    },
+    {
+      "values": [
+        0,
+        1,
+        2
+      ],
+      "bins": 2,
+      "trace": {
+        "contract": "statistics.v1",
+        "bins": [
+          {
+            "lower": 0.0,
+            "upper": 1.0,
+            "includesUpper": false,
+            "count": 1
+          },
+          {
+            "lower": 1.0,
+            "upper": 2.0,
+            "includesUpper": true,
+            "count": 2
+          }
+        ]
+      }
+    },
+    {
+      "values": [
+        5,
+        5,
+        5
+      ],
+      "bins": 4,
+      "trace": {
+        "contract": "statistics.v1",
+        "bins": [
+          {
+            "lower": 5,
+            "upper": 6,
+            "includesUpper": false,
+            "count": 3
+          },
+          {
+            "lower": 6,
+            "upper": 7,
+            "includesUpper": false,
+            "count": 0
+          },
+          {
+            "lower": 7,
+            "upper": 8,
+            "includesUpper": false,
+            "count": 0
+          },
+          {
+            "lower": 8,
+            "upper": 9,
+            "includesUpper": true,
+            "count": 0
+          }
+        ]
+      }
+    }
+  ],
+  "sampling": [
+    {
+      "size": 2,
+      "repetitions": 5,
+      "seed": 42,
+      "biased": false,
+      "trace": {
+        "contract": "statistics.v1",
+        "population": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          10,
+          10
+        ],
+        "populationMean": 2.0,
+        "populationDeviation": 4.0,
+        "sampleSize": 2,
+        "repetitions": 5,
+        "seed": 42,
+        "biased": false,
+        "standardError": 2.82842712474619,
+        "samples": [
+          {
+            "mean": 0.0,
+            "lower": -5.543717164502532,
+            "upper": 5.543717164502532,
+            "covers": true
+          },
+          {
+            "mean": 0.0,
+            "lower": -5.543717164502532,
+            "upper": 5.543717164502532,
+            "covers": true
+          },
+          {
+            "mean": 0.0,
+            "lower": -5.543717164502532,
+            "upper": 5.543717164502532,
+            "covers": true
+          },
+          {
+            "mean": 0.0,
+            "lower": -5.543717164502532,
+            "upper": 5.543717164502532,
+            "covers": true
+          },
+          {
+            "mean": 10.0,
+            "lower": 4.456282835497468,
+            "upper": 15.543717164502532,
+            "covers": false
+          }
+        ],
+        "coverage": 0.8,
+        "meanOfMeans": 2.0
+      }
+    },
+    {
+      "size": 10,
+      "repetitions": 5,
+      "seed": 42,
+      "biased": false,
+      "trace": {
+        "contract": "statistics.v1",
+        "population": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          10,
+          10
+        ],
+        "populationMean": 2.0,
+        "populationDeviation": 4.0,
+        "sampleSize": 10,
+        "repetitions": 5,
+        "seed": 42,
+        "biased": false,
+        "standardError": 1.2649110640673518,
+        "samples": [
+          {
+            "mean": 2.0,
+            "lower": -0.4792256855720094,
+            "upper": 4.479225685572009,
+            "covers": true
+          },
+          {
+            "mean": 5.0,
+            "lower": 2.5207743144279906,
+            "upper": 7.479225685572009,
+            "covers": false
+          },
+          {
+            "mean": 3.0,
+            "lower": 0.5207743144279906,
+            "upper": 5.479225685572009,
+            "covers": true
+          },
+          {
+            "mean": 2.0,
+            "lower": -0.4792256855720094,
+            "upper": 4.479225685572009,
+            "covers": true
+          },
+          {
+            "mean": 2.0,
+            "lower": -0.4792256855720094,
+            "upper": 4.479225685572009,
+            "covers": true
+          }
+        ],
+        "coverage": 0.8,
+        "meanOfMeans": 2.8
+      }
+    },
+    {
+      "size": 100,
+      "repetitions": 5,
+      "seed": 4294967295,
+      "biased": false,
+      "trace": {
+        "contract": "statistics.v1",
+        "population": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          10,
+          10
+        ],
+        "populationMean": 2.0,
+        "populationDeviation": 4.0,
+        "sampleSize": 100,
+        "repetitions": 5,
+        "seed": 4294967295,
+        "biased": false,
+        "standardError": 0.4,
+        "samples": [
+          {
+            "mean": 2.1,
+            "lower": 1.316,
+            "upper": 2.8840000000000003,
+            "covers": true
+          },
+          {
+            "mean": 2.2,
+            "lower": 1.4160000000000001,
+            "upper": 2.984,
+            "covers": true
+          },
+          {
+            "mean": 2.5,
+            "lower": 1.716,
+            "upper": 3.284,
+            "covers": true
+          },
+          {
+            "mean": 2.1,
+            "lower": 1.316,
+            "upper": 2.8840000000000003,
+            "covers": true
+          },
+          {
+            "mean": 2.7,
+            "lower": 1.9160000000000001,
+            "upper": 3.484,
+            "covers": true
+          }
+        ],
+        "coverage": 1.0,
+        "meanOfMeans": 2.3200000000000003
+      }
+    },
+    {
+      "size": 100,
+      "repetitions": 5,
+      "seed": 42,
+      "biased": true,
+      "trace": {
+        "contract": "statistics.v1",
+        "population": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          10,
+          10
+        ],
+        "populationMean": 2.0,
+        "populationDeviation": 4.0,
+        "sampleSize": 100,
+        "repetitions": 5,
+        "seed": 42,
+        "biased": true,
+        "standardError": 0.4,
+        "samples": [
+          {
+            "mean": 10.0,
+            "lower": 9.216,
+            "upper": 10.784,
+            "covers": false
+          },
+          {
+            "mean": 10.0,
+            "lower": 9.216,
+            "upper": 10.784,
+            "covers": false
+          },
+          {
+            "mean": 10.0,
+            "lower": 9.216,
+            "upper": 10.784,
+            "covers": false
+          },
+          {
+            "mean": 10.0,
+            "lower": 9.216,
+            "upper": 10.784,
+            "covers": false
+          },
+          {
+            "mean": 10.0,
+            "lower": 9.216,
+            "upper": 10.784,
+            "covers": false
+          }
+        ],
+        "coverage": 0.0,
+        "meanOfMeans": 10.0
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "strength": 20,
+      "effect": 0,
+      "intervention": 10,
+      "trace": {
+        "contract": "statistics.v1",
+        "rows": [
+          {
+            "warm": 0,
+            "x": 8,
+            "y": 47,
+            "intervenedX": 18,
+            "intervenedY": 47
+          },
+          {
+            "warm": 0,
+            "x": 12,
+            "y": 47,
+            "intervenedX": 22,
+            "intervenedY": 47
+          },
+          {
+            "warm": 0,
+            "x": 8,
+            "y": 53,
+            "intervenedX": 18,
+            "intervenedY": 53
+          },
+          {
+            "warm": 0,
+            "x": 12,
+            "y": 53,
+            "intervenedX": 22,
+            "intervenedY": 53
+          },
+          {
+            "warm": 1,
+            "x": 28,
+            "y": 77,
+            "intervenedX": 38,
+            "intervenedY": 77
+          },
+          {
+            "warm": 1,
+            "x": 32,
+            "y": 77,
+            "intervenedX": 42,
+            "intervenedY": 77
+          },
+          {
+            "warm": 1,
+            "x": 28,
+            "y": 83,
+            "intervenedX": 38,
+            "intervenedY": 83
+          },
+          {
+            "warm": 1,
+            "x": 32,
+            "y": 83,
+            "intervenedX": 42,
+            "intervenedY": 83
+          }
+        ],
+        "pooled": {
+          "contract": "statistics.v1",
+          "count": 8,
+          "convention": "sample",
+          "covariance": 171.42857142857142,
+          "correlation": 0.9615384615384616
+        },
+        "groups": [
+          {
+            "contract": "statistics.v1",
+            "count": 4,
+            "convention": "sample",
+            "covariance": 0.0,
+            "correlation": 0.0
+          },
+          {
+            "contract": "statistics.v1",
+            "count": 4,
+            "convention": "sample",
+            "covariance": 0.0,
+            "correlation": 0.0
+          }
+        ],
+        "causalChange": 0
+      }
+    },
+    {
+      "strength": 20,
+      "effect": 1,
+      "intervention": 10,
+      "trace": {
+        "contract": "statistics.v1",
+        "rows": [
+          {
+            "warm": 0,
+            "x": 8,
+            "y": 45,
+            "intervenedX": 18,
+            "intervenedY": 55
+          },
+          {
+            "warm": 0,
+            "x": 12,
+            "y": 49,
+            "intervenedX": 22,
+            "intervenedY": 59
+          },
+          {
+            "warm": 0,
+            "x": 8,
+            "y": 51,
+            "intervenedX": 18,
+            "intervenedY": 61
+          },
+          {
+            "warm": 0,
+            "x": 12,
+            "y": 55,
+            "intervenedX": 22,
+            "intervenedY": 65
+          },
+          {
+            "warm": 1,
+            "x": 28,
+            "y": 95,
+            "intervenedX": 38,
+            "intervenedY": 105
+          },
+          {
+            "warm": 1,
+            "x": 32,
+            "y": 99,
+            "intervenedX": 42,
+            "intervenedY": 109
+          },
+          {
+            "warm": 1,
+            "x": 28,
+            "y": 101,
+            "intervenedX": 38,
+            "intervenedY": 111
+          },
+          {
+            "warm": 1,
+            "x": 32,
+            "y": 105,
+            "intervenedX": 42,
+            "intervenedY": 115
+          }
+        ],
+        "pooled": {
+          "contract": "statistics.v1",
+          "count": 8,
+          "convention": "sample",
+          "covariance": 290.2857142857143,
+          "correlation": 0.9860676420728893
+        },
+        "groups": [
+          {
+            "contract": "statistics.v1",
+            "count": 4,
+            "convention": "sample",
+            "covariance": 5.333333333333333,
+            "correlation": 0.5547001962252291
+          },
+          {
+            "contract": "statistics.v1",
+            "count": 4,
+            "convention": "sample",
+            "covariance": 5.333333333333333,
+            "correlation": 0.5547001962252291
+          }
+        ],
+        "causalChange": 10
+      }
+    },
+    {
+      "strength": 0,
+      "effect": 0,
+      "intervention": 10,
+      "trace": {
+        "contract": "statistics.v1",
+        "rows": [
+          {
+            "warm": 0,
+            "x": 8,
+            "y": 47,
+            "intervenedX": 18,
+            "intervenedY": 47
+          },
+          {
+            "warm": 0,
+            "x": 12,
+            "y": 47,
+            "intervenedX": 22,
+            "intervenedY": 47
+          },
+          {
+            "warm": 0,
+            "x": 8,
+            "y": 53,
+            "intervenedX": 18,
+            "intervenedY": 53
+          },
+          {
+            "warm": 0,
+            "x": 12,
+            "y": 53,
+            "intervenedX": 22,
+            "intervenedY": 53
+          },
+          {
+            "warm": 1,
+            "x": 8,
+            "y": 77,
+            "intervenedX": 18,
+            "intervenedY": 77
+          },
+          {
+            "warm": 1,
+            "x": 12,
+            "y": 77,
+            "intervenedX": 22,
+            "intervenedY": 77
+          },
+          {
+            "warm": 1,
+            "x": 8,
+            "y": 83,
+            "intervenedX": 18,
+            "intervenedY": 83
+          },
+          {
+            "warm": 1,
+            "x": 12,
+            "y": 83,
+            "intervenedX": 22,
+            "intervenedY": 83
+          }
+        ],
+        "pooled": {
+          "contract": "statistics.v1",
+          "count": 8,
+          "convention": "sample",
+          "covariance": 0.0,
+          "correlation": 0.0
+        },
+        "groups": [
+          {
+            "contract": "statistics.v1",
+            "count": 4,
+            "convention": "sample",
+            "covariance": 0.0,
+            "correlation": 0.0
+          },
+          {
+            "contract": "statistics.v1",
+            "count": 4,
+            "convention": "sample",
+            "covariance": 0.0,
+            "correlation": 0.0
+          }
+        ],
+        "causalChange": 0
+      }
+    },
+    {
+      "strength": 30,
+      "effect": -1,
+      "intervention": -5,
+      "trace": {
+        "contract": "statistics.v1",
+        "rows": [
+          {
+            "warm": 0,
+            "x": 8,
+            "y": 49,
+            "intervenedX": 3,
+            "intervenedY": 54
+          },
+          {
+            "warm": 0,
+            "x": 12,
+            "y": 45,
+            "intervenedX": 7,
+            "intervenedY": 50
+          },
+          {
+            "warm": 0,
+            "x": 8,
+            "y": 55,
+            "intervenedX": 3,
+            "intervenedY": 60
+          },
+          {
+            "warm": 0,
+            "x": 12,
+            "y": 51,
+            "intervenedX": 7,
+            "intervenedY": 56
+          },
+          {
+            "warm": 1,
+            "x": 38,
+            "y": 49,
+            "intervenedX": 33,
+            "intervenedY": 54
+          },
+          {
+            "warm": 1,
+            "x": 42,
+            "y": 45,
+            "intervenedX": 37,
+            "intervenedY": 50
+          },
+          {
+            "warm": 1,
+            "x": 38,
+            "y": 55,
+            "intervenedX": 33,
+            "intervenedY": 60
+          },
+          {
+            "warm": 1,
+            "x": 42,
+            "y": 51,
+            "intervenedX": 37,
+            "intervenedY": 56
+          }
+        ],
+        "pooled": {
+          "contract": "statistics.v1",
+          "count": 8,
+          "convention": "sample",
+          "covariance": -4.571428571428571,
+          "correlation": -0.0733112414683439
+        },
+        "groups": [
+          {
+            "contract": "statistics.v1",
+            "count": 4,
+            "convention": "sample",
+            "covariance": -5.333333333333333,
+            "correlation": -0.5547001962252291
+          },
+          {
+            "contract": "statistics.v1",
+            "count": 4,
+            "convention": "sample",
+            "covariance": -5.333333333333333,
+            "correlation": -0.5547001962252291
+          }
+        ],
+        "causalChange": 5
+      }
+    }
+  ],
+  "twins": [
+    {
+      "intervention": 0,
+      "trace": {
+        "contract": "statistics.v1",
+        "observations": [
+          {
+            "z": 0,
+            "x": 0,
+            "y": 0
+          },
+          {
+            "z": 1,
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "observedCorrelation": 1,
+        "intervention": 0,
+        "commonCauseY": [
+          0,
+          1
+        ],
+        "directCauseY": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "intervention": 1,
+      "trace": {
+        "contract": "statistics.v1",
+        "observations": [
+          {
+            "z": 0,
+            "x": 0,
+            "y": 0
+          },
+          {
+            "z": 1,
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "observedCorrelation": 1,
+        "intervention": 1,
+        "commonCauseY": [
+          0,
+          1
+        ],
+        "directCauseY": [
+          1,
+          1
+        ]
+      }
+    }
+  ]
+}

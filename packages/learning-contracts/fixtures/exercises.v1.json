@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "1.0.0",
+  "fixtures": [
+    { "id": "conceptual-gradient-sign", "kind": "conceptual", "response": { "kind": "conceptual", "optionId": "decrease" }, "expectedCorrect": true },
+    { "id": "numerical-regression-prediction", "kind": "numerical", "response": { "kind": "numerical", "value": 245 }, "expectedCorrect": true },
+    { "id": "parameter-weight-increase", "kind": "parameter-prediction", "response": { "kind": "parameter-prediction", "optionId": "increase" }, "expectedCorrect": true },
+    { "id": "constrained-descent-operator", "kind": "constrained-code", "response": { "kind": "constrained-code", "slots": { "operator": "-" } }, "expectedCorrect": true }
+  ]
+}

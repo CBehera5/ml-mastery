@@ -1,0 +1,10 @@
+{
+  "conventions_sha256": "21932151c7d2587ec6cf974ef86384b817b88d56d8438977f2002735e964b55b",
+  "generator_sha256": "ebb3c3784e2a9ba4769932e8c597beb4d0e7ade8b44e2e68b9641dacf77751f7",
+  "schema": "decision-trees.freeze.v1",
+  "sha256": {
+    "dt-e1.manifest.v1.json": "7282bfffa8a5ee0c60682b16c34974e65cffe8672028a390ad52c689c2dfa57e",
+    "dt-e2.manifest.v1.json": "ffa0639ae58aa385fdbae2fa53222d3509172910a48847d2a6356dc71104c857",
+    "parity-report.v1.json": "107812b3b577d9822438e69d839b83a2716066f4e2da6de150b69a1f42b5a394"
+  }
+}

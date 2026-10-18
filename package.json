@@ -1,0 +1,30 @@
+{
+  "name": "ml-math-lab",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "build": "npm run build:math && npm run build:web",
+    "build:math": "tsc -p packages/math-runtime/tsconfig.json",
+    "build:web": "next build apps/web",
+    "dev": "next dev apps/web",
+    "test": "vitest run",
+    "test:web": "vitest run apps/web",
+    "test:ts": "vitest run packages/math-runtime/tests",
+    "typecheck": "tsc -p packages/math-runtime/tsconfig.json --noEmit && tsc -p apps/web/tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "jsdom": "^27.0.0",
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.11"
+  }
+}

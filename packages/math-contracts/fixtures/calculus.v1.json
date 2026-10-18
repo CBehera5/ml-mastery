@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "1.0.0",
+  "cases": [
+    {
+      "name": "weight-2",
+      "input": {
+        "weight": 2,
+        "h": 0.5
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "weight": 2.0,
+          "h": 0.5
+        },
+        "model": {
+          "input": 2.0,
+          "target": 6.0,
+          "prediction": 4.0,
+          "loss": 4.0
+        },
+        "derivative": {
+          "analytical": -8.0,
+          "numerical": -8.00000000005241,
+          "secant": -6.0,
+          "tangent": {
+            "point": [
+              2.0,
+              4.0
+            ],
+            "slope": -8.0,
+            "intercept": 20.0
+          }
+        }
+      }
+    },
+    {
+      "name": "weight-3",
+      "input": {
+        "weight": 3,
+        "h": 0.5
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "weight": 3.0,
+          "h": 0.5
+        },
+        "model": {
+          "input": 2.0,
+          "target": 6.0,
+          "prediction": 6.0,
+          "loss": 0.0
+        },
+        "derivative": {
+          "analytical": 0.0,
+          "numerical": 0.0,
+          "secant": 2.0,
+          "tangent": {
+            "point": [
+              3.0,
+              0.0
+            ],
+            "slope": 0.0,
+            "intercept": 0.0
+          }
+        }
+      }
+    },
+    {
+      "name": "weight-4",
+      "input": {
+        "weight": 4,
+        "h": 0.5
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "weight": 4.0,
+          "h": 0.5
+        },
+        "model": {
+          "input": 2.0,
+          "target": 6.0,
+          "prediction": 8.0,
+          "loss": 4.0
+        },
+        "derivative": {
+          "analytical": 8.0,
+          "numerical": 7.999999999874773,
+          "secant": 10.0,
+          "tangent": {
+            "point": [
+              4.0,
+              4.0
+            ],
+            "slope": 8.0,
+            "intercept": -28.0
+          }
+        }
+      }
+    }
+  ]
+}

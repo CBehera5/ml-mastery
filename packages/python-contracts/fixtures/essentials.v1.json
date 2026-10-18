@@ -1,0 +1,3833 @@
+{
+  "contract": "python-essentials-reference.v1",
+  "profile": "macos-arm64-cpython-3.13.16-reference.1",
+  "author": "python/mlmath/essentials_reference.py",
+  "lessons": [
+    {
+      "slug": "p01",
+      "title": "Values, names, operators and units",
+      "prerequisites": "None; optional Algebra variables recall.",
+      "motivation": "Feature units and types determine what a price expression means, before syntax is introduced.",
+      "progression": "Change numeric area to text and explain why repetition is not a prediction.",
+      "terms": "assignment, int, float, str, bool, expression, operator, precedence.",
+      "math": "Variables and function evaluation; numbers carry feature/target units.",
+      "worked": "area=2; weight=100; bias=50; prediction=area*weight+bias gives 250 ($k); '2'*3 gives '222', not 6.",
+      "misconception": "Assignment is not algebraic equality; a numeric-looking string is not a number.",
+      "objectives": [
+        {
+          "id": "P01.O1",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Classify numeric, text and boolean feature values.",
+          "assessment": "Choose the type of a new customer record field.",
+          "remediation": "Compare a type-tagged value table."
+        },
+        {
+          "id": "P01.O2",
+          "critical": true,
+          "introductory": false,
+          "outcome": "Evaluate a weighted expression with correct types, order and units.",
+          "assessment": "Predict a changed feature rule and reject string repetition as multiplication.",
+          "remediation": "Substitute values into the Algebra weighted-sum trace."
+        },
+        {
+          "id": "P01.O3",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Distinguish reassignment from an equality comparison.",
+          "assessment": "Predict the final value after two assignments versus ==.",
+          "remediation": "Step through the name/value table."
+        },
+        {
+          "id": "P01.O4",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Choose parentheses and safe numeric conversion for a supplied expression.",
+          "assessment": "Repair a preset precedence or conversion slot.",
+          "remediation": "Compare expression trees and conversion failure examples."
+        }
+      ]
+    },
+    {
+      "slug": "p02",
+      "title": "Collections, order, indexing and mutation",
+      "prerequisites": "P01.",
+      "motivation": "Ordered features and keyed records solve different identification problems; names may share one object.",
+      "progression": "Reorder a feature pair and contrast alias versus copy after one edit.",
+      "terms": "list, tuple, dict, set, index, slice, key, reference, mutation.",
+      "math": "Ordered feature vectors; row identity differs from numeric position.",
+      "worked": "features=[2,10]; alias=features; alias[0]=3 changes features to [3,10]. features[-1] is 10; features[:1] is [3].",
+      "misconception": "A slice excludes its stop; aliasing is not an independent copy; a set has no feature-column order.",
+      "objectives": [
+        {
+          "id": "P02.O1",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Select an appropriate collection for ordered features, fixed pairs, keyed records and unique labels.",
+          "assessment": "Match four ML data requirements to collection types.",
+          "remediation": "Rebuild a record using named keys and an ordered vector."
+        },
+        {
+          "id": "P02.O2",
+          "critical": true,
+          "introductory": false,
+          "outcome": "Preserve feature order and identify shared-reference mutation.",
+          "assessment": "Predict both aliases after an edit and explain an independent-copy repair.",
+          "remediation": "Draw two names pointing to one list, then copy it."
+        },
+        {
+          "id": "P02.O3",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Predict positive/negative indexing and half-open slices.",
+          "assessment": "Select the exact resulting values from a changed sequence.",
+          "remediation": "Mark start-inclusive/stop-exclusive positions."
+        },
+        {
+          "id": "P02.O4",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Use dictionary keys and set membership without relying on set iteration order.",
+          "assessment": "Repair a preset keyed lookup or membership check.",
+          "remediation": "Contrast position, key and membership tables."
+        }
+      ]
+    },
+    {
+      "slug": "p03",
+      "title": "Conditions and explicit missing-value rules",
+      "prerequisites": "P01–P02.",
+      "motivation": "A validation rule decides which observations the model is allowed to see.",
+      "progression": "Contrast valid age zero, missing age and a boundary threshold.",
+      "terms": "comparison, if/elif/else, and/or/not, None, truthiness.",
+      "math": "Domains, Boolean predicates and threshold decisions.",
+      "worked": "age=0 is valid but age=None is missing. if age is None: flag_missing=True must not be replaced by if not age.",
+      "misconception": "Zero, False and missing do not mean the same thing; = is not ==.",
+      "objectives": [
+        {
+          "id": "P03.O1",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Evaluate comparisons and compound Boolean conditions.",
+          "assessment": "Predict a new bounded eligibility/validation predicate.",
+          "remediation": "Build its truth table one condition at a time."
+        },
+        {
+          "id": "P03.O2",
+          "critical": true,
+          "introductory": false,
+          "outcome": "Distinguish a legitimate zero from None in a data rule.",
+          "assessment": "Repair a missingness branch and justify why zero is retained.",
+          "remediation": "Compare records with 0, None and an ordinary positive value."
+        },
+        {
+          "id": "P03.O3",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Trace mutually exclusive if/elif/else branches.",
+          "assessment": "Choose which output is reached at boundary values.",
+          "remediation": "Annotate the first satisfied branch."
+        },
+        {
+          "id": "P03.O4",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Reject a condition that changes the intended population.",
+          "assessment": "Identify an accidentally dropped valid record.",
+          "remediation": "Compare the retained row IDs, not just the count."
+        }
+      ]
+    },
+    {
+      "slug": "p04",
+      "title": "Loops and reliable aggregations",
+      "prerequisites": "P02–P03.",
+      "motivation": "An aggregate carries forward all prior contributions and needs an honest denominator.",
+      "progression": "Start with three errors, then an empty batch and unequal paired lists.",
+      "terms": "for, range, enumerate, zip, accumulator, count, loop invariant.",
+      "math": "Finite sums, means and paired residuals.",
+      "worked": "With errors=[-2,0,2], initialize total=0, then run the separate loop statement for error in errors: total += error*error. The final total is 8; mean square is 8/3. Resetting total inside the loop loses earlier terms.",
+      "misconception": "The final loop value is not the aggregate; zip stops at the shorter input.",
+      "objectives": [
+        {
+          "id": "P04.O1",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Trace a bounded loop and half-open range.",
+          "assessment": "Predict visited indices and iteration count.",
+          "remediation": "Expand range into an explicit index list."
+        },
+        {
+          "id": "P04.O2",
+          "critical": true,
+          "introductory": false,
+          "outcome": "Compute an aggregate without dropping or resetting contributions.",
+          "assessment": "Repair a sum/count trace and explain its denominator.",
+          "remediation": "Write one accumulator row per observation."
+        },
+        {
+          "id": "P04.O3",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Maintain row pairing with enumerate/zip and detect unequal lengths.",
+          "assessment": "Identify a silently truncated feature/target pair list.",
+          "remediation": "Check input lengths and paired row IDs before iteration."
+        },
+        {
+          "id": "P04.O4",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Explain a zero-count division guard and bounded iteration.",
+          "assessment": "Choose the safe branch for an empty filtered batch.",
+          "remediation": "Separate count validation from mean calculation."
+        }
+      ]
+    },
+    {
+      "slug": "p05",
+      "title": "Functions turn repeated steps into contracts",
+      "prerequisites": "P01–P04; Algebra functions recall.",
+      "motivation": "A function is a reusable input/output promise, not a printed screen message.",
+      "progression": "Compose two calls, then change a default/mutation case.",
+      "terms": "def, parameter, argument, return, local scope, default, side effect.",
+      "math": "Input/output mappings and composition.",
+      "worked": "Define predict(area, weight, bias) with body return area*weight+bias. A separate call predict(2,100,50) returns 250. Printing 250 without returning it leaves the call result None.",
+      "misconception": "print is not return; a local assignment need not change the caller's name.",
+      "objectives": [
+        {
+          "id": "P05.O1",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Identify parameters, arguments and local variables in a supplied function.",
+          "assessment": "Label a changed prediction call and its local state.",
+          "remediation": "Trace a call frame separately from caller variables."
+        },
+        {
+          "id": "P05.O2",
+          "critical": true,
+          "introductory": false,
+          "outcome": "Return a usable result instead of only printing it.",
+          "assessment": "Repair a two-function pipeline whose first call returns None.",
+          "remediation": "Follow the returned value into the next calculation."
+        },
+        {
+          "id": "P05.O3",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Compose small validation and prediction functions in order.",
+          "assessment": "Choose an ordered call sequence for a new record.",
+          "remediation": "Draw the intermediate input/output types."
+        },
+        {
+          "id": "P05.O4",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Recognize mutable-default and unexpected-input mutation risks.",
+          "assessment": "Choose an explicit no-mutation/default-None repair from supplied options.",
+          "remediation": "Compare successive calls and caller-owned data."
+        }
+      ]
+    },
+    {
+      "slug": "p06",
+      "title": "Comprehensions as readable transformations",
+      "prerequisites": "P02–P05.",
+      "motivation": "Map and filter are different data operations; feature/target pairs must stay together.",
+      "progression": "Translate a loop, then expose separately filtered row IDs and a duplicate key.",
+      "terms": "list/dict comprehension, expression, filter predicate, key/value mapping.",
+      "math": "Elementwise vector maps versus reductions.",
+      "worked": "[value*2 for value in [1,2,3] if value>1] gives [4,6]; it does not produce a sum. A dictionary keyed by duplicate customer IDs overwrites earlier entries.",
+      "misconception": "A filter can silently change the target population; a comprehension is not automatically a reduction.",
+      "objectives": [
+        {
+          "id": "P06.O1",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Translate a one-level loop into a list comprehension without changing order.",
+          "assessment": "Select an equivalent comprehension for a changed feature list.",
+          "remediation": "Expand it into the original loop."
+        },
+        {
+          "id": "P06.O2",
+          "critical": true,
+          "introductory": false,
+          "outcome": "Preserve feature/target alignment when filtering records.",
+          "assessment": "Repair separately filtered feature and target lists using one record-level predicate.",
+          "remediation": "Compare retained row IDs on both sides."
+        },
+        {
+          "id": "P06.O3",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Predict a dictionary comprehension with duplicate keys.",
+          "assessment": "Choose final keys/values and identify overwritten data.",
+          "remediation": "Trace each insertion into a keyed table."
+        },
+        {
+          "id": "P06.O4",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Choose readable explicit code over an unsupported nested shortcut.",
+          "assessment": "Identify a supplied equivalent simple loop/comprehension.",
+          "remediation": "Separate map, filter and reduce stages."
+        }
+      ]
+    },
+    {
+      "slug": "p07",
+      "title": "Debugging, exceptions and imports",
+      "prerequisites": "P03–P06.",
+      "motivation": "An error is information about a violated input contract; suppressing it can fabricate data.",
+      "progression": "Follow a conversion traceback, then compare narrow handling with a plausible logic bug.",
+      "terms": "traceback, SyntaxError, TypeError, ValueError, IndexError, try/except, raise, module, import.",
+      "math": "Domain validation and error propagation; a failed calculation is not zero.",
+      "worked": "float('unknown') raises ValueError. except ValueError: mark_invalid() is safer than silently returning 0; import math; math.sqrt(9) gives 3.",
+      "misconception": "Catching every exception does not fix bad data; importing is not training or running an entire model.",
+      "objectives": [
+        {
+          "id": "P07.O1",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Locate the failing line and classify a supplied exception.",
+          "assessment": "Select error class and offending operation in a new trace.",
+          "remediation": "Read the final traceback frame and input type."
+        },
+        {
+          "id": "P07.O2",
+          "critical": true,
+          "introductory": false,
+          "outcome": "Handle invalid input explicitly without fabricating a valid zero.",
+          "assessment": "Choose a narrow exception branch and explain why the record is invalid.",
+          "remediation": "Contrast error, missing and legitimate zero outcomes."
+        },
+        {
+          "id": "P07.O3",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Explain an explicit import and distinguish module name from variable name.",
+          "assessment": "Repair a preset math/module name lookup.",
+          "remediation": "Follow import binding to the named function."
+        },
+        {
+          "id": "P07.O4",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Distinguish a syntax error from a logic error with plausible output.",
+          "assessment": "Select the minimal repair and a counterexample that exposes the logic bug.",
+          "remediation": "Run the author-owned good/bad fixtures side by side."
+        }
+      ]
+    },
+    {
+      "slug": "p08",
+      "title": "Reproducible small programs and local data",
+      "prerequisites": "P02, P05, P07.",
+      "motivation": "Reliable programs validate data at an explicit resource/schema boundary; instances own separate state.",
+      "progression": "Trace a bundled record through validation, then separately inspect two tiny instances.",
+      "terms": "CSV, JSON, schema, context manager, StringIO, instance, attribute, method.",
+      "math": "A valid table needs stable row/column meaning before modeling.",
+      "worked": "A bundled CSV containing area='2', age='' needs numeric conversion and explicit missingness, not a guessed 0. A tiny Record class stores area per instance; changing one instance must not change another.",
+      "misconception": "A successful parse does not validate schema or units; class attributes and instance state are not interchangeable.",
+      "objectives": [
+        {
+          "id": "P08.O1",
+          "critical": true,
+          "introductory": false,
+          "outcome": "Validate a bundled record's schema, conversion and missingness before use.",
+          "assessment": "Reject a malformed new CSV/JSON record and explain its unsafe default.",
+          "remediation": "Apply the supplied field/type/nullability checklist."
+        },
+        {
+          "id": "P08.O2",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Explain context-managed reading and deterministic relative asset paths.",
+          "assessment": "Order read/parse/validate/close steps without using an arbitrary path.",
+          "remediation": "Trace resource lifetime in a with block."
+        },
+        {
+          "id": "P08.O3",
+          "critical": false,
+          "introductory": false,
+          "outcome": "Assemble a small import/function/validation processing flow.",
+          "assessment": "Choose the full preset program that produces a validated feature list.",
+          "remediation": "Return to P05 contracts and P07 explicit errors."
+        },
+        {
+          "id": "P08.O4",
+          "critical": false,
+          "introductory": true,
+          "outcome": "Recognize instance attributes and a simple method in a practical class (introductory).",
+          "assessment": "Predict two independent Record instance values.",
+          "remediation": "Compare per-instance dictionaries; no inheritance required."
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "lesson": "p02",
+      "objective": "P02.O1",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "features = [3, 10]\nrecord = {'area': 3, 'age': 10}\nlabels = {'spam', 'ham'}\nresult = [type(features).__name__, type(record).__name__, type(labels).__name__]",
+      "expected": [
+        "list",
+        "dict",
+        "set"
+      ],
+      "wrong": [
+        "set",
+        "list",
+        "dict"
+      ],
+      "reason": "Ordered editable features can use a list; fixed pairs can use a tuple. Named fields use a dict; unique membership uses a set, never an assumed feature-column order.",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O1",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "features = [1, 10]\nrecord = {'area': 1, 'age': 10}\nlabels = {'spam', 'ham'}\nresult = [type(features).__name__, type(record).__name__, type(labels).__name__]",
+      "expected": [
+        "list",
+        "dict",
+        "set"
+      ],
+      "wrong": [
+        "set",
+        "list",
+        "dict"
+      ],
+      "reason": "Ordered editable features can use a list; fixed pairs can use a tuple. Named fields use a dict; unique membership uses a set, never an assumed feature-column order.",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O1",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "features = (2, 10)\nrecord = {'area': 2, 'age': 10}\nlabels = {'spam', 'ham'}\nresult = [type(features).__name__, type(record).__name__, type(labels).__name__]",
+      "expected": [
+        "tuple",
+        "dict",
+        "set"
+      ],
+      "wrong": [
+        "set",
+        "list",
+        "dict"
+      ],
+      "reason": "Ordered editable features can use a list; fixed pairs can use a tuple. Named fields use a dict; unique membership uses a set, never an assumed feature-column order.",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O1",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "features = (4, 10)\nrecord = {'area': 4, 'age': 10}\nlabels = {'spam', 'ham'}\nresult = [type(features).__name__, type(record).__name__, type(labels).__name__]",
+      "expected": [
+        "tuple",
+        "dict",
+        "set"
+      ],
+      "wrong": [
+        "set",
+        "list",
+        "dict"
+      ],
+      "reason": "Ordered editable features can use a list; fixed pairs can use a tuple. Named fields use a dict; unique membership uses a set, never an assumed feature-column order.",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O1",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "features = [5, 10]\nrecord = {'area': 5, 'age': 10}\nlabels = {'spam', 'ham'}\nresult = [type(features).__name__, type(record).__name__, type(labels).__name__]",
+      "expected": [
+        "list",
+        "dict",
+        "set"
+      ],
+      "wrong": [
+        "set",
+        "list",
+        "dict"
+      ],
+      "reason": "Ordered editable features can use a list; fixed pairs can use a tuple. Named fields use a dict; unique membership uses a set, never an assumed feature-column order.",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O1",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "features = [7, 10]\nrecord = {'area': 7, 'age': 10}\nlabels = {'spam', 'ham'}\nresult = [type(features).__name__, type(record).__name__, type(labels).__name__]",
+      "expected": [
+        "list",
+        "dict",
+        "set"
+      ],
+      "wrong": [
+        "set",
+        "list",
+        "dict"
+      ],
+      "reason": "Ordered editable features can use a list; fixed pairs can use a tuple. Named fields use a dict; unique membership uses a set, never an assumed feature-column order.",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O2",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "features = [3, 10]\nalias = features\ncopy = features.copy()\nalias[0] = 4\nresult = [features, alias, copy]",
+      "expected": [
+        [
+          4,
+          10
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          3,
+          10
+        ]
+      ],
+      "wrong": [
+        [
+          3,
+          10
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          4,
+          10
+        ]
+      ],
+      "reason": "features and alias name one mutable list; copy owns a separate list. Preserve the order [area, age].",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O2",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "features = [1, 10]\nalias = features\ncopy = features.copy()\nalias[0] = 2\nresult = [features, alias, copy]",
+      "expected": [
+        [
+          2,
+          10
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          1,
+          10
+        ]
+      ],
+      "wrong": [
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          2,
+          10
+        ]
+      ],
+      "reason": "features and alias name one mutable list; copy owns a separate list. Preserve the order [area, age].",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O2",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "features = [2, 10]\nalias = features\ncopy = features.copy()\nalias[0] = 3\nresult = [features, alias, copy]",
+      "expected": [
+        [
+          3,
+          10
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          2,
+          10
+        ]
+      ],
+      "wrong": [
+        [
+          2,
+          10
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          3,
+          10
+        ]
+      ],
+      "reason": "features and alias name one mutable list; copy owns a separate list. Preserve the order [area, age].",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O2",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "features = [4, 10]\nalias = features\ncopy = features.copy()\nalias[0] = 5\nresult = [features, alias, copy]",
+      "expected": [
+        [
+          5,
+          10
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          4,
+          10
+        ]
+      ],
+      "wrong": [
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          5,
+          10
+        ]
+      ],
+      "reason": "features and alias name one mutable list; copy owns a separate list. Preserve the order [area, age].",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O2",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "features = [5, 10]\nalias = features\ncopy = features.copy()\nalias[0] = 6\nresult = [features, alias, copy]",
+      "expected": [
+        [
+          6,
+          10
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          5,
+          10
+        ]
+      ],
+      "wrong": [
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          6,
+          10
+        ]
+      ],
+      "reason": "features and alias name one mutable list; copy owns a separate list. Preserve the order [area, age].",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O2",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "features = [7, 10]\nalias = features\ncopy = features.copy()\nalias[0] = 8\nresult = [features, alias, copy]",
+      "expected": [
+        [
+          8,
+          10
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          7,
+          10
+        ]
+      ],
+      "wrong": [
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          8,
+          10
+        ]
+      ],
+      "reason": "features and alias name one mutable list; copy owns a separate list. Preserve the order [area, age].",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O3",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "features = [3, 5, 7]\nresult = [features[-1], features[:2]]",
+      "expected": [
+        7,
+        [
+          3,
+          5
+        ]
+      ],
+      "wrong": [
+        3,
+        [
+          3,
+          5,
+          7
+        ]
+      ],
+      "reason": "Negative one selects the last position; the slice stop is excluded, so [:2] retains positions zero and one.",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O3",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "features = [1, 3, 5]\nresult = [features[-1], features[:2]]",
+      "expected": [
+        5,
+        [
+          1,
+          3
+        ]
+      ],
+      "wrong": [
+        1,
+        [
+          1,
+          3,
+          5
+        ]
+      ],
+      "reason": "Negative one selects the last position; the slice stop is excluded, so [:2] retains positions zero and one.",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O3",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "features = [2, 4, 6]\nresult = [features[-1], features[:2]]",
+      "expected": [
+        6,
+        [
+          2,
+          4
+        ]
+      ],
+      "wrong": [
+        2,
+        [
+          2,
+          4,
+          6
+        ]
+      ],
+      "reason": "Negative one selects the last position; the slice stop is excluded, so [:2] retains positions zero and one.",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O3",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "features = [4, 6, 8]\nresult = [features[-1], features[:2]]",
+      "expected": [
+        8,
+        [
+          4,
+          6
+        ]
+      ],
+      "wrong": [
+        4,
+        [
+          4,
+          6,
+          8
+        ]
+      ],
+      "reason": "Negative one selects the last position; the slice stop is excluded, so [:2] retains positions zero and one.",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O3",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "features = [5, 7, 9]\nresult = [features[-1], features[:2]]",
+      "expected": [
+        9,
+        [
+          5,
+          7
+        ]
+      ],
+      "wrong": [
+        5,
+        [
+          5,
+          7,
+          9
+        ]
+      ],
+      "reason": "Negative one selects the last position; the slice stop is excluded, so [:2] retains positions zero and one.",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O3",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "features = [7, 9, 11]\nresult = [features[-1], features[:2]]",
+      "expected": [
+        11,
+        [
+          7,
+          9
+        ]
+      ],
+      "wrong": [
+        7,
+        [
+          7,
+          9,
+          11
+        ]
+      ],
+      "reason": "Negative one selects the last position; the slice stop is excluded, so [:2] retains positions zero and one.",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O4",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "record = {'area': 3, 'age': 10}\nlabels = {'spam', 'ham'}\nresult = [record['area'], 'spam' in labels]",
+      "expected": [
+        3,
+        true
+      ],
+      "wrong": [
+        10,
+        false
+      ],
+      "reason": "Dictionary keys retrieve named fields; membership asks a yes/no question without relying on set iteration order.",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O4",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "record = {'area': 1, 'age': 10}\nlabels = {'spam', 'ham'}\nresult = [record['area'], 'spam' in labels]",
+      "expected": [
+        1,
+        true
+      ],
+      "wrong": [
+        10,
+        false
+      ],
+      "reason": "Dictionary keys retrieve named fields; membership asks a yes/no question without relying on set iteration order.",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O4",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "record = {'area': 2, 'age': 10}\nlabels = {'spam', 'ham'}\nresult = [record['area'], 'spam' in labels]",
+      "expected": [
+        2,
+        true
+      ],
+      "wrong": [
+        10,
+        false
+      ],
+      "reason": "Dictionary keys retrieve named fields; membership asks a yes/no question without relying on set iteration order.",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O4",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "record = {'area': 4, 'age': 10}\nlabels = {'spam', 'ham'}\nresult = [record['area'], 'spam' in labels]",
+      "expected": [
+        4,
+        true
+      ],
+      "wrong": [
+        10,
+        false
+      ],
+      "reason": "Dictionary keys retrieve named fields; membership asks a yes/no question without relying on set iteration order.",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O4",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "record = {'area': 5, 'age': 10}\nlabels = {'spam', 'ham'}\nresult = [record['area'], 'spam' in labels]",
+      "expected": [
+        5,
+        true
+      ],
+      "wrong": [
+        10,
+        false
+      ],
+      "reason": "Dictionary keys retrieve named fields; membership asks a yes/no question without relying on set iteration order.",
+      "raises": null
+    },
+    {
+      "lesson": "p02",
+      "objective": "P02.O4",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "record = {'area': 7, 'age': 10}\nlabels = {'spam', 'ham'}\nresult = [record['area'], 'spam' in labels]",
+      "expected": [
+        7,
+        true
+      ],
+      "wrong": [
+        10,
+        false
+      ],
+      "reason": "Dictionary keys retrieve named fields; membership asks a yes/no question without relying on set iteration order.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O1",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "age = 3\nresult = age >= 3 and age < 5",
+      "expected": true,
+      "wrong": false,
+      "reason": "Evaluate both comparisons at the boundary; >= includes equality while < excludes its upper endpoint.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O1",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "age = 1\nresult = age >= 1 and age < 3",
+      "expected": true,
+      "wrong": false,
+      "reason": "Evaluate both comparisons at the boundary; >= includes equality while < excludes its upper endpoint.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O1",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "age = 2\nresult = age >= 2 and age < 4",
+      "expected": true,
+      "wrong": false,
+      "reason": "Evaluate both comparisons at the boundary; >= includes equality while < excludes its upper endpoint.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O1",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "age = 4\nresult = age >= 4 and age < 6",
+      "expected": true,
+      "wrong": false,
+      "reason": "Evaluate both comparisons at the boundary; >= includes equality while < excludes its upper endpoint.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O1",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "age = 5\nresult = age >= 5 and age < 7",
+      "expected": true,
+      "wrong": false,
+      "reason": "Evaluate both comparisons at the boundary; >= includes equality while < excludes its upper endpoint.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O1",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "age = 7\nresult = age >= 7 and age < 9",
+      "expected": true,
+      "wrong": false,
+      "reason": "Evaluate both comparisons at the boundary; >= includes equality while < excludes its upper endpoint.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O2",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "records = [('A3', 0), ('B3', None), ('C3', 3)]\nkept = [row_id for row_id, age in records if age is not None]\nresult = kept",
+      "expected": [
+        "A3",
+        "C3"
+      ],
+      "wrong": [
+        "C3"
+      ],
+      "reason": "Zero is a legitimate observed value. Test is not None, rather than truthiness, so the zero-valued record is not silently lost.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O2",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "records = [('A1', 0), ('B1', None), ('C1', 1)]\nkept = [row_id for row_id, age in records if age is not None]\nresult = kept",
+      "expected": [
+        "A1",
+        "C1"
+      ],
+      "wrong": [
+        "C1"
+      ],
+      "reason": "Zero is a legitimate observed value. Test is not None, rather than truthiness, so the zero-valued record is not silently lost.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O2",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "records = [('A2', 0), ('B2', None), ('C2', 2)]\nkept = [row_id for row_id, age in records if age is not None]\nresult = kept",
+      "expected": [
+        "A2",
+        "C2"
+      ],
+      "wrong": [
+        "C2"
+      ],
+      "reason": "Zero is a legitimate observed value. Test is not None, rather than truthiness, so the zero-valued record is not silently lost.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O2",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "records = [('A4', 0), ('B4', None), ('C4', 4)]\nkept = [row_id for row_id, age in records if age is not None]\nresult = kept",
+      "expected": [
+        "A4",
+        "C4"
+      ],
+      "wrong": [
+        "C4"
+      ],
+      "reason": "Zero is a legitimate observed value. Test is not None, rather than truthiness, so the zero-valued record is not silently lost.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O2",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "records = [('A5', 0), ('B5', None), ('C5', 5)]\nkept = [row_id for row_id, age in records if age is not None]\nresult = kept",
+      "expected": [
+        "A5",
+        "C5"
+      ],
+      "wrong": [
+        "C5"
+      ],
+      "reason": "Zero is a legitimate observed value. Test is not None, rather than truthiness, so the zero-valued record is not silently lost.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O2",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "records = [('A7', 0), ('B7', None), ('C7', 7)]\nkept = [row_id for row_id, age in records if age is not None]\nresult = kept",
+      "expected": [
+        "A7",
+        "C7"
+      ],
+      "wrong": [
+        "C7"
+      ],
+      "reason": "Zero is a legitimate observed value. Test is not None, rather than truthiness, so the zero-valued record is not silently lost.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O3",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "age = 3\nif age < 3:\n    branch = 'low'\nelif age <= 4:\n    branch = 'middle'\nelse:\n    branch = 'high'\nresult = branch",
+      "expected": "middle",
+      "wrong": "high",
+      "reason": "An if/elif chain executes the first satisfied branch; test the exact boundary before choosing a later branch.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O3",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "age = 1\nif age < 1:\n    branch = 'low'\nelif age <= 2:\n    branch = 'middle'\nelse:\n    branch = 'high'\nresult = branch",
+      "expected": "middle",
+      "wrong": "high",
+      "reason": "An if/elif chain executes the first satisfied branch; test the exact boundary before choosing a later branch.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O3",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "age = 2\nif age < 2:\n    branch = 'low'\nelif age <= 3:\n    branch = 'middle'\nelse:\n    branch = 'high'\nresult = branch",
+      "expected": "middle",
+      "wrong": "high",
+      "reason": "An if/elif chain executes the first satisfied branch; test the exact boundary before choosing a later branch.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O3",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "age = 4\nif age < 4:\n    branch = 'low'\nelif age <= 5:\n    branch = 'middle'\nelse:\n    branch = 'high'\nresult = branch",
+      "expected": "middle",
+      "wrong": "high",
+      "reason": "An if/elif chain executes the first satisfied branch; test the exact boundary before choosing a later branch.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O3",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "age = 5\nif age < 5:\n    branch = 'low'\nelif age <= 6:\n    branch = 'middle'\nelse:\n    branch = 'high'\nresult = branch",
+      "expected": "middle",
+      "wrong": "high",
+      "reason": "An if/elif chain executes the first satisfied branch; test the exact boundary before choosing a later branch.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O3",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "age = 7\nif age < 7:\n    branch = 'low'\nelif age <= 8:\n    branch = 'middle'\nelse:\n    branch = 'high'\nresult = branch",
+      "expected": "middle",
+      "wrong": "high",
+      "reason": "An if/elif chain executes the first satisfied branch; test the exact boundary before choosing a later branch.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O4",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "records = [('A', 0), ('B', 3), ('C', None)]\nkept = [row_id for row_id, age in records if age]\nresult = kept",
+      "expected": [
+        "B"
+      ],
+      "wrong": [
+        "A",
+        "B"
+      ],
+      "reason": "This truthiness filter accidentally drops valid zero A as well as missing C. A plausible row count does not prove the intended population was kept.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O4",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "records = [('A', 0), ('B', 1), ('C', None)]\nkept = [row_id for row_id, age in records if age]\nresult = kept",
+      "expected": [
+        "B"
+      ],
+      "wrong": [
+        "A",
+        "B"
+      ],
+      "reason": "This truthiness filter accidentally drops valid zero A as well as missing C. A plausible row count does not prove the intended population was kept.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O4",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "records = [('A', 0), ('B', 2), ('C', None)]\nkept = [row_id for row_id, age in records if age]\nresult = kept",
+      "expected": [
+        "B"
+      ],
+      "wrong": [
+        "A",
+        "B"
+      ],
+      "reason": "This truthiness filter accidentally drops valid zero A as well as missing C. A plausible row count does not prove the intended population was kept.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O4",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "records = [('A', 0), ('B', 4), ('C', None)]\nkept = [row_id for row_id, age in records if age]\nresult = kept",
+      "expected": [
+        "B"
+      ],
+      "wrong": [
+        "A",
+        "B"
+      ],
+      "reason": "This truthiness filter accidentally drops valid zero A as well as missing C. A plausible row count does not prove the intended population was kept.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O4",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "records = [('A', 0), ('B', 5), ('C', None)]\nkept = [row_id for row_id, age in records if age]\nresult = kept",
+      "expected": [
+        "B"
+      ],
+      "wrong": [
+        "A",
+        "B"
+      ],
+      "reason": "This truthiness filter accidentally drops valid zero A as well as missing C. A plausible row count does not prove the intended population was kept.",
+      "raises": null
+    },
+    {
+      "lesson": "p03",
+      "objective": "P03.O4",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "records = [('A', 0), ('B', 7), ('C', None)]\nkept = [row_id for row_id, age in records if age]\nresult = kept",
+      "expected": [
+        "B"
+      ],
+      "wrong": [
+        "A",
+        "B"
+      ],
+      "reason": "This truthiness filter accidentally drops valid zero A as well as missing C. A plausible row count does not prove the intended population was kept.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O1",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "visited = list(range(1, 5))\nresult = [visited, len(visited)]",
+      "expected": [
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        4
+      ],
+      "wrong": [
+        [
+          1,
+          2,
+          3
+        ],
+        3
+      ],
+      "reason": "range includes its start and excludes its stop; expand the visited indices before counting.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O1",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "visited = list(range(1, 3))\nresult = [visited, len(visited)]",
+      "expected": [
+        [
+          1,
+          2
+        ],
+        2
+      ],
+      "wrong": [
+        [
+          1
+        ],
+        1
+      ],
+      "reason": "range includes its start and excludes its stop; expand the visited indices before counting.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O1",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "visited = list(range(1, 4))\nresult = [visited, len(visited)]",
+      "expected": [
+        [
+          1,
+          2,
+          3
+        ],
+        3
+      ],
+      "wrong": [
+        [
+          1,
+          2
+        ],
+        2
+      ],
+      "reason": "range includes its start and excludes its stop; expand the visited indices before counting.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O1",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "visited = list(range(1, 6))\nresult = [visited, len(visited)]",
+      "expected": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        5
+      ],
+      "wrong": [
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        4
+      ],
+      "reason": "range includes its start and excludes its stop; expand the visited indices before counting.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O1",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "visited = list(range(1, 7))\nresult = [visited, len(visited)]",
+      "expected": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        6
+      ],
+      "wrong": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        5
+      ],
+      "reason": "range includes its start and excludes its stop; expand the visited indices before counting.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O1",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "visited = list(range(1, 9))\nresult = [visited, len(visited)]",
+      "expected": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        8
+      ],
+      "wrong": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        7
+      ],
+      "reason": "range includes its start and excludes its stop; expand the visited indices before counting.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O2",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "errors = [-3, 0, 3]\ntotal = 0\ncount = 0\nfor error in errors:\n    total += error * error\n    count += 1\nresult = [total, count, total / count]",
+      "expected": [
+        18,
+        3,
+        6.0
+      ],
+      "wrong": [
+        9,
+        1,
+        9
+      ],
+      "reason": "Initialize once outside the loop and retain every contribution; the denominator counts all three observations, including zero error.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O2",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "errors = [-1, 0, 1]\ntotal = 0\ncount = 0\nfor error in errors:\n    total += error * error\n    count += 1\nresult = [total, count, total / count]",
+      "expected": [
+        2,
+        3,
+        0.6666666666666666
+      ],
+      "wrong": [
+        1,
+        1,
+        1
+      ],
+      "reason": "Initialize once outside the loop and retain every contribution; the denominator counts all three observations, including zero error.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O2",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "errors = [-2, 0, 2]\ntotal = 0\ncount = 0\nfor error in errors:\n    total += error * error\n    count += 1\nresult = [total, count, total / count]",
+      "expected": [
+        8,
+        3,
+        2.6666666666666665
+      ],
+      "wrong": [
+        4,
+        1,
+        4
+      ],
+      "reason": "Initialize once outside the loop and retain every contribution; the denominator counts all three observations, including zero error.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O2",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "errors = [-4, 0, 4]\ntotal = 0\ncount = 0\nfor error in errors:\n    total += error * error\n    count += 1\nresult = [total, count, total / count]",
+      "expected": [
+        32,
+        3,
+        10.666666666666666
+      ],
+      "wrong": [
+        16,
+        1,
+        16
+      ],
+      "reason": "Initialize once outside the loop and retain every contribution; the denominator counts all three observations, including zero error.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O2",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "errors = [-5, 0, 5]\ntotal = 0\ncount = 0\nfor error in errors:\n    total += error * error\n    count += 1\nresult = [total, count, total / count]",
+      "expected": [
+        50,
+        3,
+        16.666666666666668
+      ],
+      "wrong": [
+        25,
+        1,
+        25
+      ],
+      "reason": "Initialize once outside the loop and retain every contribution; the denominator counts all three observations, including zero error.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O2",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "errors = [-7, 0, 7]\ntotal = 0\ncount = 0\nfor error in errors:\n    total += error * error\n    count += 1\nresult = [total, count, total / count]",
+      "expected": [
+        98,
+        3,
+        32.666666666666664
+      ],
+      "wrong": [
+        49,
+        1,
+        49
+      ],
+      "reason": "Initialize once outside the loop and retain every contribution; the denominator counts all three observations, including zero error.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O3",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "features = [3, 4, 5]\ntargets = [100, 200]\npairs = list(zip(features, targets))\nresult = [pairs, len(features) == len(targets)]",
+      "expected": [
+        [
+          [
+            3,
+            100
+          ],
+          [
+            4,
+            200
+          ]
+        ],
+        false
+      ],
+      "wrong": [
+        [
+          [
+            3,
+            100
+          ],
+          [
+            4,
+            200
+          ]
+        ],
+        true
+      ],
+      "reason": "zip truncates at the shorter list. Check lengths and row identities before trusting paired model errors.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O3",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "features = [1, 2, 3]\ntargets = [100, 200]\npairs = list(zip(features, targets))\nresult = [pairs, len(features) == len(targets)]",
+      "expected": [
+        [
+          [
+            1,
+            100
+          ],
+          [
+            2,
+            200
+          ]
+        ],
+        false
+      ],
+      "wrong": [
+        [
+          [
+            1,
+            100
+          ],
+          [
+            2,
+            200
+          ]
+        ],
+        true
+      ],
+      "reason": "zip truncates at the shorter list. Check lengths and row identities before trusting paired model errors.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O3",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "features = [2, 3, 4]\ntargets = [100, 200]\npairs = list(zip(features, targets))\nresult = [pairs, len(features) == len(targets)]",
+      "expected": [
+        [
+          [
+            2,
+            100
+          ],
+          [
+            3,
+            200
+          ]
+        ],
+        false
+      ],
+      "wrong": [
+        [
+          [
+            2,
+            100
+          ],
+          [
+            3,
+            200
+          ]
+        ],
+        true
+      ],
+      "reason": "zip truncates at the shorter list. Check lengths and row identities before trusting paired model errors.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O3",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "features = [4, 5, 6]\ntargets = [100, 200]\npairs = list(zip(features, targets))\nresult = [pairs, len(features) == len(targets)]",
+      "expected": [
+        [
+          [
+            4,
+            100
+          ],
+          [
+            5,
+            200
+          ]
+        ],
+        false
+      ],
+      "wrong": [
+        [
+          [
+            4,
+            100
+          ],
+          [
+            5,
+            200
+          ]
+        ],
+        true
+      ],
+      "reason": "zip truncates at the shorter list. Check lengths and row identities before trusting paired model errors.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O3",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "features = [5, 6, 7]\ntargets = [100, 200]\npairs = list(zip(features, targets))\nresult = [pairs, len(features) == len(targets)]",
+      "expected": [
+        [
+          [
+            5,
+            100
+          ],
+          [
+            6,
+            200
+          ]
+        ],
+        false
+      ],
+      "wrong": [
+        [
+          [
+            5,
+            100
+          ],
+          [
+            6,
+            200
+          ]
+        ],
+        true
+      ],
+      "reason": "zip truncates at the shorter list. Check lengths and row identities before trusting paired model errors.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O3",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "features = [7, 8, 9]\ntargets = [100, 200]\npairs = list(zip(features, targets))\nresult = [pairs, len(features) == len(targets)]",
+      "expected": [
+        [
+          [
+            7,
+            100
+          ],
+          [
+            8,
+            200
+          ]
+        ],
+        false
+      ],
+      "wrong": [
+        [
+          [
+            7,
+            100
+          ],
+          [
+            8,
+            200
+          ]
+        ],
+        true
+      ],
+      "reason": "zip truncates at the shorter list. Check lengths and row identities before trusting paired model errors.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O4",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "errors = [0, 0]\ncount = len(errors)\nresult = None if count == 0 else sum(errors) / count",
+      "expected": 0.0,
+      "wrong": null,
+      "reason": "An empty batch has no observed mean; guard zero count. Observed zero errors, unlike an empty batch, have a legitimate mean zero.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O4",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "errors = [0, 0]\ncount = len(errors)\nresult = None if count == 0 else sum(errors) / count",
+      "expected": 0.0,
+      "wrong": null,
+      "reason": "An empty batch has no observed mean; guard zero count. Observed zero errors, unlike an empty batch, have a legitimate mean zero.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O4",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "errors = []\ncount = len(errors)\nresult = None if count == 0 else sum(errors) / count",
+      "expected": null,
+      "wrong": 0,
+      "reason": "An empty batch has no observed mean; guard zero count. Observed zero errors, unlike an empty batch, have a legitimate mean zero.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O4",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "errors = []\ncount = len(errors)\nresult = None if count == 0 else sum(errors) / count",
+      "expected": null,
+      "wrong": 0,
+      "reason": "An empty batch has no observed mean; guard zero count. Observed zero errors, unlike an empty batch, have a legitimate mean zero.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O4",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "errors = [0, 0]\ncount = len(errors)\nresult = None if count == 0 else sum(errors) / count",
+      "expected": 0.0,
+      "wrong": null,
+      "reason": "An empty batch has no observed mean; guard zero count. Observed zero errors, unlike an empty batch, have a legitimate mean zero.",
+      "raises": null
+    },
+    {
+      "lesson": "p04",
+      "objective": "P04.O4",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "errors = [0, 0]\ncount = len(errors)\nresult = None if count == 0 else sum(errors) / count",
+      "expected": 0.0,
+      "wrong": null,
+      "reason": "An empty batch has no observed mean; guard zero count. Observed zero errors, unlike an empty batch, have a legitimate mean zero.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O1",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "def predict(area):\n    price = area * 100 + 50\n    return price\nvalue = predict(3)\nresult = ['area', 3, 'price', value]",
+      "expected": [
+        "area",
+        3,
+        "price",
+        350
+      ],
+      "wrong": [
+        "price",
+        300,
+        "area",
+        3
+      ],
+      "reason": "area is the parameter, the supplied number is its argument, and price is local to the call frame.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O1",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "def predict(area):\n    price = area * 100 + 50\n    return price\nvalue = predict(1)\nresult = ['area', 1, 'price', value]",
+      "expected": [
+        "area",
+        1,
+        "price",
+        150
+      ],
+      "wrong": [
+        "price",
+        100,
+        "area",
+        1
+      ],
+      "reason": "area is the parameter, the supplied number is its argument, and price is local to the call frame.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O1",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "def predict(area):\n    price = area * 100 + 50\n    return price\nvalue = predict(2)\nresult = ['area', 2, 'price', value]",
+      "expected": [
+        "area",
+        2,
+        "price",
+        250
+      ],
+      "wrong": [
+        "price",
+        200,
+        "area",
+        2
+      ],
+      "reason": "area is the parameter, the supplied number is its argument, and price is local to the call frame.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O1",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "def predict(area):\n    price = area * 100 + 50\n    return price\nvalue = predict(4)\nresult = ['area', 4, 'price', value]",
+      "expected": [
+        "area",
+        4,
+        "price",
+        450
+      ],
+      "wrong": [
+        "price",
+        400,
+        "area",
+        4
+      ],
+      "reason": "area is the parameter, the supplied number is its argument, and price is local to the call frame.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O1",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "def predict(area):\n    price = area * 100 + 50\n    return price\nvalue = predict(5)\nresult = ['area', 5, 'price', value]",
+      "expected": [
+        "area",
+        5,
+        "price",
+        550
+      ],
+      "wrong": [
+        "price",
+        500,
+        "area",
+        5
+      ],
+      "reason": "area is the parameter, the supplied number is its argument, and price is local to the call frame.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O1",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "def predict(area):\n    price = area * 100 + 50\n    return price\nvalue = predict(7)\nresult = ['area', 7, 'price', value]",
+      "expected": [
+        "area",
+        7,
+        "price",
+        750
+      ],
+      "wrong": [
+        "price",
+        700,
+        "area",
+        7
+      ],
+      "reason": "area is the parameter, the supplied number is its argument, and price is local to the call frame.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O2",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "def predict(area):\n    return area * 100 + 50\ndef add_fee(price):\n    return price + 10\nresult = add_fee(predict(3))",
+      "expected": 360,
+      "wrong": 350,
+      "reason": "Return the prediction so the next function receives a number. Printing without returning would pass None and break the arithmetic.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O2",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "def predict(area):\n    return area * 100 + 50\ndef add_fee(price):\n    return price + 10\nresult = add_fee(predict(1))",
+      "expected": 160,
+      "wrong": 150,
+      "reason": "Return the prediction so the next function receives a number. Printing without returning would pass None and break the arithmetic.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O2",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "def predict(area):\n    return area * 100 + 50\ndef add_fee(price):\n    return price + 10\nresult = add_fee(predict(2))",
+      "expected": 260,
+      "wrong": 250,
+      "reason": "Return the prediction so the next function receives a number. Printing without returning would pass None and break the arithmetic.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O2",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "def predict(area):\n    return area * 100 + 50\ndef add_fee(price):\n    return price + 10\nresult = add_fee(predict(4))",
+      "expected": 460,
+      "wrong": 450,
+      "reason": "Return the prediction so the next function receives a number. Printing without returning would pass None and break the arithmetic.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O2",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "def predict(area):\n    return area * 100 + 50\ndef add_fee(price):\n    return price + 10\nresult = add_fee(predict(5))",
+      "expected": 560,
+      "wrong": 550,
+      "reason": "Return the prediction so the next function receives a number. Printing without returning would pass None and break the arithmetic.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O2",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "def predict(area):\n    return area * 100 + 50\ndef add_fee(price):\n    return price + 10\nresult = add_fee(predict(7))",
+      "expected": 760,
+      "wrong": 750,
+      "reason": "Return the prediction so the next function receives a number. Printing without returning would pass None and break the arithmetic.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O3",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "def validate(text):\n    return float(text)\ndef predict(area):\n    return area * 100 + 50\nresult = predict(validate('3'))",
+      "expected": 350.0,
+      "wrong": "333",
+      "reason": "Validate and convert first, then predict using that numeric result. Composition carries the intermediate type and units forward.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O3",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "def validate(text):\n    return float(text)\ndef predict(area):\n    return area * 100 + 50\nresult = predict(validate('1'))",
+      "expected": 150.0,
+      "wrong": "111",
+      "reason": "Validate and convert first, then predict using that numeric result. Composition carries the intermediate type and units forward.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O3",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "def validate(text):\n    return float(text)\ndef predict(area):\n    return area * 100 + 50\nresult = predict(validate('2'))",
+      "expected": 250.0,
+      "wrong": "222",
+      "reason": "Validate and convert first, then predict using that numeric result. Composition carries the intermediate type and units forward.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O3",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "def validate(text):\n    return float(text)\ndef predict(area):\n    return area * 100 + 50\nresult = predict(validate('4'))",
+      "expected": 450.0,
+      "wrong": "444",
+      "reason": "Validate and convert first, then predict using that numeric result. Composition carries the intermediate type and units forward.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O3",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "def validate(text):\n    return float(text)\ndef predict(area):\n    return area * 100 + 50\nresult = predict(validate('5'))",
+      "expected": 550.0,
+      "wrong": "555",
+      "reason": "Validate and convert first, then predict using that numeric result. Composition carries the intermediate type and units forward.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O3",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "def validate(text):\n    return float(text)\ndef predict(area):\n    return area * 100 + 50\nresult = predict(validate('7'))",
+      "expected": 750.0,
+      "wrong": "777",
+      "reason": "Validate and convert first, then predict using that numeric result. Composition carries the intermediate type and units forward.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O4",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "def append_feature(value, items=None):\n    output = [] if items is None else items.copy()\n    output.append(value)\n    return output\ncaller = [10]\nfirst = append_feature(3)\nsecond = append_feature(4)\nthird = append_feature(3, caller)\nresult = [first, second, third, caller]",
+      "expected": [
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          10
+        ]
+      ],
+      "wrong": [
+        [
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          10,
+          3
+        ]
+      ],
+      "reason": "Create a fresh default on each call and copy supplied input before editing; neither a previous call nor caller-owned data should silently change.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O4",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "def append_feature(value, items=None):\n    output = [] if items is None else items.copy()\n    output.append(value)\n    return output\ncaller = [10]\nfirst = append_feature(1)\nsecond = append_feature(2)\nthird = append_feature(1, caller)\nresult = [first, second, third, caller]",
+      "expected": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          10
+        ]
+      ],
+      "wrong": [
+        [
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          10,
+          1
+        ]
+      ],
+      "reason": "Create a fresh default on each call and copy supplied input before editing; neither a previous call nor caller-owned data should silently change.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O4",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "def append_feature(value, items=None):\n    output = [] if items is None else items.copy()\n    output.append(value)\n    return output\ncaller = [10]\nfirst = append_feature(2)\nsecond = append_feature(3)\nthird = append_feature(2, caller)\nresult = [first, second, third, caller]",
+      "expected": [
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          10
+        ]
+      ],
+      "wrong": [
+        [
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          10,
+          2
+        ]
+      ],
+      "reason": "Create a fresh default on each call and copy supplied input before editing; neither a previous call nor caller-owned data should silently change.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O4",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "def append_feature(value, items=None):\n    output = [] if items is None else items.copy()\n    output.append(value)\n    return output\ncaller = [10]\nfirst = append_feature(4)\nsecond = append_feature(5)\nthird = append_feature(4, caller)\nresult = [first, second, third, caller]",
+      "expected": [
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          10
+        ]
+      ],
+      "wrong": [
+        [
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          10,
+          4
+        ]
+      ],
+      "reason": "Create a fresh default on each call and copy supplied input before editing; neither a previous call nor caller-owned data should silently change.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O4",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "def append_feature(value, items=None):\n    output = [] if items is None else items.copy()\n    output.append(value)\n    return output\ncaller = [10]\nfirst = append_feature(5)\nsecond = append_feature(6)\nthird = append_feature(5, caller)\nresult = [first, second, third, caller]",
+      "expected": [
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          10
+        ]
+      ],
+      "wrong": [
+        [
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          10,
+          5
+        ]
+      ],
+      "reason": "Create a fresh default on each call and copy supplied input before editing; neither a previous call nor caller-owned data should silently change.",
+      "raises": null
+    },
+    {
+      "lesson": "p05",
+      "objective": "P05.O4",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "def append_feature(value, items=None):\n    output = [] if items is None else items.copy()\n    output.append(value)\n    return output\ncaller = [10]\nfirst = append_feature(7)\nsecond = append_feature(8)\nthird = append_feature(7, caller)\nresult = [first, second, third, caller]",
+      "expected": [
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          10
+        ]
+      ],
+      "wrong": [
+        [
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          10,
+          7
+        ]
+      ],
+      "reason": "Create a fresh default on each call and copy supplied input before editing; neither a previous call nor caller-owned data should silently change.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O1",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "values = [3, 4, 5]\nresult = [value * 2 for value in values if value > 3]",
+      "expected": [
+        8,
+        10
+      ],
+      "wrong": [
+        6,
+        8,
+        10
+      ],
+      "reason": "Filter each value using the stated predicate, then map it; a list comprehension preserves retained order and is not a reduction.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O1",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "values = [1, 2, 3]\nresult = [value * 2 for value in values if value > 1]",
+      "expected": [
+        4,
+        6
+      ],
+      "wrong": [
+        2,
+        4,
+        6
+      ],
+      "reason": "Filter each value using the stated predicate, then map it; a list comprehension preserves retained order and is not a reduction.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O1",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "values = [2, 3, 4]\nresult = [value * 2 for value in values if value > 2]",
+      "expected": [
+        6,
+        8
+      ],
+      "wrong": [
+        4,
+        6,
+        8
+      ],
+      "reason": "Filter each value using the stated predicate, then map it; a list comprehension preserves retained order and is not a reduction.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O1",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "values = [4, 5, 6]\nresult = [value * 2 for value in values if value > 4]",
+      "expected": [
+        10,
+        12
+      ],
+      "wrong": [
+        8,
+        10,
+        12
+      ],
+      "reason": "Filter each value using the stated predicate, then map it; a list comprehension preserves retained order and is not a reduction.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O1",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "values = [5, 6, 7]\nresult = [value * 2 for value in values if value > 5]",
+      "expected": [
+        12,
+        14
+      ],
+      "wrong": [
+        10,
+        12,
+        14
+      ],
+      "reason": "Filter each value using the stated predicate, then map it; a list comprehension preserves retained order and is not a reduction.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O1",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "values = [7, 8, 9]\nresult = [value * 2 for value in values if value > 7]",
+      "expected": [
+        16,
+        18
+      ],
+      "wrong": [
+        14,
+        16,
+        18
+      ],
+      "reason": "Filter each value using the stated predicate, then map it; a list comprehension preserves retained order and is not a reduction.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O2",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "records = [('A', 3, 100), ('B', None, 200), ('C', 4, 300)]\npaired = [(row_id, area, target) for row_id, area, target in records if area is not None]\nresult = paired",
+      "expected": [
+        [
+          "A",
+          3,
+          100
+        ],
+        [
+          "C",
+          4,
+          300
+        ]
+      ],
+      "wrong": [
+        [
+          "A",
+          3,
+          100
+        ],
+        [
+          "C",
+          4,
+          200
+        ]
+      ],
+      "reason": "Use one record-level predicate so row IDs, features and targets stay aligned; separately filtering columns can pair C with B's target.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O2",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "records = [('A', 1, 100), ('B', None, 200), ('C', 2, 300)]\npaired = [(row_id, area, target) for row_id, area, target in records if area is not None]\nresult = paired",
+      "expected": [
+        [
+          "A",
+          1,
+          100
+        ],
+        [
+          "C",
+          2,
+          300
+        ]
+      ],
+      "wrong": [
+        [
+          "A",
+          1,
+          100
+        ],
+        [
+          "C",
+          2,
+          200
+        ]
+      ],
+      "reason": "Use one record-level predicate so row IDs, features and targets stay aligned; separately filtering columns can pair C with B's target.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O2",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "records = [('A', 2, 100), ('B', None, 200), ('C', 3, 300)]\npaired = [(row_id, area, target) for row_id, area, target in records if area is not None]\nresult = paired",
+      "expected": [
+        [
+          "A",
+          2,
+          100
+        ],
+        [
+          "C",
+          3,
+          300
+        ]
+      ],
+      "wrong": [
+        [
+          "A",
+          2,
+          100
+        ],
+        [
+          "C",
+          3,
+          200
+        ]
+      ],
+      "reason": "Use one record-level predicate so row IDs, features and targets stay aligned; separately filtering columns can pair C with B's target.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O2",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "records = [('A', 4, 100), ('B', None, 200), ('C', 5, 300)]\npaired = [(row_id, area, target) for row_id, area, target in records if area is not None]\nresult = paired",
+      "expected": [
+        [
+          "A",
+          4,
+          100
+        ],
+        [
+          "C",
+          5,
+          300
+        ]
+      ],
+      "wrong": [
+        [
+          "A",
+          4,
+          100
+        ],
+        [
+          "C",
+          5,
+          200
+        ]
+      ],
+      "reason": "Use one record-level predicate so row IDs, features and targets stay aligned; separately filtering columns can pair C with B's target.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O2",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "records = [('A', 5, 100), ('B', None, 200), ('C', 6, 300)]\npaired = [(row_id, area, target) for row_id, area, target in records if area is not None]\nresult = paired",
+      "expected": [
+        [
+          "A",
+          5,
+          100
+        ],
+        [
+          "C",
+          6,
+          300
+        ]
+      ],
+      "wrong": [
+        [
+          "A",
+          5,
+          100
+        ],
+        [
+          "C",
+          6,
+          200
+        ]
+      ],
+      "reason": "Use one record-level predicate so row IDs, features and targets stay aligned; separately filtering columns can pair C with B's target.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O2",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "records = [('A', 7, 100), ('B', None, 200), ('C', 8, 300)]\npaired = [(row_id, area, target) for row_id, area, target in records if area is not None]\nresult = paired",
+      "expected": [
+        [
+          "A",
+          7,
+          100
+        ],
+        [
+          "C",
+          8,
+          300
+        ]
+      ],
+      "wrong": [
+        [
+          "A",
+          7,
+          100
+        ],
+        [
+          "C",
+          8,
+          200
+        ]
+      ],
+      "reason": "Use one record-level predicate so row IDs, features and targets stay aligned; separately filtering columns can pair C with B's target.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O3",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "records = [('A', 3), ('A', 4), ('B', 9)]\nresult = {row_id: value for row_id, value in records}",
+      "expected": {
+        "A": 4,
+        "B": 9
+      },
+      "wrong": {
+        "A": 3,
+        "B": 9
+      },
+      "reason": "A dictionary has one value per key; the later A insertion overwrites the earlier A, so duplicates can represent information loss.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O3",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "records = [('A', 1), ('A', 2), ('B', 9)]\nresult = {row_id: value for row_id, value in records}",
+      "expected": {
+        "A": 2,
+        "B": 9
+      },
+      "wrong": {
+        "A": 1,
+        "B": 9
+      },
+      "reason": "A dictionary has one value per key; the later A insertion overwrites the earlier A, so duplicates can represent information loss.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O3",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "records = [('A', 2), ('A', 3), ('B', 9)]\nresult = {row_id: value for row_id, value in records}",
+      "expected": {
+        "A": 3,
+        "B": 9
+      },
+      "wrong": {
+        "A": 2,
+        "B": 9
+      },
+      "reason": "A dictionary has one value per key; the later A insertion overwrites the earlier A, so duplicates can represent information loss.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O3",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "records = [('A', 4), ('A', 5), ('B', 9)]\nresult = {row_id: value for row_id, value in records}",
+      "expected": {
+        "A": 5,
+        "B": 9
+      },
+      "wrong": {
+        "A": 4,
+        "B": 9
+      },
+      "reason": "A dictionary has one value per key; the later A insertion overwrites the earlier A, so duplicates can represent information loss.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O3",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "records = [('A', 5), ('A', 6), ('B', 9)]\nresult = {row_id: value for row_id, value in records}",
+      "expected": {
+        "A": 6,
+        "B": 9
+      },
+      "wrong": {
+        "A": 5,
+        "B": 9
+      },
+      "reason": "A dictionary has one value per key; the later A insertion overwrites the earlier A, so duplicates can represent information loss.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O3",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "records = [('A', 7), ('A', 8), ('B', 9)]\nresult = {row_id: value for row_id, value in records}",
+      "expected": {
+        "A": 8,
+        "B": 9
+      },
+      "wrong": {
+        "A": 7,
+        "B": 9
+      },
+      "reason": "A dictionary has one value per key; the later A insertion overwrites the earlier A, so duplicates can represent information loss.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O4",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "values = [3, 4]\noutput = []\nfor value in values:\n    output.append(value * 2)\nresult = output",
+      "expected": [
+        6,
+        8
+      ],
+      "wrong": 14,
+      "reason": "This readable loop maps each observation; an equivalent single-level comprehension produces the same list, not its sum.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O4",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "values = [1, 2]\noutput = []\nfor value in values:\n    output.append(value * 2)\nresult = output",
+      "expected": [
+        2,
+        4
+      ],
+      "wrong": 6,
+      "reason": "This readable loop maps each observation; an equivalent single-level comprehension produces the same list, not its sum.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O4",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "values = [2, 3]\noutput = []\nfor value in values:\n    output.append(value * 2)\nresult = output",
+      "expected": [
+        4,
+        6
+      ],
+      "wrong": 10,
+      "reason": "This readable loop maps each observation; an equivalent single-level comprehension produces the same list, not its sum.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O4",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "values = [4, 5]\noutput = []\nfor value in values:\n    output.append(value * 2)\nresult = output",
+      "expected": [
+        8,
+        10
+      ],
+      "wrong": 18,
+      "reason": "This readable loop maps each observation; an equivalent single-level comprehension produces the same list, not its sum.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O4",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "values = [5, 6]\noutput = []\nfor value in values:\n    output.append(value * 2)\nresult = output",
+      "expected": [
+        10,
+        12
+      ],
+      "wrong": 22,
+      "reason": "This readable loop maps each observation; an equivalent single-level comprehension produces the same list, not its sum.",
+      "raises": null
+    },
+    {
+      "lesson": "p06",
+      "objective": "P06.O4",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "values = [7, 8]\noutput = []\nfor value in values:\n    output.append(value * 2)\nresult = output",
+      "expected": [
+        14,
+        16
+      ],
+      "wrong": 30,
+      "reason": "This readable loop maps each observation; an equivalent single-level comprehension produces the same list, not its sum.",
+      "raises": null
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O1",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "result = '3' + 1",
+      "expected": [
+        "TypeError",
+        "text + number"
+      ],
+      "wrong": [
+        "SyntaxError",
+        "successful arithmetic"
+      ],
+      "reason": "Match the failing operation to its input contract: indexing past the end is IndexError, mixing text and numbers is TypeError, and invalid numeric text is ValueError.",
+      "raises": "TypeError"
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O1",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "values = [1]\nresult = values[1]",
+      "expected": [
+        "IndexError",
+        "values[1]"
+      ],
+      "wrong": [
+        "SyntaxError",
+        "successful arithmetic"
+      ],
+      "reason": "Match the failing operation to its input contract: indexing past the end is IndexError, mixing text and numbers is TypeError, and invalid numeric text is ValueError.",
+      "raises": "IndexError"
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O1",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "result = float('bad-2')",
+      "expected": [
+        "ValueError",
+        "float conversion"
+      ],
+      "wrong": [
+        "SyntaxError",
+        "successful arithmetic"
+      ],
+      "reason": "Match the failing operation to its input contract: indexing past the end is IndexError, mixing text and numbers is TypeError, and invalid numeric text is ValueError.",
+      "raises": "ValueError"
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O1",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "values = [4]\nresult = values[1]",
+      "expected": [
+        "IndexError",
+        "values[1]"
+      ],
+      "wrong": [
+        "SyntaxError",
+        "successful arithmetic"
+      ],
+      "reason": "Match the failing operation to its input contract: indexing past the end is IndexError, mixing text and numbers is TypeError, and invalid numeric text is ValueError.",
+      "raises": "IndexError"
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O1",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "result = '5' + 1",
+      "expected": [
+        "TypeError",
+        "text + number"
+      ],
+      "wrong": [
+        "SyntaxError",
+        "successful arithmetic"
+      ],
+      "reason": "Match the failing operation to its input contract: indexing past the end is IndexError, mixing text and numbers is TypeError, and invalid numeric text is ValueError.",
+      "raises": "TypeError"
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O1",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "result = float('bad-7')",
+      "expected": [
+        "ValueError",
+        "float conversion"
+      ],
+      "wrong": [
+        "SyntaxError",
+        "successful arithmetic"
+      ],
+      "reason": "Match the failing operation to its input contract: indexing past the end is IndexError, mixing text and numbers is TypeError, and invalid numeric text is ValueError.",
+      "raises": "ValueError"
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O2",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "text = 'unknown-3'\ntry:\n    value = float(text)\nexcept ValueError:\n    result = ['invalid', None]\nelse:\n    result = ['valid', value]",
+      "expected": [
+        "invalid",
+        null
+      ],
+      "wrong": [
+        "valid",
+        0
+      ],
+      "reason": "Catch the expected conversion failure narrowly and mark the record invalid. A zero feature is a valid number, not a substitute for failed conversion.",
+      "raises": null
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O2",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "text = 'unknown-1'\ntry:\n    value = float(text)\nexcept ValueError:\n    result = ['invalid', None]\nelse:\n    result = ['valid', value]",
+      "expected": [
+        "invalid",
+        null
+      ],
+      "wrong": [
+        "valid",
+        0
+      ],
+      "reason": "Catch the expected conversion failure narrowly and mark the record invalid. A zero feature is a valid number, not a substitute for failed conversion.",
+      "raises": null
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O2",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "text = 'unknown-2'\ntry:\n    value = float(text)\nexcept ValueError:\n    result = ['invalid', None]\nelse:\n    result = ['valid', value]",
+      "expected": [
+        "invalid",
+        null
+      ],
+      "wrong": [
+        "valid",
+        0
+      ],
+      "reason": "Catch the expected conversion failure narrowly and mark the record invalid. A zero feature is a valid number, not a substitute for failed conversion.",
+      "raises": null
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O2",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "text = 'unknown-4'\ntry:\n    value = float(text)\nexcept ValueError:\n    result = ['invalid', None]\nelse:\n    result = ['valid', value]",
+      "expected": [
+        "invalid",
+        null
+      ],
+      "wrong": [
+        "valid",
+        0
+      ],
+      "reason": "Catch the expected conversion failure narrowly and mark the record invalid. A zero feature is a valid number, not a substitute for failed conversion.",
+      "raises": null
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O2",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "text = 'unknown-5'\ntry:\n    value = float(text)\nexcept ValueError:\n    result = ['invalid', None]\nelse:\n    result = ['valid', value]",
+      "expected": [
+        "invalid",
+        null
+      ],
+      "wrong": [
+        "valid",
+        0
+      ],
+      "reason": "Catch the expected conversion failure narrowly and mark the record invalid. A zero feature is a valid number, not a substitute for failed conversion.",
+      "raises": null
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O2",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "text = 'unknown-7'\ntry:\n    value = float(text)\nexcept ValueError:\n    result = ['invalid', None]\nelse:\n    result = ['valid', value]",
+      "expected": [
+        "invalid",
+        null
+      ],
+      "wrong": [
+        "valid",
+        0
+      ],
+      "reason": "Catch the expected conversion failure narrowly and mark the record invalid. A zero feature is a valid number, not a substitute for failed conversion.",
+      "raises": null
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O3",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "import math\nresult = math.sqrt(9)",
+      "expected": 3.0,
+      "wrong": 10,
+      "reason": "import binds the module name math; use its sqrt attribute. Importing is not training a model, and shadowing math would break the lookup.",
+      "raises": null
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O3",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "import math\nresult = math.sqrt(1)",
+      "expected": 1.0,
+      "wrong": 2,
+      "reason": "import binds the module name math; use its sqrt attribute. Importing is not training a model, and shadowing math would break the lookup.",
+      "raises": null
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O3",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "import math\nresult = math.sqrt(4)",
+      "expected": 2.0,
+      "wrong": 5,
+      "reason": "import binds the module name math; use its sqrt attribute. Importing is not training a model, and shadowing math would break the lookup.",
+      "raises": null
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O3",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "import math\nresult = math.sqrt(16)",
+      "expected": 4.0,
+      "wrong": 17,
+      "reason": "import binds the module name math; use its sqrt attribute. Importing is not training a model, and shadowing math would break the lookup.",
+      "raises": null
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O3",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "import math\nresult = math.sqrt(25)",
+      "expected": 5.0,
+      "wrong": 26,
+      "reason": "import binds the module name math; use its sqrt attribute. Importing is not training a model, and shadowing math would break the lookup.",
+      "raises": null
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O3",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "import math\nresult = math.sqrt(49)",
+      "expected": 7.0,
+      "wrong": 50,
+      "reason": "import binds the module name math; use its sqrt attribute. Importing is not training a model, and shadowing math would break the lookup.",
+      "raises": null
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O4",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "area = 3\nwrong = area + 1 * 100\nrepaired = (area + 1) * 100\nresult = [wrong, repaired, 'logic error']",
+      "expected": [
+        103,
+        400,
+        "logic error"
+      ],
+      "wrong": [
+        103,
+        400,
+        "SyntaxError"
+      ],
+      "reason": "The wrong expression is valid syntax and yields a plausible number. Parentheses repair its intended rule; a changed area exposes the logic error.",
+      "raises": null
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O4",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "area = 1\nwrong = area + 1 * 100\nrepaired = (area + 1) * 100\nresult = [wrong, repaired, 'logic error']",
+      "expected": [
+        101,
+        200,
+        "logic error"
+      ],
+      "wrong": [
+        101,
+        200,
+        "SyntaxError"
+      ],
+      "reason": "The wrong expression is valid syntax and yields a plausible number. Parentheses repair its intended rule; a changed area exposes the logic error.",
+      "raises": null
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O4",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "area = 2\nif area > 0\n    result = area * 100 + 50",
+      "expected": [
+        "SyntaxError",
+        "add ':' after if",
+        250
+      ],
+      "wrong": [
+        "logic error",
+        "the program already runs",
+        250
+      ],
+      "reason": "A missing colon is a syntax error before execution, not an incorrect numeric result. Add the colon after the if condition; only then can the supplied weighted expression run.",
+      "raises": "SyntaxError"
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O4",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "area = 4\nif area > 0\n    result = area * 100 + 50",
+      "expected": [
+        "SyntaxError",
+        "add ':' after if",
+        450
+      ],
+      "wrong": [
+        "logic error",
+        "the program already runs",
+        450
+      ],
+      "reason": "A missing colon is a syntax error before execution, not an incorrect numeric result. Add the colon after the if condition; only then can the supplied weighted expression run.",
+      "raises": "SyntaxError"
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O4",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "area = 5\nwrong = area + 1 * 100\nrepaired = (area + 1) * 100\nresult = [wrong, repaired, 'logic error']",
+      "expected": [
+        105,
+        600,
+        "logic error"
+      ],
+      "wrong": [
+        105,
+        600,
+        "SyntaxError"
+      ],
+      "reason": "The wrong expression is valid syntax and yields a plausible number. Parentheses repair its intended rule; a changed area exposes the logic error.",
+      "raises": null
+    },
+    {
+      "lesson": "p07",
+      "objective": "P07.O4",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "area = 7\nwrong = area + 1 * 100\nrepaired = (area + 1) * 100\nresult = [wrong, repaired, 'logic error']",
+      "expected": [
+        107,
+        800,
+        "logic error"
+      ],
+      "wrong": [
+        107,
+        800,
+        "SyntaxError"
+      ],
+      "reason": "The wrong expression is valid syntax and yields a plausible number. Parentheses repair its intended rule; a changed area exposes the logic error.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O1",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "record = {'area': 'bad-3', 'age': ''}\nage = None if record['age'] == '' else float(record['age'])\ntry:\n    area = float(record['area'])\nexcept (KeyError, ValueError):\n    result = ['invalid required area', None, age]\nelse:\n    result = ['valid', area, age]",
+      "expected": [
+        "invalid required area",
+        null,
+        null
+      ],
+      "wrong": [
+        "valid",
+        0,
+        0
+      ],
+      "reason": "Validate required fields, numeric conversion and nullability before modeling. Missing or invalid required area rejects the record; missing age must not become an observed zero.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O1",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "record = {'area': 'bad-1', 'age': ''}\nage = None if record['age'] == '' else float(record['age'])\ntry:\n    area = float(record['area'])\nexcept (KeyError, ValueError):\n    result = ['invalid required area', None, age]\nelse:\n    result = ['valid', area, age]",
+      "expected": [
+        "invalid required area",
+        null,
+        null
+      ],
+      "wrong": [
+        "valid",
+        0,
+        0
+      ],
+      "reason": "Validate required fields, numeric conversion and nullability before modeling. Missing or invalid required area rejects the record; missing age must not become an observed zero.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O1",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "record = {'age': ''}\nage = None if record['age'] == '' else float(record['age'])\ntry:\n    area = float(record['area'])\nexcept (KeyError, ValueError):\n    result = ['invalid required area', None, age]\nelse:\n    result = ['valid', area, age]",
+      "expected": [
+        "invalid required area",
+        null,
+        null
+      ],
+      "wrong": [
+        "valid",
+        0,
+        0
+      ],
+      "reason": "Validate required fields, numeric conversion and nullability before modeling. Missing or invalid required area rejects the record; missing age must not become an observed zero.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O1",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "record = {'age': ''}\nage = None if record['age'] == '' else float(record['age'])\ntry:\n    area = float(record['area'])\nexcept (KeyError, ValueError):\n    result = ['invalid required area', None, age]\nelse:\n    result = ['valid', area, age]",
+      "expected": [
+        "invalid required area",
+        null,
+        null
+      ],
+      "wrong": [
+        "valid",
+        0,
+        0
+      ],
+      "reason": "Validate required fields, numeric conversion and nullability before modeling. Missing or invalid required area rejects the record; missing age must not become an observed zero.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O1",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "record = {'area': 'bad-5', 'age': ''}\nage = None if record['age'] == '' else float(record['age'])\ntry:\n    area = float(record['area'])\nexcept (KeyError, ValueError):\n    result = ['invalid required area', None, age]\nelse:\n    result = ['valid', area, age]",
+      "expected": [
+        "invalid required area",
+        null,
+        null
+      ],
+      "wrong": [
+        "valid",
+        0,
+        0
+      ],
+      "reason": "Validate required fields, numeric conversion and nullability before modeling. Missing or invalid required area rejects the record; missing age must not become an observed zero.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O1",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "record = {'area': 'bad-7', 'age': ''}\nage = None if record['age'] == '' else float(record['age'])\ntry:\n    area = float(record['area'])\nexcept (KeyError, ValueError):\n    result = ['invalid required area', None, age]\nelse:\n    result = ['valid', area, age]",
+      "expected": [
+        "invalid required area",
+        null,
+        null
+      ],
+      "wrong": [
+        "valid",
+        0,
+        0
+      ],
+      "reason": "Validate required fields, numeric conversion and nullability before modeling. Missing or invalid required area rejects the record; missing age must not become an observed zero.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O2",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "import csv\nimport io\ncsv_text = 'area,age\\n3,0\\n'\nasset_name = 'data/houses.csv'\nwith io.StringIO(csv_text) as handle:\n    record = next(csv.DictReader(handle))\n    valid = float(record['area']) > 0\nresult = [handle.closed, valid, asset_name, 'open-read/parse-validate-close']",
+      "expected": [
+        true,
+        true,
+        "data/houses.csv",
+        "open-read/parse-validate-close"
+      ],
+      "wrong": [
+        false,
+        true,
+        "/Users/me/houses.csv",
+        "close-open-validate"
+      ],
+      "reason": "In this supplied program the context closes after parsing and validation. A declared relative bundled asset name is portable; an arbitrary machine-specific absolute path is not.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O2",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "import csv\nimport io\ncsv_text = 'area,age\\n1,0\\n'\nasset_name = 'data/houses.csv'\nwith io.StringIO(csv_text) as handle:\n    record = next(csv.DictReader(handle))\n    valid = float(record['area']) > 0\nresult = [handle.closed, valid, asset_name, 'open-read/parse-validate-close']",
+      "expected": [
+        true,
+        true,
+        "data/houses.csv",
+        "open-read/parse-validate-close"
+      ],
+      "wrong": [
+        false,
+        true,
+        "/Users/me/houses.csv",
+        "close-open-validate"
+      ],
+      "reason": "In this supplied program the context closes after parsing and validation. A declared relative bundled asset name is portable; an arbitrary machine-specific absolute path is not.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O2",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "import csv\nimport io\ncsv_text = 'area,age\\n2,0\\n'\nasset_name = 'data/houses.csv'\nwith io.StringIO(csv_text) as handle:\n    record = next(csv.DictReader(handle))\n    valid = float(record['area']) > 0\nresult = [handle.closed, valid, asset_name, 'open-read/parse-validate-close']",
+      "expected": [
+        true,
+        true,
+        "data/houses.csv",
+        "open-read/parse-validate-close"
+      ],
+      "wrong": [
+        false,
+        true,
+        "/Users/me/houses.csv",
+        "close-open-validate"
+      ],
+      "reason": "In this supplied program the context closes after parsing and validation. A declared relative bundled asset name is portable; an arbitrary machine-specific absolute path is not.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O2",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "import csv\nimport io\ncsv_text = 'area,age\\n4,0\\n'\nasset_name = 'data/houses.csv'\nwith io.StringIO(csv_text) as handle:\n    record = next(csv.DictReader(handle))\n    valid = float(record['area']) > 0\nresult = [handle.closed, valid, asset_name, 'open-read/parse-validate-close']",
+      "expected": [
+        true,
+        true,
+        "data/houses.csv",
+        "open-read/parse-validate-close"
+      ],
+      "wrong": [
+        false,
+        true,
+        "/Users/me/houses.csv",
+        "close-open-validate"
+      ],
+      "reason": "In this supplied program the context closes after parsing and validation. A declared relative bundled asset name is portable; an arbitrary machine-specific absolute path is not.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O2",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "import csv\nimport io\ncsv_text = 'area,age\\n5,0\\n'\nasset_name = 'data/houses.csv'\nwith io.StringIO(csv_text) as handle:\n    record = next(csv.DictReader(handle))\n    valid = float(record['area']) > 0\nresult = [handle.closed, valid, asset_name, 'open-read/parse-validate-close']",
+      "expected": [
+        true,
+        true,
+        "data/houses.csv",
+        "open-read/parse-validate-close"
+      ],
+      "wrong": [
+        false,
+        true,
+        "/Users/me/houses.csv",
+        "close-open-validate"
+      ],
+      "reason": "In this supplied program the context closes after parsing and validation. A declared relative bundled asset name is portable; an arbitrary machine-specific absolute path is not.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O2",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "import csv\nimport io\ncsv_text = 'area,age\\n7,0\\n'\nasset_name = 'data/houses.csv'\nwith io.StringIO(csv_text) as handle:\n    record = next(csv.DictReader(handle))\n    valid = float(record['area']) > 0\nresult = [handle.closed, valid, asset_name, 'open-read/parse-validate-close']",
+      "expected": [
+        true,
+        true,
+        "data/houses.csv",
+        "open-read/parse-validate-close"
+      ],
+      "wrong": [
+        false,
+        true,
+        "/Users/me/houses.csv",
+        "close-open-validate"
+      ],
+      "reason": "In this supplied program the context closes after parsing and validation. A declared relative bundled asset name is portable; an arbitrary machine-specific absolute path is not.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O3",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "import json\ndef validate(record):\n    return float(record['area'])\nrecord = json.loads('{\"area\": \"3\"}')\nresult = [validate(record), 'parse-validate-return']",
+      "expected": [
+        3.0,
+        "parse-validate-return"
+      ],
+      "wrong": [
+        "3",
+        "return-parse-skip-validation"
+      ],
+      "reason": "Parsing establishes syntax, not feature validity. Pass the parsed record through the validation function and return a usable numeric feature.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O3",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "import json\ndef validate(record):\n    return float(record['area'])\nrecord = json.loads('{\"area\": \"1\"}')\nresult = [validate(record), 'parse-validate-return']",
+      "expected": [
+        1.0,
+        "parse-validate-return"
+      ],
+      "wrong": [
+        "1",
+        "return-parse-skip-validation"
+      ],
+      "reason": "Parsing establishes syntax, not feature validity. Pass the parsed record through the validation function and return a usable numeric feature.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O3",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "import json\ndef validate(record):\n    return float(record['area'])\nrecord = json.loads('{\"area\": \"2\"}')\nresult = [validate(record), 'parse-validate-return']",
+      "expected": [
+        2.0,
+        "parse-validate-return"
+      ],
+      "wrong": [
+        "2",
+        "return-parse-skip-validation"
+      ],
+      "reason": "Parsing establishes syntax, not feature validity. Pass the parsed record through the validation function and return a usable numeric feature.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O3",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "import json\ndef validate(record):\n    return float(record['area'])\nrecord = json.loads('{\"area\": \"4\"}')\nresult = [validate(record), 'parse-validate-return']",
+      "expected": [
+        4.0,
+        "parse-validate-return"
+      ],
+      "wrong": [
+        "4",
+        "return-parse-skip-validation"
+      ],
+      "reason": "Parsing establishes syntax, not feature validity. Pass the parsed record through the validation function and return a usable numeric feature.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O3",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "import json\ndef validate(record):\n    return float(record['area'])\nrecord = json.loads('{\"area\": \"5\"}')\nresult = [validate(record), 'parse-validate-return']",
+      "expected": [
+        5.0,
+        "parse-validate-return"
+      ],
+      "wrong": [
+        "5",
+        "return-parse-skip-validation"
+      ],
+      "reason": "Parsing establishes syntax, not feature validity. Pass the parsed record through the validation function and return a usable numeric feature.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O3",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "import json\ndef validate(record):\n    return float(record['area'])\nrecord = json.loads('{\"area\": \"7\"}')\nresult = [validate(record), 'parse-validate-return']",
+      "expected": [
+        7.0,
+        "parse-validate-return"
+      ],
+      "wrong": [
+        "7",
+        "return-parse-skip-validation"
+      ],
+      "reason": "Parsing establishes syntax, not feature validity. Pass the parsed record through the validation function and return a usable numeric feature.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O4",
+      "mode": "worked",
+      "variant": 0,
+      "amount": 3,
+      "code": "class Record:\n    def __init__(self, area):\n        self.area = area\n    def doubled(self):\n        return self.area * 2\nfirst = Record(3)\nsecond = Record(4)\nfirst.area = 5\nresult = [first.area, second.area, first.doubled()]",
+      "expected": [
+        5,
+        4,
+        10
+      ],
+      "wrong": [
+        5,
+        5,
+        10
+      ],
+      "reason": "Each instance owns its area attribute; changing first does not change second. A method uses its own instance through self; this is introductory recognition, not advanced OOP.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O4",
+      "mode": "practice",
+      "variant": 0,
+      "amount": 1,
+      "code": "class Record:\n    def __init__(self, area):\n        self.area = area\n    def doubled(self):\n        return self.area * 2\nfirst = Record(1)\nsecond = Record(2)\nfirst.area = 3\nresult = [first.area, second.area, first.doubled()]",
+      "expected": [
+        3,
+        2,
+        6
+      ],
+      "wrong": [
+        3,
+        3,
+        6
+      ],
+      "reason": "Each instance owns its area attribute; changing first does not change second. A method uses its own instance through self; this is introductory recognition, not advanced OOP.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O4",
+      "mode": "practice",
+      "variant": 1,
+      "amount": 2,
+      "code": "class Record:\n    def __init__(self, area):\n        self.area = area\n    def doubled(self):\n        return self.area * 2\nfirst = Record(2)\nsecond = Record(3)\nfirst.area = 4\nresult = [first.area, second.area, first.doubled()]",
+      "expected": [
+        4,
+        3,
+        8
+      ],
+      "wrong": [
+        4,
+        4,
+        8
+      ],
+      "reason": "Each instance owns its area attribute; changing first does not change second. A method uses its own instance through self; this is introductory recognition, not advanced OOP.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O4",
+      "mode": "mastery",
+      "variant": 0,
+      "amount": 4,
+      "code": "class Record:\n    def __init__(self, area):\n        self.area = area\n    def doubled(self):\n        return self.area * 2\nfirst = Record(4)\nsecond = Record(5)\nfirst.area = 6\nresult = [first.area, second.area, first.doubled()]",
+      "expected": [
+        6,
+        5,
+        12
+      ],
+      "wrong": [
+        6,
+        6,
+        12
+      ],
+      "reason": "Each instance owns its area attribute; changing first does not change second. A method uses its own instance through self; this is introductory recognition, not advanced OOP.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O4",
+      "mode": "mastery",
+      "variant": 1,
+      "amount": 5,
+      "code": "class Record:\n    def __init__(self, area):\n        self.area = area\n    def doubled(self):\n        return self.area * 2\nfirst = Record(5)\nsecond = Record(6)\nfirst.area = 7\nresult = [first.area, second.area, first.doubled()]",
+      "expected": [
+        7,
+        6,
+        14
+      ],
+      "wrong": [
+        7,
+        7,
+        14
+      ],
+      "reason": "Each instance owns its area attribute; changing first does not change second. A method uses its own instance through self; this is introductory recognition, not advanced OOP.",
+      "raises": null
+    },
+    {
+      "lesson": "p08",
+      "objective": "P08.O4",
+      "mode": "mastery",
+      "variant": 2,
+      "amount": 7,
+      "code": "class Record:\n    def __init__(self, area):\n        self.area = area\n    def doubled(self):\n        return self.area * 2\nfirst = Record(7)\nsecond = Record(8)\nfirst.area = 9\nresult = [first.area, second.area, first.doubled()]",
+      "expected": [
+        9,
+        8,
+        18
+      ],
+      "wrong": [
+        9,
+        9,
+        18
+      ],
+      "reason": "Each instance owns its area attribute; changing first does not change second. A method uses its own instance through self; this is introductory recognition, not advanced OOP.",
+      "raises": null
+    }
+  ]
+}

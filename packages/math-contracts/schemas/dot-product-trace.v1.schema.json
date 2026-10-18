@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mlmathlab.dev/schemas/dot-product-trace.v1.schema.json",
+  "title": "Dot product calculation trace",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "input", "contributions", "value"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "input": { "$ref": "dot-product-input.v1.schema.json" },
+    "contributions": { "type": "array", "items": { "type": "number" } },
+    "value": { "type": "number" }
+  }
+}

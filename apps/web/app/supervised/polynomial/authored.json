@@ -1,0 +1,3705 @@
+{
+  "content": "supervised.polynomial.1.0.0",
+  "families": [
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "[1,1], shape(1,2)"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Powers are new columns, not rows; no constant column when include_bias=False.",
+      "id": "PR01.O1.practice.A",
+      "objective": "PR01.O1",
+      "prompt": "Expand x=1 to degree2 without bias; state one-row dimensions.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Powers are new columns, not rows; no constant column when include_bias=False."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "[2,4], shape(1,2)"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Powers are new columns, not rows; no constant column when include_bias=False.",
+      "id": "PR01.O1.practice.B",
+      "objective": "PR01.O1",
+      "prompt": "Expand x=2 to degree2 without bias; state one-row dimensions.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Powers are new columns, not rows; no constant column when include_bias=False."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "[3,9], shape(1,2)"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Powers are new columns, not rows; no constant column when include_bias=False.",
+      "id": "PR01.O1.independent.A",
+      "objective": "PR01.O1",
+      "prompt": "Expand x=3 to degree2 without bias; state one-row dimensions.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Powers are new columns, not rows; no constant column when include_bias=False."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "[4,16], shape(1,2)"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Powers are new columns, not rows; no constant column when include_bias=False.",
+      "id": "PR01.O1.independent.B",
+      "objective": "PR01.O1",
+      "prompt": "Expand x=4 to degree2 without bias; state one-row dimensions.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Powers are new columns, not rows; no constant column when include_bias=False."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "[5,25], shape(1,2)"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Powers are new columns, not rows; no constant column when include_bias=False.",
+      "id": "PR01.O1.independent.C",
+      "objective": "PR01.O1",
+      "prompt": "Expand x=5 to degree2 without bias; state one-row dimensions.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Powers are new columns, not rows; no constant column when include_bias=False."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Yes: fix the feature row and the coefficients enter only as a weighted sum"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Curved in input is compatible with linear in coefficients; no coefficient is squared or multiplied by another coefficient."
+            },
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Curved in input is compatible with linear in coefficients; no coefficient is squared or multiplied by another coefficient.",
+      "id": "PR01.O2.practice.A",
+      "objective": "PR01.O2",
+      "prompt": "For x=1, f(x)=b+w1*x+w2*x². Is it linear in its coefficients?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Curved in input is compatible with linear in coefficients; no coefficient is squared or multiplied by another coefficient."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "Yes: fix the feature row and the coefficients enter only as a weighted sum"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            },
+            {
+              "id": "mechanism",
+              "label": "Curved in input is compatible with linear in coefficients; no coefficient is squared or multiplied by another coefficient."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Curved in input is compatible with linear in coefficients; no coefficient is squared or multiplied by another coefficient.",
+      "id": "PR01.O2.practice.B",
+      "objective": "PR01.O2",
+      "prompt": "For x=2, f(x)=b+w1*x+w2*x². Is it linear in its coefficients?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Curved in input is compatible with linear in coefficients; no coefficient is squared or multiplied by another coefficient."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "Yes: fix the feature row and the coefficients enter only as a weighted sum"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Curved in input is compatible with linear in coefficients; no coefficient is squared or multiplied by another coefficient."
+            },
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Curved in input is compatible with linear in coefficients; no coefficient is squared or multiplied by another coefficient.",
+      "id": "PR01.O2.independent.A",
+      "objective": "PR01.O2",
+      "prompt": "For x=3, f(x)=b+w1*x+w2*x². Is it linear in its coefficients?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Curved in input is compatible with linear in coefficients; no coefficient is squared or multiplied by another coefficient."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Yes: fix the feature row and the coefficients enter only as a weighted sum"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            },
+            {
+              "id": "mechanism",
+              "label": "Curved in input is compatible with linear in coefficients; no coefficient is squared or multiplied by another coefficient."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Curved in input is compatible with linear in coefficients; no coefficient is squared or multiplied by another coefficient.",
+      "id": "PR01.O2.independent.B",
+      "objective": "PR01.O2",
+      "prompt": "For x=4, f(x)=b+w1*x+w2*x². Is it linear in its coefficients?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Curved in input is compatible with linear in coefficients; no coefficient is squared or multiplied by another coefficient."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "Yes: fix the feature row and the coefficients enter only as a weighted sum"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Curved in input is compatible with linear in coefficients; no coefficient is squared or multiplied by another coefficient."
+            },
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Curved in input is compatible with linear in coefficients; no coefficient is squared or multiplied by another coefficient.",
+      "id": "PR01.O2.independent.C",
+      "objective": "PR01.O2",
+      "prompt": "For x=5, f(x)=b+w1*x+w2*x². Is it linear in its coefficients?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Curved in input is compatible with linear in coefficients; no coefficient is squared or multiplied by another coefficient."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 6
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Compute1+2x+3x². Raw physical powers require inverse-power coefficient units; dimensionless normalized inputs simplify the units.",
+      "id": "PR01.O3.practice.A",
+      "objective": "PR01.O3",
+      "prompt": "Dimensionless x=1; w=[2,3], intercept1 thousand USD. Predict the price in thousand USD.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Compute1+2x+3x². Raw physical powers require inverse-power coefficient units; dimensionless normalized inputs simplify the units."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 17
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Compute1+2x+3x². Raw physical powers require inverse-power coefficient units; dimensionless normalized inputs simplify the units.",
+      "id": "PR01.O3.practice.B",
+      "objective": "PR01.O3",
+      "prompt": "Dimensionless x=2; w=[2,3], intercept1 thousand USD. Predict the price in thousand USD.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Compute1+2x+3x². Raw physical powers require inverse-power coefficient units; dimensionless normalized inputs simplify the units."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 34
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Compute1+2x+3x². Raw physical powers require inverse-power coefficient units; dimensionless normalized inputs simplify the units.",
+      "id": "PR01.O3.independent.A",
+      "objective": "PR01.O3",
+      "prompt": "Dimensionless x=3; w=[2,3], intercept1 thousand USD. Predict the price in thousand USD.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Compute1+2x+3x². Raw physical powers require inverse-power coefficient units; dimensionless normalized inputs simplify the units."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 57
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Compute1+2x+3x². Raw physical powers require inverse-power coefficient units; dimensionless normalized inputs simplify the units.",
+      "id": "PR01.O3.independent.B",
+      "objective": "PR01.O3",
+      "prompt": "Dimensionless x=4; w=[2,3], intercept1 thousand USD. Predict the price in thousand USD.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Compute1+2x+3x². Raw physical powers require inverse-power coefficient units; dimensionless normalized inputs simplify the units."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 86
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Compute1+2x+3x². Raw physical powers require inverse-power coefficient units; dimensionless normalized inputs simplify the units.",
+      "id": "PR01.O3.independent.C",
+      "objective": "PR01.O3",
+      "prompt": "Dimensionless x=5; w=[2,3], intercept1 thousand USD. Predict the price in thousand USD.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Compute1+2x+3x². Raw physical powers require inverse-power coefficient units; dimensionless normalized inputs simplify the units."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "Use include_bias=False with the model intercept, or one explicit constant without an additional intercept"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Two constant directions are redundant; predictions can be identified without unique separate constant coefficients.",
+      "id": "PR01.O4.practice.A",
+      "objective": "PR01.O4",
+      "prompt": "PolynomialFeatures includes a constant1 while the estimator also fits an intercept. What must be repaired?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Two constant directions are redundant; predictions can be identified without unique separate constant coefficients."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Use include_bias=False with the model intercept, or one explicit constant without an additional intercept"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Two constant directions are redundant; predictions can be identified without unique separate constant coefficients.",
+      "id": "PR01.O4.practice.B",
+      "objective": "PR01.O4",
+      "prompt": "PolynomialFeatures includes a constant1 while the estimator also fits an intercept. What must be repaired?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Two constant directions are redundant; predictions can be identified without unique separate constant coefficients."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "Use include_bias=False with the model intercept, or one explicit constant without an additional intercept"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Two constant directions are redundant; predictions can be identified without unique separate constant coefficients.",
+      "id": "PR01.O4.independent.A",
+      "objective": "PR01.O4",
+      "prompt": "PolynomialFeatures includes a constant1 while the estimator also fits an intercept. What must be repaired?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Two constant directions are redundant; predictions can be identified without unique separate constant coefficients."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "Use include_bias=False with the model intercept, or one explicit constant without an additional intercept"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Two constant directions are redundant; predictions can be identified without unique separate constant coefficients.",
+      "id": "PR01.O4.independent.B",
+      "objective": "PR01.O4",
+      "prompt": "PolynomialFeatures includes a constant1 while the estimator also fits an intercept. What must be repaired?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Two constant directions are redundant; predictions can be identified without unique separate constant coefficients."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Use include_bias=False with the model intercept, or one explicit constant without an additional intercept"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Two constant directions are redundant; predictions can be identified without unique separate constant coefficients.",
+      "id": "PR01.O4.independent.C",
+      "objective": "PR01.O4",
+      "prompt": "PolynomialFeatures includes a constant1 while the estimator also fits an intercept. What must be repaired?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Two constant directions are redundant; predictions can be identified without unique separate constant coefficients."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "[1, 2, 1, 2, 4]"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Order is a,b,a²,ab,b²; interactions change the column schema, not observation count.",
+      "id": "PR02.O1.practice.A",
+      "objective": "PR02.O1",
+      "prompt": "For row [1, 2], expand degree2 without bias, preserving sklearn order.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Order is a,b,a²,ab,b²; interactions change the column schema, not observation count."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "[2, 3, 4, 6, 9]"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Order is a,b,a²,ab,b²; interactions change the column schema, not observation count.",
+      "id": "PR02.O1.practice.B",
+      "objective": "PR02.O1",
+      "prompt": "For row [2, 3], expand degree2 without bias, preserving sklearn order.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Order is a,b,a²,ab,b²; interactions change the column schema, not observation count."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "[3, 4, 9, 12, 16]"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Order is a,b,a²,ab,b²; interactions change the column schema, not observation count.",
+      "id": "PR02.O1.independent.A",
+      "objective": "PR02.O1",
+      "prompt": "For row [3, 4], expand degree2 without bias, preserving sklearn order.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Order is a,b,a²,ab,b²; interactions change the column schema, not observation count."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "[4, 5, 16, 20, 25]"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Order is a,b,a²,ab,b²; interactions change the column schema, not observation count.",
+      "id": "PR02.O1.independent.B",
+      "objective": "PR02.O1",
+      "prompt": "For row [4, 5], expand degree2 without bias, preserving sklearn order.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Order is a,b,a²,ab,b²; interactions change the column schema, not observation count."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "[5, 6, 25, 30, 36]"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Order is a,b,a²,ab,b²; interactions change the column schema, not observation count.",
+      "id": "PR02.O1.independent.C",
+      "objective": "PR02.O1",
+      "prompt": "For row [5, 6], expand degree2 without bias, preserving sklearn order.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Order is a,b,a²,ab,b²; interactions change the column schema, not observation count."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 44
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Count C(p+d,d)−1 nonconstant monomials. This exceeds32 columns, so reject rather than generate an unbounded learner array; added columns are not extra evidence."
+            },
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Count C(p+d,d)−1 nonconstant monomials. This exceeds32 columns, so reject rather than generate an unbounded learner array; added columns are not extra evidence.",
+      "id": "PR02.O2.practice.A",
+      "objective": "PR02.O2",
+      "prompt": "Two features, degree8, no bias: how many columns? With a32-dimension bound, explain why this design is unsupported.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Count C(p+d,d)−1 nonconstant monomials. This exceeds32 columns, so reject rather than generate an unbounded learner array; added columns are not extra evidence."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 54
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            },
+            {
+              "id": "mechanism",
+              "label": "Count C(p+d,d)−1 nonconstant monomials. This exceeds32 columns, so reject rather than generate an unbounded learner array; added columns are not extra evidence."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Count C(p+d,d)−1 nonconstant monomials. This exceeds32 columns, so reject rather than generate an unbounded learner array; added columns are not extra evidence.",
+      "id": "PR02.O2.practice.B",
+      "objective": "PR02.O2",
+      "prompt": "Two features, degree9, no bias: how many columns? With a32-dimension bound, explain why this design is unsupported.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Count C(p+d,d)−1 nonconstant monomials. This exceeds32 columns, so reject rather than generate an unbounded learner array; added columns are not extra evidence."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 65
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Count C(p+d,d)−1 nonconstant monomials. This exceeds32 columns, so reject rather than generate an unbounded learner array; added columns are not extra evidence."
+            },
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Count C(p+d,d)−1 nonconstant monomials. This exceeds32 columns, so reject rather than generate an unbounded learner array; added columns are not extra evidence.",
+      "id": "PR02.O2.independent.A",
+      "objective": "PR02.O2",
+      "prompt": "Two features, degree10, no bias: how many columns? With a32-dimension bound, explain why this design is unsupported.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Count C(p+d,d)−1 nonconstant monomials. This exceeds32 columns, so reject rather than generate an unbounded learner array; added columns are not extra evidence."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 77
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            },
+            {
+              "id": "mechanism",
+              "label": "Count C(p+d,d)−1 nonconstant monomials. This exceeds32 columns, so reject rather than generate an unbounded learner array; added columns are not extra evidence."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Count C(p+d,d)−1 nonconstant monomials. This exceeds32 columns, so reject rather than generate an unbounded learner array; added columns are not extra evidence.",
+      "id": "PR02.O2.independent.B",
+      "objective": "PR02.O2",
+      "prompt": "Two features, degree11, no bias: how many columns? With a32-dimension bound, explain why this design is unsupported.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Count C(p+d,d)−1 nonconstant monomials. This exceeds32 columns, so reject rather than generate an unbounded learner array; added columns are not extra evidence."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 90
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Count C(p+d,d)−1 nonconstant monomials. This exceeds32 columns, so reject rather than generate an unbounded learner array; added columns are not extra evidence."
+            },
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Count C(p+d,d)−1 nonconstant monomials. This exceeds32 columns, so reject rather than generate an unbounded learner array; added columns are not extra evidence.",
+      "id": "PR02.O2.independent.C",
+      "objective": "PR02.O2",
+      "prompt": "Two features, degree12, no bias: how many columns? With a32-dimension bound, explain why this design is unsupported.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Count C(p+d,d)−1 nonconstant monomials. This exceeds32 columns, so reject rather than generate an unbounded learner array; added columns are not extra evidence."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 36
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "The query is outside training support. The arithmetic is defined but reliability is unestablished; marginal ranges also do not prove joint support in multiple dimensions.",
+      "id": "PR02.O3.practice.A",
+      "objective": "PR02.O3",
+      "prompt": "Training x range[0,3]; f(x)=x². Predict at x=6; is this interpolation evidence?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. The query is outside training support. The arithmetic is defined but reliability is unestablished; marginal ranges also do not prove joint support in multiple dimensions."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 49
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "The query is outside training support. The arithmetic is defined but reliability is unestablished; marginal ranges also do not prove joint support in multiple dimensions.",
+      "id": "PR02.O3.practice.B",
+      "objective": "PR02.O3",
+      "prompt": "Training x range[0,3]; f(x)=x². Predict at x=7; is this interpolation evidence?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. The query is outside training support. The arithmetic is defined but reliability is unestablished; marginal ranges also do not prove joint support in multiple dimensions."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 64
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "The query is outside training support. The arithmetic is defined but reliability is unestablished; marginal ranges also do not prove joint support in multiple dimensions.",
+      "id": "PR02.O3.independent.A",
+      "objective": "PR02.O3",
+      "prompt": "Training x range[0,3]; f(x)=x². Predict at x=8; is this interpolation evidence?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. The query is outside training support. The arithmetic is defined but reliability is unestablished; marginal ranges also do not prove joint support in multiple dimensions."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 81
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "The query is outside training support. The arithmetic is defined but reliability is unestablished; marginal ranges also do not prove joint support in multiple dimensions.",
+      "id": "PR02.O3.independent.B",
+      "objective": "PR02.O3",
+      "prompt": "Training x range[0,3]; f(x)=x². Predict at x=9; is this interpolation evidence?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. The query is outside training support. The arithmetic is defined but reliability is unestablished; marginal ranges also do not prove joint support in multiple dimensions."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 100
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "The query is outside training support. The arithmetic is defined but reliability is unestablished; marginal ranges also do not prove joint support in multiple dimensions.",
+      "id": "PR02.O3.independent.C",
+      "objective": "PR02.O3",
+      "prompt": "Training x range[0,3]; f(x)=x². Predict at x=10; is this interpolation evidence?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. The query is outside training support. The arithmetic is defined but reliability is unestablished; marginal ranges also do not prove joint support in multiple dimensions."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No: feature order must match the fitted schema; a same-shape matrix can still predict incorrectly"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Annotate columns and restore their original order before multiplication; do not retrain on prediction rows.",
+      "id": "PR02.O4.practice.A",
+      "objective": "PR02.O4",
+      "prompt": "A fitted schema is [a,b,a²,ab,b²], but prediction supplies [b,a,a²,ab,b²]. Dimensions match. Is it safe?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Annotate columns and restore their original order before multiplication; do not retrain on prediction rows."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "No: feature order must match the fitted schema; a same-shape matrix can still predict incorrectly"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Annotate columns and restore their original order before multiplication; do not retrain on prediction rows.",
+      "id": "PR02.O4.practice.B",
+      "objective": "PR02.O4",
+      "prompt": "A fitted schema is [a,b,a²,ab,b²], but prediction supplies [b,a,a²,ab,b²]. Dimensions match. Is it safe?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Annotate columns and restore their original order before multiplication; do not retrain on prediction rows."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "No: feature order must match the fitted schema; a same-shape matrix can still predict incorrectly"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Annotate columns and restore their original order before multiplication; do not retrain on prediction rows.",
+      "id": "PR02.O4.independent.A",
+      "objective": "PR02.O4",
+      "prompt": "A fitted schema is [a,b,a²,ab,b²], but prediction supplies [b,a,a²,ab,b²]. Dimensions match. Is it safe?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Annotate columns and restore their original order before multiplication; do not retrain on prediction rows."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No: feature order must match the fitted schema; a same-shape matrix can still predict incorrectly"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Annotate columns and restore their original order before multiplication; do not retrain on prediction rows.",
+      "id": "PR02.O4.independent.B",
+      "objective": "PR02.O4",
+      "prompt": "A fitted schema is [a,b,a²,ab,b²], but prediction supplies [b,a,a²,ab,b²]. Dimensions match. Is it safe?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Annotate columns and restore their original order before multiplication; do not retrain on prediction rows."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "No: feature order must match the fitted schema; a same-shape matrix can still predict incorrectly"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Annotate columns and restore their original order before multiplication; do not retrain on prediction rows.",
+      "id": "PR02.O4.independent.C",
+      "objective": "PR02.O4",
+      "prompt": "A fitted schema is [a,b,a²,ab,b²], but prediction supplies [b,a,a²,ab,b²]. Dimensions match. Is it safe?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Annotate columns and restore their original order before multiplication; do not retrain on prediction rows."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "3"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Select from the actual development errors, not a claim that the greatest degree must win. Training fit alone is insufficient.",
+      "id": "PR03.O1.practice.A",
+      "objective": "PR03.O1",
+      "prompt": "Compare fixed-profile development MAE [(1, 0.9000000000000021), (3, 0.4687500000000018), (9, 2.5390775100308236)]; which degree minimizes this development criterion?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Select from the actual development errors, not a claim that the greatest degree must win. Training fit alone is insufficient."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "3"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Select from the actual development errors, not a claim that the greatest degree must win. Training fit alone is insufficient.",
+      "id": "PR03.O1.practice.B",
+      "objective": "PR03.O1",
+      "prompt": "Compare fixed-profile development MAE [(1, 0.9000000000000021), (3, 0.4687500000000018), (9, 2.5390775100308236)]; which degree minimizes this development criterion?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Select from the actual development errors, not a claim that the greatest degree must win. Training fit alone is insufficient."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "3"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Select from the actual development errors, not a claim that the greatest degree must win. Training fit alone is insufficient.",
+      "id": "PR03.O1.independent.A",
+      "objective": "PR03.O1",
+      "prompt": "Compare fixed-profile development MAE [(1, 0.9000000000000021), (3, 0.4687500000000018), (9, 2.5390775100308236)]; which degree minimizes this development criterion?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Select from the actual development errors, not a claim that the greatest degree must win. Training fit alone is insufficient."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "3"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Select from the actual development errors, not a claim that the greatest degree must win. Training fit alone is insufficient.",
+      "id": "PR03.O1.independent.B",
+      "objective": "PR03.O1",
+      "prompt": "Compare fixed-profile development MAE [(1, 0.9000000000000021), (3, 0.4687500000000018), (9, 2.5390775100308236)]; which degree minimizes this development criterion?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Select from the actual development errors, not a claim that the greatest degree must win. Training fit alone is insufficient."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "3"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Select from the actual development errors, not a claim that the greatest degree must win. Training fit alone is insufficient.",
+      "id": "PR03.O1.independent.C",
+      "objective": "PR03.O1",
+      "prompt": "Compare fixed-profile development MAE [(1, 0.9000000000000021), (3, 0.4687500000000018), (9, 2.5390775100308236)]; which degree minimizes this development criterion?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Select from the actual development errors, not a claim that the greatest degree must win. Training fit alone is insufficient."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "Select on development folds, fit scaling separately inside each fold training set, freeze before final test"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "A fixed polynomial map may transform held-out inputs; learned means/scales and candidate selection must not use validation or final-test feedback outside permitted boundaries."
+            },
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "A fixed polynomial map may transform held-out inputs; learned means/scales and candidate selection must not use validation or final-test feedback outside permitted boundaries.",
+      "id": "PR03.O2.practice.A",
+      "objective": "PR03.O2",
+      "prompt": "Select degree/penalty and learned scaling using CV. Which information boundary is required?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. A fixed polynomial map may transform held-out inputs; learned means/scales and candidate selection must not use validation or final-test feedback outside permitted boundaries."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Select on development folds, fit scaling separately inside each fold training set, freeze before final test"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            },
+            {
+              "id": "mechanism",
+              "label": "A fixed polynomial map may transform held-out inputs; learned means/scales and candidate selection must not use validation or final-test feedback outside permitted boundaries."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "A fixed polynomial map may transform held-out inputs; learned means/scales and candidate selection must not use validation or final-test feedback outside permitted boundaries.",
+      "id": "PR03.O2.practice.B",
+      "objective": "PR03.O2",
+      "prompt": "Select degree/penalty and learned scaling using CV. Which information boundary is required?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. A fixed polynomial map may transform held-out inputs; learned means/scales and candidate selection must not use validation or final-test feedback outside permitted boundaries."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "Select on development folds, fit scaling separately inside each fold training set, freeze before final test"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "A fixed polynomial map may transform held-out inputs; learned means/scales and candidate selection must not use validation or final-test feedback outside permitted boundaries."
+            },
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "A fixed polynomial map may transform held-out inputs; learned means/scales and candidate selection must not use validation or final-test feedback outside permitted boundaries.",
+      "id": "PR03.O2.independent.A",
+      "objective": "PR03.O2",
+      "prompt": "Select degree/penalty and learned scaling using CV. Which information boundary is required?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. A fixed polynomial map may transform held-out inputs; learned means/scales and candidate selection must not use validation or final-test feedback outside permitted boundaries."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "Select on development folds, fit scaling separately inside each fold training set, freeze before final test"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            },
+            {
+              "id": "mechanism",
+              "label": "A fixed polynomial map may transform held-out inputs; learned means/scales and candidate selection must not use validation or final-test feedback outside permitted boundaries."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "A fixed polynomial map may transform held-out inputs; learned means/scales and candidate selection must not use validation or final-test feedback outside permitted boundaries.",
+      "id": "PR03.O2.independent.B",
+      "objective": "PR03.O2",
+      "prompt": "Select degree/penalty and learned scaling using CV. Which information boundary is required?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. A fixed polynomial map may transform held-out inputs; learned means/scales and candidate selection must not use validation or final-test feedback outside permitted boundaries."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Select on development folds, fit scaling separately inside each fold training set, freeze before final test"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "A fixed polynomial map may transform held-out inputs; learned means/scales and candidate selection must not use validation or final-test feedback outside permitted boundaries."
+            },
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "A fixed polynomial map may transform held-out inputs; learned means/scales and candidate selection must not use validation or final-test feedback outside permitted boundaries.",
+      "id": "PR03.O2.independent.C",
+      "objective": "PR03.O2",
+      "prompt": "Select degree/penalty and learned scaling using CV. Which information boundary is required?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. A fixed polynomial map may transform held-out inputs; learned means/scales and candidate selection must not use validation or final-test feedback outside permitted boundaries."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No: feature scale changes the coefficient needed for a prediction and therefore its penalty"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation.",
+      "id": "PR03.O3.practice.A",
+      "objective": "PR03.O3",
+      "prompt": "A feature is multiplied by100 before an L2 coefficient penalty. Is the same alpha automatically the same model preference?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "No: feature scale changes the coefficient needed for a prediction and therefore its penalty"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation.",
+      "id": "PR03.O3.practice.B",
+      "objective": "PR03.O3",
+      "prompt": "A feature is multiplied by100 before an L2 coefficient penalty. Is the same alpha automatically the same model preference?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "No: feature scale changes the coefficient needed for a prediction and therefore its penalty"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation.",
+      "id": "PR03.O3.independent.A",
+      "objective": "PR03.O3",
+      "prompt": "A feature is multiplied by100 before an L2 coefficient penalty. Is the same alpha automatically the same model preference?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No: feature scale changes the coefficient needed for a prediction and therefore its penalty"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation.",
+      "id": "PR03.O3.independent.B",
+      "objective": "PR03.O3",
+      "prompt": "A feature is multiplied by100 before an L2 coefficient penalty. Is the same alpha automatically the same model preference?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "No: feature scale changes the coefficient needed for a prediction and therefore its penalty"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation.",
+      "id": "PR03.O3.independent.C",
+      "objective": "PR03.O3",
+      "prompt": "A feature is multiplied by100 before an L2 coefficient penalty. Is the same alpha automatically the same model preference?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "entries": [
+              {
+                "optionId": "poly",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ],
+        [
+          {
+            "entries": [
+              {
+                "optionId": "poly_fixed",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "slots",
+          "label": "Decision or calculation",
+          "slots": [
+            {
+              "id": "step1",
+              "label": "Pipeline step1",
+              "options": [
+                {
+                  "id": "poly",
+                  "label": "Fixed polynomial expansion"
+                },
+                {
+                  "id": "poly_fixed",
+                  "label": "The same fixed polynomial expansion (equivalent alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Training-only scaling"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final test"
+                }
+              ]
+            },
+            {
+              "id": "step2",
+              "label": "Pipeline step2",
+              "options": [
+                {
+                  "id": "poly",
+                  "label": "Fixed polynomial expansion"
+                },
+                {
+                  "id": "poly_fixed",
+                  "label": "The same fixed polynomial expansion (equivalent alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Training-only scaling"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final test"
+                }
+              ]
+            },
+            {
+              "id": "step3",
+              "label": "Pipeline step3",
+              "options": [
+                {
+                  "id": "poly",
+                  "label": "Fixed polynomial expansion"
+                },
+                {
+                  "id": "poly_fixed",
+                  "label": "The same fixed polynomial expansion (equivalent alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Training-only scaling"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final test"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Expand the fixed features, fit scaling on fold training rows, then fit the estimator; wrap the entire unfitted pipeline in CV.",
+      "id": "PR03.O4.practice.A",
+      "objective": "PR03.O4",
+      "prompt": "Repair the supplied pipeline order; choose the complete safe tuple, not individually plausible fragments.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Expand the fixed features, fit scaling on fold training rows, then fit the estimator; wrap the entire unfitted pipeline in CV."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "entries": [
+              {
+                "optionId": "poly",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ],
+        [
+          {
+            "entries": [
+              {
+                "optionId": "poly_fixed",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "slots",
+          "label": "Decision or calculation",
+          "slots": [
+            {
+              "id": "step1",
+              "label": "Pipeline step1",
+              "options": [
+                {
+                  "id": "poly",
+                  "label": "Fixed polynomial expansion"
+                },
+                {
+                  "id": "poly_fixed",
+                  "label": "The same fixed polynomial expansion (equivalent alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Training-only scaling"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final test"
+                }
+              ]
+            },
+            {
+              "id": "step2",
+              "label": "Pipeline step2",
+              "options": [
+                {
+                  "id": "poly",
+                  "label": "Fixed polynomial expansion"
+                },
+                {
+                  "id": "poly_fixed",
+                  "label": "The same fixed polynomial expansion (equivalent alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Training-only scaling"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final test"
+                }
+              ]
+            },
+            {
+              "id": "step3",
+              "label": "Pipeline step3",
+              "options": [
+                {
+                  "id": "poly",
+                  "label": "Fixed polynomial expansion"
+                },
+                {
+                  "id": "poly_fixed",
+                  "label": "The same fixed polynomial expansion (equivalent alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Training-only scaling"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final test"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Expand the fixed features, fit scaling on fold training rows, then fit the estimator; wrap the entire unfitted pipeline in CV.",
+      "id": "PR03.O4.practice.B",
+      "objective": "PR03.O4",
+      "prompt": "Repair the supplied pipeline order; choose the complete safe tuple, not individually plausible fragments.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Expand the fixed features, fit scaling on fold training rows, then fit the estimator; wrap the entire unfitted pipeline in CV."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "entries": [
+              {
+                "optionId": "poly",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ],
+        [
+          {
+            "entries": [
+              {
+                "optionId": "poly_fixed",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "slots",
+          "label": "Decision or calculation",
+          "slots": [
+            {
+              "id": "step1",
+              "label": "Pipeline step1",
+              "options": [
+                {
+                  "id": "poly",
+                  "label": "Fixed polynomial expansion"
+                },
+                {
+                  "id": "poly_fixed",
+                  "label": "The same fixed polynomial expansion (equivalent alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Training-only scaling"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final test"
+                }
+              ]
+            },
+            {
+              "id": "step2",
+              "label": "Pipeline step2",
+              "options": [
+                {
+                  "id": "poly",
+                  "label": "Fixed polynomial expansion"
+                },
+                {
+                  "id": "poly_fixed",
+                  "label": "The same fixed polynomial expansion (equivalent alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Training-only scaling"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final test"
+                }
+              ]
+            },
+            {
+              "id": "step3",
+              "label": "Pipeline step3",
+              "options": [
+                {
+                  "id": "poly",
+                  "label": "Fixed polynomial expansion"
+                },
+                {
+                  "id": "poly_fixed",
+                  "label": "The same fixed polynomial expansion (equivalent alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Training-only scaling"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final test"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Expand the fixed features, fit scaling on fold training rows, then fit the estimator; wrap the entire unfitted pipeline in CV.",
+      "id": "PR03.O4.independent.A",
+      "objective": "PR03.O4",
+      "prompt": "Repair the supplied pipeline order; choose the complete safe tuple, not individually plausible fragments.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Expand the fixed features, fit scaling on fold training rows, then fit the estimator; wrap the entire unfitted pipeline in CV."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "entries": [
+              {
+                "optionId": "poly",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ],
+        [
+          {
+            "entries": [
+              {
+                "optionId": "poly_fixed",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "slots",
+          "label": "Decision or calculation",
+          "slots": [
+            {
+              "id": "step1",
+              "label": "Pipeline step1",
+              "options": [
+                {
+                  "id": "poly",
+                  "label": "Fixed polynomial expansion"
+                },
+                {
+                  "id": "poly_fixed",
+                  "label": "The same fixed polynomial expansion (equivalent alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Training-only scaling"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final test"
+                }
+              ]
+            },
+            {
+              "id": "step2",
+              "label": "Pipeline step2",
+              "options": [
+                {
+                  "id": "poly",
+                  "label": "Fixed polynomial expansion"
+                },
+                {
+                  "id": "poly_fixed",
+                  "label": "The same fixed polynomial expansion (equivalent alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Training-only scaling"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final test"
+                }
+              ]
+            },
+            {
+              "id": "step3",
+              "label": "Pipeline step3",
+              "options": [
+                {
+                  "id": "poly",
+                  "label": "Fixed polynomial expansion"
+                },
+                {
+                  "id": "poly_fixed",
+                  "label": "The same fixed polynomial expansion (equivalent alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Training-only scaling"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final test"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Expand the fixed features, fit scaling on fold training rows, then fit the estimator; wrap the entire unfitted pipeline in CV.",
+      "id": "PR03.O4.independent.B",
+      "objective": "PR03.O4",
+      "prompt": "Repair the supplied pipeline order; choose the complete safe tuple, not individually plausible fragments.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Expand the fixed features, fit scaling on fold training rows, then fit the estimator; wrap the entire unfitted pipeline in CV."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "entries": [
+              {
+                "optionId": "poly",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ],
+        [
+          {
+            "entries": [
+              {
+                "optionId": "poly_fixed",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "slots",
+          "label": "Decision or calculation",
+          "slots": [
+            {
+              "id": "step1",
+              "label": "Pipeline step1",
+              "options": [
+                {
+                  "id": "poly",
+                  "label": "Fixed polynomial expansion"
+                },
+                {
+                  "id": "poly_fixed",
+                  "label": "The same fixed polynomial expansion (equivalent alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Training-only scaling"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final test"
+                }
+              ]
+            },
+            {
+              "id": "step2",
+              "label": "Pipeline step2",
+              "options": [
+                {
+                  "id": "poly",
+                  "label": "Fixed polynomial expansion"
+                },
+                {
+                  "id": "poly_fixed",
+                  "label": "The same fixed polynomial expansion (equivalent alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Training-only scaling"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final test"
+                }
+              ]
+            },
+            {
+              "id": "step3",
+              "label": "Pipeline step3",
+              "options": [
+                {
+                  "id": "poly",
+                  "label": "Fixed polynomial expansion"
+                },
+                {
+                  "id": "poly_fixed",
+                  "label": "The same fixed polynomial expansion (equivalent alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Training-only scaling"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit using final test"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Expand the fixed features, fit scaling on fold training rows, then fit the estimator; wrap the entire unfitted pipeline in CV.",
+      "id": "PR03.O4.independent.C",
+      "objective": "PR03.O4",
+      "prompt": "Repair the supplied pipeline order; choose the complete safe tuple, not individually plausible fragments.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Expand the fixed features, fit scaling on fold training rows, then fit the estimator; wrap the entire unfitted pipeline in CV."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "Consider a curved feature map and compare development residuals against the existing linear baseline"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Residual structure suggests a missing pattern, not proof of a causal law or guaranteed benefit from every higher degree.",
+      "id": "PR04.O1.practice.A",
+      "objective": "PR04.O1",
+      "prompt": "Residuals from a straight line bend systematically with area. What is justified?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Residual structure suggests a missing pattern, not proof of a causal law or guaranteed benefit from every higher degree."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Consider a curved feature map and compare development residuals against the existing linear baseline"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Residual structure suggests a missing pattern, not proof of a causal law or guaranteed benefit from every higher degree.",
+      "id": "PR04.O1.practice.B",
+      "objective": "PR04.O1",
+      "prompt": "Residuals from a straight line bend systematically with area. What is justified?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Residual structure suggests a missing pattern, not proof of a causal law or guaranteed benefit from every higher degree."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "Consider a curved feature map and compare development residuals against the existing linear baseline"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Residual structure suggests a missing pattern, not proof of a causal law or guaranteed benefit from every higher degree.",
+      "id": "PR04.O1.independent.A",
+      "objective": "PR04.O1",
+      "prompt": "Residuals from a straight line bend systematically with area. What is justified?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Residual structure suggests a missing pattern, not proof of a causal law or guaranteed benefit from every higher degree."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "Consider a curved feature map and compare development residuals against the existing linear baseline"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Residual structure suggests a missing pattern, not proof of a causal law or guaranteed benefit from every higher degree.",
+      "id": "PR04.O1.independent.B",
+      "objective": "PR04.O1",
+      "prompt": "Residuals from a straight line bend systematically with area. What is justified?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Residual structure suggests a missing pattern, not proof of a causal law or guaranteed benefit from every higher degree."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Consider a curved feature map and compare development residuals against the existing linear baseline"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Residual structure suggests a missing pattern, not proof of a causal law or guaranteed benefit from every higher degree.",
+      "id": "PR04.O1.independent.C",
+      "objective": "PR04.O1",
+      "prompt": "Residuals from a straight line bend systematically with area. What is justified?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Residual structure suggests a missing pattern, not proof of a causal law or guaranteed benefit from every higher degree."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No: good interpolation is not evidence of safe extrapolation; inspect domain support and assumptions"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Polynomial tails can grow rapidly; finite numerical output is not a reliability guarantee or causal effect."
+            },
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Polynomial tails can grow rapidly; finite numerical output is not a reliability guarantee or causal effect.",
+      "id": "PR04.O2.practice.A",
+      "objective": "PR04.O2",
+      "prompt": "A degree3 model fits observed x in[0,3] well. Does that establish safe predictions at x=10?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Polynomial tails can grow rapidly; finite numerical output is not a reliability guarantee or causal effect."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "No: good interpolation is not evidence of safe extrapolation; inspect domain support and assumptions"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            },
+            {
+              "id": "mechanism",
+              "label": "Polynomial tails can grow rapidly; finite numerical output is not a reliability guarantee or causal effect."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Polynomial tails can grow rapidly; finite numerical output is not a reliability guarantee or causal effect.",
+      "id": "PR04.O2.practice.B",
+      "objective": "PR04.O2",
+      "prompt": "A degree4 model fits observed x in[0,3] well. Does that establish safe predictions at x=10?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Polynomial tails can grow rapidly; finite numerical output is not a reliability guarantee or causal effect."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "No: good interpolation is not evidence of safe extrapolation; inspect domain support and assumptions"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Polynomial tails can grow rapidly; finite numerical output is not a reliability guarantee or causal effect."
+            },
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Polynomial tails can grow rapidly; finite numerical output is not a reliability guarantee or causal effect.",
+      "id": "PR04.O2.independent.A",
+      "objective": "PR04.O2",
+      "prompt": "A degree5 model fits observed x in[0,3] well. Does that establish safe predictions at x=10?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Polynomial tails can grow rapidly; finite numerical output is not a reliability guarantee or causal effect."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No: good interpolation is not evidence of safe extrapolation; inspect domain support and assumptions"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            },
+            {
+              "id": "mechanism",
+              "label": "Polynomial tails can grow rapidly; finite numerical output is not a reliability guarantee or causal effect."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Polynomial tails can grow rapidly; finite numerical output is not a reliability guarantee or causal effect.",
+      "id": "PR04.O2.independent.B",
+      "objective": "PR04.O2",
+      "prompt": "A degree6 model fits observed x in[0,3] well. Does that establish safe predictions at x=10?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Polynomial tails can grow rapidly; finite numerical output is not a reliability guarantee or causal effect."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "No: good interpolation is not evidence of safe extrapolation; inspect domain support and assumptions"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Polynomial tails can grow rapidly; finite numerical output is not a reliability guarantee or causal effect."
+            },
+            {
+              "id": "shortcut",
+              "label": "A high score validates any feature interpretation, tail prediction or test-selection procedure."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Polynomial tails can grow rapidly; finite numerical output is not a reliability guarantee or causal effect.",
+      "id": "PR04.O2.independent.C",
+      "objective": "PR04.O2",
+      "prompt": "A degree7 model fits observed x in[0,3] well. Does that establish safe predictions at x=10?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Polynomial tails can grow rapidly; finite numerical output is not a reliability guarantee or causal effect."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "A polynomial is linear in coefficients but curved in inputs; a piecewise rule partitions regions with different assumptions"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Do not infer that one family always wins. Compare matching development rows and constraints; no tree estimator is implemented here.",
+      "id": "PR04.O3.practice.A",
+      "objective": "PR04.O3",
+      "prompt": "Compare a straight line, a polynomial weighted map and a supplied piecewise-constant rule. Which distinction is sound?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Do not infer that one family always wins. Compare matching development rows and constraints; no tree estimator is implemented here."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "A polynomial is linear in coefficients but curved in inputs; a piecewise rule partitions regions with different assumptions"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Do not infer that one family always wins. Compare matching development rows and constraints; no tree estimator is implemented here.",
+      "id": "PR04.O3.practice.B",
+      "objective": "PR04.O3",
+      "prompt": "Compare a straight line, a polynomial weighted map and a supplied piecewise-constant rule. Which distinction is sound?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Do not infer that one family always wins. Compare matching development rows and constraints; no tree estimator is implemented here."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "A polynomial is linear in coefficients but curved in inputs; a piecewise rule partitions regions with different assumptions"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Do not infer that one family always wins. Compare matching development rows and constraints; no tree estimator is implemented here.",
+      "id": "PR04.O3.independent.A",
+      "objective": "PR04.O3",
+      "prompt": "Compare a straight line, a polynomial weighted map and a supplied piecewise-constant rule. Which distinction is sound?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Do not infer that one family always wins. Compare matching development rows and constraints; no tree estimator is implemented here."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "A polynomial is linear in coefficients but curved in inputs; a piecewise rule partitions regions with different assumptions"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Do not infer that one family always wins. Compare matching development rows and constraints; no tree estimator is implemented here.",
+      "id": "PR04.O3.independent.B",
+      "objective": "PR04.O3",
+      "prompt": "Compare a straight line, a polynomial weighted map and a supplied piecewise-constant rule. Which distinction is sound?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Do not infer that one family always wins. Compare matching development rows and constraints; no tree estimator is implemented here."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "A polynomial is linear in coefficients but curved in inputs; a piecewise rule partitions regions with different assumptions"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Do not infer that one family always wins. Compare matching development rows and constraints; no tree estimator is implemented here.",
+      "id": "PR04.O3.independent.C",
+      "objective": "PR04.O3",
+      "prompt": "Compare a straight line, a polynomial weighted map and a supplied piecewise-constant rule. Which distinction is sound?",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Do not infer that one family always wins. Compare matching development rows and constraints; no tree estimator is implemented here."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "Record feature schema, units, fit/split IDs, degree/penalty selection, baseline errors and tail/shift limitations"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A price regressor does not directly classify churn or Good/Needs Improvement. Record target mismatch and failure cases, not only a winning score.",
+      "id": "PR04.O4.practice.A",
+      "objective": "PR04.O4",
+      "prompt": "Choose an honest model report for a curved house-price relationship.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. A price regressor does not directly classify churn or Good/Needs Improvement. Record target mismatch and failure cases, not only a winning score."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Record feature schema, units, fit/split IDs, degree/penalty selection, baseline errors and tail/shift limitations"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A price regressor does not directly classify churn or Good/Needs Improvement. Record target mismatch and failure cases, not only a winning score.",
+      "id": "PR04.O4.practice.B",
+      "objective": "PR04.O4",
+      "prompt": "Choose an honest model report for a curved house-price relationship.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. A price regressor does not directly classify churn or Good/Needs Improvement. Record target mismatch and failure cases, not only a winning score."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "Record feature schema, units, fit/split IDs, degree/penalty selection, baseline errors and tail/shift limitations"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A price regressor does not directly classify churn or Good/Needs Improvement. Record target mismatch and failure cases, not only a winning score.",
+      "id": "PR04.O4.independent.A",
+      "objective": "PR04.O4",
+      "prompt": "Choose an honest model report for a curved house-price relationship.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. A price regressor does not directly classify churn or Good/Needs Improvement. Record target mismatch and failure cases, not only a winning score."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            },
+            {
+              "id": "supported",
+              "label": "Record feature schema, units, fit/split IDs, degree/penalty selection, baseline errors and tail/shift limitations"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A price regressor does not directly classify churn or Good/Needs Improvement. Record target mismatch and failure cases, not only a winning score.",
+      "id": "PR04.O4.independent.B",
+      "objective": "PR04.O4",
+      "prompt": "Choose an honest model report for a curved house-price relationship.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. A price regressor does not directly classify churn or Good/Needs Improvement. Record target mismatch and failure cases, not only a winning score."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Record feature schema, units, fit/split IDs, degree/penalty selection, baseline errors and tail/shift limitations"
+            },
+            {
+              "id": "shortcut",
+              "label": "Higher degree and lower training error guarantee correct unseen predictions."
+            },
+            {
+              "id": "ignore",
+              "label": "Ignore feature order, units and information boundaries when dimensions or scores look plausible."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A price regressor does not directly classify churn or Good/Needs Improvement. Record target mismatch and failure cases, not only a winning score.",
+      "id": "PR04.O4.independent.C",
+      "objective": "PR04.O4",
+      "prompt": "Choose an honest model report for a curved house-price relationship.",
+      "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. A price regressor does not directly classify churn or Good/Needs Improvement. Record target mismatch and failure cases, not only a winning score."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "authored_sha256": "57a2f6a836f101ef6c6cb035361a23a8ac522623a606bab34b0c4f32f927c7a6",
+  "files": {
+    "pr-e1.manifest.v1.json": "b946fe015565175d5d1330244a5f0529ec2f3b722a34af06a87fa67d76c61d16",
+    "pr-e2.manifest.v1.json": "27e367dfb55fe3a330d7973f1e4e983f1e04ecdcc6db8f9d0b78afa3ed2067b7"
+  },
+  "reference_sha256": "13b7b3c3f0fdef8daf91797b5eacdfb65a603fd92efb3e3e8b12aa37e4fd0f59",
+  "schema": "supervised.polynomial.freeze.v1",
+  "spec_sha256": "5540eb134385b09abada8354d0f4cdce72a672ecc4c5fdbc7aae3a11a85bf3c8"
+}

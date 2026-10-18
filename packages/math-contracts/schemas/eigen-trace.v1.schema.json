@@ -1,0 +1,147 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "transform",
+    "matrix",
+    "vector",
+    "mapped",
+    "isEigenvector",
+    "eigenvalue",
+    "reason",
+    "knownPairs",
+    "hasRealEigenvectors"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "transform": {
+      "enum": [
+        "identity",
+        "scale",
+        "reflection",
+        "rotation",
+        "shear",
+        "collapse",
+        "spread"
+      ]
+    },
+    "matrix": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": {
+          "type": "number"
+        }
+      }
+    },
+    "vector": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "number"
+      }
+    },
+    "mapped": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "number"
+      }
+    },
+    "isEigenvector": {
+      "type": "boolean"
+    },
+    "eigenvalue": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "knownPairs": {
+      "type": "array",
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "vector",
+          "value",
+          "mapped"
+        ],
+        "properties": {
+          "vector": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "number"
+            }
+          },
+          "value": {
+            "type": "number"
+          },
+          "mapped": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "hasRealEigenvectors": {
+      "type": "boolean"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Known eigenpair intuition trace v1",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "isEigenvector": {
+            "const": false
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "eigenvalue": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "isEigenvector": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "eigenvalue": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  ]
+}

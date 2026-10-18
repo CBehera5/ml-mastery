@@ -1,0 +1,205 @@
+{
+  "schemaVersion": "1.0.0",
+  "cases": [
+    {
+      "name": "reference-example",
+      "input": {
+        "inputs": [
+          2,
+          3
+        ],
+        "weights": [
+          1,
+          2
+        ],
+        "bias": 1,
+        "target": 12,
+        "learningRate": 0.01
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "inputs": [
+            2.0,
+            3.0
+          ],
+          "weights": [
+            1.0,
+            2.0
+          ],
+          "bias": 1.0,
+          "target": 12.0,
+          "learningRate": 0.01
+        },
+        "forward": {
+          "weightedInputs": [
+            2.0,
+            6.0
+          ],
+          "prediction": 9.0,
+          "error": -3.0,
+          "loss": 9.0
+        },
+        "backward": {
+          "dLossDPrediction": -6.0,
+          "dPredictionDWeights": [
+            2.0,
+            3.0
+          ],
+          "weightGradients": [
+            -12.0,
+            -18.0
+          ],
+          "biasGradient": -6.0
+        },
+        "update": {
+          "learningRate": 0.01,
+          "weights": [
+            1.12,
+            2.18
+          ],
+          "bias": 1.06,
+          "prediction": 9.840000000000002,
+          "error": -2.1599999999999984,
+          "loss": 4.665599999999993
+        }
+      }
+    },
+    {
+      "name": "three-dimensional-fractional",
+      "input": {
+        "inputs": [
+          0.5,
+          -2.0,
+          1.25
+        ],
+        "weights": [
+          -1.5,
+          0.25,
+          2.0
+        ],
+        "bias": -0.75,
+        "target": 1.5,
+        "learningRate": 0.05
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "inputs": [
+            0.5,
+            -2.0,
+            1.25
+          ],
+          "weights": [
+            -1.5,
+            0.25,
+            2.0
+          ],
+          "bias": -0.75,
+          "target": 1.5,
+          "learningRate": 0.05
+        },
+        "forward": {
+          "weightedInputs": [
+            -0.75,
+            -0.5,
+            2.5
+          ],
+          "prediction": 0.5,
+          "error": -1.0,
+          "loss": 1.0
+        },
+        "backward": {
+          "dLossDPrediction": -2.0,
+          "dPredictionDWeights": [
+            0.5,
+            -2.0,
+            1.25
+          ],
+          "weightGradients": [
+            -1.0,
+            4.0,
+            -2.5
+          ],
+          "biasGradient": -2.0
+        },
+        "update": {
+          "learningRate": 0.05,
+          "weights": [
+            -1.45,
+            0.04999999999999999,
+            2.125
+          ],
+          "bias": -0.65,
+          "prediction": 1.18125,
+          "error": -0.3187500000000001,
+          "loss": 0.10160156250000006
+        }
+      }
+    },
+    {
+      "name": "zero-error",
+      "input": {
+        "inputs": [
+          1,
+          -1
+        ],
+        "weights": [
+          2,
+          2
+        ],
+        "bias": 3,
+        "target": 3,
+        "learningRate": 0.1
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "inputs": [
+            1.0,
+            -1.0
+          ],
+          "weights": [
+            2.0,
+            2.0
+          ],
+          "bias": 3.0,
+          "target": 3.0,
+          "learningRate": 0.1
+        },
+        "forward": {
+          "weightedInputs": [
+            2.0,
+            -2.0
+          ],
+          "prediction": 3.0,
+          "error": 0.0,
+          "loss": 0.0
+        },
+        "backward": {
+          "dLossDPrediction": 0.0,
+          "dPredictionDWeights": [
+            1.0,
+            -1.0
+          ],
+          "weightGradients": [
+            0.0,
+            -0.0
+          ],
+          "biasGradient": 0.0
+        },
+        "update": {
+          "learningRate": 0.1,
+          "weights": [
+            2.0,
+            2.0
+          ],
+          "bias": 3.0,
+          "prediction": 3.0,
+          "error": 0.0,
+          "loss": 0.0
+        }
+      }
+    }
+  ]
+}

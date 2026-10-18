@@ -1,0 +1,158 @@
+{
+  "schemaVersion": "1.0.0",
+  "assessmentId": "algebra.functions.assessment.v1",
+  "version": "1.0.0",
+  "minimumPercent": 80,
+  "variants": [
+    "v01",
+    "v02"
+  ],
+  "pointsPerQuestion": 1,
+  "absoluteTolerance": 0.001,
+  "questions": [
+    {
+      "key": "variables.roles",
+      "lesson": "variables",
+      "objectiveId": "algebra.functions.variables.roles",
+      "critical": false
+    },
+    {
+      "key": "variables.expression",
+      "lesson": "variables",
+      "objectiveId": "algebra.functions.variables.expression",
+      "critical": false
+    },
+    {
+      "key": "variables.solve",
+      "lesson": "variables",
+      "objectiveId": "algebra.functions.variables.solve",
+      "critical": true
+    },
+    {
+      "key": "variables.balance",
+      "lesson": "variables",
+      "objectiveId": "algebra.functions.variables.balance",
+      "critical": false
+    },
+    {
+      "key": "functions.mapping",
+      "lesson": "functions",
+      "objectiveId": "algebra.functions.functions.mapping",
+      "critical": true
+    },
+    {
+      "key": "functions.notation",
+      "lesson": "functions",
+      "objectiveId": "algebra.functions.functions.notation",
+      "critical": false
+    },
+    {
+      "key": "functions.domain",
+      "lesson": "functions",
+      "objectiveId": "algebra.functions.functions.domain",
+      "critical": false
+    },
+    {
+      "key": "functions.range",
+      "lesson": "functions",
+      "objectiveId": "algebra.functions.functions.range",
+      "critical": false
+    },
+    {
+      "key": "graphs.slope",
+      "lesson": "graphs",
+      "objectiveId": "algebra.functions.graphs.slope",
+      "critical": true
+    },
+    {
+      "key": "graphs.intercept",
+      "lesson": "graphs",
+      "objectiveId": "algebra.functions.graphs.intercept",
+      "critical": false
+    },
+    {
+      "key": "graphs.direction",
+      "lesson": "graphs",
+      "objectiveId": "algebra.functions.graphs.direction",
+      "critical": false
+    },
+    {
+      "key": "graphs.prediction",
+      "lesson": "graphs",
+      "objectiveId": "algebra.functions.graphs.prediction",
+      "critical": false
+    },
+    {
+      "key": "powers.rules",
+      "lesson": "powers",
+      "objectiveId": "algebra.functions.powers.rules",
+      "critical": false
+    },
+    {
+      "key": "powers.growth",
+      "lesson": "powers",
+      "objectiveId": "algebra.functions.powers.growth",
+      "critical": true
+    },
+    {
+      "key": "powers.decay",
+      "lesson": "powers",
+      "objectiveId": "algebra.functions.powers.decay",
+      "critical": false
+    },
+    {
+      "key": "powers.e",
+      "lesson": "powers",
+      "objectiveId": "algebra.functions.powers.e",
+      "critical": false
+    },
+    {
+      "key": "logarithms.inverse",
+      "lesson": "logarithms",
+      "objectiveId": "algebra.functions.logarithms.inverse",
+      "critical": true
+    },
+    {
+      "key": "logarithms.natural",
+      "lesson": "logarithms",
+      "objectiveId": "algebra.functions.logarithms.natural",
+      "critical": false
+    },
+    {
+      "key": "logarithms.domain",
+      "lesson": "logarithms",
+      "objectiveId": "algebra.functions.logarithms.domain",
+      "critical": false
+    },
+    {
+      "key": "logarithms.interpretation",
+      "lesson": "logarithms",
+      "objectiveId": "algebra.functions.logarithms.interpretation",
+      "critical": false
+    },
+    {
+      "key": "transformations.shift",
+      "lesson": "transformations",
+      "objectiveId": "algebra.functions.transformations.shift",
+      "critical": false
+    },
+    {
+      "key": "transformations.scale",
+      "lesson": "transformations",
+      "objectiveId": "algebra.functions.transformations.scale",
+      "critical": false
+    },
+    {
+      "key": "transformations.compose",
+      "lesson": "transformations",
+      "objectiveId": "algebra.functions.transformations.compose",
+      "critical": true
+    },
+    {
+      "key": "transformations.nonlinear",
+      "lesson": "transformations",
+      "objectiveId": "algebra.functions.transformations.nonlinear",
+      "critical": false
+    }
+  ]
+}

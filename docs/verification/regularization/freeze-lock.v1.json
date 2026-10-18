@@ -1,0 +1,16 @@
+{
+  "conventions_sha256": "153275b8e0697031eea250b40ff735b6c12e6cf3f6e1eef1f160f74c5fd1ee89",
+  "files": {
+    "rg-e1.manifest.v1.json": "d6e642b4c559b136187febf0c8d1294561dddeb276012f35fc45c48a12db69bc",
+    "rg-e2.manifest.v1.json": "bf74e0f2fb801cff82cc629d40b108b5d1675a671d4d80b0a76b07886204a1df"
+  },
+  "profile": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "python": "3.13.16",
+    "scikit-learn": "1.9.1"
+  },
+  "reference_sha256": "304ff57ee4ff79f3e4b4dd641a3b4189e63609a429e24491eb6da6524f07639c",
+  "schema": "supervised.regularization.freeze.v1"
+}

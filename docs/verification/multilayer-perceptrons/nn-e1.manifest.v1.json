@@ -1,0 +1,3947 @@
+{
+  "accessibility": [
+    "Native labeled keyboard controls and visible focus",
+    "Ordered layer and chain-rule text alternatives",
+    "Numerical tables with units,dimensions,parameter values and fit IDs",
+    "Wrapping summaries plus local focusable table scrolling at320px",
+    "No color,hover,animation or spatial-only meaning;reduced motion",
+    "No massive live-region trace dump"
+  ],
+  "configurations": [
+    {
+      "controls": {
+        "activation": "identity",
+        "hidden_units": 1,
+        "parameter_scene": "base"
+      },
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "explanation": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty.",
+      "fit_claim": false,
+      "forward": {
+        "A1": [
+          [
+            -1.25
+          ],
+          [
+            -0.25
+          ],
+          [
+            0.75
+          ],
+          [
+            0.0
+          ]
+        ],
+        "Z1": [
+          [
+            -1.25
+          ],
+          [
+            -0.25
+          ],
+          [
+            0.75
+          ],
+          [
+            0.0
+          ]
+        ],
+        "logits": [
+          -1.775,
+          -0.275,
+          1.225,
+          0.1
+        ],
+        "predictions": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.14492163148782286,
+          0.4316800165217519,
+          0.7729422593967386,
+          0.52497918747894
+        ]
+      },
+      "id": "nn-e1.manual.h1.identity.base.v1",
+      "inputs": [
+        [
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.5,
+          -0.5
+        ]
+      ],
+      "kind": "manual-forward",
+      "native_class_tie": "p>0.5 gives1;equality gives0",
+      "parameter_count": 5,
+      "parameters": {
+        "W1": [
+          [
+            1.0
+          ],
+          [
+            0.5
+          ]
+        ],
+        "W2": [
+          [
+            1.5
+          ]
+        ],
+        "b1": [
+          -0.25
+        ],
+        "b2": [
+          0.1
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "p=0.5249792,class=1,parameters=5"
+        },
+        {
+          "id": "alternative-0",
+          "label": "p=0.5,class=0;weights and biases are irrelevant"
+        },
+        {
+          "id": "alternative-1",
+          "label": "Stacking identity layers guarantees a nonlinear rule and calibrated probabilities"
+        }
+      ],
+      "prediction_question": "For the FINAL listed query,predict output probability,class and learned parameter count before revealing intermediate signals.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "shapes": {
+        "W1": [
+          2,
+          1
+        ],
+        "W2": [
+          1,
+          1
+        ],
+        "X": [
+          4,
+          2
+        ],
+        "b1": [
+          1
+        ],
+        "b2": [
+          1
+        ]
+      }
+    },
+    {
+      "controls": {
+        "activation": "identity",
+        "hidden_units": 1,
+        "parameter_scene": "shifted"
+      },
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "explanation": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty.",
+      "fit_claim": false,
+      "forward": {
+        "A1": [
+          [
+            -0.5
+          ],
+          [
+            0.5
+          ],
+          [
+            1.5
+          ],
+          [
+            0.75
+          ]
+        ],
+        "Z1": [
+          [
+            -0.5
+          ],
+          [
+            0.5
+          ],
+          [
+            1.5
+          ],
+          [
+            0.75
+          ]
+        ],
+        "logits": [
+          -0.4,
+          0.6,
+          1.6,
+          0.85
+        ],
+        "predictions": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.401312339887548,
+          0.6456563062257954,
+          0.8320183851339245,
+          0.7005671424739729
+        ]
+      },
+      "id": "nn-e1.manual.h1.identity.shifted.v1",
+      "inputs": [
+        [
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.5,
+          -0.5
+        ]
+      ],
+      "kind": "manual-forward",
+      "native_class_tie": "p>0.5 gives1;equality gives0",
+      "parameter_count": 5,
+      "parameters": {
+        "W1": [
+          [
+            1.0
+          ],
+          [
+            0.5
+          ]
+        ],
+        "W2": [
+          [
+            1.0
+          ]
+        ],
+        "b1": [
+          0.5
+        ],
+        "b2": [
+          0.1
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "p=0.7005671,class=1,parameters=5"
+        },
+        {
+          "id": "alternative-0",
+          "label": "p=0.5,class=0;weights and biases are irrelevant"
+        },
+        {
+          "id": "alternative-1",
+          "label": "Stacking identity layers guarantees a nonlinear rule and calibrated probabilities"
+        }
+      ],
+      "prediction_question": "For the FINAL listed query,predict output probability,class and learned parameter count before revealing intermediate signals.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "shapes": {
+        "W1": [
+          2,
+          1
+        ],
+        "W2": [
+          1,
+          1
+        ],
+        "X": [
+          4,
+          2
+        ],
+        "b1": [
+          1
+        ],
+        "b2": [
+          1
+        ]
+      }
+    },
+    {
+      "controls": {
+        "activation": "logistic",
+        "hidden_units": 1,
+        "parameter_scene": "base"
+      },
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "explanation": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty.",
+      "fit_claim": false,
+      "forward": {
+        "A1": [
+          [
+            0.22270013882530884
+          ],
+          [
+            0.4378234991142019
+          ],
+          [
+            0.679178699175393
+          ],
+          [
+            0.5
+          ]
+        ],
+        "Z1": [
+          [
+            -1.25
+          ],
+          [
+            -0.25
+          ],
+          [
+            0.75
+          ],
+          [
+            0.0
+          ]
+        ],
+        "logits": [
+          0.43405020823796325,
+          0.7567352486713028,
+          1.1187680487630896,
+          0.85
+        ],
+        "predictions": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.6068404048925155,
+          0.6806445016518209,
+          0.753760130648301,
+          0.7005671424739729
+        ]
+      },
+      "id": "nn-e1.manual.h1.logistic.base.v1",
+      "inputs": [
+        [
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.5,
+          -0.5
+        ]
+      ],
+      "kind": "manual-forward",
+      "native_class_tie": "p>0.5 gives1;equality gives0",
+      "parameter_count": 5,
+      "parameters": {
+        "W1": [
+          [
+            1.0
+          ],
+          [
+            0.5
+          ]
+        ],
+        "W2": [
+          [
+            1.5
+          ]
+        ],
+        "b1": [
+          -0.25
+        ],
+        "b2": [
+          0.1
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "p=0.7005671,class=1,parameters=5"
+        },
+        {
+          "id": "alternative-0",
+          "label": "p=0.5,class=0;weights and biases are irrelevant"
+        },
+        {
+          "id": "alternative-1",
+          "label": "Stacking identity layers guarantees a nonlinear rule and calibrated probabilities"
+        }
+      ],
+      "prediction_question": "For the FINAL listed query,predict output probability,class and learned parameter count before revealing intermediate signals.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "shapes": {
+        "W1": [
+          2,
+          1
+        ],
+        "W2": [
+          1,
+          1
+        ],
+        "X": [
+          4,
+          2
+        ],
+        "b1": [
+          1
+        ],
+        "b2": [
+          1
+        ]
+      }
+    },
+    {
+      "controls": {
+        "activation": "logistic",
+        "hidden_units": 1,
+        "parameter_scene": "shifted"
+      },
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "explanation": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty.",
+      "fit_claim": false,
+      "forward": {
+        "A1": [
+          [
+            0.37754066879814546
+          ],
+          [
+            0.6224593312018546
+          ],
+          [
+            0.8175744761936437
+          ],
+          [
+            0.679178699175393
+          ]
+        ],
+        "Z1": [
+          [
+            -0.5
+          ],
+          [
+            0.5
+          ],
+          [
+            1.5
+          ],
+          [
+            0.75
+          ]
+        ],
+        "logits": [
+          0.4775406687981455,
+          0.7224593312018546,
+          0.9175744761936436,
+          0.779178699175393
+        ],
+        "predictions": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.6171669715929976,
+          0.6731483484984315,
+          0.7145476308362568,
+          0.6855030778187116
+        ]
+      },
+      "id": "nn-e1.manual.h1.logistic.shifted.v1",
+      "inputs": [
+        [
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.5,
+          -0.5
+        ]
+      ],
+      "kind": "manual-forward",
+      "native_class_tie": "p>0.5 gives1;equality gives0",
+      "parameter_count": 5,
+      "parameters": {
+        "W1": [
+          [
+            1.0
+          ],
+          [
+            0.5
+          ]
+        ],
+        "W2": [
+          [
+            1.0
+          ]
+        ],
+        "b1": [
+          0.5
+        ],
+        "b2": [
+          0.1
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "p=0.6855031,class=1,parameters=5"
+        },
+        {
+          "id": "alternative-0",
+          "label": "p=0.5,class=0;weights and biases are irrelevant"
+        },
+        {
+          "id": "alternative-1",
+          "label": "Stacking identity layers guarantees a nonlinear rule and calibrated probabilities"
+        }
+      ],
+      "prediction_question": "For the FINAL listed query,predict output probability,class and learned parameter count before revealing intermediate signals.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "shapes": {
+        "W1": [
+          2,
+          1
+        ],
+        "W2": [
+          1,
+          1
+        ],
+        "X": [
+          4,
+          2
+        ],
+        "b1": [
+          1
+        ],
+        "b2": [
+          1
+        ]
+      }
+    },
+    {
+      "controls": {
+        "activation": "relu",
+        "hidden_units": 1,
+        "parameter_scene": "base"
+      },
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "explanation": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty.",
+      "fit_claim": false,
+      "forward": {
+        "A1": [
+          [
+            0.0
+          ],
+          [
+            0.0
+          ],
+          [
+            0.75
+          ],
+          [
+            0.0
+          ]
+        ],
+        "Z1": [
+          [
+            -1.25
+          ],
+          [
+            -0.25
+          ],
+          [
+            0.75
+          ],
+          [
+            0.0
+          ]
+        ],
+        "logits": [
+          0.1,
+          0.1,
+          1.225,
+          0.1
+        ],
+        "predictions": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.52497918747894,
+          0.52497918747894,
+          0.7729422593967386,
+          0.52497918747894
+        ]
+      },
+      "id": "nn-e1.manual.h1.relu.base.v1",
+      "inputs": [
+        [
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.5,
+          -0.5
+        ]
+      ],
+      "kind": "manual-forward",
+      "native_class_tie": "p>0.5 gives1;equality gives0",
+      "parameter_count": 5,
+      "parameters": {
+        "W1": [
+          [
+            1.0
+          ],
+          [
+            0.5
+          ]
+        ],
+        "W2": [
+          [
+            1.5
+          ]
+        ],
+        "b1": [
+          -0.25
+        ],
+        "b2": [
+          0.1
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "p=0.5249792,class=1,parameters=5"
+        },
+        {
+          "id": "alternative-0",
+          "label": "p=0.5,class=0;weights and biases are irrelevant"
+        },
+        {
+          "id": "alternative-1",
+          "label": "Stacking identity layers guarantees a nonlinear rule and calibrated probabilities"
+        }
+      ],
+      "prediction_question": "For the FINAL listed query,predict output probability,class and learned parameter count before revealing intermediate signals.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "shapes": {
+        "W1": [
+          2,
+          1
+        ],
+        "W2": [
+          1,
+          1
+        ],
+        "X": [
+          4,
+          2
+        ],
+        "b1": [
+          1
+        ],
+        "b2": [
+          1
+        ]
+      }
+    },
+    {
+      "controls": {
+        "activation": "relu",
+        "hidden_units": 1,
+        "parameter_scene": "shifted"
+      },
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "explanation": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty.",
+      "fit_claim": false,
+      "forward": {
+        "A1": [
+          [
+            0.0
+          ],
+          [
+            0.5
+          ],
+          [
+            1.5
+          ],
+          [
+            0.75
+          ]
+        ],
+        "Z1": [
+          [
+            -0.5
+          ],
+          [
+            0.5
+          ],
+          [
+            1.5
+          ],
+          [
+            0.75
+          ]
+        ],
+        "logits": [
+          0.1,
+          0.6,
+          1.6,
+          0.85
+        ],
+        "predictions": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.52497918747894,
+          0.6456563062257954,
+          0.8320183851339245,
+          0.7005671424739729
+        ]
+      },
+      "id": "nn-e1.manual.h1.relu.shifted.v1",
+      "inputs": [
+        [
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.5,
+          -0.5
+        ]
+      ],
+      "kind": "manual-forward",
+      "native_class_tie": "p>0.5 gives1;equality gives0",
+      "parameter_count": 5,
+      "parameters": {
+        "W1": [
+          [
+            1.0
+          ],
+          [
+            0.5
+          ]
+        ],
+        "W2": [
+          [
+            1.0
+          ]
+        ],
+        "b1": [
+          0.5
+        ],
+        "b2": [
+          0.1
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "p=0.7005671,class=1,parameters=5"
+        },
+        {
+          "id": "alternative-0",
+          "label": "p=0.5,class=0;weights and biases are irrelevant"
+        },
+        {
+          "id": "alternative-1",
+          "label": "Stacking identity layers guarantees a nonlinear rule and calibrated probabilities"
+        }
+      ],
+      "prediction_question": "For the FINAL listed query,predict output probability,class and learned parameter count before revealing intermediate signals.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "shapes": {
+        "W1": [
+          2,
+          1
+        ],
+        "W2": [
+          1,
+          1
+        ],
+        "X": [
+          4,
+          2
+        ],
+        "b1": [
+          1
+        ],
+        "b2": [
+          1
+        ]
+      }
+    },
+    {
+      "controls": {
+        "activation": "identity",
+        "hidden_units": 2,
+        "parameter_scene": "base"
+      },
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "explanation": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty.",
+      "fit_claim": false,
+      "forward": {
+        "A1": [
+          [
+            -1.25,
+            1.5
+          ],
+          [
+            -0.25,
+            0.5
+          ],
+          [
+            0.75,
+            -0.5
+          ],
+          [
+            0.0,
+            -0.5
+          ]
+        ],
+        "Z1": [
+          [
+            -1.25,
+            1.5
+          ],
+          [
+            -0.25,
+            0.5
+          ],
+          [
+            0.75,
+            -0.5
+          ],
+          [
+            0.0,
+            -0.5
+          ]
+        ],
+        "logits": [
+          -2.9,
+          -0.65,
+          1.6,
+          0.475
+        ],
+        "predictions": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.05215356307841774,
+          0.3429895373265012,
+          0.8320183851339245,
+          0.6165665045213193
+        ]
+      },
+      "id": "nn-e1.manual.h2.identity.base.v1",
+      "inputs": [
+        [
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.5,
+          -0.5
+        ]
+      ],
+      "kind": "manual-forward",
+      "native_class_tie": "p>0.5 gives1;equality gives0",
+      "parameter_count": 9,
+      "parameters": {
+        "W1": [
+          [
+            1.0,
+            -1.0
+          ],
+          [
+            0.5,
+            1.0
+          ]
+        ],
+        "W2": [
+          [
+            1.5
+          ],
+          [
+            -0.75
+          ]
+        ],
+        "b1": [
+          -0.25,
+          0.5
+        ],
+        "b2": [
+          0.1
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "p=0.6165665,class=1,parameters=9"
+        },
+        {
+          "id": "alternative-0",
+          "label": "p=0.5,class=0;weights and biases are irrelevant"
+        },
+        {
+          "id": "alternative-1",
+          "label": "Stacking identity layers guarantees a nonlinear rule and calibrated probabilities"
+        }
+      ],
+      "prediction_question": "For the FINAL listed query,predict output probability,class and learned parameter count before revealing intermediate signals.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "shapes": {
+        "W1": [
+          2,
+          2
+        ],
+        "W2": [
+          2,
+          1
+        ],
+        "X": [
+          4,
+          2
+        ],
+        "b1": [
+          2
+        ],
+        "b2": [
+          1
+        ]
+      }
+    },
+    {
+      "controls": {
+        "activation": "identity",
+        "hidden_units": 2,
+        "parameter_scene": "shifted"
+      },
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "explanation": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty.",
+      "fit_claim": false,
+      "forward": {
+        "A1": [
+          [
+            -0.5,
+            1.5
+          ],
+          [
+            0.5,
+            0.5
+          ],
+          [
+            1.5,
+            -0.5
+          ],
+          [
+            0.75,
+            -0.5
+          ]
+        ],
+        "Z1": [
+          [
+            -0.5,
+            1.5
+          ],
+          [
+            0.5,
+            0.5
+          ],
+          [
+            1.5,
+            -0.5
+          ],
+          [
+            0.75,
+            -0.5
+          ]
+        ],
+        "logits": [
+          -1.525,
+          0.225,
+          1.975,
+          1.225
+        ],
+        "predictions": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.1787264236588505,
+          0.5560138905446199,
+          0.878147149230382,
+          0.7729422593967386
+        ]
+      },
+      "id": "nn-e1.manual.h2.identity.shifted.v1",
+      "inputs": [
+        [
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.5,
+          -0.5
+        ]
+      ],
+      "kind": "manual-forward",
+      "native_class_tie": "p>0.5 gives1;equality gives0",
+      "parameter_count": 9,
+      "parameters": {
+        "W1": [
+          [
+            1.0,
+            -1.0
+          ],
+          [
+            0.5,
+            1.0
+          ]
+        ],
+        "W2": [
+          [
+            1.0
+          ],
+          [
+            -0.75
+          ]
+        ],
+        "b1": [
+          0.5,
+          0.5
+        ],
+        "b2": [
+          0.1
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "p=0.7729423,class=1,parameters=9"
+        },
+        {
+          "id": "alternative-0",
+          "label": "p=0.5,class=0;weights and biases are irrelevant"
+        },
+        {
+          "id": "alternative-1",
+          "label": "Stacking identity layers guarantees a nonlinear rule and calibrated probabilities"
+        }
+      ],
+      "prediction_question": "For the FINAL listed query,predict output probability,class and learned parameter count before revealing intermediate signals.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "shapes": {
+        "W1": [
+          2,
+          2
+        ],
+        "W2": [
+          2,
+          1
+        ],
+        "X": [
+          4,
+          2
+        ],
+        "b1": [
+          2
+        ],
+        "b2": [
+          1
+        ]
+      }
+    },
+    {
+      "controls": {
+        "activation": "logistic",
+        "hidden_units": 2,
+        "parameter_scene": "base"
+      },
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "explanation": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty.",
+      "fit_claim": false,
+      "forward": {
+        "A1": [
+          [
+            0.22270013882530884,
+            0.8175744761936437
+          ],
+          [
+            0.4378234991142019,
+            0.6224593312018546
+          ],
+          [
+            0.679178699175393,
+            0.37754066879814546
+          ],
+          [
+            0.5,
+            0.37754066879814546
+          ]
+        ],
+        "Z1": [
+          [
+            -1.25,
+            1.5
+          ],
+          [
+            -0.25,
+            0.5
+          ],
+          [
+            0.75,
+            -0.5
+          ],
+          [
+            0.0,
+            -0.5
+          ]
+        ],
+        "logits": [
+          -0.17913064890726946,
+          0.28989075026991185,
+          0.8356125471644803,
+          0.566844498401391
+        ],
+        "predictions": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.4553367028245223,
+          0.571969386578414,
+          0.6975403638873876,
+          0.6380347412697888
+        ]
+      },
+      "id": "nn-e1.manual.h2.logistic.base.v1",
+      "inputs": [
+        [
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.5,
+          -0.5
+        ]
+      ],
+      "kind": "manual-forward",
+      "native_class_tie": "p>0.5 gives1;equality gives0",
+      "parameter_count": 9,
+      "parameters": {
+        "W1": [
+          [
+            1.0,
+            -1.0
+          ],
+          [
+            0.5,
+            1.0
+          ]
+        ],
+        "W2": [
+          [
+            1.5
+          ],
+          [
+            -0.75
+          ]
+        ],
+        "b1": [
+          -0.25,
+          0.5
+        ],
+        "b2": [
+          0.1
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "p=0.6380347,class=1,parameters=9"
+        },
+        {
+          "id": "alternative-0",
+          "label": "p=0.5,class=0;weights and biases are irrelevant"
+        },
+        {
+          "id": "alternative-1",
+          "label": "Stacking identity layers guarantees a nonlinear rule and calibrated probabilities"
+        }
+      ],
+      "prediction_question": "For the FINAL listed query,predict output probability,class and learned parameter count before revealing intermediate signals.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "shapes": {
+        "W1": [
+          2,
+          2
+        ],
+        "W2": [
+          2,
+          1
+        ],
+        "X": [
+          4,
+          2
+        ],
+        "b1": [
+          2
+        ],
+        "b2": [
+          1
+        ]
+      }
+    },
+    {
+      "controls": {
+        "activation": "logistic",
+        "hidden_units": 2,
+        "parameter_scene": "shifted"
+      },
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "explanation": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty.",
+      "fit_claim": false,
+      "forward": {
+        "A1": [
+          [
+            0.37754066879814546,
+            0.8175744761936437
+          ],
+          [
+            0.6224593312018546,
+            0.6224593312018546
+          ],
+          [
+            0.8175744761936437,
+            0.37754066879814546
+          ],
+          [
+            0.679178699175393,
+            0.37754066879814546
+          ]
+        ],
+        "Z1": [
+          [
+            -0.5,
+            1.5
+          ],
+          [
+            0.5,
+            0.5
+          ],
+          [
+            1.5,
+            -0.5
+          ],
+          [
+            0.75,
+            -0.5
+          ]
+        ],
+        "logits": [
+          -0.13564018834708727,
+          0.2556148328004636,
+          0.6344189745950345,
+          0.4960231975767839
+        ],
+        "predictions": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.4661418479280575,
+          0.5635580166754705,
+          0.6534907749047686,
+          0.6215243137516915
+        ]
+      },
+      "id": "nn-e1.manual.h2.logistic.shifted.v1",
+      "inputs": [
+        [
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.5,
+          -0.5
+        ]
+      ],
+      "kind": "manual-forward",
+      "native_class_tie": "p>0.5 gives1;equality gives0",
+      "parameter_count": 9,
+      "parameters": {
+        "W1": [
+          [
+            1.0,
+            -1.0
+          ],
+          [
+            0.5,
+            1.0
+          ]
+        ],
+        "W2": [
+          [
+            1.0
+          ],
+          [
+            -0.75
+          ]
+        ],
+        "b1": [
+          0.5,
+          0.5
+        ],
+        "b2": [
+          0.1
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "p=0.6215243,class=1,parameters=9"
+        },
+        {
+          "id": "alternative-0",
+          "label": "p=0.5,class=0;weights and biases are irrelevant"
+        },
+        {
+          "id": "alternative-1",
+          "label": "Stacking identity layers guarantees a nonlinear rule and calibrated probabilities"
+        }
+      ],
+      "prediction_question": "For the FINAL listed query,predict output probability,class and learned parameter count before revealing intermediate signals.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "shapes": {
+        "W1": [
+          2,
+          2
+        ],
+        "W2": [
+          2,
+          1
+        ],
+        "X": [
+          4,
+          2
+        ],
+        "b1": [
+          2
+        ],
+        "b2": [
+          1
+        ]
+      }
+    },
+    {
+      "controls": {
+        "activation": "relu",
+        "hidden_units": 2,
+        "parameter_scene": "base"
+      },
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "explanation": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty.",
+      "fit_claim": false,
+      "forward": {
+        "A1": [
+          [
+            0.0,
+            1.5
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.75,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "Z1": [
+          [
+            -1.25,
+            1.5
+          ],
+          [
+            -0.25,
+            0.5
+          ],
+          [
+            0.75,
+            -0.5
+          ],
+          [
+            0.0,
+            -0.5
+          ]
+        ],
+        "logits": [
+          -1.025,
+          -0.275,
+          1.225,
+          0.1
+        ],
+        "predictions": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.2640546060728515,
+          0.4316800165217519,
+          0.7729422593967386,
+          0.52497918747894
+        ]
+      },
+      "id": "nn-e1.manual.h2.relu.base.v1",
+      "inputs": [
+        [
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.5,
+          -0.5
+        ]
+      ],
+      "kind": "manual-forward",
+      "native_class_tie": "p>0.5 gives1;equality gives0",
+      "parameter_count": 9,
+      "parameters": {
+        "W1": [
+          [
+            1.0,
+            -1.0
+          ],
+          [
+            0.5,
+            1.0
+          ]
+        ],
+        "W2": [
+          [
+            1.5
+          ],
+          [
+            -0.75
+          ]
+        ],
+        "b1": [
+          -0.25,
+          0.5
+        ],
+        "b2": [
+          0.1
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "p=0.5249792,class=1,parameters=9"
+        },
+        {
+          "id": "alternative-0",
+          "label": "p=0.5,class=0;weights and biases are irrelevant"
+        },
+        {
+          "id": "alternative-1",
+          "label": "Stacking identity layers guarantees a nonlinear rule and calibrated probabilities"
+        }
+      ],
+      "prediction_question": "For the FINAL listed query,predict output probability,class and learned parameter count before revealing intermediate signals.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "shapes": {
+        "W1": [
+          2,
+          2
+        ],
+        "W2": [
+          2,
+          1
+        ],
+        "X": [
+          4,
+          2
+        ],
+        "b1": [
+          2
+        ],
+        "b2": [
+          1
+        ]
+      }
+    },
+    {
+      "controls": {
+        "activation": "relu",
+        "hidden_units": 2,
+        "parameter_scene": "shifted"
+      },
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "explanation": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty.",
+      "fit_claim": false,
+      "forward": {
+        "A1": [
+          [
+            0.0,
+            1.5
+          ],
+          [
+            0.5,
+            0.5
+          ],
+          [
+            1.5,
+            0.0
+          ],
+          [
+            0.75,
+            0.0
+          ]
+        ],
+        "Z1": [
+          [
+            -0.5,
+            1.5
+          ],
+          [
+            0.5,
+            0.5
+          ],
+          [
+            1.5,
+            -0.5
+          ],
+          [
+            0.75,
+            -0.5
+          ]
+        ],
+        "logits": [
+          -1.025,
+          0.225,
+          1.6,
+          0.85
+        ],
+        "predictions": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.2640546060728515,
+          0.5560138905446199,
+          0.8320183851339245,
+          0.7005671424739729
+        ]
+      },
+      "id": "nn-e1.manual.h2.relu.shifted.v1",
+      "inputs": [
+        [
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.5,
+          -0.5
+        ]
+      ],
+      "kind": "manual-forward",
+      "native_class_tie": "p>0.5 gives1;equality gives0",
+      "parameter_count": 9,
+      "parameters": {
+        "W1": [
+          [
+            1.0,
+            -1.0
+          ],
+          [
+            0.5,
+            1.0
+          ]
+        ],
+        "W2": [
+          [
+            1.0
+          ],
+          [
+            -0.75
+          ]
+        ],
+        "b1": [
+          0.5,
+          0.5
+        ],
+        "b2": [
+          0.1
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "p=0.7005671,class=1,parameters=9"
+        },
+        {
+          "id": "alternative-0",
+          "label": "p=0.5,class=0;weights and biases are irrelevant"
+        },
+        {
+          "id": "alternative-1",
+          "label": "Stacking identity layers guarantees a nonlinear rule and calibrated probabilities"
+        }
+      ],
+      "prediction_question": "For the FINAL listed query,predict output probability,class and learned parameter count before revealing intermediate signals.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Weighted sums include biases;hidden activation changes composition,and the output sigmoid estimates a probability,not calibrated or causal certainty."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "shapes": {
+        "W1": [
+          2,
+          2
+        ],
+        "W2": [
+          2,
+          1
+        ],
+        "X": [
+          4,
+          2
+        ],
+        "b1": [
+          2
+        ],
+        "b2": [
+          1
+        ]
+      }
+    },
+    {
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "epoch": 32,
+      "explanation": "Inference applies the frozen scaler and weights;hidden units combine nonlinear transformations but do not inherently encode human concepts.",
+      "forward": {
+        "A1": [
+          [
+            0.7161757466502574,
+            0.657865070211866
+          ],
+          [
+            0.6145745605990499,
+            0.6771817660844295
+          ],
+          [
+            0.5911103438518103,
+            0.6013264866237156
+          ],
+          [
+            0.5510212580742125,
+            0.5665604810529696
+          ],
+          [
+            0.5266678517645454,
+            0.48449908699198974
+          ],
+          [
+            0.412845356756188,
+            0.5062577022976291
+          ]
+        ],
+        "Z1": [
+          [
+            0.9255703726807178,
+            0.653794659029505
+          ],
+          [
+            0.4665824954501962,
+            0.7408503029174847
+          ],
+          [
+            0.36855737672919686,
+            0.4109952062931246
+          ],
+          [
+            0.20479784806106682,
+            0.26783156895293947
+          ],
+          [
+            0.10677272934006748,
+            -0.06202352767142055
+          ],
+          [
+            -0.3522151478904541,
+            0.025032116216559097
+          ]
+        ],
+        "logits": [
+          -0.1728656924636558,
+          -0.13097943522301447,
+          -0.0759886185276677,
+          -0.03554465776683435,
+          0.023409841124463093,
+          0.07026768444804188
+        ],
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.4568908743318958,
+          0.4673018741981735,
+          0.4810119813180122,
+          0.49111477102192247,
+          0.5058521930233325,
+          0.5175596965535639
+        ]
+      },
+      "id": "nn-e1.nn.training.logistic.eta-0.05.alpha-0.0.v1.epoch-32",
+      "inputs_in_training_scaled_space": [
+        [
+          -1.212435565298214,
+          -0.6123724356957945
+        ],
+        [
+          -0.5196152422706631,
+          0.6123724356957945
+        ],
+        [
+          -0.1732050807568877,
+          0.0
+        ],
+        [
+          0.1732050807568877,
+          0.0
+        ],
+        [
+          0.5196152422706631,
+          -0.6123724356957945
+        ],
+        [
+          1.212435565298214,
+          0.6123724356957945
+        ]
+      ],
+      "kind": "fitted-forward",
+      "parameter_count": 9,
+      "parameters": {
+        "W1": [
+          [
+            -0.47273303979455567,
+            -0.4132778227826092
+          ],
+          [
+            -0.10734384194226747,
+            0.3048658763878732
+          ]
+        ],
+        "W2": [
+          [
+            -0.5195356912480672
+          ],
+          [
+            -0.5642365163276707
+          ]
+        ],
+        "b1": [
+          0.28667761239513184,
+          0.339413387623032
+        ],
+        "b2": [
+          0.5704046645573881
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "The named reference calculation or permission is valid"
+        },
+        {
+          "id": "guarantee",
+          "label": "A larger network or longer training guarantees reliable future predictions"
+        },
+        {
+          "id": "leak",
+          "label": "Use final-test feedback to choose weights or stopping"
+        }
+      ],
+      "prediction_question": "Trace the fitted two-hidden-unit network and predict a named development probability without retraining it.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Inference applies the frozen scaler and weights;hidden units combine nonlinear transformations but do not inherently encode human concepts."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "training_fit_ids": [
+        "nn.train.0",
+        "nn.train.1",
+        "nn.train.2",
+        "nn.train.3",
+        "nn.train.4",
+        "nn.train.5",
+        "nn.train.6",
+        "nn.train.7",
+        "nn.train.8",
+        "nn.train.9",
+        "nn.train.10",
+        "nn.train.11"
+      ],
+      "trajectory_id": "nn.training.logistic.eta-0.05.alpha-0.0.v1"
+    },
+    {
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "epoch": 32,
+      "explanation": "Inference applies the frozen scaler and weights;hidden units combine nonlinear transformations but do not inherently encode human concepts.",
+      "forward": {
+        "A1": [
+          [
+            0.70961526991901,
+            0.6544178137838131
+          ],
+          [
+            0.612503147157932,
+            0.6727705766166635
+          ],
+          [
+            0.5901719180768347,
+            0.600523172246195
+          ],
+          [
+            0.5521035449225906,
+            0.567498819102955
+          ],
+          [
+            0.5289683471400988,
+            0.48964054043408817
+          ],
+          [
+            0.4207570027335095,
+            0.5101944782386357
+          ]
+        ],
+        "Z1": [
+          [
+            0.8935162506130275,
+            0.6385155153822311
+          ],
+          [
+            0.45784635356018166,
+            0.7207428495172801
+          ],
+          [
+            0.36467612164603924,
+            0.40764546862428125
+          ],
+          [
+            0.20917353142575656,
+            0.27165361171154406
+          ],
+          [
+            0.11600329951161412,
+            -0.041443769181454704
+          ],
+          [
+            -0.3196665975412317,
+            0.0407835649535942
+          ]
+        ],
+        "logits": [
+          -0.14052453464360892,
+          -0.10210730755590303,
+          -0.05196628507223122,
+          -0.015180928547746109,
+          0.03839113902822089,
+          0.08114322515860783
+        ],
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.46492656403735216,
+          0.47449532836263364,
+          0.4870113515818346,
+          0.496204840749004,
+          0.5095966060992136,
+          0.5202746830906797
+        ]
+      },
+      "id": "nn-e1.nn.training.logistic.eta-0.05.alpha-0.4.v1.epoch-32",
+      "inputs_in_training_scaled_space": [
+        [
+          -1.212435565298214,
+          -0.6123724356957945
+        ],
+        [
+          -0.5196152422706631,
+          0.6123724356957945
+        ],
+        [
+          -0.1732050807568877,
+          0.0
+        ],
+        [
+          0.1732050807568877,
+          0.0
+        ],
+        [
+          0.5196152422706631,
+          -0.6123724356957945
+        ],
+        [
+          1.212435565298214,
+          0.6123724356957945
+        ]
+      ],
+      "kind": "fitted-forward",
+      "parameter_count": 9,
+      "parameters": {
+        "W1": [
+          [
+            -0.4488973116168214,
+            -0.3925746759808294
+          ],
+          [
+            -0.10178831487625088,
+            0.28921210958659405
+          ]
+        ],
+        "W2": [
+          [
+            -0.4976840580376635
+          ],
+          [
+            -0.5401872373642682
+          ]
+        ],
+        "b1": [
+          0.2869248265358979,
+          0.33964954016791266
+        ],
+        "b2": [
+          0.566147823445018
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "The named reference calculation or permission is valid"
+        },
+        {
+          "id": "guarantee",
+          "label": "A larger network or longer training guarantees reliable future predictions"
+        },
+        {
+          "id": "leak",
+          "label": "Use final-test feedback to choose weights or stopping"
+        }
+      ],
+      "prediction_question": "Trace the fitted two-hidden-unit network and predict a named development probability without retraining it.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Inference applies the frozen scaler and weights;hidden units combine nonlinear transformations but do not inherently encode human concepts."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "training_fit_ids": [
+        "nn.train.0",
+        "nn.train.1",
+        "nn.train.2",
+        "nn.train.3",
+        "nn.train.4",
+        "nn.train.5",
+        "nn.train.6",
+        "nn.train.7",
+        "nn.train.8",
+        "nn.train.9",
+        "nn.train.10",
+        "nn.train.11"
+      ],
+      "trajectory_id": "nn.training.logistic.eta-0.05.alpha-0.4.v1"
+    },
+    {
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "epoch": 32,
+      "explanation": "Inference applies the frozen scaler and weights;hidden units combine nonlinear transformations but do not inherently encode human concepts.",
+      "forward": {
+        "A1": [
+          [
+            0.8662265232497477,
+            0.8444490663731182
+          ],
+          [
+            0.6955879509034735,
+            0.7356526270099734
+          ],
+          [
+            0.6016419999053394,
+            0.61014136865743
+          ],
+          [
+            0.48622193324089735,
+            0.4982646176108954
+          ],
+          [
+            0.3848079800139748,
+            0.3583508664496087
+          ],
+          [
+            0.18081829504675026,
+            0.2225709840820214
+          ]
+        ],
+        "Z1": [
+          [
+            1.8679985510715398,
+            1.691711196832721
+          ],
+          [
+            0.826375252147652,
+            1.0234939881311749
+          ],
+          [
+            0.41231148516714167,
+            0.44790649254087844
+          ],
+          [
+            -0.05512622305408538,
+            -0.006941557429656298
+          ],
+          [
+            -0.4691899900345957,
+            -0.5825290530199526
+          ],
+          [
+            -1.5108132889584833,
+            -1.250746261721499
+          ]
+        ],
+        "logits": [
+          -1.4311226643137354,
+          -1.0586120148389786,
+          -0.7670817315586665,
+          -0.46467375862089966,
+          -0.14413883399101002,
+          0.3087135786231646
+        ],
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "probabilities_positive": [
+          0.19292382039721445,
+          0.25757478980064896,
+          0.31711072415399977,
+          0.38587766575144955,
+          0.4640275502590134,
+          0.5765712292497314
+        ]
+      },
+      "id": "nn-e1.nn.training.logistic.eta-0.5.alpha-0.0.v1.epoch-32",
+      "inputs_in_training_scaled_space": [
+        [
+          -1.212435565298214,
+          -0.6123724356957945
+        ],
+        [
+          -0.5196152422706631,
+          0.6123724356957945
+        ],
+        [
+          -0.1732050807568877,
+          0.0
+        ],
+        [
+          0.1732050807568877,
+          0.0
+        ],
+        [
+          0.5196152422706631,
+          -0.6123724356957945
+        ],
+        [
+          1.212435565298214,
+          0.6123724356957945
+        ]
+      ],
+      "kind": "fitted-forward",
+      "parameter_count": 9,
+      "parameters": {
+        "W1": [
+          [
+            -1.3493764333545362,
+            -1.3130332204543231
+          ],
+          [
+            -0.08715928106736531,
+            0.19716668906328894
+          ]
+        ],
+        "W2": [
+          [
+            -1.3430439615694971
+          ],
+          [
+            -1.317465407078467
+          ]
+        ],
+        "b1": [
+          0.17859263105652814,
+          0.22048246755561107
+        ],
+        "b2": [
+          0.8447900700744696
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "The named reference calculation or permission is valid"
+        },
+        {
+          "id": "guarantee",
+          "label": "A larger network or longer training guarantees reliable future predictions"
+        },
+        {
+          "id": "leak",
+          "label": "Use final-test feedback to choose weights or stopping"
+        }
+      ],
+      "prediction_question": "Trace the fitted two-hidden-unit network and predict a named development probability without retraining it.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Inference applies the frozen scaler and weights;hidden units combine nonlinear transformations but do not inherently encode human concepts."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "training_fit_ids": [
+        "nn.train.0",
+        "nn.train.1",
+        "nn.train.2",
+        "nn.train.3",
+        "nn.train.4",
+        "nn.train.5",
+        "nn.train.6",
+        "nn.train.7",
+        "nn.train.8",
+        "nn.train.9",
+        "nn.train.10",
+        "nn.train.11"
+      ],
+      "trajectory_id": "nn.training.logistic.eta-0.5.alpha-0.0.v1"
+    },
+    {
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "epoch": 32,
+      "explanation": "Inference applies the frozen scaler and weights;hidden units combine nonlinear transformations but do not inherently encode human concepts.",
+      "forward": {
+        "A1": [
+          [
+            0.8064426082022685,
+            0.7911322980077176
+          ],
+          [
+            0.6658481928515676,
+            0.6965090444449318
+          ],
+          [
+            0.5953137670381261,
+            0.6050350954538564
+          ],
+          [
+            0.5124558265004019,
+            0.5247574992191527
+          ],
+          [
+            0.43692381022348104,
+            0.4243042922908658
+          ],
+          [
+            0.2706655505321891,
+            0.3087086198560447
+          ]
+        ],
+        "Z1": [
+          [
+            1.4270586665425617,
+            1.3317641611896665
+          ],
+          [
+            0.6894663037594408,
+            0.8307289691210078
+          ],
+          [
+            0.3859765726928286,
+            0.42648955365949826
+          ],
+          [
+            0.049833616463742236,
+            0.09911104791157885
+          ],
+          [
+            -0.25365611460286996,
+            -0.3051283675499307
+          ],
+          [
+            -0.9912484773859909,
+            -0.8061635596185892
+          ]
+        ],
+        "logits": [
+          -0.9379952797921062,
+          -0.708512934052098,
+          -0.5509385710215459,
+          -0.3920502576011299,
+          -0.22090158260143522,
+          0.05403921463526984
+        ],
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "probabilities_positive": [
+          0.28130546453131167,
+          0.32992751062931513,
+          0.3656466807655395,
+          0.40322384050930066,
+          0.4449980856923451,
+          0.5135065169665475
+        ]
+      },
+      "id": "nn-e1.nn.training.logistic.eta-0.5.alpha-0.4.v1.epoch-32",
+      "inputs_in_training_scaled_space": [
+        [
+          -1.212435565298214,
+          -0.6123724356957945
+        ],
+        [
+          -0.5196152422706631,
+          0.6123724356957945
+        ],
+        [
+          -0.1732050807568877,
+          0.0
+        ],
+        [
+          0.1732050807568877,
+          0.0
+        ],
+        [
+          0.5196152422706631,
+          -0.6123724356957945
+        ],
+        [
+          1.212435565298214,
+          0.6123724356957945
+        ]
+      ],
+      "kind": "fitted-forward",
+      "parameter_count": 9,
+      "parameters": {
+        "W1": [
+          [
+            -0.9703611313252981,
+            -0.9450603421022937
+          ],
+          [
+            -0.05332249340284667,
+            0.1255133399762821
+          ]
+        ],
+        "W2": [
+          [
+            -0.9830159964973026
+          ],
+          [
+            -0.9646232083059635
+          ]
+        ],
+        "b1": [
+          0.2179050945782854,
+          0.26280030078553857
+        ],
+        "b2": [
+          0.6178952798264047
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "The named reference calculation or permission is valid"
+        },
+        {
+          "id": "guarantee",
+          "label": "A larger network or longer training guarantees reliable future predictions"
+        },
+        {
+          "id": "leak",
+          "label": "Use final-test feedback to choose weights or stopping"
+        }
+      ],
+      "prediction_question": "Trace the fitted two-hidden-unit network and predict a named development probability without retraining it.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Inference applies the frozen scaler and weights;hidden units combine nonlinear transformations but do not inherently encode human concepts."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "training_fit_ids": [
+        "nn.train.0",
+        "nn.train.1",
+        "nn.train.2",
+        "nn.train.3",
+        "nn.train.4",
+        "nn.train.5",
+        "nn.train.6",
+        "nn.train.7",
+        "nn.train.8",
+        "nn.train.9",
+        "nn.train.10",
+        "nn.train.11"
+      ],
+      "trajectory_id": "nn.training.logistic.eta-0.5.alpha-0.4.v1"
+    },
+    {
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "epoch": 32,
+      "explanation": "Inference applies the frozen scaler and weights;hidden units combine nonlinear transformations but do not inherently encode human concepts.",
+      "forward": {
+        "A1": [
+          [
+            1.830910244780843,
+            1.4682024808492362
+          ],
+          [
+            1.0200778807545874,
+            1.4289264327669928
+          ],
+          [
+            0.8374619716586553,
+            0.8961077046157004
+          ],
+          [
+            0.5434459261041256,
+            0.6198793285194932
+          ],
+          [
+            0.36083001700819345,
+            0.08706060036820085
+          ],
+          [
+            0.0,
+            0.04778455228595746
+          ]
+        ],
+        "Z1": [
+          [
+            1.830910244780843,
+            1.4682024808492362
+          ],
+          [
+            1.0200778807545874,
+            1.4289264327669928
+          ],
+          [
+            0.8374619716586553,
+            0.8961077046157004
+          ],
+          [
+            0.5434459261041256,
+            0.6198793285194932
+          ],
+          [
+            0.36083001700819345,
+            0.08706060036820085
+          ],
+          [
+            -0.45000234701806197,
+            0.04778455228595746
+          ]
+        ],
+        "logits": [
+          -1.926980413671519,
+          -1.1469388451857385,
+          -0.4690651027508277,
+          0.06488216058807295,
+          0.7427559030229843,
+          1.1107753070412696
+        ],
+        "predictions": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.12708517950301088,
+          0.24104865957177352,
+          0.3848375451056732,
+          0.5162148522478629,
+          0.6775982021554422,
+          0.7522736243814425
+        ]
+      },
+      "id": "nn-e1.nn.training.relu.eta-0.05.alpha-0.0.v1.epoch-32",
+      "inputs_in_training_scaled_space": [
+        [
+          -1.212435565298214,
+          -0.6123724356957945
+        ],
+        [
+          -0.5196152422706631,
+          0.6123724356957945
+        ],
+        [
+          -0.1732050807568877,
+          0.0
+        ],
+        [
+          0.1732050807568877,
+          0.0
+        ],
+        [
+          0.5196152422706631,
+          -0.6123724356957945
+        ],
+        [
+          1.212435565298214,
+          0.6123724356957945
+        ]
+      ],
+      "kind": "fitted-forward",
+      "parameter_count": 9,
+      "parameters": {
+        "W1": [
+          [
+            -0.8487512152348855,
+            -0.7974026364847918
+          ],
+          [
+            -0.1819156610666545,
+            0.4190102903040375
+          ]
+        ],
+        "W2": [
+          [
+            -0.9156000345281694
+          ],
+          [
+            -0.9584321698547339
+          ]
+        ],
+        "b1": [
+          0.6904539488813904,
+          0.7579935165675968
+        ],
+        "b2": [
+          1.1565735591742368
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "The named reference calculation or permission is valid"
+        },
+        {
+          "id": "guarantee",
+          "label": "A larger network or longer training guarantees reliable future predictions"
+        },
+        {
+          "id": "leak",
+          "label": "Use final-test feedback to choose weights or stopping"
+        }
+      ],
+      "prediction_question": "Trace the fitted two-hidden-unit network and predict a named development probability without retraining it.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Inference applies the frozen scaler and weights;hidden units combine nonlinear transformations but do not inherently encode human concepts."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "training_fit_ids": [
+        "nn.train.0",
+        "nn.train.1",
+        "nn.train.2",
+        "nn.train.3",
+        "nn.train.4",
+        "nn.train.5",
+        "nn.train.6",
+        "nn.train.7",
+        "nn.train.8",
+        "nn.train.9",
+        "nn.train.10",
+        "nn.train.11"
+      ],
+      "trajectory_id": "nn.training.relu.eta-0.05.alpha-0.0.v1"
+    },
+    {
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "epoch": 32,
+      "explanation": "Inference applies the frozen scaler and weights;hidden units combine nonlinear transformations but do not inherently encode human concepts.",
+      "forward": {
+        "A1": [
+          [
+            1.783302041084382,
+            1.4458245216868904
+          ],
+          [
+            1.009972922136858,
+            1.40215900641763
+          ],
+          [
+            0.8339611406757865,
+            0.8944426830593348
+          ],
+          [
+            0.5526229702083698,
+            0.6296681425628721
+          ],
+          [
+            0.3766111887472982,
+            0.12195181920457698
+          ],
+          [
+            0.0,
+            0.07828630393531655
+          ]
+        ],
+        "Z1": [
+          [
+            1.783302041084382,
+            1.4458245216868904
+          ],
+          [
+            1.009972922136858,
+            1.40215900641763
+          ],
+          [
+            0.8339611406757865,
+            0.8944426830593348
+          ],
+          [
+            0.5526229702083698,
+            0.6296681425628721
+          ],
+          [
+            0.3766111887472982,
+            0.12195181920457698
+          ],
+          [
+            -0.3967179302002256,
+            0.07828630393531655
+          ]
+        ],
+        "logits": [
+          -1.7664205221457576,
+          -1.0422182206052144,
+          -0.41683937448111763,
+          0.07690062396606656,
+          0.7022794700901633,
+          1.0756909623080326
+        ],
+        "predictions": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.14598803696837956,
+          0.26072221357642256,
+          0.3972733068807317,
+          0.5192156872643631,
+          0.6686929661319388,
+          0.7456776721754634
+        ]
+      },
+      "id": "nn-e1.nn.training.relu.eta-0.05.alpha-0.4.v1.epoch-32",
+      "inputs_in_training_scaled_space": [
+        [
+          -1.212435565298214,
+          -0.6123724356957945
+        ],
+        [
+          -0.5196152422706631,
+          0.6123724356957945
+        ],
+        [
+          -0.1732050807568877,
+          0.0
+        ],
+        [
+          0.1732050807568877,
+          0.0
+        ],
+        [
+          0.5196152422706631,
+          -0.6123724356957945
+        ],
+        [
+          1.212435565298214,
+          0.6123724356957945
+        ]
+      ],
+      "kind": "fitted-forward",
+      "parameter_count": 9,
+      "parameters": {
+        "W1": [
+          [
+            -0.8121533422633995,
+            -0.764338261150961
+          ],
+          [
+            -0.17199727301028891,
+            0.39672227014234435
+          ]
+        ],
+        "W2": [
+          [
+            -0.8842323036562222
+          ],
+          [
+            -0.9252086677556753
+          ]
+        ],
+        "b1": [
+          0.6932920554420782,
+          0.7620554128111034
+        ],
+        "b2": [
+          1.1481221292755428
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "The named reference calculation or permission is valid"
+        },
+        {
+          "id": "guarantee",
+          "label": "A larger network or longer training guarantees reliable future predictions"
+        },
+        {
+          "id": "leak",
+          "label": "Use final-test feedback to choose weights or stopping"
+        }
+      ],
+      "prediction_question": "Trace the fitted two-hidden-unit network and predict a named development probability without retraining it.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Inference applies the frozen scaler and weights;hidden units combine nonlinear transformations but do not inherently encode human concepts."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "training_fit_ids": [
+        "nn.train.0",
+        "nn.train.1",
+        "nn.train.2",
+        "nn.train.3",
+        "nn.train.4",
+        "nn.train.5",
+        "nn.train.6",
+        "nn.train.7",
+        "nn.train.8",
+        "nn.train.9",
+        "nn.train.10",
+        "nn.train.11"
+      ],
+      "trajectory_id": "nn.training.relu.eta-0.05.alpha-0.4.v1"
+    },
+    {
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "epoch": 32,
+      "explanation": "Inference applies the frozen scaler and weights;hidden units combine nonlinear transformations but do not inherently encode human concepts.",
+      "forward": {
+        "A1": [
+          [
+            2.7340848505478275,
+            2.6564562329714034
+          ],
+          [
+            1.7015301702459027,
+            1.8469690192042882
+          ],
+          [
+            1.2848077143083452,
+            1.311091591254387
+          ],
+          [
+            0.8183078162640854,
+            0.8407810738376575
+          ],
+          [
+            0.40158536032652814,
+            0.3049036458877563
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "Z1": [
+          [
+            2.7340848505478275,
+            2.6564562329714034
+          ],
+          [
+            1.7015301702459027,
+            1.8469690192042882
+          ],
+          [
+            1.2848077143083452,
+            1.311091591254387
+          ],
+          [
+            0.8183078162640854,
+            0.8407810738376575
+          ],
+          [
+            0.40158536032652814,
+            0.3049036458877563
+          ],
+          [
+            -0.6309693199753967,
+            -0.5045835678793587
+          ]
+        ],
+        "logits": [
+          -6.891553040663981,
+          -3.9586096942750015,
+          -2.4425220350721424,
+          -0.9512423688734688,
+          0.5648452903293899,
+          1.6897655965331517
+        ],
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.0010153023198664051,
+          0.018732048292410007,
+          0.07998712096850384,
+          0.27863504020959856,
+          0.637572904047458,
+          0.8441933310527875
+        ]
+      },
+      "id": "nn-e1.nn.training.relu.eta-0.5.alpha-0.0.v1.epoch-32",
+      "inputs_in_training_scaled_space": [
+        [
+          -1.212435565298214,
+          -0.6123724356957945
+        ],
+        [
+          -0.5196152422706631,
+          0.6123724356957945
+        ],
+        [
+          -0.1732050807568877,
+          0.0
+        ],
+        [
+          0.1732050807568877,
+          0.0
+        ],
+        [
+          0.5196152422706631,
+          -0.6123724356957945
+        ],
+        [
+          1.212435565298214,
+          0.6123724356957945
+        ]
+      ],
+      "kind": "fitted-forward",
+      "parameter_count": 9,
+      "parameters": {
+        "W1": [
+          [
+            -1.3466692085639322,
+            -1.3576695191663046
+          ],
+          [
+            -0.08128622257490103,
+            0.10707031654465794
+          ]
+        ],
+        "W2": [
+          [
+            -1.5947153750428562
+          ],
+          [
+            -1.5890461273043692
+          ]
+        ],
+        "b1": [
+          1.0515577652862154,
+          1.0759363325460223
+        ],
+        "b2": [
+          1.6897655965331517
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "The named reference calculation or permission is valid"
+        },
+        {
+          "id": "guarantee",
+          "label": "A larger network or longer training guarantees reliable future predictions"
+        },
+        {
+          "id": "leak",
+          "label": "Use final-test feedback to choose weights or stopping"
+        }
+      ],
+      "prediction_question": "Trace the fitted two-hidden-unit network and predict a named development probability without retraining it.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Inference applies the frozen scaler and weights;hidden units combine nonlinear transformations but do not inherently encode human concepts."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "training_fit_ids": [
+        "nn.train.0",
+        "nn.train.1",
+        "nn.train.2",
+        "nn.train.3",
+        "nn.train.4",
+        "nn.train.5",
+        "nn.train.6",
+        "nn.train.7",
+        "nn.train.8",
+        "nn.train.9",
+        "nn.train.10",
+        "nn.train.11"
+      ],
+      "trajectory_id": "nn.training.relu.eta-0.5.alpha-0.0.v1"
+    },
+    {
+      "correct_prediction_id": "forward",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "epoch": 32,
+      "explanation": "Inference applies the frozen scaler and weights;hidden units combine nonlinear transformations but do not inherently encode human concepts.",
+      "forward": {
+        "A1": [
+          [
+            2.429766974808209,
+            2.3410091366242507
+          ],
+          [
+            1.51639022652853,
+            1.7435896597437681
+          ],
+          [
+            1.2146505432732568,
+            1.2874986268847883
+          ],
+          [
+            0.8354365145757005,
+            0.9100982412351777
+          ],
+          [
+            0.5336968313204271,
+            0.4540072083761978
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "Z1": [
+          [
+            2.429766974808209,
+            2.3410091366242507
+          ],
+          [
+            1.51639022652853,
+            1.7435896597437681
+          ],
+          [
+            1.2146505432732568,
+            1.2874986268847883
+          ],
+          [
+            0.8354365145757005,
+            0.9100982412351777
+          ],
+          [
+            0.5336968313204271,
+            0.4540072083761978
+          ],
+          [
+            -0.37967991695925174,
+            -0.14341226850428468
+          ]
+        ],
+        "logits": [
+          -4.3960894286858645,
+          -2.496653754602808,
+          -1.5428522311534785,
+          -0.5910925509080487,
+          0.3627089725412813,
+          1.6049072733213698
+        ],
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "probabilities_positive": [
+          0.012175378354725847,
+          0.07609309745508346,
+          0.17612102677063549,
+          0.3563842116787095,
+          0.5896960413821469,
+          0.8327031272335449
+        ]
+      },
+      "id": "nn-e1.nn.training.relu.eta-0.5.alpha-0.4.v1.epoch-32",
+      "inputs_in_training_scaled_space": [
+        [
+          -1.212435565298214,
+          -0.6123724356957945
+        ],
+        [
+          -0.5196152422706631,
+          0.6123724356957945
+        ],
+        [
+          -0.1732050807568877,
+          0.0
+        ],
+        [
+          0.1732050807568877,
+          0.0
+        ],
+        [
+          0.5196152422706631,
+          -0.6123724356957945
+        ],
+        [
+          1.212435565298214,
+          0.6123724356957945
+        ]
+      ],
+      "kind": "fitted-forward",
+      "parameter_count": 9,
+      "parameters": {
+        "W1": [
+          [
+            -1.0946966077450833,
+            -1.0894610712353563
+          ],
+          [
+            -0.12651507632647527,
+            0.12850128879488
+          ]
+        ],
+        "W2": [
+          [
+            -1.2546494396926264
+          ],
+          [
+            -1.2612043593892062
+          ]
+        ],
+        "b1": [
+          1.0250435289244786,
+          1.098798434059983
+        ],
+        "b2": [
+          1.6049072733213698
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "forward",
+          "label": "The named reference calculation or permission is valid"
+        },
+        {
+          "id": "guarantee",
+          "label": "A larger network or longer training guarantees reliable future predictions"
+        },
+        {
+          "id": "leak",
+          "label": "Use final-test feedback to choose weights or stopping"
+        }
+      ],
+      "prediction_question": "Trace the fitted two-hidden-unit network and predict a named development probability without retraining it.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Inference applies the frozen scaler and weights;hidden units combine nonlinear transformations but do not inherently encode human concepts."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "training_fit_ids": [
+        "nn.train.0",
+        "nn.train.1",
+        "nn.train.2",
+        "nn.train.3",
+        "nn.train.4",
+        "nn.train.5",
+        "nn.train.6",
+        "nn.train.7",
+        "nn.train.8",
+        "nn.train.9",
+        "nn.train.10",
+        "nn.train.11"
+      ],
+      "trajectory_id": "nn.training.relu.eta-0.5.alpha-0.4.v1"
+    },
+    {
+      "correct_prediction_id": "endpoint",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "explanation": "A confidently wrong finite logit has large finite stable loss;exact contradictory probability endpoints have infinite mathematical loss,and library epsilon clipping is a different numerical convention.",
+      "forward": {
+        "A1": [
+          [
+            1.0
+          ]
+        ],
+        "Z1": [
+          [
+            1.0
+          ]
+        ],
+        "logits": [
+          -1000.0
+        ],
+        "predictions": [
+          0
+        ],
+        "probabilities_positive": [
+          0.0
+        ]
+      },
+      "id": "nn-e1.endpoint.-1.v1",
+      "input": [
+        0.0,
+        0.0
+      ],
+      "kind": "numerical-endpoint",
+      "library_clipped_probability_log_loss": 36.04365338911715,
+      "mathematical_probability_endpoint_loss": {
+        "reason": "exact-contradictory-probability-endpoint",
+        "tag": "positive-infinity"
+      },
+      "note": "Mathematical sigmoid of a finite logit is strictly interior;binary64 rounds here to0/1. Finite logit-loss1000 differs from exact-endpoint infinity and library epsilon clipping.",
+      "parameters": {
+        "W1": [
+          [
+            0.0
+          ],
+          [
+            0.0
+          ]
+        ],
+        "W2": [
+          [
+            0.0
+          ]
+        ],
+        "b1": [
+          1.0
+        ],
+        "b2": [
+          -1000.0
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "endpoint",
+          "label": "The named reference calculation or permission is valid"
+        },
+        {
+          "id": "guarantee",
+          "label": "A larger network or longer training guarantees reliable future predictions"
+        },
+        {
+          "id": "leak",
+          "label": "Use final-test feedback to choose weights or stopping"
+        }
+      ],
+      "prediction_question": "Predict whether rounded probability endpoints imply a zero loss for a confidently wrong label.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "A confidently wrong finite logit has large finite stable loss;exact contradictory probability endpoints have infinite mathematical loss,and library epsilon clipping is a different numerical convention."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "stable_finite_logit_loss": 1000.0,
+      "target": 1
+    },
+    {
+      "correct_prediction_id": "endpoint",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "explanation": "A confidently wrong finite logit has large finite stable loss;exact contradictory probability endpoints have infinite mathematical loss,and library epsilon clipping is a different numerical convention.",
+      "forward": {
+        "A1": [
+          [
+            1.0
+          ]
+        ],
+        "Z1": [
+          [
+            1.0
+          ]
+        ],
+        "logits": [
+          1000.0
+        ],
+        "predictions": [
+          1
+        ],
+        "probabilities_positive": [
+          1.0
+        ]
+      },
+      "id": "nn-e1.endpoint.1.v1",
+      "input": [
+        0.0,
+        0.0
+      ],
+      "kind": "numerical-endpoint",
+      "library_clipped_probability_log_loss": 36.04365338911715,
+      "mathematical_probability_endpoint_loss": {
+        "reason": "exact-contradictory-probability-endpoint",
+        "tag": "positive-infinity"
+      },
+      "note": "Mathematical sigmoid of a finite logit is strictly interior;binary64 rounds here to0/1. Finite logit-loss1000 differs from exact-endpoint infinity and library epsilon clipping.",
+      "parameters": {
+        "W1": [
+          [
+            0.0
+          ],
+          [
+            0.0
+          ]
+        ],
+        "W2": [
+          [
+            0.0
+          ]
+        ],
+        "b1": [
+          1.0
+        ],
+        "b2": [
+          1000.0
+        ]
+      },
+      "prediction_options": [
+        {
+          "id": "endpoint",
+          "label": "The named reference calculation or permission is valid"
+        },
+        {
+          "id": "guarantee",
+          "label": "A larger network or longer training guarantees reliable future predictions"
+        },
+        {
+          "id": "leak",
+          "label": "Use final-test feedback to choose weights or stopping"
+        }
+      ],
+      "prediction_question": "Predict whether rounded probability endpoints imply a zero loss for a confidently wrong label.",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "A confidently wrong finite logit has large finite stable loss;exact contradictory probability endpoints have infinite mathematical loss,and library epsilon clipping is a different numerical convention."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ],
+      "stable_finite_logit_loss": 1000.0,
+      "target": 0
+    },
+    {
+      "correct_prediction_id": "reject",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "expected": {
+        "gradient": null,
+        "prediction": null,
+        "selected_checkpoint": null,
+        "tag": "invalid"
+      },
+      "explanation": "Only finite reviewed parameters and training/fold-only fits are permitted;test data and nonfinite values cannot guide updates or checkpoint selection.",
+      "id": "nn-e1.reject.shape-mismatch.v1",
+      "kind": "rejected",
+      "prediction_options": [
+        {
+          "id": "reject",
+          "label": "The named reference calculation or permission is valid"
+        },
+        {
+          "id": "guarantee",
+          "label": "A larger network or longer training guarantees reliable future predictions"
+        },
+        {
+          "id": "leak",
+          "label": "Use final-test feedback to choose weights or stopping"
+        }
+      ],
+      "prediction_question": "Is this authored configuration permitted,or must it reject without a fabricated result?",
+      "reason": "shape-mismatch",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Only finite reviewed parameters and training/fold-only fits are permitted;test data and nonfinite values cannot guide updates or checkpoint selection."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ]
+    },
+    {
+      "correct_prediction_id": "reject",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "expected": {
+        "gradient": null,
+        "prediction": null,
+        "selected_checkpoint": null,
+        "tag": "invalid"
+      },
+      "explanation": "Only finite reviewed parameters and training/fold-only fits are permitted;test data and nonfinite values cannot guide updates or checkpoint selection.",
+      "id": "nn-e1.reject.nonfinite-weight.v1",
+      "kind": "rejected",
+      "prediction_options": [
+        {
+          "id": "reject",
+          "label": "The named reference calculation or permission is valid"
+        },
+        {
+          "id": "guarantee",
+          "label": "A larger network or longer training guarantees reliable future predictions"
+        },
+        {
+          "id": "leak",
+          "label": "Use final-test feedback to choose weights or stopping"
+        }
+      ],
+      "prediction_question": "Is this authored configuration permitted,or must it reject without a fabricated result?",
+      "reason": "nonfinite-weight",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Only finite reviewed parameters and training/fold-only fits are permitted;test data and nonfinite values cannot guide updates or checkpoint selection."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ]
+    },
+    {
+      "correct_prediction_id": "reject",
+      "correct_reason_id": "mechanism",
+      "counterexample": "Identical linear layers collapse to one affine map;more parameters or smaller training loss do not guarantee better development loss,calibration or causal meaning.",
+      "expected": {
+        "gradient": null,
+        "prediction": null,
+        "selected_checkpoint": null,
+        "tag": "invalid"
+      },
+      "explanation": "Only finite reviewed parameters and training/fold-only fits are permitted;test data and nonfinite values cannot guide updates or checkpoint selection.",
+      "id": "nn-e1.reject.unsupported-activation.v1",
+      "kind": "rejected",
+      "prediction_options": [
+        {
+          "id": "reject",
+          "label": "The named reference calculation or permission is valid"
+        },
+        {
+          "id": "guarantee",
+          "label": "A larger network or longer training guarantees reliable future predictions"
+        },
+        {
+          "id": "leak",
+          "label": "Use final-test feedback to choose weights or stopping"
+        }
+      ],
+      "prediction_question": "Is this authored configuration permitted,or must it reject without a fabricated result?",
+      "reason": "unsupported-activation",
+      "reason_options": [
+        {
+          "id": "mechanism",
+          "label": "Only finite reviewed parameters and training/fold-only fits are permitted;test data and nonfinite values cannot guide updates or checkpoint selection."
+        },
+        {
+          "id": "causal",
+          "label": "A hidden unit necessarily represents a named human concept and proves causality"
+        },
+        {
+          "id": "test",
+          "label": "A high test score permits changing the model after final evaluation"
+        }
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "class_order": [
+        0,
+        1
+      ],
+      "development": {
+        "ids": [
+          "nn.development.0",
+          "nn.development.1",
+          "nn.development.2",
+          "nn.development.3",
+          "nn.development.4",
+          "nn.development.5"
+        ],
+        "inputs": [
+          [
+            -1.75,
+            -0.5
+          ],
+          [
+            -0.75,
+            0.5
+          ],
+          [
+            -0.25,
+            0.0
+          ],
+          [
+            0.25,
+            0.0
+          ],
+          [
+            0.75,
+            -0.5
+          ],
+          [
+            1.75,
+            0.5
+          ]
+        ],
+        "targets": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      "feature_order": [
+        "pre_prediction_activity_index",
+        "pre_prediction_contact_index"
+      ],
+      "feature_units": [
+        "fictional index",
+        "fictional index"
+      ],
+      "id": "nn.churn.noisy.v1",
+      "positive_class": "1=churns;0=stays",
+      "provenance": "Original fictional CC0-1.0 customer coordinates;no real people,production labels or remote data.",
+      "queries": {
+        "ids": [
+          "nn.query.0",
+          "nn.query.1",
+          "nn.query.2",
+          "nn.query.3"
+        ],
+        "inputs": [
+          [
+            -1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.5,
+            -0.5
+          ]
+        ]
+      },
+      "sealed_test": {
+        "ids": [
+          "nn.test.0",
+          "nn.test.1",
+          "nn.test.2",
+          "nn.test.3"
+        ],
+        "inputs": [
+          [
+            -1.25,
+            0.25
+          ],
+          [
+            -0.25,
+            -0.25
+          ],
+          [
+            0.25,
+            0.25
+          ],
+          [
+            1.25,
+            -0.25
+          ]
+        ],
+        "policy": "Not transformed,predicted,scored or used for checkpoint selection;strip from eventual client replay.",
+        "targets": [
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      "training": {
+        "ids": [
+          "nn.train.0",
+          "nn.train.1",
+          "nn.train.2",
+          "nn.train.3",
+          "nn.train.4",
+          "nn.train.5",
+          "nn.train.6",
+          "nn.train.7",
+          "nn.train.8",
+          "nn.train.9",
+          "nn.train.10",
+          "nn.train.11"
+        ],
+        "inputs": [
+          [
+            -2.0,
+            -1.0
+          ],
+          [
+            -2.0,
+            1.0
+          ],
+          [
+            -1.0,
+            -1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            1.0,
+            -1.0
+          ],
+          [
+            1.0,
+            1.0
+          ],
+          [
+            2.0,
+            -1.0
+          ],
+          [
+            2.0,
+            1.0
+          ],
+          [
+            0.5,
+            0.0
+          ],
+          [
+            1.5,
+            0.0
+          ],
+          [
+            -1.5,
+            0.0
+          ],
+          [
+            -0.5,
+            0.0
+          ]
+        ],
+        "targets": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "display_policy": "Full immutable traces are evidence assets;display selected bounded rows/layers. Never put full traces into learner submissions or persistence.",
+  "id": "NN-E1.v1",
+  "interaction": [
+    "Choose a reviewed configuration",
+    "Record prediction before reveal",
+    "Reveal numerical and synchronized graphic result",
+    "Change a meaningful finite scene and predict again",
+    "Give a bounded supported explanation and transfer"
+  ],
+  "limits": {
+    "arbitrary_code": false,
+    "combined_configurations": 64,
+    "displayed_table_rows": 32,
+    "plotted_points": 64,
+    "table_columns": 8,
+    "unreviewed_continuous_controls": false
+  },
+  "notebook": "One future trusted module notebook;not authored/executed by this freeze;no mastery credit.",
+  "objectives": [
+    "NN01",
+    "NN03",
+    "NN05"
+  ],
+  "prerequisites": [
+    "weighted sums and matrix shapes",
+    "Logistic probabilities",
+    "chain rule and gradient descent",
+    "training-only and fold-only scaling",
+    "development versus final-test evaluation"
+  ],
+  "schema": "mlp.experiment.v1"
+}

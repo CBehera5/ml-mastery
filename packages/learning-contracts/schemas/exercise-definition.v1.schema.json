@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mlmathlab.local/schemas/exercise-definition.v1.schema.json",
+  "title": "Deterministic exercise definition v1",
+  "type": "object",
+  "required": ["schemaVersion", "id", "version", "kind", "objectiveIds", "prompt", "points", "retry", "feedback"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" }, "id": { "type": "string" }, "version": { "type": "string" },
+    "kind": { "enum": ["conceptual", "numerical", "parameter-prediction", "constrained-code"] },
+    "objectiveIds": { "type": "array", "items": { "type": "string" } }, "prompt": { "type": "string" }, "points": { "type": "number", "exclusiveMinimum": 0 },
+    "retry": { "type": "object", "required": ["maxAttempts", "variantIds"], "properties": { "maxAttempts": { "type": "integer", "minimum": 1 }, "variantIds": { "type": "array", "items": { "type": "string" } }, "revealWorkedAnswerAfter": { "type": "integer", "minimum": 1 } } },
+    "feedback": { "type": "object", "required": ["correct", "incorrect", "exhausted"], "properties": { "correct": { "type": "string" }, "incorrect": { "type": "string" }, "exhausted": { "type": "string" } } },
+    "options": { "type": "array" }, "expectedOptionId": { "type": "string" }, "expected": { "type": "number" }, "absoluteTolerance": { "type": "number", "minimum": 0 }, "unit": { "type": "string" }, "slots": { "type": "array" }, "expectedSlots": { "type": "object", "additionalProperties": { "type": "string" } }
+  },
+  "allOf": [
+    { "if": { "properties": { "kind": { "const": "numerical" } } }, "then": { "required": ["expected", "absoluteTolerance"] } },
+    { "if": { "properties": { "kind": { "enum": ["conceptual", "parameter-prediction"] } } }, "then": { "required": ["options", "expectedOptionId"] } },
+    { "if": { "properties": { "kind": { "const": "constrained-code" } } }, "then": { "required": ["slots", "expectedSlots"] } }
+  ]
+}

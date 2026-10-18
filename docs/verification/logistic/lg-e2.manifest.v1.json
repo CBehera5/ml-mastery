@@ -1,0 +1,2613 @@
+{
+  "allowed_controls": "Only complete listed configuration IDs; no free-form weights, thresholds, models or datasets.",
+  "completion": "Wrong initial predictions are recoverable; changed state plus correct post-observation reasoning is required. Never module mastery.",
+  "configurations": [
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 0
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.25,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.4,
+          "fn": 0,
+          "fp": 6,
+          "library_float64_clipped_log_loss": 0.5143469833868277,
+          "mathematical_log_loss": 0.5143469833868277,
+          "precision": 0.25,
+          "predictions": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.10536051565782628,
+            0.2231435513142097,
+            0.35667494393873245,
+            0.5108256237659907,
+            0.6931471805599453,
+            0.5108256237659907,
+            1.6094379124341005,
+            0.10536051565782628
+          ],
+          "tn": 0,
+          "total_cost": 6,
+          "tp": 2
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.moderate.v1",
+      "id": "LG-E2.moderate.t0.fn1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 5,
+        "false_positive_cost": 1,
+        "threshold": 0
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.25,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.4,
+          "fn": 0,
+          "fp": 6,
+          "library_float64_clipped_log_loss": 0.5143469833868277,
+          "mathematical_log_loss": 0.5143469833868277,
+          "precision": 0.25,
+          "predictions": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.10536051565782628,
+            0.2231435513142097,
+            0.35667494393873245,
+            0.5108256237659907,
+            0.6931471805599453,
+            0.5108256237659907,
+            1.6094379124341005,
+            0.10536051565782628
+          ],
+          "tn": 0,
+          "total_cost": 6,
+          "tp": 2
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.moderate.v1",
+      "id": "LG-E2.moderate.t0.fn5",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 0.5
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              4,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.6666666666666666,
+          "fn": 0,
+          "fp": 2,
+          "library_float64_clipped_log_loss": 0.5143469833868277,
+          "mathematical_log_loss": 0.5143469833868277,
+          "precision": 0.5,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.10536051565782628,
+            0.2231435513142097,
+            0.35667494393873245,
+            0.5108256237659907,
+            0.6931471805599453,
+            0.5108256237659907,
+            1.6094379124341005,
+            0.10536051565782628
+          ],
+          "tn": 4,
+          "total_cost": 2,
+          "tp": 2
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.moderate.v1",
+      "id": "LG-E2.moderate.t0.5.fn1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 5,
+        "false_positive_cost": 1,
+        "threshold": 0.5
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              4,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.6666666666666666,
+          "fn": 0,
+          "fp": 2,
+          "library_float64_clipped_log_loss": 0.5143469833868277,
+          "mathematical_log_loss": 0.5143469833868277,
+          "precision": 0.5,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.10536051565782628,
+            0.2231435513142097,
+            0.35667494393873245,
+            0.5108256237659907,
+            0.6931471805599453,
+            0.5108256237659907,
+            1.6094379124341005,
+            0.10536051565782628
+          ],
+          "tn": 4,
+          "total_cost": 2,
+          "tp": 2
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.moderate.v1",
+      "id": "LG-E2.moderate.t0.5.fn5",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 0.6
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.875,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              5,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.8,
+          "fn": 0,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.5143469833868277,
+          "mathematical_log_loss": 0.5143469833868277,
+          "precision": 0.6666666666666666,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.10536051565782628,
+            0.2231435513142097,
+            0.35667494393873245,
+            0.5108256237659907,
+            0.6931471805599453,
+            0.5108256237659907,
+            1.6094379124341005,
+            0.10536051565782628
+          ],
+          "tn": 5,
+          "total_cost": 1,
+          "tp": 2
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.moderate.v1",
+      "id": "LG-E2.moderate.t0.6.fn1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 5,
+        "false_positive_cost": 1,
+        "threshold": 0.6
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.875,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              5,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.8,
+          "fn": 0,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.5143469833868277,
+          "mathematical_log_loss": 0.5143469833868277,
+          "precision": 0.6666666666666666,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.10536051565782628,
+            0.2231435513142097,
+            0.35667494393873245,
+            0.5108256237659907,
+            0.6931471805599453,
+            0.5108256237659907,
+            1.6094379124341005,
+            0.10536051565782628
+          ],
+          "tn": 5,
+          "total_cost": 1,
+          "tp": 2
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.moderate.v1",
+      "id": "LG-E2.moderate.t0.6.fn5",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 1
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              6,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 2,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 0.5143469833868277,
+          "mathematical_log_loss": 0.5143469833868277,
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "prevalence": 0.25,
+          "recall": 0.0,
+          "row_log_loss": [
+            0.10536051565782628,
+            0.2231435513142097,
+            0.35667494393873245,
+            0.5108256237659907,
+            0.6931471805599453,
+            0.5108256237659907,
+            1.6094379124341005,
+            0.10536051565782628
+          ],
+          "tn": 6,
+          "total_cost": 2,
+          "tp": 0
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.moderate.v1",
+      "id": "LG-E2.moderate.t1.fn1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 5,
+        "false_positive_cost": 1,
+        "threshold": 1
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              6,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 2,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 0.5143469833868277,
+          "mathematical_log_loss": 0.5143469833868277,
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "prevalence": 0.25,
+          "recall": 0.0,
+          "row_log_loss": [
+            0.10536051565782628,
+            0.2231435513142097,
+            0.35667494393873245,
+            0.5108256237659907,
+            0.6931471805599453,
+            0.5108256237659907,
+            1.6094379124341005,
+            0.10536051565782628
+          ],
+          "tn": 6,
+          "total_cost": 10,
+          "tp": 0
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.moderate.v1",
+      "id": "LG-E2.moderate.t1.fn5",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 0
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.25,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.4,
+          "fn": 0,
+          "fp": 6,
+          "library_float64_clipped_log_loss": 0.6318250356449456,
+          "mathematical_log_loss": 0.6318250356449456,
+          "precision": 0.25,
+          "predictions": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.5108256237659907,
+            0.5978370007556204,
+            0.616186139423817,
+            0.6539264674066639,
+            0.6931471805599453,
+            0.6733445532637656,
+            0.7985076962177717,
+            0.5108256237659907
+          ],
+          "tn": 0,
+          "total_cost": 6,
+          "tp": 2
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.cautious.v1",
+      "id": "LG-E2.cautious.t0.fn1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 5,
+        "false_positive_cost": 1,
+        "threshold": 0
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.25,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.4,
+          "fn": 0,
+          "fp": 6,
+          "library_float64_clipped_log_loss": 0.6318250356449456,
+          "mathematical_log_loss": 0.6318250356449456,
+          "precision": 0.25,
+          "predictions": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.5108256237659907,
+            0.5978370007556204,
+            0.616186139423817,
+            0.6539264674066639,
+            0.6931471805599453,
+            0.6733445532637656,
+            0.7985076962177717,
+            0.5108256237659907
+          ],
+          "tn": 0,
+          "total_cost": 6,
+          "tp": 2
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.cautious.v1",
+      "id": "LG-E2.cautious.t0.fn5",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 0.5
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              4,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.6666666666666666,
+          "fn": 0,
+          "fp": 2,
+          "library_float64_clipped_log_loss": 0.6318250356449456,
+          "mathematical_log_loss": 0.6318250356449456,
+          "precision": 0.5,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.5108256237659907,
+            0.5978370007556204,
+            0.616186139423817,
+            0.6539264674066639,
+            0.6931471805599453,
+            0.6733445532637656,
+            0.7985076962177717,
+            0.5108256237659907
+          ],
+          "tn": 4,
+          "total_cost": 2,
+          "tp": 2
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.cautious.v1",
+      "id": "LG-E2.cautious.t0.5.fn1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 5,
+        "false_positive_cost": 1,
+        "threshold": 0.5
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              4,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.6666666666666666,
+          "fn": 0,
+          "fp": 2,
+          "library_float64_clipped_log_loss": 0.6318250356449456,
+          "mathematical_log_loss": 0.6318250356449456,
+          "precision": 0.5,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.5108256237659907,
+            0.5978370007556204,
+            0.616186139423817,
+            0.6539264674066639,
+            0.6931471805599453,
+            0.6733445532637656,
+            0.7985076962177717,
+            0.5108256237659907
+          ],
+          "tn": 4,
+          "total_cost": 2,
+          "tp": 2
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.cautious.v1",
+      "id": "LG-E2.cautious.t0.5.fn5",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 0.6
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.875,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              6,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "f1": 0.6666666666666666,
+          "fn": 1,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 0.6318250356449456,
+          "mathematical_log_loss": 0.6318250356449456,
+          "precision": 1.0,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 0.5,
+          "row_log_loss": [
+            0.5108256237659907,
+            0.5978370007556204,
+            0.616186139423817,
+            0.6539264674066639,
+            0.6931471805599453,
+            0.6733445532637656,
+            0.7985076962177717,
+            0.5108256237659907
+          ],
+          "tn": 6,
+          "total_cost": 1,
+          "tp": 1
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.cautious.v1",
+      "id": "LG-E2.cautious.t0.6.fn1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 5,
+        "false_positive_cost": 1,
+        "threshold": 0.6
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.875,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              6,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "f1": 0.6666666666666666,
+          "fn": 1,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 0.6318250356449456,
+          "mathematical_log_loss": 0.6318250356449456,
+          "precision": 1.0,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 0.5,
+          "row_log_loss": [
+            0.5108256237659907,
+            0.5978370007556204,
+            0.616186139423817,
+            0.6539264674066639,
+            0.6931471805599453,
+            0.6733445532637656,
+            0.7985076962177717,
+            0.5108256237659907
+          ],
+          "tn": 6,
+          "total_cost": 5,
+          "tp": 1
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.cautious.v1",
+      "id": "LG-E2.cautious.t0.6.fn5",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 1
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              6,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 2,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 0.6318250356449456,
+          "mathematical_log_loss": 0.6318250356449456,
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "prevalence": 0.25,
+          "recall": 0.0,
+          "row_log_loss": [
+            0.5108256237659907,
+            0.5978370007556204,
+            0.616186139423817,
+            0.6539264674066639,
+            0.6931471805599453,
+            0.6733445532637656,
+            0.7985076962177717,
+            0.5108256237659907
+          ],
+          "tn": 6,
+          "total_cost": 2,
+          "tp": 0
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.cautious.v1",
+      "id": "LG-E2.cautious.t1.fn1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 5,
+        "false_positive_cost": 1,
+        "threshold": 1
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              6,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 2,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 0.6318250356449456,
+          "mathematical_log_loss": 0.6318250356449456,
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "prevalence": 0.25,
+          "recall": 0.0,
+          "row_log_loss": [
+            0.5108256237659907,
+            0.5978370007556204,
+            0.616186139423817,
+            0.6539264674066639,
+            0.6931471805599453,
+            0.6733445532637656,
+            0.7985076962177717,
+            0.5108256237659907
+          ],
+          "tn": 6,
+          "total_cost": 10,
+          "tp": 0
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.cautious.v1",
+      "id": "LG-E2.cautious.t1.fn5",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 0
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.25,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.4,
+          "fn": 0,
+          "fp": 6,
+          "library_float64_clipped_log_loss": 0.7196908819995421,
+          "mathematical_log_loss": 0.7196908819995421,
+          "precision": 0.25,
+          "predictions": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.01005033585350145,
+            0.020202707317519466,
+            0.030459207484708574,
+            0.040821994520255166,
+            0.6931471805599453,
+            0.35667494393873245,
+            4.605170185988091,
+            0.0010005003335835344
+          ],
+          "tn": 0,
+          "total_cost": 6,
+          "tp": 2
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.sharp.v1",
+      "id": "LG-E2.sharp.t0.fn1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 5,
+        "false_positive_cost": 1,
+        "threshold": 0
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.25,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.4,
+          "fn": 0,
+          "fp": 6,
+          "library_float64_clipped_log_loss": 0.7196908819995421,
+          "mathematical_log_loss": 0.7196908819995421,
+          "precision": 0.25,
+          "predictions": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.01005033585350145,
+            0.020202707317519466,
+            0.030459207484708574,
+            0.040821994520255166,
+            0.6931471805599453,
+            0.35667494393873245,
+            4.605170185988091,
+            0.0010005003335835344
+          ],
+          "tn": 0,
+          "total_cost": 6,
+          "tp": 2
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.sharp.v1",
+      "id": "LG-E2.sharp.t0.fn5",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 0.5
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              4,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.6666666666666666,
+          "fn": 0,
+          "fp": 2,
+          "library_float64_clipped_log_loss": 0.7196908819995421,
+          "mathematical_log_loss": 0.7196908819995421,
+          "precision": 0.5,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.01005033585350145,
+            0.020202707317519466,
+            0.030459207484708574,
+            0.040821994520255166,
+            0.6931471805599453,
+            0.35667494393873245,
+            4.605170185988091,
+            0.0010005003335835344
+          ],
+          "tn": 4,
+          "total_cost": 2,
+          "tp": 2
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.sharp.v1",
+      "id": "LG-E2.sharp.t0.5.fn1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 5,
+        "false_positive_cost": 1,
+        "threshold": 0.5
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              4,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.6666666666666666,
+          "fn": 0,
+          "fp": 2,
+          "library_float64_clipped_log_loss": 0.7196908819995421,
+          "mathematical_log_loss": 0.7196908819995421,
+          "precision": 0.5,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.01005033585350145,
+            0.020202707317519466,
+            0.030459207484708574,
+            0.040821994520255166,
+            0.6931471805599453,
+            0.35667494393873245,
+            4.605170185988091,
+            0.0010005003335835344
+          ],
+          "tn": 4,
+          "total_cost": 2,
+          "tp": 2
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.sharp.v1",
+      "id": "LG-E2.sharp.t0.5.fn5",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 0.6
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.875,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              5,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.8,
+          "fn": 0,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.7196908819995421,
+          "mathematical_log_loss": 0.7196908819995421,
+          "precision": 0.6666666666666666,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.01005033585350145,
+            0.020202707317519466,
+            0.030459207484708574,
+            0.040821994520255166,
+            0.6931471805599453,
+            0.35667494393873245,
+            4.605170185988091,
+            0.0010005003335835344
+          ],
+          "tn": 5,
+          "total_cost": 1,
+          "tp": 2
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.sharp.v1",
+      "id": "LG-E2.sharp.t0.6.fn1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 5,
+        "false_positive_cost": 1,
+        "threshold": 0.6
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.875,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              5,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.8,
+          "fn": 0,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.7196908819995421,
+          "mathematical_log_loss": 0.7196908819995421,
+          "precision": 0.6666666666666666,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.01005033585350145,
+            0.020202707317519466,
+            0.030459207484708574,
+            0.040821994520255166,
+            0.6931471805599453,
+            0.35667494393873245,
+            4.605170185988091,
+            0.0010005003335835344
+          ],
+          "tn": 5,
+          "total_cost": 1,
+          "tp": 2
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.sharp.v1",
+      "id": "LG-E2.sharp.t0.6.fn5",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 1
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              6,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 2,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 0.7196908819995421,
+          "mathematical_log_loss": 0.7196908819995421,
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "prevalence": 0.25,
+          "recall": 0.0,
+          "row_log_loss": [
+            0.01005033585350145,
+            0.020202707317519466,
+            0.030459207484708574,
+            0.040821994520255166,
+            0.6931471805599453,
+            0.35667494393873245,
+            4.605170185988091,
+            0.0010005003335835344
+          ],
+          "tn": 6,
+          "total_cost": 2,
+          "tp": 0
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.sharp.v1",
+      "id": "LG-E2.sharp.t1.fn1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 5,
+        "false_positive_cost": 1,
+        "threshold": 1
+      },
+      "counterexample": "At threshold.5 all three confidence sets have the same hard labels and accuracy but different probability loss; their identical ranking does not prove calibration.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              6,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 2,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 0.7196908819995421,
+          "mathematical_log_loss": 0.7196908819995421,
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "prevalence": 0.25,
+          "recall": 0.0,
+          "row_log_loss": [
+            0.01005033585350145,
+            0.020202707317519466,
+            0.030459207484708574,
+            0.040821994520255166,
+            0.6931471805599453,
+            0.35667494393873245,
+            4.605170185988091,
+            0.0010005003335835344
+          ],
+          "tn": 6,
+          "total_cost": 10,
+          "tp": 0
+        },
+        "probabilities_unchanged": true,
+        "selection_valid": true
+      },
+      "explanation": "Probability>=threshold predicts positive, including equality. Threshold changes counts and costs, not probabilities or log loss. Select using development costs, then freeze before final evaluation.",
+      "explanation_id": "threshold-development-only",
+      "fixture": "LG.fixed-probabilities.sharp.v1",
+      "id": "LG-E2.sharp.t1.fn5",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 0
+      },
+      "counterexample": "A library's finite clipped log loss does not make mathematical infinite loss finite, and no actual positives makes recall undefined regardless of accuracy.",
+      "expected": {
+        "diagnostic_only": true,
+        "metrics": {
+          "accuracy": 0.5,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.6666666666666666,
+          "fn": 0,
+          "fp": 2,
+          "library_float64_clipped_log_loss": 18.021826694558577,
+          "mathematical_log_loss": {
+            "reason": "zero-probability-observed-outcome",
+            "sign": "positive",
+            "tag": "infinity"
+          },
+          "precision": 0.5,
+          "predictions": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.5,
+          "recall": 1.0,
+          "row_log_loss": [
+            -0.0,
+            -0.0,
+            {
+              "reason": "zero-probability-observed-outcome",
+              "sign": "positive",
+              "tag": "infinity"
+            },
+            {
+              "reason": "zero-probability-observed-outcome",
+              "sign": "positive",
+              "tag": "infinity"
+            }
+          ],
+          "tn": 0,
+          "total_cost": 2,
+          "tp": 2
+        },
+        "selection_valid": true
+      },
+      "explanation": "Correct endpoint probability has zero mathematical loss; certainty in the wrong outcome gives tagged infinity. Missing metric denominators are undefined, not silently zero; a clipped library loss is a separate numerical result.",
+      "explanation_id": "endpoint-and-undefined",
+      "fixture": "LG.endpoint.exact-endpoints.v1",
+      "id": "LG-E2.exact-endpoints.t0",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 0.5
+      },
+      "counterexample": "A library's finite clipped log loss does not make mathematical infinite loss finite, and no actual positives makes recall undefined regardless of accuracy.",
+      "expected": {
+        "diagnostic_only": true,
+        "metrics": {
+          "accuracy": 0.5,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "f1": 0.5,
+          "fn": 1,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 18.021826694558577,
+          "mathematical_log_loss": {
+            "reason": "zero-probability-observed-outcome",
+            "sign": "positive",
+            "tag": "infinity"
+          },
+          "precision": 0.5,
+          "predictions": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "prevalence": 0.5,
+          "recall": 0.5,
+          "row_log_loss": [
+            -0.0,
+            -0.0,
+            {
+              "reason": "zero-probability-observed-outcome",
+              "sign": "positive",
+              "tag": "infinity"
+            },
+            {
+              "reason": "zero-probability-observed-outcome",
+              "sign": "positive",
+              "tag": "infinity"
+            }
+          ],
+          "tn": 1,
+          "total_cost": 2,
+          "tp": 1
+        },
+        "selection_valid": true
+      },
+      "explanation": "Correct endpoint probability has zero mathematical loss; certainty in the wrong outcome gives tagged infinity. Missing metric denominators are undefined, not silently zero; a clipped library loss is a separate numerical result.",
+      "explanation_id": "endpoint-and-undefined",
+      "fixture": "LG.endpoint.exact-endpoints.v1",
+      "id": "LG-E2.exact-endpoints.t0.5",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 1
+      },
+      "counterexample": "A library's finite clipped log loss does not make mathematical infinite loss finite, and no actual positives makes recall undefined regardless of accuracy.",
+      "expected": {
+        "diagnostic_only": true,
+        "metrics": {
+          "accuracy": 0.5,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "f1": 0.5,
+          "fn": 1,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 18.021826694558577,
+          "mathematical_log_loss": {
+            "reason": "zero-probability-observed-outcome",
+            "sign": "positive",
+            "tag": "infinity"
+          },
+          "precision": 0.5,
+          "predictions": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "prevalence": 0.5,
+          "recall": 0.5,
+          "row_log_loss": [
+            -0.0,
+            -0.0,
+            {
+              "reason": "zero-probability-observed-outcome",
+              "sign": "positive",
+              "tag": "infinity"
+            },
+            {
+              "reason": "zero-probability-observed-outcome",
+              "sign": "positive",
+              "tag": "infinity"
+            }
+          ],
+          "tn": 1,
+          "total_cost": 2,
+          "tp": 1
+        },
+        "selection_valid": true
+      },
+      "explanation": "Correct endpoint probability has zero mathematical loss; certainty in the wrong outcome gives tagged infinity. Missing metric denominators are undefined, not silently zero; a clipped library loss is a separate numerical result.",
+      "explanation_id": "endpoint-and-undefined",
+      "fixture": "LG.endpoint.exact-endpoints.v1",
+      "id": "LG-E2.exact-endpoints.t1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 0
+      },
+      "counterexample": "A library's finite clipped log loss does not make mathematical infinite loss finite, and no actual positives makes recall undefined regardless of accuracy.",
+      "expected": {
+        "diagnostic_only": true,
+        "metrics": {
+          "accuracy": 0.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 0,
+          "fp": 4,
+          "library_float64_clipped_log_loss": 0.5858517718785753,
+          "mathematical_log_loss": 0.5858517718785752,
+          "precision": 0.0,
+          "predictions": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.0,
+          "recall": {
+            "reason": "no-actual-positives",
+            "tag": "undefined"
+          },
+          "row_log_loss": [
+            -0.0,
+            0.2231435513142097,
+            0.5108256237659907,
+            1.6094379124341005
+          ],
+          "tn": 0,
+          "total_cost": 4,
+          "tp": 0
+        },
+        "selection_valid": true
+      },
+      "explanation": "Correct endpoint probability has zero mathematical loss; certainty in the wrong outcome gives tagged infinity. Missing metric denominators are undefined, not silently zero; a clipped library loss is a separate numerical result.",
+      "explanation_id": "endpoint-and-undefined",
+      "fixture": "LG.endpoint.no-actual-positives.v1",
+      "id": "LG-E2.no-actual-positives.t0",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 0.5
+      },
+      "counterexample": "A library's finite clipped log loss does not make mathematical infinite loss finite, and no actual positives makes recall undefined regardless of accuracy.",
+      "expected": {
+        "diagnostic_only": true,
+        "metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              3,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "f1": 0.0,
+          "fn": 0,
+          "fp": 1,
+          "library_float64_clipped_log_loss": 0.5858517718785753,
+          "mathematical_log_loss": 0.5858517718785752,
+          "precision": 0.0,
+          "predictions": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "prevalence": 0.0,
+          "recall": {
+            "reason": "no-actual-positives",
+            "tag": "undefined"
+          },
+          "row_log_loss": [
+            -0.0,
+            0.2231435513142097,
+            0.5108256237659907,
+            1.6094379124341005
+          ],
+          "tn": 3,
+          "total_cost": 1,
+          "tp": 0
+        },
+        "selection_valid": true
+      },
+      "explanation": "Correct endpoint probability has zero mathematical loss; certainty in the wrong outcome gives tagged infinity. Missing metric denominators are undefined, not silently zero; a clipped library loss is a separate numerical result.",
+      "explanation_id": "endpoint-and-undefined",
+      "fixture": "LG.endpoint.no-actual-positives.v1",
+      "id": "LG-E2.no-actual-positives.t0.5",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "false_negative_cost": 1,
+        "false_positive_cost": 1,
+        "threshold": 1
+      },
+      "counterexample": "A library's finite clipped log loss does not make mathematical infinite loss finite, and no actual positives makes recall undefined regardless of accuracy.",
+      "expected": {
+        "diagnostic_only": true,
+        "metrics": {
+          "accuracy": 1.0,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              4,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "f1": {
+            "reason": "zero-f1-denominator",
+            "tag": "undefined"
+          },
+          "fn": 0,
+          "fp": 0,
+          "library_float64_clipped_log_loss": 0.5858517718785753,
+          "mathematical_log_loss": 0.5858517718785752,
+          "precision": {
+            "reason": "no-predicted-positives",
+            "tag": "undefined"
+          },
+          "predictions": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "prevalence": 0.0,
+          "recall": {
+            "reason": "no-actual-positives",
+            "tag": "undefined"
+          },
+          "row_log_loss": [
+            -0.0,
+            0.2231435513142097,
+            0.5108256237659907,
+            1.6094379124341005
+          ],
+          "tn": 4,
+          "total_cost": 0,
+          "tp": 0
+        },
+        "selection_valid": true
+      },
+      "explanation": "Correct endpoint probability has zero mathematical loss; certainty in the wrong outcome gives tagged infinity. Missing metric denominators are undefined, not silently zero; a clipped library loss is a separate numerical result.",
+      "explanation_id": "endpoint-and-undefined",
+      "fixture": "LG.endpoint.no-actual-positives.v1",
+      "id": "LG-E2.no-actual-positives.t1",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "threshold": 0.5,
+        "violation": "global-scaler"
+      },
+      "counterexample": "An attractive numerical score cannot establish honest evaluation when the information boundary is violated.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              4,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.6666666666666666,
+          "fn": 0,
+          "fp": 2,
+          "library_float64_clipped_log_loss": 0.5143469833868277,
+          "mathematical_log_loss": 0.5143469833868277,
+          "precision": 0.5,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.10536051565782628,
+            0.2231435513142097,
+            0.35667494393873245,
+            0.5108256237659907,
+            0.6931471805599453,
+            0.5108256237659907,
+            1.6094379124341005,
+            0.10536051565782628
+          ],
+          "tn": 4,
+          "total_cost": 2,
+          "tp": 2
+        },
+        "selection_valid": false,
+        "violation": "global-scaler",
+        "workflow": {
+          "estimator_fit_ids": [
+            "lg-action-train1",
+            "lg-action-train2",
+            "lg-action-train3",
+            "lg-action-train4"
+          ],
+          "evaluation_ids": [
+            "lg-action1",
+            "lg-action2",
+            "lg-action3",
+            "lg-action4",
+            "lg-action5",
+            "lg-action6",
+            "lg-action7",
+            "lg-action8"
+          ],
+          "feature_available_day": -7,
+          "final_test_targets": "not exposed",
+          "kind": "authored-permission-diagnostic-not-executed-fit",
+          "prediction_day": 0,
+          "scaler_fit_ids": [
+            "lg-action-train1",
+            "lg-action-train2",
+            "lg-action-train3",
+            "lg-action-train4",
+            "lg-action1",
+            "lg-action2",
+            "lg-action3",
+            "lg-action4",
+            "lg-action5",
+            "lg-action6",
+            "lg-action7",
+            "lg-action8"
+          ],
+          "threshold_selection_ids": [
+            "lg-action1",
+            "lg-action2",
+            "lg-action3",
+            "lg-action4",
+            "lg-action5",
+            "lg-action6",
+            "lg-action7",
+            "lg-action8"
+          ]
+        }
+      },
+      "explanation": "Reject this evaluation/selection claim despite correct arithmetic: fit preprocessing within each training fold, exclude unavailable target-derived inputs, and never select a threshold from final-test feedback.",
+      "explanation_id": "reject-leakage",
+      "fixture": "LG.fixed-probabilities.moderate.v1",
+      "id": "LG-E2.invalid.global-scaler",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "threshold": 0.5,
+        "violation": "target-derived-feature"
+      },
+      "counterexample": "An attractive numerical score cannot establish honest evaluation when the information boundary is violated.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              4,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.6666666666666666,
+          "fn": 0,
+          "fp": 2,
+          "library_float64_clipped_log_loss": 0.5143469833868277,
+          "mathematical_log_loss": 0.5143469833868277,
+          "precision": 0.5,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.10536051565782628,
+            0.2231435513142097,
+            0.35667494393873245,
+            0.5108256237659907,
+            0.6931471805599453,
+            0.5108256237659907,
+            1.6094379124341005,
+            0.10536051565782628
+          ],
+          "tn": 4,
+          "total_cost": 2,
+          "tp": 2
+        },
+        "selection_valid": false,
+        "violation": "target-derived-feature",
+        "workflow": {
+          "estimator_fit_ids": [
+            "lg-action-train1",
+            "lg-action-train2",
+            "lg-action-train3",
+            "lg-action-train4"
+          ],
+          "evaluation_ids": [
+            "lg-action1",
+            "lg-action2",
+            "lg-action3",
+            "lg-action4",
+            "lg-action5",
+            "lg-action6",
+            "lg-action7",
+            "lg-action8"
+          ],
+          "feature_available_day": 30,
+          "final_test_targets": "not exposed",
+          "kind": "authored-permission-diagnostic-not-executed-fit",
+          "prediction_day": 0,
+          "scaler_fit_ids": [
+            "lg-action-train1",
+            "lg-action-train2",
+            "lg-action-train3",
+            "lg-action-train4"
+          ],
+          "threshold_selection_ids": [
+            "lg-action1",
+            "lg-action2",
+            "lg-action3",
+            "lg-action4",
+            "lg-action5",
+            "lg-action6",
+            "lg-action7",
+            "lg-action8"
+          ]
+        }
+      },
+      "explanation": "Reject this evaluation/selection claim despite correct arithmetic: fit preprocessing within each training fold, exclude unavailable target-derived inputs, and never select a threshold from final-test feedback.",
+      "explanation_id": "reject-leakage",
+      "fixture": "LG.fixed-probabilities.moderate.v1",
+      "id": "LG-E2.invalid.target-derived-feature",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    },
+    {
+      "controls": {
+        "threshold": 0.5,
+        "violation": "test-selected-threshold"
+      },
+      "counterexample": "An attractive numerical score cannot establish honest evaluation when the information boundary is violated.",
+      "expected": {
+        "metrics": {
+          "accuracy": 0.75,
+          "clipping_epsilon": 2.220446049250313e-16,
+          "confusion_actual_rows_01": [
+            [
+              4,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "f1": 0.6666666666666666,
+          "fn": 0,
+          "fp": 2,
+          "library_float64_clipped_log_loss": 0.5143469833868277,
+          "mathematical_log_loss": 0.5143469833868277,
+          "precision": 0.5,
+          "predictions": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "prevalence": 0.25,
+          "recall": 1.0,
+          "row_log_loss": [
+            0.10536051565782628,
+            0.2231435513142097,
+            0.35667494393873245,
+            0.5108256237659907,
+            0.6931471805599453,
+            0.5108256237659907,
+            1.6094379124341005,
+            0.10536051565782628
+          ],
+          "tn": 4,
+          "total_cost": 2,
+          "tp": 2
+        },
+        "selection_valid": false,
+        "violation": "test-selected-threshold",
+        "workflow": {
+          "estimator_fit_ids": [
+            "lg-action-train1",
+            "lg-action-train2",
+            "lg-action-train3",
+            "lg-action-train4"
+          ],
+          "evaluation_ids": [
+            "lg-action1",
+            "lg-action2",
+            "lg-action3",
+            "lg-action4",
+            "lg-action5",
+            "lg-action6",
+            "lg-action7",
+            "lg-action8"
+          ],
+          "feature_available_day": -7,
+          "final_test_targets": "not exposed",
+          "kind": "authored-permission-diagnostic-not-executed-fit",
+          "prediction_day": 0,
+          "scaler_fit_ids": [
+            "lg-action-train1",
+            "lg-action-train2",
+            "lg-action-train3",
+            "lg-action-train4"
+          ],
+          "threshold_selection_ids": [
+            "lg-final-test1"
+          ]
+        }
+      },
+      "explanation": "Reject this evaluation/selection claim despite correct arithmetic: fit preprocessing within each training fold, exclude unavailable target-derived inputs, and never select a threshold from final-test feedback.",
+      "explanation_id": "reject-leakage",
+      "fixture": "LG.fixed-probabilities.moderate.v1",
+      "id": "LG-E2.invalid.test-selected-threshold",
+      "text_alternative": "Read ordered input contributions, scores/probabilities, named classes, exact counts and tagged loss/undefined outcomes; no graphic or color is required."
+    }
+  ],
+  "explanation_options": [
+    "score-probability-learning",
+    "inverse-c-training-only",
+    "reject-unsupported-model",
+    "threshold-development-only",
+    "endpoint-and-undefined",
+    "reject-leakage",
+    "training-accuracy-guarantees-risk",
+    "threshold-change-refits-model"
+  ],
+  "fixtures": [
+    {
+      "declared_fit_ids": [
+        "lg-action-train1",
+        "lg-action-train2",
+        "lg-action-train3",
+        "lg-action-train4"
+      ],
+      "eligible_feature_day": -7,
+      "fictional": true,
+      "id": "LG.fixed-probabilities.moderate.v1",
+      "ids": [
+        "lg-action1",
+        "lg-action2",
+        "lg-action3",
+        "lg-action4",
+        "lg-action5",
+        "lg-action6",
+        "lg-action7",
+        "lg-action8"
+      ],
+      "majority_baseline": {
+        "accuracy": 0.75,
+        "clipping_epsilon": 2.220446049250313e-16,
+        "confusion_actual_rows_01": [
+          [
+            6,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "f1": 0.0,
+        "fn": 2,
+        "fp": 0,
+        "library_float64_clipped_log_loss": 9.010913347279288,
+        "mathematical_log_loss": {
+          "reason": "zero-probability-observed-outcome",
+          "sign": "positive",
+          "tag": "infinity"
+        },
+        "precision": {
+          "reason": "no-predicted-positives",
+          "tag": "undefined"
+        },
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "prevalence": 0.25,
+        "recall": 0.0,
+        "row_log_loss": [
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          {
+            "reason": "zero-probability-observed-outcome",
+            "sign": "positive",
+            "tag": "infinity"
+          },
+          -0.0,
+          {
+            "reason": "zero-probability-observed-outcome",
+            "sign": "positive",
+            "tag": "infinity"
+          }
+        ],
+        "tn": 6,
+        "total_cost": 2,
+        "tp": 0
+      },
+      "positive_label": "1=churns;0=stays",
+      "prediction_day": 0,
+      "probabilities": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.8,
+        0.9
+      ],
+      "provenance": "authored fixed development outputs; not a claimed trained model",
+      "target_window_days": [
+        1,
+        30
+      ],
+      "y": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "declared_fit_ids": [
+        "lg-action-train1",
+        "lg-action-train2",
+        "lg-action-train3",
+        "lg-action-train4"
+      ],
+      "eligible_feature_day": -7,
+      "fictional": true,
+      "id": "LG.fixed-probabilities.cautious.v1",
+      "ids": [
+        "lg-action1",
+        "lg-action2",
+        "lg-action3",
+        "lg-action4",
+        "lg-action5",
+        "lg-action6",
+        "lg-action7",
+        "lg-action8"
+      ],
+      "majority_baseline": {
+        "accuracy": 0.75,
+        "clipping_epsilon": 2.220446049250313e-16,
+        "confusion_actual_rows_01": [
+          [
+            6,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "f1": 0.0,
+        "fn": 2,
+        "fp": 0,
+        "library_float64_clipped_log_loss": 9.010913347279288,
+        "mathematical_log_loss": {
+          "reason": "zero-probability-observed-outcome",
+          "sign": "positive",
+          "tag": "infinity"
+        },
+        "precision": {
+          "reason": "no-predicted-positives",
+          "tag": "undefined"
+        },
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "prevalence": 0.25,
+        "recall": 0.0,
+        "row_log_loss": [
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          {
+            "reason": "zero-probability-observed-outcome",
+            "sign": "positive",
+            "tag": "infinity"
+          },
+          -0.0,
+          {
+            "reason": "zero-probability-observed-outcome",
+            "sign": "positive",
+            "tag": "infinity"
+          }
+        ],
+        "tn": 6,
+        "total_cost": 2,
+        "tp": 0
+      },
+      "positive_label": "1=churns;0=stays",
+      "prediction_day": 0,
+      "probabilities": [
+        0.4,
+        0.45,
+        0.46,
+        0.48,
+        0.5,
+        0.51,
+        0.55,
+        0.6
+      ],
+      "provenance": "authored fixed development outputs; not a claimed trained model",
+      "target_window_days": [
+        1,
+        30
+      ],
+      "y": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "declared_fit_ids": [
+        "lg-action-train1",
+        "lg-action-train2",
+        "lg-action-train3",
+        "lg-action-train4"
+      ],
+      "eligible_feature_day": -7,
+      "fictional": true,
+      "id": "LG.fixed-probabilities.sharp.v1",
+      "ids": [
+        "lg-action1",
+        "lg-action2",
+        "lg-action3",
+        "lg-action4",
+        "lg-action5",
+        "lg-action6",
+        "lg-action7",
+        "lg-action8"
+      ],
+      "majority_baseline": {
+        "accuracy": 0.75,
+        "clipping_epsilon": 2.220446049250313e-16,
+        "confusion_actual_rows_01": [
+          [
+            6,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "f1": 0.0,
+        "fn": 2,
+        "fp": 0,
+        "library_float64_clipped_log_loss": 9.010913347279288,
+        "mathematical_log_loss": {
+          "reason": "zero-probability-observed-outcome",
+          "sign": "positive",
+          "tag": "infinity"
+        },
+        "precision": {
+          "reason": "no-predicted-positives",
+          "tag": "undefined"
+        },
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "prevalence": 0.25,
+        "recall": 0.0,
+        "row_log_loss": [
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          {
+            "reason": "zero-probability-observed-outcome",
+            "sign": "positive",
+            "tag": "infinity"
+          },
+          -0.0,
+          {
+            "reason": "zero-probability-observed-outcome",
+            "sign": "positive",
+            "tag": "infinity"
+          }
+        ],
+        "tn": 6,
+        "total_cost": 2,
+        "tp": 0
+      },
+      "positive_label": "1=churns;0=stays",
+      "prediction_day": 0,
+      "probabilities": [
+        0.01,
+        0.02,
+        0.03,
+        0.04,
+        0.5,
+        0.7,
+        0.99,
+        0.999
+      ],
+      "provenance": "authored fixed development outputs; not a claimed trained model",
+      "target_window_days": [
+        1,
+        30
+      ],
+      "y": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "fictional": true,
+      "id": "LG.endpoint.exact-endpoints.v1",
+      "ids": [
+        "lg-edge1",
+        "lg-edge2",
+        "lg-edge3",
+        "lg-edge4"
+      ],
+      "probabilities": [
+        0.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      "provenance": "authored metric diagnostic, not finite-logit mathematical endpoints",
+      "y": [
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "fictional": true,
+      "id": "LG.endpoint.no-actual-positives.v1",
+      "ids": [
+        "lg-edge1",
+        "lg-edge2",
+        "lg-edge3",
+        "lg-edge4"
+      ],
+      "probabilities": [
+        0.0,
+        0.2,
+        0.4,
+        0.8
+      ],
+      "provenance": "authored metric diagnostic, not finite-logit mathematical endpoints",
+      "y": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "id": "LG-E2",
+  "initial_configuration": "LG-E2.moderate.t0.fn1",
+  "interaction": [
+    "Record prediction before reveal",
+    "Change a meaningful listed configuration",
+    "Reveal exact score/probability or metric tables and synchronized visual",
+    "Choose the supported explanation",
+    "Apply a changed-case bounded transfer"
+  ],
+  "learning_question": "How do threshold decisions, probability quality and evaluation permissions differ?",
+  "objectives": [
+    "LG03.O1",
+    "LG03.O2",
+    "LG03.O3",
+    "LG03.O4",
+    "LG05.O1",
+    "LG05.O2",
+    "LG05.O3",
+    "LG05.O4",
+    "LG06.O1",
+    "LG06.O2",
+    "LG06.O3",
+    "LG06.O4"
+  ],
+  "positive_class": "1=churns;0=stays",
+  "prediction_options": [
+    "Probability changes because the linear score changes",
+    "The decision may change without refitting or changing probabilities",
+    "The score cannot justify this evaluation or probability interpretation"
+  ],
+  "prerequisites": [
+    "Evaluation Foundations",
+    "Probability and Derivatives",
+    "linear scores and training-only scaling"
+  ],
+  "profile": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "python": "3.13.16",
+    "scikit-learn": "1.9.1"
+  },
+  "rejection": "Reject unknown/altered IDs, nonfinite or out-of-domain inputs, arbitrary expressions and unsupported Cartesian tuples. Unsupported model diagnostics are explicit tagged states, never fitted outputs.",
+  "schema": "supervised.logistic.experiment.v1",
+  "seed": 1729,
+  "version": "1.0.0"
+}

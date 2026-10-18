@@ -1,0 +1,1160 @@
+{
+  "schemaVersion": "1.0.0",
+  "tolerance": {
+    "absolute": 1e-09,
+    "gradientCheck": 1e-06
+  },
+  "cases": [
+    {
+      "name": "single-feature",
+      "input": {
+        "features": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "targets": [
+          3,
+          5,
+          7
+        ],
+        "weights": [
+          1
+        ],
+        "bias": 0,
+        "learningRate": 0.01,
+        "iterations": 5
+      },
+      "evaluation": {
+        "schemaVersion": "1.0.0",
+        "shape": {
+          "observations": 3,
+          "features": 1
+        },
+        "parameters": {
+          "weights": [
+            1.0
+          ],
+          "bias": 0.0
+        },
+        "rows": [
+          {
+            "features": [
+              1.0
+            ],
+            "contributions": [
+              1.0
+            ],
+            "target": 3.0,
+            "prediction": 1.0,
+            "residual": -2.0,
+            "absoluteResidual": 2.0,
+            "squaredResidual": 4.0
+          },
+          {
+            "features": [
+              2.0
+            ],
+            "contributions": [
+              2.0
+            ],
+            "target": 5.0,
+            "prediction": 2.0,
+            "residual": -3.0,
+            "absoluteResidual": 3.0,
+            "squaredResidual": 9.0
+          },
+          {
+            "features": [
+              3.0
+            ],
+            "contributions": [
+              3.0
+            ],
+            "target": 7.0,
+            "prediction": 3.0,
+            "residual": -4.0,
+            "absoluteResidual": 4.0,
+            "squaredResidual": 16.0
+          }
+        ],
+        "metrics": {
+          "mae": 3.0,
+          "mse": 9.666666666666666,
+          "rmse": 3.1091263510296048
+        }
+      },
+      "gradient": {
+        "schemaVersion": "1.0.0",
+        "residuals": [
+          -2.0,
+          -3.0,
+          -4.0
+        ],
+        "factor": 0.6666666666666666,
+        "weightGradients": [
+          -13.333333333333332
+        ],
+        "biasGradient": -6.0
+      },
+      "update": {
+        "schemaVersion": "1.0.0",
+        "learningRate": 0.01,
+        "before": {
+          "schemaVersion": "1.0.0",
+          "shape": {
+            "observations": 3,
+            "features": 1
+          },
+          "parameters": {
+            "weights": [
+              1.0
+            ],
+            "bias": 0.0
+          },
+          "rows": [
+            {
+              "features": [
+                1.0
+              ],
+              "contributions": [
+                1.0
+              ],
+              "target": 3.0,
+              "prediction": 1.0,
+              "residual": -2.0,
+              "absoluteResidual": 2.0,
+              "squaredResidual": 4.0
+            },
+            {
+              "features": [
+                2.0
+              ],
+              "contributions": [
+                2.0
+              ],
+              "target": 5.0,
+              "prediction": 2.0,
+              "residual": -3.0,
+              "absoluteResidual": 3.0,
+              "squaredResidual": 9.0
+            },
+            {
+              "features": [
+                3.0
+              ],
+              "contributions": [
+                3.0
+              ],
+              "target": 7.0,
+              "prediction": 3.0,
+              "residual": -4.0,
+              "absoluteResidual": 4.0,
+              "squaredResidual": 16.0
+            }
+          ],
+          "metrics": {
+            "mae": 3.0,
+            "mse": 9.666666666666666,
+            "rmse": 3.1091263510296048
+          }
+        },
+        "gradient": {
+          "schemaVersion": "1.0.0",
+          "residuals": [
+            -2.0,
+            -3.0,
+            -4.0
+          ],
+          "factor": 0.6666666666666666,
+          "weightGradients": [
+            -13.333333333333332
+          ],
+          "biasGradient": -6.0
+        },
+        "updatedParameters": {
+          "weights": [
+            1.1333333333333333
+          ],
+          "bias": 0.06
+        },
+        "after": {
+          "schemaVersion": "1.0.0",
+          "shape": {
+            "observations": 3,
+            "features": 1
+          },
+          "parameters": {
+            "weights": [
+              1.1333333333333333
+            ],
+            "bias": 0.06
+          },
+          "rows": [
+            {
+              "features": [
+                1.0
+              ],
+              "contributions": [
+                1.1333333333333333
+              ],
+              "target": 3.0,
+              "prediction": 1.1933333333333334,
+              "residual": -1.8066666666666666,
+              "absoluteResidual": 1.8066666666666666,
+              "squaredResidual": 3.2640444444444445
+            },
+            {
+              "features": [
+                2.0
+              ],
+              "contributions": [
+                2.2666666666666666
+              ],
+              "target": 5.0,
+              "prediction": 2.3266666666666667,
+              "residual": -2.6733333333333333,
+              "absoluteResidual": 2.6733333333333333,
+              "squaredResidual": 7.146711111111111
+            },
+            {
+              "features": [
+                3.0
+              ],
+              "contributions": [
+                3.4
+              ],
+              "target": 7.0,
+              "prediction": 3.46,
+              "residual": -3.54,
+              "absoluteResidual": 3.54,
+              "squaredResidual": 12.531600000000001
+            }
+          ],
+          "metrics": {
+            "mae": 2.6733333333333333,
+            "mse": 7.647451851851852,
+            "rmse": 2.7654026563688427
+          }
+        }
+      },
+      "training": {
+        "schemaVersion": "1.0.0",
+        "entryConvention": "iteration 0 is the initial state; iteration k is the state after k updates",
+        "requestedIterations": 5,
+        "completedUpdates": 5,
+        "learningRate": 0.01,
+        "status": "completed",
+        "terminationReason": "iterations_completed",
+        "entries": [
+          {
+            "iteration": 0,
+            "weights": [
+              1.0
+            ],
+            "bias": 0.0,
+            "loss": 9.666666666666666,
+            "weightGradients": [
+              -13.333333333333332
+            ],
+            "biasGradient": -6.0,
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 1,
+            "weights": [
+              1.1333333333333333
+            ],
+            "bias": 0.06,
+            "loss": 7.647451851851852,
+            "weightGradients": [
+              -11.848888888888888
+            ],
+            "biasGradient": -5.346666666666666,
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 2,
+            "weights": [
+              1.2518222222222222
+            ],
+            "bias": 0.11346666666666666,
+            "loss": 6.051339448230453,
+            "weightGradients": [
+              -10.529125925925925
+            ],
+            "biasGradient": -4.765777777777778,
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 3,
+            "weights": [
+              1.3571134814814814
+            ],
+            "bias": 0.16112444444444446,
+            "loss": 4.789667025800926,
+            "weightGradients": [
+              -9.355776395061728
+            ],
+            "biasGradient": -4.249297185185185,
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 4,
+            "weights": [
+              1.4506712454320987
+            ],
+            "bias": 0.20361741629629632,
+            "loss": 3.792351673865911,
+            "weightGradients": [
+              -8.312598710781891
+            ],
+            "biasGradient": -3.790080185679012,
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 5,
+            "weights": [
+              1.5337972325399176
+            ],
+            "bias": 0.24151821815308644,
+            "loss": 3.003996598262063,
+            "weightGradients": [
+              -7.385152957015089
+            ],
+            "biasGradient": -3.3817746335341567,
+            "status": "completed",
+            "terminationReason": "iterations_completed"
+          }
+        ]
+      }
+    },
+    {
+      "name": "multiple-feature",
+      "input": {
+        "features": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "targets": [
+          5,
+          4,
+          7
+        ],
+        "weights": [
+          0.5,
+          -1
+        ],
+        "bias": 1,
+        "learningRate": 0.02,
+        "iterations": 4
+      },
+      "evaluation": {
+        "schemaVersion": "1.0.0",
+        "shape": {
+          "observations": 3,
+          "features": 2
+        },
+        "parameters": {
+          "weights": [
+            0.5,
+            -1.0
+          ],
+          "bias": 1.0
+        },
+        "rows": [
+          {
+            "features": [
+              1.0,
+              2.0
+            ],
+            "contributions": [
+              0.5,
+              -2.0
+            ],
+            "target": 5.0,
+            "prediction": -0.5,
+            "residual": -5.5,
+            "absoluteResidual": 5.5,
+            "squaredResidual": 30.25
+          },
+          {
+            "features": [
+              2.0,
+              0.0
+            ],
+            "contributions": [
+              1.0,
+              -0.0
+            ],
+            "target": 4.0,
+            "prediction": 2.0,
+            "residual": -2.0,
+            "absoluteResidual": 2.0,
+            "squaredResidual": 4.0
+          },
+          {
+            "features": [
+              3.0,
+              1.0
+            ],
+            "contributions": [
+              1.5,
+              -1.0
+            ],
+            "target": 7.0,
+            "prediction": 1.5,
+            "residual": -5.5,
+            "absoluteResidual": 5.5,
+            "squaredResidual": 30.25
+          }
+        ],
+        "metrics": {
+          "mae": 4.333333333333333,
+          "mse": 21.5,
+          "rmse": 4.636809247747852
+        }
+      },
+      "gradient": {
+        "schemaVersion": "1.0.0",
+        "residuals": [
+          -5.5,
+          -2.0,
+          -5.5
+        ],
+        "factor": 0.6666666666666666,
+        "weightGradients": [
+          -17.333333333333332,
+          -11.0
+        ],
+        "biasGradient": -8.666666666666666
+      },
+      "update": {
+        "schemaVersion": "1.0.0",
+        "learningRate": 0.02,
+        "before": {
+          "schemaVersion": "1.0.0",
+          "shape": {
+            "observations": 3,
+            "features": 2
+          },
+          "parameters": {
+            "weights": [
+              0.5,
+              -1.0
+            ],
+            "bias": 1.0
+          },
+          "rows": [
+            {
+              "features": [
+                1.0,
+                2.0
+              ],
+              "contributions": [
+                0.5,
+                -2.0
+              ],
+              "target": 5.0,
+              "prediction": -0.5,
+              "residual": -5.5,
+              "absoluteResidual": 5.5,
+              "squaredResidual": 30.25
+            },
+            {
+              "features": [
+                2.0,
+                0.0
+              ],
+              "contributions": [
+                1.0,
+                -0.0
+              ],
+              "target": 4.0,
+              "prediction": 2.0,
+              "residual": -2.0,
+              "absoluteResidual": 2.0,
+              "squaredResidual": 4.0
+            },
+            {
+              "features": [
+                3.0,
+                1.0
+              ],
+              "contributions": [
+                1.5,
+                -1.0
+              ],
+              "target": 7.0,
+              "prediction": 1.5,
+              "residual": -5.5,
+              "absoluteResidual": 5.5,
+              "squaredResidual": 30.25
+            }
+          ],
+          "metrics": {
+            "mae": 4.333333333333333,
+            "mse": 21.5,
+            "rmse": 4.636809247747852
+          }
+        },
+        "gradient": {
+          "schemaVersion": "1.0.0",
+          "residuals": [
+            -5.5,
+            -2.0,
+            -5.5
+          ],
+          "factor": 0.6666666666666666,
+          "weightGradients": [
+            -17.333333333333332,
+            -11.0
+          ],
+          "biasGradient": -8.666666666666666
+        },
+        "updatedParameters": {
+          "weights": [
+            0.8466666666666667,
+            -0.78
+          ],
+          "bias": 1.1733333333333333
+        },
+        "after": {
+          "schemaVersion": "1.0.0",
+          "shape": {
+            "observations": 3,
+            "features": 2
+          },
+          "parameters": {
+            "weights": [
+              0.8466666666666667,
+              -0.78
+            ],
+            "bias": 1.1733333333333333
+          },
+          "rows": [
+            {
+              "features": [
+                1.0,
+                2.0
+              ],
+              "contributions": [
+                0.8466666666666667,
+                -1.56
+              ],
+              "target": 5.0,
+              "prediction": 0.45999999999999996,
+              "residual": -4.54,
+              "absoluteResidual": 4.54,
+              "squaredResidual": 20.6116
+            },
+            {
+              "features": [
+                2.0,
+                0.0
+              ],
+              "contributions": [
+                1.6933333333333334,
+                -0.0
+              ],
+              "target": 4.0,
+              "prediction": 2.8666666666666667,
+              "residual": -1.1333333333333333,
+              "absoluteResidual": 1.1333333333333333,
+              "squaredResidual": 1.2844444444444443
+            },
+            {
+              "features": [
+                3.0,
+                1.0
+              ],
+              "contributions": [
+                2.54,
+                -0.78
+              ],
+              "target": 7.0,
+              "prediction": 2.9333333333333336,
+              "residual": -4.066666666666666,
+              "absoluteResidual": 4.066666666666666,
+              "squaredResidual": 16.537777777777777
+            }
+          ],
+          "metrics": {
+            "mae": 3.2466666666666666,
+            "mse": 12.811274074074072,
+            "rmse": 3.5792840169612234
+          }
+        }
+      },
+      "training": {
+        "schemaVersion": "1.0.0",
+        "entryConvention": "iteration 0 is the initial state; iteration k is the state after k updates",
+        "requestedIterations": 4,
+        "completedUpdates": 4,
+        "learningRate": 0.02,
+        "status": "completed",
+        "terminationReason": "iterations_completed",
+        "entries": [
+          {
+            "iteration": 0,
+            "weights": [
+              0.5,
+              -1.0
+            ],
+            "bias": 1.0,
+            "loss": 21.5,
+            "weightGradients": [
+              -17.333333333333332,
+              -11.0
+            ],
+            "biasGradient": -8.666666666666666,
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 1,
+            "weights": [
+              0.8466666666666667,
+              -0.78
+            ],
+            "bias": 1.1733333333333333,
+            "loss": 12.811274074074072,
+            "weightGradients": [
+              -12.67111111111111,
+              -8.764444444444443
+            ],
+            "biasGradient": -6.493333333333333,
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 2,
+            "weights": [
+              1.100088888888889,
+              -0.6047111111111112
+            ],
+            "bias": 1.3032,
+            "loss": 7.913584266008232,
+            "weightGradients": [
+              -9.202074074074075,
+              -7.075674074074074
+            ],
+            "biasGradient": -4.8693333333333335,
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 3,
+            "weights": [
+              1.2841303703703704,
+              -0.46319762962962974
+            ],
+            "bias": 1.4005866666666666,
+            "loss": 5.131506657991696,
+            "weightGradients": [
+              -6.6230953086419735,
+              -5.795717530864197
+            ],
+            "biasGradient": -3.6553671111111106,
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 4,
+            "weights": [
+              1.4165922765432097,
+              -0.3472832790123458
+            ],
+            "bias": 1.4736940088888888,
+            "loss": 3.531643046984847,
+            "weightGradients": [
+              -4.707973646748972,
+              -4.8215819904526755
+            ],
+            "biasGradient": -2.7474761007407413,
+            "status": "completed",
+            "terminationReason": "iterations_completed"
+          }
+        ]
+      }
+    },
+    {
+      "name": "exact-predictions",
+      "input": {
+        "features": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "targets": [
+          3,
+          5,
+          7
+        ],
+        "weights": [
+          2
+        ],
+        "bias": 1,
+        "learningRate": 0.01,
+        "iterations": 2
+      },
+      "evaluation": {
+        "schemaVersion": "1.0.0",
+        "shape": {
+          "observations": 3,
+          "features": 1
+        },
+        "parameters": {
+          "weights": [
+            2.0
+          ],
+          "bias": 1.0
+        },
+        "rows": [
+          {
+            "features": [
+              1.0
+            ],
+            "contributions": [
+              2.0
+            ],
+            "target": 3.0,
+            "prediction": 3.0,
+            "residual": 0.0,
+            "absoluteResidual": 0.0,
+            "squaredResidual": 0.0
+          },
+          {
+            "features": [
+              2.0
+            ],
+            "contributions": [
+              4.0
+            ],
+            "target": 5.0,
+            "prediction": 5.0,
+            "residual": 0.0,
+            "absoluteResidual": 0.0,
+            "squaredResidual": 0.0
+          },
+          {
+            "features": [
+              3.0
+            ],
+            "contributions": [
+              6.0
+            ],
+            "target": 7.0,
+            "prediction": 7.0,
+            "residual": 0.0,
+            "absoluteResidual": 0.0,
+            "squaredResidual": 0.0
+          }
+        ],
+        "metrics": {
+          "mae": 0.0,
+          "mse": 0.0,
+          "rmse": 0.0
+        }
+      },
+      "gradient": {
+        "schemaVersion": "1.0.0",
+        "residuals": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "factor": 0.6666666666666666,
+        "weightGradients": [
+          0.0
+        ],
+        "biasGradient": 0.0
+      },
+      "update": {
+        "schemaVersion": "1.0.0",
+        "learningRate": 0.01,
+        "before": {
+          "schemaVersion": "1.0.0",
+          "shape": {
+            "observations": 3,
+            "features": 1
+          },
+          "parameters": {
+            "weights": [
+              2.0
+            ],
+            "bias": 1.0
+          },
+          "rows": [
+            {
+              "features": [
+                1.0
+              ],
+              "contributions": [
+                2.0
+              ],
+              "target": 3.0,
+              "prediction": 3.0,
+              "residual": 0.0,
+              "absoluteResidual": 0.0,
+              "squaredResidual": 0.0
+            },
+            {
+              "features": [
+                2.0
+              ],
+              "contributions": [
+                4.0
+              ],
+              "target": 5.0,
+              "prediction": 5.0,
+              "residual": 0.0,
+              "absoluteResidual": 0.0,
+              "squaredResidual": 0.0
+            },
+            {
+              "features": [
+                3.0
+              ],
+              "contributions": [
+                6.0
+              ],
+              "target": 7.0,
+              "prediction": 7.0,
+              "residual": 0.0,
+              "absoluteResidual": 0.0,
+              "squaredResidual": 0.0
+            }
+          ],
+          "metrics": {
+            "mae": 0.0,
+            "mse": 0.0,
+            "rmse": 0.0
+          }
+        },
+        "gradient": {
+          "schemaVersion": "1.0.0",
+          "residuals": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "factor": 0.6666666666666666,
+          "weightGradients": [
+            0.0
+          ],
+          "biasGradient": 0.0
+        },
+        "updatedParameters": {
+          "weights": [
+            2.0
+          ],
+          "bias": 1.0
+        },
+        "after": {
+          "schemaVersion": "1.0.0",
+          "shape": {
+            "observations": 3,
+            "features": 1
+          },
+          "parameters": {
+            "weights": [
+              2.0
+            ],
+            "bias": 1.0
+          },
+          "rows": [
+            {
+              "features": [
+                1.0
+              ],
+              "contributions": [
+                2.0
+              ],
+              "target": 3.0,
+              "prediction": 3.0,
+              "residual": 0.0,
+              "absoluteResidual": 0.0,
+              "squaredResidual": 0.0
+            },
+            {
+              "features": [
+                2.0
+              ],
+              "contributions": [
+                4.0
+              ],
+              "target": 5.0,
+              "prediction": 5.0,
+              "residual": 0.0,
+              "absoluteResidual": 0.0,
+              "squaredResidual": 0.0
+            },
+            {
+              "features": [
+                3.0
+              ],
+              "contributions": [
+                6.0
+              ],
+              "target": 7.0,
+              "prediction": 7.0,
+              "residual": 0.0,
+              "absoluteResidual": 0.0,
+              "squaredResidual": 0.0
+            }
+          ],
+          "metrics": {
+            "mae": 0.0,
+            "mse": 0.0,
+            "rmse": 0.0
+          }
+        }
+      },
+      "training": {
+        "schemaVersion": "1.0.0",
+        "entryConvention": "iteration 0 is the initial state; iteration k is the state after k updates",
+        "requestedIterations": 2,
+        "completedUpdates": 2,
+        "learningRate": 0.01,
+        "status": "completed",
+        "terminationReason": "iterations_completed",
+        "entries": [
+          {
+            "iteration": 0,
+            "weights": [
+              2.0
+            ],
+            "bias": 1.0,
+            "loss": 0.0,
+            "weightGradients": [
+              0.0
+            ],
+            "biasGradient": 0.0,
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 1,
+            "weights": [
+              2.0
+            ],
+            "bias": 1.0,
+            "loss": 0.0,
+            "weightGradients": [
+              0.0
+            ],
+            "biasGradient": 0.0,
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 2,
+            "weights": [
+              2.0
+            ],
+            "bias": 1.0,
+            "loss": 0.0,
+            "weightGradients": [
+              0.0
+            ],
+            "biasGradient": 0.0,
+            "status": "completed",
+            "terminationReason": "iterations_completed"
+          }
+        ]
+      }
+    }
+  ],
+  "scaling": {
+    "input": {
+      "features": [
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          20
+        ],
+        [
+          3,
+          40
+        ]
+      ]
+    },
+    "trace": {
+      "schemaVersion": "1.0.0",
+      "method": "standard",
+      "original": [
+        [
+          1.0,
+          10.0
+        ],
+        [
+          2.0,
+          20.0
+        ],
+        [
+          3.0,
+          40.0
+        ]
+      ],
+      "mean": [
+        2.0,
+        23.333333333333332
+      ],
+      "scale": [
+        0.816496580927726,
+        12.472191289246473
+      ],
+      "scaled": [
+        [
+          -1.224744871391589,
+          -1.0690449676496974
+        ],
+        [
+          0.0,
+          -0.2672612419124243
+        ],
+        [
+          1.224744871391589,
+          1.3363062095621219
+        ]
+      ]
+    }
+  },
+  "invalidCases": [
+    {
+      "name": "empty-dataset",
+      "operation": "evaluation",
+      "input": {
+        "features": [],
+        "targets": [],
+        "weights": [],
+        "bias": 0
+      },
+      "expectedError": "features must be a non-empty rectangular numeric matrix"
+    },
+    {
+      "name": "zero-variance-feature",
+      "operation": "scaling",
+      "input": {
+        "features": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ]
+        ]
+      },
+      "expectedError": "feature column 1 has zero variance and cannot be scaled; remove it or choose a varying feature"
+    },
+    {
+      "name": "invalid-learning-rate",
+      "operation": "training",
+      "input": {
+        "features": [
+          [
+            1
+          ]
+        ],
+        "targets": [
+          1
+        ],
+        "weights": [
+          0
+        ],
+        "bias": 0,
+        "learningRate": 0,
+        "iterations": 2
+      },
+      "expectedError": "learningRate must be greater than 0 and at most 10"
+    }
+  ],
+  "divergent": {
+    "input": {
+      "features": [
+        [
+          1e+100
+        ]
+      ],
+      "targets": [
+        1
+      ],
+      "weights": [
+        0
+      ],
+      "bias": 0,
+      "learningRate": 1,
+      "iterations": 3
+    },
+    "trace": {
+      "schemaVersion": "1.0.0",
+      "entryConvention": "iteration 0 is the initial state; iteration k is the state after k updates",
+      "requestedIterations": 3,
+      "completedUpdates": 1,
+      "learningRate": 1.0,
+      "status": "diverged",
+      "terminationReason": "non_finite_calculation",
+      "entries": [
+        {
+          "iteration": 0,
+          "weights": [
+            0.0
+          ],
+          "bias": 0.0,
+          "loss": 1.0,
+          "weightGradients": [
+            -2e+100
+          ],
+          "biasGradient": -2.0,
+          "status": "running",
+          "terminationReason": null
+        },
+        {
+          "iteration": 1,
+          "weights": [
+            2e+100
+          ],
+          "bias": 2.0,
+          "loss": null,
+          "weightGradients": null,
+          "biasGradient": null,
+          "status": "diverged",
+          "terminationReason": "non_finite_calculation"
+        }
+      ]
+    }
+  }
+}

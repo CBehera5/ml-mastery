@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "1.0.0",
+  "continuity": [
+    {
+      "kind": "smooth",
+      "step": 0.1,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "kind": "smooth",
+        "center": 0,
+        "step": 0.1,
+        "value": 0,
+        "left": {
+          "input": -0.1,
+          "value": 0.010000000000000002
+        },
+        "right": {
+          "input": 0.1,
+          "value": 0.010000000000000002
+        },
+        "limit": 0,
+        "continuous": true,
+        "differentiable": true,
+        "derivative": 0,
+        "leftSlope": -0.10000000000000002,
+        "rightSlope": 0.10000000000000002,
+        "symmetricEstimate": 0.0
+      }
+    },
+    {
+      "kind": "hole",
+      "step": 0.1,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "kind": "hole",
+        "center": 1,
+        "step": 0.1,
+        "value": null,
+        "left": {
+          "input": 0.9,
+          "value": 1.9
+        },
+        "right": {
+          "input": 1.1,
+          "value": 2.1
+        },
+        "limit": 2,
+        "continuous": false,
+        "differentiable": false,
+        "derivative": null,
+        "leftSlope": null,
+        "rightSlope": null,
+        "symmetricEstimate": 1.0000000000000009
+      }
+    },
+    {
+      "kind": "jump",
+      "step": 0.1,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "kind": "jump",
+        "center": 0,
+        "step": 0.1,
+        "value": 1,
+        "left": {
+          "input": -0.1,
+          "value": -1
+        },
+        "right": {
+          "input": 0.1,
+          "value": 1
+        },
+        "limit": null,
+        "continuous": false,
+        "differentiable": false,
+        "derivative": null,
+        "leftSlope": 20.0,
+        "rightSlope": 0.0,
+        "symmetricEstimate": 10.0
+      }
+    },
+    {
+      "kind": "corner",
+      "step": 0.1,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "kind": "corner",
+        "center": 0,
+        "step": 0.1,
+        "value": 0,
+        "left": {
+          "input": -0.1,
+          "value": 0.1
+        },
+        "right": {
+          "input": 0.1,
+          "value": 0.1
+        },
+        "limit": 0,
+        "continuous": true,
+        "differentiable": false,
+        "derivative": null,
+        "leftSlope": -1.0,
+        "rightSlope": 1.0,
+        "symmetricEstimate": 0.0
+      }
+    }
+  ],
+  "multivariable": [
+    {
+      "input": {
+        "x": 1,
+        "y": 2,
+        "rate": 0.1,
+        "shape": "bowl",
+        "direction": "x"
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "x": 1,
+          "y": 2,
+          "rate": 0.1,
+          "shape": "bowl",
+          "direction": "x"
+        },
+        "value": 13,
+        "gradient": [
+          2,
+          12
+        ],
+        "numericalGradient": [
+          2.0000000000131024,
+          12.00000000016743
+        ],
+        "unitDirection": [
+          1,
+          0
+        ],
+        "directionalDerivative": 2,
+        "update": {
+          "displacement": [
+            -0.2,
+            -1.2000000000000002
+          ],
+          "next": [
+            0.8,
+            0.7999999999999998
+          ],
+          "value": 2.559999999999999
+        },
+        "jacobian": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "hessian": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "x": -1,
+        "y": 0.5,
+        "rate": 0.1,
+        "shape": "bowl",
+        "direction": "diagonal"
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "x": -1,
+          "y": 0.5,
+          "rate": 0.1,
+          "shape": "bowl",
+          "direction": "diagonal"
+        },
+        "value": 1.75,
+        "gradient": [
+          -2,
+          3.0
+        ],
+        "numericalGradient": [
+          -2.000000000002,
+          2.9999999999863465
+        ],
+        "unitDirection": [
+          0.7071067811865476,
+          0.7071067811865476
+        ],
+        "directionalDerivative": 0.7071067811865477,
+        "update": {
+          "displacement": [
+            0.2,
+            -0.30000000000000004
+          ],
+          "next": [
+            -0.8,
+            0.19999999999999996
+          ],
+          "value": 0.76
+        },
+        "jacobian": [
+          [
+            1,
+            1
+          ],
+          [
+            0.5,
+            -1
+          ]
+        ],
+        "hessian": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            6
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "x": 0,
+        "y": 0,
+        "rate": 0.1,
+        "shape": "saddle",
+        "direction": "y"
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "x": 0,
+          "y": 0,
+          "rate": 0.1,
+          "shape": "saddle",
+          "direction": "y"
+        },
+        "value": 0,
+        "gradient": [
+          0,
+          0
+        ],
+        "numericalGradient": [
+          0.0,
+          0.0
+        ],
+        "unitDirection": [
+          0,
+          1
+        ],
+        "directionalDerivative": 0,
+        "update": {
+          "displacement": [
+            -0.0,
+            -0.0
+          ],
+          "next": [
+            0.0,
+            0.0
+          ],
+          "value": 0.0
+        },
+        "jacobian": [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "hessian": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            -2
+          ]
+        ]
+      }
+    },
+    {
+      "input": {
+        "x": 1,
+        "y": 2,
+        "rate": 0.1,
+        "shape": "saddle",
+        "direction": "y"
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "x": 1,
+          "y": 2,
+          "rate": 0.1,
+          "shape": "saddle",
+          "direction": "y"
+        },
+        "value": -3,
+        "gradient": [
+          2,
+          -4
+        ],
+        "numericalGradient": [
+          2.0000000000131024,
+          -4.000000000026205
+        ],
+        "unitDirection": [
+          0,
+          1
+        ],
+        "directionalDerivative": -4,
+        "update": {
+          "displacement": [
+            -0.2,
+            0.4
+          ],
+          "next": [
+            0.8,
+            2.4
+          ],
+          "value": -5.119999999999999
+        },
+        "jacobian": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "hessian": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            -2
+          ]
+        ]
+      }
+    }
+  ]
+}

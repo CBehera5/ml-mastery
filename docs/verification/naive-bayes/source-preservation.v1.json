@@ -1,0 +1,7 @@
+{
+  "baseline": "accepted Task015.5 source-equality.json",
+  "baseline_sha256": "07176697da7d51bb3c978b0aa743d3162d2b9c9573efc7a8d60e6d0336a5f07d",
+  "protected_application_public_package_python_files_checked": 464,
+  "unchanged": true,
+  "scope": "No application/public/package/Python source changes during NB reference authoring"
+}

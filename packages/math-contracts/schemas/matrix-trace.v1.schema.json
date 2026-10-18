@@ -1,0 +1,9 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mlmathlab.dev/schemas/matrix-trace.v1.schema.json",
+  "title":"Matrix multiplication trace",
+  "oneOf":[
+    {"type":"object","required":["schemaVersion","operation","input","shapes","rowProducts","result"],"properties":{"schemaVersion":{"const":"1.0.0"},"operation":{"const":"matrix-vector"},"input":{"type":"object","required":["matrix","vector"]},"shapes":{"type":"object"},"rowProducts":{"type":"array"},"result":{"type":"array"}}},
+    {"type":"object","required":["schemaVersion","operation","input","shapes","cellProducts","result"],"properties":{"schemaVersion":{"const":"1.0.0"},"operation":{"const":"matrix-matrix"},"input":{"type":"object","required":["left","right"]},"shapes":{"type":"object"},"cellProducts":{"type":"array"},"result":{"type":"array"}}}
+  ]
+}

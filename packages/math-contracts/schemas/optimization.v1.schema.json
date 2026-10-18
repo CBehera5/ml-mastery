@@ -1,0 +1,762 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "optimization.v1.schema.json",
+  "title": "Optimization v1 bounded reference fixtures",
+  "type": "object",
+  "properties": {
+    "contract": {
+      "const": "optimization.v1"
+    },
+    "states": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "enum": [
+                  "quadratic",
+                  "coupled",
+                  "saddle",
+                  "double-well",
+                  "anisotropic"
+                ]
+              },
+              "point": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "scale": {
+                "type": "number"
+              },
+              "penalty": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "kind",
+              "point",
+              "scale",
+              "penalty"
+            ],
+            "additionalProperties": false
+          },
+          "trace": {
+            "type": "object",
+            "properties": {
+              "contract": {
+                "const": "optimization.v1"
+              },
+              "kind": {
+                "enum": [
+                  "quadratic",
+                  "coupled",
+                  "saddle",
+                  "double-well",
+                  "anisotropic"
+                ]
+              },
+              "point": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "scale": {
+                "type": "number"
+              },
+              "penalty": {
+                "type": "number"
+              },
+              "dataLoss": {
+                "type": "number"
+              },
+              "penaltyLoss": {
+                "type": "number"
+              },
+              "totalLoss": {
+                "type": "number"
+              },
+              "gradient": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "gradientNorm": {
+                "type": "number"
+              },
+              "numericalGradient": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "gradientCheck": {
+                "type": "object",
+                "properties": {
+                  "passed": {
+                    "type": "boolean"
+                  },
+                  "maxAbsoluteError": {
+                    "type": "number"
+                  },
+                  "tolerance": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "passed",
+                  "maxAbsoluteError",
+                  "tolerance"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "contract",
+              "kind",
+              "point",
+              "scale",
+              "penalty",
+              "dataLoss",
+              "penaltyLoss",
+              "totalLoss",
+              "gradient",
+              "gradientNorm",
+              "numericalGradient",
+              "gradientCheck"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "input",
+          "trace"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "training": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "enum": [
+                  "quadratic",
+                  "coupled",
+                  "saddle",
+                  "double-well",
+                  "anisotropic"
+                ]
+              },
+              "point": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "scale": {
+                "type": "number"
+              },
+              "penalty": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "kind",
+              "point",
+              "scale",
+              "penalty"
+            ],
+            "additionalProperties": false
+          },
+          "rate": {
+            "type": "number"
+          },
+          "iterations": {
+            "type": "number"
+          },
+          "trace": {
+            "type": "object",
+            "properties": {
+              "contract": {
+                "const": "optimization.v1"
+              },
+              "entryConvention": {
+                "type": "string"
+              },
+              "requestedIterations": {
+                "type": "number"
+              },
+              "learningRate": {
+                "type": "number"
+              },
+              "completedUpdates": {
+                "type": "number"
+              },
+              "status": {
+                "enum": [
+                  "running",
+                  "completed",
+                  "diverged"
+                ]
+              },
+              "terminationReason": {
+                "enum": [
+                  null,
+                  "iterations_completed",
+                  "non_finite_calculation",
+                  "numerical_limit_exceeded"
+                ]
+              },
+              "entries": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "iteration": {
+                      "type": "number"
+                    },
+                    "point": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    "dataLoss": {
+                      "anyOf": [
+                        {
+                          "type": "number"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "penaltyLoss": {
+                      "anyOf": [
+                        {
+                          "type": "number"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "totalLoss": {
+                      "anyOf": [
+                        {
+                          "type": "number"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "gradient": {
+                      "anyOf": [
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          }
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "status": {
+                      "enum": [
+                        "running",
+                        "completed",
+                        "diverged"
+                      ]
+                    },
+                    "terminationReason": {
+                      "enum": [
+                        null,
+                        "iterations_completed",
+                        "non_finite_calculation",
+                        "numerical_limit_exceeded"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "iteration",
+                    "point",
+                    "dataLoss",
+                    "penaltyLoss",
+                    "totalLoss",
+                    "gradient",
+                    "status",
+                    "terminationReason"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "contract",
+              "entryConvention",
+              "requestedIterations",
+              "learningRate",
+              "completedUpdates",
+              "status",
+              "terminationReason",
+              "entries"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "input",
+          "rate",
+          "iterations",
+          "trace"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "comparison": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "rate": {
+            "type": "number"
+          },
+          "iterations": {
+            "type": "number"
+          },
+          "trace": {
+            "type": "object",
+            "properties": {
+              "contract": {
+                "const": "optimization.v1"
+              },
+              "scaling": {
+                "type": "object",
+                "properties": {
+                  "schemaVersion": {
+                    "const": "1.0.0"
+                  },
+                  "method": {
+                    "type": "string"
+                  },
+                  "original": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "mean": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "scale": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "scaled": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "schemaVersion",
+                  "method",
+                  "original",
+                  "mean",
+                  "scale",
+                  "scaled"
+                ],
+                "additionalProperties": false
+              },
+              "original": {
+                "type": "object",
+                "properties": {
+                  "schemaVersion": {
+                    "const": "1.0.0"
+                  },
+                  "entryConvention": {
+                    "type": "string"
+                  },
+                  "requestedIterations": {
+                    "type": "number"
+                  },
+                  "completedUpdates": {
+                    "type": "number"
+                  },
+                  "learningRate": {
+                    "type": "number"
+                  },
+                  "status": {
+                    "enum": [
+                      "running",
+                      "completed",
+                      "diverged"
+                    ]
+                  },
+                  "terminationReason": {
+                    "enum": [
+                      null,
+                      "iterations_completed",
+                      "non_finite_calculation",
+                      "numerical_limit_exceeded"
+                    ]
+                  },
+                  "entries": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "iteration": {
+                          "type": "number"
+                        },
+                        "weights": {
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          }
+                        },
+                        "bias": {
+                          "type": "number"
+                        },
+                        "loss": {
+                          "type": "number"
+                        },
+                        "weightGradients": {
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          }
+                        },
+                        "biasGradient": {
+                          "type": "number"
+                        },
+                        "status": {
+                          "enum": [
+                            "running",
+                            "completed",
+                            "diverged"
+                          ]
+                        },
+                        "terminationReason": {
+                          "enum": [
+                            null,
+                            "iterations_completed",
+                            "non_finite_calculation",
+                            "numerical_limit_exceeded"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "iteration",
+                        "weights",
+                        "bias",
+                        "loss",
+                        "weightGradients",
+                        "biasGradient",
+                        "status",
+                        "terminationReason"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "schemaVersion",
+                  "entryConvention",
+                  "requestedIterations",
+                  "completedUpdates",
+                  "learningRate",
+                  "status",
+                  "terminationReason",
+                  "entries"
+                ],
+                "additionalProperties": false
+              },
+              "scaled": {
+                "type": "object",
+                "properties": {
+                  "schemaVersion": {
+                    "const": "1.0.0"
+                  },
+                  "entryConvention": {
+                    "type": "string"
+                  },
+                  "requestedIterations": {
+                    "type": "number"
+                  },
+                  "completedUpdates": {
+                    "type": "number"
+                  },
+                  "learningRate": {
+                    "type": "number"
+                  },
+                  "status": {
+                    "enum": [
+                      "running",
+                      "completed",
+                      "diverged"
+                    ]
+                  },
+                  "terminationReason": {
+                    "enum": [
+                      null,
+                      "iterations_completed",
+                      "non_finite_calculation",
+                      "numerical_limit_exceeded"
+                    ]
+                  },
+                  "entries": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "iteration": {
+                          "type": "number"
+                        },
+                        "weights": {
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          }
+                        },
+                        "bias": {
+                          "type": "number"
+                        },
+                        "loss": {
+                          "type": "number"
+                        },
+                        "weightGradients": {
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          }
+                        },
+                        "biasGradient": {
+                          "type": "number"
+                        },
+                        "status": {
+                          "enum": [
+                            "running",
+                            "completed",
+                            "diverged"
+                          ]
+                        },
+                        "terminationReason": {
+                          "enum": [
+                            null,
+                            "iterations_completed",
+                            "non_finite_calculation",
+                            "numerical_limit_exceeded"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "iteration",
+                        "weights",
+                        "bias",
+                        "loss",
+                        "weightGradients",
+                        "biasGradient",
+                        "status",
+                        "terminationReason"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "schemaVersion",
+                  "entryConvention",
+                  "requestedIterations",
+                  "completedUpdates",
+                  "learningRate",
+                  "status",
+                  "terminationReason",
+                  "entries"
+                ],
+                "additionalProperties": false
+              },
+              "gradientChecks": {
+                "type": "object",
+                "properties": {
+                  "original": {
+                    "type": "object",
+                    "properties": {
+                      "passed": {
+                        "type": "boolean"
+                      },
+                      "maxAbsoluteError": {
+                        "type": "number"
+                      },
+                      "tolerance": {
+                        "type": "number"
+                      },
+                      "analytical": {
+                        "type": "object",
+                        "properties": {
+                          "weightGradients": {
+                            "type": "array",
+                            "items": {
+                              "type": "number"
+                            }
+                          },
+                          "biasGradient": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "weightGradients",
+                          "biasGradient"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "numerical": {
+                        "type": "object",
+                        "properties": {
+                          "weightGradients": {
+                            "type": "array",
+                            "items": {
+                              "type": "number"
+                            }
+                          },
+                          "biasGradient": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "weightGradients",
+                          "biasGradient"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "passed",
+                      "maxAbsoluteError",
+                      "tolerance",
+                      "analytical",
+                      "numerical"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "scaled": {
+                    "type": "object",
+                    "properties": {
+                      "passed": {
+                        "type": "boolean"
+                      },
+                      "maxAbsoluteError": {
+                        "type": "number"
+                      },
+                      "tolerance": {
+                        "type": "number"
+                      },
+                      "analytical": {
+                        "type": "object",
+                        "properties": {
+                          "weightGradients": {
+                            "type": "array",
+                            "items": {
+                              "type": "number"
+                            }
+                          },
+                          "biasGradient": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "weightGradients",
+                          "biasGradient"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "numerical": {
+                        "type": "object",
+                        "properties": {
+                          "weightGradients": {
+                            "type": "array",
+                            "items": {
+                              "type": "number"
+                            }
+                          },
+                          "biasGradient": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "weightGradients",
+                          "biasGradient"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "passed",
+                      "maxAbsoluteError",
+                      "tolerance",
+                      "analytical",
+                      "numerical"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "original",
+                  "scaled"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "contract",
+              "scaling",
+              "original",
+              "scaled",
+              "gradientChecks"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "rate",
+          "iterations",
+          "trace"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "contract",
+    "states",
+    "training",
+    "comparison"
+  ],
+  "additionalProperties": false
+}

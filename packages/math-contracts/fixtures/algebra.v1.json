@@ -1,0 +1,1151 @@
+{
+  "schemaVersion": "1.0.0",
+  "functions": [
+    {
+      "spec": {
+        "kind": "linear",
+        "a": 2,
+        "b": 3
+      },
+      "x": 4,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "function": {
+          "kind": "linear",
+          "a": 2,
+          "b": 3
+        },
+        "input": 4,
+        "selected": {
+          "value": 11.0,
+          "reason": null
+        },
+        "samples": [
+          {
+            "input": -4,
+            "value": -5.0,
+            "reason": null
+          },
+          {
+            "input": -3,
+            "value": -3.0,
+            "reason": null
+          },
+          {
+            "input": -2,
+            "value": -1.0,
+            "reason": null
+          },
+          {
+            "input": -1,
+            "value": 1.0,
+            "reason": null
+          },
+          {
+            "input": 0,
+            "value": 3.0,
+            "reason": null
+          },
+          {
+            "input": 0.5,
+            "value": 4.0,
+            "reason": null
+          },
+          {
+            "input": 1,
+            "value": 5.0,
+            "reason": null
+          },
+          {
+            "input": 2,
+            "value": 7.0,
+            "reason": null
+          },
+          {
+            "input": 3,
+            "value": 9.0,
+            "reason": null
+          },
+          {
+            "input": 4,
+            "value": 11.0,
+            "reason": null
+          }
+        ]
+      }
+    },
+    {
+      "spec": {
+        "kind": "linear",
+        "a": -2,
+        "b": 1
+      },
+      "x": -3,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "function": {
+          "kind": "linear",
+          "a": -2,
+          "b": 1
+        },
+        "input": -3,
+        "selected": {
+          "value": 7.0,
+          "reason": null
+        },
+        "samples": [
+          {
+            "input": -4,
+            "value": 9.0,
+            "reason": null
+          },
+          {
+            "input": -3,
+            "value": 7.0,
+            "reason": null
+          },
+          {
+            "input": -2,
+            "value": 5.0,
+            "reason": null
+          },
+          {
+            "input": -1,
+            "value": 3.0,
+            "reason": null
+          },
+          {
+            "input": 0,
+            "value": 1.0,
+            "reason": null
+          },
+          {
+            "input": 0.5,
+            "value": 0,
+            "reason": null
+          },
+          {
+            "input": 1,
+            "value": -1.0,
+            "reason": null
+          },
+          {
+            "input": 2,
+            "value": -3.0,
+            "reason": null
+          },
+          {
+            "input": 3,
+            "value": -5.0,
+            "reason": null
+          },
+          {
+            "input": 4,
+            "value": -7.0,
+            "reason": null
+          }
+        ]
+      }
+    },
+    {
+      "spec": {
+        "kind": "power",
+        "exponent": 2,
+        "scale": -2,
+        "shift": -1,
+        "offset": 1
+      },
+      "x": 2,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "function": {
+          "kind": "power",
+          "exponent": 2,
+          "scale": -2,
+          "shift": -1,
+          "offset": 1
+        },
+        "input": 2,
+        "selected": {
+          "value": -17,
+          "reason": null
+        },
+        "samples": [
+          {
+            "input": -4,
+            "value": -17,
+            "reason": null
+          },
+          {
+            "input": -3,
+            "value": -7,
+            "reason": null
+          },
+          {
+            "input": -2,
+            "value": -1,
+            "reason": null
+          },
+          {
+            "input": -1,
+            "value": 1,
+            "reason": null
+          },
+          {
+            "input": 0,
+            "value": -1,
+            "reason": null
+          },
+          {
+            "input": 0.5,
+            "value": -3.5,
+            "reason": null
+          },
+          {
+            "input": 1,
+            "value": -7,
+            "reason": null
+          },
+          {
+            "input": 2,
+            "value": -17,
+            "reason": null
+          },
+          {
+            "input": 3,
+            "value": -31,
+            "reason": null
+          },
+          {
+            "input": 4,
+            "value": -49,
+            "reason": null
+          }
+        ]
+      }
+    },
+    {
+      "spec": {
+        "kind": "power",
+        "exponent": -1,
+        "scale": 1,
+        "shift": 0,
+        "offset": 0
+      },
+      "x": 0,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "function": {
+          "kind": "power",
+          "exponent": -1,
+          "scale": 1,
+          "shift": 0,
+          "offset": 0
+        },
+        "input": 0,
+        "selected": {
+          "value": null,
+          "reason": "This explorer leaves zero to a nonpositive power undefined: negative powers divide by zero, and 0⁰ needs a separate convention."
+        },
+        "samples": [
+          {
+            "input": -4,
+            "value": -0.25,
+            "reason": null
+          },
+          {
+            "input": -3,
+            "value": -0.3333333333333333,
+            "reason": null
+          },
+          {
+            "input": -2,
+            "value": -0.5,
+            "reason": null
+          },
+          {
+            "input": -1,
+            "value": -1.0,
+            "reason": null
+          },
+          {
+            "input": 0,
+            "value": null,
+            "reason": "This explorer leaves zero to a nonpositive power undefined: negative powers divide by zero, and 0⁰ needs a separate convention."
+          },
+          {
+            "input": 0.5,
+            "value": 2.0,
+            "reason": null
+          },
+          {
+            "input": 1,
+            "value": 1.0,
+            "reason": null
+          },
+          {
+            "input": 2,
+            "value": 0.5,
+            "reason": null
+          },
+          {
+            "input": 3,
+            "value": 0.3333333333333333,
+            "reason": null
+          },
+          {
+            "input": 4,
+            "value": 0.25,
+            "reason": null
+          }
+        ]
+      }
+    },
+    {
+      "spec": {
+        "kind": "power",
+        "exponent": 0,
+        "scale": 1,
+        "shift": 0,
+        "offset": 0
+      },
+      "x": 0,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "function": {
+          "kind": "power",
+          "exponent": 0,
+          "scale": 1,
+          "shift": 0,
+          "offset": 0
+        },
+        "input": 0,
+        "selected": {
+          "value": null,
+          "reason": "This explorer leaves zero to a nonpositive power undefined: negative powers divide by zero, and 0⁰ needs a separate convention."
+        },
+        "samples": [
+          {
+            "input": -4,
+            "value": 1,
+            "reason": null
+          },
+          {
+            "input": -3,
+            "value": 1,
+            "reason": null
+          },
+          {
+            "input": -2,
+            "value": 1,
+            "reason": null
+          },
+          {
+            "input": -1,
+            "value": 1,
+            "reason": null
+          },
+          {
+            "input": 0,
+            "value": null,
+            "reason": "This explorer leaves zero to a nonpositive power undefined: negative powers divide by zero, and 0⁰ needs a separate convention."
+          },
+          {
+            "input": 0.5,
+            "value": 1.0,
+            "reason": null
+          },
+          {
+            "input": 1,
+            "value": 1,
+            "reason": null
+          },
+          {
+            "input": 2,
+            "value": 1,
+            "reason": null
+          },
+          {
+            "input": 3,
+            "value": 1,
+            "reason": null
+          },
+          {
+            "input": 4,
+            "value": 1,
+            "reason": null
+          }
+        ]
+      }
+    },
+    {
+      "spec": {
+        "kind": "exponential",
+        "base": 2
+      },
+      "x": 3,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "function": {
+          "kind": "exponential",
+          "base": 2
+        },
+        "input": 3,
+        "selected": {
+          "value": 8.0,
+          "reason": null
+        },
+        "samples": [
+          {
+            "input": -4,
+            "value": 0.0625,
+            "reason": null
+          },
+          {
+            "input": -3,
+            "value": 0.125,
+            "reason": null
+          },
+          {
+            "input": -2,
+            "value": 0.25,
+            "reason": null
+          },
+          {
+            "input": -1,
+            "value": 0.5,
+            "reason": null
+          },
+          {
+            "input": 0,
+            "value": 1.0,
+            "reason": null
+          },
+          {
+            "input": 0.5,
+            "value": 1.4142135623730951,
+            "reason": null
+          },
+          {
+            "input": 1,
+            "value": 2.0,
+            "reason": null
+          },
+          {
+            "input": 2,
+            "value": 4.0,
+            "reason": null
+          },
+          {
+            "input": 3,
+            "value": 8.0,
+            "reason": null
+          },
+          {
+            "input": 4,
+            "value": 16.0,
+            "reason": null
+          }
+        ]
+      }
+    },
+    {
+      "spec": {
+        "kind": "exponential",
+        "base": 0.5
+      },
+      "x": 3,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "function": {
+          "kind": "exponential",
+          "base": 0.5
+        },
+        "input": 3,
+        "selected": {
+          "value": 0.125,
+          "reason": null
+        },
+        "samples": [
+          {
+            "input": -4,
+            "value": 16.0,
+            "reason": null
+          },
+          {
+            "input": -3,
+            "value": 8.0,
+            "reason": null
+          },
+          {
+            "input": -2,
+            "value": 4.0,
+            "reason": null
+          },
+          {
+            "input": -1,
+            "value": 2.0,
+            "reason": null
+          },
+          {
+            "input": 0,
+            "value": 1.0,
+            "reason": null
+          },
+          {
+            "input": 0.5,
+            "value": 0.7071067811865476,
+            "reason": null
+          },
+          {
+            "input": 1,
+            "value": 0.5,
+            "reason": null
+          },
+          {
+            "input": 2,
+            "value": 0.25,
+            "reason": null
+          },
+          {
+            "input": 3,
+            "value": 0.125,
+            "reason": null
+          },
+          {
+            "input": 4,
+            "value": 0.0625,
+            "reason": null
+          }
+        ]
+      }
+    },
+    {
+      "spec": {
+        "kind": "exponential",
+        "base": 10
+      },
+      "x": 1000,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "function": {
+          "kind": "exponential",
+          "base": 10
+        },
+        "input": 1000,
+        "selected": {
+          "value": null,
+          "reason": "The result exceeds this bounded explorer's numerical limit (magnitude 10¹²). This is a display/runtime limit, not a mathematical domain restriction."
+        },
+        "samples": [
+          {
+            "input": -4,
+            "value": 0.0001,
+            "reason": null
+          },
+          {
+            "input": -3,
+            "value": 0.001,
+            "reason": null
+          },
+          {
+            "input": -2,
+            "value": 0.01,
+            "reason": null
+          },
+          {
+            "input": -1,
+            "value": 0.1,
+            "reason": null
+          },
+          {
+            "input": 0,
+            "value": 1.0,
+            "reason": null
+          },
+          {
+            "input": 0.5,
+            "value": 3.1622776601683795,
+            "reason": null
+          },
+          {
+            "input": 1,
+            "value": 10.0,
+            "reason": null
+          },
+          {
+            "input": 2,
+            "value": 100.0,
+            "reason": null
+          },
+          {
+            "input": 3,
+            "value": 1000.0,
+            "reason": null
+          },
+          {
+            "input": 4,
+            "value": 10000.0,
+            "reason": null
+          }
+        ]
+      }
+    },
+    {
+      "spec": {
+        "kind": "logarithm",
+        "base": 10
+      },
+      "x": 100,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "function": {
+          "kind": "logarithm",
+          "base": 10
+        },
+        "input": 100,
+        "selected": {
+          "value": 2.0,
+          "reason": null
+        },
+        "samples": [
+          {
+            "input": -4,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": -3,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": -2,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": -1,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": 0,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": 0.5,
+            "value": -0.30102999566398114,
+            "reason": null
+          },
+          {
+            "input": 1,
+            "value": 0,
+            "reason": null
+          },
+          {
+            "input": 2,
+            "value": 0.30102999566398114,
+            "reason": null
+          },
+          {
+            "input": 3,
+            "value": 0.47712125471966244,
+            "reason": null
+          },
+          {
+            "input": 4,
+            "value": 0.6020599913279623,
+            "reason": null
+          }
+        ]
+      }
+    },
+    {
+      "spec": {
+        "kind": "logarithm",
+        "base": 2.718281828459045
+      },
+      "x": 20.085536923187668,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "function": {
+          "kind": "logarithm",
+          "base": 2.718281828459045
+        },
+        "input": 20.085536923187668,
+        "selected": {
+          "value": 3.0,
+          "reason": null
+        },
+        "samples": [
+          {
+            "input": -4,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": -3,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": -2,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": -1,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": 0,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": 0.5,
+            "value": -0.6931471805599453,
+            "reason": null
+          },
+          {
+            "input": 1,
+            "value": 0,
+            "reason": null
+          },
+          {
+            "input": 2,
+            "value": 0.6931471805599453,
+            "reason": null
+          },
+          {
+            "input": 3,
+            "value": 1.0986122886681098,
+            "reason": null
+          },
+          {
+            "input": 4,
+            "value": 1.3862943611198906,
+            "reason": null
+          }
+        ]
+      }
+    },
+    {
+      "spec": {
+        "kind": "logarithm",
+        "base": 0.5
+      },
+      "x": 4,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "function": {
+          "kind": "logarithm",
+          "base": 0.5
+        },
+        "input": 4,
+        "selected": {
+          "value": -2.0,
+          "reason": null
+        },
+        "samples": [
+          {
+            "input": -4,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": -3,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": -2,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": -1,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": 0,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": 0.5,
+            "value": 1.0,
+            "reason": null
+          },
+          {
+            "input": 1,
+            "value": 0,
+            "reason": null
+          },
+          {
+            "input": 2,
+            "value": -1.0,
+            "reason": null
+          },
+          {
+            "input": 3,
+            "value": -1.5849625007211563,
+            "reason": null
+          },
+          {
+            "input": 4,
+            "value": -2.0,
+            "reason": null
+          }
+        ]
+      }
+    },
+    {
+      "spec": {
+        "kind": "logarithm",
+        "base": 2
+      },
+      "x": -1,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "function": {
+          "kind": "logarithm",
+          "base": 2
+        },
+        "input": -1,
+        "selected": {
+          "value": null,
+          "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+        },
+        "samples": [
+          {
+            "input": -4,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": -3,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": -2,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": -1,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": 0,
+            "value": null,
+            "reason": "A real logarithm requires a strictly positive input. Zero and negative inputs are outside this domain."
+          },
+          {
+            "input": 0.5,
+            "value": -1.0,
+            "reason": null
+          },
+          {
+            "input": 1,
+            "value": 0,
+            "reason": null
+          },
+          {
+            "input": 2,
+            "value": 1.0,
+            "reason": null
+          },
+          {
+            "input": 3,
+            "value": 1.5849625007211563,
+            "reason": null
+          },
+          {
+            "input": 4,
+            "value": 2.0,
+            "reason": null
+          }
+        ]
+      }
+    },
+    {
+      "spec": {
+        "kind": "composition",
+        "order": "f-after-g"
+      },
+      "x": 2,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "function": {
+          "kind": "composition",
+          "order": "f-after-g"
+        },
+        "input": 2,
+        "selected": {
+          "value": 11.0,
+          "reason": null
+        },
+        "samples": [
+          {
+            "input": -4,
+            "value": 35.0,
+            "reason": null
+          },
+          {
+            "input": -3,
+            "value": 21.0,
+            "reason": null
+          },
+          {
+            "input": -2,
+            "value": 11.0,
+            "reason": null
+          },
+          {
+            "input": -1,
+            "value": 5.0,
+            "reason": null
+          },
+          {
+            "input": 0,
+            "value": 3.0,
+            "reason": null
+          },
+          {
+            "input": 0.5,
+            "value": 3.5,
+            "reason": null
+          },
+          {
+            "input": 1,
+            "value": 5.0,
+            "reason": null
+          },
+          {
+            "input": 2,
+            "value": 11.0,
+            "reason": null
+          },
+          {
+            "input": 3,
+            "value": 21.0,
+            "reason": null
+          },
+          {
+            "input": 4,
+            "value": 35.0,
+            "reason": null
+          }
+        ]
+      }
+    },
+    {
+      "spec": {
+        "kind": "composition",
+        "order": "g-after-f"
+      },
+      "x": 2,
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "function": {
+          "kind": "composition",
+          "order": "g-after-f"
+        },
+        "input": 2,
+        "selected": {
+          "value": 49.0,
+          "reason": null
+        },
+        "samples": [
+          {
+            "input": -4,
+            "value": 25.0,
+            "reason": null
+          },
+          {
+            "input": -3,
+            "value": 9.0,
+            "reason": null
+          },
+          {
+            "input": -2,
+            "value": 1.0,
+            "reason": null
+          },
+          {
+            "input": -1,
+            "value": 1.0,
+            "reason": null
+          },
+          {
+            "input": 0,
+            "value": 9.0,
+            "reason": null
+          },
+          {
+            "input": 0.5,
+            "value": 16.0,
+            "reason": null
+          },
+          {
+            "input": 1,
+            "value": 25.0,
+            "reason": null
+          },
+          {
+            "input": 2,
+            "value": 49.0,
+            "reason": null
+          },
+          {
+            "input": 3,
+            "value": 81.0,
+            "reason": null
+          },
+          {
+            "input": 4,
+            "value": 121.0,
+            "reason": null
+          }
+        ]
+      }
+    }
+  ],
+  "equations": [
+    {
+      "schemaVersion": "1.0.0",
+      "a": 3,
+      "b": 1,
+      "target": 13,
+      "status": "unique",
+      "solution": 4.0
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "a": -2,
+      "b": 3,
+      "target": 11,
+      "status": "unique",
+      "solution": -4.0
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "a": 0,
+      "b": 1,
+      "target": 1,
+      "status": "all-inputs",
+      "solution": null
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "a": 0,
+      "b": 1,
+      "target": 2,
+      "status": "no-solution",
+      "solution": null
+    }
+  ],
+  "mappings": [
+    {
+      "schemaVersion": "1.0.0",
+      "pairs": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "isFunction": true,
+      "domain": [
+        1,
+        2
+      ],
+      "range": [
+        4
+      ]
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "pairs": [
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          7
+        ]
+      ],
+      "isFunction": false,
+      "domain": [
+        2
+      ],
+      "range": [
+        4,
+        7
+      ]
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "pairs": [
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "isFunction": true,
+      "domain": [
+        2
+      ],
+      "range": [
+        4
+      ]
+    }
+  ],
+  "compounding": [
+    {
+      "schemaVersion": "1.0.0",
+      "intervals": 1,
+      "approximation": 2.0,
+      "e": 2.718281828459045
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "intervals": 2,
+      "approximation": 2.25,
+      "e": 2.718281828459045
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "intervals": 10,
+      "approximation": 2.5937424601000023,
+      "e": 2.718281828459045
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "intervals": 100,
+      "approximation": 2.7048138294215285,
+      "e": 2.718281828459045
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "intervals": 1000,
+      "approximation": 2.7169239322355936,
+      "e": 2.718281828459045
+    }
+  ]
+}

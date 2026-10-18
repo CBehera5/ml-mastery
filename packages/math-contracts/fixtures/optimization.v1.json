@@ -1,0 +1,1927 @@
+{
+  "contract": "optimization.v1",
+  "states": [
+    {
+      "input": {
+        "kind": "quadratic",
+        "point": [
+          1,
+          0
+        ],
+        "scale": 1,
+        "penalty": 0
+      },
+      "trace": {
+        "contract": "optimization.v1",
+        "kind": "quadratic",
+        "point": [
+          1,
+          0
+        ],
+        "scale": 1,
+        "penalty": 0,
+        "dataLoss": 4,
+        "penaltyLoss": 0,
+        "totalLoss": 4,
+        "gradient": [
+          -4,
+          0
+        ],
+        "gradientNorm": 4.0,
+        "numericalGradient": [
+          -4.000000000026205,
+          0.0
+        ],
+        "gradientCheck": {
+          "passed": true,
+          "maxAbsoluteError": 2.6204816094832495e-11,
+          "tolerance": 4e-06
+        }
+      }
+    },
+    {
+      "input": {
+        "kind": "quadratic",
+        "point": [
+          1.5,
+          0
+        ],
+        "scale": 1,
+        "penalty": 1
+      },
+      "trace": {
+        "contract": "optimization.v1",
+        "kind": "quadratic",
+        "point": [
+          1.5,
+          0
+        ],
+        "scale": 1,
+        "penalty": 1,
+        "dataLoss": 2.25,
+        "penaltyLoss": 2.25,
+        "totalLoss": 4.5,
+        "gradient": [
+          0.0,
+          0
+        ],
+        "gradientNorm": 0.0,
+        "numericalGradient": [
+          0.0,
+          0.0
+        ],
+        "gradientCheck": {
+          "passed": true,
+          "maxAbsoluteError": 0.0,
+          "tolerance": 1e-06
+        }
+      }
+    },
+    {
+      "input": {
+        "kind": "quadratic",
+        "point": [
+          1,
+          0
+        ],
+        "scale": 1,
+        "penalty": 1
+      },
+      "trace": {
+        "contract": "optimization.v1",
+        "kind": "quadratic",
+        "point": [
+          1,
+          0
+        ],
+        "scale": 1,
+        "penalty": 1,
+        "dataLoss": 4,
+        "penaltyLoss": 1,
+        "totalLoss": 5,
+        "gradient": [
+          -2,
+          0
+        ],
+        "gradientNorm": 2.0,
+        "numericalGradient": [
+          -2.0000000000131024,
+          0.0
+        ],
+        "gradientCheck": {
+          "passed": true,
+          "maxAbsoluteError": 1.3102408047416247e-11,
+          "tolerance": 2e-06
+        }
+      }
+    },
+    {
+      "input": {
+        "kind": "coupled",
+        "point": [
+          1,
+          2
+        ],
+        "scale": 1,
+        "penalty": 0
+      },
+      "trace": {
+        "contract": "optimization.v1",
+        "kind": "coupled",
+        "point": [
+          1,
+          2
+        ],
+        "scale": 1,
+        "penalty": 0,
+        "dataLoss": 9,
+        "penaltyLoss": 0,
+        "totalLoss": 9,
+        "gradient": [
+          6,
+          6
+        ],
+        "gradientNorm": 8.48528137423857,
+        "numericalGradient": [
+          6.000000000039306,
+          6.000000000039306
+        ],
+        "gradientCheck": {
+          "passed": true,
+          "maxAbsoluteError": 3.930633596382904e-11,
+          "tolerance": 6e-06
+        }
+      }
+    },
+    {
+      "input": {
+        "kind": "saddle",
+        "point": [
+          0,
+          0
+        ],
+        "scale": 1,
+        "penalty": 0
+      },
+      "trace": {
+        "contract": "optimization.v1",
+        "kind": "saddle",
+        "point": [
+          0,
+          0
+        ],
+        "scale": 1,
+        "penalty": 0,
+        "dataLoss": 0,
+        "penaltyLoss": 0,
+        "totalLoss": 0,
+        "gradient": [
+          0,
+          0
+        ],
+        "gradientNorm": 0.0,
+        "numericalGradient": [
+          0.0,
+          0.0
+        ],
+        "gradientCheck": {
+          "passed": true,
+          "maxAbsoluteError": 0.0,
+          "tolerance": 1e-06
+        }
+      }
+    },
+    {
+      "input": {
+        "kind": "saddle",
+        "point": [
+          0,
+          1
+        ],
+        "scale": 1,
+        "penalty": 0
+      },
+      "trace": {
+        "contract": "optimization.v1",
+        "kind": "saddle",
+        "point": [
+          0,
+          1
+        ],
+        "scale": 1,
+        "penalty": 0,
+        "dataLoss": -1,
+        "penaltyLoss": 0,
+        "totalLoss": -1,
+        "gradient": [
+          0,
+          -2
+        ],
+        "gradientNorm": 2.0,
+        "numericalGradient": [
+          0.0,
+          -2.000000000002
+        ],
+        "gradientCheck": {
+          "passed": true,
+          "maxAbsoluteError": 2.000177801164682e-12,
+          "tolerance": 2e-06
+        }
+      }
+    },
+    {
+      "input": {
+        "kind": "double-well",
+        "point": [
+          0.5,
+          1
+        ],
+        "scale": 1,
+        "penalty": 0
+      },
+      "trace": {
+        "contract": "optimization.v1",
+        "kind": "double-well",
+        "point": [
+          0.5,
+          1
+        ],
+        "scale": 1,
+        "penalty": 0,
+        "dataLoss": 1.5625,
+        "penaltyLoss": 0.0,
+        "totalLoss": 1.5625,
+        "gradient": [
+          -1.5,
+          2
+        ],
+        "gradientNorm": 2.5,
+        "numericalGradient": [
+          -1.4999999998099864,
+          2.000000000002
+        ],
+        "gradientCheck": {
+          "passed": true,
+          "maxAbsoluteError": 1.9001356044157092e-10,
+          "tolerance": 2e-06
+        }
+      }
+    },
+    {
+      "input": {
+        "kind": "anisotropic",
+        "point": [
+          1,
+          1
+        ],
+        "scale": 100,
+        "penalty": 0
+      },
+      "trace": {
+        "contract": "optimization.v1",
+        "kind": "anisotropic",
+        "point": [
+          1,
+          1
+        ],
+        "scale": 100,
+        "penalty": 0,
+        "dataLoss": 104,
+        "penaltyLoss": 0,
+        "totalLoss": 104,
+        "gradient": [
+          -4,
+          200
+        ],
+        "gradientNorm": 200.0399960007998,
+        "numericalGradient": [
+          -3.9999999998485687,
+          200.0000000002444
+        ],
+        "gradientCheck": {
+          "passed": true,
+          "maxAbsoluteError": 2.4439827939204406e-10,
+          "tolerance": 0.00019999999999999998
+        }
+      }
+    }
+  ],
+  "training": [
+    {
+      "input": {
+        "kind": "quadratic",
+        "point": [
+          1,
+          0
+        ],
+        "scale": 1,
+        "penalty": 0
+      },
+      "rate": 0.1,
+      "iterations": 4,
+      "trace": {
+        "contract": "optimization.v1",
+        "entryConvention": "state 0 is initial; state k follows k simultaneous updates",
+        "requestedIterations": 4,
+        "learningRate": 0.1,
+        "completedUpdates": 4,
+        "status": "completed",
+        "terminationReason": "iterations_completed",
+        "entries": [
+          {
+            "iteration": 0,
+            "point": [
+              1,
+              0
+            ],
+            "dataLoss": 4,
+            "penaltyLoss": 0,
+            "totalLoss": 4,
+            "gradient": [
+              -4,
+              0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 1,
+            "point": [
+              1.4,
+              0.0
+            ],
+            "dataLoss": 2.5600000000000005,
+            "penaltyLoss": 0.0,
+            "totalLoss": 2.5600000000000005,
+            "gradient": [
+              -3.2,
+              0.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 2,
+            "point": [
+              1.72,
+              0.0
+            ],
+            "dataLoss": 1.6384,
+            "penaltyLoss": 0.0,
+            "totalLoss": 1.6384,
+            "gradient": [
+              -2.56,
+              0.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 3,
+            "point": [
+              1.976,
+              0.0
+            ],
+            "dataLoss": 1.048576,
+            "penaltyLoss": 0.0,
+            "totalLoss": 1.048576,
+            "gradient": [
+              -2.048,
+              0.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 4,
+            "point": [
+              2.1808,
+              0.0
+            ],
+            "dataLoss": 0.6710886399999999,
+            "penaltyLoss": 0.0,
+            "totalLoss": 0.6710886399999999,
+            "gradient": [
+              -1.6383999999999999,
+              0.0
+            ],
+            "status": "completed",
+            "terminationReason": "iterations_completed"
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "kind": "quadratic",
+        "point": [
+          1,
+          0
+        ],
+        "scale": 1,
+        "penalty": 0
+      },
+      "rate": 0.5,
+      "iterations": 4,
+      "trace": {
+        "contract": "optimization.v1",
+        "entryConvention": "state 0 is initial; state k follows k simultaneous updates",
+        "requestedIterations": 4,
+        "learningRate": 0.5,
+        "completedUpdates": 4,
+        "status": "completed",
+        "terminationReason": "iterations_completed",
+        "entries": [
+          {
+            "iteration": 0,
+            "point": [
+              1,
+              0
+            ],
+            "dataLoss": 4,
+            "penaltyLoss": 0,
+            "totalLoss": 4,
+            "gradient": [
+              -4,
+              0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 1,
+            "point": [
+              3.0,
+              0.0
+            ],
+            "dataLoss": 0.0,
+            "penaltyLoss": 0.0,
+            "totalLoss": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 2,
+            "point": [
+              3.0,
+              0.0
+            ],
+            "dataLoss": 0.0,
+            "penaltyLoss": 0.0,
+            "totalLoss": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 3,
+            "point": [
+              3.0,
+              0.0
+            ],
+            "dataLoss": 0.0,
+            "penaltyLoss": 0.0,
+            "totalLoss": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 4,
+            "point": [
+              3.0,
+              0.0
+            ],
+            "dataLoss": 0.0,
+            "penaltyLoss": 0.0,
+            "totalLoss": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ],
+            "status": "completed",
+            "terminationReason": "iterations_completed"
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "kind": "quadratic",
+        "point": [
+          1,
+          0
+        ],
+        "scale": 1,
+        "penalty": 0
+      },
+      "rate": 1,
+      "iterations": 4,
+      "trace": {
+        "contract": "optimization.v1",
+        "entryConvention": "state 0 is initial; state k follows k simultaneous updates",
+        "requestedIterations": 4,
+        "learningRate": 1,
+        "completedUpdates": 4,
+        "status": "completed",
+        "terminationReason": "iterations_completed",
+        "entries": [
+          {
+            "iteration": 0,
+            "point": [
+              1,
+              0
+            ],
+            "dataLoss": 4,
+            "penaltyLoss": 0,
+            "totalLoss": 4,
+            "gradient": [
+              -4,
+              0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 1,
+            "point": [
+              5,
+              0
+            ],
+            "dataLoss": 4,
+            "penaltyLoss": 0,
+            "totalLoss": 4,
+            "gradient": [
+              4,
+              0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 2,
+            "point": [
+              1,
+              0
+            ],
+            "dataLoss": 4,
+            "penaltyLoss": 0,
+            "totalLoss": 4,
+            "gradient": [
+              -4,
+              0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 3,
+            "point": [
+              5,
+              0
+            ],
+            "dataLoss": 4,
+            "penaltyLoss": 0,
+            "totalLoss": 4,
+            "gradient": [
+              4,
+              0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 4,
+            "point": [
+              1,
+              0
+            ],
+            "dataLoss": 4,
+            "penaltyLoss": 0,
+            "totalLoss": 4,
+            "gradient": [
+              -4,
+              0
+            ],
+            "status": "completed",
+            "terminationReason": "iterations_completed"
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "kind": "quadratic",
+        "point": [
+          1,
+          0
+        ],
+        "scale": 1,
+        "penalty": 1
+      },
+      "rate": 0.1,
+      "iterations": 4,
+      "trace": {
+        "contract": "optimization.v1",
+        "entryConvention": "state 0 is initial; state k follows k simultaneous updates",
+        "requestedIterations": 4,
+        "learningRate": 0.1,
+        "completedUpdates": 4,
+        "status": "completed",
+        "terminationReason": "iterations_completed",
+        "entries": [
+          {
+            "iteration": 0,
+            "point": [
+              1,
+              0
+            ],
+            "dataLoss": 4,
+            "penaltyLoss": 1,
+            "totalLoss": 5,
+            "gradient": [
+              -2,
+              0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 1,
+            "point": [
+              1.2,
+              0.0
+            ],
+            "dataLoss": 3.24,
+            "penaltyLoss": 1.44,
+            "totalLoss": 4.68,
+            "gradient": [
+              -1.2000000000000002,
+              0.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 2,
+            "point": [
+              1.32,
+              0.0
+            ],
+            "dataLoss": 2.8223999999999996,
+            "penaltyLoss": 1.7424000000000002,
+            "totalLoss": 4.5648,
+            "gradient": [
+              -0.7199999999999998,
+              0.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 3,
+            "point": [
+              1.3920000000000001,
+              0.0
+            ],
+            "dataLoss": 2.5856639999999995,
+            "penaltyLoss": 1.9376640000000003,
+            "totalLoss": 4.523327999999999,
+            "gradient": [
+              -0.4319999999999995,
+              0.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 4,
+            "point": [
+              1.4352,
+              0.0
+            ],
+            "dataLoss": 2.44859904,
+            "penaltyLoss": 2.05979904,
+            "totalLoss": 4.50839808,
+            "gradient": [
+              -0.2591999999999999,
+              0.0
+            ],
+            "status": "completed",
+            "terminationReason": "iterations_completed"
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "kind": "quadratic",
+        "point": [
+          1,
+          0
+        ],
+        "scale": 1,
+        "penalty": 2
+      },
+      "rate": 0.1,
+      "iterations": 4,
+      "trace": {
+        "contract": "optimization.v1",
+        "entryConvention": "state 0 is initial; state k follows k simultaneous updates",
+        "requestedIterations": 4,
+        "learningRate": 0.1,
+        "completedUpdates": 4,
+        "status": "completed",
+        "terminationReason": "iterations_completed",
+        "entries": [
+          {
+            "iteration": 0,
+            "point": [
+              1,
+              0
+            ],
+            "dataLoss": 4,
+            "penaltyLoss": 2,
+            "totalLoss": 6,
+            "gradient": [
+              0,
+              0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 1,
+            "point": [
+              1.0,
+              0.0
+            ],
+            "dataLoss": 4.0,
+            "penaltyLoss": 2.0,
+            "totalLoss": 6.0,
+            "gradient": [
+              0.0,
+              0.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 2,
+            "point": [
+              1.0,
+              0.0
+            ],
+            "dataLoss": 4.0,
+            "penaltyLoss": 2.0,
+            "totalLoss": 6.0,
+            "gradient": [
+              0.0,
+              0.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 3,
+            "point": [
+              1.0,
+              0.0
+            ],
+            "dataLoss": 4.0,
+            "penaltyLoss": 2.0,
+            "totalLoss": 6.0,
+            "gradient": [
+              0.0,
+              0.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 4,
+            "point": [
+              1.0,
+              0.0
+            ],
+            "dataLoss": 4.0,
+            "penaltyLoss": 2.0,
+            "totalLoss": 6.0,
+            "gradient": [
+              0.0,
+              0.0
+            ],
+            "status": "completed",
+            "terminationReason": "iterations_completed"
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "kind": "coupled",
+        "point": [
+          1,
+          2
+        ],
+        "scale": 1,
+        "penalty": 0
+      },
+      "rate": 0.1,
+      "iterations": 2,
+      "trace": {
+        "contract": "optimization.v1",
+        "entryConvention": "state 0 is initial; state k follows k simultaneous updates",
+        "requestedIterations": 2,
+        "learningRate": 0.1,
+        "completedUpdates": 2,
+        "status": "completed",
+        "terminationReason": "iterations_completed",
+        "entries": [
+          {
+            "iteration": 0,
+            "point": [
+              1,
+              2
+            ],
+            "dataLoss": 9,
+            "penaltyLoss": 0,
+            "totalLoss": 9,
+            "gradient": [
+              6,
+              6
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 1,
+            "point": [
+              0.3999999999999999,
+              1.4
+            ],
+            "dataLoss": 3.2399999999999993,
+            "penaltyLoss": 0.0,
+            "totalLoss": 3.2399999999999993,
+            "gradient": [
+              3.5999999999999996,
+              3.5999999999999996
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 2,
+            "point": [
+              0.039999999999999925,
+              1.04
+            ],
+            "dataLoss": 1.1664,
+            "penaltyLoss": 0.0,
+            "totalLoss": 1.1664,
+            "gradient": [
+              2.16,
+              2.16
+            ],
+            "status": "completed",
+            "terminationReason": "iterations_completed"
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "kind": "saddle",
+        "point": [
+          0,
+          0
+        ],
+        "scale": 1,
+        "penalty": 0
+      },
+      "rate": 0.1,
+      "iterations": 3,
+      "trace": {
+        "contract": "optimization.v1",
+        "entryConvention": "state 0 is initial; state k follows k simultaneous updates",
+        "requestedIterations": 3,
+        "learningRate": 0.1,
+        "completedUpdates": 3,
+        "status": "completed",
+        "terminationReason": "iterations_completed",
+        "entries": [
+          {
+            "iteration": 0,
+            "point": [
+              0,
+              0
+            ],
+            "dataLoss": 0,
+            "penaltyLoss": 0,
+            "totalLoss": 0,
+            "gradient": [
+              0,
+              0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 1,
+            "point": [
+              0.0,
+              0.0
+            ],
+            "dataLoss": 0.0,
+            "penaltyLoss": 0.0,
+            "totalLoss": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 2,
+            "point": [
+              0.0,
+              0.0
+            ],
+            "dataLoss": 0.0,
+            "penaltyLoss": 0.0,
+            "totalLoss": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 3,
+            "point": [
+              0.0,
+              0.0
+            ],
+            "dataLoss": 0.0,
+            "penaltyLoss": 0.0,
+            "totalLoss": 0.0,
+            "gradient": [
+              0.0,
+              0.0
+            ],
+            "status": "completed",
+            "terminationReason": "iterations_completed"
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "kind": "anisotropic",
+        "point": [
+          1,
+          1
+        ],
+        "scale": 100,
+        "penalty": 0
+      },
+      "rate": 0.1,
+      "iterations": 30,
+      "trace": {
+        "contract": "optimization.v1",
+        "entryConvention": "state 0 is initial; state k follows k simultaneous updates",
+        "requestedIterations": 30,
+        "learningRate": 0.1,
+        "completedUpdates": 4,
+        "status": "diverged",
+        "terminationReason": "numerical_limit_exceeded",
+        "entries": [
+          {
+            "iteration": 0,
+            "point": [
+              1,
+              1
+            ],
+            "dataLoss": 104,
+            "penaltyLoss": 0,
+            "totalLoss": 104,
+            "gradient": [
+              -4,
+              200
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 1,
+            "point": [
+              1.4,
+              -19.0
+            ],
+            "dataLoss": 36102.56,
+            "penaltyLoss": 0.0,
+            "totalLoss": 36102.56,
+            "gradient": [
+              -3.2,
+              -3800.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 2,
+            "point": [
+              1.72,
+              361.0
+            ],
+            "dataLoss": 13032101.6384,
+            "penaltyLoss": 0.0,
+            "totalLoss": 13032101.6384,
+            "gradient": [
+              -2.56,
+              72200.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 3,
+            "point": [
+              1.976,
+              -6859.0
+            ],
+            "dataLoss": 4704588101.048576,
+            "penaltyLoss": 0.0,
+            "totalLoss": 4704588101.048576,
+            "gradient": [
+              -2.048,
+              -1371800.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 4,
+            "point": [
+              2.1808,
+              130321.0
+            ],
+            "dataLoss": null,
+            "penaltyLoss": null,
+            "totalLoss": null,
+            "gradient": null,
+            "status": "diverged",
+            "terminationReason": "numerical_limit_exceeded"
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "kind": "double-well",
+        "point": [
+          0.5,
+          0
+        ],
+        "scale": 1,
+        "penalty": 0
+      },
+      "rate": 0.1,
+      "iterations": 4,
+      "trace": {
+        "contract": "optimization.v1",
+        "entryConvention": "state 0 is initial; state k follows k simultaneous updates",
+        "requestedIterations": 4,
+        "learningRate": 0.1,
+        "completedUpdates": 4,
+        "status": "completed",
+        "terminationReason": "iterations_completed",
+        "entries": [
+          {
+            "iteration": 0,
+            "point": [
+              0.5,
+              0
+            ],
+            "dataLoss": 0.5625,
+            "penaltyLoss": 0.0,
+            "totalLoss": 0.5625,
+            "gradient": [
+              -1.5,
+              0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 1,
+            "point": [
+              0.65,
+              0.0
+            ],
+            "dataLoss": 0.3335062499999999,
+            "penaltyLoss": 0.0,
+            "totalLoss": 0.3335062499999999,
+            "gradient": [
+              -1.5014999999999998,
+              0.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 2,
+            "point": [
+              0.80015,
+              0.0
+            ],
+            "dataLoss": 0.1294272414108005,
+            "penaltyLoss": 0.0,
+            "totalLoss": 0.1294272414108005,
+            "gradient": [
+              -1.1514477839865,
+              0.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 3,
+            "point": [
+              0.91529477839865,
+              0.0
+            ],
+            "dataLoss": 0.02632034728359644,
+            "penaltyLoss": 0.0,
+            "totalLoss": 0.02632034728359644,
+            "gradient": [
+              -0.5939731092549632,
+              0.0
+            ],
+            "status": "running",
+            "terminationReason": null
+          },
+          {
+            "iteration": 4,
+            "point": [
+              0.9746920893241463,
+              0.0
+            ],
+            "dataLoss": 0.0024975337094521573,
+            "penaltyLoss": 0.0,
+            "totalLoss": 0.0024975337094521573,
+            "gradient": [
+              -0.19484223918304056,
+              0.0
+            ],
+            "status": "completed",
+            "terminationReason": "iterations_completed"
+          }
+        ]
+      }
+    }
+  ],
+  "comparison": [
+    {
+      "rate": 0.001,
+      "iterations": 4,
+      "trace": {
+        "contract": "optimization.v1",
+        "scaling": {
+          "schemaVersion": "1.0.0",
+          "method": "standard",
+          "original": [
+            [
+              -20.0
+            ],
+            [
+              -10.0
+            ],
+            [
+              10.0
+            ],
+            [
+              20.0
+            ]
+          ],
+          "mean": [
+            0.0
+          ],
+          "scale": [
+            15.811388300841896
+          ],
+          "scaled": [
+            [
+              -1.2649110640673518
+            ],
+            [
+              -0.6324555320336759
+            ],
+            [
+              0.6324555320336759
+            ],
+            [
+              1.2649110640673518
+            ]
+          ]
+        },
+        "original": {
+          "schemaVersion": "1.0.0",
+          "entryConvention": "iteration 0 is the initial state; iteration k is the state after k updates",
+          "requestedIterations": 4,
+          "completedUpdates": 4,
+          "learningRate": 0.001,
+          "status": "completed",
+          "terminationReason": "iterations_completed",
+          "entries": [
+            {
+              "iteration": 0,
+              "weights": [
+                0.0
+              ],
+              "bias": 0.0,
+              "loss": 10.0,
+              "weightGradients": [
+                -100.0
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 1,
+              "weights": [
+                0.1
+              ],
+              "bias": 0.0,
+              "loss": 2.5,
+              "weightGradients": [
+                -50.0
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 2,
+              "weights": [
+                0.15000000000000002
+              ],
+              "bias": 0.0,
+              "loss": 0.6249999999999994,
+              "weightGradients": [
+                -24.999999999999993
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 3,
+              "weights": [
+                0.17500000000000002
+              ],
+              "bias": 0.0,
+              "loss": 0.15624999999999972,
+              "weightGradients": [
+                -12.49999999999999
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 4,
+              "weights": [
+                0.1875
+              ],
+              "bias": 0.0,
+              "loss": 0.0390625,
+              "weightGradients": [
+                -6.25
+              ],
+              "biasGradient": 0.0,
+              "status": "completed",
+              "terminationReason": "iterations_completed"
+            }
+          ]
+        },
+        "scaled": {
+          "schemaVersion": "1.0.0",
+          "entryConvention": "iteration 0 is the initial state; iteration k is the state after k updates",
+          "requestedIterations": 4,
+          "completedUpdates": 4,
+          "learningRate": 0.001,
+          "status": "completed",
+          "terminationReason": "iterations_completed",
+          "entries": [
+            {
+              "iteration": 0,
+              "weights": [
+                0.0
+              ],
+              "bias": 0.0,
+              "loss": 10.0,
+              "weightGradients": [
+                -6.324555320336759
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 1,
+              "weights": [
+                0.006324555320336759
+              ],
+              "bias": 0.0,
+              "loss": 9.96004,
+              "weightGradients": [
+                -6.311906209696085
+              ],
+              "biasGradient": -2.220446049250313e-16,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 2,
+              "weights": [
+                0.012636461530032844
+              ],
+              "bias": 2.220446049250313e-19,
+              "loss": 9.92023968016,
+              "weightGradients": [
+                -6.299282397276693
+              ],
+              "biasGradient": -2.220446049250313e-16,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 3,
+              "weights": [
+                0.018935743927309536
+              ],
+              "bias": 4.440892098500626e-19,
+              "loss": 9.88059840239808,
+              "weightGradients": [
+                -6.286683832482139
+              ],
+              "biasGradient": 2.220446049250313e-16,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 4,
+              "weights": [
+                0.025222427759791676
+              ],
+              "bias": 2.220446049250313e-19,
+              "loss": 9.841115531182098,
+              "weightGradients": [
+                -6.274110464817175
+              ],
+              "biasGradient": 2.220446049250313e-16,
+              "status": "completed",
+              "terminationReason": "iterations_completed"
+            }
+          ]
+        },
+        "gradientChecks": {
+          "original": {
+            "passed": true,
+            "maxAbsoluteError": 3.3381297726009507e-11,
+            "tolerance": 1e-07,
+            "analytical": {
+              "weightGradients": [
+                -100.0
+              ],
+              "biasGradient": 0.0
+            },
+            "numerical": {
+              "weightGradients": [
+                -100.00000000003338
+              ],
+              "biasGradient": 0.0
+            }
+          },
+          "scaled": {
+            "passed": true,
+            "maxAbsoluteError": 1.049826892085548e-11,
+            "tolerance": 1e-07,
+            "analytical": {
+              "weightGradients": [
+                -6.324555320336759
+              ],
+              "biasGradient": 0.0
+            },
+            "numerical": {
+              "weightGradients": [
+                -6.324555320347257
+              ],
+              "biasGradient": 0.0
+            }
+          }
+        }
+      }
+    },
+    {
+      "rate": 0.01,
+      "iterations": 4,
+      "trace": {
+        "contract": "optimization.v1",
+        "scaling": {
+          "schemaVersion": "1.0.0",
+          "method": "standard",
+          "original": [
+            [
+              -20.0
+            ],
+            [
+              -10.0
+            ],
+            [
+              10.0
+            ],
+            [
+              20.0
+            ]
+          ],
+          "mean": [
+            0.0
+          ],
+          "scale": [
+            15.811388300841896
+          ],
+          "scaled": [
+            [
+              -1.2649110640673518
+            ],
+            [
+              -0.6324555320336759
+            ],
+            [
+              0.6324555320336759
+            ],
+            [
+              1.2649110640673518
+            ]
+          ]
+        },
+        "original": {
+          "schemaVersion": "1.0.0",
+          "entryConvention": "iteration 0 is the initial state; iteration k is the state after k updates",
+          "requestedIterations": 4,
+          "completedUpdates": 4,
+          "learningRate": 0.01,
+          "status": "completed",
+          "terminationReason": "iterations_completed",
+          "entries": [
+            {
+              "iteration": 0,
+              "weights": [
+                0.0
+              ],
+              "bias": 0.0,
+              "loss": 10.0,
+              "weightGradients": [
+                -100.0
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 1,
+              "weights": [
+                1.0
+              ],
+              "bias": 0.0,
+              "loss": 160.0,
+              "weightGradients": [
+                400.0
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 2,
+              "weights": [
+                -3.0
+              ],
+              "bias": 0.0,
+              "loss": 2560.0,
+              "weightGradients": [
+                -1600.0
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 3,
+              "weights": [
+                13.0
+              ],
+              "bias": 0.0,
+              "loss": 40960.0,
+              "weightGradients": [
+                6400.0
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 4,
+              "weights": [
+                -51.0
+              ],
+              "bias": 0.0,
+              "loss": 655360.0,
+              "weightGradients": [
+                -25600.0
+              ],
+              "biasGradient": 0.0,
+              "status": "completed",
+              "terminationReason": "iterations_completed"
+            }
+          ]
+        },
+        "scaled": {
+          "schemaVersion": "1.0.0",
+          "entryConvention": "iteration 0 is the initial state; iteration k is the state after k updates",
+          "requestedIterations": 4,
+          "completedUpdates": 4,
+          "learningRate": 0.01,
+          "status": "completed",
+          "terminationReason": "iterations_completed",
+          "entries": [
+            {
+              "iteration": 0,
+              "weights": [
+                0.0
+              ],
+              "bias": 0.0,
+              "loss": 10.0,
+              "weightGradients": [
+                -6.324555320336759
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 1,
+              "weights": [
+                0.0632455532033676
+              ],
+              "bias": 0.0,
+              "loss": 9.604,
+              "weightGradients": [
+                -6.1980642139300235
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 2,
+              "weights": [
+                0.12522619534266782
+              ],
+              "bias": 0.0,
+              "loss": 9.2236816,
+              "weightGradients": [
+                -6.074102929651424
+              ],
+              "biasGradient": 2.220446049250313e-16,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 3,
+              "weights": [
+                0.18596722463918208
+              ],
+              "bias": -2.220446049250313e-18,
+              "loss": 8.85842380864,
+              "weightGradients": [
+                -5.952620871058395
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 4,
+              "weights": [
+                0.24549343334976603
+              ],
+              "bias": -2.220446049250313e-18,
+              "loss": 8.507630225817856,
+              "weightGradients": [
+                -5.833568453637227
+              ],
+              "biasGradient": 0.0,
+              "status": "completed",
+              "terminationReason": "iterations_completed"
+            }
+          ]
+        },
+        "gradientChecks": {
+          "original": {
+            "passed": true,
+            "maxAbsoluteError": 3.3381297726009507e-11,
+            "tolerance": 1e-07,
+            "analytical": {
+              "weightGradients": [
+                -100.0
+              ],
+              "biasGradient": 0.0
+            },
+            "numerical": {
+              "weightGradients": [
+                -100.00000000003338
+              ],
+              "biasGradient": 0.0
+            }
+          },
+          "scaled": {
+            "passed": true,
+            "maxAbsoluteError": 1.049826892085548e-11,
+            "tolerance": 1e-07,
+            "analytical": {
+              "weightGradients": [
+                -6.324555320336759
+              ],
+              "biasGradient": 0.0
+            },
+            "numerical": {
+              "weightGradients": [
+                -6.324555320347257
+              ],
+              "biasGradient": 0.0
+            }
+          }
+        }
+      }
+    },
+    {
+      "rate": 0.1,
+      "iterations": 4,
+      "trace": {
+        "contract": "optimization.v1",
+        "scaling": {
+          "schemaVersion": "1.0.0",
+          "method": "standard",
+          "original": [
+            [
+              -20.0
+            ],
+            [
+              -10.0
+            ],
+            [
+              10.0
+            ],
+            [
+              20.0
+            ]
+          ],
+          "mean": [
+            0.0
+          ],
+          "scale": [
+            15.811388300841896
+          ],
+          "scaled": [
+            [
+              -1.2649110640673518
+            ],
+            [
+              -0.6324555320336759
+            ],
+            [
+              0.6324555320336759
+            ],
+            [
+              1.2649110640673518
+            ]
+          ]
+        },
+        "original": {
+          "schemaVersion": "1.0.0",
+          "entryConvention": "iteration 0 is the initial state; iteration k is the state after k updates",
+          "requestedIterations": 4,
+          "completedUpdates": 4,
+          "learningRate": 0.1,
+          "status": "completed",
+          "terminationReason": "iterations_completed",
+          "entries": [
+            {
+              "iteration": 0,
+              "weights": [
+                0.0
+              ],
+              "bias": 0.0,
+              "loss": 10.0,
+              "weightGradients": [
+                -100.0
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 1,
+              "weights": [
+                10.0
+              ],
+              "bias": 0.0,
+              "loss": 24010.0,
+              "weightGradients": [
+                4900.0
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 2,
+              "weights": [
+                -480.0
+              ],
+              "bias": 0.0,
+              "loss": 57648010.0,
+              "weightGradients": [
+                -240100.0
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 3,
+              "weights": [
+                23530.0
+              ],
+              "bias": 0.0,
+              "loss": 138412872010.0,
+              "weightGradients": [
+                11764900.0
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 4,
+              "weights": [
+                -1152960.0
+              ],
+              "bias": 0.0,
+              "loss": 332329305696010.0,
+              "weightGradients": [
+                -576480100.0
+              ],
+              "biasGradient": 0.0,
+              "status": "completed",
+              "terminationReason": "iterations_completed"
+            }
+          ]
+        },
+        "scaled": {
+          "schemaVersion": "1.0.0",
+          "entryConvention": "iteration 0 is the initial state; iteration k is the state after k updates",
+          "requestedIterations": 4,
+          "completedUpdates": 4,
+          "learningRate": 0.1,
+          "status": "completed",
+          "terminationReason": "iterations_completed",
+          "entries": [
+            {
+              "iteration": 0,
+              "weights": [
+                0.0
+              ],
+              "bias": 0.0,
+              "loss": 10.0,
+              "weightGradients": [
+                -6.324555320336759
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 1,
+              "weights": [
+                0.632455532033676
+              ],
+              "bias": 0.0,
+              "loss": 6.399999999999999,
+              "weightGradients": [
+                -5.059644256269406
+              ],
+              "biasGradient": 2.220446049250313e-16,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 2,
+              "weights": [
+                1.1384199576606167
+              ],
+              "bias": -2.2204460492503132e-17,
+              "loss": 4.095999999999998,
+              "weightGradients": [
+                -4.047715405015525
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 3,
+              "weights": [
+                1.5431914981621693
+              ],
+              "bias": -2.2204460492503132e-17,
+              "loss": 2.6214399999999998,
+              "weightGradients": [
+                -3.2381723240124205
+              ],
+              "biasGradient": 0.0,
+              "status": "running",
+              "terminationReason": null
+            },
+            {
+              "iteration": 4,
+              "weights": [
+                1.8670087305634113
+              ],
+              "bias": -2.2204460492503132e-17,
+              "loss": 1.6777216,
+              "weightGradients": [
+                -2.590537859209936
+              ],
+              "biasGradient": 0.0,
+              "status": "completed",
+              "terminationReason": "iterations_completed"
+            }
+          ]
+        },
+        "gradientChecks": {
+          "original": {
+            "passed": true,
+            "maxAbsoluteError": 3.3381297726009507e-11,
+            "tolerance": 1e-07,
+            "analytical": {
+              "weightGradients": [
+                -100.0
+              ],
+              "biasGradient": 0.0
+            },
+            "numerical": {
+              "weightGradients": [
+                -100.00000000003338
+              ],
+              "biasGradient": 0.0
+            }
+          },
+          "scaled": {
+            "passed": true,
+            "maxAbsoluteError": 1.049826892085548e-11,
+            "tolerance": 1e-07,
+            "analytical": {
+              "weightGradients": [
+                -6.324555320336759
+              ],
+              "biasGradient": 0.0
+            },
+            "numerical": {
+              "weightGradients": [
+                -6.324555320347257
+              ],
+              "biasGradient": 0.0
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mlmathlab.dev/schemas/dot-product-input.v1.schema.json",
+  "title": "Dot product calculation input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["features", "weights"],
+  "properties": {
+    "features": { "type": "array", "minItems": 1, "items": { "type": "number" } },
+    "weights": { "type": "array", "minItems": 1, "items": { "type": "number" } }
+  }
+}

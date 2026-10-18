@@ -1,0 +1,13 @@
+// @vitest-environment jsdom
+import "@testing-library/jest-dom/vitest";
+import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
+import { afterEach, describe, expect, it } from "vitest";
+import { MatricesLesson } from "./matrices-lesson";
+afterEach(cleanup);
+const next=()=>fireEvent.click(screen.getByRole("button",{name:"Next stage"}));
+describe("Matrices lesson",()=>{
+ it("introduces the batch problem and prerequisite navigation",()=>{render(<MatricesLesson/>);expect(screen.getByRole("heading",{name:/One matrix/})).toBeInTheDocument();expect(screen.getByRole("link",{name:/Review vectors/})).toHaveAttribute("href","/math/vectors-dot-product");expect(screen.getByRole("button",{name:"Next stage"})).toBeDisabled();});
+ it("calculates dynamically and highlights the selected cell",()=>{render(<MatricesLesson/>);fireEvent.click(screen.getByRole("button",{name:/Group the houses/}));next();expect(screen.getByTestId("matrix-predictions")).toHaveTextContent("[28, 39, 29]");const cell=screen.getByLabelText("House B Bedrooms");fireEvent.focus(cell);expect(cell).toHaveClass("selected-cell");fireEvent.change(cell,{target:{value:"3"}});expect(screen.getByTestId("matrix-predictions")).toHaveTextContent("[28, 41, 29]");});
+ it("requires the correct shape explanation",()=>{render(<MatricesLesson/>);fireEvent.click(screen.getByRole("button",{name:/Group the houses/}));next();fireEvent.click(screen.getByRole("button",{name:"Run all rows"}));next();fireEvent.click(screen.getByLabelText(/Because X has three rows/));expect(within(screen.getByRole("region",{name:"Existing five-stage house lab"})).getByRole("status")).toHaveTextContent("Correct");expect(screen.getByRole("button",{name:"Next stage"})).toBeEnabled();});
+ it("verifies a semantic shape fix and completes the lesson",()=>{render(<MatricesLesson/>);fireEvent.click(screen.getByRole("button",{name:/Group the houses/}));next();fireEvent.click(screen.getByRole("button",{name:"Run all rows"}));next();fireEvent.click(screen.getByLabelText(/Because X has three rows/));next();fireEvent.click(screen.getByRole("button",{name:/Copy NumPy exercise/}));next();fireEvent.click(screen.getByLabelText(/Restore the missing location weight/));fireEvent.click(screen.getByRole("button",{name:/Verify corrected contract/}));expect(within(screen.getByRole("region",{name:"Existing five-stage house lab"})).getByRole("status")).toHaveTextContent("Fix verified");expect(screen.getByRole("heading",{name:/batch into a neural-layer operation/})).toBeInTheDocument();expect(screen.getByRole("link",{name:/Next: Functions & Derivatives/})).toHaveAttribute("href","/math/functions-derivatives");});
+});

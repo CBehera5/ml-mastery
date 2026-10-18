@@ -1,0 +1,2804 @@
+{
+  "configuration_rule": "Only listed IDs and their complete control tuple are supported; no Cartesian-product inference",
+  "configurations": [
+    {
+      "controls": {
+        "feature": "available",
+        "split": "holdout"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [],
+        "overlap": [],
+        "reason": "both-valid",
+        "split_valid": true,
+        "valid": true
+      },
+      "fixture": "ev-e1.split.housing-units.v1",
+      "id": "EV-E1.split.housing-units.available.holdout",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "available",
+        "split": "overlap"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [],
+        "overlap": [
+          "r4"
+        ],
+        "reason": "split-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.housing-units.v1",
+      "id": "EV-E1.split.housing-units.available.overlap",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=['r4']; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=['r4']; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "available",
+        "split": "crossed"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [],
+        "overlap": [
+          "r5"
+        ],
+        "reason": "split-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.housing-units.v1",
+      "id": "EV-E1.split.housing-units.available.crossed",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=['r5']; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=['r5']; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "holdout"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [],
+        "overlap": [],
+        "reason": "feature-future",
+        "split_valid": true,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.housing-units.v1",
+      "id": "EV-E1.split.housing-units.future.holdout",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "overlap"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [],
+        "overlap": [
+          "r4"
+        ],
+        "reason": "both-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.housing-units.v1",
+      "id": "EV-E1.split.housing-units.future.overlap",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=['r4']; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=['r4']; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "crossed"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [],
+        "overlap": [
+          "r5"
+        ],
+        "reason": "both-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.housing-units.v1",
+      "id": "EV-E1.split.housing-units.future.crossed",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=['r5']; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=['r5']; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "available",
+        "split": "overlap"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [
+          "r4"
+        ],
+        "groups": [],
+        "overlap": [
+          "r4"
+        ],
+        "reason": "split-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.housing-future.v1",
+      "id": "EV-E1.split.housing-future.available.overlap",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=['r4']; required group overlap=[]; prohibited future training IDs=['r4']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=['r4']; required group overlap=[]; prohibited future training IDs=['r4']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "available",
+        "split": "crossed"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [
+          "r5",
+          "r6"
+        ],
+        "groups": [],
+        "overlap": [],
+        "reason": "split-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.housing-future.v1",
+      "id": "EV-E1.split.housing-future.available.crossed",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=['r5', 'r6']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=['r5', 'r6']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "available",
+        "split": "holdout"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [],
+        "overlap": [],
+        "reason": "both-valid",
+        "split_valid": true,
+        "valid": true
+      },
+      "fixture": "ev-e1.split.housing-future.v1",
+      "id": "EV-E1.split.housing-future.available.holdout",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "overlap"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [
+          "r4"
+        ],
+        "groups": [],
+        "overlap": [
+          "r4"
+        ],
+        "reason": "both-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.housing-future.v1",
+      "id": "EV-E1.split.housing-future.future.overlap",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=['r4']; required group overlap=[]; prohibited future training IDs=['r4']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=['r4']; required group overlap=[]; prohibited future training IDs=['r4']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "crossed"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [
+          "r5",
+          "r6"
+        ],
+        "groups": [],
+        "overlap": [],
+        "reason": "both-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.housing-future.v1",
+      "id": "EV-E1.split.housing-future.future.crossed",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=['r5', 'r6']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=['r5', 'r6']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "holdout"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [],
+        "overlap": [],
+        "reason": "feature-future",
+        "split_valid": true,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.housing-future.v1",
+      "id": "EV-E1.split.housing-future.future.holdout",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "available",
+        "split": "crossed"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [
+          "g1",
+          "g2",
+          "g3"
+        ],
+        "overlap": [],
+        "reason": "split-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.churn-customers.v1",
+      "id": "EV-E1.split.churn-customers.available.crossed",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=['g1', 'g2', 'g3']; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=['g1', 'g2', 'g3']; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "available",
+        "split": "holdout"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [],
+        "overlap": [],
+        "reason": "both-valid",
+        "split_valid": true,
+        "valid": true
+      },
+      "fixture": "ev-e1.split.churn-customers.v1",
+      "id": "EV-E1.split.churn-customers.available.holdout",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "available",
+        "split": "overlap"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [
+          "g2"
+        ],
+        "overlap": [
+          "r4"
+        ],
+        "reason": "split-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.churn-customers.v1",
+      "id": "EV-E1.split.churn-customers.available.overlap",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=['r4']; required group overlap=['g2']; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=['r4']; required group overlap=['g2']; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "crossed"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [
+          "g1",
+          "g2",
+          "g3"
+        ],
+        "overlap": [],
+        "reason": "both-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.churn-customers.v1",
+      "id": "EV-E1.split.churn-customers.future.crossed",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=['g1', 'g2', 'g3']; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=['g1', 'g2', 'g3']; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "holdout"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [],
+        "overlap": [],
+        "reason": "feature-future",
+        "split_valid": true,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.churn-customers.v1",
+      "id": "EV-E1.split.churn-customers.future.holdout",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "overlap"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [
+          "g2"
+        ],
+        "overlap": [
+          "r4"
+        ],
+        "reason": "both-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.churn-customers.v1",
+      "id": "EV-E1.split.churn-customers.future.overlap",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=['r4']; required group overlap=['g2']; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=['r4']; required group overlap=['g2']; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "available",
+        "split": "holdout"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [],
+        "overlap": [],
+        "reason": "both-valid",
+        "split_valid": true,
+        "valid": true
+      },
+      "fixture": "ev-e1.split.churn-future.v1",
+      "id": "EV-E1.split.churn-future.available.holdout",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "available",
+        "split": "overlap"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [
+          "r4"
+        ],
+        "groups": [],
+        "overlap": [
+          "r4"
+        ],
+        "reason": "split-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.churn-future.v1",
+      "id": "EV-E1.split.churn-future.available.overlap",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=['r4']; required group overlap=[]; prohibited future training IDs=['r4']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=['r4']; required group overlap=[]; prohibited future training IDs=['r4']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "available",
+        "split": "crossed"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [
+          "r5",
+          "r6"
+        ],
+        "groups": [],
+        "overlap": [],
+        "reason": "split-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.churn-future.v1",
+      "id": "EV-E1.split.churn-future.available.crossed",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=['r5', 'r6']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=['r5', 'r6']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "holdout"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [],
+        "overlap": [],
+        "reason": "feature-future",
+        "split_valid": true,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.churn-future.v1",
+      "id": "EV-E1.split.churn-future.future.holdout",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "overlap"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [
+          "r4"
+        ],
+        "groups": [],
+        "overlap": [
+          "r4"
+        ],
+        "reason": "both-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.churn-future.v1",
+      "id": "EV-E1.split.churn-future.future.overlap",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=['r4']; required group overlap=[]; prohibited future training IDs=['r4']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=['r4']; required group overlap=[]; prohibited future training IDs=['r4']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "crossed"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [
+          "r5",
+          "r6"
+        ],
+        "groups": [],
+        "overlap": [],
+        "reason": "both-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.churn-future.v1",
+      "id": "EV-E1.split.churn-future.future.crossed",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=['r5', 'r6']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=['r5', 'r6']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "available",
+        "split": "overlap"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [
+          "g2"
+        ],
+        "overlap": [
+          "r4"
+        ],
+        "reason": "split-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.docs-groups.v1",
+      "id": "EV-E1.split.docs-groups.available.overlap",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=['r4']; required group overlap=['g2']; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=['r4']; required group overlap=['g2']; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "available",
+        "split": "crossed"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [
+          "g1",
+          "g2",
+          "g3"
+        ],
+        "overlap": [],
+        "reason": "split-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.docs-groups.v1",
+      "id": "EV-E1.split.docs-groups.available.crossed",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=['g1', 'g2', 'g3']; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=['g1', 'g2', 'g3']; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "available",
+        "split": "holdout"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [],
+        "overlap": [],
+        "reason": "both-valid",
+        "split_valid": true,
+        "valid": true
+      },
+      "fixture": "ev-e1.split.docs-groups.v1",
+      "id": "EV-E1.split.docs-groups.available.holdout",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "overlap"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [
+          "g2"
+        ],
+        "overlap": [
+          "r4"
+        ],
+        "reason": "both-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.docs-groups.v1",
+      "id": "EV-E1.split.docs-groups.future.overlap",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=['r4']; required group overlap=['g2']; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=['r4']; required group overlap=['g2']; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "crossed"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [
+          "g1",
+          "g2",
+          "g3"
+        ],
+        "overlap": [],
+        "reason": "both-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.docs-groups.v1",
+      "id": "EV-E1.split.docs-groups.future.crossed",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=['g1', 'g2', 'g3']; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=['g1', 'g2', 'g3']; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "holdout"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [],
+        "overlap": [],
+        "reason": "feature-future",
+        "split_valid": true,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.docs-groups.v1",
+      "id": "EV-E1.split.docs-groups.future.holdout",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "available",
+        "split": "crossed"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [
+          "r3",
+          "r5"
+        ],
+        "groups": [
+          "g1",
+          "g2",
+          "g3"
+        ],
+        "overlap": [],
+        "reason": "split-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.docs-future.v1",
+      "id": "EV-E1.split.docs-future.available.crossed",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=['g1', 'g2', 'g3']; prohibited future training IDs=['r3', 'r5']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=['g1', 'g2', 'g3']; prohibited future training IDs=['r3', 'r5']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "available",
+        "split": "holdout"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [],
+        "overlap": [],
+        "reason": "both-valid",
+        "split_valid": true,
+        "valid": true
+      },
+      "fixture": "ev-e1.split.docs-future.v1",
+      "id": "EV-E1.split.docs-future.available.holdout",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "available",
+        "split": "overlap"
+      },
+      "expected": {
+        "feature_valid": true,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [
+          "r4"
+        ],
+        "groups": [
+          "g2"
+        ],
+        "overlap": [
+          "r4"
+        ],
+        "reason": "split-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.docs-future.v1",
+      "id": "EV-E1.split.docs-future.available.overlap",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=-1 must exist by t=0. Row overlap=['r4']; required group overlap=['g2']; prohibited future training IDs=['r4']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=-1 must exist by t=0. Row overlap=['r4']; required group overlap=['g2']; prohibited future training IDs=['r4']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "crossed"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [
+          "r3",
+          "r5"
+        ],
+        "groups": [
+          "g1",
+          "g2",
+          "g3"
+        ],
+        "overlap": [],
+        "reason": "both-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.docs-future.v1",
+      "id": "EV-E1.split.docs-future.future.crossed",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=['g1', 'g2', 'g3']; prohibited future training IDs=['r3', 'r5']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=['g1', 'g2', 'g3']; prohibited future training IDs=['r3', 'r5']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "holdout"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [],
+        "groups": [],
+        "overlap": [],
+        "reason": "feature-future",
+        "split_valid": true,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.docs-future.v1",
+      "id": "EV-E1.split.docs-future.future.holdout",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=[]; required group overlap=[]; prohibited future training IDs=[]. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "feature": "future",
+        "split": "overlap"
+      },
+      "expected": {
+        "feature_valid": false,
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "future": [
+          "r4"
+        ],
+        "groups": [
+          "g2"
+        ],
+        "overlap": [
+          "r4"
+        ],
+        "reason": "both-invalid",
+        "split_valid": false,
+        "valid": false
+      },
+      "fixture": "ev-e1.split.docs-future.v1",
+      "id": "EV-E1.split.docs-future.future.overlap",
+      "objectives": [
+        "EV01.O1",
+        "EV01.O2",
+        "EV01.O3",
+        "EV01.O4"
+      ],
+      "prediction_question": "Will both the feature and split be permissible for this deployment question?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Feature at t=1 must exist by t=0. Row overlap=['r4']; required group overlap=['g2']; prohibited future training IDs=['r4']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+      },
+      "why": "Feature at t=1 must exist by t=0. Row overlap=['r4']; required group overlap=['g2']; prohibited future training IDs=['r4']. Group separation is required only for a declared unseen-group deployment question; causal effects are not established."
+    },
+    {
+      "controls": {
+        "capacity": "low",
+        "selection_source": "development"
+      },
+      "expected": {
+        "baseline_mae": 5,
+        "best_development_candidate": "middle",
+        "development_mae": 9.0,
+        "final_test_permission": "eligible-once-selection-and-workflow-frozen",
+        "reason": "development-selection",
+        "relative_error_reduction": -0.8,
+        "selection_valid": true,
+        "train_mae": 8.0
+      },
+      "fixture": "ev-e1.capacity.v1",
+      "id": "EV-E1.capacity.low.development",
+      "objectives": [
+        "EV02.O1",
+        "EV02.O2",
+        "EV02.O3",
+        "EV05.O1",
+        "EV05.O2",
+        "EV06.O4"
+      ],
+      "prediction_question": "Will training and development errors both improve with greater capacity, and is this selection source permissible?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Capacity low gives train MAE 8.0 and development MAE 9.0 thousand USD; baseline MAE is 5. Middle capacity minimizes development MAE at 4, a 20% relative reduction. Lower training error alone does not select a model. Repeated final-test selection is invalid even if the displayed development error is unchanged."
+      },
+      "why": "Capacity low gives train MAE 8.0 and development MAE 9.0 thousand USD; baseline MAE is 5. Middle capacity minimizes development MAE at 4, a 20% relative reduction. Lower training error alone does not select a model. Repeated final-test selection is invalid even if the displayed development error is unchanged."
+    },
+    {
+      "controls": {
+        "capacity": "low",
+        "selection_source": "test-peeking"
+      },
+      "expected": {
+        "baseline_mae": 5,
+        "best_development_candidate": "middle",
+        "development_mae": 9.0,
+        "final_test_permission": "invalid-test-used-for-selection",
+        "reason": "test-selection-optimism",
+        "relative_error_reduction": -0.8,
+        "selection_valid": false,
+        "train_mae": 8.0
+      },
+      "fixture": "ev-e1.capacity.v1",
+      "id": "EV-E1.capacity.low.test-peeking",
+      "objectives": [
+        "EV02.O1",
+        "EV02.O2",
+        "EV02.O3",
+        "EV05.O1",
+        "EV05.O2",
+        "EV06.O4"
+      ],
+      "prediction_question": "Will training and development errors both improve with greater capacity, and is this selection source permissible?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Capacity low gives train MAE 8.0 and development MAE 9.0 thousand USD; baseline MAE is 5. Middle capacity minimizes development MAE at 4, a 20% relative reduction. Lower training error alone does not select a model. Repeated final-test selection is invalid even if the displayed development error is unchanged."
+      },
+      "why": "Capacity low gives train MAE 8.0 and development MAE 9.0 thousand USD; baseline MAE is 5. Middle capacity minimizes development MAE at 4, a 20% relative reduction. Lower training error alone does not select a model. Repeated final-test selection is invalid even if the displayed development error is unchanged."
+    },
+    {
+      "controls": {
+        "capacity": "middle",
+        "selection_source": "development"
+      },
+      "expected": {
+        "baseline_mae": 5,
+        "best_development_candidate": "middle",
+        "development_mae": 4.0,
+        "final_test_permission": "eligible-once-selection-and-workflow-frozen",
+        "reason": "development-selection",
+        "relative_error_reduction": 0.2,
+        "selection_valid": true,
+        "train_mae": 3.0
+      },
+      "fixture": "ev-e1.capacity.v1",
+      "id": "EV-E1.capacity.middle.development",
+      "objectives": [
+        "EV02.O1",
+        "EV02.O2",
+        "EV02.O3",
+        "EV05.O1",
+        "EV05.O2",
+        "EV06.O4"
+      ],
+      "prediction_question": "Will training and development errors both improve with greater capacity, and is this selection source permissible?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Capacity middle gives train MAE 3.0 and development MAE 4.0 thousand USD; baseline MAE is 5. Middle capacity minimizes development MAE at 4, a 20% relative reduction. Lower training error alone does not select a model. Repeated final-test selection is invalid even if the displayed development error is unchanged."
+      },
+      "why": "Capacity middle gives train MAE 3.0 and development MAE 4.0 thousand USD; baseline MAE is 5. Middle capacity minimizes development MAE at 4, a 20% relative reduction. Lower training error alone does not select a model. Repeated final-test selection is invalid even if the displayed development error is unchanged."
+    },
+    {
+      "controls": {
+        "capacity": "middle",
+        "selection_source": "test-peeking"
+      },
+      "expected": {
+        "baseline_mae": 5,
+        "best_development_candidate": "middle",
+        "development_mae": 4.0,
+        "final_test_permission": "invalid-test-used-for-selection",
+        "reason": "test-selection-optimism",
+        "relative_error_reduction": 0.2,
+        "selection_valid": false,
+        "train_mae": 3.0
+      },
+      "fixture": "ev-e1.capacity.v1",
+      "id": "EV-E1.capacity.middle.test-peeking",
+      "objectives": [
+        "EV02.O1",
+        "EV02.O2",
+        "EV02.O3",
+        "EV05.O1",
+        "EV05.O2",
+        "EV06.O4"
+      ],
+      "prediction_question": "Will training and development errors both improve with greater capacity, and is this selection source permissible?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Capacity middle gives train MAE 3.0 and development MAE 4.0 thousand USD; baseline MAE is 5. Middle capacity minimizes development MAE at 4, a 20% relative reduction. Lower training error alone does not select a model. Repeated final-test selection is invalid even if the displayed development error is unchanged."
+      },
+      "why": "Capacity middle gives train MAE 3.0 and development MAE 4.0 thousand USD; baseline MAE is 5. Middle capacity minimizes development MAE at 4, a 20% relative reduction. Lower training error alone does not select a model. Repeated final-test selection is invalid even if the displayed development error is unchanged."
+    },
+    {
+      "controls": {
+        "capacity": "high",
+        "selection_source": "development"
+      },
+      "expected": {
+        "baseline_mae": 5,
+        "best_development_candidate": "middle",
+        "development_mae": 12.0,
+        "final_test_permission": "eligible-once-selection-and-workflow-frozen",
+        "reason": "development-selection",
+        "relative_error_reduction": -1.4,
+        "selection_valid": true,
+        "train_mae": 1.0
+      },
+      "fixture": "ev-e1.capacity.v1",
+      "id": "EV-E1.capacity.high.development",
+      "objectives": [
+        "EV02.O1",
+        "EV02.O2",
+        "EV02.O3",
+        "EV05.O1",
+        "EV05.O2",
+        "EV06.O4"
+      ],
+      "prediction_question": "Will training and development errors both improve with greater capacity, and is this selection source permissible?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Capacity high gives train MAE 1.0 and development MAE 12.0 thousand USD; baseline MAE is 5. Middle capacity minimizes development MAE at 4, a 20% relative reduction. Lower training error alone does not select a model. Repeated final-test selection is invalid even if the displayed development error is unchanged."
+      },
+      "why": "Capacity high gives train MAE 1.0 and development MAE 12.0 thousand USD; baseline MAE is 5. Middle capacity minimizes development MAE at 4, a 20% relative reduction. Lower training error alone does not select a model. Repeated final-test selection is invalid even if the displayed development error is unchanged."
+    },
+    {
+      "controls": {
+        "capacity": "high",
+        "selection_source": "test-peeking"
+      },
+      "expected": {
+        "baseline_mae": 5,
+        "best_development_candidate": "middle",
+        "development_mae": 12.0,
+        "final_test_permission": "invalid-test-used-for-selection",
+        "reason": "test-selection-optimism",
+        "relative_error_reduction": -1.4,
+        "selection_valid": false,
+        "train_mae": 1.0
+      },
+      "fixture": "ev-e1.capacity.v1",
+      "id": "EV-E1.capacity.high.test-peeking",
+      "objectives": [
+        "EV02.O1",
+        "EV02.O2",
+        "EV02.O3",
+        "EV05.O1",
+        "EV05.O2",
+        "EV06.O4"
+      ],
+      "prediction_question": "Will training and development errors both improve with greater capacity, and is this selection source permissible?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Capacity high gives train MAE 1.0 and development MAE 12.0 thousand USD; baseline MAE is 5. Middle capacity minimizes development MAE at 4, a 20% relative reduction. Lower training error alone does not select a model. Repeated final-test selection is invalid even if the displayed development error is unchanged."
+      },
+      "why": "Capacity high gives train MAE 1.0 and development MAE 12.0 thousand USD; baseline MAE is 5. Middle capacity minimizes development MAE at 4, a 20% relative reduction. Lower training error alone does not select a model. Repeated final-test selection is invalid even if the displayed development error is unchanged."
+    },
+    {
+      "controls": {
+        "fit_policy": "train-only"
+      },
+      "expected": {
+        "evaluation_ids": [
+          "r5",
+          "r6"
+        ],
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "fit_ids": [
+          "r1",
+          "r2",
+          "r3",
+          "r4"
+        ],
+        "forbidden_fit_ids": [],
+        "mean": 5.0,
+        "permitted_ids": [
+          "r1",
+          "r2",
+          "r3",
+          "r4"
+        ],
+        "reason": "fit-local",
+        "transformed_query": 5.0,
+        "valid": true
+      },
+      "fixture": "ev-e1.fit.v1",
+      "id": "EV-E1.fit.train-only",
+      "objectives": [
+        "EV06.O1",
+        "EV06.O2",
+        "EV06.O4"
+      ],
+      "prediction_question": "Does this mean use only permitted training rows, including the current fold boundary?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Only ['r1', 'r2', 'r3', 'r4'] may determine this preprocessing mean. Actual fit IDs ['r1', 'r2', 'r3', 'r4'] produce mean 5; query 10 becomes 5. Forbidden fit IDs=[]. A globally training-only transform still leaks within cross-validation when a fold's validation rows influence its mean. A pipeline is valid only with the correct fit boundary."
+      },
+      "why": "Only ['r1', 'r2', 'r3', 'r4'] may determine this preprocessing mean. Actual fit IDs ['r1', 'r2', 'r3', 'r4'] produce mean 5; query 10 becomes 5. Forbidden fit IDs=[]. A globally training-only transform still leaks within cross-validation when a fold's validation rows influence its mean. A pipeline is valid only with the correct fit boundary."
+    },
+    {
+      "controls": {
+        "fit_policy": "train-plus-validation"
+      },
+      "expected": {
+        "evaluation_ids": [
+          "r5",
+          "r6"
+        ],
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "fit_ids": [
+          "r1",
+          "r2",
+          "r3",
+          "r4",
+          "r5",
+          "r6"
+        ],
+        "forbidden_fit_ids": [
+          "r5",
+          "r6"
+        ],
+        "mean": 10.333333333333334,
+        "permitted_ids": [
+          "r1",
+          "r2",
+          "r3",
+          "r4"
+        ],
+        "reason": "fit-leakage",
+        "transformed_query": -0.3333333333333339,
+        "valid": false
+      },
+      "fixture": "ev-e1.fit.v1",
+      "id": "EV-E1.fit.train-plus-validation",
+      "objectives": [
+        "EV06.O1",
+        "EV06.O2",
+        "EV06.O4"
+      ],
+      "prediction_question": "Does this mean use only permitted training rows, including the current fold boundary?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Only ['r1', 'r2', 'r3', 'r4'] may determine this preprocessing mean. Actual fit IDs ['r1', 'r2', 'r3', 'r4', 'r5', 'r6'] produce mean 10.3333333333; query 10 becomes -0.333333333333. Forbidden fit IDs=['r5', 'r6']. A globally training-only transform still leaks within cross-validation when a fold's validation rows influence its mean. A pipeline is valid only with the correct fit boundary."
+      },
+      "why": "Only ['r1', 'r2', 'r3', 'r4'] may determine this preprocessing mean. Actual fit IDs ['r1', 'r2', 'r3', 'r4', 'r5', 'r6'] produce mean 10.3333333333; query 10 becomes -0.333333333333. Forbidden fit IDs=['r5', 'r6']. A globally training-only transform still leaks within cross-validation when a fold's validation rows influence its mean. A pipeline is valid only with the correct fit boundary."
+    },
+    {
+      "controls": {
+        "fit_policy": "fold-a-only"
+      },
+      "expected": {
+        "evaluation_ids": [
+          "r3",
+          "r4"
+        ],
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "fit_ids": [
+          "r1",
+          "r2"
+        ],
+        "forbidden_fit_ids": [],
+        "mean": 3.0,
+        "permitted_ids": [
+          "r1",
+          "r2"
+        ],
+        "reason": "fit-local",
+        "transformed_query": 7.0,
+        "valid": true
+      },
+      "fixture": "ev-e1.fit.v1",
+      "id": "EV-E1.fit.fold-a-only",
+      "objectives": [
+        "EV06.O1",
+        "EV06.O2",
+        "EV06.O4"
+      ],
+      "prediction_question": "Does this mean use only permitted training rows, including the current fold boundary?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Only ['r1', 'r2'] may determine this preprocessing mean. Actual fit IDs ['r1', 'r2'] produce mean 3; query 10 becomes 7. Forbidden fit IDs=[]. A globally training-only transform still leaks within cross-validation when a fold's validation rows influence its mean. A pipeline is valid only with the correct fit boundary."
+      },
+      "why": "Only ['r1', 'r2'] may determine this preprocessing mean. Actual fit IDs ['r1', 'r2'] produce mean 3; query 10 becomes 7. Forbidden fit IDs=[]. A globally training-only transform still leaks within cross-validation when a fold's validation rows influence its mean. A pipeline is valid only with the correct fit boundary."
+    },
+    {
+      "controls": {
+        "fit_policy": "fold-a-global"
+      },
+      "expected": {
+        "evaluation_ids": [
+          "r3",
+          "r4"
+        ],
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "fit_ids": [
+          "r1",
+          "r2",
+          "r3",
+          "r4"
+        ],
+        "forbidden_fit_ids": [
+          "r3",
+          "r4"
+        ],
+        "mean": 5.0,
+        "permitted_ids": [
+          "r1",
+          "r2"
+        ],
+        "reason": "fit-leakage",
+        "transformed_query": 5.0,
+        "valid": false
+      },
+      "fixture": "ev-e1.fit.v1",
+      "id": "EV-E1.fit.fold-a-global",
+      "objectives": [
+        "EV06.O1",
+        "EV06.O2",
+        "EV06.O4"
+      ],
+      "prediction_question": "Does this mean use only permitted training rows, including the current fold boundary?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Only ['r1', 'r2'] may determine this preprocessing mean. Actual fit IDs ['r1', 'r2', 'r3', 'r4'] produce mean 5; query 10 becomes 5. Forbidden fit IDs=['r3', 'r4']. A globally training-only transform still leaks within cross-validation when a fold's validation rows influence its mean. A pipeline is valid only with the correct fit boundary."
+      },
+      "why": "Only ['r1', 'r2'] may determine this preprocessing mean. Actual fit IDs ['r1', 'r2', 'r3', 'r4'] produce mean 5; query 10 becomes 5. Forbidden fit IDs=['r3', 'r4']. A globally training-only transform still leaks within cross-validation when a fold's validation rows influence its mean. A pipeline is valid only with the correct fit boundary."
+    },
+    {
+      "controls": {
+        "fit_policy": "fold-b-only"
+      },
+      "expected": {
+        "evaluation_ids": [
+          "r1",
+          "r2"
+        ],
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "fit_ids": [
+          "r3",
+          "r4"
+        ],
+        "forbidden_fit_ids": [],
+        "mean": 7.0,
+        "permitted_ids": [
+          "r3",
+          "r4"
+        ],
+        "reason": "fit-local",
+        "transformed_query": 3.0,
+        "valid": true
+      },
+      "fixture": "ev-e1.fit.v1",
+      "id": "EV-E1.fit.fold-b-only",
+      "objectives": [
+        "EV06.O1",
+        "EV06.O2",
+        "EV06.O4"
+      ],
+      "prediction_question": "Does this mean use only permitted training rows, including the current fold boundary?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Only ['r3', 'r4'] may determine this preprocessing mean. Actual fit IDs ['r3', 'r4'] produce mean 7; query 10 becomes 3. Forbidden fit IDs=[]. A globally training-only transform still leaks within cross-validation when a fold's validation rows influence its mean. A pipeline is valid only with the correct fit boundary."
+      },
+      "why": "Only ['r3', 'r4'] may determine this preprocessing mean. Actual fit IDs ['r3', 'r4'] produce mean 7; query 10 becomes 3. Forbidden fit IDs=[]. A globally training-only transform still leaks within cross-validation when a fold's validation rows influence its mean. A pipeline is valid only with the correct fit boundary."
+    },
+    {
+      "controls": {
+        "fit_policy": "fold-b-global"
+      },
+      "expected": {
+        "evaluation_ids": [
+          "r1",
+          "r2"
+        ],
+        "final_test_permission": "not-yet-selection-not-frozen",
+        "fit_ids": [
+          "r1",
+          "r2",
+          "r3",
+          "r4"
+        ],
+        "forbidden_fit_ids": [
+          "r1",
+          "r2"
+        ],
+        "mean": 5.0,
+        "permitted_ids": [
+          "r3",
+          "r4"
+        ],
+        "reason": "fit-leakage",
+        "transformed_query": 5.0,
+        "valid": false
+      },
+      "fixture": "ev-e1.fit.v1",
+      "id": "EV-E1.fit.fold-b-global",
+      "objectives": [
+        "EV06.O1",
+        "EV06.O2",
+        "EV06.O4"
+      ],
+      "prediction_question": "Does this mean use only permitted training rows, including the current fold boundary?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "Only ['r3', 'r4'] may determine this preprocessing mean. Actual fit IDs ['r1', 'r2', 'r3', 'r4'] produce mean 5; query 10 becomes 5. Forbidden fit IDs=['r1', 'r2']. A globally training-only transform still leaks within cross-validation when a fold's validation rows influence its mean. A pipeline is valid only with the correct fit boundary."
+      },
+      "why": "Only ['r3', 'r4'] may determine this preprocessing mean. Actual fit IDs ['r1', 'r2', 'r3', 'r4'] produce mean 5; query 10 becomes 5. Forbidden fit IDs=['r1', 'r2']. A globally training-only transform still leaks within cross-validation when a fold's validation rows influence its mean. A pipeline is valid only with the correct fit boundary."
+    },
+    {
+      "controls": {
+        "resample_set": 1
+      },
+      "expected": {
+        "confidence_interval": "not-estimated",
+        "errors": [
+          4,
+          4,
+          4
+        ],
+        "mean": 4.0,
+        "population_sd": 0.0,
+        "range": 0,
+        "reason": "seed-not-generalization",
+        "shift_conclusion": "unsupported-without-representative-evidence"
+      },
+      "fixture": "ev-e1.resamples.v1",
+      "id": "EV-E1.resample.1",
+      "objectives": [
+        "EV05.O3",
+        "EV05.O4",
+        "EV06.O3"
+      ],
+      "prediction_question": "Can equal mean errors have different variability, and does reproducibility establish future reliability?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "The same fixed mean 4.0 hides different error spread: population SD across these three authored resamples is 0. A fixed seed reproduces this replay; it does not remove sampling uncertainty or certify future regions/subgroups. This spread is not a confidence interval."
+      },
+      "why": "The same fixed mean 4.0 hides different error spread: population SD across these three authored resamples is 0. A fixed seed reproduces this replay; it does not remove sampling uncertainty or certify future regions/subgroups. This spread is not a confidence interval."
+    },
+    {
+      "controls": {
+        "resample_set": 2
+      },
+      "expected": {
+        "confidence_interval": "not-estimated",
+        "errors": [
+          2,
+          4,
+          6
+        ],
+        "mean": 4.0,
+        "population_sd": 1.632993161855452,
+        "range": 4,
+        "reason": "seed-not-generalization",
+        "shift_conclusion": "unsupported-without-representative-evidence"
+      },
+      "fixture": "ev-e1.resamples.v1",
+      "id": "EV-E1.resample.2",
+      "objectives": [
+        "EV05.O3",
+        "EV05.O4",
+        "EV06.O3"
+      ],
+      "prediction_question": "Can equal mean errors have different variability, and does reproducibility establish future reliability?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "The same fixed mean 4.0 hides different error spread: population SD across these three authored resamples is 1.63299316186. A fixed seed reproduces this replay; it does not remove sampling uncertainty or certify future regions/subgroups. This spread is not a confidence interval."
+      },
+      "why": "The same fixed mean 4.0 hides different error spread: population SD across these three authored resamples is 1.63299316186. A fixed seed reproduces this replay; it does not remove sampling uncertainty or certify future regions/subgroups. This spread is not a confidence interval."
+    },
+    {
+      "controls": {
+        "resample_set": 3
+      },
+      "expected": {
+        "confidence_interval": "not-estimated",
+        "errors": [
+          1,
+          4,
+          7
+        ],
+        "mean": 4.0,
+        "population_sd": 2.449489742783178,
+        "range": 6,
+        "reason": "seed-not-generalization",
+        "shift_conclusion": "unsupported-without-representative-evidence"
+      },
+      "fixture": "ev-e1.resamples.v1",
+      "id": "EV-E1.resample.3",
+      "objectives": [
+        "EV05.O3",
+        "EV05.O4",
+        "EV06.O3"
+      ],
+      "prediction_question": "Can equal mean errors have different variability, and does reproducibility establish future reliability?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "The same fixed mean 4.0 hides different error spread: population SD across these three authored resamples is 2.44948974278. A fixed seed reproduces this replay; it does not remove sampling uncertainty or certify future regions/subgroups. This spread is not a confidence interval."
+      },
+      "why": "The same fixed mean 4.0 hides different error spread: population SD across these three authored resamples is 2.44948974278. A fixed seed reproduces this replay; it does not remove sampling uncertainty or certify future regions/subgroups. This spread is not a confidence interval."
+    },
+    {
+      "controls": {
+        "metric_case": "negative-r2"
+      },
+      "expected": {
+        "baseline_mae": 1.0,
+        "library_force_finite_r2": -1.0,
+        "mae": 1.0,
+        "r2": -1.0,
+        "reason": "r2-not-accuracy",
+        "relative_error_reduction": 0.0,
+        "sse": 4,
+        "target_variation_sse": 2.0
+      },
+      "fixture": "ev-e1.regression-edges.v1",
+      "id": "EV-E1.edge.negative-r2",
+      "objectives": [
+        "EV02.O3",
+        "EV02.O4"
+      ],
+      "prediction_question": "Is R² negative, finite or undefined, and is percentage improvement defined?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "R² compares SSE with variation around the evaluated target mean, not classification accuracy. A negative value is worse than that mean reference. Constant targets have zero reference variation: perfect predictions give undefined 0/0; imperfect predictions give a negative-infinite extension. A zero-error baseline makes percentage error reduction undefined. Library force_finite=True replacements are not mathematical values."
+      },
+      "why": "R² compares SSE with variation around the evaluated target mean, not classification accuracy. A negative value is worse than that mean reference. Constant targets have zero reference variation: perfect predictions give undefined 0/0; imperfect predictions give a negative-infinite extension. A zero-error baseline makes percentage error reduction undefined. Library force_finite=True replacements are not mathematical values."
+    },
+    {
+      "controls": {
+        "metric_case": "constant-perfect"
+      },
+      "expected": {
+        "baseline_mae": 0.0,
+        "library_force_finite_r2": 1.0,
+        "mae": 0.0,
+        "r2": {
+          "reason": "constant-target-zero-over-zero",
+          "tag": "undefined"
+        },
+        "reason": "r2-not-accuracy",
+        "relative_error_reduction": {
+          "reason": "zero-baseline-error",
+          "tag": "undefined"
+        },
+        "sse": 0,
+        "target_variation_sse": 0.0
+      },
+      "fixture": "ev-e1.regression-edges.v1",
+      "id": "EV-E1.edge.constant-perfect",
+      "objectives": [
+        "EV02.O3",
+        "EV02.O4"
+      ],
+      "prediction_question": "Is R² negative, finite or undefined, and is percentage improvement defined?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "R² compares SSE with variation around the evaluated target mean, not classification accuracy. A negative value is worse than that mean reference. Constant targets have zero reference variation: perfect predictions give undefined 0/0; imperfect predictions give a negative-infinite extension. A zero-error baseline makes percentage error reduction undefined. Library force_finite=True replacements are not mathematical values."
+      },
+      "why": "R² compares SSE with variation around the evaluated target mean, not classification accuracy. A negative value is worse than that mean reference. Constant targets have zero reference variation: perfect predictions give undefined 0/0; imperfect predictions give a negative-infinite extension. A zero-error baseline makes percentage error reduction undefined. Library force_finite=True replacements are not mathematical values."
+    },
+    {
+      "controls": {
+        "metric_case": "constant-imperfect"
+      },
+      "expected": {
+        "baseline_mae": 0.0,
+        "library_force_finite_r2": 0.0,
+        "mae": 1.0,
+        "r2": {
+          "reason": "constant-target-positive-sse",
+          "sign": "negative",
+          "tag": "infinity"
+        },
+        "reason": "r2-not-accuracy",
+        "relative_error_reduction": {
+          "reason": "zero-baseline-error",
+          "tag": "undefined"
+        },
+        "sse": 2,
+        "target_variation_sse": 0.0
+      },
+      "fixture": "ev-e1.regression-edges.v1",
+      "id": "EV-E1.edge.constant-imperfect",
+      "objectives": [
+        "EV02.O3",
+        "EV02.O4"
+      ],
+      "prediction_question": "Is R² negative, finite or undefined, and is percentage improvement defined?",
+      "text_alternative": {
+        "numerical_source": "expected",
+        "show_input_row_ids": true,
+        "summary": "R² compares SSE with variation around the evaluated target mean, not classification accuracy. A negative value is worse than that mean reference. Constant targets have zero reference variation: perfect predictions give undefined 0/0; imperfect predictions give a negative-infinite extension. A zero-error baseline makes percentage error reduction undefined. Library force_finite=True replacements are not mathematical values."
+      },
+      "why": "R² compares SSE with variation around the evaluated target mean, not classification accuracy. A negative value is worse than that mean reference. Constant targets have zero reference variation: perfect predictions give undefined 0/0; imperfect predictions give a negative-infinite extension. A zero-error baseline makes percentage error reduction undefined. Library force_finite=True replacements are not mathematical values."
+    }
+  ],
+  "fixture_provenance": "Original fictional teaching fixtures only; no credentials, uploads, remote data or production annotation",
+  "fixtures": [
+    {
+      "data": {
+        "domain": "housing",
+        "features": [
+          {
+            "id": "available",
+            "label": "area at listing",
+            "observedAt": -1
+          },
+          {
+            "id": "future",
+            "label": "future sale proceeds",
+            "observedAt": 1
+          }
+        ],
+        "id": "housing-units",
+        "plans": [
+          {
+            "id": "holdout",
+            "label": "Train r1–r4; test r5–r6",
+            "test": [
+              "r5",
+              "r6"
+            ],
+            "train": [
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          {
+            "id": "overlap",
+            "label": "Train r1–r4; test r4–r6",
+            "test": [
+              "r4",
+              "r5",
+              "r6"
+            ],
+            "train": [
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          {
+            "id": "crossed",
+            "label": "Train r1–r5; test r5–r6",
+            "test": [
+              "r5",
+              "r6"
+            ],
+            "train": [
+              "r1",
+              "r2",
+              "r3",
+              "r4",
+              "r5"
+            ]
+          }
+        ],
+        "requireGroup": false,
+        "requireTime": false,
+        "rows": [
+          {
+            "group": "g1",
+            "id": "r1",
+            "time": 1
+          },
+          {
+            "group": "g2",
+            "id": "r2",
+            "time": 2
+          },
+          {
+            "group": "g3",
+            "id": "r3",
+            "time": 3
+          },
+          {
+            "group": "g4",
+            "id": "r4",
+            "time": 4
+          },
+          {
+            "group": "g5",
+            "id": "r5",
+            "time": 5
+          },
+          {
+            "group": "g6",
+            "id": "r6",
+            "time": 6
+          }
+        ],
+        "title": "House price: new independent homes"
+      },
+      "id": "ev-e1.split.housing-units.v1",
+      "kind": "prediction-permission",
+      "source": "unchanged EV01 authored scene"
+    },
+    {
+      "data": {
+        "domain": "housing",
+        "features": [
+          {
+            "id": "available",
+            "label": "area at listing",
+            "observedAt": -1
+          },
+          {
+            "id": "future",
+            "label": "future sale proceeds",
+            "observedAt": 1
+          }
+        ],
+        "id": "housing-future",
+        "plans": [
+          {
+            "id": "overlap",
+            "label": "Train r1–r4; test r4–r6",
+            "test": [
+              "r4",
+              "r5",
+              "r6"
+            ],
+            "train": [
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          {
+            "id": "crossed",
+            "label": "Train r1,r5,r6; test r2,r3,r4",
+            "test": [
+              "r2",
+              "r3",
+              "r4"
+            ],
+            "train": [
+              "r1",
+              "r5",
+              "r6"
+            ]
+          },
+          {
+            "id": "holdout",
+            "label": "Train r1–r4; test r5–r6",
+            "test": [
+              "r5",
+              "r6"
+            ],
+            "train": [
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          }
+        ],
+        "requireGroup": false,
+        "requireTime": true,
+        "rows": [
+          {
+            "group": "g1",
+            "id": "r1",
+            "time": 1
+          },
+          {
+            "group": "g2",
+            "id": "r2",
+            "time": 2
+          },
+          {
+            "group": "g3",
+            "id": "r3",
+            "time": 3
+          },
+          {
+            "group": "g4",
+            "id": "r4",
+            "time": 4
+          },
+          {
+            "group": "g5",
+            "id": "r5",
+            "time": 5
+          },
+          {
+            "group": "g6",
+            "id": "r6",
+            "time": 6
+          }
+        ],
+        "title": "House price: future sales"
+      },
+      "id": "ev-e1.split.housing-future.v1",
+      "kind": "prediction-permission",
+      "source": "unchanged EV01 authored scene"
+    },
+    {
+      "data": {
+        "domain": "churn",
+        "features": [
+          {
+            "id": "available",
+            "label": "usage before decision",
+            "observedAt": -1
+          },
+          {
+            "id": "future",
+            "label": "cancellation after decision",
+            "observedAt": 1
+          }
+        ],
+        "id": "churn-customers",
+        "plans": [
+          {
+            "id": "crossed",
+            "label": "Train r1,r3,r5; test r2,r4,r6",
+            "test": [
+              "r2",
+              "r4",
+              "r6"
+            ],
+            "train": [
+              "r1",
+              "r3",
+              "r5"
+            ]
+          },
+          {
+            "id": "holdout",
+            "label": "Train r1–r4; test r5–r6",
+            "test": [
+              "r5",
+              "r6"
+            ],
+            "train": [
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          {
+            "id": "overlap",
+            "label": "Train r1–r4; test r4–r6",
+            "test": [
+              "r4",
+              "r5",
+              "r6"
+            ],
+            "train": [
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          }
+        ],
+        "requireGroup": true,
+        "requireTime": false,
+        "rows": [
+          {
+            "group": "g1",
+            "id": "r1",
+            "time": 1
+          },
+          {
+            "group": "g1",
+            "id": "r2",
+            "time": 2
+          },
+          {
+            "group": "g2",
+            "id": "r3",
+            "time": 3
+          },
+          {
+            "group": "g2",
+            "id": "r4",
+            "time": 4
+          },
+          {
+            "group": "g3",
+            "id": "r5",
+            "time": 5
+          },
+          {
+            "group": "g3",
+            "id": "r6",
+            "time": 6
+          }
+        ],
+        "title": "Churn: new customers"
+      },
+      "id": "ev-e1.split.churn-customers.v1",
+      "kind": "prediction-permission",
+      "source": "unchanged EV01 authored scene"
+    },
+    {
+      "data": {
+        "domain": "churn",
+        "features": [
+          {
+            "id": "available",
+            "label": "usage before decision",
+            "observedAt": -1
+          },
+          {
+            "id": "future",
+            "label": "cancellation after decision",
+            "observedAt": 1
+          }
+        ],
+        "id": "churn-future",
+        "plans": [
+          {
+            "id": "holdout",
+            "label": "Train r1–r4; test r5–r6",
+            "test": [
+              "r5",
+              "r6"
+            ],
+            "train": [
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          {
+            "id": "overlap",
+            "label": "Train r1–r4; test r4–r6",
+            "test": [
+              "r4",
+              "r5",
+              "r6"
+            ],
+            "train": [
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          {
+            "id": "crossed",
+            "label": "Train r1,r5,r6; test r2,r3,r4",
+            "test": [
+              "r2",
+              "r3",
+              "r4"
+            ],
+            "train": [
+              "r1",
+              "r5",
+              "r6"
+            ]
+          }
+        ],
+        "requireGroup": false,
+        "requireTime": true,
+        "rows": [
+          {
+            "group": "g1",
+            "id": "r1",
+            "time": 1
+          },
+          {
+            "group": "g0",
+            "id": "r2",
+            "time": 2
+          },
+          {
+            "group": "g1",
+            "id": "r3",
+            "time": 3
+          },
+          {
+            "group": "g0",
+            "id": "r4",
+            "time": 4
+          },
+          {
+            "group": "g1",
+            "id": "r5",
+            "time": 5
+          },
+          {
+            "group": "g0",
+            "id": "r6",
+            "time": 6
+          }
+        ],
+        "title": "Churn: future events for known customers"
+      },
+      "id": "ev-e1.split.churn-future.v1",
+      "kind": "prediction-permission",
+      "source": "unchanged EV01 authored scene"
+    },
+    {
+      "data": {
+        "domain": "docs",
+        "features": [
+          {
+            "id": "available",
+            "label": "submitted text at review request",
+            "observedAt": -1
+          },
+          {
+            "id": "future",
+            "label": "post-review correction flag",
+            "observedAt": 1
+          }
+        ],
+        "id": "docs-groups",
+        "plans": [
+          {
+            "id": "overlap",
+            "label": "Train r1–r4; test r4–r6",
+            "test": [
+              "r4",
+              "r5",
+              "r6"
+            ],
+            "train": [
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          {
+            "id": "crossed",
+            "label": "Train r1,r3,r5; test r2,r4,r6",
+            "test": [
+              "r2",
+              "r4",
+              "r6"
+            ],
+            "train": [
+              "r1",
+              "r3",
+              "r5"
+            ]
+          },
+          {
+            "id": "holdout",
+            "label": "Train r1–r4; test r5–r6",
+            "test": [
+              "r5",
+              "r6"
+            ],
+            "train": [
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          }
+        ],
+        "requireGroup": true,
+        "requireTime": false,
+        "rows": [
+          {
+            "group": "g1",
+            "id": "r1",
+            "time": 1
+          },
+          {
+            "group": "g1",
+            "id": "r2",
+            "time": 2
+          },
+          {
+            "group": "g2",
+            "id": "r3",
+            "time": 3
+          },
+          {
+            "group": "g2",
+            "id": "r4",
+            "time": 4
+          },
+          {
+            "group": "g3",
+            "id": "r5",
+            "time": 5
+          },
+          {
+            "group": "g3",
+            "id": "r6",
+            "time": 6
+          }
+        ],
+        "title": "Documentation: unseen source/template groups"
+      },
+      "id": "ev-e1.split.docs-groups.v1",
+      "kind": "prediction-permission",
+      "source": "unchanged EV01 authored scene"
+    },
+    {
+      "data": {
+        "domain": "docs",
+        "features": [
+          {
+            "id": "available",
+            "label": "submitted text at review request",
+            "observedAt": -1
+          },
+          {
+            "id": "future",
+            "label": "post-review correction flag",
+            "observedAt": 1
+          }
+        ],
+        "id": "docs-future",
+        "plans": [
+          {
+            "id": "crossed",
+            "label": "Train r1,r3,r5; test r2,r4,r6",
+            "test": [
+              "r2",
+              "r4",
+              "r6"
+            ],
+            "train": [
+              "r1",
+              "r3",
+              "r5"
+            ]
+          },
+          {
+            "id": "holdout",
+            "label": "Train r1–r4; test r5–r6",
+            "test": [
+              "r5",
+              "r6"
+            ],
+            "train": [
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          {
+            "id": "overlap",
+            "label": "Train r1–r4; test r4–r6",
+            "test": [
+              "r4",
+              "r5",
+              "r6"
+            ],
+            "train": [
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          }
+        ],
+        "requireGroup": true,
+        "requireTime": true,
+        "rows": [
+          {
+            "group": "g1",
+            "id": "r1",
+            "time": 1
+          },
+          {
+            "group": "g1",
+            "id": "r2",
+            "time": 2
+          },
+          {
+            "group": "g2",
+            "id": "r3",
+            "time": 3
+          },
+          {
+            "group": "g2",
+            "id": "r4",
+            "time": 4
+          },
+          {
+            "group": "g3",
+            "id": "r5",
+            "time": 5
+          },
+          {
+            "group": "g3",
+            "id": "r6",
+            "time": 6
+          }
+        ],
+        "title": "Documentation: future revisions from unseen families"
+      },
+      "id": "ev-e1.split.docs-future.v1",
+      "kind": "prediction-permission",
+      "source": "unchanged EV01 authored scene"
+    },
+    {
+      "baseline_dev_predictions": [
+        95,
+        105
+      ],
+      "candidates": [
+        {
+          "dev_predictions": [
+            91,
+            109
+          ],
+          "id": "low",
+          "train_predictions": [
+            92,
+            108
+          ]
+        },
+        {
+          "dev_predictions": [
+            96,
+            104
+          ],
+          "id": "middle",
+          "train_predictions": [
+            97,
+            103
+          ]
+        },
+        {
+          "dev_predictions": [
+            88,
+            112
+          ],
+          "id": "high",
+          "train_predictions": [
+            99,
+            101
+          ]
+        }
+      ],
+      "dev_ids": [
+        "h3",
+        "h4"
+      ],
+      "final_test_ids": [
+        "h5",
+        "h6"
+      ],
+      "final_test_targets": "withheld",
+      "id": "ev-e1.capacity.v1",
+      "kind": "fixed-prediction-replay",
+      "parameter_hyperparameter": "Fitted coefficients are parameters; capacity is a hyperparameter. No coefficients are refitted in the browser.",
+      "target": [
+        100,
+        100
+      ],
+      "train_ids": [
+        "h1",
+        "h2"
+      ],
+      "unit": "thousand USD"
+    },
+    {
+      "final_test_ids": [
+        "r7",
+        "r8"
+      ],
+      "final_test_values": "withheld",
+      "id": "ev-e1.fit.v1",
+      "kind": "center-only-preprocessing",
+      "policies": [
+        {
+          "evaluation_ids": [
+            "r5",
+            "r6"
+          ],
+          "fit_ids": [
+            "r1",
+            "r2",
+            "r3",
+            "r4"
+          ],
+          "id": "train-only",
+          "permitted_ids": [
+            "r1",
+            "r2",
+            "r3",
+            "r4"
+          ]
+        },
+        {
+          "evaluation_ids": [
+            "r5",
+            "r6"
+          ],
+          "fit_ids": [
+            "r1",
+            "r2",
+            "r3",
+            "r4",
+            "r5",
+            "r6"
+          ],
+          "id": "train-plus-validation",
+          "permitted_ids": [
+            "r1",
+            "r2",
+            "r3",
+            "r4"
+          ]
+        },
+        {
+          "evaluation_ids": [
+            "r3",
+            "r4"
+          ],
+          "fit_ids": [
+            "r1",
+            "r2"
+          ],
+          "id": "fold-a-only",
+          "permitted_ids": [
+            "r1",
+            "r2"
+          ]
+        },
+        {
+          "evaluation_ids": [
+            "r3",
+            "r4"
+          ],
+          "fit_ids": [
+            "r1",
+            "r2",
+            "r3",
+            "r4"
+          ],
+          "id": "fold-a-global",
+          "permitted_ids": [
+            "r1",
+            "r2"
+          ]
+        },
+        {
+          "evaluation_ids": [
+            "r1",
+            "r2"
+          ],
+          "fit_ids": [
+            "r3",
+            "r4"
+          ],
+          "id": "fold-b-only",
+          "permitted_ids": [
+            "r3",
+            "r4"
+          ]
+        },
+        {
+          "evaluation_ids": [
+            "r1",
+            "r2"
+          ],
+          "fit_ids": [
+            "r1",
+            "r2",
+            "r3",
+            "r4"
+          ],
+          "id": "fold-b-global",
+          "permitted_ids": [
+            "r3",
+            "r4"
+          ]
+        }
+      ],
+      "query_id": "q1",
+      "query_value": 10,
+      "rows": [
+        {
+          "id": "r1",
+          "value": 2
+        },
+        {
+          "id": "r2",
+          "value": 4
+        },
+        {
+          "id": "r3",
+          "value": 6
+        },
+        {
+          "id": "r4",
+          "value": 8
+        },
+        {
+          "id": "r5",
+          "value": 20
+        },
+        {
+          "id": "r6",
+          "value": 22
+        }
+      ],
+      "unit": "feature units"
+    },
+    {
+      "deployment_caveat": "No evidence for new regions, rare subgroups or shifted time periods",
+      "error_sets": [
+        [
+          4,
+          4,
+          4
+        ],
+        [
+          2,
+          4,
+          6
+        ],
+        [
+          1,
+          4,
+          7
+        ]
+      ],
+      "id": "ev-e1.resamples.v1",
+      "kind": "fixed-resample-replay",
+      "population": "fictional development houses",
+      "resample_ids": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "seed": 1729,
+      "unit": "thousand USD MAE"
+    },
+    {
+      "cases": [
+        {
+          "baseline": [
+            2,
+            2
+          ],
+          "id": "negative-r2",
+          "ids": [
+            "e1",
+            "e2"
+          ],
+          "prediction": [
+            3,
+            3
+          ],
+          "target": [
+            1,
+            3
+          ]
+        },
+        {
+          "baseline": [
+            2,
+            2
+          ],
+          "id": "constant-perfect",
+          "ids": [
+            "e1",
+            "e2"
+          ],
+          "prediction": [
+            2,
+            2
+          ],
+          "target": [
+            2,
+            2
+          ]
+        },
+        {
+          "baseline": [
+            2,
+            2
+          ],
+          "id": "constant-imperfect",
+          "ids": [
+            "e1",
+            "e2"
+          ],
+          "prediction": [
+            1,
+            1
+          ],
+          "target": [
+            2,
+            2
+          ]
+        }
+      ],
+      "id": "ev-e1.regression-edges.v1",
+      "kind": "regression-metric-boundaries",
+      "unit": "target units"
+    }
+  ],
+  "id": "EV-E1",
+  "initial_configuration": "EV-E1.split.housing-units.available.holdout",
+  "interaction_spec": "EV_E1_MANIFEST.md",
+  "lesson_ids": [
+    "EV01",
+    "EV02",
+    "EV05",
+    "EV06"
+  ],
+  "metric_conventions": "supervised.ev.metrics.1.0.0",
+  "prerequisites": [
+    "existing Regression residuals",
+    "Math Statistics and Probability",
+    "Python Data Preparation fit boundaries",
+    "EV01 prediction moment"
+  ],
+  "reference_profile": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "python": "3.13.16",
+    "scikit-learn": "1.9.1"
+  },
+  "schema": "supervised.ev.experiment-manifest.v1",
+  "status": "frozen-specification-not-implemented",
+  "tolerance": {
+    "absolute": 1e-09,
+    "display_significant_digits": 6,
+    "relative": 1e-09
+  },
+  "version": "1.0.0"
+}

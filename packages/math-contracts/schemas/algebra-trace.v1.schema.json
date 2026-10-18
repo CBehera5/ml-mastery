@@ -1,0 +1,256 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "algebra-trace.v1",
+  "title": "Bounded named Algebra function trace v1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "function",
+    "input",
+    "selected",
+    "samples"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "function": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "a",
+            "b"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "linear"
+            },
+            "a": {
+              "type": "number",
+              "minimum": -10,
+              "maximum": 10
+            },
+            "b": {
+              "type": "number",
+              "minimum": -100,
+              "maximum": 100
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "exponent",
+            "scale",
+            "shift",
+            "offset"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "power"
+            },
+            "exponent": {
+              "type": "integer",
+              "minimum": -3,
+              "maximum": 3
+            },
+            "scale": {
+              "type": "number",
+              "minimum": -10,
+              "maximum": 10
+            },
+            "shift": {
+              "type": "number",
+              "minimum": -10,
+              "maximum": 10
+            },
+            "offset": {
+              "type": "number",
+              "minimum": -100,
+              "maximum": 100
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "base"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "exponential"
+            },
+            "base": {
+              "type": "number",
+              "minimum": 0.1,
+              "maximum": 10
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "base"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "logarithm"
+            },
+            "base": {
+              "type": "number",
+              "minimum": 0.1,
+              "maximum": 10,
+              "not": {
+                "const": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "order"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "composition"
+            },
+            "order": {
+              "enum": [
+                "f-after-g",
+                "g-after-f"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "input": {
+      "type": "number",
+      "minimum": -1000,
+      "maximum": 1000
+    },
+    "selected": {
+      "$ref": "#/$defs/result"
+    },
+    "samples": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": [
+          "input",
+          "value",
+          "reason"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "input": {
+            "type": "number",
+            "minimum": -1000,
+            "maximum": 1000
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": -1000000000000,
+            "maximum": 1000000000000
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "oneOf": [
+          {
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "reason": {
+                "type": "null"
+              }
+            }
+          },
+          {
+            "properties": {
+              "value": {
+                "type": "null"
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "result": {
+      "type": "object",
+      "required": [
+        "value",
+        "reason"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": -1000000000000,
+          "maximum": 1000000000000
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "reason": {
+              "type": "null"
+            }
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "type": "null"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "conventions_sha256": "81a20877c606f6b3e78d8d34c42ef4dcbb943301ea747ceef677c9ef3990a04f",
+  "files": {
+    "lg-e1.manifest.v1.json": "f25499ef1d4dad0fa02be5cb298b747f49f232946ed9fb7376a2463ab7fa0a7b",
+    "lg-e2.manifest.v1.json": "94f57add2f21f5a13a9a6f5a0f2e063a66747701ad06a6e8e3984dd340c51386"
+  },
+  "profile": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "python": "3.13.16",
+    "scikit-learn": "1.9.1"
+  },
+  "reference_sha256": "f706141aff0d5742739081397301a7e9dd3710c503fa641c67a32c9836c27598",
+  "schema": "supervised.logistic.freeze.v1",
+  "scipy": "1.18.1"
+}

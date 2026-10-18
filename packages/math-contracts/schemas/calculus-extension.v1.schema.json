@@ -1,0 +1,260 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bounded Calculus extension v1",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "kind",
+        "center",
+        "step",
+        "value",
+        "left",
+        "right",
+        "limit",
+        "continuous",
+        "differentiable",
+        "derivative",
+        "leftSlope",
+        "rightSlope",
+        "symmetricEstimate"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "1.0.0"
+        },
+        "kind": {
+          "enum": [
+            "smooth",
+            "hole",
+            "jump",
+            "corner"
+          ]
+        },
+        "center": {
+          "type": "number"
+        },
+        "step": {
+          "type": "number",
+          "minimum": 0.000001,
+          "maximum": 1
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "left": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "input",
+            "value"
+          ],
+          "properties": {
+            "input": {
+              "type": "number"
+            },
+            "value": {
+              "type": "number"
+            }
+          }
+        },
+        "right": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "input",
+            "value"
+          ],
+          "properties": {
+            "input": {
+              "type": "number"
+            },
+            "value": {
+              "type": "number"
+            }
+          }
+        },
+        "limit": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "continuous": {
+          "type": "boolean"
+        },
+        "differentiable": {
+          "type": "boolean"
+        },
+        "derivative": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "leftSlope": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "rightSlope": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "symmetricEstimate": {
+          "type": "number"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "input",
+        "value",
+        "gradient",
+        "numericalGradient",
+        "unitDirection",
+        "directionalDerivative",
+        "update",
+        "jacobian",
+        "hessian"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "1.0.0"
+        },
+        "input": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "x",
+            "y",
+            "rate",
+            "shape",
+            "direction"
+          ],
+          "properties": {
+            "x": {
+              "type": "number"
+            },
+            "y": {
+              "type": "number"
+            },
+            "rate": {
+              "type": "number"
+            },
+            "shape": {
+              "enum": [
+                "bowl",
+                "saddle"
+              ]
+            },
+            "direction": {
+              "enum": [
+                "x",
+                "y",
+                "diagonal"
+              ]
+            }
+          }
+        },
+        "value": {
+          "type": "number"
+        },
+        "gradient": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number"
+          }
+        },
+        "numericalGradient": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number"
+          }
+        },
+        "unitDirection": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number"
+          }
+        },
+        "directionalDerivative": {
+          "type": "number"
+        },
+        "update": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "displacement",
+            "next",
+            "value"
+          ],
+          "properties": {
+            "displacement": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "type": "number"
+              }
+            },
+            "next": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "type": "number"
+              }
+            },
+            "value": {
+              "type": "number"
+            }
+          }
+        },
+        "jacobian": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "number"
+            }
+          }
+        },
+        "hessian": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

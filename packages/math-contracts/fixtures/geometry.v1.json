@@ -1,0 +1,4099 @@
+{
+  "schemaVersion": "1.0.0",
+  "geometry": [
+    {
+      "input": {
+        "first": "identity",
+        "second": "rotation",
+        "vector": [
+          1,
+          1
+        ],
+        "coefficients": [
+          2,
+          -1
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "first": "identity",
+          "second": "rotation",
+          "vector": [
+            1,
+            1
+          ],
+          "coefficients": [
+            2,
+            -1
+          ]
+        },
+        "first": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "second": [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "mapped": [
+          1.0,
+          1.0
+        ],
+        "basis": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "spanPoint": [
+          2.0,
+          -1.0
+        ],
+        "rank": 2,
+        "determinant": 1,
+        "signedArea": 1,
+        "area": 1,
+        "inverseStatus": "available",
+        "inverse": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "roundTrip": [
+          1.0,
+          1.0
+        ],
+        "composition": {
+          "firstThenSecond": [
+            [
+              0.0,
+              -1.0
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          "secondThenFirst": [
+            [
+              0.0,
+              -1.0
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          "firstThenSecondPoint": [
+            -1.0,
+            1.0
+          ],
+          "secondThenFirstPoint": [
+            -1.0,
+            1.0
+          ]
+        },
+        "grid": [
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              2,
+              -2
+            ],
+            "mappedFrom": [
+              -2.0,
+              -2.0
+            ],
+            "mappedTo": [
+              2.0,
+              -2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              -2,
+              2
+            ],
+            "mappedFrom": [
+              -2.0,
+              -2.0
+            ],
+            "mappedTo": [
+              -2.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -1
+            ],
+            "to": [
+              2,
+              -1
+            ],
+            "mappedFrom": [
+              -2.0,
+              -1.0
+            ],
+            "mappedTo": [
+              2.0,
+              -1.0
+            ]
+          },
+          {
+            "from": [
+              -1,
+              -2
+            ],
+            "to": [
+              -1,
+              2
+            ],
+            "mappedFrom": [
+              -1.0,
+              -2.0
+            ],
+            "mappedTo": [
+              -1.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              0
+            ],
+            "to": [
+              2,
+              0
+            ],
+            "mappedFrom": [
+              -2.0,
+              0.0
+            ],
+            "mappedTo": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              0,
+              -2
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "mappedFrom": [
+              0.0,
+              -2.0
+            ],
+            "mappedTo": [
+              0.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              1
+            ],
+            "to": [
+              2,
+              1
+            ],
+            "mappedFrom": [
+              -2.0,
+              1.0
+            ],
+            "mappedTo": [
+              2.0,
+              1.0
+            ]
+          },
+          {
+            "from": [
+              1,
+              -2
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "mappedFrom": [
+              1.0,
+              -2.0
+            ],
+            "mappedTo": [
+              1.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              -2.0,
+              2.0
+            ],
+            "mappedTo": [
+              2.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              2,
+              -2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              2.0,
+              -2.0
+            ],
+            "mappedTo": [
+              2.0,
+              2.0
+            ]
+          }
+        ],
+        "points": [
+          {
+            "point": [
+              0,
+              0
+            ],
+            "mapped": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              0
+            ],
+            "mapped": [
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              0,
+              1
+            ],
+            "mapped": [
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              1.0,
+              1.0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "first": "scale",
+        "second": "rotation",
+        "vector": [
+          1,
+          1
+        ],
+        "coefficients": [
+          2,
+          -1
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "first": "scale",
+          "second": "rotation",
+          "vector": [
+            1,
+            1
+          ],
+          "coefficients": [
+            2,
+            -1
+          ]
+        },
+        "first": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "second": [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "mapped": [
+          2.0,
+          1.0
+        ],
+        "basis": [
+          [
+            2.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "spanPoint": [
+          4.0,
+          -1.0
+        ],
+        "rank": 2,
+        "determinant": 2,
+        "signedArea": 2,
+        "area": 2,
+        "inverseStatus": "available",
+        "inverse": [
+          [
+            0.5,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "roundTrip": [
+          1.0,
+          1.0
+        ],
+        "composition": {
+          "firstThenSecond": [
+            [
+              0.0,
+              -1.0
+            ],
+            [
+              2.0,
+              0.0
+            ]
+          ],
+          "secondThenFirst": [
+            [
+              0.0,
+              -2.0
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          "firstThenSecondPoint": [
+            -1.0,
+            2.0
+          ],
+          "secondThenFirstPoint": [
+            -2.0,
+            1.0
+          ]
+        },
+        "grid": [
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              2,
+              -2
+            ],
+            "mappedFrom": [
+              -4.0,
+              -2.0
+            ],
+            "mappedTo": [
+              4.0,
+              -2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              -2,
+              2
+            ],
+            "mappedFrom": [
+              -4.0,
+              -2.0
+            ],
+            "mappedTo": [
+              -4.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -1
+            ],
+            "to": [
+              2,
+              -1
+            ],
+            "mappedFrom": [
+              -4.0,
+              -1.0
+            ],
+            "mappedTo": [
+              4.0,
+              -1.0
+            ]
+          },
+          {
+            "from": [
+              -1,
+              -2
+            ],
+            "to": [
+              -1,
+              2
+            ],
+            "mappedFrom": [
+              -2.0,
+              -2.0
+            ],
+            "mappedTo": [
+              -2.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              0
+            ],
+            "to": [
+              2,
+              0
+            ],
+            "mappedFrom": [
+              -4.0,
+              0.0
+            ],
+            "mappedTo": [
+              4.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              0,
+              -2
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "mappedFrom": [
+              0.0,
+              -2.0
+            ],
+            "mappedTo": [
+              0.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              1
+            ],
+            "to": [
+              2,
+              1
+            ],
+            "mappedFrom": [
+              -4.0,
+              1.0
+            ],
+            "mappedTo": [
+              4.0,
+              1.0
+            ]
+          },
+          {
+            "from": [
+              1,
+              -2
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "mappedFrom": [
+              2.0,
+              -2.0
+            ],
+            "mappedTo": [
+              2.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              -4.0,
+              2.0
+            ],
+            "mappedTo": [
+              4.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              2,
+              -2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              4.0,
+              -2.0
+            ],
+            "mappedTo": [
+              4.0,
+              2.0
+            ]
+          }
+        ],
+        "points": [
+          {
+            "point": [
+              0,
+              0
+            ],
+            "mapped": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              0
+            ],
+            "mapped": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              0,
+              1
+            ],
+            "mapped": [
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              2.0,
+              1.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              2.0,
+              1.0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "first": "reflection",
+        "second": "rotation",
+        "vector": [
+          1,
+          1
+        ],
+        "coefficients": [
+          2,
+          -1
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "first": "reflection",
+          "second": "rotation",
+          "vector": [
+            1,
+            1
+          ],
+          "coefficients": [
+            2,
+            -1
+          ]
+        },
+        "first": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "second": [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "mapped": [
+          -1.0,
+          1.0
+        ],
+        "basis": [
+          [
+            -1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "spanPoint": [
+          -2.0,
+          -1.0
+        ],
+        "rank": 2,
+        "determinant": -1,
+        "signedArea": -1,
+        "area": 1,
+        "inverseStatus": "available",
+        "inverse": [
+          [
+            -1.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            1.0
+          ]
+        ],
+        "roundTrip": [
+          1.0,
+          1.0
+        ],
+        "composition": {
+          "firstThenSecond": [
+            [
+              0.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              0.0
+            ]
+          ],
+          "secondThenFirst": [
+            [
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          "firstThenSecondPoint": [
+            -1.0,
+            -1.0
+          ],
+          "secondThenFirstPoint": [
+            1.0,
+            1.0
+          ]
+        },
+        "grid": [
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              2,
+              -2
+            ],
+            "mappedFrom": [
+              2.0,
+              -2.0
+            ],
+            "mappedTo": [
+              -2.0,
+              -2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              -2,
+              2
+            ],
+            "mappedFrom": [
+              2.0,
+              -2.0
+            ],
+            "mappedTo": [
+              2.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -1
+            ],
+            "to": [
+              2,
+              -1
+            ],
+            "mappedFrom": [
+              2.0,
+              -1.0
+            ],
+            "mappedTo": [
+              -2.0,
+              -1.0
+            ]
+          },
+          {
+            "from": [
+              -1,
+              -2
+            ],
+            "to": [
+              -1,
+              2
+            ],
+            "mappedFrom": [
+              1.0,
+              -2.0
+            ],
+            "mappedTo": [
+              1.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              0
+            ],
+            "to": [
+              2,
+              0
+            ],
+            "mappedFrom": [
+              2.0,
+              0.0
+            ],
+            "mappedTo": [
+              -2.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              0,
+              -2
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "mappedFrom": [
+              0.0,
+              -2.0
+            ],
+            "mappedTo": [
+              0.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              1
+            ],
+            "to": [
+              2,
+              1
+            ],
+            "mappedFrom": [
+              2.0,
+              1.0
+            ],
+            "mappedTo": [
+              -2.0,
+              1.0
+            ]
+          },
+          {
+            "from": [
+              1,
+              -2
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "mappedFrom": [
+              -1.0,
+              -2.0
+            ],
+            "mappedTo": [
+              -1.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              2.0,
+              2.0
+            ],
+            "mappedTo": [
+              -2.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              2,
+              -2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              -2.0,
+              -2.0
+            ],
+            "mappedTo": [
+              -2.0,
+              2.0
+            ]
+          }
+        ],
+        "points": [
+          {
+            "point": [
+              0,
+              0
+            ],
+            "mapped": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              0
+            ],
+            "mapped": [
+              -1.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              0,
+              1
+            ],
+            "mapped": [
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              -1.0,
+              1.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              -1.0,
+              1.0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "first": "rotation",
+        "second": "rotation",
+        "vector": [
+          1,
+          1
+        ],
+        "coefficients": [
+          2,
+          -1
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "first": "rotation",
+          "second": "rotation",
+          "vector": [
+            1,
+            1
+          ],
+          "coefficients": [
+            2,
+            -1
+          ]
+        },
+        "first": [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "second": [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "mapped": [
+          -1.0,
+          1.0
+        ],
+        "basis": [
+          [
+            0.0,
+            1.0
+          ],
+          [
+            -1.0,
+            0.0
+          ]
+        ],
+        "spanPoint": [
+          1.0,
+          2.0
+        ],
+        "rank": 2,
+        "determinant": 1,
+        "signedArea": 1,
+        "area": 1,
+        "inverseStatus": "available",
+        "inverse": [
+          [
+            0.0,
+            1.0
+          ],
+          [
+            -1.0,
+            0.0
+          ]
+        ],
+        "roundTrip": [
+          1.0,
+          1.0
+        ],
+        "composition": {
+          "firstThenSecond": [
+            [
+              -1.0,
+              0.0
+            ],
+            [
+              0.0,
+              -1.0
+            ]
+          ],
+          "secondThenFirst": [
+            [
+              -1.0,
+              0.0
+            ],
+            [
+              0.0,
+              -1.0
+            ]
+          ],
+          "firstThenSecondPoint": [
+            -1.0,
+            -1.0
+          ],
+          "secondThenFirstPoint": [
+            -1.0,
+            -1.0
+          ]
+        },
+        "grid": [
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              2,
+              -2
+            ],
+            "mappedFrom": [
+              2.0,
+              -2.0
+            ],
+            "mappedTo": [
+              2.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              -2,
+              2
+            ],
+            "mappedFrom": [
+              2.0,
+              -2.0
+            ],
+            "mappedTo": [
+              -2.0,
+              -2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -1
+            ],
+            "to": [
+              2,
+              -1
+            ],
+            "mappedFrom": [
+              1.0,
+              -2.0
+            ],
+            "mappedTo": [
+              1.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -1,
+              -2
+            ],
+            "to": [
+              -1,
+              2
+            ],
+            "mappedFrom": [
+              2.0,
+              -1.0
+            ],
+            "mappedTo": [
+              -2.0,
+              -1.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              0
+            ],
+            "to": [
+              2,
+              0
+            ],
+            "mappedFrom": [
+              0.0,
+              -2.0
+            ],
+            "mappedTo": [
+              0.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              0,
+              -2
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "mappedFrom": [
+              2.0,
+              0.0
+            ],
+            "mappedTo": [
+              -2.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              1
+            ],
+            "to": [
+              2,
+              1
+            ],
+            "mappedFrom": [
+              -1.0,
+              -2.0
+            ],
+            "mappedTo": [
+              -1.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              1,
+              -2
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "mappedFrom": [
+              2.0,
+              1.0
+            ],
+            "mappedTo": [
+              -2.0,
+              1.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              -2.0,
+              -2.0
+            ],
+            "mappedTo": [
+              -2.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              2,
+              -2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              2.0,
+              2.0
+            ],
+            "mappedTo": [
+              -2.0,
+              2.0
+            ]
+          }
+        ],
+        "points": [
+          {
+            "point": [
+              0,
+              0
+            ],
+            "mapped": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              0
+            ],
+            "mapped": [
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "point": [
+              0,
+              1
+            ],
+            "mapped": [
+              -1.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              -1.0,
+              1.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              -1.0,
+              1.0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "first": "shear",
+        "second": "rotation",
+        "vector": [
+          1,
+          1
+        ],
+        "coefficients": [
+          2,
+          -1
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "first": "shear",
+          "second": "rotation",
+          "vector": [
+            1,
+            1
+          ],
+          "coefficients": [
+            2,
+            -1
+          ]
+        },
+        "first": [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "second": [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "mapped": [
+          2.0,
+          1.0
+        ],
+        "basis": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            1.0
+          ]
+        ],
+        "spanPoint": [
+          1.0,
+          -1.0
+        ],
+        "rank": 2,
+        "determinant": 1,
+        "signedArea": 1,
+        "area": 1,
+        "inverseStatus": "available",
+        "inverse": [
+          [
+            1.0,
+            -1.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "roundTrip": [
+          1.0,
+          1.0
+        ],
+        "composition": {
+          "firstThenSecond": [
+            [
+              0.0,
+              -1.0
+            ],
+            [
+              1.0,
+              1.0
+            ]
+          ],
+          "secondThenFirst": [
+            [
+              1.0,
+              -1.0
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          "firstThenSecondPoint": [
+            -1.0,
+            2.0
+          ],
+          "secondThenFirstPoint": [
+            0.0,
+            1.0
+          ]
+        },
+        "grid": [
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              2,
+              -2
+            ],
+            "mappedFrom": [
+              -4.0,
+              -2.0
+            ],
+            "mappedTo": [
+              0.0,
+              -2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              -2,
+              2
+            ],
+            "mappedFrom": [
+              -4.0,
+              -2.0
+            ],
+            "mappedTo": [
+              0.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -1
+            ],
+            "to": [
+              2,
+              -1
+            ],
+            "mappedFrom": [
+              -3.0,
+              -1.0
+            ],
+            "mappedTo": [
+              1.0,
+              -1.0
+            ]
+          },
+          {
+            "from": [
+              -1,
+              -2
+            ],
+            "to": [
+              -1,
+              2
+            ],
+            "mappedFrom": [
+              -3.0,
+              -2.0
+            ],
+            "mappedTo": [
+              1.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              0
+            ],
+            "to": [
+              2,
+              0
+            ],
+            "mappedFrom": [
+              -2.0,
+              0.0
+            ],
+            "mappedTo": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              0,
+              -2
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "mappedFrom": [
+              -2.0,
+              -2.0
+            ],
+            "mappedTo": [
+              2.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              1
+            ],
+            "to": [
+              2,
+              1
+            ],
+            "mappedFrom": [
+              -1.0,
+              1.0
+            ],
+            "mappedTo": [
+              3.0,
+              1.0
+            ]
+          },
+          {
+            "from": [
+              1,
+              -2
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "mappedFrom": [
+              -1.0,
+              -2.0
+            ],
+            "mappedTo": [
+              3.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              0.0,
+              2.0
+            ],
+            "mappedTo": [
+              4.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              2,
+              -2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              0.0,
+              -2.0
+            ],
+            "mappedTo": [
+              4.0,
+              2.0
+            ]
+          }
+        ],
+        "points": [
+          {
+            "point": [
+              0,
+              0
+            ],
+            "mapped": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              0
+            ],
+            "mapped": [
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              0,
+              1
+            ],
+            "mapped": [
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              2.0,
+              1.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              2.0,
+              1.0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "first": "dependent",
+        "second": "rotation",
+        "vector": [
+          1,
+          1
+        ],
+        "coefficients": [
+          2,
+          -1
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "first": "dependent",
+          "second": "rotation",
+          "vector": [
+            1,
+            1
+          ],
+          "coefficients": [
+            2,
+            -1
+          ]
+        },
+        "first": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "second": [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "mapped": [
+          3.0,
+          0.0
+        ],
+        "basis": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            2.0,
+            0.0
+          ]
+        ],
+        "spanPoint": [
+          0.0,
+          0.0
+        ],
+        "rank": 1,
+        "determinant": 0,
+        "signedArea": 0,
+        "area": 0,
+        "inverseStatus": "singular",
+        "inverse": null,
+        "roundTrip": null,
+        "composition": {
+          "firstThenSecond": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              2.0
+            ]
+          ],
+          "secondThenFirst": [
+            [
+              2.0,
+              -1.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "firstThenSecondPoint": [
+            0.0,
+            3.0
+          ],
+          "secondThenFirstPoint": [
+            1.0,
+            0.0
+          ]
+        },
+        "grid": [
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              2,
+              -2
+            ],
+            "mappedFrom": [
+              -6.0,
+              0.0
+            ],
+            "mappedTo": [
+              -2.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              -2,
+              2
+            ],
+            "mappedFrom": [
+              -6.0,
+              0.0
+            ],
+            "mappedTo": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -1
+            ],
+            "to": [
+              2,
+              -1
+            ],
+            "mappedFrom": [
+              -4.0,
+              0.0
+            ],
+            "mappedTo": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -1,
+              -2
+            ],
+            "to": [
+              -1,
+              2
+            ],
+            "mappedFrom": [
+              -5.0,
+              0.0
+            ],
+            "mappedTo": [
+              3.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              0
+            ],
+            "to": [
+              2,
+              0
+            ],
+            "mappedFrom": [
+              -2.0,
+              0.0
+            ],
+            "mappedTo": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              0,
+              -2
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "mappedFrom": [
+              -4.0,
+              0.0
+            ],
+            "mappedTo": [
+              4.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              1
+            ],
+            "to": [
+              2,
+              1
+            ],
+            "mappedFrom": [
+              0.0,
+              0.0
+            ],
+            "mappedTo": [
+              4.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              1,
+              -2
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "mappedFrom": [
+              -3.0,
+              0.0
+            ],
+            "mappedTo": [
+              5.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              2.0,
+              0.0
+            ],
+            "mappedTo": [
+              6.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              2,
+              -2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              -2.0,
+              0.0
+            ],
+            "mappedTo": [
+              6.0,
+              0.0
+            ]
+          }
+        ],
+        "points": [
+          {
+            "point": [
+              0,
+              0
+            ],
+            "mapped": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              0
+            ],
+            "mapped": [
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              0,
+              1
+            ],
+            "mapped": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              3.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              3.0,
+              0.0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "first": "collapse",
+        "second": "rotation",
+        "vector": [
+          1,
+          1
+        ],
+        "coefficients": [
+          2,
+          -1
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "first": "collapse",
+          "second": "rotation",
+          "vector": [
+            1,
+            1
+          ],
+          "coefficients": [
+            2,
+            -1
+          ]
+        },
+        "first": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "second": [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "mapped": [
+          1.0,
+          0.0
+        ],
+        "basis": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "spanPoint": [
+          2.0,
+          0.0
+        ],
+        "rank": 1,
+        "determinant": 0,
+        "signedArea": 0,
+        "area": 0,
+        "inverseStatus": "singular",
+        "inverse": null,
+        "roundTrip": null,
+        "composition": {
+          "firstThenSecond": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          "secondThenFirst": [
+            [
+              0.0,
+              -1.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "firstThenSecondPoint": [
+            0.0,
+            1.0
+          ],
+          "secondThenFirstPoint": [
+            -1.0,
+            0.0
+          ]
+        },
+        "grid": [
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              2,
+              -2
+            ],
+            "mappedFrom": [
+              -2.0,
+              0.0
+            ],
+            "mappedTo": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              -2,
+              2
+            ],
+            "mappedFrom": [
+              -2.0,
+              0.0
+            ],
+            "mappedTo": [
+              -2.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -1
+            ],
+            "to": [
+              2,
+              -1
+            ],
+            "mappedFrom": [
+              -2.0,
+              0.0
+            ],
+            "mappedTo": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -1,
+              -2
+            ],
+            "to": [
+              -1,
+              2
+            ],
+            "mappedFrom": [
+              -1.0,
+              0.0
+            ],
+            "mappedTo": [
+              -1.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              0
+            ],
+            "to": [
+              2,
+              0
+            ],
+            "mappedFrom": [
+              -2.0,
+              0.0
+            ],
+            "mappedTo": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              0,
+              -2
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "mappedFrom": [
+              0.0,
+              0.0
+            ],
+            "mappedTo": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              1
+            ],
+            "to": [
+              2,
+              1
+            ],
+            "mappedFrom": [
+              -2.0,
+              0.0
+            ],
+            "mappedTo": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              1,
+              -2
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "mappedFrom": [
+              1.0,
+              0.0
+            ],
+            "mappedTo": [
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              -2.0,
+              0.0
+            ],
+            "mappedTo": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              2,
+              -2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              2.0,
+              0.0
+            ],
+            "mappedTo": [
+              2.0,
+              0.0
+            ]
+          }
+        ],
+        "points": [
+          {
+            "point": [
+              0,
+              0
+            ],
+            "mapped": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              0
+            ],
+            "mapped": [
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              0,
+              1
+            ],
+            "mapped": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              1.0,
+              0.0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "first": "zero",
+        "second": "rotation",
+        "vector": [
+          1,
+          1
+        ],
+        "coefficients": [
+          2,
+          -1
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "first": "zero",
+          "second": "rotation",
+          "vector": [
+            1,
+            1
+          ],
+          "coefficients": [
+            2,
+            -1
+          ]
+        },
+        "first": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "second": [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "mapped": [
+          0.0,
+          0.0
+        ],
+        "basis": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "spanPoint": [
+          0.0,
+          0.0
+        ],
+        "rank": 0,
+        "determinant": 0,
+        "signedArea": 0,
+        "area": 0,
+        "inverseStatus": "singular",
+        "inverse": null,
+        "roundTrip": null,
+        "composition": {
+          "firstThenSecond": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "secondThenFirst": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "firstThenSecondPoint": [
+            0.0,
+            0.0
+          ],
+          "secondThenFirstPoint": [
+            0.0,
+            0.0
+          ]
+        },
+        "grid": [
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              2,
+              -2
+            ],
+            "mappedFrom": [
+              0.0,
+              0.0
+            ],
+            "mappedTo": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              -2,
+              2
+            ],
+            "mappedFrom": [
+              0.0,
+              0.0
+            ],
+            "mappedTo": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -1
+            ],
+            "to": [
+              2,
+              -1
+            ],
+            "mappedFrom": [
+              0.0,
+              0.0
+            ],
+            "mappedTo": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -1,
+              -2
+            ],
+            "to": [
+              -1,
+              2
+            ],
+            "mappedFrom": [
+              0.0,
+              0.0
+            ],
+            "mappedTo": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              0
+            ],
+            "to": [
+              2,
+              0
+            ],
+            "mappedFrom": [
+              0.0,
+              0.0
+            ],
+            "mappedTo": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              0,
+              -2
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "mappedFrom": [
+              0.0,
+              0.0
+            ],
+            "mappedTo": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              1
+            ],
+            "to": [
+              2,
+              1
+            ],
+            "mappedFrom": [
+              0.0,
+              0.0
+            ],
+            "mappedTo": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              1,
+              -2
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "mappedFrom": [
+              0.0,
+              0.0
+            ],
+            "mappedTo": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              0.0,
+              0.0
+            ],
+            "mappedTo": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              2,
+              -2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              0.0,
+              0.0
+            ],
+            "mappedTo": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "points": [
+          {
+            "point": [
+              0,
+              0
+            ],
+            "mapped": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              0
+            ],
+            "mapped": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              0,
+              1
+            ],
+            "mapped": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              0.0,
+              0.0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "first": "near",
+        "second": "rotation",
+        "vector": [
+          1,
+          1
+        ],
+        "coefficients": [
+          2,
+          -1
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "first": "near",
+          "second": "rotation",
+          "vector": [
+            1,
+            1
+          ],
+          "coefficients": [
+            2,
+            -1
+          ]
+        },
+        "first": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1e-10
+          ]
+        ],
+        "second": [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "mapped": [
+          1.0,
+          1e-10
+        ],
+        "basis": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1e-10
+          ]
+        ],
+        "spanPoint": [
+          2.0,
+          -1e-10
+        ],
+        "rank": 2,
+        "determinant": 1e-10,
+        "signedArea": 1e-10,
+        "area": 1e-10,
+        "inverseStatus": "near-singular",
+        "inverse": null,
+        "roundTrip": null,
+        "composition": {
+          "firstThenSecond": [
+            [
+              0.0,
+              -1e-10
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          "secondThenFirst": [
+            [
+              0.0,
+              -1.0
+            ],
+            [
+              1e-10,
+              0.0
+            ]
+          ],
+          "firstThenSecondPoint": [
+            -1e-10,
+            1.0
+          ],
+          "secondThenFirstPoint": [
+            -1.0,
+            1e-10
+          ]
+        },
+        "grid": [
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              2,
+              -2
+            ],
+            "mappedFrom": [
+              -2.0,
+              -2e-10
+            ],
+            "mappedTo": [
+              2.0,
+              -2e-10
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              -2,
+              2
+            ],
+            "mappedFrom": [
+              -2.0,
+              -2e-10
+            ],
+            "mappedTo": [
+              -2.0,
+              2e-10
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -1
+            ],
+            "to": [
+              2,
+              -1
+            ],
+            "mappedFrom": [
+              -2.0,
+              -1e-10
+            ],
+            "mappedTo": [
+              2.0,
+              -1e-10
+            ]
+          },
+          {
+            "from": [
+              -1,
+              -2
+            ],
+            "to": [
+              -1,
+              2
+            ],
+            "mappedFrom": [
+              -1.0,
+              -2e-10
+            ],
+            "mappedTo": [
+              -1.0,
+              2e-10
+            ]
+          },
+          {
+            "from": [
+              -2,
+              0
+            ],
+            "to": [
+              2,
+              0
+            ],
+            "mappedFrom": [
+              -2.0,
+              0.0
+            ],
+            "mappedTo": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              0,
+              -2
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "mappedFrom": [
+              0.0,
+              -2e-10
+            ],
+            "mappedTo": [
+              0.0,
+              2e-10
+            ]
+          },
+          {
+            "from": [
+              -2,
+              1
+            ],
+            "to": [
+              2,
+              1
+            ],
+            "mappedFrom": [
+              -2.0,
+              1e-10
+            ],
+            "mappedTo": [
+              2.0,
+              1e-10
+            ]
+          },
+          {
+            "from": [
+              1,
+              -2
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "mappedFrom": [
+              1.0,
+              -2e-10
+            ],
+            "mappedTo": [
+              1.0,
+              2e-10
+            ]
+          },
+          {
+            "from": [
+              -2,
+              2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              -2.0,
+              2e-10
+            ],
+            "mappedTo": [
+              2.0,
+              2e-10
+            ]
+          },
+          {
+            "from": [
+              2,
+              -2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              2.0,
+              -2e-10
+            ],
+            "mappedTo": [
+              2.0,
+              2e-10
+            ]
+          }
+        ],
+        "points": [
+          {
+            "point": [
+              0,
+              0
+            ],
+            "mapped": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              0
+            ],
+            "mapped": [
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              0,
+              1
+            ],
+            "mapped": [
+              0.0,
+              1e-10
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              1.0,
+              1e-10
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              1.0,
+              1e-10
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "first": "spread",
+        "second": "rotation",
+        "vector": [
+          1,
+          1
+        ],
+        "coefficients": [
+          2,
+          -1
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "input": {
+          "first": "spread",
+          "second": "rotation",
+          "vector": [
+            1,
+            1
+          ],
+          "coefficients": [
+            2,
+            -1
+          ]
+        },
+        "first": [
+          [
+            9,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "second": [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "mapped": [
+          9.0,
+          1.0
+        ],
+        "basis": [
+          [
+            9.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "spanPoint": [
+          18.0,
+          -1.0
+        ],
+        "rank": 2,
+        "determinant": 9,
+        "signedArea": 9,
+        "area": 9,
+        "inverseStatus": "available",
+        "inverse": [
+          [
+            0.1111111111111111,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "roundTrip": [
+          1.0,
+          1.0
+        ],
+        "composition": {
+          "firstThenSecond": [
+            [
+              0.0,
+              -1.0
+            ],
+            [
+              9.0,
+              0.0
+            ]
+          ],
+          "secondThenFirst": [
+            [
+              0.0,
+              -9.0
+            ],
+            [
+              1.0,
+              0.0
+            ]
+          ],
+          "firstThenSecondPoint": [
+            -1.0,
+            9.0
+          ],
+          "secondThenFirstPoint": [
+            -9.0,
+            1.0
+          ]
+        },
+        "grid": [
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              2,
+              -2
+            ],
+            "mappedFrom": [
+              -18.0,
+              -2.0
+            ],
+            "mappedTo": [
+              18.0,
+              -2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -2
+            ],
+            "to": [
+              -2,
+              2
+            ],
+            "mappedFrom": [
+              -18.0,
+              -2.0
+            ],
+            "mappedTo": [
+              -18.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              -1
+            ],
+            "to": [
+              2,
+              -1
+            ],
+            "mappedFrom": [
+              -18.0,
+              -1.0
+            ],
+            "mappedTo": [
+              18.0,
+              -1.0
+            ]
+          },
+          {
+            "from": [
+              -1,
+              -2
+            ],
+            "to": [
+              -1,
+              2
+            ],
+            "mappedFrom": [
+              -9.0,
+              -2.0
+            ],
+            "mappedTo": [
+              -9.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              0
+            ],
+            "to": [
+              2,
+              0
+            ],
+            "mappedFrom": [
+              -18.0,
+              0.0
+            ],
+            "mappedTo": [
+              18.0,
+              0.0
+            ]
+          },
+          {
+            "from": [
+              0,
+              -2
+            ],
+            "to": [
+              0,
+              2
+            ],
+            "mappedFrom": [
+              0.0,
+              -2.0
+            ],
+            "mappedTo": [
+              0.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              1
+            ],
+            "to": [
+              2,
+              1
+            ],
+            "mappedFrom": [
+              -18.0,
+              1.0
+            ],
+            "mappedTo": [
+              18.0,
+              1.0
+            ]
+          },
+          {
+            "from": [
+              1,
+              -2
+            ],
+            "to": [
+              1,
+              2
+            ],
+            "mappedFrom": [
+              9.0,
+              -2.0
+            ],
+            "mappedTo": [
+              9.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              -2,
+              2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              -18.0,
+              2.0
+            ],
+            "mappedTo": [
+              18.0,
+              2.0
+            ]
+          },
+          {
+            "from": [
+              2,
+              -2
+            ],
+            "to": [
+              2,
+              2
+            ],
+            "mappedFrom": [
+              18.0,
+              -2.0
+            ],
+            "mappedTo": [
+              18.0,
+              2.0
+            ]
+          }
+        ],
+        "points": [
+          {
+            "point": [
+              0,
+              0
+            ],
+            "mapped": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              0
+            ],
+            "mapped": [
+              9.0,
+              0.0
+            ]
+          },
+          {
+            "point": [
+              0,
+              1
+            ],
+            "mapped": [
+              0.0,
+              1.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              9.0,
+              1.0
+            ]
+          },
+          {
+            "point": [
+              1,
+              1
+            ],
+            "mapped": [
+              9.0,
+              1.0
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "eigen": [
+    {
+      "input": {
+        "name": "scale",
+        "vector": [
+          1,
+          0
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "transform": "scale",
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "vector": [
+          1,
+          0
+        ],
+        "mapped": [
+          2.0,
+          0.0
+        ],
+        "isEigenvector": true,
+        "eigenvalue": 2.0,
+        "reason": "The mapped vector remains on the same line: this is an eigenvector.",
+        "knownPairs": [
+          {
+            "vector": [
+              1,
+              0
+            ],
+            "value": 2,
+            "mapped": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "vector": [
+              0,
+              1
+            ],
+            "value": 1,
+            "mapped": [
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "hasRealEigenvectors": true
+      }
+    },
+    {
+      "input": {
+        "name": "scale",
+        "vector": [
+          1,
+          1
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "transform": "scale",
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "vector": [
+          1,
+          1
+        ],
+        "mapped": [
+          2.0,
+          1.0
+        ],
+        "isEigenvector": false,
+        "eigenvalue": null,
+        "reason": "The vector leaves its original line; it is not an eigenvector in this example.",
+        "knownPairs": [
+          {
+            "vector": [
+              1,
+              0
+            ],
+            "value": 2,
+            "mapped": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "vector": [
+              0,
+              1
+            ],
+            "value": 1,
+            "mapped": [
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "hasRealEigenvectors": true
+      }
+    },
+    {
+      "input": {
+        "name": "reflection",
+        "vector": [
+          1,
+          0
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "transform": "reflection",
+        "matrix": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "vector": [
+          1,
+          0
+        ],
+        "mapped": [
+          -1.0,
+          0.0
+        ],
+        "isEigenvector": true,
+        "eigenvalue": -1.0,
+        "reason": "The line is preserved but the pointing direction reverses: the eigenvalue is negative.",
+        "knownPairs": [
+          {
+            "vector": [
+              1,
+              0
+            ],
+            "value": -1,
+            "mapped": [
+              -1.0,
+              0.0
+            ]
+          },
+          {
+            "vector": [
+              0,
+              1
+            ],
+            "value": 1,
+            "mapped": [
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "hasRealEigenvectors": true
+      }
+    },
+    {
+      "input": {
+        "name": "collapse",
+        "vector": [
+          0,
+          1
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "transform": "collapse",
+        "matrix": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "vector": [
+          0,
+          1
+        ],
+        "mapped": [
+          0.0,
+          0.0
+        ],
+        "isEigenvector": true,
+        "eigenvalue": 0.0,
+        "reason": "A nonzero vector maps to zero: this is an eigenvector with eigenvalue zero, although the output has no direction.",
+        "knownPairs": [
+          {
+            "vector": [
+              1,
+              0
+            ],
+            "value": 1,
+            "mapped": [
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "vector": [
+              0,
+              1
+            ],
+            "value": 0,
+            "mapped": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "hasRealEigenvectors": true
+      }
+    },
+    {
+      "input": {
+        "name": "scale",
+        "vector": [
+          0,
+          0
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "transform": "scale",
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "vector": [
+          0,
+          0
+        ],
+        "mapped": [
+          0.0,
+          0.0
+        ],
+        "isEigenvector": false,
+        "eigenvalue": null,
+        "reason": "The zero vector is excluded from the definition of an eigenvector.",
+        "knownPairs": [
+          {
+            "vector": [
+              1,
+              0
+            ],
+            "value": 2,
+            "mapped": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "vector": [
+              0,
+              1
+            ],
+            "value": 1,
+            "mapped": [
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "hasRealEigenvectors": true
+      }
+    },
+    {
+      "input": {
+        "name": "rotation",
+        "vector": [
+          1,
+          0
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "transform": "rotation",
+        "matrix": [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "vector": [
+          1,
+          0
+        ],
+        "mapped": [
+          0.0,
+          1.0
+        ],
+        "isEigenvector": false,
+        "eigenvalue": null,
+        "reason": "The vector leaves its original line; it is not an eigenvector in this example.",
+        "knownPairs": [],
+        "hasRealEigenvectors": false
+      }
+    },
+    {
+      "input": {
+        "name": "rotation",
+        "vector": [
+          1e-200,
+          0
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "transform": "rotation",
+        "matrix": [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "vector": [
+          1e-200,
+          0
+        ],
+        "mapped": [
+          0.0,
+          1e-200
+        ],
+        "isEigenvector": false,
+        "eigenvalue": null,
+        "reason": "The vector leaves its original line; it is not an eigenvector in this example.",
+        "knownPairs": [],
+        "hasRealEigenvectors": false
+      }
+    },
+    {
+      "input": {
+        "name": "shear",
+        "vector": [
+          1,
+          0
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "transform": "shear",
+        "matrix": [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "vector": [
+          1,
+          0
+        ],
+        "mapped": [
+          1.0,
+          0.0
+        ],
+        "isEigenvector": true,
+        "eigenvalue": 1.0,
+        "reason": "The mapped vector remains on the same line: this is an eigenvector.",
+        "knownPairs": [
+          {
+            "vector": [
+              1,
+              0
+            ],
+            "value": 1,
+            "mapped": [
+              1.0,
+              0.0
+            ]
+          }
+        ],
+        "hasRealEigenvectors": true
+      }
+    },
+    {
+      "input": {
+        "name": "shear",
+        "vector": [
+          0,
+          1
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "transform": "shear",
+        "matrix": [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "vector": [
+          0,
+          1
+        ],
+        "mapped": [
+          1.0,
+          1.0
+        ],
+        "isEigenvector": false,
+        "eigenvalue": null,
+        "reason": "The vector leaves its original line; it is not an eigenvector in this example.",
+        "knownPairs": [
+          {
+            "vector": [
+              1,
+              0
+            ],
+            "value": 1,
+            "mapped": [
+              1.0,
+              0.0
+            ]
+          }
+        ],
+        "hasRealEigenvectors": true
+      }
+    },
+    {
+      "input": {
+        "name": "identity",
+        "vector": [
+          2,
+          -1
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "transform": "identity",
+        "matrix": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "vector": [
+          2,
+          -1
+        ],
+        "mapped": [
+          2.0,
+          -1.0
+        ],
+        "isEigenvector": true,
+        "eigenvalue": 1.0,
+        "reason": "The mapped vector remains on the same line: this is an eigenvector.",
+        "knownPairs": [
+          {
+            "vector": [
+              1,
+              0
+            ],
+            "value": 1,
+            "mapped": [
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "vector": [
+              0,
+              1
+            ],
+            "value": 1,
+            "mapped": [
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "hasRealEigenvectors": true
+      }
+    },
+    {
+      "input": {
+        "name": "spread",
+        "vector": [
+          1,
+          0
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "transform": "spread",
+        "matrix": [
+          [
+            9,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "vector": [
+          1,
+          0
+        ],
+        "mapped": [
+          9.0,
+          0.0
+        ],
+        "isEigenvector": true,
+        "eigenvalue": 9.0,
+        "reason": "The mapped vector remains on the same line: this is an eigenvector.",
+        "knownPairs": [
+          {
+            "vector": [
+              1,
+              0
+            ],
+            "value": 9,
+            "mapped": [
+              9.0,
+              0.0
+            ]
+          },
+          {
+            "vector": [
+              0,
+              1
+            ],
+            "value": 1,
+            "mapped": [
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "hasRealEigenvectors": true
+      }
+    },
+    {
+      "input": {
+        "name": "scale",
+        "vector": [
+          1e-200,
+          0
+        ]
+      },
+      "trace": {
+        "schemaVersion": "1.0.0",
+        "transform": "scale",
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "vector": [
+          1e-200,
+          0
+        ],
+        "mapped": [
+          2e-200,
+          0.0
+        ],
+        "isEigenvector": true,
+        "eigenvalue": 2.0,
+        "reason": "The mapped vector remains on the same line: this is an eigenvector.",
+        "knownPairs": [
+          {
+            "vector": [
+              1,
+              0
+            ],
+            "value": 2,
+            "mapped": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "vector": [
+              0,
+              1
+            ],
+            "value": 1,
+            "mapped": [
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "hasRealEigenvectors": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "content": "supervised.ev01.1.0.0",
+  "profile": {
+    "python": "3.13.16",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2",
+    "scikit-learn": "1.9.1"
+  },
+  "origin": "Original fictional teaching fixtures; no production documents or labels",
+  "counts": {
+    "practice": 8,
+    "testOnly": 12,
+    "scenarios": 6,
+    "states": 36
+  },
+  "sha256": {
+    "python/mlmath/supervised_ev01.py": "7c113295bfe95615597d3fbb492e99a2371a09764e6364ba9d3c8161adfc0bda",
+    "apps/web/app/supervised/foundation/authored.json": "49a71ff5f0436efe6f4ed93e068a49ebaffc01e387d626679f72b89c46f7aa12",
+    "python/tests/fixtures/supervised-ev01-reference.json": "f728dd7dda88e1a261e8d157247b758a28d0c8fec9387fb7a18bf69a642b7ad5"
+  }
+}

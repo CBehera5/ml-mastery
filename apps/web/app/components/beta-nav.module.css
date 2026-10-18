@@ -1,0 +1,18 @@
+.navigation { gap: 1rem; position: relative; z-index: 10; }
+.links { display: flex; flex-wrap: wrap; gap: .25rem; align-items: center; }
+.links details { position: relative; }
+.links summary { min-height: 44px; display: flex; align-items: center; gap: .5rem; padding: .6rem .8rem; cursor: pointer; color: var(--ink); font-size: .9rem; border-radius: 8px; }
+.links summary::after { content: "+"; }
+.links details[open] summary::after { content: "−"; }
+.links summary::-webkit-details-marker { display: none; }
+.menu { position: absolute; top: 100%; right: 0; width: 260px; padding: .5rem; display: grid; gap: .15rem; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); }
+.menu a { padding: .75rem; min-height: 44px; color: var(--ink); text-decoration: none; border-radius: 8px; font-size: .95rem; overflow-wrap: anywhere; }
+.menu a:hover, .links summary:hover { background: var(--teal-soft); }
+.navigation :focus-visible { outline: 3px solid var(--teal-dark); outline-offset: 3px; }
+@media (max-width: 700px) {
+  .navigation { gap: .35rem; }
+  .links { width: 100%; justify-content: space-between; }
+  .links details { position: static; }
+  .links summary { padding: .5rem .35rem; font-size: .875rem; }
+  .menu { top: 100%; left: 0; right: 0; width: 100%; }
+}

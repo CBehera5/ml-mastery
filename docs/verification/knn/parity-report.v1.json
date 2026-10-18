@@ -1,0 +1,332 @@
+{
+  "checks": {
+    "constant_feature_scale_one": true,
+    "invalid_k_zero_and_above_n_rejected": true,
+    "kth_tie_training_order_counterexample": "At query1 between training0/class0 and2/class1,k1, reversing rows reverses sklearn prediction. Reject this ambiguous cutoff in learner controls.",
+    "near_equal_not_tied": true
+  },
+  "dependencies": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  },
+  "diagnostic_states": 3,
+  "ledger": [
+    {
+      "id": "kn.clean.v1.q0.k1.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.clean.v1.q0.k1.distance.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.clean.v1.q0.k3.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.clean.v1.q0.k3.distance.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.clean.v1.q0.k5.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.clean.v1.q0.k5.distance.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.clean.v1.q1.k1.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.clean.v1.q1.k1.distance.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.clean.v1.q1.k3.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.clean.v1.q1.k3.distance.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.clean.v1.q1.k5.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.clean.v1.q1.k5.distance.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.noisy.v1.q0.k1.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.noisy.v1.q0.k1.distance.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.noisy.v1.q0.k3.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.noisy.v1.q0.k3.distance.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.noisy.v1.q0.k5.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.noisy.v1.q0.k5.distance.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.noisy.v1.q1.k1.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.noisy.v1.q1.k1.distance.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.noisy.v1.q1.k3.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.noisy.v1.q1.k3.distance.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.noisy.v1.q1.k5.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.noisy.v1.q1.k5.distance.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.duplicates.v1.q0.k3.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.duplicates.v1.q0.k3.distance.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.duplicates.v1.q0.k5.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.duplicates.v1.q0.k5.distance.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.duplicates.v1.q1.k3.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.duplicates.v1.q1.k3.distance.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.duplicates.v1.q1.k5.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.duplicates.v1.q1.k5.distance.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.vote-tie.v1.q0.k2.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.vote-tie.v1.q0.k2.distance.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.units.v1.q0.k1.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.units.v1.q0.k1.uniform.scaled",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.units.v1.q0.k3.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.units.v1.q0.k3.uniform.scaled",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.units.v1.q0.k5.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.units.v1.q0.k5.uniform.scaled",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.units.v1.q1.k1.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.units.v1.q1.k1.uniform.scaled",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.units.v1.q1.k3.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.units.v1.q1.k3.uniform.scaled",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.units.v1.q1.k5.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.units.v1.q1.k5.uniform.scaled",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.irrelevant.v1.q0.k1.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.irrelevant.v1.q0.k1.uniform.scaled",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.irrelevant.v1.q0.k3.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.irrelevant.v1.q0.k3.uniform.scaled",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.irrelevant.v1.q0.k5.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.irrelevant.v1.q0.k5.uniform.scaled",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.irrelevant.v1.q1.k1.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.irrelevant.v1.q1.k1.uniform.scaled",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.irrelevant.v1.q1.k3.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.irrelevant.v1.q1.k3.uniform.scaled",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.irrelevant.v1.q1.k5.uniform.raw",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "kn.irrelevant.v1.q1.k5.uniform.scaled",
+      "kind": "trusted_sklearn_and_manual_distance_vote",
+      "passed": true
+    },
+    {
+      "id": "KN-E2.reject.test-fit.v1",
+      "kind": "permission_or_ambiguity_rejection",
+      "passed": true
+    },
+    {
+      "id": "KN-E2.reject.fold-k.v1",
+      "kind": "permission_or_ambiguity_rejection",
+      "passed": true
+    },
+    {
+      "id": "KN-E2.reject.cutoff-tie.v1",
+      "kind": "permission_or_ambiguity_rejection",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "prediction_states": 58,
+  "python": "3.13.16",
+  "schema": "knn.parity.v1",
+  "state_counts": {
+    "KN-E1": 34,
+    "KN-E2": 27
+  }
+}

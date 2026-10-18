@@ -1,0 +1,567 @@
+{
+  "checks": {
+    "argmax_threshold_equality_counterexample": "RF-E2.supplied.probability.1.v1",
+    "changed_training_target_comparison": [
+      {
+        "base": "RF-E1.rf.regression.base.v1.trees1.depth2.features1",
+        "base_development_predictions": [
+          2.0,
+          4.0,
+          10.0,
+          10.0
+        ],
+        "changed": "RF-E1.rf.regression.changed-row.v1.trees1.depth2.features1",
+        "changed_development_predictions": [
+          2.0,
+          4.0,
+          7.6,
+          7.6
+        ],
+        "trees": 1
+      },
+      {
+        "base": "RF-E1.rf.regression.base.v1.trees3.depth2.features1",
+        "base_development_predictions": [
+          2.8333333333333335,
+          4.111111111111111,
+          7.177777777777777,
+          8.4
+        ],
+        "changed": "RF-E1.rf.regression.changed-row.v1.trees3.depth2.features1",
+        "changed_development_predictions": [
+          2.8333333333333335,
+          4.111111111111111,
+          5.977777777777778,
+          7.866666666666667
+        ],
+        "trees": 3
+      },
+      {
+        "base": "RF-E1.rf.regression.base.v1.trees7.depth2.features1",
+        "base_development_predictions": [
+          3.166666666666667,
+          4.345238095238095,
+          6.242857142857143,
+          8.052380952380952
+        ],
+        "changed": "RF-E1.rf.regression.changed-row.v1.trees7.depth2.features1",
+        "changed_development_predictions": [
+          2.8095238095238098,
+          3.892857142857143,
+          6.740476190476191,
+          7.55
+        ],
+        "trees": 7
+      }
+    ],
+    "feature_randomness_same_bootstrap_comparisons": [
+      {
+        "both_development_predictions": [
+          2.8095238095238093,
+          4.369047619047619,
+          6.433333333333333,
+          8.028571428571428
+        ],
+        "one_development_predictions": [
+          3.166666666666667,
+          4.345238095238095,
+          6.242857142857143,
+          8.052380952380952
+        ],
+        "same_bootstrap_draws": true,
+        "sample_both": "RF-E1.rf.regression.base.v1.trees7.depth2.features2",
+        "sample_one": "RF-E1.rf.regression.base.v1.trees7.depth2.features1",
+        "sample_one_retained_root_features": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "both_development_predictions": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "one_development_predictions": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "same_bootstrap_draws": true,
+        "sample_both": "RF-E2.rf.classification.base.v1.trees7.depth2.features2",
+        "sample_one": "RF-E2.rf.classification.base.v1.trees7.depth2.features1",
+        "sample_one_retained_root_features": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "fitted_forests": 62,
+    "individual_tree_fits": 222,
+    "informative_but_zero_permutation_counterexamples": [
+      {
+        "configuration": "RF-E2.rf.classification.correlated.v1.trees1.depth1.features1",
+        "feature": 0,
+        "permutation_mean": 0.0,
+        "standalone_feature_accuracy": 1.0
+      },
+      {
+        "configuration": "RF-E2.rf.classification.correlated.v1.trees1.depth1.features2",
+        "feature": 0,
+        "permutation_mean": 0.0,
+        "standalone_feature_accuracy": 1.0
+      },
+      {
+        "configuration": "RF-E2.rf.classification.correlated.v1.trees1.depth2.features1",
+        "feature": 0,
+        "permutation_mean": 0.0,
+        "standalone_feature_accuracy": 1.0
+      },
+      {
+        "configuration": "RF-E2.rf.classification.correlated.v1.trees1.depth2.features2",
+        "feature": 0,
+        "permutation_mean": 0.0,
+        "standalone_feature_accuracy": 1.0
+      },
+      {
+        "configuration": "RF-E2.rf.classification.correlated.v1.trees7.depth1.features1",
+        "feature": 1,
+        "permutation_mean": 0.0,
+        "standalone_feature_accuracy": 1.0
+      },
+      {
+        "configuration": "RF-E2.rf.classification.correlated.v1.trees7.depth1.features2",
+        "feature": 1,
+        "permutation_mean": 0.0,
+        "standalone_feature_accuracy": 1.0
+      },
+      {
+        "configuration": "RF-E2.rf.classification.correlated.v1.trees7.depth2.features1",
+        "feature": 1,
+        "permutation_mean": 0.0,
+        "standalone_feature_accuracy": 1.0
+      },
+      {
+        "configuration": "RF-E2.rf.classification.correlated.v1.trees7.depth2.features2",
+        "feature": 1,
+        "permutation_mean": 0.0,
+        "standalone_feature_accuracy": 1.0
+      }
+    ],
+    "probability_majority_counterexample": "RF-E2.supplied.probability.0.v1",
+    "uncovered_row_occurrences_tagged": 172
+  },
+  "counts": {
+    "RF-E1": 41,
+    "RF-E2": 33
+  },
+  "dependencies": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  },
+  "installed_source_sha256": {
+    "ensemble/_base.py": "183d8e6833b9dd9129d1913e4e84b76d7992fa1eee6e3819438187a4bbabe423",
+    "ensemble/_forest.py": "ddf75afd3c1fb4d1b29e5154436ec1684e8969bffed4eef4718af53e2260ca7c",
+    "inspection/_permutation_importance.py": "bac60915136a0b9aa93ced25b0d24db8d220bbe85af863da8285b362ed0549e2",
+    "tree/_splitter.pyx": "87f7c72c481eda0f71b5fe883e28a34e6946506cc1f9b3b42e40b81082117752",
+    "tree/_utils.pyx": "8b744e733db9b606fb8277928c0699224fef0b5f81e61fd1b1d9f93eca516819",
+    "utils/_random.pxd": "a4a4e61fd8e605042a89a0b3e5e2857058f47b2929359d18ce48b9580805ec78"
+  },
+  "ledger": [
+    {
+      "id": "RF-E1.rf.regression.base.v1.trees1.depth1.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.base.v1.trees1.depth1.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.base.v1.trees1.depth2.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.base.v1.trees1.depth2.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.base.v1.trees3.depth1.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.base.v1.trees3.depth1.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.base.v1.trees3.depth2.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.base.v1.trees3.depth2.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.base.v1.trees7.depth1.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.base.v1.trees7.depth1.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.base.v1.trees7.depth2.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.base.v1.trees7.depth2.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.changed-row.v1.trees1.depth1.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.changed-row.v1.trees1.depth1.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.changed-row.v1.trees1.depth2.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.changed-row.v1.trees1.depth2.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.changed-row.v1.trees3.depth1.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.changed-row.v1.trees3.depth1.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.changed-row.v1.trees3.depth2.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.changed-row.v1.trees3.depth2.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.changed-row.v1.trees7.depth1.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.changed-row.v1.trees7.depth1.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.changed-row.v1.trees7.depth2.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.changed-row.v1.trees7.depth2.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.correlated.v1.trees1.depth1.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.correlated.v1.trees1.depth1.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.correlated.v1.trees1.depth2.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.correlated.v1.trees1.depth2.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.correlated.v1.trees3.depth1.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.correlated.v1.trees3.depth1.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.correlated.v1.trees3.depth2.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.correlated.v1.trees3.depth2.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.correlated.v1.trees7.depth1.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.correlated.v1.trees7.depth1.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.correlated.v1.trees7.depth2.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.rf.regression.correlated.v1.trees7.depth2.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.supplied.mean.0.v1",
+      "kind": "supplied-arithmetic-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.supplied.mean.1.v1",
+      "kind": "supplied-arithmetic-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.reject.bootstrap-off.v1",
+      "kind": "rejection-diagnostic",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.reject.test-selection.v1",
+      "kind": "rejection-diagnostic",
+      "passed": true
+    },
+    {
+      "id": "RF-E1.reject.group-time.v1",
+      "kind": "rejection-diagnostic",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.base.v1.trees1.depth1.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.base.v1.trees1.depth1.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.base.v1.trees1.depth2.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.base.v1.trees1.depth2.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.base.v1.trees3.depth1.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.base.v1.trees3.depth1.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.base.v1.trees3.depth2.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.base.v1.trees3.depth2.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.base.v1.trees7.depth1.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.base.v1.trees7.depth1.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.base.v1.trees7.depth2.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.base.v1.trees7.depth2.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.correlated.v1.trees1.depth1.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.correlated.v1.trees1.depth1.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.correlated.v1.trees1.depth2.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.correlated.v1.trees1.depth2.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.correlated.v1.trees3.depth1.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.correlated.v1.trees3.depth1.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.correlated.v1.trees3.depth2.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.correlated.v1.trees3.depth2.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.correlated.v1.trees7.depth1.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.correlated.v1.trees7.depth1.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.correlated.v1.trees7.depth2.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.correlated.v1.trees7.depth2.features2",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.only-0.v1.trees1.depth1.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.rf.classification.only-1.v1.trees1.depth1.features1",
+      "kind": "reference-fitted-forest",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.supplied.probability.0.v1",
+      "kind": "supplied-arithmetic-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.supplied.probability.1.v1",
+      "kind": "supplied-arithmetic-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.supplied.probability.2.v1",
+      "kind": "supplied-arithmetic-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.supplied.probability.3.v1",
+      "kind": "supplied-arithmetic-not-fitted",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.reject.bootstrap-off.v1",
+      "kind": "rejection-diagnostic",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.reject.test-selection.v1",
+      "kind": "rejection-diagnostic",
+      "passed": true
+    },
+    {
+      "id": "RF-E2.reject.group-time.v1",
+      "kind": "rejection-diagnostic",
+      "passed": true
+    }
+  ],
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "python": "3.13.16",
+  "schema": "random-forests.parity.v1",
+  "unverified": [
+    "genuine screen-reader",
+    "genuine browser zoom",
+    "genuine Google Colab",
+    "original-directory I/O reliability"
+  ],
+  "verification": "Independent weighted rational node gains/leaf outputs,source-reconstructed bootstrap/feature RNG,weighted independent tree refits,path routing,probability/mean aggregation,OOB eligible coverage,held-out permutations and repeated deterministic fitting. Semantic diagnostics are authored invariants,not library provenance validation."
+}

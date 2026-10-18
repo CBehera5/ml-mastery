@@ -1,0 +1,1463 @@
+{
+  "version": "supervised.ev01.1.0.0",
+  "states": [
+    {
+      "id": "housing-units:available:holdout",
+      "scene": "housing-units",
+      "feature": "available",
+      "plan": "holdout",
+      "expected": {
+        "featureValid": true,
+        "splitValid": true,
+        "valid": true,
+        "overlap": [],
+        "groups": [],
+        "future": [],
+        "reason": "both-valid"
+      }
+    },
+    {
+      "id": "housing-units:available:overlap",
+      "scene": "housing-units",
+      "feature": "available",
+      "plan": "overlap",
+      "expected": {
+        "featureValid": true,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [
+          "r4"
+        ],
+        "groups": [],
+        "future": [],
+        "reason": "split-invalid"
+      }
+    },
+    {
+      "id": "housing-units:available:crossed",
+      "scene": "housing-units",
+      "feature": "available",
+      "plan": "crossed",
+      "expected": {
+        "featureValid": true,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [
+          "r5"
+        ],
+        "groups": [],
+        "future": [],
+        "reason": "split-invalid"
+      }
+    },
+    {
+      "id": "housing-units:future:holdout",
+      "scene": "housing-units",
+      "feature": "future",
+      "plan": "holdout",
+      "expected": {
+        "featureValid": false,
+        "splitValid": true,
+        "valid": false,
+        "overlap": [],
+        "groups": [],
+        "future": [],
+        "reason": "feature-future"
+      }
+    },
+    {
+      "id": "housing-units:future:overlap",
+      "scene": "housing-units",
+      "feature": "future",
+      "plan": "overlap",
+      "expected": {
+        "featureValid": false,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [
+          "r4"
+        ],
+        "groups": [],
+        "future": [],
+        "reason": "both-invalid"
+      }
+    },
+    {
+      "id": "housing-units:future:crossed",
+      "scene": "housing-units",
+      "feature": "future",
+      "plan": "crossed",
+      "expected": {
+        "featureValid": false,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [
+          "r5"
+        ],
+        "groups": [],
+        "future": [],
+        "reason": "both-invalid"
+      }
+    },
+    {
+      "id": "housing-future:available:overlap",
+      "scene": "housing-future",
+      "feature": "available",
+      "plan": "overlap",
+      "expected": {
+        "featureValid": true,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [
+          "r4"
+        ],
+        "groups": [],
+        "future": [
+          "r4"
+        ],
+        "reason": "split-invalid"
+      }
+    },
+    {
+      "id": "housing-future:available:crossed",
+      "scene": "housing-future",
+      "feature": "available",
+      "plan": "crossed",
+      "expected": {
+        "featureValid": true,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [],
+        "groups": [],
+        "future": [
+          "r5",
+          "r6"
+        ],
+        "reason": "split-invalid"
+      }
+    },
+    {
+      "id": "housing-future:available:holdout",
+      "scene": "housing-future",
+      "feature": "available",
+      "plan": "holdout",
+      "expected": {
+        "featureValid": true,
+        "splitValid": true,
+        "valid": true,
+        "overlap": [],
+        "groups": [],
+        "future": [],
+        "reason": "both-valid"
+      }
+    },
+    {
+      "id": "housing-future:future:overlap",
+      "scene": "housing-future",
+      "feature": "future",
+      "plan": "overlap",
+      "expected": {
+        "featureValid": false,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [
+          "r4"
+        ],
+        "groups": [],
+        "future": [
+          "r4"
+        ],
+        "reason": "both-invalid"
+      }
+    },
+    {
+      "id": "housing-future:future:crossed",
+      "scene": "housing-future",
+      "feature": "future",
+      "plan": "crossed",
+      "expected": {
+        "featureValid": false,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [],
+        "groups": [],
+        "future": [
+          "r5",
+          "r6"
+        ],
+        "reason": "both-invalid"
+      }
+    },
+    {
+      "id": "housing-future:future:holdout",
+      "scene": "housing-future",
+      "feature": "future",
+      "plan": "holdout",
+      "expected": {
+        "featureValid": false,
+        "splitValid": true,
+        "valid": false,
+        "overlap": [],
+        "groups": [],
+        "future": [],
+        "reason": "feature-future"
+      }
+    },
+    {
+      "id": "churn-customers:available:crossed",
+      "scene": "churn-customers",
+      "feature": "available",
+      "plan": "crossed",
+      "expected": {
+        "featureValid": true,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [],
+        "groups": [
+          "g1",
+          "g2",
+          "g3"
+        ],
+        "future": [],
+        "reason": "split-invalid"
+      }
+    },
+    {
+      "id": "churn-customers:available:holdout",
+      "scene": "churn-customers",
+      "feature": "available",
+      "plan": "holdout",
+      "expected": {
+        "featureValid": true,
+        "splitValid": true,
+        "valid": true,
+        "overlap": [],
+        "groups": [],
+        "future": [],
+        "reason": "both-valid"
+      }
+    },
+    {
+      "id": "churn-customers:available:overlap",
+      "scene": "churn-customers",
+      "feature": "available",
+      "plan": "overlap",
+      "expected": {
+        "featureValid": true,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [
+          "r4"
+        ],
+        "groups": [
+          "g2"
+        ],
+        "future": [],
+        "reason": "split-invalid"
+      }
+    },
+    {
+      "id": "churn-customers:future:crossed",
+      "scene": "churn-customers",
+      "feature": "future",
+      "plan": "crossed",
+      "expected": {
+        "featureValid": false,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [],
+        "groups": [
+          "g1",
+          "g2",
+          "g3"
+        ],
+        "future": [],
+        "reason": "both-invalid"
+      }
+    },
+    {
+      "id": "churn-customers:future:holdout",
+      "scene": "churn-customers",
+      "feature": "future",
+      "plan": "holdout",
+      "expected": {
+        "featureValid": false,
+        "splitValid": true,
+        "valid": false,
+        "overlap": [],
+        "groups": [],
+        "future": [],
+        "reason": "feature-future"
+      }
+    },
+    {
+      "id": "churn-customers:future:overlap",
+      "scene": "churn-customers",
+      "feature": "future",
+      "plan": "overlap",
+      "expected": {
+        "featureValid": false,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [
+          "r4"
+        ],
+        "groups": [
+          "g2"
+        ],
+        "future": [],
+        "reason": "both-invalid"
+      }
+    },
+    {
+      "id": "churn-future:available:holdout",
+      "scene": "churn-future",
+      "feature": "available",
+      "plan": "holdout",
+      "expected": {
+        "featureValid": true,
+        "splitValid": true,
+        "valid": true,
+        "overlap": [],
+        "groups": [],
+        "future": [],
+        "reason": "both-valid"
+      }
+    },
+    {
+      "id": "churn-future:available:overlap",
+      "scene": "churn-future",
+      "feature": "available",
+      "plan": "overlap",
+      "expected": {
+        "featureValid": true,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [
+          "r4"
+        ],
+        "groups": [],
+        "future": [
+          "r4"
+        ],
+        "reason": "split-invalid"
+      }
+    },
+    {
+      "id": "churn-future:available:crossed",
+      "scene": "churn-future",
+      "feature": "available",
+      "plan": "crossed",
+      "expected": {
+        "featureValid": true,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [],
+        "groups": [],
+        "future": [
+          "r5",
+          "r6"
+        ],
+        "reason": "split-invalid"
+      }
+    },
+    {
+      "id": "churn-future:future:holdout",
+      "scene": "churn-future",
+      "feature": "future",
+      "plan": "holdout",
+      "expected": {
+        "featureValid": false,
+        "splitValid": true,
+        "valid": false,
+        "overlap": [],
+        "groups": [],
+        "future": [],
+        "reason": "feature-future"
+      }
+    },
+    {
+      "id": "churn-future:future:overlap",
+      "scene": "churn-future",
+      "feature": "future",
+      "plan": "overlap",
+      "expected": {
+        "featureValid": false,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [
+          "r4"
+        ],
+        "groups": [],
+        "future": [
+          "r4"
+        ],
+        "reason": "both-invalid"
+      }
+    },
+    {
+      "id": "churn-future:future:crossed",
+      "scene": "churn-future",
+      "feature": "future",
+      "plan": "crossed",
+      "expected": {
+        "featureValid": false,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [],
+        "groups": [],
+        "future": [
+          "r5",
+          "r6"
+        ],
+        "reason": "both-invalid"
+      }
+    },
+    {
+      "id": "docs-groups:available:overlap",
+      "scene": "docs-groups",
+      "feature": "available",
+      "plan": "overlap",
+      "expected": {
+        "featureValid": true,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [
+          "r4"
+        ],
+        "groups": [
+          "g2"
+        ],
+        "future": [],
+        "reason": "split-invalid"
+      }
+    },
+    {
+      "id": "docs-groups:available:crossed",
+      "scene": "docs-groups",
+      "feature": "available",
+      "plan": "crossed",
+      "expected": {
+        "featureValid": true,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [],
+        "groups": [
+          "g1",
+          "g2",
+          "g3"
+        ],
+        "future": [],
+        "reason": "split-invalid"
+      }
+    },
+    {
+      "id": "docs-groups:available:holdout",
+      "scene": "docs-groups",
+      "feature": "available",
+      "plan": "holdout",
+      "expected": {
+        "featureValid": true,
+        "splitValid": true,
+        "valid": true,
+        "overlap": [],
+        "groups": [],
+        "future": [],
+        "reason": "both-valid"
+      }
+    },
+    {
+      "id": "docs-groups:future:overlap",
+      "scene": "docs-groups",
+      "feature": "future",
+      "plan": "overlap",
+      "expected": {
+        "featureValid": false,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [
+          "r4"
+        ],
+        "groups": [
+          "g2"
+        ],
+        "future": [],
+        "reason": "both-invalid"
+      }
+    },
+    {
+      "id": "docs-groups:future:crossed",
+      "scene": "docs-groups",
+      "feature": "future",
+      "plan": "crossed",
+      "expected": {
+        "featureValid": false,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [],
+        "groups": [
+          "g1",
+          "g2",
+          "g3"
+        ],
+        "future": [],
+        "reason": "both-invalid"
+      }
+    },
+    {
+      "id": "docs-groups:future:holdout",
+      "scene": "docs-groups",
+      "feature": "future",
+      "plan": "holdout",
+      "expected": {
+        "featureValid": false,
+        "splitValid": true,
+        "valid": false,
+        "overlap": [],
+        "groups": [],
+        "future": [],
+        "reason": "feature-future"
+      }
+    },
+    {
+      "id": "docs-future:available:crossed",
+      "scene": "docs-future",
+      "feature": "available",
+      "plan": "crossed",
+      "expected": {
+        "featureValid": true,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [],
+        "groups": [
+          "g1",
+          "g2",
+          "g3"
+        ],
+        "future": [
+          "r3",
+          "r5"
+        ],
+        "reason": "split-invalid"
+      }
+    },
+    {
+      "id": "docs-future:available:holdout",
+      "scene": "docs-future",
+      "feature": "available",
+      "plan": "holdout",
+      "expected": {
+        "featureValid": true,
+        "splitValid": true,
+        "valid": true,
+        "overlap": [],
+        "groups": [],
+        "future": [],
+        "reason": "both-valid"
+      }
+    },
+    {
+      "id": "docs-future:available:overlap",
+      "scene": "docs-future",
+      "feature": "available",
+      "plan": "overlap",
+      "expected": {
+        "featureValid": true,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [
+          "r4"
+        ],
+        "groups": [
+          "g2"
+        ],
+        "future": [
+          "r4"
+        ],
+        "reason": "split-invalid"
+      }
+    },
+    {
+      "id": "docs-future:future:crossed",
+      "scene": "docs-future",
+      "feature": "future",
+      "plan": "crossed",
+      "expected": {
+        "featureValid": false,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [],
+        "groups": [
+          "g1",
+          "g2",
+          "g3"
+        ],
+        "future": [
+          "r3",
+          "r5"
+        ],
+        "reason": "both-invalid"
+      }
+    },
+    {
+      "id": "docs-future:future:holdout",
+      "scene": "docs-future",
+      "feature": "future",
+      "plan": "holdout",
+      "expected": {
+        "featureValid": false,
+        "splitValid": true,
+        "valid": false,
+        "overlap": [],
+        "groups": [],
+        "future": [],
+        "reason": "feature-future"
+      }
+    },
+    {
+      "id": "docs-future:future:overlap",
+      "scene": "docs-future",
+      "feature": "future",
+      "plan": "overlap",
+      "expected": {
+        "featureValid": false,
+        "splitValid": false,
+        "valid": false,
+        "overlap": [
+          "r4"
+        ],
+        "groups": [
+          "g2"
+        ],
+        "future": [
+          "r4"
+        ],
+        "reason": "both-invalid"
+      }
+    }
+  ],
+  "independent": [
+    {
+      "family": {
+        "id": "EV01.O1.test-A",
+        "objective": "EV01.O1",
+        "critical": false,
+        "prompt": "At t=0 predict cancellation during days 1\u201330: no cancellation=0, cancellation=1. Choose the target and its unit before any model is selected.",
+        "code": "",
+        "atoms": [
+          {
+            "id": "target",
+            "label": "Target and unit",
+            "kind": "slots",
+            "slots": [
+              {
+                "id": "target",
+                "label": "What is predicted?",
+                "options": [
+                  {
+                    "id": "price",
+                    "label": "Future sale price"
+                  },
+                  {
+                    "id": "churn",
+                    "label": "Cancellation during days 1\u201330"
+                  },
+                  {
+                    "id": "quality",
+                    "label": "Human-reviewed quality of the submitted version"
+                  }
+                ]
+              },
+              {
+                "id": "unit",
+                "label": "Output unit",
+                "options": [
+                  {
+                    "id": "currency",
+                    "label": "Thousands of dollars"
+                  },
+                  {
+                    "id": "binary",
+                    "label": "Binary label 0/1; not currency"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "accepted": [
+          [
+            {
+              "kind": "slots",
+              "entries": [
+                {
+                  "slotId": "target",
+                  "optionId": "churn"
+                },
+                {
+                  "slotId": "unit",
+                  "optionId": "binary"
+                }
+              ]
+            }
+          ]
+        ],
+        "explanation": "The deployment question fixes both the target and units. A human label is not a numeric price or an automatically reliable LLM score.",
+        "remediation": "The deployment question fixes both the target and units. A human label is not a numeric price or an automatically reliable LLM score. Revisit the changed-condition example for this objective."
+      },
+      "oracle": {
+        "objective": 1,
+        "scenario": "churn-future",
+        "feature": "future",
+        "plan": "crossed",
+        "target": "churn",
+        "unit": "binary"
+      }
+    },
+    {
+      "family": {
+        "id": "EV01.O1.test-B",
+        "objective": "EV01.O1",
+        "critical": false,
+        "prompt": "At submission t=0 predict human-reviewed quality of this version: Good=0, Needs Improvement=1. Choose the target and its unit before any model is selected.",
+        "code": "",
+        "atoms": [
+          {
+            "id": "target",
+            "label": "Target and unit",
+            "kind": "slots",
+            "slots": [
+              {
+                "id": "target",
+                "label": "What is predicted?",
+                "options": [
+                  {
+                    "id": "price",
+                    "label": "Future sale price"
+                  },
+                  {
+                    "id": "churn",
+                    "label": "Cancellation during days 1\u201330"
+                  },
+                  {
+                    "id": "quality",
+                    "label": "Human-reviewed quality of the submitted version"
+                  }
+                ]
+              },
+              {
+                "id": "unit",
+                "label": "Output unit",
+                "options": [
+                  {
+                    "id": "currency",
+                    "label": "Thousands of dollars"
+                  },
+                  {
+                    "id": "binary",
+                    "label": "Binary label 0/1; not currency"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "accepted": [
+          [
+            {
+              "kind": "slots",
+              "entries": [
+                {
+                  "slotId": "target",
+                  "optionId": "quality"
+                },
+                {
+                  "slotId": "unit",
+                  "optionId": "binary"
+                }
+              ]
+            }
+          ]
+        ],
+        "explanation": "The deployment question fixes both the target and units. A human label is not a numeric price or an automatically reliable LLM score.",
+        "remediation": "The deployment question fixes both the target and units. A human label is not a numeric price or an automatically reliable LLM score. Revisit the changed-condition example for this objective."
+      },
+      "oracle": {
+        "objective": 1,
+        "scenario": "docs-groups",
+        "feature": "available",
+        "plan": "holdout",
+        "target": "quality",
+        "unit": "binary"
+      }
+    },
+    {
+      "family": {
+        "id": "EV01.O1.test-C",
+        "objective": "EV01.O1",
+        "critical": false,
+        "prompt": "At submission t=0 predict human-reviewed quality of this version: Good=0, Needs Improvement=1. Choose the target and its unit before any model is selected.",
+        "code": "",
+        "atoms": [
+          {
+            "id": "target",
+            "label": "Target and unit",
+            "kind": "slots",
+            "slots": [
+              {
+                "id": "target",
+                "label": "What is predicted?",
+                "options": [
+                  {
+                    "id": "price",
+                    "label": "Future sale price"
+                  },
+                  {
+                    "id": "churn",
+                    "label": "Cancellation during days 1\u201330"
+                  },
+                  {
+                    "id": "quality",
+                    "label": "Human-reviewed quality of the submitted version"
+                  }
+                ]
+              },
+              {
+                "id": "unit",
+                "label": "Output unit",
+                "options": [
+                  {
+                    "id": "currency",
+                    "label": "Thousands of dollars"
+                  },
+                  {
+                    "id": "binary",
+                    "label": "Binary label 0/1; not currency"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "accepted": [
+          [
+            {
+              "kind": "slots",
+              "entries": [
+                {
+                  "slotId": "target",
+                  "optionId": "quality"
+                },
+                {
+                  "slotId": "unit",
+                  "optionId": "binary"
+                }
+              ]
+            }
+          ]
+        ],
+        "explanation": "The deployment question fixes both the target and units. A human label is not a numeric price or an automatically reliable LLM score.",
+        "remediation": "The deployment question fixes both the target and units. A human label is not a numeric price or an automatically reliable LLM score. Revisit the changed-condition example for this objective."
+      },
+      "oracle": {
+        "objective": 1,
+        "scenario": "docs-future",
+        "feature": "future",
+        "plan": "crossed",
+        "target": "quality",
+        "unit": "binary"
+      }
+    },
+    {
+      "family": {
+        "id": "EV01.O2.test-A",
+        "objective": "EV01.O2",
+        "critical": true,
+        "prompt": "At submission t=0 predict human-reviewed quality of this version: Good=0, Needs Improvement=1. May submitted text at review request (observed at t=-1) be used at prediction time t=0?",
+        "code": "",
+        "atoms": [
+          {
+            "id": "decision",
+            "label": "Feature permission",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "allow",
+                "label": "Available at prediction time"
+              },
+              {
+                "id": "reject",
+                "label": "Unavailable at prediction time"
+              }
+            ]
+          },
+          {
+            "id": "reason",
+            "label": "Explain the time boundary",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "before",
+                "label": "It exists no later than t=0; later labels remain targets, not inputs."
+              },
+              {
+                "id": "after",
+                "label": "It only exists after t=0; a high correlation cannot make it available."
+              },
+              {
+                "id": "correlation",
+                "label": "Any strongly correlated feature is permitted, including future information."
+              }
+            ]
+          }
+        ],
+        "accepted": [
+          [
+            {
+              "kind": "choice",
+              "optionId": "allow"
+            },
+            {
+              "kind": "choice",
+              "optionId": "before"
+            }
+          ]
+        ],
+        "explanation": "Only information available by the prediction moment is eligible. Later outcomes can supply training targets after observation; they cannot become prediction-time features. Both the permission and its reason matter.",
+        "remediation": "Only information available by the prediction moment is eligible. Later outcomes can supply training targets after observation; they cannot become prediction-time features. Both the permission and its reason matter. Revisit the changed-condition example for this objective."
+      },
+      "oracle": {
+        "objective": 2,
+        "scenario": "docs-groups",
+        "feature": "available",
+        "plan": "holdout",
+        "target": "quality",
+        "unit": "binary"
+      }
+    },
+    {
+      "family": {
+        "id": "EV01.O2.test-B",
+        "objective": "EV01.O2",
+        "critical": true,
+        "prompt": "At submission t=0 predict human-reviewed quality of this version: Good=0, Needs Improvement=1. May post-review correction flag (observed at t=1) be used at prediction time t=0?",
+        "code": "",
+        "atoms": [
+          {
+            "id": "decision",
+            "label": "Feature permission",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "allow",
+                "label": "Available at prediction time"
+              },
+              {
+                "id": "reject",
+                "label": "Unavailable at prediction time"
+              }
+            ]
+          },
+          {
+            "id": "reason",
+            "label": "Explain the time boundary",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "before",
+                "label": "It exists no later than t=0; later labels remain targets, not inputs."
+              },
+              {
+                "id": "after",
+                "label": "It only exists after t=0; a high correlation cannot make it available."
+              },
+              {
+                "id": "correlation",
+                "label": "Any strongly correlated feature is permitted, including future information."
+              }
+            ]
+          }
+        ],
+        "accepted": [
+          [
+            {
+              "kind": "choice",
+              "optionId": "reject"
+            },
+            {
+              "kind": "choice",
+              "optionId": "after"
+            }
+          ]
+        ],
+        "explanation": "Only information available by the prediction moment is eligible. Later outcomes can supply training targets after observation; they cannot become prediction-time features. Both the permission and its reason matter.",
+        "remediation": "Only information available by the prediction moment is eligible. Later outcomes can supply training targets after observation; they cannot become prediction-time features. Both the permission and its reason matter. Revisit the changed-condition example for this objective."
+      },
+      "oracle": {
+        "objective": 2,
+        "scenario": "docs-future",
+        "feature": "future",
+        "plan": "crossed",
+        "target": "quality",
+        "unit": "binary"
+      }
+    },
+    {
+      "family": {
+        "id": "EV01.O2.test-C",
+        "objective": "EV01.O2",
+        "critical": true,
+        "prompt": "Predict the sale price in thousands of dollars from a listing at t=0, with sale outcome after t=0. May area at listing (observed at t=-1) be used at prediction time t=0?",
+        "code": "",
+        "atoms": [
+          {
+            "id": "decision",
+            "label": "Feature permission",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "allow",
+                "label": "Available at prediction time"
+              },
+              {
+                "id": "reject",
+                "label": "Unavailable at prediction time"
+              }
+            ]
+          },
+          {
+            "id": "reason",
+            "label": "Explain the time boundary",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "before",
+                "label": "It exists no later than t=0; later labels remain targets, not inputs."
+              },
+              {
+                "id": "after",
+                "label": "It only exists after t=0; a high correlation cannot make it available."
+              },
+              {
+                "id": "correlation",
+                "label": "Any strongly correlated feature is permitted, including future information."
+              }
+            ]
+          }
+        ],
+        "accepted": [
+          [
+            {
+              "kind": "choice",
+              "optionId": "allow"
+            },
+            {
+              "kind": "choice",
+              "optionId": "before"
+            }
+          ]
+        ],
+        "explanation": "Only information available by the prediction moment is eligible. Later outcomes can supply training targets after observation; they cannot become prediction-time features. Both the permission and its reason matter.",
+        "remediation": "Only information available by the prediction moment is eligible. Later outcomes can supply training targets after observation; they cannot become prediction-time features. Both the permission and its reason matter. Revisit the changed-condition example for this objective."
+      },
+      "oracle": {
+        "objective": 2,
+        "scenario": "housing-units",
+        "feature": "available",
+        "plan": "holdout",
+        "target": "price",
+        "unit": "currency"
+      }
+    },
+    {
+      "family": {
+        "id": "EV01.O3.test-A",
+        "objective": "EV01.O3",
+        "critical": false,
+        "prompt": "At submission t=0 predict human-reviewed quality of this version: Good=0, Needs Improvement=1. Deployment question: Documentation: future revisions from unseen families. Proposed plan: Train r1,r3,r5; test r2,r4,r6. May this split support that question?",
+        "code": "",
+        "atoms": [
+          {
+            "id": "decision",
+            "label": "Split permission",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "valid",
+                "label": "Valid for this declared deployment question"
+              },
+              {
+                "id": "invalid",
+                "label": "Invalid for this declared deployment question"
+              }
+            ]
+          },
+          {
+            "id": "reason",
+            "label": "Explain split reasoning",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "boundary",
+                "label": "Rows are disjoint and the required unseen-group/time boundary is preserved."
+              },
+              {
+                "id": "crossing",
+                "label": "The required row/group/time boundary is crossed; the estimate answers a different or contaminated question."
+              },
+              {
+                "id": "random",
+                "label": "A random-looking split is always valid regardless of groups or dates."
+              }
+            ]
+          }
+        ],
+        "accepted": [
+          [
+            {
+              "kind": "choice",
+              "optionId": "invalid"
+            },
+            {
+              "kind": "choice",
+              "optionId": "crossing"
+            }
+          ]
+        ],
+        "explanation": "Independent new units can use disjoint rows; unseen customers/templates require disjoint groups; future prediction requires earlier training cohorts. A row split alone cannot guarantee all three.",
+        "remediation": "Independent new units can use disjoint rows; unseen customers/templates require disjoint groups; future prediction requires earlier training cohorts. A row split alone cannot guarantee all three. Revisit the changed-condition example for this objective."
+      },
+      "oracle": {
+        "objective": 3,
+        "scenario": "docs-future",
+        "feature": "future",
+        "plan": "crossed",
+        "target": "quality",
+        "unit": "binary"
+      }
+    },
+    {
+      "family": {
+        "id": "EV01.O3.test-B",
+        "objective": "EV01.O3",
+        "critical": false,
+        "prompt": "Predict the sale price in thousands of dollars from a listing at t=0, with sale outcome after t=0. Deployment question: House price: new independent homes. Proposed plan: Train r1\u2013r4; test r5\u2013r6. May this split support that question?",
+        "code": "",
+        "atoms": [
+          {
+            "id": "decision",
+            "label": "Split permission",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "valid",
+                "label": "Valid for this declared deployment question"
+              },
+              {
+                "id": "invalid",
+                "label": "Invalid for this declared deployment question"
+              }
+            ]
+          },
+          {
+            "id": "reason",
+            "label": "Explain split reasoning",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "boundary",
+                "label": "Rows are disjoint and the required unseen-group/time boundary is preserved."
+              },
+              {
+                "id": "crossing",
+                "label": "The required row/group/time boundary is crossed; the estimate answers a different or contaminated question."
+              },
+              {
+                "id": "random",
+                "label": "A random-looking split is always valid regardless of groups or dates."
+              }
+            ]
+          }
+        ],
+        "accepted": [
+          [
+            {
+              "kind": "choice",
+              "optionId": "valid"
+            },
+            {
+              "kind": "choice",
+              "optionId": "boundary"
+            }
+          ]
+        ],
+        "explanation": "Independent new units can use disjoint rows; unseen customers/templates require disjoint groups; future prediction requires earlier training cohorts. A row split alone cannot guarantee all three.",
+        "remediation": "Independent new units can use disjoint rows; unseen customers/templates require disjoint groups; future prediction requires earlier training cohorts. A row split alone cannot guarantee all three. Revisit the changed-condition example for this objective."
+      },
+      "oracle": {
+        "objective": 3,
+        "scenario": "housing-units",
+        "feature": "available",
+        "plan": "holdout",
+        "target": "price",
+        "unit": "currency"
+      }
+    },
+    {
+      "family": {
+        "id": "EV01.O3.test-C",
+        "objective": "EV01.O3",
+        "critical": false,
+        "prompt": "Predict the sale price in thousands of dollars from a listing at t=0, with sale outcome after t=0. Deployment question: House price: future sales. Proposed plan: Train r1,r5,r6; test r2,r3,r4. May this split support that question?",
+        "code": "",
+        "atoms": [
+          {
+            "id": "decision",
+            "label": "Split permission",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "valid",
+                "label": "Valid for this declared deployment question"
+              },
+              {
+                "id": "invalid",
+                "label": "Invalid for this declared deployment question"
+              }
+            ]
+          },
+          {
+            "id": "reason",
+            "label": "Explain split reasoning",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "boundary",
+                "label": "Rows are disjoint and the required unseen-group/time boundary is preserved."
+              },
+              {
+                "id": "crossing",
+                "label": "The required row/group/time boundary is crossed; the estimate answers a different or contaminated question."
+              },
+              {
+                "id": "random",
+                "label": "A random-looking split is always valid regardless of groups or dates."
+              }
+            ]
+          }
+        ],
+        "accepted": [
+          [
+            {
+              "kind": "choice",
+              "optionId": "invalid"
+            },
+            {
+              "kind": "choice",
+              "optionId": "crossing"
+            }
+          ]
+        ],
+        "explanation": "Independent new units can use disjoint rows; unseen customers/templates require disjoint groups; future prediction requires earlier training cohorts. A row split alone cannot guarantee all three.",
+        "remediation": "Independent new units can use disjoint rows; unseen customers/templates require disjoint groups; future prediction requires earlier training cohorts. A row split alone cannot guarantee all three. Revisit the changed-condition example for this objective."
+      },
+      "oracle": {
+        "objective": 3,
+        "scenario": "housing-future",
+        "feature": "future",
+        "plan": "crossed",
+        "target": "price",
+        "unit": "currency"
+      }
+    },
+    {
+      "family": {
+        "id": "EV01.O4.test-A",
+        "objective": "EV01.O4",
+        "critical": false,
+        "prompt": "Predict the sale price in thousands of dollars from a listing at t=0, with sale outcome after t=0. Observational prediction only. Evaluate this statement: Changing this predictive feature is proven to improve the outcome.",
+        "code": "",
+        "atoms": [
+          {
+            "id": "decision",
+            "label": "Conclusion",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "supported",
+                "label": "Supported predictive limitation"
+              },
+              {
+                "id": "unsupported",
+                "label": "Unsupported causal claim"
+              }
+            ]
+          },
+          {
+            "id": "reason",
+            "label": "Explain the claim",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "observation",
+                "label": "Predictive association alone does not identify an intervention effect."
+              },
+              {
+                "id": "accuracy",
+                "label": "A sufficiently accurate predictor automatically proves causation."
+              }
+            ]
+          }
+        ],
+        "accepted": [
+          [
+            {
+              "kind": "choice",
+              "optionId": "unsupported"
+            },
+            {
+              "kind": "choice",
+              "optionId": "observation"
+            }
+          ]
+        ],
+        "explanation": "Association can support a scoped prediction claim, not the claim that changing a feature changes the outcome. Confounding and selection can produce predictive patterns.",
+        "remediation": "Association can support a scoped prediction claim, not the claim that changing a feature changes the outcome. Confounding and selection can produce predictive patterns. Revisit the changed-condition example for this objective."
+      },
+      "oracle": {
+        "objective": 4,
+        "scenario": "housing-units",
+        "feature": "available",
+        "plan": "holdout",
+        "target": "price",
+        "unit": "currency"
+      }
+    },
+    {
+      "family": {
+        "id": "EV01.O4.test-B",
+        "objective": "EV01.O4",
+        "critical": false,
+        "prompt": "Predict the sale price in thousands of dollars from a listing at t=0, with sale outcome after t=0. Observational prediction only. Evaluate this statement: This feature predicts the observed label in this dataset; an intervention benefit is not established.",
+        "code": "",
+        "atoms": [
+          {
+            "id": "decision",
+            "label": "Conclusion",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "supported",
+                "label": "Supported predictive limitation"
+              },
+              {
+                "id": "unsupported",
+                "label": "Unsupported causal claim"
+              }
+            ]
+          },
+          {
+            "id": "reason",
+            "label": "Explain the claim",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "observation",
+                "label": "Predictive association alone does not identify an intervention effect."
+              },
+              {
+                "id": "accuracy",
+                "label": "A sufficiently accurate predictor automatically proves causation."
+              }
+            ]
+          }
+        ],
+        "accepted": [
+          [
+            {
+              "kind": "choice",
+              "optionId": "supported"
+            },
+            {
+              "kind": "choice",
+              "optionId": "observation"
+            }
+          ]
+        ],
+        "explanation": "Association can support a scoped prediction claim, not the claim that changing a feature changes the outcome. Confounding and selection can produce predictive patterns.",
+        "remediation": "Association can support a scoped prediction claim, not the claim that changing a feature changes the outcome. Confounding and selection can produce predictive patterns. Revisit the changed-condition example for this objective."
+      },
+      "oracle": {
+        "objective": 4,
+        "scenario": "housing-future",
+        "feature": "future",
+        "plan": "crossed",
+        "target": "price",
+        "unit": "currency"
+      }
+    },
+    {
+      "family": {
+        "id": "EV01.O4.test-C",
+        "objective": "EV01.O4",
+        "critical": false,
+        "prompt": "At t=0 predict cancellation during days 1\u201330: no cancellation=0, cancellation=1. Observational prediction only. Evaluate this statement: Changing this predictive feature is proven to improve the outcome.",
+        "code": "",
+        "atoms": [
+          {
+            "id": "decision",
+            "label": "Conclusion",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "supported",
+                "label": "Supported predictive limitation"
+              },
+              {
+                "id": "unsupported",
+                "label": "Unsupported causal claim"
+              }
+            ]
+          },
+          {
+            "id": "reason",
+            "label": "Explain the claim",
+            "kind": "choice",
+            "options": [
+              {
+                "id": "observation",
+                "label": "Predictive association alone does not identify an intervention effect."
+              },
+              {
+                "id": "accuracy",
+                "label": "A sufficiently accurate predictor automatically proves causation."
+              }
+            ]
+          }
+        ],
+        "accepted": [
+          [
+            {
+              "kind": "choice",
+              "optionId": "unsupported"
+            },
+            {
+              "kind": "choice",
+              "optionId": "observation"
+            }
+          ]
+        ],
+        "explanation": "Association can support a scoped prediction claim, not the claim that changing a feature changes the outcome. Confounding and selection can produce predictive patterns.",
+        "remediation": "Association can support a scoped prediction claim, not the claim that changing a feature changes the outcome. Confounding and selection can produce predictive patterns. Revisit the changed-condition example for this objective."
+      },
+      "oracle": {
+        "objective": 4,
+        "scenario": "churn-customers",
+        "feature": "available",
+        "plan": "holdout",
+        "target": "churn",
+        "unit": "binary"
+      }
+    }
+  ]
+}

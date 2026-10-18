@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mlmathlab.local/schemas/learning-evidence.v1.schema.json",
+  "title": "Learning evidence v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "curriculumVersion", "lessons", "objectives", "assessmentAttempts", "masteryEvidence", "projectMilestones"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "curriculumVersion": { "type": "string", "minLength": 1 },
+    "lessons": { "type": "object", "additionalProperties": { "$ref": "#/$defs/lessonEvidence" } },
+    "objectives": { "type": "object", "additionalProperties": { "$ref": "#/$defs/objectiveEvidence" } },
+    "assessmentAttempts": { "type": "array", "items": { "$ref": "#/$defs/attempt" } },
+    "masteryEvidence": { "type": "array", "items": { "$ref": "#/$defs/mastery" } },
+    "projectMilestones": { "type": "array", "items": { "$ref": "#/$defs/milestone" } }
+  },
+  "$defs": {
+    "lessonEvidence": { "type": "object", "required": ["state", "completedObjectiveIds", "updatedAt"], "properties": { "state": { "enum": ["visited", "started", "completed", "assessed"] }, "completedObjectiveIds": { "type": "array", "items": { "type": "string" } }, "updatedAt": { "type": "string", "format": "date-time" } } },
+    "objectiveEvidence": { "type": "object", "required": ["completed", "mastered", "evidenceIds", "updatedAt"], "properties": { "completed": { "type": "boolean" }, "mastered": { "type": "boolean" }, "evidenceIds": { "type": "array", "items": { "type": "string" } }, "updatedAt": { "type": "string", "format": "date-time" } } },
+    "attempt": { "type": "object", "required": ["id", "assessmentId", "variantId", "score", "maxScore", "objectiveIds", "submittedAt"], "properties": { "id": { "type": "string" }, "assessmentId": { "type": "string" }, "variantId": { "type": "string" }, "score": { "type": "number", "minimum": 0 }, "maxScore": { "type": "number", "exclusiveMinimum": 0 }, "objectiveIds": { "type": "array", "items": { "type": "string" } }, "submittedAt": { "type": "string", "format": "date-time" } } },
+    "mastery": { "type": "object", "required": ["id", "objectiveId", "sourceType", "sourceId", "level", "awardedAt"], "properties": { "id": { "type": "string" }, "objectiveId": { "type": "string" }, "sourceType": { "enum": ["assessment", "project"] }, "sourceId": { "type": "string" }, "level": { "enum": [1, 2, 3] }, "awardedAt": { "type": "string", "format": "date-time" } } },
+    "milestone": { "type": "object", "required": ["projectId", "milestoneId", "completed", "updatedAt"], "properties": { "projectId": { "type": "string" }, "milestoneId": { "type": "string" }, "completed": { "type": "boolean" }, "evidenceId": { "type": "string" }, "updatedAt": { "type": "string", "format": "date-time" } } }
+  }
+}

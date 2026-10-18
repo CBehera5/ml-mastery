@@ -1,0 +1,598 @@
+{
+  "contract": "probability.v1",
+  "events": [
+    {
+      "input": [
+        8,
+        12,
+        2,
+        78
+      ],
+      "trace": {
+        "contract": "probability.v1",
+        "total": 100,
+        "pA": 0.2,
+        "pB": 0.1,
+        "joint": 0.08,
+        "union": 0.22,
+        "complementA": 0.8,
+        "conditional": 0.8,
+        "independent": false
+      }
+    },
+    {
+      "input": [
+        25,
+        25,
+        25,
+        25
+      ],
+      "trace": {
+        "contract": "probability.v1",
+        "total": 100,
+        "pA": 0.5,
+        "pB": 0.5,
+        "joint": 0.25,
+        "union": 0.75,
+        "complementA": 0.5,
+        "conditional": 0.5,
+        "independent": true
+      }
+    },
+    {
+      "input": [
+        0,
+        20,
+        0,
+        80
+      ],
+      "trace": {
+        "contract": "probability.v1",
+        "total": 100,
+        "pA": 0.2,
+        "pB": 0.0,
+        "joint": 0.0,
+        "union": 0.2,
+        "complementA": 0.8,
+        "conditional": null,
+        "independent": true
+      }
+    }
+  ],
+  "bayes": [
+    {
+      "input": [
+        0.01,
+        0.9,
+        0.1
+      ],
+      "trace": {
+        "contract": "probability.v1",
+        "prior": 0.01,
+        "sensitivity": 0.9,
+        "falsePositiveRate": 0.1,
+        "truePositive": 0.009000000000000001,
+        "falsePositive": 0.099,
+        "evidence": 0.10800000000000001,
+        "posterior": 0.08333333333333333
+      }
+    },
+    {
+      "input": [
+        0.5,
+        0.9,
+        0.1
+      ],
+      "trace": {
+        "contract": "probability.v1",
+        "prior": 0.5,
+        "sensitivity": 0.9,
+        "falsePositiveRate": 0.1,
+        "truePositive": 0.45,
+        "falsePositive": 0.05,
+        "evidence": 0.5,
+        "posterior": 0.9
+      }
+    },
+    {
+      "input": [
+        0.5,
+        0,
+        0
+      ],
+      "trace": {
+        "contract": "probability.v1",
+        "prior": 0.5,
+        "sensitivity": 0,
+        "falsePositiveRate": 0,
+        "truePositive": 0.0,
+        "falsePositive": 0.0,
+        "evidence": 0.0,
+        "posterior": null
+      }
+    },
+    {
+      "input": [
+        0,
+        0.9,
+        0.1
+      ],
+      "trace": {
+        "contract": "probability.v1",
+        "prior": 0,
+        "sensitivity": 0.9,
+        "falsePositiveRate": 0.1,
+        "truePositive": 0.0,
+        "falsePositive": 0.1,
+        "evidence": 0.1,
+        "posterior": 0.0
+      }
+    },
+    {
+      "input": [
+        1,
+        0.9,
+        0.1
+      ],
+      "trace": {
+        "contract": "probability.v1",
+        "prior": 1,
+        "sensitivity": 0.9,
+        "falsePositiveRate": 0.1,
+        "truePositive": 0.9,
+        "falsePositive": 0.0,
+        "evidence": 0.9,
+        "posterior": 1.0
+      }
+    }
+  ],
+  "binomial": [
+    {
+      "input": [
+        1,
+        0.3
+      ],
+      "trace": {
+        "contract": "probability.v1",
+        "mass": [
+          0.7,
+          0.3
+        ],
+        "cdf": [
+          0.7,
+          1
+        ],
+        "expectation": 0.3,
+        "variance": 0.21
+      }
+    },
+    {
+      "input": [
+        2,
+        0.5
+      ],
+      "trace": {
+        "contract": "probability.v1",
+        "mass": [
+          0.25,
+          0.5,
+          0.25
+        ],
+        "cdf": [
+          0.25,
+          0.75,
+          1
+        ],
+        "expectation": 1.0,
+        "variance": 0.5
+      }
+    },
+    {
+      "input": [
+        10,
+        0.3
+      ],
+      "trace": {
+        "contract": "probability.v1",
+        "mass": [
+          0.02824752489999998,
+          0.12106082099999993,
+          0.23347444049999988,
+          0.2668279319999998,
+          0.2001209489999999,
+          0.10291934519999994,
+          0.03675690899999999,
+          0.009001691999999995,
+          0.0014467004999999993,
+          0.00013778099999999996,
+          5.9048999999999975e-06
+        ],
+        "cdf": [
+          0.02824752489999998,
+          0.14930834589999992,
+          0.3827827863999998,
+          0.6496107183999996,
+          0.8497316673999995,
+          0.9526510125999994,
+          0.9894079215999994,
+          0.9984096135999994,
+          0.9998563140999993,
+          0.9999940950999993,
+          0.9999999999999992
+        ],
+        "expectation": 3.0,
+        "variance": 2.0999999999999996
+      }
+    },
+    {
+      "input": [
+        3,
+        0
+      ],
+      "trace": {
+        "contract": "probability.v1",
+        "mass": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "cdf": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "expectation": 0,
+        "variance": 0
+      }
+    },
+    {
+      "input": [
+        3,
+        1
+      ],
+      "trace": {
+        "contract": "probability.v1",
+        "mass": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "cdf": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "expectation": 3,
+        "variance": 0
+      }
+    }
+  ],
+  "simulation": [
+    {
+      "input": [
+        2,
+        100,
+        42
+      ],
+      "trace": {
+        "contract": "probability.v1",
+        "sides": 2,
+        "draws": 100,
+        "seed": 42,
+        "counts": [
+          50,
+          50
+        ]
+      }
+    },
+    {
+      "input": [
+        6,
+        100,
+        42
+      ],
+      "trace": {
+        "contract": "probability.v1",
+        "sides": 6,
+        "draws": 100,
+        "seed": 42,
+        "counts": [
+          19,
+          15,
+          16,
+          13,
+          18,
+          19
+        ]
+      }
+    },
+    {
+      "input": [
+        6,
+        1000,
+        4294967295
+      ],
+      "trace": {
+        "contract": "probability.v1",
+        "sides": 6,
+        "draws": 1000,
+        "seed": 4294967295,
+        "counts": [
+          167,
+          176,
+          174,
+          142,
+          174,
+          167
+        ]
+      }
+    }
+  ],
+  "normal": [
+    {
+      "input": [
+        0,
+        0,
+        0.1
+      ],
+      "density": 3.989422804014327
+    },
+    {
+      "input": [
+        2,
+        0,
+        1
+      ],
+      "density": 0.05399096651318806
+    },
+    {
+      "input": [
+        5,
+        5,
+        2
+      ],
+      "density": 0.19947114020071635
+    }
+  ],
+  "intervals": [
+    {
+      "input": [
+        -1,
+        1
+      ],
+      "area": 0.6826894921371643
+    },
+    {
+      "input": [
+        -3,
+        3
+      ],
+      "area": 0.9973002039356954
+    },
+    {
+      "input": [
+        0,
+        0
+      ],
+      "area": 0
+    },
+    {
+      "input": [
+        -8,
+        8
+      ],
+      "area": 1
+    }
+  ],
+  "thresholds": [
+    {
+      "input": 0,
+      "trace": {
+        "rows": [
+          {
+            "score": 0.9,
+            "actual": 1,
+            "predicted": 1
+          },
+          {
+            "score": 0.7,
+            "actual": 0,
+            "predicted": 1
+          },
+          {
+            "score": 0.6,
+            "actual": 1,
+            "predicted": 1
+          },
+          {
+            "score": 0.4,
+            "actual": 0,
+            "predicted": 1
+          },
+          {
+            "score": 0.3,
+            "actual": 1,
+            "predicted": 1
+          },
+          {
+            "score": 0.1,
+            "actual": 0,
+            "predicted": 1
+          }
+        ],
+        "truePositive": 3,
+        "falsePositive": 3,
+        "falseNegative": 0,
+        "trueNegative": 0
+      }
+    },
+    {
+      "input": 0.5,
+      "trace": {
+        "rows": [
+          {
+            "score": 0.9,
+            "actual": 1,
+            "predicted": 1
+          },
+          {
+            "score": 0.7,
+            "actual": 0,
+            "predicted": 1
+          },
+          {
+            "score": 0.6,
+            "actual": 1,
+            "predicted": 1
+          },
+          {
+            "score": 0.4,
+            "actual": 0,
+            "predicted": 0
+          },
+          {
+            "score": 0.3,
+            "actual": 1,
+            "predicted": 0
+          },
+          {
+            "score": 0.1,
+            "actual": 0,
+            "predicted": 0
+          }
+        ],
+        "truePositive": 2,
+        "falsePositive": 1,
+        "falseNegative": 1,
+        "trueNegative": 2
+      }
+    },
+    {
+      "input": 0.6,
+      "trace": {
+        "rows": [
+          {
+            "score": 0.9,
+            "actual": 1,
+            "predicted": 1
+          },
+          {
+            "score": 0.7,
+            "actual": 0,
+            "predicted": 1
+          },
+          {
+            "score": 0.6,
+            "actual": 1,
+            "predicted": 1
+          },
+          {
+            "score": 0.4,
+            "actual": 0,
+            "predicted": 0
+          },
+          {
+            "score": 0.3,
+            "actual": 1,
+            "predicted": 0
+          },
+          {
+            "score": 0.1,
+            "actual": 0,
+            "predicted": 0
+          }
+        ],
+        "truePositive": 2,
+        "falsePositive": 1,
+        "falseNegative": 1,
+        "trueNegative": 2
+      }
+    },
+    {
+      "input": 0.8,
+      "trace": {
+        "rows": [
+          {
+            "score": 0.9,
+            "actual": 1,
+            "predicted": 1
+          },
+          {
+            "score": 0.7,
+            "actual": 0,
+            "predicted": 0
+          },
+          {
+            "score": 0.6,
+            "actual": 1,
+            "predicted": 0
+          },
+          {
+            "score": 0.4,
+            "actual": 0,
+            "predicted": 0
+          },
+          {
+            "score": 0.3,
+            "actual": 1,
+            "predicted": 0
+          },
+          {
+            "score": 0.1,
+            "actual": 0,
+            "predicted": 0
+          }
+        ],
+        "truePositive": 1,
+        "falsePositive": 0,
+        "falseNegative": 2,
+        "trueNegative": 3
+      }
+    },
+    {
+      "input": 1,
+      "trace": {
+        "rows": [
+          {
+            "score": 0.9,
+            "actual": 1,
+            "predicted": 0
+          },
+          {
+            "score": 0.7,
+            "actual": 0,
+            "predicted": 0
+          },
+          {
+            "score": 0.6,
+            "actual": 1,
+            "predicted": 0
+          },
+          {
+            "score": 0.4,
+            "actual": 0,
+            "predicted": 0
+          },
+          {
+            "score": 0.3,
+            "actual": 1,
+            "predicted": 0
+          },
+          {
+            "score": 0.1,
+            "actual": 0,
+            "predicted": 0
+          }
+        ],
+        "truePositive": 0,
+        "falsePositive": 0,
+        "falseNegative": 3,
+        "trueNegative": 3
+      }
+    }
+  ]
+}

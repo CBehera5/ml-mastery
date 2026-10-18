@@ -1,0 +1,8 @@
+{
+  "baseline": "outputs/task-015-9/source-equality.json",
+  "changed_files": [],
+  "checked_files": 517,
+  "learner_storage_accessed": false,
+  "original_directory_io_reliability": "OPEN",
+  "schema": "svm.source-preservation.v1"
+}

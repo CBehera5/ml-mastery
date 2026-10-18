@@ -1,0 +1,50 @@
+"use client";
+import Link from "next/link";
+import { useState } from "react";
+import { recordObjectiveCompletion } from "../../learn/foundation/evidence";
+import { evaluateExercise, type ExerciseResult } from "../../learn/foundation/exercises";
+import { CONTENT, MODULE_ID, lessonTopics, questions, type Lesson, type Topic } from "./content";
+import { BatchExperiment, VectorExperiment } from "./experiments";
+import { finishLesson, importLegacy } from "./model";
+import { useCoreEvidence } from "./use-evidence";
+
+export function CoreLearning({ lesson }: { lesson: Lesson }) {
+  const { evidence, setEvidence, loaded, storageError } = useCoreEvidence();
+  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [results, setResults] = useState<Record<string, ExerciseResult>>({});
+  const [importMessage, setImportMessage] = useState("");
+  const checks = questions(0).filter(question => lessonTopics(lesson).includes(question.topic));
+  function explore(topic: Topic) {
+    if (!loaded) return;
+    const time = new Date().toISOString();
+    setEvidence(previous => finishLesson(recordObjectiveCompletion(previous, `${MODULE_ID}.${topic}.activity`, `${MODULE_ID}.${topic}.experiment`, time), lesson, time));
+  }
+  function check(key: string) {
+    const question = checks.find(item => item.key === key)!;
+    const answer = answers[key];
+    if (!loaded || !answer?.trim()) return;
+    const result = evaluateExercise(question.exercise, question.exercise.kind === "numerical" ? { kind: "numerical", value: Number(answer) } : { kind: "conceptual", optionId: answer }, 1);
+    setResults(previous => ({ ...previous, [key]: result }));
+    if (result.correct) {
+      const time = new Date().toISOString();
+      setEvidence(previous => finishLesson(recordObjectiveCompletion(previous, question.objectiveId, question.exercise.id, time), lesson, time));
+    }
+  }
+  function importCompletion() {
+    try {
+      const raw = localStorage.getItem(`ml-math-lab:lesson:${lesson === "vectors" ? "vectors-dot-product" : "matrices-multiplication"}:v1`);
+      const next = importLegacy(evidence, lesson, raw, new Date().toISOString());
+      setEvidence(next);
+      setImportMessage(next.objectives[`${MODULE_ID}.${lesson}.legacy-completion`]?.completed ? "Historical five-stage completion recorded with its source. No understanding or mastery was inferred; the original record remains unchanged." : "No complete five-stage record found. Existing progress remains unchanged.");
+    } catch { setImportMessage("Could not read historical completion. Existing records remain unchanged."); }
+  }
+  const completed = evidence.lessons[`${MODULE_ID}.${lesson}`]?.state === "completed";
+  return <section className="panel la-core" id="linear-algebra-content" tabIndex={-1} aria-label="Linear Algebra core learning"><nav aria-label="Linear Algebra pathway"><Link href="/math/linear-algebra">Linear Algebra overview</Link><Link href="/math/vectors-dot-product">Vectors and dot products</Link><Link href="/math/matrices-multiplication">Matrices and multiplication</Link><Link href="/math/linear-algebra/assessment">Independent core assessment</Link></nav><h2>{lesson === "vectors" ? "Build the vector foundations" : "Build the matrix foundations"}</h2><p>Work through the two concept sections, then use the existing five-stage house lab below. Each new section requires a real experiment change plus four correct checks. Historical five-stage completion is preserved separately; copying code or visiting a page does not establish new understanding or mastery.</p><p><Link href="/math/algebra-functions">Recall Algebra, functions and notation →</Link> · <a href="#existing-house-lab">Jump to the existing house lab</a></p>
+    {lessonTopics(lesson).map(topic => {
+      const content = CONTENT[topic];
+      const activity = evidence.objectives[`${MODULE_ID}.${topic}.activity`]?.completed;
+      const topicChecks = checks.filter(question => question.topic === topic);
+      return <section key={topic} id={`core-${topic}`} aria-labelledby={`title-${topic}`}><h3 id={`title-${topic}`}>{content.title}</h3><ul>{topicChecks.map(question => <li key={question.key}>{question.statement}</li>)}</ul><h4>Why it exists</h4><p>{content.why}</p><h4>Definition and intuition</h4><p>{content.definition}</p><p>{content.intuition}</p><h4>Symbols and calculation</h4><p>{content.symbols}</p><h4>Worked example</h4><p>{content.worked}</p><aside className="la-recall"><h4>Prerequisite recall</h4><p>{content.recall}</p>{topic === "dot" && <a href="#core-vectors">Review vector magnitude and direction</a>}{lesson === "matrices" && <Link href="/math/vectors-dot-product#core-dot">Review dot products</Link>}</aside>{lesson === "vectors" ? <VectorExperiment topic={topic} onExplore={() => explore(topic)} /> : <BatchExperiment topic={topic} onExplore={() => explore(topic)} />}<h4>Misconception to avoid</h4><p>{content.misconception}</p><h4>Where ML uses this</h4><p>{content.application}</p><h4>Understanding checks</h4><p>Numerical tolerance: 0.001. Use the worked example and experiment to reason about these values.</p>{topicChecks.map(question => <fieldset key={question.key}><legend>{question.exercise.prompt}</legend>{question.exercise.kind === "numerical" ? <label>Answer: {question.statement}<input type="number" step="any" value={answers[question.key] ?? ""} onChange={event => { setAnswers(previous => ({ ...previous, [question.key]: event.target.value })); setResults(previous => { const next = { ...previous }; delete next[question.key]; return next; }); }} /></label> : question.exercise.options.map(option => <label key={option.id}><input type="radio" name={`guided-${question.key}`} checked={answers[question.key] === option.id} onChange={() => { setAnswers(previous => ({ ...previous, [question.key]: option.id })); setResults(previous => { const next = { ...previous }; delete next[question.key]; return next; }); }} />{option.label}</label>)}<button disabled={!loaded || !answers[question.key]?.trim()} onClick={() => check(question.key)}>Check: {question.statement}</button>{results[question.key] && <p role="status">{results[question.key].feedback} {!results[question.key].correct && <a href={`#core-${topic}`}>Review this concept and try again.</a>}</p>}{evidence.objectives[question.objectiveId]?.completed && <p>Understanding evidence recorded.</p>}</fieldset>)}<p>{activity ? "Experiment activity recorded." : "Change an experiment control to record exploration."} {topicChecks.filter(question => evidence.objectives[question.objectiveId]?.completed).length}/4 objective checks recorded.</p></section>;
+    })}
+    <section className="la-recall" aria-live="polite"><h3>{completed ? "Core lesson outcome demonstrated" : "Build your core lesson evidence"}</h3><p>Guided completion is separate from independent core mastery. Resetting the original five-stage lesson below affects only its historical record; the new objective evidence remains.</p>{storageError && <p role="alert">Progress cannot be saved reliably in this browser; it remains usable during this visit.</p>}</section><button disabled={!loaded} onClick={importCompletion}>Import historical five-stage completion</button>{importMessage && <p role="status">{importMessage}</p>}<p><Link href="/math/linear-algebra/assessment">Attempt independent Linear Algebra core assessment →</Link></p></section>;
+}

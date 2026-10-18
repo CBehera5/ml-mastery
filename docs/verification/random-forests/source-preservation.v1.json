@@ -1,0 +1,8 @@
+{
+  "schema": "random-forests.source-preservation.v1",
+  "baseline": "outputs/task-015-7/source-equality.json",
+  "checked_files": 490,
+  "changed_files": [],
+  "scope": "Accepted application, public, package and Python sources; no browser learner-storage access or modification; not exhaustive filesystem equality.",
+  "original_directory_io_reliability": "OPEN: bounded reads and successful reference generation do not establish general reliability."
+}

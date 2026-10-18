@@ -1,0 +1,11 @@
+{
+  "conventions_sha256": "e202ff5d7f05aa23bc59ddc26e636c2b315dadc4b40e0eec674f507485e499b7",
+  "generator_sha256": "653eabc02506fd201ce92418c14bfca2e9a404b3c495bab54cb7b78f48a20a6b",
+  "schema": "svm.freeze.v1",
+  "sha256": {
+    "parity-report.v1.json": "9dc1baaa90ae45199fc6897e4ff3d3be624a2de44f7e95e3d4263fc17fb23672",
+    "source-preservation.v1.json": "cb7b766d1fc1c277df6c2618aaa0c1823f14c8f5ab2d65eefff6607f3b72869d",
+    "sv-e1.manifest.v1.json": "7041ae6c7a3198d75d6640fcaffd4fd7eebf1b7f4fb722b368422bcc312ad579",
+    "sv-e2.manifest.v1.json": "5aff88c847ecbb4a7769e991ec3d984f0c3509e4d3005289988d039e71bcdf63"
+  }
+}

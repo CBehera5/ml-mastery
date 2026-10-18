@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mlmathlab.local/schemas/regression-trace.v1.schema.json",
+  "title": "Linear regression traces v1",
+  "$defs": {
+    "parameters": { "type": "object", "additionalProperties": false, "required": ["weights", "bias"], "properties": { "weights": { "type": "array", "minItems": 1, "items": { "type": "number" } }, "bias": { "type": "number" } } },
+    "metrics": { "type": "object", "additionalProperties": false, "required": ["mae", "mse", "rmse"], "properties": { "mae": { "type": "number", "minimum": 0 }, "mse": { "type": "number", "minimum": 0 }, "rmse": { "type": "number", "minimum": 0 } } },
+    "evaluation": {
+      "type": "object", "additionalProperties": false, "required": ["schemaVersion", "shape", "parameters", "rows", "metrics"],
+      "properties": {
+        "schemaVersion": { "const": "1.0.0" },
+        "shape": { "type": "object", "additionalProperties": false, "required": ["observations", "features"], "properties": { "observations": { "type": "integer", "minimum": 1, "maximum": 1000 }, "features": { "type": "integer", "minimum": 1, "maximum": 64 } } },
+        "parameters": { "$ref": "#/$defs/parameters" },
+        "rows": { "type": "array", "minItems": 1, "items": { "type": "object", "additionalProperties": false, "required": ["features", "contributions", "target", "prediction", "residual", "absoluteResidual", "squaredResidual"], "properties": { "features": { "type": "array", "items": { "type": "number" } }, "contributions": { "type": "array", "items": { "type": "number" } }, "target": { "type": "number" }, "prediction": { "type": "number" }, "residual": { "type": "number" }, "absoluteResidual": { "type": "number", "minimum": 0 }, "squaredResidual": { "type": "number", "minimum": 0 } } } },
+        "metrics": { "$ref": "#/$defs/metrics" }
+      }
+    },
+    "gradient": { "type": "object", "additionalProperties": false, "required": ["schemaVersion", "residuals", "factor", "weightGradients", "biasGradient"], "properties": { "schemaVersion": { "const": "1.0.0" }, "residuals": { "type": "array", "items": { "type": "number" } }, "factor": { "type": "number", "exclusiveMinimum": 0 }, "weightGradients": { "type": "array", "items": { "type": "number" } }, "biasGradient": { "type": "number" } } }
+  },
+  "oneOf": [
+    { "$ref": "#/$defs/evaluation" },
+    { "$ref": "#/$defs/gradient" },
+    {
+      "type": "object", "additionalProperties": false, "required": ["schemaVersion", "learningRate", "before", "gradient", "updatedParameters", "after"],
+      "properties": { "schemaVersion": { "const": "1.0.0" }, "learningRate": { "type": "number", "exclusiveMinimum": 0, "maximum": 10 }, "before": { "$ref": "#/$defs/evaluation" }, "gradient": { "$ref": "#/$defs/gradient" }, "updatedParameters": { "$ref": "#/$defs/parameters" }, "after": { "$ref": "#/$defs/evaluation" } }
+    },
+    {
+      "type": "object", "additionalProperties": false, "required": ["schemaVersion", "entryConvention", "requestedIterations", "completedUpdates", "learningRate", "status", "terminationReason", "entries"],
+      "properties": {
+        "schemaVersion": { "const": "1.0.0" }, "entryConvention": { "const": "iteration 0 is the initial state; iteration k is the state after k updates" },
+        "requestedIterations": { "type": "integer", "minimum": 1, "maximum": 1000 }, "completedUpdates": { "type": "integer", "minimum": 0, "maximum": 1000 }, "learningRate": { "type": "number", "exclusiveMinimum": 0, "maximum": 10 },
+        "status": { "enum": ["completed", "diverged"] }, "terminationReason": { "enum": ["iterations_completed", "non_finite_calculation", "numerical_limit_exceeded"] },
+        "entries": { "type": "array", "minItems": 1, "maxItems": 1001, "items": { "type": "object", "additionalProperties": false, "required": ["iteration", "weights", "bias", "loss", "weightGradients", "biasGradient", "status", "terminationReason"], "properties": { "iteration": { "type": "integer", "minimum": 0 }, "weights": { "type": "array", "items": { "type": "number" } }, "bias": { "type": "number" }, "loss": { "type": ["number", "null"], "minimum": 0 }, "weightGradients": { "oneOf": [{ "type": "array", "items": { "type": "number" } }, { "type": "null" }] }, "biasGradient": { "type": ["number", "null"] }, "status": { "enum": ["running", "completed", "diverged"] }, "terminationReason": { "enum": [null, "iterations_completed", "non_finite_calculation", "numerical_limit_exceeded"] } } } }
+      }
+    }
+  ]
+}

@@ -1,0 +1,2982 @@
+{
+  "accessibility": "Native labeled selects/buttons; keyboard and visible focus; numerical tables list every distance/row/label/weight, class totals and prediction; text explains changes. Never rely on color, hover or animation. Finite query presets, not drag-only controls.",
+  "allowed_configuration_ids": [
+    "kn.units.v1.q0.k1.uniform.raw",
+    "kn.units.v1.q0.k1.uniform.scaled",
+    "kn.units.v1.q0.k3.uniform.raw",
+    "kn.units.v1.q0.k3.uniform.scaled",
+    "kn.units.v1.q0.k5.uniform.raw",
+    "kn.units.v1.q0.k5.uniform.scaled",
+    "kn.units.v1.q1.k1.uniform.raw",
+    "kn.units.v1.q1.k1.uniform.scaled",
+    "kn.units.v1.q1.k3.uniform.raw",
+    "kn.units.v1.q1.k3.uniform.scaled",
+    "kn.units.v1.q1.k5.uniform.raw",
+    "kn.units.v1.q1.k5.uniform.scaled",
+    "kn.irrelevant.v1.q0.k1.uniform.raw",
+    "kn.irrelevant.v1.q0.k1.uniform.scaled",
+    "kn.irrelevant.v1.q0.k3.uniform.raw",
+    "kn.irrelevant.v1.q0.k3.uniform.scaled",
+    "kn.irrelevant.v1.q0.k5.uniform.raw",
+    "kn.irrelevant.v1.q0.k5.uniform.scaled",
+    "kn.irrelevant.v1.q1.k1.uniform.raw",
+    "kn.irrelevant.v1.q1.k1.uniform.scaled",
+    "kn.irrelevant.v1.q1.k3.uniform.raw",
+    "kn.irrelevant.v1.q1.k3.uniform.scaled",
+    "kn.irrelevant.v1.q1.k5.uniform.raw",
+    "kn.irrelevant.v1.q1.k5.uniform.scaled",
+    "KN-E2.reject.test-fit.v1",
+    "KN-E2.reject.fold-k.v1",
+    "KN-E2.reject.cutoff-tie.v1"
+  ],
+  "configurations": [
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        1.0,
+        0.0
+      ],
+      "class_totals_0_1": [
+        1.0,
+        0
+      ],
+      "coordinate_difference_count": 12,
+      "correct": false,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.units.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        340.0679932013597,
+        220.00009090907213,
+        30.555523232306136,
+        210.0034285434407,
+        460.0250427965852,
+        860.0003720929427
+      ],
+      "fit_ids": [
+        "kn.units.v1.train.0",
+        "kn.units.v1.train.1",
+        "kn.units.v1.train.2",
+        "kn.units.v1.train.3",
+        "kn.units.v1.train.4",
+        "kn.units.v1.train.5"
+      ],
+      "id": "kn.units.v1.q0.k1.uniform.raw",
+      "k": 1,
+      "library_neighbor_order": [
+        2
+      ],
+      "ordered_indices": [
+        2,
+        3,
+        1,
+        0,
+        4,
+        5
+      ],
+      "prediction": 0,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.units.v1.dev.0",
+      "query_index": 0,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": false,
+      "scaler": null,
+      "selected_indices": [
+        2
+      ],
+      "selected_weights": [
+        1.0
+      ],
+      "text": "Query 0; k=1; uniform; raw: class totals [1.0, 0], predicted 0. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        440.0,
+        7.8
+      ],
+      "transformed_rows": [
+        [
+          100.0,
+          1.0
+        ],
+        [
+          220.0,
+          8.0
+        ],
+        [
+          410.0,
+          2.0
+        ],
+        [
+          650.0,
+          9.0
+        ],
+        [
+          900.0,
+          3.0
+        ],
+        [
+          1300.0,
+          7.0
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.0,
+        1.0
+      ],
+      "class_totals_0_1": [
+        0,
+        1.0
+      ],
+      "coordinate_difference_count": 12,
+      "correct": true,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.units.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        2.3384166125282464,
+        0.5392866087185526,
+        1.8669041356563938,
+        0.6404584702053321,
+        1.9070494937771527,
+        2.1088259153441884
+      ],
+      "fit_ids": [
+        "kn.units.v1.train.0",
+        "kn.units.v1.train.1",
+        "kn.units.v1.train.2",
+        "kn.units.v1.train.3",
+        "kn.units.v1.train.4",
+        "kn.units.v1.train.5"
+      ],
+      "id": "kn.units.v1.q0.k1.uniform.scaled",
+      "k": 1,
+      "library_neighbor_order": [
+        1
+      ],
+      "ordered_indices": [
+        1,
+        3,
+        2,
+        4,
+        5,
+        0
+      ],
+      "prediction": 1,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.units.v1.dev.0",
+      "query_index": 0,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": true,
+      "scaler": {
+        "mean": [
+          596.6666666666666,
+          5.0
+        ],
+        "scale": [
+          410.87981481477306,
+          3.1091263510296048
+        ],
+        "variance": [
+          168822.22222222222,
+          9.666666666666666
+        ]
+      },
+      "selected_indices": [
+        1
+      ],
+      "selected_weights": [
+        1.0
+      ],
+      "text": "Query 0; k=1; uniform; training-scaled: class totals [0, 1.0], predicted 1. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        -0.3812956027963867,
+        0.9005745292637477
+      ],
+      "transformed_rows": [
+        [
+          -1.2087881875885453,
+          -1.2865350418053538
+        ],
+        [
+          -0.9167319811913128,
+          0.9649012813540154
+        ],
+        [
+          -0.4543096543956948,
+          -0.9649012813540154
+        ],
+        [
+          0.12980275839877006,
+          1.2865350418053538
+        ],
+        [
+          0.7382531883930042,
+          -0.6432675209026769
+        ],
+        [
+          1.711773876383779,
+          0.6432675209026769
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "class_totals_0_1": [
+        1.0,
+        2.0
+      ],
+      "coordinate_difference_count": 12,
+      "correct": true,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.units.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        340.0679932013597,
+        220.00009090907213,
+        30.555523232306136,
+        210.0034285434407,
+        460.0250427965852,
+        860.0003720929427
+      ],
+      "fit_ids": [
+        "kn.units.v1.train.0",
+        "kn.units.v1.train.1",
+        "kn.units.v1.train.2",
+        "kn.units.v1.train.3",
+        "kn.units.v1.train.4",
+        "kn.units.v1.train.5"
+      ],
+      "id": "kn.units.v1.q0.k3.uniform.raw",
+      "k": 3,
+      "library_neighbor_order": [
+        2,
+        3,
+        1
+      ],
+      "ordered_indices": [
+        2,
+        3,
+        1,
+        0,
+        4,
+        5
+      ],
+      "prediction": 1,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.units.v1.dev.0",
+      "query_index": 0,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": false,
+      "scaler": null,
+      "selected_indices": [
+        2,
+        3,
+        1
+      ],
+      "selected_weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "text": "Query 0; k=3; uniform; raw: class totals [1.0, 2.0], predicted 1. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        440.0,
+        7.8
+      ],
+      "transformed_rows": [
+        [
+          100.0,
+          1.0
+        ],
+        [
+          220.0,
+          8.0
+        ],
+        [
+          410.0,
+          2.0
+        ],
+        [
+          650.0,
+          9.0
+        ],
+        [
+          900.0,
+          3.0
+        ],
+        [
+          1300.0,
+          7.0
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "class_totals_0_1": [
+        1.0,
+        2.0
+      ],
+      "coordinate_difference_count": 12,
+      "correct": true,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.units.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        2.3384166125282464,
+        0.5392866087185526,
+        1.8669041356563938,
+        0.6404584702053321,
+        1.9070494937771527,
+        2.1088259153441884
+      ],
+      "fit_ids": [
+        "kn.units.v1.train.0",
+        "kn.units.v1.train.1",
+        "kn.units.v1.train.2",
+        "kn.units.v1.train.3",
+        "kn.units.v1.train.4",
+        "kn.units.v1.train.5"
+      ],
+      "id": "kn.units.v1.q0.k3.uniform.scaled",
+      "k": 3,
+      "library_neighbor_order": [
+        1,
+        3,
+        2
+      ],
+      "ordered_indices": [
+        1,
+        3,
+        2,
+        4,
+        5,
+        0
+      ],
+      "prediction": 1,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.units.v1.dev.0",
+      "query_index": 0,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": true,
+      "scaler": {
+        "mean": [
+          596.6666666666666,
+          5.0
+        ],
+        "scale": [
+          410.87981481477306,
+          3.1091263510296048
+        ],
+        "variance": [
+          168822.22222222222,
+          9.666666666666666
+        ]
+      },
+      "selected_indices": [
+        1,
+        3,
+        2
+      ],
+      "selected_weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "text": "Query 0; k=3; uniform; training-scaled: class totals [1.0, 2.0], predicted 1. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        -0.3812956027963867,
+        0.9005745292637477
+      ],
+      "transformed_rows": [
+        [
+          -1.2087881875885453,
+          -1.2865350418053538
+        ],
+        [
+          -0.9167319811913128,
+          0.9649012813540154
+        ],
+        [
+          -0.4543096543956948,
+          -0.9649012813540154
+        ],
+        [
+          0.12980275839877006,
+          1.2865350418053538
+        ],
+        [
+          0.7382531883930042,
+          -0.6432675209026769
+        ],
+        [
+          1.711773876383779,
+          0.6432675209026769
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.6,
+        0.4
+      ],
+      "class_totals_0_1": [
+        3.0,
+        2.0
+      ],
+      "coordinate_difference_count": 12,
+      "correct": false,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.units.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        340.0679932013597,
+        220.00009090907213,
+        30.555523232306136,
+        210.0034285434407,
+        460.0250427965852,
+        860.0003720929427
+      ],
+      "fit_ids": [
+        "kn.units.v1.train.0",
+        "kn.units.v1.train.1",
+        "kn.units.v1.train.2",
+        "kn.units.v1.train.3",
+        "kn.units.v1.train.4",
+        "kn.units.v1.train.5"
+      ],
+      "id": "kn.units.v1.q0.k5.uniform.raw",
+      "k": 5,
+      "library_neighbor_order": [
+        2,
+        3,
+        1,
+        0,
+        4
+      ],
+      "ordered_indices": [
+        2,
+        3,
+        1,
+        0,
+        4,
+        5
+      ],
+      "prediction": 0,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.units.v1.dev.0",
+      "query_index": 0,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": false,
+      "scaler": null,
+      "selected_indices": [
+        2,
+        3,
+        1,
+        0,
+        4
+      ],
+      "selected_weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "text": "Query 0; k=5; uniform; raw: class totals [3.0, 2.0], predicted 0. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        440.0,
+        7.8
+      ],
+      "transformed_rows": [
+        [
+          100.0,
+          1.0
+        ],
+        [
+          220.0,
+          8.0
+        ],
+        [
+          410.0,
+          2.0
+        ],
+        [
+          650.0,
+          9.0
+        ],
+        [
+          900.0,
+          3.0
+        ],
+        [
+          1300.0,
+          7.0
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.4,
+        0.6
+      ],
+      "class_totals_0_1": [
+        2.0,
+        3.0
+      ],
+      "coordinate_difference_count": 12,
+      "correct": true,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.units.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        2.3384166125282464,
+        0.5392866087185526,
+        1.8669041356563938,
+        0.6404584702053321,
+        1.9070494937771527,
+        2.1088259153441884
+      ],
+      "fit_ids": [
+        "kn.units.v1.train.0",
+        "kn.units.v1.train.1",
+        "kn.units.v1.train.2",
+        "kn.units.v1.train.3",
+        "kn.units.v1.train.4",
+        "kn.units.v1.train.5"
+      ],
+      "id": "kn.units.v1.q0.k5.uniform.scaled",
+      "k": 5,
+      "library_neighbor_order": [
+        1,
+        3,
+        2,
+        4,
+        5
+      ],
+      "ordered_indices": [
+        1,
+        3,
+        2,
+        4,
+        5,
+        0
+      ],
+      "prediction": 1,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.units.v1.dev.0",
+      "query_index": 0,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": true,
+      "scaler": {
+        "mean": [
+          596.6666666666666,
+          5.0
+        ],
+        "scale": [
+          410.87981481477306,
+          3.1091263510296048
+        ],
+        "variance": [
+          168822.22222222222,
+          9.666666666666666
+        ]
+      },
+      "selected_indices": [
+        1,
+        3,
+        2,
+        4,
+        5
+      ],
+      "selected_weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "text": "Query 0; k=5; uniform; training-scaled: class totals [2.0, 3.0], predicted 1. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        -0.3812956027963867,
+        0.9005745292637477
+      ],
+      "transformed_rows": [
+        [
+          -1.2087881875885453,
+          -1.2865350418053538
+        ],
+        [
+          -0.9167319811913128,
+          0.9649012813540154
+        ],
+        [
+          -0.4543096543956948,
+          -0.9649012813540154
+        ],
+        [
+          0.12980275839877006,
+          1.2865350418053538
+        ],
+        [
+          0.7382531883930042,
+          -0.6432675209026769
+        ],
+        [
+          1.711773876383779,
+          0.6432675209026769
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        1.0,
+        0.0
+      ],
+      "class_totals_0_1": [
+        1.0,
+        0
+      ],
+      "coordinate_difference_count": 12,
+      "correct": false,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.units.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        750.0336059137617,
+        630.0000079365079,
+        440.04228205934936,
+        200.00202498974855,
+        50.25942697643896,
+        450.00134444243605
+      ],
+      "fit_ids": [
+        "kn.units.v1.train.0",
+        "kn.units.v1.train.1",
+        "kn.units.v1.train.2",
+        "kn.units.v1.train.3",
+        "kn.units.v1.train.4",
+        "kn.units.v1.train.5"
+      ],
+      "id": "kn.units.v1.q1.k1.uniform.raw",
+      "k": 1,
+      "library_neighbor_order": [
+        4
+      ],
+      "ordered_indices": [
+        4,
+        3,
+        2,
+        5,
+        1,
+        0
+      ],
+      "prediction": 0,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.units.v1.dev.1",
+      "query_index": 1,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": false,
+      "scaler": null,
+      "selected_indices": [
+        4
+      ],
+      "selected_weights": [
+        1.0
+      ],
+      "text": "Query 1; k=1; uniform; raw: class totals [1.0, 0], predicted 0. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        850.0,
+        8.1
+      ],
+      "transformed_rows": [
+        [
+          100.0,
+          1.0
+        ],
+        [
+          220.0,
+          8.0
+        ],
+        [
+          410.0,
+          2.0
+        ],
+        [
+          650.0,
+          9.0
+        ],
+        [
+          900.0,
+          3.0
+        ],
+        [
+          1300.0,
+          7.0
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.0,
+        1.0
+      ],
+      "class_totals_0_1": [
+        0,
+        1.0
+      ],
+      "coordinate_difference_count": 12,
+      "correct": true,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.units.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        2.923479932896481,
+        1.533632386234066,
+        2.2351909999063357,
+        0.5663291763054272,
+        1.6448398500166577,
+        1.1509383359920067
+      ],
+      "fit_ids": [
+        "kn.units.v1.train.0",
+        "kn.units.v1.train.1",
+        "kn.units.v1.train.2",
+        "kn.units.v1.train.3",
+        "kn.units.v1.train.4",
+        "kn.units.v1.train.5"
+      ],
+      "id": "kn.units.v1.q1.k1.uniform.scaled",
+      "k": 1,
+      "library_neighbor_order": [
+        3
+      ],
+      "ordered_indices": [
+        3,
+        5,
+        1,
+        4,
+        2,
+        0
+      ],
+      "prediction": 1,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.units.v1.dev.1",
+      "query_index": 1,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": true,
+      "scaler": {
+        "mean": [
+          596.6666666666666,
+          5.0
+        ],
+        "scale": [
+          410.87981481477306,
+          3.1091263510296048
+        ],
+        "variance": [
+          168822.22222222222,
+          9.666666666666666
+        ]
+      },
+      "selected_indices": [
+        3
+      ],
+      "selected_weights": [
+        1.0
+      ],
+      "text": "Query 1; k=1; uniform; training-scaled: class totals [0, 1.0], predicted 1. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        0.6165631023941575,
+        0.9970646573991492
+      ],
+      "transformed_rows": [
+        [
+          -1.2087881875885453,
+          -1.2865350418053538
+        ],
+        [
+          -0.9167319811913128,
+          0.9649012813540154
+        ],
+        [
+          -0.4543096543956948,
+          -0.9649012813540154
+        ],
+        [
+          0.12980275839877006,
+          1.2865350418053538
+        ],
+        [
+          0.7382531883930042,
+          -0.6432675209026769
+        ],
+        [
+          1.711773876383779,
+          0.6432675209026769
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.6666666666666666,
+        0.3333333333333333
+      ],
+      "class_totals_0_1": [
+        2.0,
+        1.0
+      ],
+      "coordinate_difference_count": 12,
+      "correct": false,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.units.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        750.0336059137617,
+        630.0000079365079,
+        440.04228205934936,
+        200.00202498974855,
+        50.25942697643896,
+        450.00134444243605
+      ],
+      "fit_ids": [
+        "kn.units.v1.train.0",
+        "kn.units.v1.train.1",
+        "kn.units.v1.train.2",
+        "kn.units.v1.train.3",
+        "kn.units.v1.train.4",
+        "kn.units.v1.train.5"
+      ],
+      "id": "kn.units.v1.q1.k3.uniform.raw",
+      "k": 3,
+      "library_neighbor_order": [
+        4,
+        3,
+        2
+      ],
+      "ordered_indices": [
+        4,
+        3,
+        2,
+        5,
+        1,
+        0
+      ],
+      "prediction": 0,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.units.v1.dev.1",
+      "query_index": 1,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": false,
+      "scaler": null,
+      "selected_indices": [
+        4,
+        3,
+        2
+      ],
+      "selected_weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "text": "Query 1; k=3; uniform; raw: class totals [2.0, 1.0], predicted 0. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        850.0,
+        8.1
+      ],
+      "transformed_rows": [
+        [
+          100.0,
+          1.0
+        ],
+        [
+          220.0,
+          8.0
+        ],
+        [
+          410.0,
+          2.0
+        ],
+        [
+          650.0,
+          9.0
+        ],
+        [
+          900.0,
+          3.0
+        ],
+        [
+          1300.0,
+          7.0
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.0,
+        1.0
+      ],
+      "class_totals_0_1": [
+        0,
+        3.0
+      ],
+      "coordinate_difference_count": 12,
+      "correct": true,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.units.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        2.923479932896481,
+        1.533632386234066,
+        2.2351909999063357,
+        0.5663291763054272,
+        1.6448398500166577,
+        1.1509383359920067
+      ],
+      "fit_ids": [
+        "kn.units.v1.train.0",
+        "kn.units.v1.train.1",
+        "kn.units.v1.train.2",
+        "kn.units.v1.train.3",
+        "kn.units.v1.train.4",
+        "kn.units.v1.train.5"
+      ],
+      "id": "kn.units.v1.q1.k3.uniform.scaled",
+      "k": 3,
+      "library_neighbor_order": [
+        3,
+        5,
+        1
+      ],
+      "ordered_indices": [
+        3,
+        5,
+        1,
+        4,
+        2,
+        0
+      ],
+      "prediction": 1,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.units.v1.dev.1",
+      "query_index": 1,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": true,
+      "scaler": {
+        "mean": [
+          596.6666666666666,
+          5.0
+        ],
+        "scale": [
+          410.87981481477306,
+          3.1091263510296048
+        ],
+        "variance": [
+          168822.22222222222,
+          9.666666666666666
+        ]
+      },
+      "selected_indices": [
+        3,
+        5,
+        1
+      ],
+      "selected_weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "text": "Query 1; k=3; uniform; training-scaled: class totals [0, 3.0], predicted 1. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        0.6165631023941575,
+        0.9970646573991492
+      ],
+      "transformed_rows": [
+        [
+          -1.2087881875885453,
+          -1.2865350418053538
+        ],
+        [
+          -0.9167319811913128,
+          0.9649012813540154
+        ],
+        [
+          -0.4543096543956948,
+          -0.9649012813540154
+        ],
+        [
+          0.12980275839877006,
+          1.2865350418053538
+        ],
+        [
+          0.7382531883930042,
+          -0.6432675209026769
+        ],
+        [
+          1.711773876383779,
+          0.6432675209026769
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.4,
+        0.6
+      ],
+      "class_totals_0_1": [
+        2.0,
+        3.0
+      ],
+      "coordinate_difference_count": 12,
+      "correct": true,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.units.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        750.0336059137617,
+        630.0000079365079,
+        440.04228205934936,
+        200.00202498974855,
+        50.25942697643896,
+        450.00134444243605
+      ],
+      "fit_ids": [
+        "kn.units.v1.train.0",
+        "kn.units.v1.train.1",
+        "kn.units.v1.train.2",
+        "kn.units.v1.train.3",
+        "kn.units.v1.train.4",
+        "kn.units.v1.train.5"
+      ],
+      "id": "kn.units.v1.q1.k5.uniform.raw",
+      "k": 5,
+      "library_neighbor_order": [
+        4,
+        3,
+        2,
+        5,
+        1
+      ],
+      "ordered_indices": [
+        4,
+        3,
+        2,
+        5,
+        1,
+        0
+      ],
+      "prediction": 1,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.units.v1.dev.1",
+      "query_index": 1,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": false,
+      "scaler": null,
+      "selected_indices": [
+        4,
+        3,
+        2,
+        5,
+        1
+      ],
+      "selected_weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "text": "Query 1; k=5; uniform; raw: class totals [2.0, 3.0], predicted 1. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        850.0,
+        8.1
+      ],
+      "transformed_rows": [
+        [
+          100.0,
+          1.0
+        ],
+        [
+          220.0,
+          8.0
+        ],
+        [
+          410.0,
+          2.0
+        ],
+        [
+          650.0,
+          9.0
+        ],
+        [
+          900.0,
+          3.0
+        ],
+        [
+          1300.0,
+          7.0
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.4,
+        0.6
+      ],
+      "class_totals_0_1": [
+        2.0,
+        3.0
+      ],
+      "coordinate_difference_count": 12,
+      "correct": true,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.units.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        2.923479932896481,
+        1.533632386234066,
+        2.2351909999063357,
+        0.5663291763054272,
+        1.6448398500166577,
+        1.1509383359920067
+      ],
+      "fit_ids": [
+        "kn.units.v1.train.0",
+        "kn.units.v1.train.1",
+        "kn.units.v1.train.2",
+        "kn.units.v1.train.3",
+        "kn.units.v1.train.4",
+        "kn.units.v1.train.5"
+      ],
+      "id": "kn.units.v1.q1.k5.uniform.scaled",
+      "k": 5,
+      "library_neighbor_order": [
+        3,
+        5,
+        1,
+        4,
+        2
+      ],
+      "ordered_indices": [
+        3,
+        5,
+        1,
+        4,
+        2,
+        0
+      ],
+      "prediction": 1,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.units.v1.dev.1",
+      "query_index": 1,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": true,
+      "scaler": {
+        "mean": [
+          596.6666666666666,
+          5.0
+        ],
+        "scale": [
+          410.87981481477306,
+          3.1091263510296048
+        ],
+        "variance": [
+          168822.22222222222,
+          9.666666666666666
+        ]
+      },
+      "selected_indices": [
+        3,
+        5,
+        1,
+        4,
+        2
+      ],
+      "selected_weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "text": "Query 1; k=5; uniform; training-scaled: class totals [2.0, 3.0], predicted 1. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        0.6165631023941575,
+        0.9970646573991492
+      ],
+      "transformed_rows": [
+        [
+          -1.2087881875885453,
+          -1.2865350418053538
+        ],
+        [
+          -0.9167319811913128,
+          0.9649012813540154
+        ],
+        [
+          -0.4543096543956948,
+          -0.9649012813540154
+        ],
+        [
+          0.12980275839877006,
+          1.2865350418053538
+        ],
+        [
+          0.7382531883930042,
+          -0.6432675209026769
+        ],
+        [
+          1.711773876383779,
+          0.6432675209026769
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        1.0,
+        0.0
+      ],
+      "class_totals_0_1": [
+        1.0,
+        0
+      ],
+      "coordinate_difference_count": 18,
+      "correct": false,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.irrelevant.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        349.81457945603125,
+        220.32712043686314,
+        30.70244289954791,
+        222.00324321955299,
+        461.9383508651344,
+        860.0986222521229
+      ],
+      "fit_ids": [
+        "kn.irrelevant.v1.train.0",
+        "kn.irrelevant.v1.train.1",
+        "kn.irrelevant.v1.train.2",
+        "kn.irrelevant.v1.train.3",
+        "kn.irrelevant.v1.train.4",
+        "kn.irrelevant.v1.train.5"
+      ],
+      "id": "kn.irrelevant.v1.q0.k1.uniform.raw",
+      "k": 1,
+      "library_neighbor_order": [
+        2
+      ],
+      "ordered_indices": [
+        2,
+        1,
+        3,
+        0,
+        4,
+        5
+      ],
+      "prediction": 0,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.irrelevant.v1.dev.0",
+      "query_index": 0,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": false,
+      "scaler": null,
+      "selected_indices": [
+        2
+      ],
+      "selected_weights": [
+        1.0
+      ],
+      "text": "Query 0; k=1; uniform; raw: class totals [1.0, 0], predicted 0. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        440.0,
+        7.8,
+        82.0
+      ],
+      "transformed_rows": [
+        [
+          100.0,
+          1.0,
+          0.0
+        ],
+        [
+          220.0,
+          8.0,
+          70.0
+        ],
+        [
+          410.0,
+          2.0,
+          85.0
+        ],
+        [
+          650.0,
+          9.0,
+          10.0
+        ],
+        [
+          900.0,
+          3.0,
+          40.0
+        ],
+        [
+          1300.0,
+          7.0,
+          95.0
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.0,
+        1.0
+      ],
+      "class_totals_0_1": [
+        0,
+        1.0
+      ],
+      "coordinate_difference_count": 18,
+      "correct": true,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.irrelevant.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        3.2569242102132065,
+        0.6331617017876817,
+        1.868745577285112,
+        2.0910475952709273,
+        2.232737787222845,
+        2.1392332074249287
+      ],
+      "fit_ids": [
+        "kn.irrelevant.v1.train.0",
+        "kn.irrelevant.v1.train.1",
+        "kn.irrelevant.v1.train.2",
+        "kn.irrelevant.v1.train.3",
+        "kn.irrelevant.v1.train.4",
+        "kn.irrelevant.v1.train.5"
+      ],
+      "id": "kn.irrelevant.v1.q0.k1.uniform.scaled",
+      "k": 1,
+      "library_neighbor_order": [
+        1
+      ],
+      "ordered_indices": [
+        1,
+        2,
+        3,
+        5,
+        4,
+        0
+      ],
+      "prediction": 1,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.irrelevant.v1.dev.0",
+      "query_index": 0,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": true,
+      "scaler": {
+        "mean": [
+          596.6666666666666,
+          5.0,
+          50.0
+        ],
+        "scale": [
+          410.87981481477306,
+          3.1091263510296048,
+          36.17089069035117
+        ],
+        "variance": [
+          168822.22222222222,
+          9.666666666666666,
+          1308.3333333333333
+        ]
+      },
+      "selected_indices": [
+        1
+      ],
+      "selected_weights": [
+        1.0
+      ],
+      "text": "Query 0; k=1; uniform; training-scaled: class totals [0, 1.0], predicted 1. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        -0.3812956027963867,
+        0.9005745292637477,
+        0.8846893009614556
+      ],
+      "transformed_rows": [
+        [
+          -1.2087881875885453,
+          -1.2865350418053538,
+          -1.3823270327522743
+        ],
+        [
+          -0.9167319811913128,
+          0.9649012813540154,
+          0.5529308131009097
+        ],
+        [
+          -0.4543096543956948,
+          -0.9649012813540154,
+          0.9676289229265921
+        ],
+        [
+          0.12980275839877006,
+          1.2865350418053538,
+          -1.1058616262018195
+        ],
+        [
+          0.7382531883930042,
+          -0.6432675209026769,
+          -0.2764654065504549
+        ],
+        [
+          1.711773876383779,
+          0.6432675209026769,
+          1.244094329477047
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "class_totals_0_1": [
+        1.0,
+        2.0
+      ],
+      "coordinate_difference_count": 18,
+      "correct": true,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.irrelevant.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        349.81457945603125,
+        220.32712043686314,
+        30.70244289954791,
+        222.00324321955299,
+        461.9383508651344,
+        860.0986222521229
+      ],
+      "fit_ids": [
+        "kn.irrelevant.v1.train.0",
+        "kn.irrelevant.v1.train.1",
+        "kn.irrelevant.v1.train.2",
+        "kn.irrelevant.v1.train.3",
+        "kn.irrelevant.v1.train.4",
+        "kn.irrelevant.v1.train.5"
+      ],
+      "id": "kn.irrelevant.v1.q0.k3.uniform.raw",
+      "k": 3,
+      "library_neighbor_order": [
+        2,
+        1,
+        3
+      ],
+      "ordered_indices": [
+        2,
+        1,
+        3,
+        0,
+        4,
+        5
+      ],
+      "prediction": 1,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.irrelevant.v1.dev.0",
+      "query_index": 0,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": false,
+      "scaler": null,
+      "selected_indices": [
+        2,
+        1,
+        3
+      ],
+      "selected_weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "text": "Query 0; k=3; uniform; raw: class totals [1.0, 2.0], predicted 1. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        440.0,
+        7.8,
+        82.0
+      ],
+      "transformed_rows": [
+        [
+          100.0,
+          1.0,
+          0.0
+        ],
+        [
+          220.0,
+          8.0,
+          70.0
+        ],
+        [
+          410.0,
+          2.0,
+          85.0
+        ],
+        [
+          650.0,
+          9.0,
+          10.0
+        ],
+        [
+          900.0,
+          3.0,
+          40.0
+        ],
+        [
+          1300.0,
+          7.0,
+          95.0
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "class_totals_0_1": [
+        1.0,
+        2.0
+      ],
+      "coordinate_difference_count": 18,
+      "correct": true,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.irrelevant.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        3.2569242102132065,
+        0.6331617017876817,
+        1.868745577285112,
+        2.0910475952709273,
+        2.232737787222845,
+        2.1392332074249287
+      ],
+      "fit_ids": [
+        "kn.irrelevant.v1.train.0",
+        "kn.irrelevant.v1.train.1",
+        "kn.irrelevant.v1.train.2",
+        "kn.irrelevant.v1.train.3",
+        "kn.irrelevant.v1.train.4",
+        "kn.irrelevant.v1.train.5"
+      ],
+      "id": "kn.irrelevant.v1.q0.k3.uniform.scaled",
+      "k": 3,
+      "library_neighbor_order": [
+        1,
+        2,
+        3
+      ],
+      "ordered_indices": [
+        1,
+        2,
+        3,
+        5,
+        4,
+        0
+      ],
+      "prediction": 1,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.irrelevant.v1.dev.0",
+      "query_index": 0,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": true,
+      "scaler": {
+        "mean": [
+          596.6666666666666,
+          5.0,
+          50.0
+        ],
+        "scale": [
+          410.87981481477306,
+          3.1091263510296048,
+          36.17089069035117
+        ],
+        "variance": [
+          168822.22222222222,
+          9.666666666666666,
+          1308.3333333333333
+        ]
+      },
+      "selected_indices": [
+        1,
+        2,
+        3
+      ],
+      "selected_weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "text": "Query 0; k=3; uniform; training-scaled: class totals [1.0, 2.0], predicted 1. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        -0.3812956027963867,
+        0.9005745292637477,
+        0.8846893009614556
+      ],
+      "transformed_rows": [
+        [
+          -1.2087881875885453,
+          -1.2865350418053538,
+          -1.3823270327522743
+        ],
+        [
+          -0.9167319811913128,
+          0.9649012813540154,
+          0.5529308131009097
+        ],
+        [
+          -0.4543096543956948,
+          -0.9649012813540154,
+          0.9676289229265921
+        ],
+        [
+          0.12980275839877006,
+          1.2865350418053538,
+          -1.1058616262018195
+        ],
+        [
+          0.7382531883930042,
+          -0.6432675209026769,
+          -0.2764654065504549
+        ],
+        [
+          1.711773876383779,
+          0.6432675209026769,
+          1.244094329477047
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.6,
+        0.4
+      ],
+      "class_totals_0_1": [
+        3.0,
+        2.0
+      ],
+      "coordinate_difference_count": 18,
+      "correct": false,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.irrelevant.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        349.81457945603125,
+        220.32712043686314,
+        30.70244289954791,
+        222.00324321955299,
+        461.9383508651344,
+        860.0986222521229
+      ],
+      "fit_ids": [
+        "kn.irrelevant.v1.train.0",
+        "kn.irrelevant.v1.train.1",
+        "kn.irrelevant.v1.train.2",
+        "kn.irrelevant.v1.train.3",
+        "kn.irrelevant.v1.train.4",
+        "kn.irrelevant.v1.train.5"
+      ],
+      "id": "kn.irrelevant.v1.q0.k5.uniform.raw",
+      "k": 5,
+      "library_neighbor_order": [
+        2,
+        1,
+        3,
+        0,
+        4
+      ],
+      "ordered_indices": [
+        2,
+        1,
+        3,
+        0,
+        4,
+        5
+      ],
+      "prediction": 0,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.irrelevant.v1.dev.0",
+      "query_index": 0,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": false,
+      "scaler": null,
+      "selected_indices": [
+        2,
+        1,
+        3,
+        0,
+        4
+      ],
+      "selected_weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "text": "Query 0; k=5; uniform; raw: class totals [3.0, 2.0], predicted 0. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        440.0,
+        7.8,
+        82.0
+      ],
+      "transformed_rows": [
+        [
+          100.0,
+          1.0,
+          0.0
+        ],
+        [
+          220.0,
+          8.0,
+          70.0
+        ],
+        [
+          410.0,
+          2.0,
+          85.0
+        ],
+        [
+          650.0,
+          9.0,
+          10.0
+        ],
+        [
+          900.0,
+          3.0,
+          40.0
+        ],
+        [
+          1300.0,
+          7.0,
+          95.0
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.4,
+        0.6
+      ],
+      "class_totals_0_1": [
+        2.0,
+        3.0
+      ],
+      "coordinate_difference_count": 18,
+      "correct": true,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.irrelevant.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        3.2569242102132065,
+        0.6331617017876817,
+        1.868745577285112,
+        2.0910475952709273,
+        2.232737787222845,
+        2.1392332074249287
+      ],
+      "fit_ids": [
+        "kn.irrelevant.v1.train.0",
+        "kn.irrelevant.v1.train.1",
+        "kn.irrelevant.v1.train.2",
+        "kn.irrelevant.v1.train.3",
+        "kn.irrelevant.v1.train.4",
+        "kn.irrelevant.v1.train.5"
+      ],
+      "id": "kn.irrelevant.v1.q0.k5.uniform.scaled",
+      "k": 5,
+      "library_neighbor_order": [
+        1,
+        2,
+        3,
+        5,
+        4
+      ],
+      "ordered_indices": [
+        1,
+        2,
+        3,
+        5,
+        4,
+        0
+      ],
+      "prediction": 1,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.irrelevant.v1.dev.0",
+      "query_index": 0,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": true,
+      "scaler": {
+        "mean": [
+          596.6666666666666,
+          5.0,
+          50.0
+        ],
+        "scale": [
+          410.87981481477306,
+          3.1091263510296048,
+          36.17089069035117
+        ],
+        "variance": [
+          168822.22222222222,
+          9.666666666666666,
+          1308.3333333333333
+        ]
+      },
+      "selected_indices": [
+        1,
+        2,
+        3,
+        5,
+        4
+      ],
+      "selected_weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "text": "Query 0; k=5; uniform; training-scaled: class totals [2.0, 3.0], predicted 1. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        -0.3812956027963867,
+        0.9005745292637477,
+        0.8846893009614556
+      ],
+      "transformed_rows": [
+        [
+          -1.2087881875885453,
+          -1.2865350418053538,
+          -1.3823270327522743
+        ],
+        [
+          -0.9167319811913128,
+          0.9649012813540154,
+          0.5529308131009097
+        ],
+        [
+          -0.4543096543956948,
+          -0.9649012813540154,
+          0.9676289229265921
+        ],
+        [
+          0.12980275839877006,
+          1.2865350418053538,
+          -1.1058616262018195
+        ],
+        [
+          0.7382531883930042,
+          -0.6432675209026769,
+          -0.2764654065504549
+        ],
+        [
+          1.711773876383779,
+          0.6432675209026769,
+          1.244094329477047
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        1.0,
+        0.0
+      ],
+      "class_totals_0_1": [
+        1.0,
+        0
+      ],
+      "coordinate_difference_count": 18,
+      "correct": false,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.irrelevant.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        751.208632804496,
+        630.6219231837727,
+        442.13822499304445,
+        202.5458219761642,
+        50.299204765085506,
+        453.11169704610364
+      ],
+      "fit_ids": [
+        "kn.irrelevant.v1.train.0",
+        "kn.irrelevant.v1.train.1",
+        "kn.irrelevant.v1.train.2",
+        "kn.irrelevant.v1.train.3",
+        "kn.irrelevant.v1.train.4",
+        "kn.irrelevant.v1.train.5"
+      ],
+      "id": "kn.irrelevant.v1.q1.k1.uniform.raw",
+      "k": 1,
+      "library_neighbor_order": [
+        4
+      ],
+      "ordered_indices": [
+        4,
+        3,
+        2,
+        5,
+        1,
+        0
+      ],
+      "prediction": 0,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.irrelevant.v1.dev.1",
+      "query_index": 1,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": false,
+      "scaler": null,
+      "selected_indices": [
+        4
+      ],
+      "selected_weights": [
+        1.0
+      ],
+      "text": "Query 1; k=1; uniform; raw: class totals [1.0, 0], predicted 0. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        850.0,
+        8.1,
+        42.0
+      ],
+      "transformed_rows": [
+        [
+          100.0,
+          1.0,
+          0.0
+        ],
+        [
+          220.0,
+          8.0,
+          70.0
+        ],
+        [
+          410.0,
+          2.0,
+          85.0
+        ],
+        [
+          650.0,
+          9.0,
+          10.0
+        ],
+        [
+          900.0,
+          3.0,
+          40.0
+        ],
+        [
+          1300.0,
+          7.0,
+          95.0
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.0,
+        1.0
+      ],
+      "class_totals_0_1": [
+        0,
+        1.0
+      ],
+      "coordinate_difference_count": 18,
+      "correct": true,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.irrelevant.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        3.145634303733586,
+        1.7179243187334547,
+        2.531664909443111,
+        1.0504303380855167,
+        1.6457689561550204,
+        1.8632405702653647
+      ],
+      "fit_ids": [
+        "kn.irrelevant.v1.train.0",
+        "kn.irrelevant.v1.train.1",
+        "kn.irrelevant.v1.train.2",
+        "kn.irrelevant.v1.train.3",
+        "kn.irrelevant.v1.train.4",
+        "kn.irrelevant.v1.train.5"
+      ],
+      "id": "kn.irrelevant.v1.q1.k1.uniform.scaled",
+      "k": 1,
+      "library_neighbor_order": [
+        3
+      ],
+      "ordered_indices": [
+        3,
+        4,
+        1,
+        5,
+        2,
+        0
+      ],
+      "prediction": 1,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.irrelevant.v1.dev.1",
+      "query_index": 1,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": true,
+      "scaler": {
+        "mean": [
+          596.6666666666666,
+          5.0,
+          50.0
+        ],
+        "scale": [
+          410.87981481477306,
+          3.1091263510296048,
+          36.17089069035117
+        ],
+        "variance": [
+          168822.22222222222,
+          9.666666666666666,
+          1308.3333333333333
+        ]
+      },
+      "selected_indices": [
+        3
+      ],
+      "selected_weights": [
+        1.0
+      ],
+      "text": "Query 1; k=1; uniform; training-scaled: class totals [0, 1.0], predicted 1. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        0.6165631023941575,
+        0.9970646573991492,
+        -0.2211723252403639
+      ],
+      "transformed_rows": [
+        [
+          -1.2087881875885453,
+          -1.2865350418053538,
+          -1.3823270327522743
+        ],
+        [
+          -0.9167319811913128,
+          0.9649012813540154,
+          0.5529308131009097
+        ],
+        [
+          -0.4543096543956948,
+          -0.9649012813540154,
+          0.9676289229265921
+        ],
+        [
+          0.12980275839877006,
+          1.2865350418053538,
+          -1.1058616262018195
+        ],
+        [
+          0.7382531883930042,
+          -0.6432675209026769,
+          -0.2764654065504549
+        ],
+        [
+          1.711773876383779,
+          0.6432675209026769,
+          1.244094329477047
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.6666666666666666,
+        0.3333333333333333
+      ],
+      "class_totals_0_1": [
+        2.0,
+        1.0
+      ],
+      "coordinate_difference_count": 18,
+      "correct": false,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.irrelevant.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        751.208632804496,
+        630.6219231837727,
+        442.13822499304445,
+        202.5458219761642,
+        50.299204765085506,
+        453.11169704610364
+      ],
+      "fit_ids": [
+        "kn.irrelevant.v1.train.0",
+        "kn.irrelevant.v1.train.1",
+        "kn.irrelevant.v1.train.2",
+        "kn.irrelevant.v1.train.3",
+        "kn.irrelevant.v1.train.4",
+        "kn.irrelevant.v1.train.5"
+      ],
+      "id": "kn.irrelevant.v1.q1.k3.uniform.raw",
+      "k": 3,
+      "library_neighbor_order": [
+        4,
+        3,
+        2
+      ],
+      "ordered_indices": [
+        4,
+        3,
+        2,
+        5,
+        1,
+        0
+      ],
+      "prediction": 0,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.irrelevant.v1.dev.1",
+      "query_index": 1,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": false,
+      "scaler": null,
+      "selected_indices": [
+        4,
+        3,
+        2
+      ],
+      "selected_weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "text": "Query 1; k=3; uniform; raw: class totals [2.0, 1.0], predicted 0. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        850.0,
+        8.1,
+        42.0
+      ],
+      "transformed_rows": [
+        [
+          100.0,
+          1.0,
+          0.0
+        ],
+        [
+          220.0,
+          8.0,
+          70.0
+        ],
+        [
+          410.0,
+          2.0,
+          85.0
+        ],
+        [
+          650.0,
+          9.0,
+          10.0
+        ],
+        [
+          900.0,
+          3.0,
+          40.0
+        ],
+        [
+          1300.0,
+          7.0,
+          95.0
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "class_totals_0_1": [
+        1.0,
+        2.0
+      ],
+      "coordinate_difference_count": 18,
+      "correct": true,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.irrelevant.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        3.145634303733586,
+        1.7179243187334547,
+        2.531664909443111,
+        1.0504303380855167,
+        1.6457689561550204,
+        1.8632405702653647
+      ],
+      "fit_ids": [
+        "kn.irrelevant.v1.train.0",
+        "kn.irrelevant.v1.train.1",
+        "kn.irrelevant.v1.train.2",
+        "kn.irrelevant.v1.train.3",
+        "kn.irrelevant.v1.train.4",
+        "kn.irrelevant.v1.train.5"
+      ],
+      "id": "kn.irrelevant.v1.q1.k3.uniform.scaled",
+      "k": 3,
+      "library_neighbor_order": [
+        3,
+        4,
+        1
+      ],
+      "ordered_indices": [
+        3,
+        4,
+        1,
+        5,
+        2,
+        0
+      ],
+      "prediction": 1,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.irrelevant.v1.dev.1",
+      "query_index": 1,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": true,
+      "scaler": {
+        "mean": [
+          596.6666666666666,
+          5.0,
+          50.0
+        ],
+        "scale": [
+          410.87981481477306,
+          3.1091263510296048,
+          36.17089069035117
+        ],
+        "variance": [
+          168822.22222222222,
+          9.666666666666666,
+          1308.3333333333333
+        ]
+      },
+      "selected_indices": [
+        3,
+        4,
+        1
+      ],
+      "selected_weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "text": "Query 1; k=3; uniform; training-scaled: class totals [1.0, 2.0], predicted 1. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        0.6165631023941575,
+        0.9970646573991492,
+        -0.2211723252403639
+      ],
+      "transformed_rows": [
+        [
+          -1.2087881875885453,
+          -1.2865350418053538,
+          -1.3823270327522743
+        ],
+        [
+          -0.9167319811913128,
+          0.9649012813540154,
+          0.5529308131009097
+        ],
+        [
+          -0.4543096543956948,
+          -0.9649012813540154,
+          0.9676289229265921
+        ],
+        [
+          0.12980275839877006,
+          1.2865350418053538,
+          -1.1058616262018195
+        ],
+        [
+          0.7382531883930042,
+          -0.6432675209026769,
+          -0.2764654065504549
+        ],
+        [
+          1.711773876383779,
+          0.6432675209026769,
+          1.244094329477047
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.4,
+        0.6
+      ],
+      "class_totals_0_1": [
+        2.0,
+        3.0
+      ],
+      "coordinate_difference_count": 18,
+      "correct": true,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.irrelevant.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        751.208632804496,
+        630.6219231837727,
+        442.13822499304445,
+        202.5458219761642,
+        50.299204765085506,
+        453.11169704610364
+      ],
+      "fit_ids": [
+        "kn.irrelevant.v1.train.0",
+        "kn.irrelevant.v1.train.1",
+        "kn.irrelevant.v1.train.2",
+        "kn.irrelevant.v1.train.3",
+        "kn.irrelevant.v1.train.4",
+        "kn.irrelevant.v1.train.5"
+      ],
+      "id": "kn.irrelevant.v1.q1.k5.uniform.raw",
+      "k": 5,
+      "library_neighbor_order": [
+        4,
+        3,
+        2,
+        5,
+        1
+      ],
+      "ordered_indices": [
+        4,
+        3,
+        2,
+        5,
+        1,
+        0
+      ],
+      "prediction": 1,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.irrelevant.v1.dev.1",
+      "query_index": 1,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": false,
+      "scaler": null,
+      "selected_indices": [
+        4,
+        3,
+        2,
+        5,
+        1
+      ],
+      "selected_weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "text": "Query 1; k=5; uniform; raw: class totals [2.0, 3.0], predicted 1. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        850.0,
+        8.1,
+        42.0
+      ],
+      "transformed_rows": [
+        [
+          100.0,
+          1.0,
+          0.0
+        ],
+        [
+          220.0,
+          8.0,
+          70.0
+        ],
+        [
+          410.0,
+          2.0,
+          85.0
+        ],
+        [
+          650.0,
+          9.0,
+          10.0
+        ],
+        [
+          900.0,
+          3.0,
+          40.0
+        ],
+        [
+          1300.0,
+          7.0,
+          95.0
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "brute_distance_evaluations": 6,
+      "class_fractions_0_1": [
+        0.4,
+        0.6
+      ],
+      "class_totals_0_1": [
+        2.0,
+        3.0
+      ],
+      "coordinate_difference_count": 18,
+      "correct": true,
+      "correct_reason": "distance-selects-labels-vote",
+      "counterexample": "Changing a development outcome label must not change neighbor selection or the predicted vote; target leakage would make it do so.",
+      "dataset_id": "kn.irrelevant.v1",
+      "development_label": 1,
+      "distances_in_training_order": [
+        3.145634303733586,
+        1.7179243187334547,
+        2.531664909443111,
+        1.0504303380855167,
+        1.6457689561550204,
+        1.8632405702653647
+      ],
+      "fit_ids": [
+        "kn.irrelevant.v1.train.0",
+        "kn.irrelevant.v1.train.1",
+        "kn.irrelevant.v1.train.2",
+        "kn.irrelevant.v1.train.3",
+        "kn.irrelevant.v1.train.4",
+        "kn.irrelevant.v1.train.5"
+      ],
+      "id": "kn.irrelevant.v1.q1.k5.uniform.scaled",
+      "k": 5,
+      "library_neighbor_order": [
+        3,
+        4,
+        1,
+        5,
+        2
+      ],
+      "ordered_indices": [
+        3,
+        4,
+        1,
+        5,
+        2,
+        0
+      ],
+      "prediction": 1,
+      "prediction_options": [
+        "class0",
+        "class1"
+      ],
+      "query_id": "kn.irrelevant.v1.dev.1",
+      "query_index": 1,
+      "reason_options": [
+        "distance-selects-labels-vote",
+        "average-label-codes",
+        "query-label-determines-vote"
+      ],
+      "scaled": true,
+      "scaler": {
+        "mean": [
+          596.6666666666666,
+          5.0,
+          50.0
+        ],
+        "scale": [
+          410.87981481477306,
+          3.1091263510296048,
+          36.17089069035117
+        ],
+        "variance": [
+          168822.22222222222,
+          9.666666666666666,
+          1308.3333333333333
+        ]
+      },
+      "selected_indices": [
+        3,
+        4,
+        1,
+        5,
+        2
+      ],
+      "selected_weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "text": "Query 1; k=5; uniform; training-scaled: class totals [2.0, 3.0], predicted 1. Distances select neighbors; labels determine votes. A correct vote is not calibrated future risk.",
+      "transformed_query": [
+        0.6165631023941575,
+        0.9970646573991492,
+        -0.2211723252403639
+      ],
+      "transformed_rows": [
+        [
+          -1.2087881875885453,
+          -1.2865350418053538,
+          -1.3823270327522743
+        ],
+        [
+          -0.9167319811913128,
+          0.9649012813540154,
+          0.5529308131009097
+        ],
+        [
+          -0.4543096543956948,
+          -0.9649012813540154,
+          0.9676289229265921
+        ],
+        [
+          0.12980275839877006,
+          1.2865350418053538,
+          -1.1058616262018195
+        ],
+        [
+          0.7382531883930042,
+          -0.6432675209026769,
+          -0.2764654065504549
+        ],
+        [
+          1.711773876383779,
+          0.6432675209026769,
+          1.244094329477047
+        ]
+      ],
+      "weights": "uniform"
+    },
+    {
+      "id": "KN-E2.reject.test-fit.v1",
+      "outcome": {
+        "reason": "Never fit scaling with development/test rows",
+        "tag": "rejected"
+      },
+      "prediction": null
+    },
+    {
+      "id": "KN-E2.reject.fold-k.v1",
+      "outcome": {
+        "reason": "k5 is illegal for a four-row fold-training set",
+        "tag": "rejected"
+      },
+      "prediction": null
+    },
+    {
+      "id": "KN-E2.reject.cutoff-tie.v1",
+      "outcome": {
+        "reason": "Equal-distance kth membership is deliberately unsupported, not silently resolved by row IDs",
+        "tag": "rejected"
+      },
+      "prediction": null
+    }
+  ],
+  "controls": "Only listed query0/1,k1/3/5,raw/train-scaled,base/irrelevant-dimension configurations; uniform votes. Three explicit rejected permission/configuration diagnostics.",
+  "datasets": [
+    {
+      "features": [
+        "spend_currency",
+        "support_contacts"
+      ],
+      "id": "kn.units.v1",
+      "labels": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "queries": [
+        [
+          440,
+          7.8
+        ],
+        [
+          850,
+          8.1
+        ]
+      ],
+      "query_ids": [
+        "kn.units.v1.dev.0",
+        "kn.units.v1.dev.1"
+      ],
+      "query_labels": [
+        1,
+        1
+      ],
+      "rows": [
+        [
+          100,
+          1
+        ],
+        [
+          220,
+          8
+        ],
+        [
+          410,
+          2
+        ],
+        [
+          650,
+          9
+        ],
+        [
+          900,
+          3
+        ],
+        [
+          1300,
+          7
+        ]
+      ],
+      "training_ids": [
+        "kn.units.v1.train.0",
+        "kn.units.v1.train.1",
+        "kn.units.v1.train.2",
+        "kn.units.v1.train.3",
+        "kn.units.v1.train.4",
+        "kn.units.v1.train.5"
+      ]
+    },
+    {
+      "features": [
+        "spend_currency",
+        "support_contacts",
+        "irrelevant_badge_index"
+      ],
+      "id": "kn.irrelevant.v1",
+      "labels": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "queries": [
+        [
+          440,
+          7.8,
+          82
+        ],
+        [
+          850,
+          8.1,
+          42
+        ]
+      ],
+      "query_ids": [
+        "kn.irrelevant.v1.dev.0",
+        "kn.irrelevant.v1.dev.1"
+      ],
+      "query_labels": [
+        1,
+        1
+      ],
+      "rows": [
+        [
+          100,
+          1,
+          0
+        ],
+        [
+          220,
+          8,
+          70
+        ],
+        [
+          410,
+          2,
+          85
+        ],
+        [
+          650,
+          9,
+          10
+        ],
+        [
+          900,
+          3,
+          40
+        ],
+        [
+          1300,
+          7,
+          95
+        ]
+      ],
+      "training_ids": [
+        "kn.irrelevant.v1.train.0",
+        "kn.irrelevant.v1.train.1",
+        "kn.irrelevant.v1.train.2",
+        "kn.irrelevant.v1.train.3",
+        "kn.irrelevant.v1.train.4",
+        "kn.irrelevant.v1.train.5"
+      ]
+    }
+  ],
+  "explanation": "Units can dominate Euclidean geometry. Train-fitted scaling changes relative coordinate influence; an irrelevant badge coordinate can change neighbors even after scaling. Six rows do not prove a high-dimensional theorem; count 12 versus18 coordinate differences per brute-force query and inspect minority errors. Fast storage does not imply cheap inference.",
+  "id": "KN-E2",
+  "interaction": {
+    "after_reveal": "Compare distances, selected row IDs, votes and explanation; change a listed configuration and complete a changed transfer check. Initial error is recoverable.",
+    "before_reveal": "Select predicted class 0/1 (or rejection for a diagnostic) and one authored reason before revealing any output.",
+    "no_mastery": "Experiment interaction never awards independent module mastery."
+  },
+  "labels": {
+    "0": "stays",
+    "1": "churns (positive class)"
+  },
+  "objectives": [
+    "KN02",
+    "KN04"
+  ],
+  "prerequisites": [
+    "Euclidean distance",
+    "feature units",
+    "training/development separation",
+    "class labels"
+  ],
+  "provenance": "Wholly fictional authored observations; no production labels or causal claims.",
+  "schema": "supervised.knn.experiment.v1",
+  "version": "1.0.0"
+}

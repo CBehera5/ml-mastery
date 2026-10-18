@@ -1,0 +1,4222 @@
+{
+  "bounds": "At most64 configurations,21 read-only plot points,7x9 maximum fitted expansion, no learner arrays beyond64 cells; rank-deficient predictions profile-pinned.",
+  "configurations": [
+    {
+      "controls": {
+        "degree": 1,
+        "features": 1,
+        "query": 2,
+        "weights": "reference"
+      },
+      "expected": {
+        "coefficients": [
+          10.999999999999998
+        ],
+        "curve": [
+          [
+            0.0,
+            -1.9999999999999964
+          ],
+          [
+            0.15,
+            -0.34999999999999676
+          ],
+          [
+            0.3,
+            1.300000000000003
+          ],
+          [
+            0.44999999999999996,
+            2.950000000000002
+          ],
+          [
+            0.6,
+            4.600000000000002
+          ],
+          [
+            0.75,
+            6.250000000000002
+          ],
+          [
+            0.8999999999999999,
+            7.9
+          ],
+          [
+            1.05,
+            9.550000000000002
+          ],
+          [
+            1.2,
+            11.200000000000001
+          ],
+          [
+            1.3499999999999999,
+            12.85
+          ],
+          [
+            1.5,
+            14.5
+          ],
+          [
+            1.65,
+            16.15
+          ],
+          [
+            1.7999999999999998,
+            17.799999999999997
+          ],
+          [
+            1.95,
+            19.45
+          ],
+          [
+            2.1,
+            21.1
+          ],
+          [
+            2.25,
+            22.75
+          ],
+          [
+            2.4,
+            24.4
+          ],
+          [
+            2.55,
+            26.049999999999997
+          ],
+          [
+            2.6999999999999997,
+            27.699999999999996
+          ],
+          [
+            2.85,
+            29.349999999999998
+          ],
+          [
+            3.0,
+            30.999999999999996
+          ]
+        ],
+        "feature_names": [
+          "x0"
+        ],
+        "features": [
+          2
+        ],
+        "intercept": -1.9999999999999964,
+        "prediction": 20.0,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          1
+        ],
+        "training_mae": 3.0000000000000004,
+        "training_predictions": [
+          -1.9999999999999964,
+          9.000000000000002,
+          20.0,
+          30.999999999999996
+        ],
+        "training_residuals": [
+          2.9999999999999964,
+          -3.0000000000000018,
+          -3.0,
+          3.0000000000000036
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p1.d1.x2.reference.fixture.v1",
+      "id": "PR-E1.p1.d1.x2.reference",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "reference-trained single-feature curve. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 1,
+        "features": 1,
+        "query": 2,
+        "weights": "changed-first-weight"
+      },
+      "expected": {
+        "coefficients": [
+          12.999999999999998
+        ],
+        "curve": [
+          [
+            0.0,
+            -1.9999999999999964
+          ],
+          [
+            0.15,
+            -0.049999999999996714
+          ],
+          [
+            0.3,
+            1.900000000000003
+          ],
+          [
+            0.44999999999999996,
+            3.8500000000000023
+          ],
+          [
+            0.6,
+            5.8000000000000025
+          ],
+          [
+            0.75,
+            7.750000000000002
+          ],
+          [
+            0.8999999999999999,
+            9.700000000000001
+          ],
+          [
+            1.05,
+            11.650000000000002
+          ],
+          [
+            1.2,
+            13.600000000000001
+          ],
+          [
+            1.3499999999999999,
+            15.55
+          ],
+          [
+            1.5,
+            17.5
+          ],
+          [
+            1.65,
+            19.45
+          ],
+          [
+            1.7999999999999998,
+            21.4
+          ],
+          [
+            1.95,
+            23.349999999999998
+          ],
+          [
+            2.1,
+            25.3
+          ],
+          [
+            2.25,
+            27.25
+          ],
+          [
+            2.4,
+            29.2
+          ],
+          [
+            2.55,
+            31.149999999999995
+          ],
+          [
+            2.6999999999999997,
+            33.099999999999994
+          ],
+          [
+            2.85,
+            35.05
+          ],
+          [
+            3.0,
+            37.0
+          ]
+        ],
+        "feature_names": [
+          "x0"
+        ],
+        "features": [
+          2
+        ],
+        "intercept": -1.9999999999999964,
+        "prediction": 24.0,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          1
+        ],
+        "training_mae": 4.5,
+        "training_predictions": [
+          -1.9999999999999964,
+          11.000000000000002,
+          24.0,
+          37.0
+        ],
+        "training_residuals": [
+          2.9999999999999964,
+          -5.000000000000002,
+          -7.0,
+          -3.0
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p1.d1.x2.changed-first-weight.fixture.v1",
+      "id": "PR-E1.p1.d1.x2.changed-first-weight",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored coefficient counterfactual, not refitted. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 1,
+        "features": 1,
+        "query": 3,
+        "weights": "reference"
+      },
+      "expected": {
+        "coefficients": [
+          10.999999999999998
+        ],
+        "curve": [
+          [
+            0.0,
+            -1.9999999999999964
+          ],
+          [
+            0.15,
+            -0.34999999999999676
+          ],
+          [
+            0.3,
+            1.300000000000003
+          ],
+          [
+            0.44999999999999996,
+            2.950000000000002
+          ],
+          [
+            0.6,
+            4.600000000000002
+          ],
+          [
+            0.75,
+            6.250000000000002
+          ],
+          [
+            0.8999999999999999,
+            7.9
+          ],
+          [
+            1.05,
+            9.550000000000002
+          ],
+          [
+            1.2,
+            11.200000000000001
+          ],
+          [
+            1.3499999999999999,
+            12.85
+          ],
+          [
+            1.5,
+            14.5
+          ],
+          [
+            1.65,
+            16.15
+          ],
+          [
+            1.7999999999999998,
+            17.799999999999997
+          ],
+          [
+            1.95,
+            19.45
+          ],
+          [
+            2.1,
+            21.1
+          ],
+          [
+            2.25,
+            22.75
+          ],
+          [
+            2.4,
+            24.4
+          ],
+          [
+            2.55,
+            26.049999999999997
+          ],
+          [
+            2.6999999999999997,
+            27.699999999999996
+          ],
+          [
+            2.85,
+            29.349999999999998
+          ],
+          [
+            3.0,
+            30.999999999999996
+          ]
+        ],
+        "feature_names": [
+          "x0"
+        ],
+        "features": [
+          3
+        ],
+        "intercept": -1.9999999999999964,
+        "prediction": 30.999999999999996,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          1
+        ],
+        "training_mae": 3.0000000000000004,
+        "training_predictions": [
+          -1.9999999999999964,
+          9.000000000000002,
+          20.0,
+          30.999999999999996
+        ],
+        "training_residuals": [
+          2.9999999999999964,
+          -3.0000000000000018,
+          -3.0,
+          3.0000000000000036
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p1.d1.x3.reference.fixture.v1",
+      "id": "PR-E1.p1.d1.x3.reference",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "reference-trained single-feature curve. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 1,
+        "features": 1,
+        "query": 3,
+        "weights": "changed-first-weight"
+      },
+      "expected": {
+        "coefficients": [
+          12.999999999999998
+        ],
+        "curve": [
+          [
+            0.0,
+            -1.9999999999999964
+          ],
+          [
+            0.15,
+            -0.049999999999996714
+          ],
+          [
+            0.3,
+            1.900000000000003
+          ],
+          [
+            0.44999999999999996,
+            3.8500000000000023
+          ],
+          [
+            0.6,
+            5.8000000000000025
+          ],
+          [
+            0.75,
+            7.750000000000002
+          ],
+          [
+            0.8999999999999999,
+            9.700000000000001
+          ],
+          [
+            1.05,
+            11.650000000000002
+          ],
+          [
+            1.2,
+            13.600000000000001
+          ],
+          [
+            1.3499999999999999,
+            15.55
+          ],
+          [
+            1.5,
+            17.5
+          ],
+          [
+            1.65,
+            19.45
+          ],
+          [
+            1.7999999999999998,
+            21.4
+          ],
+          [
+            1.95,
+            23.349999999999998
+          ],
+          [
+            2.1,
+            25.3
+          ],
+          [
+            2.25,
+            27.25
+          ],
+          [
+            2.4,
+            29.2
+          ],
+          [
+            2.55,
+            31.149999999999995
+          ],
+          [
+            2.6999999999999997,
+            33.099999999999994
+          ],
+          [
+            2.85,
+            35.05
+          ],
+          [
+            3.0,
+            37.0
+          ]
+        ],
+        "feature_names": [
+          "x0"
+        ],
+        "features": [
+          3
+        ],
+        "intercept": -1.9999999999999964,
+        "prediction": 37.0,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          1
+        ],
+        "training_mae": 4.5,
+        "training_predictions": [
+          -1.9999999999999964,
+          11.000000000000002,
+          24.0,
+          37.0
+        ],
+        "training_residuals": [
+          2.9999999999999964,
+          -5.000000000000002,
+          -7.0,
+          -3.0
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p1.d1.x3.changed-first-weight.fixture.v1",
+      "id": "PR-E1.p1.d1.x3.changed-first-weight",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored coefficient counterfactual, not refitted. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 2,
+        "features": 1,
+        "query": 2,
+        "weights": "reference"
+      },
+      "expected": {
+        "coefficients": [
+          2.0000000000000004,
+          3.0000000000000004
+        ],
+        "curve": [
+          [
+            0.0,
+            0.9999999999999964
+          ],
+          [
+            0.15,
+            1.3674999999999966
+          ],
+          [
+            0.3,
+            1.8699999999999966
+          ],
+          [
+            0.44999999999999996,
+            2.5074999999999967
+          ],
+          [
+            0.6,
+            3.2799999999999967
+          ],
+          [
+            0.75,
+            4.187499999999997
+          ],
+          [
+            0.8999999999999999,
+            5.229999999999997
+          ],
+          [
+            1.05,
+            6.407499999999997
+          ],
+          [
+            1.2,
+            7.719999999999997
+          ],
+          [
+            1.3499999999999999,
+            9.167499999999997
+          ],
+          [
+            1.5,
+            10.749999999999998
+          ],
+          [
+            1.65,
+            12.467499999999998
+          ],
+          [
+            1.7999999999999998,
+            14.319999999999997
+          ],
+          [
+            1.95,
+            16.307499999999997
+          ],
+          [
+            2.1,
+            18.43
+          ],
+          [
+            2.25,
+            20.6875
+          ],
+          [
+            2.4,
+            23.08
+          ],
+          [
+            2.55,
+            25.607499999999998
+          ],
+          [
+            2.6999999999999997,
+            28.269999999999992
+          ],
+          [
+            2.85,
+            31.067500000000006
+          ],
+          [
+            3.0,
+            34.0
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x0^2"
+        ],
+        "features": [
+          2,
+          4
+        ],
+        "intercept": 0.9999999999999964,
+        "prediction": 17.0,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          2
+        ],
+        "training_mae": 1.5543122344752192e-15,
+        "training_predictions": [
+          0.9999999999999964,
+          5.999999999999997,
+          17.0,
+          34.0
+        ],
+        "training_residuals": [
+          3.552713678800501e-15,
+          2.6645352591003757e-15,
+          0.0,
+          0.0
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p1.d2.x2.reference.fixture.v1",
+      "id": "PR-E1.p1.d2.x2.reference",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "reference-trained single-feature curve. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 2,
+        "features": 1,
+        "query": 2,
+        "weights": "changed-first-weight"
+      },
+      "expected": {
+        "coefficients": [
+          4.0,
+          3.0000000000000004
+        ],
+        "curve": [
+          [
+            0.0,
+            0.9999999999999964
+          ],
+          [
+            0.15,
+            1.6674999999999964
+          ],
+          [
+            0.3,
+            2.469999999999996
+          ],
+          [
+            0.44999999999999996,
+            3.407499999999996
+          ],
+          [
+            0.6,
+            4.479999999999997
+          ],
+          [
+            0.75,
+            5.6874999999999964
+          ],
+          [
+            0.8999999999999999,
+            7.029999999999996
+          ],
+          [
+            1.05,
+            8.507499999999997
+          ],
+          [
+            1.2,
+            10.119999999999997
+          ],
+          [
+            1.3499999999999999,
+            11.867499999999996
+          ],
+          [
+            1.5,
+            13.749999999999996
+          ],
+          [
+            1.65,
+            15.767499999999997
+          ],
+          [
+            1.7999999999999998,
+            17.919999999999995
+          ],
+          [
+            1.95,
+            20.207499999999996
+          ],
+          [
+            2.1,
+            22.63
+          ],
+          [
+            2.25,
+            25.187499999999996
+          ],
+          [
+            2.4,
+            27.88
+          ],
+          [
+            2.55,
+            30.707499999999996
+          ],
+          [
+            2.6999999999999997,
+            33.66999999999999
+          ],
+          [
+            2.85,
+            36.7675
+          ],
+          [
+            3.0,
+            40.0
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x0^2"
+        ],
+        "features": [
+          2,
+          4
+        ],
+        "intercept": 0.9999999999999964,
+        "prediction": 20.999999999999996,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          2
+        ],
+        "training_mae": 2.999999999999999,
+        "training_predictions": [
+          0.9999999999999964,
+          7.9999999999999964,
+          20.999999999999996,
+          40.0
+        ],
+        "training_residuals": [
+          3.552713678800501e-15,
+          -1.9999999999999964,
+          -3.9999999999999964,
+          -6.0
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p1.d2.x2.changed-first-weight.fixture.v1",
+      "id": "PR-E1.p1.d2.x2.changed-first-weight",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored coefficient counterfactual, not refitted. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 2,
+        "features": 1,
+        "query": 3,
+        "weights": "reference"
+      },
+      "expected": {
+        "coefficients": [
+          2.0000000000000004,
+          3.0000000000000004
+        ],
+        "curve": [
+          [
+            0.0,
+            0.9999999999999964
+          ],
+          [
+            0.15,
+            1.3674999999999966
+          ],
+          [
+            0.3,
+            1.8699999999999966
+          ],
+          [
+            0.44999999999999996,
+            2.5074999999999967
+          ],
+          [
+            0.6,
+            3.2799999999999967
+          ],
+          [
+            0.75,
+            4.187499999999997
+          ],
+          [
+            0.8999999999999999,
+            5.229999999999997
+          ],
+          [
+            1.05,
+            6.407499999999997
+          ],
+          [
+            1.2,
+            7.719999999999997
+          ],
+          [
+            1.3499999999999999,
+            9.167499999999997
+          ],
+          [
+            1.5,
+            10.749999999999998
+          ],
+          [
+            1.65,
+            12.467499999999998
+          ],
+          [
+            1.7999999999999998,
+            14.319999999999997
+          ],
+          [
+            1.95,
+            16.307499999999997
+          ],
+          [
+            2.1,
+            18.43
+          ],
+          [
+            2.25,
+            20.6875
+          ],
+          [
+            2.4,
+            23.08
+          ],
+          [
+            2.55,
+            25.607499999999998
+          ],
+          [
+            2.6999999999999997,
+            28.269999999999992
+          ],
+          [
+            2.85,
+            31.067500000000006
+          ],
+          [
+            3.0,
+            34.0
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x0^2"
+        ],
+        "features": [
+          3,
+          9
+        ],
+        "intercept": 0.9999999999999964,
+        "prediction": 34.0,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          2
+        ],
+        "training_mae": 1.5543122344752192e-15,
+        "training_predictions": [
+          0.9999999999999964,
+          5.999999999999997,
+          17.0,
+          34.0
+        ],
+        "training_residuals": [
+          3.552713678800501e-15,
+          2.6645352591003757e-15,
+          0.0,
+          0.0
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p1.d2.x3.reference.fixture.v1",
+      "id": "PR-E1.p1.d2.x3.reference",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "reference-trained single-feature curve. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 2,
+        "features": 1,
+        "query": 3,
+        "weights": "changed-first-weight"
+      },
+      "expected": {
+        "coefficients": [
+          4.0,
+          3.0000000000000004
+        ],
+        "curve": [
+          [
+            0.0,
+            0.9999999999999964
+          ],
+          [
+            0.15,
+            1.6674999999999964
+          ],
+          [
+            0.3,
+            2.469999999999996
+          ],
+          [
+            0.44999999999999996,
+            3.407499999999996
+          ],
+          [
+            0.6,
+            4.479999999999997
+          ],
+          [
+            0.75,
+            5.6874999999999964
+          ],
+          [
+            0.8999999999999999,
+            7.029999999999996
+          ],
+          [
+            1.05,
+            8.507499999999997
+          ],
+          [
+            1.2,
+            10.119999999999997
+          ],
+          [
+            1.3499999999999999,
+            11.867499999999996
+          ],
+          [
+            1.5,
+            13.749999999999996
+          ],
+          [
+            1.65,
+            15.767499999999997
+          ],
+          [
+            1.7999999999999998,
+            17.919999999999995
+          ],
+          [
+            1.95,
+            20.207499999999996
+          ],
+          [
+            2.1,
+            22.63
+          ],
+          [
+            2.25,
+            25.187499999999996
+          ],
+          [
+            2.4,
+            27.88
+          ],
+          [
+            2.55,
+            30.707499999999996
+          ],
+          [
+            2.6999999999999997,
+            33.66999999999999
+          ],
+          [
+            2.85,
+            36.7675
+          ],
+          [
+            3.0,
+            40.0
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x0^2"
+        ],
+        "features": [
+          3,
+          9
+        ],
+        "intercept": 0.9999999999999964,
+        "prediction": 40.0,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          2
+        ],
+        "training_mae": 2.999999999999999,
+        "training_predictions": [
+          0.9999999999999964,
+          7.9999999999999964,
+          20.999999999999996,
+          40.0
+        ],
+        "training_residuals": [
+          3.552713678800501e-15,
+          -1.9999999999999964,
+          -3.9999999999999964,
+          -6.0
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p1.d2.x3.changed-first-weight.fixture.v1",
+      "id": "PR-E1.p1.d2.x3.changed-first-weight",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored coefficient counterfactual, not refitted. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 3,
+        "features": 1,
+        "query": 2,
+        "weights": "reference"
+      },
+      "expected": {
+        "coefficients": [
+          1.9999999999999898,
+          3.0000000000000036,
+          -1.0544581575678707e-15
+        ],
+        "curve": [
+          [
+            0.0,
+            1.0000000000000124
+          ],
+          [
+            0.15,
+            1.3675000000000108
+          ],
+          [
+            0.3,
+            1.8700000000000097
+          ],
+          [
+            0.44999999999999996,
+            2.5075000000000083
+          ],
+          [
+            0.6,
+            3.280000000000007
+          ],
+          [
+            0.75,
+            4.187500000000007
+          ],
+          [
+            0.8999999999999999,
+            5.230000000000005
+          ],
+          [
+            1.05,
+            6.407500000000005
+          ],
+          [
+            1.2,
+            7.720000000000002
+          ],
+          [
+            1.3499999999999999,
+            9.167500000000002
+          ],
+          [
+            1.5,
+            10.750000000000002
+          ],
+          [
+            1.65,
+            12.4675
+          ],
+          [
+            1.7999999999999998,
+            14.319999999999999
+          ],
+          [
+            1.95,
+            16.307499999999997
+          ],
+          [
+            2.1,
+            18.43
+          ],
+          [
+            2.25,
+            20.687499999999993
+          ],
+          [
+            2.4,
+            23.07999999999999
+          ],
+          [
+            2.55,
+            25.607499999999987
+          ],
+          [
+            2.6999999999999997,
+            28.26999999999999
+          ],
+          [
+            2.85,
+            31.06749999999999
+          ],
+          [
+            3.0,
+            33.999999999999986
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x0^2",
+          "x0^3"
+        ],
+        "features": [
+          2,
+          4,
+          8
+        ],
+        "intercept": 1.0000000000000124,
+        "prediction": 16.999999999999996,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          3
+        ],
+        "training_mae": 8.659739592076221e-15,
+        "training_predictions": [
+          1.0000000000000124,
+          6.000000000000004,
+          16.999999999999996,
+          33.999999999999986
+        ],
+        "training_residuals": [
+          -1.2434497875801753e-14,
+          -4.440892098500626e-15,
+          3.552713678800501e-15,
+          1.4210854715202004e-14
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p1.d3.x2.reference.fixture.v1",
+      "id": "PR-E1.p1.d3.x2.reference",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "reference-trained single-feature curve. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 3,
+        "features": 1,
+        "query": 2,
+        "weights": "changed-first-weight"
+      },
+      "expected": {
+        "coefficients": [
+          3.99999999999999,
+          3.0000000000000036,
+          -1.0544581575678707e-15
+        ],
+        "curve": [
+          [
+            0.0,
+            1.0000000000000124
+          ],
+          [
+            0.15,
+            1.667500000000011
+          ],
+          [
+            0.3,
+            2.4700000000000095
+          ],
+          [
+            0.44999999999999996,
+            3.407500000000008
+          ],
+          [
+            0.6,
+            4.4800000000000075
+          ],
+          [
+            0.75,
+            5.687500000000006
+          ],
+          [
+            0.8999999999999999,
+            7.030000000000004
+          ],
+          [
+            1.05,
+            8.507500000000004
+          ],
+          [
+            1.2,
+            10.120000000000003
+          ],
+          [
+            1.3499999999999999,
+            11.867500000000001
+          ],
+          [
+            1.5,
+            13.750000000000002
+          ],
+          [
+            1.65,
+            15.767499999999998
+          ],
+          [
+            1.7999999999999998,
+            17.919999999999995
+          ],
+          [
+            1.95,
+            20.207499999999996
+          ],
+          [
+            2.1,
+            22.629999999999995
+          ],
+          [
+            2.25,
+            25.187499999999993
+          ],
+          [
+            2.4,
+            27.879999999999995
+          ],
+          [
+            2.55,
+            30.70749999999999
+          ],
+          [
+            2.6999999999999997,
+            33.66999999999999
+          ],
+          [
+            2.85,
+            36.7675
+          ],
+          [
+            3.0,
+            39.999999999999986
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x0^2",
+          "x0^3"
+        ],
+        "features": [
+          2,
+          4,
+          8
+        ],
+        "intercept": 1.0000000000000124,
+        "prediction": 21.0,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          3
+        ],
+        "training_mae": 3.0000000000000004,
+        "training_predictions": [
+          1.0000000000000124,
+          8.000000000000004,
+          21.0,
+          39.999999999999986
+        ],
+        "training_residuals": [
+          -1.2434497875801753e-14,
+          -2.0000000000000036,
+          -4.0,
+          -5.999999999999986
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p1.d3.x2.changed-first-weight.fixture.v1",
+      "id": "PR-E1.p1.d3.x2.changed-first-weight",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored coefficient counterfactual, not refitted. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 3,
+        "features": 1,
+        "query": 3,
+        "weights": "reference"
+      },
+      "expected": {
+        "coefficients": [
+          1.9999999999999898,
+          3.0000000000000036,
+          -1.0544581575678707e-15
+        ],
+        "curve": [
+          [
+            0.0,
+            1.0000000000000124
+          ],
+          [
+            0.15,
+            1.3675000000000108
+          ],
+          [
+            0.3,
+            1.8700000000000097
+          ],
+          [
+            0.44999999999999996,
+            2.5075000000000083
+          ],
+          [
+            0.6,
+            3.280000000000007
+          ],
+          [
+            0.75,
+            4.187500000000007
+          ],
+          [
+            0.8999999999999999,
+            5.230000000000005
+          ],
+          [
+            1.05,
+            6.407500000000005
+          ],
+          [
+            1.2,
+            7.720000000000002
+          ],
+          [
+            1.3499999999999999,
+            9.167500000000002
+          ],
+          [
+            1.5,
+            10.750000000000002
+          ],
+          [
+            1.65,
+            12.4675
+          ],
+          [
+            1.7999999999999998,
+            14.319999999999999
+          ],
+          [
+            1.95,
+            16.307499999999997
+          ],
+          [
+            2.1,
+            18.43
+          ],
+          [
+            2.25,
+            20.687499999999993
+          ],
+          [
+            2.4,
+            23.07999999999999
+          ],
+          [
+            2.55,
+            25.607499999999987
+          ],
+          [
+            2.6999999999999997,
+            28.26999999999999
+          ],
+          [
+            2.85,
+            31.06749999999999
+          ],
+          [
+            3.0,
+            33.999999999999986
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x0^2",
+          "x0^3"
+        ],
+        "features": [
+          3,
+          9,
+          27
+        ],
+        "intercept": 1.0000000000000124,
+        "prediction": 33.999999999999986,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          3
+        ],
+        "training_mae": 8.659739592076221e-15,
+        "training_predictions": [
+          1.0000000000000124,
+          6.000000000000004,
+          16.999999999999996,
+          33.999999999999986
+        ],
+        "training_residuals": [
+          -1.2434497875801753e-14,
+          -4.440892098500626e-15,
+          3.552713678800501e-15,
+          1.4210854715202004e-14
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p1.d3.x3.reference.fixture.v1",
+      "id": "PR-E1.p1.d3.x3.reference",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "reference-trained single-feature curve. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 3,
+        "features": 1,
+        "query": 3,
+        "weights": "changed-first-weight"
+      },
+      "expected": {
+        "coefficients": [
+          3.99999999999999,
+          3.0000000000000036,
+          -1.0544581575678707e-15
+        ],
+        "curve": [
+          [
+            0.0,
+            1.0000000000000124
+          ],
+          [
+            0.15,
+            1.667500000000011
+          ],
+          [
+            0.3,
+            2.4700000000000095
+          ],
+          [
+            0.44999999999999996,
+            3.407500000000008
+          ],
+          [
+            0.6,
+            4.4800000000000075
+          ],
+          [
+            0.75,
+            5.687500000000006
+          ],
+          [
+            0.8999999999999999,
+            7.030000000000004
+          ],
+          [
+            1.05,
+            8.507500000000004
+          ],
+          [
+            1.2,
+            10.120000000000003
+          ],
+          [
+            1.3499999999999999,
+            11.867500000000001
+          ],
+          [
+            1.5,
+            13.750000000000002
+          ],
+          [
+            1.65,
+            15.767499999999998
+          ],
+          [
+            1.7999999999999998,
+            17.919999999999995
+          ],
+          [
+            1.95,
+            20.207499999999996
+          ],
+          [
+            2.1,
+            22.629999999999995
+          ],
+          [
+            2.25,
+            25.187499999999993
+          ],
+          [
+            2.4,
+            27.879999999999995
+          ],
+          [
+            2.55,
+            30.70749999999999
+          ],
+          [
+            2.6999999999999997,
+            33.66999999999999
+          ],
+          [
+            2.85,
+            36.7675
+          ],
+          [
+            3.0,
+            39.999999999999986
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x0^2",
+          "x0^3"
+        ],
+        "features": [
+          3,
+          9,
+          27
+        ],
+        "intercept": 1.0000000000000124,
+        "prediction": 39.999999999999986,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          3
+        ],
+        "training_mae": 3.0000000000000004,
+        "training_predictions": [
+          1.0000000000000124,
+          8.000000000000004,
+          21.0,
+          39.999999999999986
+        ],
+        "training_residuals": [
+          -1.2434497875801753e-14,
+          -2.0000000000000036,
+          -4.0,
+          -5.999999999999986
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p1.d3.x3.changed-first-weight.fixture.v1",
+      "id": "PR-E1.p1.d3.x3.changed-first-weight",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored coefficient counterfactual, not refitted. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 1,
+        "features": 2,
+        "query": 2,
+        "weights": "reference"
+      },
+      "expected": {
+        "coefficients": [
+          2,
+          1
+        ],
+        "curve": [
+          [
+            0.0,
+            4.0
+          ],
+          [
+            0.15,
+            4.3
+          ],
+          [
+            0.3,
+            4.6
+          ],
+          [
+            0.44999999999999996,
+            4.9
+          ],
+          [
+            0.6,
+            5.2
+          ],
+          [
+            0.75,
+            5.5
+          ],
+          [
+            0.8999999999999999,
+            5.8
+          ],
+          [
+            1.05,
+            6.1
+          ],
+          [
+            1.2,
+            6.4
+          ],
+          [
+            1.3499999999999999,
+            6.699999999999999
+          ],
+          [
+            1.5,
+            7.0
+          ],
+          [
+            1.65,
+            7.3
+          ],
+          [
+            1.7999999999999998,
+            7.6
+          ],
+          [
+            1.95,
+            7.9
+          ],
+          [
+            2.1,
+            8.2
+          ],
+          [
+            2.25,
+            8.5
+          ],
+          [
+            2.4,
+            8.8
+          ],
+          [
+            2.55,
+            9.1
+          ],
+          [
+            2.6999999999999997,
+            9.399999999999999
+          ],
+          [
+            2.85,
+            9.7
+          ],
+          [
+            3.0,
+            10.0
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x1"
+        ],
+        "features": [
+          2,
+          3
+        ],
+        "intercept": 1,
+        "prediction": 8.0,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          2
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p2.d1.x2.reference.fixture.v1",
+      "id": "PR-E1.p2.d1.x2.reference",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored two-feature weighted map, not a trained model. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 1,
+        "features": 2,
+        "query": 2,
+        "weights": "changed-first-weight"
+      },
+      "expected": {
+        "coefficients": [
+          4,
+          1
+        ],
+        "curve": [
+          [
+            0.0,
+            4.0
+          ],
+          [
+            0.15,
+            4.6
+          ],
+          [
+            0.3,
+            5.2
+          ],
+          [
+            0.44999999999999996,
+            5.8
+          ],
+          [
+            0.6,
+            6.4
+          ],
+          [
+            0.75,
+            7.0
+          ],
+          [
+            0.8999999999999999,
+            7.6
+          ],
+          [
+            1.05,
+            8.2
+          ],
+          [
+            1.2,
+            8.8
+          ],
+          [
+            1.3499999999999999,
+            9.399999999999999
+          ],
+          [
+            1.5,
+            10.0
+          ],
+          [
+            1.65,
+            10.6
+          ],
+          [
+            1.7999999999999998,
+            11.2
+          ],
+          [
+            1.95,
+            11.8
+          ],
+          [
+            2.1,
+            12.4
+          ],
+          [
+            2.25,
+            13.0
+          ],
+          [
+            2.4,
+            13.6
+          ],
+          [
+            2.55,
+            14.2
+          ],
+          [
+            2.6999999999999997,
+            14.799999999999999
+          ],
+          [
+            2.85,
+            15.4
+          ],
+          [
+            3.0,
+            16.0
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x1"
+        ],
+        "features": [
+          2,
+          3
+        ],
+        "intercept": 1,
+        "prediction": 12.0,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          2
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p2.d1.x2.changed-first-weight.fixture.v1",
+      "id": "PR-E1.p2.d1.x2.changed-first-weight",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored two-feature weighted map, not a trained model. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 1,
+        "features": 2,
+        "query": 3,
+        "weights": "reference"
+      },
+      "expected": {
+        "coefficients": [
+          2,
+          1
+        ],
+        "curve": [
+          [
+            0.0,
+            4.0
+          ],
+          [
+            0.15,
+            4.3
+          ],
+          [
+            0.3,
+            4.6
+          ],
+          [
+            0.44999999999999996,
+            4.9
+          ],
+          [
+            0.6,
+            5.2
+          ],
+          [
+            0.75,
+            5.5
+          ],
+          [
+            0.8999999999999999,
+            5.8
+          ],
+          [
+            1.05,
+            6.1
+          ],
+          [
+            1.2,
+            6.4
+          ],
+          [
+            1.3499999999999999,
+            6.699999999999999
+          ],
+          [
+            1.5,
+            7.0
+          ],
+          [
+            1.65,
+            7.3
+          ],
+          [
+            1.7999999999999998,
+            7.6
+          ],
+          [
+            1.95,
+            7.9
+          ],
+          [
+            2.1,
+            8.2
+          ],
+          [
+            2.25,
+            8.5
+          ],
+          [
+            2.4,
+            8.8
+          ],
+          [
+            2.55,
+            9.1
+          ],
+          [
+            2.6999999999999997,
+            9.399999999999999
+          ],
+          [
+            2.85,
+            9.7
+          ],
+          [
+            3.0,
+            10.0
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x1"
+        ],
+        "features": [
+          3,
+          3
+        ],
+        "intercept": 1,
+        "prediction": 10.0,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          2
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p2.d1.x3.reference.fixture.v1",
+      "id": "PR-E1.p2.d1.x3.reference",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored two-feature weighted map, not a trained model. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 1,
+        "features": 2,
+        "query": 3,
+        "weights": "changed-first-weight"
+      },
+      "expected": {
+        "coefficients": [
+          4,
+          1
+        ],
+        "curve": [
+          [
+            0.0,
+            4.0
+          ],
+          [
+            0.15,
+            4.6
+          ],
+          [
+            0.3,
+            5.2
+          ],
+          [
+            0.44999999999999996,
+            5.8
+          ],
+          [
+            0.6,
+            6.4
+          ],
+          [
+            0.75,
+            7.0
+          ],
+          [
+            0.8999999999999999,
+            7.6
+          ],
+          [
+            1.05,
+            8.2
+          ],
+          [
+            1.2,
+            8.8
+          ],
+          [
+            1.3499999999999999,
+            9.399999999999999
+          ],
+          [
+            1.5,
+            10.0
+          ],
+          [
+            1.65,
+            10.6
+          ],
+          [
+            1.7999999999999998,
+            11.2
+          ],
+          [
+            1.95,
+            11.8
+          ],
+          [
+            2.1,
+            12.4
+          ],
+          [
+            2.25,
+            13.0
+          ],
+          [
+            2.4,
+            13.6
+          ],
+          [
+            2.55,
+            14.2
+          ],
+          [
+            2.6999999999999997,
+            14.799999999999999
+          ],
+          [
+            2.85,
+            15.4
+          ],
+          [
+            3.0,
+            16.0
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x1"
+        ],
+        "features": [
+          3,
+          3
+        ],
+        "intercept": 1,
+        "prediction": 16.0,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          2
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p2.d1.x3.changed-first-weight.fixture.v1",
+      "id": "PR-E1.p2.d1.x3.changed-first-weight",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored two-feature weighted map, not a trained model. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 2,
+        "features": 2,
+        "query": 2,
+        "weights": "reference"
+      },
+      "expected": {
+        "coefficients": [
+          2,
+          1,
+          3,
+          0.5,
+          1
+        ],
+        "curve": [
+          [
+            0.0,
+            13.0
+          ],
+          [
+            0.15,
+            13.5925
+          ],
+          [
+            0.3,
+            14.319999999999999
+          ],
+          [
+            0.44999999999999996,
+            15.182500000000001
+          ],
+          [
+            0.6,
+            16.18
+          ],
+          [
+            0.75,
+            17.3125
+          ],
+          [
+            0.8999999999999999,
+            18.58
+          ],
+          [
+            1.05,
+            19.9825
+          ],
+          [
+            1.2,
+            21.52
+          ],
+          [
+            1.3499999999999999,
+            23.1925
+          ],
+          [
+            1.5,
+            25.0
+          ],
+          [
+            1.65,
+            26.9425
+          ],
+          [
+            1.7999999999999998,
+            29.019999999999996
+          ],
+          [
+            1.95,
+            31.2325
+          ],
+          [
+            2.1,
+            33.58
+          ],
+          [
+            2.25,
+            36.0625
+          ],
+          [
+            2.4,
+            38.68
+          ],
+          [
+            2.55,
+            41.4325
+          ],
+          [
+            2.6999999999999997,
+            44.31999999999999
+          ],
+          [
+            2.85,
+            47.3425
+          ],
+          [
+            3.0,
+            50.5
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x1",
+          "x0^2",
+          "x0 x1",
+          "x1^2"
+        ],
+        "features": [
+          2,
+          3,
+          4,
+          6,
+          9
+        ],
+        "intercept": 1,
+        "prediction": 32.0,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          5
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p2.d2.x2.reference.fixture.v1",
+      "id": "PR-E1.p2.d2.x2.reference",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored two-feature weighted map, not a trained model. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 2,
+        "features": 2,
+        "query": 2,
+        "weights": "changed-first-weight"
+      },
+      "expected": {
+        "coefficients": [
+          4,
+          1,
+          3,
+          0.5,
+          1
+        ],
+        "curve": [
+          [
+            0.0,
+            13.0
+          ],
+          [
+            0.15,
+            13.8925
+          ],
+          [
+            0.3,
+            14.92
+          ],
+          [
+            0.44999999999999996,
+            16.0825
+          ],
+          [
+            0.6,
+            17.38
+          ],
+          [
+            0.75,
+            18.8125
+          ],
+          [
+            0.8999999999999999,
+            20.38
+          ],
+          [
+            1.05,
+            22.0825
+          ],
+          [
+            1.2,
+            23.92
+          ],
+          [
+            1.3499999999999999,
+            25.8925
+          ],
+          [
+            1.5,
+            28.0
+          ],
+          [
+            1.65,
+            30.2425
+          ],
+          [
+            1.7999999999999998,
+            32.62
+          ],
+          [
+            1.95,
+            35.1325
+          ],
+          [
+            2.1,
+            37.78
+          ],
+          [
+            2.25,
+            40.5625
+          ],
+          [
+            2.4,
+            43.48
+          ],
+          [
+            2.55,
+            46.5325
+          ],
+          [
+            2.6999999999999997,
+            49.72
+          ],
+          [
+            2.85,
+            53.0425
+          ],
+          [
+            3.0,
+            56.5
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x1",
+          "x0^2",
+          "x0 x1",
+          "x1^2"
+        ],
+        "features": [
+          2,
+          3,
+          4,
+          6,
+          9
+        ],
+        "intercept": 1,
+        "prediction": 36.0,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          5
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p2.d2.x2.changed-first-weight.fixture.v1",
+      "id": "PR-E1.p2.d2.x2.changed-first-weight",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored two-feature weighted map, not a trained model. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 2,
+        "features": 2,
+        "query": 3,
+        "weights": "reference"
+      },
+      "expected": {
+        "coefficients": [
+          2,
+          1,
+          3,
+          0.5,
+          1
+        ],
+        "curve": [
+          [
+            0.0,
+            13.0
+          ],
+          [
+            0.15,
+            13.5925
+          ],
+          [
+            0.3,
+            14.319999999999999
+          ],
+          [
+            0.44999999999999996,
+            15.182500000000001
+          ],
+          [
+            0.6,
+            16.18
+          ],
+          [
+            0.75,
+            17.3125
+          ],
+          [
+            0.8999999999999999,
+            18.58
+          ],
+          [
+            1.05,
+            19.9825
+          ],
+          [
+            1.2,
+            21.52
+          ],
+          [
+            1.3499999999999999,
+            23.1925
+          ],
+          [
+            1.5,
+            25.0
+          ],
+          [
+            1.65,
+            26.9425
+          ],
+          [
+            1.7999999999999998,
+            29.019999999999996
+          ],
+          [
+            1.95,
+            31.2325
+          ],
+          [
+            2.1,
+            33.58
+          ],
+          [
+            2.25,
+            36.0625
+          ],
+          [
+            2.4,
+            38.68
+          ],
+          [
+            2.55,
+            41.4325
+          ],
+          [
+            2.6999999999999997,
+            44.31999999999999
+          ],
+          [
+            2.85,
+            47.3425
+          ],
+          [
+            3.0,
+            50.5
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x1",
+          "x0^2",
+          "x0 x1",
+          "x1^2"
+        ],
+        "features": [
+          3,
+          3,
+          9,
+          9,
+          9
+        ],
+        "intercept": 1,
+        "prediction": 50.5,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          5
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p2.d2.x3.reference.fixture.v1",
+      "id": "PR-E1.p2.d2.x3.reference",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored two-feature weighted map, not a trained model. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 2,
+        "features": 2,
+        "query": 3,
+        "weights": "changed-first-weight"
+      },
+      "expected": {
+        "coefficients": [
+          4,
+          1,
+          3,
+          0.5,
+          1
+        ],
+        "curve": [
+          [
+            0.0,
+            13.0
+          ],
+          [
+            0.15,
+            13.8925
+          ],
+          [
+            0.3,
+            14.92
+          ],
+          [
+            0.44999999999999996,
+            16.0825
+          ],
+          [
+            0.6,
+            17.38
+          ],
+          [
+            0.75,
+            18.8125
+          ],
+          [
+            0.8999999999999999,
+            20.38
+          ],
+          [
+            1.05,
+            22.0825
+          ],
+          [
+            1.2,
+            23.92
+          ],
+          [
+            1.3499999999999999,
+            25.8925
+          ],
+          [
+            1.5,
+            28.0
+          ],
+          [
+            1.65,
+            30.2425
+          ],
+          [
+            1.7999999999999998,
+            32.62
+          ],
+          [
+            1.95,
+            35.1325
+          ],
+          [
+            2.1,
+            37.78
+          ],
+          [
+            2.25,
+            40.5625
+          ],
+          [
+            2.4,
+            43.48
+          ],
+          [
+            2.55,
+            46.5325
+          ],
+          [
+            2.6999999999999997,
+            49.72
+          ],
+          [
+            2.85,
+            53.0425
+          ],
+          [
+            3.0,
+            56.5
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x1",
+          "x0^2",
+          "x0 x1",
+          "x1^2"
+        ],
+        "features": [
+          3,
+          3,
+          9,
+          9,
+          9
+        ],
+        "intercept": 1,
+        "prediction": 56.5,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          5
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p2.d2.x3.changed-first-weight.fixture.v1",
+      "id": "PR-E1.p2.d2.x3.changed-first-weight",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored two-feature weighted map, not a trained model. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 3,
+        "features": 2,
+        "query": 2,
+        "weights": "reference"
+      },
+      "expected": {
+        "coefficients": [
+          2,
+          1,
+          3,
+          0.5,
+          1,
+          0.2,
+          0.1,
+          0.1,
+          0.05
+        ],
+        "curve": [
+          [
+            0.0,
+            14.35
+          ],
+          [
+            0.15,
+            15.084925
+          ],
+          [
+            0.3,
+            15.9724
+          ],
+          [
+            0.44999999999999996,
+            17.016475
+          ],
+          [
+            0.6,
+            18.2212
+          ],
+          [
+            0.75,
+            19.590625
+          ],
+          [
+            0.8999999999999999,
+            21.1288
+          ],
+          [
+            1.05,
+            22.839775000000003
+          ],
+          [
+            1.2,
+            24.727600000000002
+          ],
+          [
+            1.3499999999999999,
+            26.796325
+          ],
+          [
+            1.5,
+            29.05
+          ],
+          [
+            1.65,
+            31.492675
+          ],
+          [
+            1.7999999999999998,
+            34.12839999999999
+          ],
+          [
+            1.95,
+            36.961225
+          ],
+          [
+            2.1,
+            39.9952
+          ],
+          [
+            2.25,
+            43.234375
+          ],
+          [
+            2.4,
+            46.6828
+          ],
+          [
+            2.55,
+            50.344525000000004
+          ],
+          [
+            2.6999999999999997,
+            54.22359999999999
+          ],
+          [
+            2.85,
+            58.32407500000001
+          ],
+          [
+            3.0,
+            62.650000000000006
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x1",
+          "x0^2",
+          "x0 x1",
+          "x1^2",
+          "x0^3",
+          "x0^2 x1",
+          "x0 x1^2",
+          "x1^3"
+        ],
+        "features": [
+          2,
+          3,
+          4,
+          6,
+          9,
+          8,
+          12,
+          18,
+          27
+        ],
+        "intercept": 1,
+        "prediction": 37.95,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          9
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p2.d3.x2.reference.fixture.v1",
+      "id": "PR-E1.p2.d3.x2.reference",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored two-feature weighted map, not a trained model. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 3,
+        "features": 2,
+        "query": 2,
+        "weights": "changed-first-weight"
+      },
+      "expected": {
+        "coefficients": [
+          4,
+          1,
+          3,
+          0.5,
+          1,
+          0.2,
+          0.1,
+          0.1,
+          0.05
+        ],
+        "curve": [
+          [
+            0.0,
+            14.35
+          ],
+          [
+            0.15,
+            15.384925
+          ],
+          [
+            0.3,
+            16.572400000000002
+          ],
+          [
+            0.44999999999999996,
+            17.916475
+          ],
+          [
+            0.6,
+            19.4212
+          ],
+          [
+            0.75,
+            21.090625
+          ],
+          [
+            0.8999999999999999,
+            22.9288
+          ],
+          [
+            1.05,
+            24.939775000000004
+          ],
+          [
+            1.2,
+            27.1276
+          ],
+          [
+            1.3499999999999999,
+            29.496324999999995
+          ],
+          [
+            1.5,
+            32.05
+          ],
+          [
+            1.65,
+            34.792674999999996
+          ],
+          [
+            1.7999999999999998,
+            37.7284
+          ],
+          [
+            1.95,
+            40.861225000000005
+          ],
+          [
+            2.1,
+            44.1952
+          ],
+          [
+            2.25,
+            47.734375
+          ],
+          [
+            2.4,
+            51.482800000000005
+          ],
+          [
+            2.55,
+            55.444525
+          ],
+          [
+            2.6999999999999997,
+            59.623599999999996
+          ],
+          [
+            2.85,
+            64.02407500000001
+          ],
+          [
+            3.0,
+            68.65
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x1",
+          "x0^2",
+          "x0 x1",
+          "x1^2",
+          "x0^3",
+          "x0^2 x1",
+          "x0 x1^2",
+          "x1^3"
+        ],
+        "features": [
+          2,
+          3,
+          4,
+          6,
+          9,
+          8,
+          12,
+          18,
+          27
+        ],
+        "intercept": 1,
+        "prediction": 41.95,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          9
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p2.d3.x2.changed-first-weight.fixture.v1",
+      "id": "PR-E1.p2.d3.x2.changed-first-weight",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored two-feature weighted map, not a trained model. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 3,
+        "features": 2,
+        "query": 3,
+        "weights": "reference"
+      },
+      "expected": {
+        "coefficients": [
+          2,
+          1,
+          3,
+          0.5,
+          1,
+          0.2,
+          0.1,
+          0.1,
+          0.05
+        ],
+        "curve": [
+          [
+            0.0,
+            14.35
+          ],
+          [
+            0.15,
+            15.084925
+          ],
+          [
+            0.3,
+            15.9724
+          ],
+          [
+            0.44999999999999996,
+            17.016475
+          ],
+          [
+            0.6,
+            18.2212
+          ],
+          [
+            0.75,
+            19.590625
+          ],
+          [
+            0.8999999999999999,
+            21.1288
+          ],
+          [
+            1.05,
+            22.839775000000003
+          ],
+          [
+            1.2,
+            24.727600000000002
+          ],
+          [
+            1.3499999999999999,
+            26.796325
+          ],
+          [
+            1.5,
+            29.05
+          ],
+          [
+            1.65,
+            31.492675
+          ],
+          [
+            1.7999999999999998,
+            34.12839999999999
+          ],
+          [
+            1.95,
+            36.961225
+          ],
+          [
+            2.1,
+            39.9952
+          ],
+          [
+            2.25,
+            43.234375
+          ],
+          [
+            2.4,
+            46.6828
+          ],
+          [
+            2.55,
+            50.344525000000004
+          ],
+          [
+            2.6999999999999997,
+            54.22359999999999
+          ],
+          [
+            2.85,
+            58.32407500000001
+          ],
+          [
+            3.0,
+            62.650000000000006
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x1",
+          "x0^2",
+          "x0 x1",
+          "x1^2",
+          "x0^3",
+          "x0^2 x1",
+          "x0 x1^2",
+          "x1^3"
+        ],
+        "features": [
+          3,
+          3,
+          9,
+          9,
+          9,
+          27,
+          27,
+          27,
+          27
+        ],
+        "intercept": 1,
+        "prediction": 62.650000000000006,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          9
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p2.d3.x3.reference.fixture.v1",
+      "id": "PR-E1.p2.d3.x3.reference",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored two-feature weighted map, not a trained model. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "degree": 3,
+        "features": 2,
+        "query": 3,
+        "weights": "changed-first-weight"
+      },
+      "expected": {
+        "coefficients": [
+          4,
+          1,
+          3,
+          0.5,
+          1,
+          0.2,
+          0.1,
+          0.1,
+          0.05
+        ],
+        "curve": [
+          [
+            0.0,
+            14.35
+          ],
+          [
+            0.15,
+            15.384925
+          ],
+          [
+            0.3,
+            16.572400000000002
+          ],
+          [
+            0.44999999999999996,
+            17.916475
+          ],
+          [
+            0.6,
+            19.4212
+          ],
+          [
+            0.75,
+            21.090625
+          ],
+          [
+            0.8999999999999999,
+            22.9288
+          ],
+          [
+            1.05,
+            24.939775000000004
+          ],
+          [
+            1.2,
+            27.1276
+          ],
+          [
+            1.3499999999999999,
+            29.496324999999995
+          ],
+          [
+            1.5,
+            32.05
+          ],
+          [
+            1.65,
+            34.792674999999996
+          ],
+          [
+            1.7999999999999998,
+            37.7284
+          ],
+          [
+            1.95,
+            40.861225000000005
+          ],
+          [
+            2.1,
+            44.1952
+          ],
+          [
+            2.25,
+            47.734375
+          ],
+          [
+            2.4,
+            51.482800000000005
+          ],
+          [
+            2.55,
+            55.444525
+          ],
+          [
+            2.6999999999999997,
+            59.623599999999996
+          ],
+          [
+            2.85,
+            64.02407500000001
+          ],
+          [
+            3.0,
+            68.65
+          ]
+        ],
+        "feature_names": [
+          "x0",
+          "x1",
+          "x0^2",
+          "x0 x1",
+          "x1^2",
+          "x0^3",
+          "x0^2 x1",
+          "x0 x1^2",
+          "x1^3"
+        ],
+        "features": [
+          3,
+          3,
+          9,
+          9,
+          9,
+          27,
+          27,
+          27,
+          27
+        ],
+        "intercept": 1,
+        "prediction": 68.65,
+        "reason": "linear-in-coefficients",
+        "shape": [
+          1,
+          9
+        ],
+        "valid": true
+      },
+      "fixture": "PR-E1.p2.d3.x3.changed-first-weight.fixture.v1",
+      "id": "PR-E1.p2.d3.x3.changed-first-weight",
+      "objectives": [
+        "PR01.O1",
+        "PR01.O2",
+        "PR01.O3",
+        "PR02.O1"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "authored two-feature weighted map, not a trained model. The feature row changes with input/degree; with that row fixed, prediction is intercept plus a linear weighted sum. Coefficient changes are not additional observations. Two-feature curves hold the second coordinate at3; they are slices, not full surfaces."
+    },
+    {
+      "controls": {
+        "diagnostic": "duplicate-intercept",
+        "query": 2
+      },
+      "expected": {
+        "canonical_prediction": 17,
+        "features": [
+          1,
+          2,
+          4
+        ],
+        "prediction": 18.0,
+        "reason": "duplicate-intercept",
+        "valid": false
+      },
+      "fixture": "PR-E1.duplicate-intercept.x2.fixture.v1",
+      "id": "PR-E1.duplicate-intercept.x2",
+      "objectives": [
+        "PR01.O4",
+        "PR02.O4"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "Duplicate bias and model intercept create redundant constants; swapped feature columns violate the fitted coefficient schema even if dimensions still match. At equal coordinate values a swap may coincidentally leave the number unchanged; it is still the wrong schema."
+    },
+    {
+      "controls": {
+        "diagnostic": "duplicate-intercept",
+        "query": 3
+      },
+      "expected": {
+        "canonical_prediction": 34,
+        "features": [
+          1,
+          3,
+          9
+        ],
+        "prediction": 35.0,
+        "reason": "duplicate-intercept",
+        "valid": false
+      },
+      "fixture": "PR-E1.duplicate-intercept.x3.fixture.v1",
+      "id": "PR-E1.duplicate-intercept.x3",
+      "objectives": [
+        "PR01.O4",
+        "PR02.O4"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "Duplicate bias and model intercept create redundant constants; swapped feature columns violate the fitted coefficient schema even if dimensions still match. At equal coordinate values a swap may coincidentally leave the number unchanged; it is still the wrong schema."
+    },
+    {
+      "controls": {
+        "diagnostic": "swapped-columns",
+        "query": 2
+      },
+      "expected": {
+        "canonical_prediction": 32.0,
+        "features": [
+          3,
+          2,
+          4,
+          6,
+          9
+        ],
+        "prediction": 33.0,
+        "reason": "swapped-columns",
+        "valid": false
+      },
+      "fixture": "PR-E1.swapped-columns.x2.fixture.v1",
+      "id": "PR-E1.swapped-columns.x2",
+      "objectives": [
+        "PR01.O4",
+        "PR02.O4"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "Duplicate bias and model intercept create redundant constants; swapped feature columns violate the fitted coefficient schema even if dimensions still match. At equal coordinate values a swap may coincidentally leave the number unchanged; it is still the wrong schema."
+    },
+    {
+      "controls": {
+        "diagnostic": "swapped-columns",
+        "query": 3
+      },
+      "expected": {
+        "canonical_prediction": 50.5,
+        "features": [
+          3,
+          3,
+          9,
+          9,
+          9
+        ],
+        "prediction": 50.5,
+        "reason": "swapped-columns",
+        "valid": false
+      },
+      "fixture": "PR-E1.swapped-columns.x3.fixture.v1",
+      "id": "PR-E1.swapped-columns.x3",
+      "objectives": [
+        "PR01.O4",
+        "PR02.O4"
+      ],
+      "prediction_question": "Predict feature shape, prediction or generalization permission before revealing. Which quantities or conclusions should change?",
+      "text_alternative": "Read the exact inputs, feature/fit tables, residuals, prediction and explanation beside the plot.",
+      "why": "Duplicate bias and model intercept create redundant constants; swapped feature columns violate the fitted coefficient schema even if dimensions still match. At equal coordinate values a swap may coincidentally leave the number unchanged; it is still the wrong schema."
+    }
+  ],
+  "fixtures": [
+    {
+      "coefficient_kind": "reference-trained single-feature curve",
+      "coefficients": [
+        10.999999999999998
+      ],
+      "degree": 1,
+      "dimensionless_input": true,
+      "id": "PR-E1.p1.d1.x2.reference.fixture.v1",
+      "intercept": -1.9999999999999964,
+      "price_unit": "thousand USD",
+      "row": [
+        2
+      ],
+      "training_ids": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
+      "training_x": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "training_y": [
+        1,
+        6,
+        17,
+        34
+      ]
+    },
+    {
+      "coefficient_kind": "authored coefficient counterfactual, not refitted",
+      "coefficients": [
+        12.999999999999998
+      ],
+      "degree": 1,
+      "dimensionless_input": true,
+      "id": "PR-E1.p1.d1.x2.changed-first-weight.fixture.v1",
+      "intercept": -1.9999999999999964,
+      "price_unit": "thousand USD",
+      "row": [
+        2
+      ],
+      "training_ids": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
+      "training_x": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "training_y": [
+        1,
+        6,
+        17,
+        34
+      ]
+    },
+    {
+      "coefficient_kind": "reference-trained single-feature curve",
+      "coefficients": [
+        10.999999999999998
+      ],
+      "degree": 1,
+      "dimensionless_input": true,
+      "id": "PR-E1.p1.d1.x3.reference.fixture.v1",
+      "intercept": -1.9999999999999964,
+      "price_unit": "thousand USD",
+      "row": [
+        3
+      ],
+      "training_ids": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
+      "training_x": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "training_y": [
+        1,
+        6,
+        17,
+        34
+      ]
+    },
+    {
+      "coefficient_kind": "authored coefficient counterfactual, not refitted",
+      "coefficients": [
+        12.999999999999998
+      ],
+      "degree": 1,
+      "dimensionless_input": true,
+      "id": "PR-E1.p1.d1.x3.changed-first-weight.fixture.v1",
+      "intercept": -1.9999999999999964,
+      "price_unit": "thousand USD",
+      "row": [
+        3
+      ],
+      "training_ids": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
+      "training_x": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "training_y": [
+        1,
+        6,
+        17,
+        34
+      ]
+    },
+    {
+      "coefficient_kind": "reference-trained single-feature curve",
+      "coefficients": [
+        2.0000000000000004,
+        3.0000000000000004
+      ],
+      "degree": 2,
+      "dimensionless_input": true,
+      "id": "PR-E1.p1.d2.x2.reference.fixture.v1",
+      "intercept": 0.9999999999999964,
+      "price_unit": "thousand USD",
+      "row": [
+        2
+      ],
+      "training_ids": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
+      "training_x": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "training_y": [
+        1,
+        6,
+        17,
+        34
+      ]
+    },
+    {
+      "coefficient_kind": "authored coefficient counterfactual, not refitted",
+      "coefficients": [
+        4.0,
+        3.0000000000000004
+      ],
+      "degree": 2,
+      "dimensionless_input": true,
+      "id": "PR-E1.p1.d2.x2.changed-first-weight.fixture.v1",
+      "intercept": 0.9999999999999964,
+      "price_unit": "thousand USD",
+      "row": [
+        2
+      ],
+      "training_ids": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
+      "training_x": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "training_y": [
+        1,
+        6,
+        17,
+        34
+      ]
+    },
+    {
+      "coefficient_kind": "reference-trained single-feature curve",
+      "coefficients": [
+        2.0000000000000004,
+        3.0000000000000004
+      ],
+      "degree": 2,
+      "dimensionless_input": true,
+      "id": "PR-E1.p1.d2.x3.reference.fixture.v1",
+      "intercept": 0.9999999999999964,
+      "price_unit": "thousand USD",
+      "row": [
+        3
+      ],
+      "training_ids": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
+      "training_x": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "training_y": [
+        1,
+        6,
+        17,
+        34
+      ]
+    },
+    {
+      "coefficient_kind": "authored coefficient counterfactual, not refitted",
+      "coefficients": [
+        4.0,
+        3.0000000000000004
+      ],
+      "degree": 2,
+      "dimensionless_input": true,
+      "id": "PR-E1.p1.d2.x3.changed-first-weight.fixture.v1",
+      "intercept": 0.9999999999999964,
+      "price_unit": "thousand USD",
+      "row": [
+        3
+      ],
+      "training_ids": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
+      "training_x": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "training_y": [
+        1,
+        6,
+        17,
+        34
+      ]
+    },
+    {
+      "coefficient_kind": "reference-trained single-feature curve",
+      "coefficients": [
+        1.9999999999999898,
+        3.0000000000000036,
+        -1.0544581575678707e-15
+      ],
+      "degree": 3,
+      "dimensionless_input": true,
+      "id": "PR-E1.p1.d3.x2.reference.fixture.v1",
+      "intercept": 1.0000000000000124,
+      "price_unit": "thousand USD",
+      "row": [
+        2
+      ],
+      "training_ids": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
+      "training_x": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "training_y": [
+        1,
+        6,
+        17,
+        34
+      ]
+    },
+    {
+      "coefficient_kind": "authored coefficient counterfactual, not refitted",
+      "coefficients": [
+        3.99999999999999,
+        3.0000000000000036,
+        -1.0544581575678707e-15
+      ],
+      "degree": 3,
+      "dimensionless_input": true,
+      "id": "PR-E1.p1.d3.x2.changed-first-weight.fixture.v1",
+      "intercept": 1.0000000000000124,
+      "price_unit": "thousand USD",
+      "row": [
+        2
+      ],
+      "training_ids": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
+      "training_x": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "training_y": [
+        1,
+        6,
+        17,
+        34
+      ]
+    },
+    {
+      "coefficient_kind": "reference-trained single-feature curve",
+      "coefficients": [
+        1.9999999999999898,
+        3.0000000000000036,
+        -1.0544581575678707e-15
+      ],
+      "degree": 3,
+      "dimensionless_input": true,
+      "id": "PR-E1.p1.d3.x3.reference.fixture.v1",
+      "intercept": 1.0000000000000124,
+      "price_unit": "thousand USD",
+      "row": [
+        3
+      ],
+      "training_ids": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
+      "training_x": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "training_y": [
+        1,
+        6,
+        17,
+        34
+      ]
+    },
+    {
+      "coefficient_kind": "authored coefficient counterfactual, not refitted",
+      "coefficients": [
+        3.99999999999999,
+        3.0000000000000036,
+        -1.0544581575678707e-15
+      ],
+      "degree": 3,
+      "dimensionless_input": true,
+      "id": "PR-E1.p1.d3.x3.changed-first-weight.fixture.v1",
+      "intercept": 1.0000000000000124,
+      "price_unit": "thousand USD",
+      "row": [
+        3
+      ],
+      "training_ids": [
+        "a1",
+        "a2",
+        "a3",
+        "a4"
+      ],
+      "training_x": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "training_y": [
+        1,
+        6,
+        17,
+        34
+      ]
+    },
+    {
+      "coefficient_kind": "authored two-feature weighted map, not a trained model",
+      "coefficients": [
+        2,
+        1
+      ],
+      "degree": 1,
+      "dimensionless_input": true,
+      "id": "PR-E1.p2.d1.x2.reference.fixture.v1",
+      "intercept": 1,
+      "price_unit": "thousand USD",
+      "row": [
+        2,
+        3
+      ],
+      "training_ids": null,
+      "training_x": null,
+      "training_y": null
+    },
+    {
+      "coefficient_kind": "authored two-feature weighted map, not a trained model",
+      "coefficients": [
+        4,
+        1
+      ],
+      "degree": 1,
+      "dimensionless_input": true,
+      "id": "PR-E1.p2.d1.x2.changed-first-weight.fixture.v1",
+      "intercept": 1,
+      "price_unit": "thousand USD",
+      "row": [
+        2,
+        3
+      ],
+      "training_ids": null,
+      "training_x": null,
+      "training_y": null
+    },
+    {
+      "coefficient_kind": "authored two-feature weighted map, not a trained model",
+      "coefficients": [
+        2,
+        1
+      ],
+      "degree": 1,
+      "dimensionless_input": true,
+      "id": "PR-E1.p2.d1.x3.reference.fixture.v1",
+      "intercept": 1,
+      "price_unit": "thousand USD",
+      "row": [
+        3,
+        3
+      ],
+      "training_ids": null,
+      "training_x": null,
+      "training_y": null
+    },
+    {
+      "coefficient_kind": "authored two-feature weighted map, not a trained model",
+      "coefficients": [
+        4,
+        1
+      ],
+      "degree": 1,
+      "dimensionless_input": true,
+      "id": "PR-E1.p2.d1.x3.changed-first-weight.fixture.v1",
+      "intercept": 1,
+      "price_unit": "thousand USD",
+      "row": [
+        3,
+        3
+      ],
+      "training_ids": null,
+      "training_x": null,
+      "training_y": null
+    },
+    {
+      "coefficient_kind": "authored two-feature weighted map, not a trained model",
+      "coefficients": [
+        2,
+        1,
+        3,
+        0.5,
+        1
+      ],
+      "degree": 2,
+      "dimensionless_input": true,
+      "id": "PR-E1.p2.d2.x2.reference.fixture.v1",
+      "intercept": 1,
+      "price_unit": "thousand USD",
+      "row": [
+        2,
+        3
+      ],
+      "training_ids": null,
+      "training_x": null,
+      "training_y": null
+    },
+    {
+      "coefficient_kind": "authored two-feature weighted map, not a trained model",
+      "coefficients": [
+        4,
+        1,
+        3,
+        0.5,
+        1
+      ],
+      "degree": 2,
+      "dimensionless_input": true,
+      "id": "PR-E1.p2.d2.x2.changed-first-weight.fixture.v1",
+      "intercept": 1,
+      "price_unit": "thousand USD",
+      "row": [
+        2,
+        3
+      ],
+      "training_ids": null,
+      "training_x": null,
+      "training_y": null
+    },
+    {
+      "coefficient_kind": "authored two-feature weighted map, not a trained model",
+      "coefficients": [
+        2,
+        1,
+        3,
+        0.5,
+        1
+      ],
+      "degree": 2,
+      "dimensionless_input": true,
+      "id": "PR-E1.p2.d2.x3.reference.fixture.v1",
+      "intercept": 1,
+      "price_unit": "thousand USD",
+      "row": [
+        3,
+        3
+      ],
+      "training_ids": null,
+      "training_x": null,
+      "training_y": null
+    },
+    {
+      "coefficient_kind": "authored two-feature weighted map, not a trained model",
+      "coefficients": [
+        4,
+        1,
+        3,
+        0.5,
+        1
+      ],
+      "degree": 2,
+      "dimensionless_input": true,
+      "id": "PR-E1.p2.d2.x3.changed-first-weight.fixture.v1",
+      "intercept": 1,
+      "price_unit": "thousand USD",
+      "row": [
+        3,
+        3
+      ],
+      "training_ids": null,
+      "training_x": null,
+      "training_y": null
+    },
+    {
+      "coefficient_kind": "authored two-feature weighted map, not a trained model",
+      "coefficients": [
+        2,
+        1,
+        3,
+        0.5,
+        1,
+        0.2,
+        0.1,
+        0.1,
+        0.05
+      ],
+      "degree": 3,
+      "dimensionless_input": true,
+      "id": "PR-E1.p2.d3.x2.reference.fixture.v1",
+      "intercept": 1,
+      "price_unit": "thousand USD",
+      "row": [
+        2,
+        3
+      ],
+      "training_ids": null,
+      "training_x": null,
+      "training_y": null
+    },
+    {
+      "coefficient_kind": "authored two-feature weighted map, not a trained model",
+      "coefficients": [
+        4,
+        1,
+        3,
+        0.5,
+        1,
+        0.2,
+        0.1,
+        0.1,
+        0.05
+      ],
+      "degree": 3,
+      "dimensionless_input": true,
+      "id": "PR-E1.p2.d3.x2.changed-first-weight.fixture.v1",
+      "intercept": 1,
+      "price_unit": "thousand USD",
+      "row": [
+        2,
+        3
+      ],
+      "training_ids": null,
+      "training_x": null,
+      "training_y": null
+    },
+    {
+      "coefficient_kind": "authored two-feature weighted map, not a trained model",
+      "coefficients": [
+        2,
+        1,
+        3,
+        0.5,
+        1,
+        0.2,
+        0.1,
+        0.1,
+        0.05
+      ],
+      "degree": 3,
+      "dimensionless_input": true,
+      "id": "PR-E1.p2.d3.x3.reference.fixture.v1",
+      "intercept": 1,
+      "price_unit": "thousand USD",
+      "row": [
+        3,
+        3
+      ],
+      "training_ids": null,
+      "training_x": null,
+      "training_y": null
+    },
+    {
+      "coefficient_kind": "authored two-feature weighted map, not a trained model",
+      "coefficients": [
+        4,
+        1,
+        3,
+        0.5,
+        1,
+        0.2,
+        0.1,
+        0.1,
+        0.05
+      ],
+      "degree": 3,
+      "dimensionless_input": true,
+      "id": "PR-E1.p2.d3.x3.changed-first-weight.fixture.v1",
+      "intercept": 1,
+      "price_unit": "thousand USD",
+      "row": [
+        3,
+        3
+      ],
+      "training_ids": null,
+      "training_x": null,
+      "training_y": null
+    },
+    {
+      "canonical_features": [
+        2,
+        4
+      ],
+      "coefficients": [
+        1,
+        2,
+        3
+      ],
+      "id": "PR-E1.duplicate-intercept.x2.fixture.v1",
+      "intercept": 1,
+      "row": [
+        2
+      ],
+      "supplied_features": [
+        1,
+        2,
+        4
+      ],
+      "unit": "thousand USD"
+    },
+    {
+      "canonical_features": [
+        3,
+        9
+      ],
+      "coefficients": [
+        1,
+        2,
+        3
+      ],
+      "id": "PR-E1.duplicate-intercept.x3.fixture.v1",
+      "intercept": 1,
+      "row": [
+        3
+      ],
+      "supplied_features": [
+        1,
+        3,
+        9
+      ],
+      "unit": "thousand USD"
+    },
+    {
+      "canonical_features": [
+        2,
+        3,
+        4,
+        6,
+        9
+      ],
+      "coefficients": [
+        2,
+        1,
+        3,
+        0.5,
+        1
+      ],
+      "id": "PR-E1.swapped-columns.x2.fixture.v1",
+      "intercept": 1,
+      "row": [
+        2,
+        3
+      ],
+      "supplied_features": [
+        3,
+        2,
+        4,
+        6,
+        9
+      ],
+      "unit": "thousand USD"
+    },
+    {
+      "canonical_features": [
+        3,
+        3,
+        9,
+        9,
+        9
+      ],
+      "coefficients": [
+        2,
+        1,
+        3,
+        0.5,
+        1
+      ],
+      "id": "PR-E1.swapped-columns.x3.fixture.v1",
+      "intercept": 1,
+      "row": [
+        3,
+        3
+      ],
+      "supplied_features": [
+        3,
+        3,
+        9,
+        9,
+        9
+      ],
+      "unit": "thousand USD"
+    }
+  ],
+  "id": "PR-E1",
+  "initial_configuration": "PR-E1.p1.d1.x2.reference",
+  "profile": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "python": "3.13.16",
+    "scikit-learn": "1.9.1"
+  },
+  "schema": "supervised.polynomial.experiment.v1",
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "version": "1.0.0"
+}

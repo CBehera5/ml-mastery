@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mlmathlab.dev/schemas/linear-neuron-trace.v1.schema.json",
+  "title": "Linear neuron calculation trace",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "input", "forward", "backward", "update"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "input": { "$ref": "linear-neuron-input.v1.schema.json" },
+    "forward": {
+      "type": "object", "additionalProperties": false,
+      "required": ["weightedInputs", "prediction", "error", "loss"],
+      "properties": {
+        "weightedInputs": { "type": "array", "items": { "type": "number" } },
+        "prediction": { "type": "number" }, "error": { "type": "number" }, "loss": { "type": "number" }
+      }
+    },
+    "backward": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dLossDPrediction", "dPredictionDWeights", "weightGradients", "biasGradient"],
+      "properties": {
+        "dLossDPrediction": { "type": "number" },
+        "dPredictionDWeights": { "type": "array", "items": { "type": "number" } },
+        "weightGradients": { "type": "array", "items": { "type": "number" } },
+        "biasGradient": { "type": "number" }
+      }
+    },
+    "update": {
+      "type": "object", "additionalProperties": false,
+      "required": ["learningRate", "weights", "bias", "prediction", "error", "loss"],
+      "properties": {
+        "learningRate": { "type": "number" },
+        "weights": { "type": "array", "items": { "type": "number" } },
+        "bias": { "type": "number" }, "prediction": { "type": "number" },
+        "error": { "type": "number" }, "loss": { "type": "number" }
+      }
+    }
+  }
+}
+

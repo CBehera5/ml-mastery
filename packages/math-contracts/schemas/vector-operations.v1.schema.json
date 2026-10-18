@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mlmath.local/schemas/vector-operations.v1.schema.json",
+  "title": "Bounded vector operations trace v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "input", "sum", "scaled", "leftMagnitude", "rightMagnitude", "dot", "unitDirection", "cosine", "angleDegrees", "projection"],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "input": {"type": "object", "additionalProperties": false, "required": ["left", "right", "scale"], "properties": {"left": {"$ref": "#/$defs/inputVector"}, "right": {"$ref": "#/$defs/inputVector"}, "scale": {"type": "number", "minimum": -10, "maximum": 10}}},
+    "sum": {"$ref": "#/$defs/vector"},
+    "scaled": {"$ref": "#/$defs/vector"},
+    "leftMagnitude": {"type": "number", "minimum": 0},
+    "rightMagnitude": {"type": "number", "minimum": 0},
+    "dot": {"type": "number"},
+    "unitDirection": {"anyOf": [{"$ref": "#/$defs/vector"}, {"type": "null"}]},
+    "cosine": {"type": ["number", "null"], "minimum": -1, "maximum": 1},
+    "angleDegrees": {"type": ["number", "null"], "minimum": 0, "maximum": 180},
+    "projection": {"anyOf": [{"$ref": "#/$defs/vector"}, {"type": "null"}]}
+  },
+  "$defs": {
+    "inputVector": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number", "minimum": -100, "maximum": 100}},
+    "vector": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}}
+  }
+}

@@ -1,0 +1,6 @@
+from pathlib import Path
+import json,math
+from mlmath.algebra import algebra_trace,linear_equation_trace,mapping_trace,compound_growth_trace
+cases=[({'kind':'linear','a':2,'b':3},4),({'kind':'linear','a':-2,'b':1},-3),({'kind':'power','exponent':2,'scale':-2,'shift':-1,'offset':1},2),({'kind':'power','exponent':-1,'scale':1,'shift':0,'offset':0},0),({'kind':'power','exponent':0,'scale':1,'shift':0,'offset':0},0),({'kind':'exponential','base':2},3),({'kind':'exponential','base':.5},3),({'kind':'exponential','base':10},1000),({'kind':'logarithm','base':10},100),({'kind':'logarithm','base':math.e},math.exp(3)),({'kind':'logarithm','base':.5},4),({'kind':'logarithm','base':2},-1),({'kind':'composition','order':'f-after-g'},2),({'kind':'composition','order':'g-after-f'},2)]
+fixture={'schemaVersion':'1.0.0','functions':[{'spec':s,'x':x,'trace':algebra_trace(s,x)} for s,x in cases],'equations':[linear_equation_trace(*p) for p in [(3,1,13),(-2,3,11),(0,1,1),(0,1,2)]],'mappings':[mapping_trace(p) for p in [[[1,4],[2,4]],[[2,4],[2,7]],[[2,4],[2,4]]]],'compounding':[compound_growth_trace(n) for n in [1,2,10,100,1000]]}
+Path('packages/math-contracts/fixtures/algebra.v1.json').write_text(json.dumps(fixture,indent=2,ensure_ascii=False,allow_nan=False)+'\n')

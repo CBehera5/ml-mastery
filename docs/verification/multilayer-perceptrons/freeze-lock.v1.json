@@ -1,0 +1,12 @@
+{
+  "conventions_sha256": "64aff2167d5fb87c56fc4076d3a1c32a74feb489f1b1cf17b60dfc2b4b8a3745",
+  "generator_sha256": "60fad4f937f7728a64c0b22586b6f90bd69e21d956dd4dec8da6e2a45e2b9891",
+  "preservation_baseline_sha256": "1898250b31d08c759bf6856087e15797e85aa01e89bb8b0fa183a3767af446f3",
+  "schema": "mlp.freeze.v1",
+  "sha256": {
+    "nn-e1.manifest.v1.json": "e73bed61d5bb91ed1348628e3047cb48d9658d280bbae035de6bbb237e62c93a",
+    "nn-e2.manifest.v1.json": "0ce207f12e4b829b821b4e6d3a0a569ab64f580945300b1af6f1a9b061e49b56",
+    "parity-report.v1.json": "2913a406a34830f3e376f56dbb83e8496ac042b48078af63d380b80de9485069",
+    "source-preservation.v1.json": "5225a91a0f9fdaa7a44c92b6bfe62f6238b6ab69a9c1380b928f91946374df00"
+  }
+}

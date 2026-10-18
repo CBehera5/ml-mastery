@@ -1,0 +1,3033 @@
+{
+  "accessibility": "Native labeled selects/buttons, visible keyboard focus, reduced motion and320px reflow. Read priors, token/density/log contributions, normalizer, posterior, predicted class or tagged rejection/undefined reason in a numerical table plus explanation. Curves/bars are redundant; no hover/color/spatial-only meaning. Extreme float underflow is explicitly distinguished from mathematical zero.",
+  "allowed_configuration_ids": [
+    "NB-E2.gaussian.base.v1e-09.empirical.q0.v1",
+    "NB-E2.gaussian.base.v1e-09.empirical.q1.v1",
+    "NB-E2.gaussian.base.v1e-09.empirical.q2.v1",
+    "NB-E2.gaussian.base.v1e-09.good70.q0.v1",
+    "NB-E2.gaussian.base.v1e-09.good70.q1.v1",
+    "NB-E2.gaussian.base.v1e-09.good70.q2.v1",
+    "NB-E2.gaussian.base.v0.1.empirical.q0.v1",
+    "NB-E2.gaussian.base.v0.1.empirical.q1.v1",
+    "NB-E2.gaussian.base.v0.1.empirical.q2.v1",
+    "NB-E2.gaussian.base.v0.1.good70.q0.v1",
+    "NB-E2.gaussian.base.v0.1.good70.q1.v1",
+    "NB-E2.gaussian.base.v0.1.good70.q2.v1",
+    "NB-E2.gaussian.duplicate.v1e-09.empirical.q0.v1",
+    "NB-E2.gaussian.duplicate.v1e-09.empirical.q1.v1",
+    "NB-E2.gaussian.duplicate.v1e-09.empirical.q2.v1",
+    "NB-E2.gaussian.duplicate.v1e-09.good70.q0.v1",
+    "NB-E2.gaussian.duplicate.v1e-09.good70.q1.v1",
+    "NB-E2.gaussian.duplicate.v1e-09.good70.q2.v1",
+    "NB-E2.gaussian.duplicate.v0.1.empirical.q0.v1",
+    "NB-E2.gaussian.duplicate.v0.1.empirical.q1.v1",
+    "NB-E2.gaussian.duplicate.v0.1.empirical.q2.v1",
+    "NB-E2.gaussian.duplicate.v0.1.good70.q0.v1",
+    "NB-E2.gaussian.duplicate.v0.1.good70.q1.v1",
+    "NB-E2.gaussian.duplicate.v0.1.good70.q2.v1",
+    "NB-E2.supplied-density.0.v1",
+    "NB-E2.supplied-density.1.v1",
+    "NB-E2.zero-class-variance.smoothed.v1",
+    "NB-E2.reject.count-representation.v1",
+    "NB-E2.reject.zero-variance.v1",
+    "NB-E2.reject.global-constant.v1"
+  ],
+  "comparison": "NB combines assumed class-conditional likelihoods; existing Logistic models a linear logit. Compare on identical unseen rows and costs, not unrelated accuracy figures. No new Logistic fitting or calibration algorithm is introduced by this manifest.",
+  "configurations": [
+    {
+      "controls": {
+        "duplicate_first_feature": false,
+        "prior_mode": "empirical",
+        "query_index": 0,
+        "var_smoothing": 1e-09
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.4050657090298055,
+            0.48860251083410194
+          ],
+          [
+            0.004499873647964036,
+            0.23079948446061982
+          ]
+        ],
+        "development_label": 1,
+        "effective_class_variances": [
+          [
+            0.6666666695833333,
+            0.6666666695833333
+          ],
+          [
+            0.6666666695833333,
+            0.6666666695833333
+          ]
+        ],
+        "epsilon": 2.9166666666666667e-09,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666
+        ],
+        "log_class_scores": [
+          -2.313059142415814,
+          -7.563059119447064
+        ],
+        "log_feature_densities": [
+          [
+            -0.9037059805177781,
+            -0.7162059813380905
+          ],
+          [
+            -5.403705960830278,
+            -1.4662059780568406
+          ]
+        ],
+        "log_normalizer": -2.307825344144171,
+        "log_posterior": [
+          -0.005233798271642609,
+          -5.255233775302893
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.9895869980878372,
+        "posterior_float64": [
+          0.994779874187168,
+          0.005220125812832269
+        ],
+        "prediction": 0,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "stable_label_log_loss": 5.255233775302893,
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.base.v1",
+      "id": "NB-E2.gaussian.base.v1e-09.empirical.q0.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": false,
+        "prior_mode": "empirical",
+        "query_index": 1,
+        "var_smoothing": 1e-09
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.024326086930887305,
+            0.4050657090298055
+          ],
+          [
+            0.23079948446061982,
+            0.09038237711959211
+          ]
+        ],
+        "development_label": 0,
+        "effective_class_variances": [
+          [
+            0.6666666695833333,
+            0.6666666695833333
+          ],
+          [
+            0.6666666695833333,
+            0.6666666695833333
+          ]
+        ],
+        "epsilon": 2.9166666666666667e-09,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666
+        ],
+        "log_class_scores": [
+          -5.313059129290814,
+          -4.563059132572064
+        ],
+        "log_feature_densities": [
+          [
+            -3.7162059682130906,
+            -0.9037059805177781
+          ],
+          [
+            -1.4662059780568406,
+            -2.403705973955278
+          ]
+        ],
+        "log_normalizer": -4.17618812540447,
+        "log_posterior": [
+          -1.1368710038863439,
+          -0.3868710071675947
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.4612837044423971,
+        "posterior_float64": [
+          0.3208213015395753,
+          0.6791786984604251
+        ],
+        "prediction": 1,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "stable_label_log_loss": 1.1368710038863439,
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.base.v1",
+      "id": "NB-E2.gaussian.base.v1e-09.empirical.q1.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": false,
+        "prior_mode": "empirical",
+        "query_index": 2,
+        "var_smoothing": 1e-09
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "development_label": 1,
+        "effective_class_variances": [
+          [
+            0.6666666695833333,
+            0.6666666695833333
+          ],
+          [
+            0.6666666695833333,
+            0.6666666695833333
+          ]
+        ],
+        "epsilon": 2.9166666666666667e-09,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666
+        ],
+        "log_class_scores": [
+          -1504505.8689769395,
+          -1498502.8690032025
+        ],
+        "log_feature_densities": [
+          [
+            -753003.7129115933,
+            -751501.4629181656
+          ],
+          [
+            -748501.4629312906,
+            -750000.7129247313
+          ]
+        ],
+        "log_normalizer": -1498502.8690032025,
+        "log_posterior": [
+          -6002.999973736936,
+          0.0
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.0,
+        "posterior_float64": [
+          0.0,
+          1.0
+        ],
+        "prediction": 1,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "stable_label_log_loss": -0.0,
+        "status": "defined",
+        "underflowed_positive_components": [
+          0
+        ]
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.base.v1",
+      "id": "NB-E2.gaussian.base.v1e-09.empirical.q2.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": false,
+        "prior_mode": "good70",
+        "query_index": 0,
+        "var_smoothing": 1e-09
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.4050657090298055,
+            0.48860251083410194
+          ],
+          [
+            0.004499873647964036,
+            0.23079948446061982
+          ]
+        ],
+        "development_label": 1,
+        "effective_class_variances": [
+          [
+            0.6666666695833333,
+            0.6666666695833333
+          ],
+          [
+            0.6666666695833333,
+            0.6666666695833333
+          ]
+        ],
+        "epsilon": 2.9166666666666667e-09,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666
+        ],
+        "log_class_scores": [
+          -1.976586905794601,
+          -8.073884743213055
+        ],
+        "log_feature_densities": [
+          [
+            -0.9037059805177781,
+            -0.7162059813380905
+          ],
+          [
+            -5.403705960830278,
+            -1.4662059780568406
+          ]
+        ],
+        "log_normalizer": -1.9743404943587533,
+        "log_posterior": [
+          -0.002246411435847806,
+          -6.099544248854302
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.9955172547589973,
+        "posterior_float64": [
+          0.9977561098580139,
+          0.002243890141986022
+        ],
+        "prediction": 0,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "stable_label_log_loss": 6.099544248854302,
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.base.v1",
+      "id": "NB-E2.gaussian.base.v1e-09.good70.q0.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": false,
+        "prior_mode": "good70",
+        "query_index": 1,
+        "var_smoothing": 1e-09
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.024326086930887305,
+            0.4050657090298055
+          ],
+          [
+            0.23079948446061982,
+            0.09038237711959211
+          ]
+        ],
+        "development_label": 0,
+        "effective_class_variances": [
+          [
+            0.6666666695833333,
+            0.6666666695833333
+          ],
+          [
+            0.6666666695833333,
+            0.6666666695833333
+          ]
+        ],
+        "epsilon": 2.9166666666666667e-09,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666
+        ],
+        "log_class_scores": [
+          -4.976586892669601,
+          -5.073884756338055
+        ],
+        "log_feature_densities": [
+          [
+            -3.7162059682130906,
+            -0.9037059805177781
+          ],
+          [
+            -1.4662059780568406,
+            -2.403705973955278
+          ]
+        ],
+        "log_normalizer": -4.330905751144924,
+        "log_posterior": [
+          -0.645681141524677,
+          -0.7429790051931313
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.22628545298850478,
+        "posterior_float64": [
+          0.5243052943446763,
+          0.4756947056553234
+        ],
+        "prediction": 0,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "stable_label_log_loss": 0.645681141524677,
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.base.v1",
+      "id": "NB-E2.gaussian.base.v1e-09.good70.q1.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": false,
+        "prior_mode": "good70",
+        "query_index": 2,
+        "var_smoothing": 1e-09
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "development_label": 1,
+        "effective_class_variances": [
+          [
+            0.6666666695833333,
+            0.6666666695833333
+          ],
+          [
+            0.6666666695833333,
+            0.6666666695833333
+          ]
+        ],
+        "epsilon": 2.9166666666666667e-09,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666
+        ],
+        "log_class_scores": [
+          -1504505.532504703,
+          -1498503.3798288263
+        ],
+        "log_feature_densities": [
+          [
+            -753003.7129115933,
+            -751501.4629181656
+          ],
+          [
+            -748501.4629312906,
+            -750000.7129247313
+          ]
+        ],
+        "log_normalizer": -1498503.3798288263,
+        "log_posterior": [
+          -6002.152675876627,
+          0.0
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.0,
+        "posterior_float64": [
+          0.0,
+          1.0
+        ],
+        "prediction": 1,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "stable_label_log_loss": -0.0,
+        "status": "defined",
+        "underflowed_positive_components": [
+          0
+        ]
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.base.v1",
+      "id": "NB-E2.gaussian.base.v1e-09.good70.q2.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": false,
+        "prior_mode": "empirical",
+        "query_index": 0,
+        "var_smoothing": 0.1
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.35768824048859293,
+            0.407522665905009
+          ],
+          [
+            0.015630544610830997,
+            0.24185960726682953
+          ]
+        ],
+        "development_label": 1,
+        "effective_class_variances": [
+          [
+            0.9583333333333333,
+            0.9583333333333333
+          ],
+          [
+            0.9583333333333333,
+            0.9583333333333333
+          ]
+        ],
+        "epsilon": 0.2916666666666667,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666
+        ],
+        "log_class_scores": [
+          -2.6188994151591904,
+          -6.271073328202669
+        ],
+        "log_feature_densities": [
+          [
+            -1.0280935086039704,
+            -0.8976587259952747
+          ],
+          [
+            -4.158528291212666,
+            -1.4193978564300573
+          ]
+        ],
+        "log_normalizer": -2.5932953276530775,
+        "log_posterior": [
+          -0.025604087506112982,
+          -3.6777780005495915
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.9500808668481769,
+        "posterior_float64": [
+          0.9747209174159429,
+          0.025279082584057314
+        ],
+        "prediction": 0,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "stable_label_log_loss": 3.6777780005495915,
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.base.v1",
+      "id": "NB-E2.gaussian.base.v0.1.empirical.q0.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": false,
+        "prior_mode": "empirical",
+        "query_index": 1,
+        "var_smoothing": 0.1
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.050558952478897225,
+            0.35768824048859293
+          ],
+          [
+            0.24185960726682953,
+            0.12598760253214714
+          ]
+        ],
+        "development_label": 0,
+        "effective_class_variances": [
+          [
+            0.9583333333333333,
+            0.9583333333333333
+          ],
+          [
+            0.9583333333333333,
+            0.9583333333333333
+          ]
+        ],
+        "epsilon": 0.2916666666666667,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666
+        ],
+        "log_class_scores": [
+          -4.705855936898321,
+          -4.184116806463538
+        ],
+        "log_feature_densities": [
+          [
+            -2.9846152477344052,
+            -1.0280935086039704
+          ],
+          [
+            -1.4193978564300573,
+            -2.0715717694735356
+          ]
+        ],
+        "log_normalizer": -3.71819179739501,
+        "log_posterior": [
+          -0.9876641395033112,
+          -0.4659250090685281
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.3938244536284657,
+        "posterior_float64": [
+          0.37244565683244174,
+          0.6275543431675584
+        ],
+        "prediction": 1,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "stable_label_log_loss": 0.9876641395033112,
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.base.v1",
+      "id": "NB-E2.gaussian.base.v0.1.empirical.q1.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": false,
+        "prior_mode": "empirical",
+        "query_index": 2,
+        "var_smoothing": 0.1
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "development_label": 1,
+        "effective_class_variances": [
+          [
+            0.9583333333333333,
+            0.9583333333333333
+          ],
+          [
+            0.9583333333333333,
+            0.9583333333333333
+          ]
+        ],
+        "epsilon": 0.2916666666666667,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666
+        ],
+        "log_class_scores": [
+          -1046613.7928124587,
+          -1042437.7928124587
+        ],
+        "log_feature_densities": [
+          [
+            -523829.0715717695,
+            -522784.0280935086
+          ],
+          [
+            -520697.0715717695,
+            -521740.0280935086
+          ]
+        ],
+        "log_normalizer": -1042437.7928124587,
+        "log_posterior": [
+          -4176.0,
+          0.0
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.0,
+        "posterior_float64": [
+          0.0,
+          1.0
+        ],
+        "prediction": 1,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "stable_label_log_loss": -0.0,
+        "status": "defined",
+        "underflowed_positive_components": [
+          0
+        ]
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.base.v1",
+      "id": "NB-E2.gaussian.base.v0.1.empirical.q2.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": false,
+        "prior_mode": "good70",
+        "query_index": 0,
+        "var_smoothing": 0.1
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.35768824048859293,
+            0.407522665905009
+          ],
+          [
+            0.015630544610830997,
+            0.24185960726682953
+          ]
+        ],
+        "development_label": 1,
+        "effective_class_variances": [
+          [
+            0.9583333333333333,
+            0.9583333333333333
+          ],
+          [
+            0.9583333333333333,
+            0.9583333333333333
+          ]
+        ],
+        "epsilon": 0.2916666666666667,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666
+        ],
+        "log_class_scores": [
+          -2.2824271785379775,
+          -6.781898951968659
+        ],
+        "log_feature_densities": [
+          [
+            -1.0280935086039704,
+            -0.8976587259952747
+          ],
+          [
+            -4.158528291212666,
+            -1.4193978564300573
+          ]
+        ],
+        "log_normalizer": -2.271373628578144,
+        "log_posterior": [
+          -0.011053549959833653,
+          -4.510525323390516
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.9781354712108202,
+        "posterior_float64": [
+          0.9890073160552556,
+          0.010992683944744354
+        ],
+        "prediction": 0,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "stable_label_log_loss": 4.510525323390516,
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.base.v1",
+      "id": "NB-E2.gaussian.base.v0.1.good70.q0.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": false,
+        "prior_mode": "good70",
+        "query_index": 1,
+        "var_smoothing": 0.1
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.050558952478897225,
+            0.35768824048859293
+          ],
+          [
+            0.24185960726682953,
+            0.12598760253214714
+          ]
+        ],
+        "development_label": 0,
+        "effective_class_variances": [
+          [
+            0.9583333333333333,
+            0.9583333333333333
+          ],
+          [
+            0.9583333333333333,
+            0.9583333333333333
+          ]
+        ],
+        "epsilon": 0.2916666666666667,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666
+        ],
+        "log_class_scores": [
+          -4.369383700277108,
+          -4.694942430229529
+        ],
+        "log_feature_densities": [
+          [
+            -2.9846152477344052,
+            -1.0280935086039704
+          ],
+          [
+            -1.4193978564300573,
+            -2.0715717694735356
+          ]
+        ],
+        "log_normalizer": -3.8258254218683088,
+        "log_posterior": [
+          -0.5435582784087996,
+          -0.8691170083612199
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.17583064056801123,
+        "posterior_float64": [
+          0.5806783566663756,
+          0.4193216433336243
+        ],
+        "prediction": 0,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "stable_label_log_loss": 0.5435582784087996,
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.base.v1",
+      "id": "NB-E2.gaussian.base.v0.1.good70.q1.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": false,
+        "prior_mode": "good70",
+        "query_index": 2,
+        "var_smoothing": 0.1
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "development_label": 1,
+        "effective_class_variances": [
+          [
+            0.9583333333333333,
+            0.9583333333333333
+          ],
+          [
+            0.9583333333333333,
+            0.9583333333333333
+          ]
+        ],
+        "epsilon": 0.2916666666666667,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666
+        ],
+        "log_class_scores": [
+          -1046613.456340222,
+          -1042438.3036380825
+        ],
+        "log_feature_densities": [
+          [
+            -523829.0715717695,
+            -522784.0280935086
+          ],
+          [
+            -520697.0715717695,
+            -521740.0280935086
+          ]
+        ],
+        "log_normalizer": -1042438.3036380825,
+        "log_posterior": [
+          -4175.152702139574,
+          0.0
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.0,
+        "posterior_float64": [
+          0.0,
+          1.0
+        ],
+        "prediction": 1,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "stable_label_log_loss": -0.0,
+        "status": "defined",
+        "underflowed_positive_components": [
+          0
+        ]
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.base.v1",
+      "id": "NB-E2.gaussian.base.v0.1.good70.q2.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": true,
+        "prior_mode": "empirical",
+        "query_index": 0,
+        "var_smoothing": 1e-09
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0,
+            -2.0
+          ],
+          [
+            1.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.4050657090298055,
+            0.48860251083410194,
+            0.4050657090298055
+          ],
+          [
+            0.004499873647964036,
+            0.23079948446061982,
+            0.004499873647964036
+          ]
+        ],
+        "development_label": 1,
+        "effective_class_variances": [
+          [
+            0.6666666695833333,
+            0.6666666695833333,
+            0.6666666695833333
+          ],
+          [
+            0.6666666695833333,
+            0.6666666695833333,
+            0.6666666695833333
+          ]
+        ],
+        "epsilon": 2.9166666666666667e-09,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666,
+          2.9166666666666665
+        ],
+        "log_class_scores": [
+          -3.216765122933592,
+          -12.966765080277343
+        ],
+        "log_feature_densities": [
+          [
+            -0.9037059805177781,
+            -0.7162059813380905,
+            -0.9037059805177781
+          ],
+          [
+            -5.403705960830278,
+            -1.4662059780568406,
+            -5.403705960830278
+          ]
+        ],
+        "log_normalizer": -3.2167068299664425,
+        "log_posterior": [
+          -5.829296714932042e-05,
+          -9.7500582503109
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.999883420861577,
+        "posterior_float64": [
+          0.9999417087318527,
+          5.829126814748052e-05
+        ],
+        "prediction": 0,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "stable_label_log_loss": 9.7500582503109,
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.duplicate.v1",
+      "id": "NB-E2.gaussian.duplicate.v1e-09.empirical.q0.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": true,
+        "prior_mode": "empirical",
+        "query_index": 1,
+        "var_smoothing": 1e-09
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0,
+            -2.0
+          ],
+          [
+            1.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.024326086930887305,
+            0.4050657090298055,
+            0.024326086930887305
+          ],
+          [
+            0.23079948446061982,
+            0.09038237711959211,
+            0.23079948446061982
+          ]
+        ],
+        "development_label": 0,
+        "effective_class_variances": [
+          [
+            0.6666666695833333,
+            0.6666666695833333,
+            0.6666666695833333
+          ],
+          [
+            0.6666666695833333,
+            0.6666666695833333,
+            0.6666666695833333
+          ]
+        ],
+        "epsilon": 2.9166666666666667e-09,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666,
+          2.9166666666666665
+        ],
+        "log_class_scores": [
+          -9.029265097503904,
+          -6.029265110628905
+        ],
+        "log_feature_densities": [
+          [
+            -3.7162059682130906,
+            -0.9037059805177781,
+            -3.7162059682130906
+          ],
+          [
+            -1.4662059780568406,
+            -2.403705973955278,
+            -1.4662059780568406
+          ]
+        ],
+        "log_normalizer": -5.980677758432698,
+        "log_posterior": [
+          -3.048587339071206,
+          -0.0485873521962068
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.9073974659618753,
+        "posterior_float64": [
+          0.04742587377051047,
+          0.9525741262294894
+        ],
+        "prediction": 1,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "stable_label_log_loss": 3.048587339071206,
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.duplicate.v1",
+      "id": "NB-E2.gaussian.duplicate.v1e-09.empirical.q1.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": true,
+        "prior_mode": "empirical",
+        "query_index": 2,
+        "var_smoothing": 1e-09
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0,
+            -2.0
+          ],
+          [
+            1.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "development_label": 1,
+        "effective_class_variances": [
+          [
+            0.6666666695833333,
+            0.6666666695833333,
+            0.6666666695833333
+          ],
+          [
+            0.6666666695833333,
+            0.6666666695833333,
+            0.6666666695833333
+          ]
+        ],
+        "epsilon": 2.9166666666666667e-09,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666,
+          2.9166666666666665
+        ],
+        "log_class_scores": [
+          -2257509.5818885327,
+          -2247004.331934493
+        ],
+        "log_feature_densities": [
+          [
+            -753003.7129115933,
+            -751501.4629181656,
+            -753003.7129115933
+          ],
+          [
+            -748501.4629312906,
+            -750000.7129247313,
+            -748501.4629312906
+          ]
+        ],
+        "log_normalizer": -2247004.331934493,
+        "log_posterior": [
+          -10505.249954039697,
+          0.0
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.0,
+        "posterior_float64": [
+          0.0,
+          1.0
+        ],
+        "prediction": 1,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "stable_label_log_loss": -0.0,
+        "status": "defined",
+        "underflowed_positive_components": [
+          0
+        ]
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.duplicate.v1",
+      "id": "NB-E2.gaussian.duplicate.v1e-09.empirical.q2.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": true,
+        "prior_mode": "good70",
+        "query_index": 0,
+        "var_smoothing": 1e-09
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0,
+            -2.0
+          ],
+          [
+            1.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.4050657090298055,
+            0.48860251083410194,
+            0.4050657090298055
+          ],
+          [
+            0.004499873647964036,
+            0.23079948446061982,
+            0.004499873647964036
+          ]
+        ],
+        "development_label": 1,
+        "effective_class_variances": [
+          [
+            0.6666666695833333,
+            0.6666666695833333,
+            0.6666666695833333
+          ],
+          [
+            0.6666666695833333,
+            0.6666666695833333,
+            0.6666666695833333
+          ]
+        ],
+        "epsilon": 2.9166666666666667e-09,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666,
+          2.9166666666666665
+        ],
+        "log_class_scores": [
+          -2.880292886312379,
+          -13.477590704043333
+        ],
+        "log_feature_densities": [
+          [
+            -0.9037059805177781,
+            -0.7162059813380905,
+            -0.9037059805177781
+          ],
+          [
+            -5.403705960830278,
+            -1.4662059780568406,
+            -5.403705960830278
+          ]
+        ],
+        "log_normalizer": -2.8802679031960805,
+        "log_posterior": [
+          -2.498311629839378e-05,
+          -10.597322800847252
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.9999500350156949,
+        "posterior_float64": [
+          0.9999750171957771,
+          2.498280422282883e-05
+        ],
+        "prediction": 0,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "stable_label_log_loss": 10.597322800847252,
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.duplicate.v1",
+      "id": "NB-E2.gaussian.duplicate.v1e-09.good70.q0.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": true,
+        "prior_mode": "good70",
+        "query_index": 1,
+        "var_smoothing": 1e-09
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0,
+            -2.0
+          ],
+          [
+            1.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.024326086930887305,
+            0.4050657090298055,
+            0.024326086930887305
+          ],
+          [
+            0.23079948446061982,
+            0.09038237711959211,
+            0.23079948446061982
+          ]
+        ],
+        "development_label": 0,
+        "effective_class_variances": [
+          [
+            0.6666666695833333,
+            0.6666666695833333,
+            0.6666666695833333
+          ],
+          [
+            0.6666666695833333,
+            0.6666666695833333,
+            0.6666666695833333
+          ]
+        ],
+        "epsilon": 2.9166666666666667e-09,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666,
+          2.9166666666666665
+        ],
+        "log_class_scores": [
+          -8.69279286088269,
+          -6.540090734394895
+        ],
+        "log_feature_densities": [
+          [
+            -3.7162059682130906,
+            -0.9037059805177781,
+            -3.7162059682130906
+          ],
+          [
+            -1.4662059780568406,
+            -2.403705973955278,
+            -1.4662059780568406
+          ]
+        ],
+        "log_normalizer": -6.430187706640145,
+        "log_posterior": [
+          -2.2626051542425456,
+          -0.10990302775475058
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.8026744571559986,
+        "posterior_float64": [
+          0.10407898944382435,
+          0.8959210105561755
+        ],
+        "prediction": 1,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "stable_label_log_loss": 2.2626051542425456,
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.duplicate.v1",
+      "id": "NB-E2.gaussian.duplicate.v1e-09.good70.q1.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": true,
+        "prior_mode": "good70",
+        "query_index": 2,
+        "var_smoothing": 1e-09
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0,
+            -2.0
+          ],
+          [
+            1.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "development_label": 1,
+        "effective_class_variances": [
+          [
+            0.6666666695833333,
+            0.6666666695833333,
+            0.6666666695833333
+          ],
+          [
+            0.6666666695833333,
+            0.6666666695833333,
+            0.6666666695833333
+          ]
+        ],
+        "epsilon": 2.9166666666666667e-09,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666,
+          2.9166666666666665
+        ],
+        "log_class_scores": [
+          -2257509.245416296,
+          -2247004.842760117
+        ],
+        "log_feature_densities": [
+          [
+            -753003.7129115933,
+            -751501.4629181656,
+            -753003.7129115933
+          ],
+          [
+            -748501.4629312906,
+            -750000.7129247313,
+            -748501.4629312906
+          ]
+        ],
+        "log_normalizer": -2247004.842760117,
+        "log_posterior": [
+          -10504.402656179387,
+          0.0
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.0,
+        "posterior_float64": [
+          0.0,
+          1.0
+        ],
+        "prediction": 1,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "stable_label_log_loss": -0.0,
+        "status": "defined",
+        "underflowed_positive_components": [
+          0
+        ]
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.duplicate.v1",
+      "id": "NB-E2.gaussian.duplicate.v1e-09.good70.q2.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": true,
+        "prior_mode": "empirical",
+        "query_index": 0,
+        "var_smoothing": 0.1
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0,
+            -2.0
+          ],
+          [
+            1.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.35768824048859293,
+            0.407522665905009,
+            0.35768824048859293
+          ],
+          [
+            0.015630544610830997,
+            0.24185960726682953,
+            0.015630544610830997
+          ]
+        ],
+        "development_label": 1,
+        "effective_class_variances": [
+          [
+            0.9583333333333333,
+            0.9583333333333333,
+            0.9583333333333333
+          ],
+          [
+            0.9583333333333333,
+            0.9583333333333333,
+            0.9583333333333333
+          ]
+        ],
+        "epsilon": 0.2916666666666667,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666,
+          2.9166666666666665
+        ],
+        "log_class_scores": [
+          -3.646992923763161,
+          -10.429601619415335
+        ],
+        "log_feature_densities": [
+          [
+            -1.0280935086039704,
+            -0.8976587259952747,
+            -1.0280935086039704
+          ],
+          [
+            -4.158528291212666,
+            -1.4193978564300573,
+            -4.158528291212666
+          ]
+        ],
+        "log_normalizer": -3.6458602509134006,
+        "log_posterior": [
+          -0.0011326728497604854,
+          -6.783741368501934
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.997737218259598,
+        "posterior_float64": [
+          0.998867968382007,
+          0.0011320316179930622
+        ],
+        "prediction": 0,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "stable_label_log_loss": 6.783741368501934,
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.duplicate.v1",
+      "id": "NB-E2.gaussian.duplicate.v0.1.empirical.q0.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": true,
+        "prior_mode": "empirical",
+        "query_index": 1,
+        "var_smoothing": 0.1
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0,
+            -2.0
+          ],
+          [
+            1.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.050558952478897225,
+            0.35768824048859293,
+            0.050558952478897225
+          ],
+          [
+            0.24185960726682953,
+            0.12598760253214714,
+            0.24185960726682953
+          ]
+        ],
+        "development_label": 0,
+        "effective_class_variances": [
+          [
+            0.9583333333333333,
+            0.9583333333333333,
+            0.9583333333333333
+          ],
+          [
+            0.9583333333333333,
+            0.9583333333333333,
+            0.9583333333333333
+          ]
+        ],
+        "epsilon": 0.2916666666666667,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666,
+          2.9166666666666665
+        ],
+        "log_class_scores": [
+          -7.6904711846327265,
+          -5.603514662893596
+        ],
+        "log_feature_densities": [
+          [
+            -2.9846152477344052,
+            -1.0280935086039704,
+            -2.9846152477344052
+          ],
+          [
+            -1.4193978564300573,
+            -2.0715717694735356,
+            -1.4193978564300573
+          ]
+        ],
+        "log_normalizer": -5.486563841564692,
+        "log_posterior": [
+          -2.2039073430680345,
+          -0.11695082132890366
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.7914396559685167,
+        "posterior_float64": [
+          0.11037105714319465,
+          0.8896289428568052
+        ],
+        "prediction": 1,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "stable_label_log_loss": 2.2039073430680345,
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.duplicate.v1",
+      "id": "NB-E2.gaussian.duplicate.v0.1.empirical.q1.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": true,
+        "prior_mode": "empirical",
+        "query_index": 2,
+        "var_smoothing": 0.1
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0,
+            -2.0
+          ],
+          [
+            1.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "development_label": 1,
+        "effective_class_variances": [
+          [
+            0.9583333333333333,
+            0.9583333333333333,
+            0.9583333333333333
+          ],
+          [
+            0.9583333333333333,
+            0.9583333333333333,
+            0.9583333333333333
+          ]
+        ],
+        "epsilon": 0.2916666666666667,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666,
+          2.9166666666666665
+        ],
+        "log_class_scores": [
+          -1570442.8643842281,
+          -1563134.8643842281
+        ],
+        "log_feature_densities": [
+          [
+            -523829.0715717695,
+            -522784.0280935086,
+            -523829.0715717695
+          ],
+          [
+            -520697.0715717695,
+            -521740.0280935086,
+            -520697.0715717695
+          ]
+        ],
+        "log_normalizer": -1563134.8643842281,
+        "log_posterior": [
+          -7308.0,
+          0.0
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.0,
+        "posterior_float64": [
+          0.0,
+          1.0
+        ],
+        "prediction": 1,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "stable_label_log_loss": -0.0,
+        "status": "defined",
+        "underflowed_positive_components": [
+          0
+        ]
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.duplicate.v1",
+      "id": "NB-E2.gaussian.duplicate.v0.1.empirical.q2.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": true,
+        "prior_mode": "good70",
+        "query_index": 0,
+        "var_smoothing": 0.1
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0,
+            -2.0
+          ],
+          [
+            1.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.35768824048859293,
+            0.407522665905009,
+            0.35768824048859293
+          ],
+          [
+            0.015630544610830997,
+            0.24185960726682953,
+            0.015630544610830997
+          ]
+        ],
+        "development_label": 1,
+        "effective_class_variances": [
+          [
+            0.9583333333333333,
+            0.9583333333333333,
+            0.9583333333333333
+          ],
+          [
+            0.9583333333333333,
+            0.9583333333333333,
+            0.9583333333333333
+          ]
+        ],
+        "epsilon": 0.2916666666666667,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666,
+          2.9166666666666665
+        ],
+        "log_class_scores": [
+          -3.310520687141948,
+          -10.940427243181325
+        ],
+        "log_feature_densities": [
+          [
+            -1.0280935086039704,
+            -0.8976587259952747,
+            -1.0280935086039704
+          ],
+          [
+            -4.158528291212666,
+            -1.4193978564300573,
+            -4.158528291212666
+          ]
+        ],
+        "log_normalizer": -3.3100350988165097,
+        "log_posterior": [
+          -0.0004855883254384352,
+          -7.630392144364816
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.9990292947885374,
+        "posterior_float64": [
+          0.9995145295534915,
+          0.00048547044650848296
+        ],
+        "prediction": 0,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "stable_label_log_loss": 7.630392144364816,
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.duplicate.v1",
+      "id": "NB-E2.gaussian.duplicate.v0.1.good70.q0.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": true,
+        "prior_mode": "good70",
+        "query_index": 1,
+        "var_smoothing": 0.1
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0,
+            -2.0
+          ],
+          [
+            1.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.050558952478897225,
+            0.35768824048859293,
+            0.050558952478897225
+          ],
+          [
+            0.24185960726682953,
+            0.12598760253214714,
+            0.24185960726682953
+          ]
+        ],
+        "development_label": 0,
+        "effective_class_variances": [
+          [
+            0.9583333333333333,
+            0.9583333333333333,
+            0.9583333333333333
+          ],
+          [
+            0.9583333333333333,
+            0.9583333333333333,
+            0.9583333333333333
+          ]
+        ],
+        "epsilon": 0.2916666666666667,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666,
+          2.9166666666666665
+        ],
+        "log_class_scores": [
+          -7.3539989480115135,
+          -6.114340286659586
+        ],
+        "log_feature_densities": [
+          [
+            -2.9846152477344052,
+            -1.0280935086039704,
+            -2.9846152477344052
+          ],
+          [
+            -1.4193978564300573,
+            -2.0715717694735356,
+            -1.4193978564300573
+          ]
+        ],
+        "log_normalizer": -5.860098913871948,
+        "log_posterior": [
+          -1.4939000341395658,
+          -0.2542413727876385
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.601407374924671,
+        "posterior_float64": [
+          0.22449540625172845,
+          0.7755045937482711
+        ],
+        "prediction": 1,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "stable_label_log_loss": 1.4939000341395658,
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.duplicate.v1",
+      "id": "NB-E2.gaussian.duplicate.v0.1.good70.q1.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "duplicate_first_feature": true,
+        "prior_mode": "good70",
+        "query_index": 2,
+        "var_smoothing": 0.1
+      },
+      "correct_prediction": "Class1",
+      "correct_reason_id": "normalize",
+      "counterexample": "The first development label intentionally contradicts the locally favored class. Duplicating evidence can increase confidence in that wrong class. These fictional individual errors do not measure population calibration or prove every correlated feature worsens performance.",
+      "expected": {
+        "class_means": [
+          [
+            -2.0,
+            -1.0,
+            -2.0
+          ],
+          [
+            1.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "density_float64": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "development_label": 1,
+        "effective_class_variances": [
+          [
+            0.9583333333333333,
+            0.9583333333333333,
+            0.9583333333333333
+          ],
+          [
+            0.9583333333333333,
+            0.9583333333333333,
+            0.9583333333333333
+          ]
+        ],
+        "epsilon": 0.2916666666666667,
+        "global_training_variances": [
+          2.9166666666666665,
+          0.9166666666666666,
+          2.9166666666666665
+        ],
+        "log_class_scores": [
+          -1570442.5279119916,
+          -1563135.375209852
+        ],
+        "log_feature_densities": [
+          [
+            -523829.0715717695,
+            -522784.0280935086,
+            -523829.0715717695
+          ],
+          [
+            -520697.0715717695,
+            -521740.0280935086,
+            -520697.0715717695
+          ]
+        ],
+        "log_normalizer": -1563135.375209852,
+        "log_posterior": [
+          -7307.1527021396905,
+          0.0
+        ],
+        "population_class_variances": [
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ],
+          [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.6666666666666666
+          ]
+        ],
+        "positive_brier_error": 0.0,
+        "posterior_float64": [
+          0.0,
+          1.0
+        ],
+        "prediction": 1,
+        "priors": [
+          0.7,
+          0.3
+        ],
+        "stable_label_log_loss": -0.0,
+        "status": "defined",
+        "underflowed_positive_components": [
+          0
+        ]
+      },
+      "explanation": "Gaussian NB fits population class variances plus one training-global epsilon. Duplicating the first feature refits a separate model and counts the same evidence twice under the independence assumption. A confident vote is not calibrated reliability; inspect the displayed held-out label and probability error.",
+      "fixture_id": "nb.gaussian.duplicate.v1",
+      "id": "NB-E2.gaussian.duplicate.v0.1.good70.q2.v1",
+      "kind": "fitted-gaussian"
+    },
+    {
+      "controls": {
+        "likelihood": [
+          0.5,
+          0.25
+        ],
+        "prior": [
+          0.6,
+          0.4
+        ]
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "A predictive evidence update is not an intervention or causal quality effect. A zero supplied prior excludes a class here; all-zero evidence instead has undefined normalization.",
+      "expected": {
+        "class_scores": [
+          0.3,
+          0.1
+        ],
+        "likelihoods": [
+          0.5,
+          0.25
+        ],
+        "log_class_scores": [
+          -1.2039728043259361,
+          -2.3025850929940455
+        ],
+        "log_normalizer": -0.9162907318741551,
+        "log_posterior": [
+          -0.287682072451781,
+          -1.3862943611198904
+        ],
+        "posterior_float64": [
+          0.7499999999999999,
+          0.25000000000000006
+        ],
+        "prediction": 0,
+        "priors": [
+          0.6,
+          0.4
+        ],
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian densities can exceed1; they are not probability masses at an exact point. Normalize prior times class-conditional density; this is supplied-density arithmetic, not a fitted estimator.",
+      "fixture_id": "nb.gaussian.density.0.v1",
+      "id": "NB-E2.supplied-density.0.v1",
+      "kind": "supplied-gaussian-density-not-fitted"
+    },
+    {
+      "controls": {
+        "likelihood": [
+          3.989422804014327,
+          1.9947114020071635
+        ],
+        "prior": [
+          0.6,
+          0.4
+        ]
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "A predictive evidence update is not an intervention or causal quality effect. A zero supplied prior excludes a class here; all-zero evidence instead has undefined normalization.",
+      "expected": {
+        "class_scores": [
+          2.393653682408596,
+          0.7978845608028654
+        ],
+        "likelihoods": [
+          3.989422804014327,
+          1.9947114020071635
+        ],
+        "log_class_scores": [
+          0.8728209360233822,
+          -0.22579135264472738
+        ],
+        "log_normalizer": 1.160503008475163,
+        "log_posterior": [
+          -0.2876820724517809,
+          -1.3862943611198904
+        ],
+        "posterior_float64": [
+          0.75,
+          0.25000000000000006
+        ],
+        "prediction": 0,
+        "priors": [
+          0.6,
+          0.4
+        ],
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Gaussian densities can exceed1; they are not probability masses at an exact point. Normalize prior times class-conditional density; this is supplied-density arithmetic, not a fitted estimator.",
+      "fixture_id": "nb.gaussian.density.1.v1",
+      "id": "NB-E2.supplied-density.1.v1",
+      "kind": "supplied-gaussian-density-not-fitted"
+    },
+    {
+      "controls": {
+        "var_smoothing": 0.001
+      },
+      "correct_prediction": "Class0",
+      "correct_reason_id": "normalize",
+      "counterexample": "Positive var_smoothing times zero global variance still gives zero epsilon.",
+      "expected": {
+        "class_means": [
+          [
+            0
+          ],
+          [
+            2
+          ]
+        ],
+        "density_float64": [
+          [
+            8.988125218733285e-217
+          ],
+          [
+            8.988125218733285e-217
+          ]
+        ],
+        "effective_class_variances": [
+          [
+            0.001
+          ],
+          [
+            0.001
+          ]
+        ],
+        "epsilon": 0.001,
+        "log_class_scores": [
+          -498.15820807427355,
+          -498.15820807427355
+        ],
+        "log_feature_densities": [
+          [
+            -497.4650608937136
+          ],
+          [
+            -497.4650608937136
+          ]
+        ],
+        "log_normalizer": -497.4650608937136,
+        "log_posterior": [
+          -0.6931471805599472,
+          -0.6931471805599472
+        ],
+        "population_class_variances": [
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "posterior_float64": [
+          0.49999999999999906,
+          0.49999999999999906
+        ],
+        "prediction": 0,
+        "priors": [
+          0.5,
+          0.5
+        ],
+        "status": "defined",
+        "underflowed_positive_components": []
+      },
+      "explanation": "Zero class variance is rescued here because training-global variance is positive; epsilon=.001. This would not rescue a globally constant dataset.",
+      "fixture_id": "nb.gaussian.zero-class.v1",
+      "id": "NB-E2.zero-class-variance.smoothed.v1",
+      "kind": "fitted-gaussian-zero-class-variance"
+    },
+    {
+      "controls": {
+        "diagnostic": "NB-E2.reject.count-representation.v1"
+      },
+      "correct_prediction": "Reject configuration",
+      "correct_reason_id": "boundary",
+      "counterexample": "A library may accept provenance-blind data or emit NaN; neither is permission to invent a defined educational posterior or a class0 answer.",
+      "expected": {
+        "posterior": null,
+        "prediction": null,
+        "reason": "These signed continuous signals are not valid Multinomial token counts; choose Gaussian assumptions, not a coercion.",
+        "status": "rejected"
+      },
+      "explanation": "These signed continuous signals are not valid Multinomial token counts; choose Gaussian assumptions, not a coercion.",
+      "fixture_id": "nb.gaussian.base.v1",
+      "id": "NB-E2.reject.count-representation.v1",
+      "kind": "rejected-diagnostic"
+    },
+    {
+      "controls": {
+        "diagnostic": "NB-E2.reject.zero-variance.v1"
+      },
+      "correct_prediction": "Reject configuration",
+      "correct_reason_id": "boundary",
+      "counterexample": "A library may accept provenance-blind data or emit NaN; neither is permission to invent a defined educational posterior or a class0 answer.",
+      "expected": {
+        "posterior": null,
+        "prediction": null,
+        "reason": "Zero variance with var_smoothing0 has no valid Gaussian density; no posterior is exposed.",
+        "status": "rejected"
+      },
+      "explanation": "Zero variance with var_smoothing0 has no valid Gaussian density; no posterior is exposed.",
+      "fixture_id": "nb.gaussian.zero-class.v1",
+      "id": "NB-E2.reject.zero-variance.v1",
+      "kind": "rejected-diagnostic"
+    },
+    {
+      "controls": {
+        "diagnostic": "NB-E2.reject.global-constant.v1"
+      },
+      "correct_prediction": "Reject configuration",
+      "correct_reason_id": "boundary",
+      "counterexample": "A library may accept provenance-blind data or emit NaN; neither is permission to invent a defined educational posterior or a class0 answer.",
+      "expected": {
+        "posterior": null,
+        "prediction": null,
+        "reason": "All training variances are zero, so even positive var_smoothing leaves epsilon0; reject rather than display NaN as a probability.",
+        "status": "rejected"
+      },
+      "explanation": "All training variances are zero, so even positive var_smoothing leaves epsilon0; reject rather than display NaN as a probability.",
+      "fixture_id": "nb.gaussian.global-constant.v1",
+      "id": "NB-E2.reject.global-constant.v1",
+      "kind": "rejected-diagnostic"
+    }
+  ],
+  "controls": "Only complete listed configuration tuples; no unrestricted text, counts, queries, priors, alpha, variances or Cartesian expansion.",
+  "fixtures": [
+    {
+      "development_ids": [
+        "nb-gauss-dev-0",
+        "nb-gauss-dev-1",
+        "nb-gauss-dev-2"
+      ],
+      "development_labels": [
+        1,
+        0,
+        1
+      ],
+      "features": [
+        "centered_clarity_signal",
+        "centered_structure_signal"
+      ],
+      "id": "nb.gaussian.base.v1",
+      "queries": [
+        [
+          -1.5,
+          -1
+        ],
+        [
+          0,
+          -1.5
+        ],
+        [
+          1000,
+          1000
+        ]
+      ],
+      "training_ids": [
+        "nb-gauss-train-0",
+        "nb-gauss-train-1",
+        "nb-gauss-train-2",
+        "nb-gauss-train-3",
+        "nb-gauss-train-4",
+        "nb-gauss-train-5"
+      ],
+      "training_labels": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "training_rows": [
+        [
+          -3,
+          -2
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "units": "Fictional dimensionless continuous signals; negative values valid, not token counts."
+    },
+    {
+      "development_ids": [
+        "nb-gauss-dev-0",
+        "nb-gauss-dev-1",
+        "nb-gauss-dev-2"
+      ],
+      "development_labels": [
+        1,
+        0,
+        1
+      ],
+      "features": [
+        "centered_clarity_signal",
+        "centered_structure_signal",
+        "repeated_clarity_signal"
+      ],
+      "id": "nb.gaussian.duplicate.v1",
+      "queries": [
+        [
+          -1.5,
+          -1,
+          -1.5
+        ],
+        [
+          0,
+          -1.5,
+          0
+        ],
+        [
+          1000,
+          1000,
+          1000
+        ]
+      ],
+      "training_ids": [
+        "nb-gauss-train-0",
+        "nb-gauss-train-1",
+        "nb-gauss-train-2",
+        "nb-gauss-train-3",
+        "nb-gauss-train-4",
+        "nb-gauss-train-5"
+      ],
+      "training_labels": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "training_rows": [
+        [
+          -3,
+          -2,
+          -3
+        ],
+        [
+          -2,
+          -1,
+          -2
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          2,
+          1,
+          2
+        ]
+      ],
+      "units": "Fictional dimensionless continuous signals; negative values valid, not token counts."
+    },
+    {
+      "class_means": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "class_population_variances": [
+        [
+          0.6366197723675814
+        ],
+        [
+          2.5464790894703255
+        ]
+      ],
+      "id": "nb.gaussian.density.0.v1",
+      "priors": [
+        0.6,
+        0.4
+      ],
+      "query": [
+        0
+      ],
+      "var_smoothing": "not applied to supplied mathematical densities"
+    },
+    {
+      "class_means": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "class_population_variances": [
+        [
+          0.01
+        ],
+        [
+          0.04
+        ]
+      ],
+      "id": "nb.gaussian.density.1.v1",
+      "priors": [
+        0.6,
+        0.4
+      ],
+      "query": [
+        0
+      ],
+      "var_smoothing": "not applied to supplied mathematical densities"
+    },
+    {
+      "allowed_smoothing": [
+        0.001,
+        0
+      ],
+      "id": "nb.gaussian.zero-class.v1",
+      "query": [
+        1
+      ],
+      "training_ids": [
+        "nb.gaussian.zero-class.v1.train.0",
+        "nb.gaussian.zero-class.v1.train.1",
+        "nb.gaussian.zero-class.v1.train.2",
+        "nb.gaussian.zero-class.v1.train.3"
+      ],
+      "training_labels": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "training_rows": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          2
+        ],
+        [
+          2
+        ]
+      ]
+    },
+    {
+      "id": "nb.gaussian.global-constant.v1",
+      "query": [
+        1
+      ],
+      "training_ids": [
+        "nb.gaussian.global-constant.v1.train.0",
+        "nb.gaussian.global-constant.v1.train.1",
+        "nb.gaussian.global-constant.v1.train.2",
+        "nb.gaussian.global-constant.v1.train.3"
+      ],
+      "training_labels": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "training_rows": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "var_smoothing": 1e-09
+    }
+  ],
+  "id": "NB-E2",
+  "interaction": "Record prediction and bounded reason before reveal; show fixture inputs first, then numerical/text evidence. Change one listed configuration and explain a changed transfer case. Wrong initial predictions can recover. No experiment credit awards mastery.",
+  "labels": {
+    "0": "Good",
+    "1": "Needs Improvement (positive class)"
+  },
+  "learning_goals": [
+    "Choose continuous density versus count likelihood assumptions",
+    "Explain population variance and training-global epsilon",
+    "Inspect repeated-evidence confidence and held-out probability errors without claiming calibration"
+  ],
+  "learning_question": "Which likelihood model matches these features, and is stronger confidence reliable when evidence is repeated?",
+  "objectives": [
+    "NB03",
+    "NB04"
+  ],
+  "prediction_options": [
+    "Class0",
+    "Class1",
+    "Undefined evidence normalization",
+    "Reject configuration"
+  ],
+  "prerequisites": [
+    "Conditional probability and Bayes",
+    "EV",
+    "LG01\u201303",
+    "Training-only/fold-only fitting",
+    "Array row alignment"
+  ],
+  "provenance": "Wholly fictional human-label placeholders for teaching, not production labels or LLM ground truth. No data collection.",
+  "reason_options": [
+    {
+      "id": "normalize",
+      "label": "Normalize class-conditional evidence with the declared prior and representation"
+    },
+    {
+      "id": "boundary",
+      "label": "Invalid representation/variance/provenance or zero evidence prevents a defined prediction"
+    },
+    {
+      "id": "causal",
+      "label": "Accuracy proves causal effects and calibrated confidence"
+    }
+  ],
+  "related_objective_ids": [
+    "NB03.O1",
+    "NB03.O2",
+    "NB03.O3",
+    "NB03.O4",
+    "NB04.O1",
+    "NB04.O2",
+    "NB04.O3",
+    "NB04.O4"
+  ],
+  "schema": "supervised.naive-bayes.experiment.v1",
+  "version": "1.0.0"
+}

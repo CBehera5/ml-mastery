@@ -1,0 +1,11 @@
+export const CALCULUS_SCHEMA_VERSION="1.0.0" as const;
+const finite=(name:string,value:number)=>{if(typeof value!=="number"||!Number.isFinite(value))throw new Error(`${name} must be a finite number`);return value;};
+export const linearValue=(x:number,a=5,b=10)=>finite("a",a)*finite("x",x)+finite("b",b);
+export const quadraticValue=(x:number)=>{const value=finite("x",x);return value*value;};
+export const linearDerivative=(a=5)=>finite("a",a);
+export const quadraticDerivative=(x:number)=>2*finite("x",x);
+export const squaredLoss=(weight:number)=>{const w=finite("weight",weight);return (2*w-6)**2;};
+export const lossDerivative=(weight:number)=>4*(2*finite("weight",weight)-6);
+export const centralDerivative=(fn:(x:number)=>number,x:number,h=1e-5)=>{const point=finite("x",x),step=finite("h",h);if(step<=0)throw new Error("h must be greater than 0");const result=(fn(point+step)-fn(point-step))/(2*step);if(!Number.isFinite(result))throw new Error("derivative calculation produced a nonfinite result");return result;};
+export const secantSlope=(fn:(x:number)=>number,x:number,h:number)=>{const point=finite("x",x),step=finite("h",h);if(step===0)throw new Error("h must not be 0");const result=(fn(point+step)-fn(point))/step;if(!Number.isFinite(result))throw new Error("secant calculation produced a nonfinite result");return result;};
+export const calculusTrace=(raw:{weight:number;h:number})=>{const weight=finite("weight",raw.weight),h=finite("h",raw.h);if(h<=0)throw new Error("h must be greater than 0");const prediction=2*weight,loss=squaredLoss(weight),analytical=lossDerivative(weight);return{schemaVersion:CALCULUS_SCHEMA_VERSION,input:{weight,h},model:{input:2,target:6,prediction,loss},derivative:{analytical,numerical:centralDerivative(squaredLoss,weight,Math.min(h,1e-5)),secant:secantSlope(squaredLoss,weight,h),tangent:{point:[weight,loss],slope:analytical,intercept:loss-analytical*weight}}};};

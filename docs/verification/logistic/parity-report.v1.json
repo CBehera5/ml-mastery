@@ -1,0 +1,329 @@
+{
+  "mode": "freeze",
+  "configurations": [
+    28,
+    33
+  ],
+  "profile": {
+    "python": "3.13.16",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2",
+    "scikit-learn": "1.9.1"
+  },
+  "scipy": "1.18.1",
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "hashes": {
+    "lg-e1.manifest.v1.json": "f25499ef1d4dad0fa02be5cb298b747f49f232946ed9fb7376a2463ab7fa0a7b",
+    "lg-e2.manifest.v1.json": "94f57add2f21f5a13a9a6f5a0f2e063a66747701ad06a6e8e3984dd340c51386"
+  },
+  "checks": "all states: independent arithmetic and trusted scipy/sklearn; trained model stationarity and separate fold fits",
+  "state_ledger": [
+    {
+      "id": "LG-E1.LG.authored.w1.negative-tail.y0.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w1.negative-tail.y0.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w1.negative-tail.y1.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w1.negative-tail.y1.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w1.negative-ln3.y0.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w1.negative-ln3.y0.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w1.negative-ln3.y1.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w1.negative-ln3.y1.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w1.zero.y0.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w1.zero.y0.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w1.zero.y1.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w1.zero.y1.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w1.positive-ln3.y0.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w1.positive-ln3.y0.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w1.positive-ln3.y1.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w1.positive-ln3.y1.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w1.positive-tail.y0.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w1.positive-tail.y0.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w1.positive-tail.y1.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w1.positive-tail.y1.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w2.negative-tail.y0.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w2.negative-tail.y0.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w2.negative-tail.y1.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w2.negative-tail.y1.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w2.negative-ln3.y0.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w2.negative-ln3.y0.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w2.negative-ln3.y1.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w2.negative-ln3.y1.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w2.zero.y0.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w2.zero.y0.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w2.zero.y1.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w2.zero.y1.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w2.positive-ln3.y0.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w2.positive-ln3.y0.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w2.positive-ln3.y1.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w2.positive-ln3.y1.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w2.positive-tail.y0.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w2.positive-tail.y0.v1"
+    },
+    {
+      "id": "LG-E1.LG.authored.w2.positive-tail.y1.v1",
+      "status": "verified",
+      "fixture": "LG.authored.w2.positive-tail.y1.v1"
+    },
+    {
+      "id": "LG-E1.fit.C0.1.q1",
+      "status": "verified",
+      "fixture": "LG.fitted-churn.v1"
+    },
+    {
+      "id": "LG-E1.fit.C0.1.q2",
+      "status": "verified",
+      "fixture": "LG.fitted-churn.v1"
+    },
+    {
+      "id": "LG-E1.fit.C1.q1",
+      "status": "verified",
+      "fixture": "LG.fitted-churn.v1"
+    },
+    {
+      "id": "LG-E1.fit.C1.q2",
+      "status": "verified",
+      "fixture": "LG.fitted-churn.v1"
+    },
+    {
+      "id": "LG-E1.fit.C10.q1",
+      "status": "verified",
+      "fixture": "LG.fitted-churn.v1"
+    },
+    {
+      "id": "LG-E1.fit.C10.q2",
+      "status": "verified",
+      "fixture": "LG.fitted-churn.v1"
+    },
+    {
+      "id": "LG-E1.invalid.nonpositive-C",
+      "status": "verified",
+      "fixture": "LG.fitted-churn.v1"
+    },
+    {
+      "id": "LG-E1.invalid.lbfgs-L1-unsupported",
+      "status": "verified",
+      "fixture": "LG.fitted-churn.v1"
+    },
+    {
+      "id": "LG-E2.moderate.t0.fn1",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.moderate.v1"
+    },
+    {
+      "id": "LG-E2.moderate.t0.fn5",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.moderate.v1"
+    },
+    {
+      "id": "LG-E2.moderate.t0.5.fn1",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.moderate.v1"
+    },
+    {
+      "id": "LG-E2.moderate.t0.5.fn5",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.moderate.v1"
+    },
+    {
+      "id": "LG-E2.moderate.t0.6.fn1",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.moderate.v1"
+    },
+    {
+      "id": "LG-E2.moderate.t0.6.fn5",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.moderate.v1"
+    },
+    {
+      "id": "LG-E2.moderate.t1.fn1",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.moderate.v1"
+    },
+    {
+      "id": "LG-E2.moderate.t1.fn5",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.moderate.v1"
+    },
+    {
+      "id": "LG-E2.cautious.t0.fn1",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.cautious.v1"
+    },
+    {
+      "id": "LG-E2.cautious.t0.fn5",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.cautious.v1"
+    },
+    {
+      "id": "LG-E2.cautious.t0.5.fn1",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.cautious.v1"
+    },
+    {
+      "id": "LG-E2.cautious.t0.5.fn5",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.cautious.v1"
+    },
+    {
+      "id": "LG-E2.cautious.t0.6.fn1",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.cautious.v1"
+    },
+    {
+      "id": "LG-E2.cautious.t0.6.fn5",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.cautious.v1"
+    },
+    {
+      "id": "LG-E2.cautious.t1.fn1",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.cautious.v1"
+    },
+    {
+      "id": "LG-E2.cautious.t1.fn5",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.cautious.v1"
+    },
+    {
+      "id": "LG-E2.sharp.t0.fn1",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.sharp.v1"
+    },
+    {
+      "id": "LG-E2.sharp.t0.fn5",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.sharp.v1"
+    },
+    {
+      "id": "LG-E2.sharp.t0.5.fn1",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.sharp.v1"
+    },
+    {
+      "id": "LG-E2.sharp.t0.5.fn5",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.sharp.v1"
+    },
+    {
+      "id": "LG-E2.sharp.t0.6.fn1",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.sharp.v1"
+    },
+    {
+      "id": "LG-E2.sharp.t0.6.fn5",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.sharp.v1"
+    },
+    {
+      "id": "LG-E2.sharp.t1.fn1",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.sharp.v1"
+    },
+    {
+      "id": "LG-E2.sharp.t1.fn5",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.sharp.v1"
+    },
+    {
+      "id": "LG-E2.exact-endpoints.t0",
+      "status": "verified",
+      "fixture": "LG.endpoint.exact-endpoints.v1"
+    },
+    {
+      "id": "LG-E2.exact-endpoints.t0.5",
+      "status": "verified",
+      "fixture": "LG.endpoint.exact-endpoints.v1"
+    },
+    {
+      "id": "LG-E2.exact-endpoints.t1",
+      "status": "verified",
+      "fixture": "LG.endpoint.exact-endpoints.v1"
+    },
+    {
+      "id": "LG-E2.no-actual-positives.t0",
+      "status": "verified",
+      "fixture": "LG.endpoint.no-actual-positives.v1"
+    },
+    {
+      "id": "LG-E2.no-actual-positives.t0.5",
+      "status": "verified",
+      "fixture": "LG.endpoint.no-actual-positives.v1"
+    },
+    {
+      "id": "LG-E2.no-actual-positives.t1",
+      "status": "verified",
+      "fixture": "LG.endpoint.no-actual-positives.v1"
+    },
+    {
+      "id": "LG-E2.invalid.global-scaler",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.moderate.v1"
+    },
+    {
+      "id": "LG-E2.invalid.target-derived-feature",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.moderate.v1"
+    },
+    {
+      "id": "LG-E2.invalid.test-selected-threshold",
+      "status": "verified",
+      "fixture": "LG.fixed-probabilities.moderate.v1"
+    }
+  ],
+  "colab": "UNVERIFIED; no notebook execution"
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "decision-trees.source-preservation.v1",
+  "baseline": "outputs/task-015-6/source-equality.json",
+  "checked_files": 477,
+  "changed_files": [],
+  "scope": "Existing application, package, public and Python sources; not a claim about browser storage or exhaustive filesystem equality."
+}

@@ -1,0 +1,10 @@
+{
+  "conventions_sha256": "641c7cdc6aaa74bb0814bf697b133ca5d8d1952d3badba2aeba50114aefaffaa",
+  "generator_sha256": "b6067f30ffda9615e018e5ec3caa9f83903d66ba8f70ae54ec272457714d5adc",
+  "schema": "naive-bayes.freeze.v1",
+  "sha256": {
+    "nb-e1.manifest.v1.json": "f9109d5f60a08594c7a770dcaa2760e4b23f8f5b1079725abe0a784f66c21fbf",
+    "nb-e2.manifest.v1.json": "c3d3c79b936829a895f0164fce4735dd0b4a6ce46fbc0d7bb823efd6210176eb",
+    "parity-report.v1.json": "06579a9ddc2edca8a10ff6c0cef4a023d0e8b445d4f6ef709d7befbb18fcb57e"
+  }
+}

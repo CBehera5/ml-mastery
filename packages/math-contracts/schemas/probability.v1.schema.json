@@ -1,0 +1,426 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "probability.v1.schema.json",
+  "title": "Probability v1 frozen reference fixture",
+  "type": "object",
+  "properties": {
+    "contract": {
+      "const": "probability.v1"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "trace": {
+            "type": "object",
+            "properties": {
+              "contract": {
+                "const": "probability.v1"
+              },
+              "total": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "pA": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "pB": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "joint": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "union": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "complementA": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "conditional": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "independent": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "contract",
+              "total",
+              "pA",
+              "pB",
+              "joint",
+              "union",
+              "complementA",
+              "conditional",
+              "independent"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "input",
+          "trace"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "bayes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "trace": {
+            "type": "object",
+            "properties": {
+              "contract": {
+                "const": "probability.v1"
+              },
+              "prior": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "sensitivity": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "falsePositiveRate": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "truePositive": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "falsePositive": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "evidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "posterior": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "contract",
+              "prior",
+              "sensitivity",
+              "falsePositiveRate",
+              "truePositive",
+              "falsePositive",
+              "evidence",
+              "posterior"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "input",
+          "trace"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "binomial": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "trace": {
+            "type": "object",
+            "properties": {
+              "contract": {
+                "const": "probability.v1"
+              },
+              "mass": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "cdf": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "expectation": {
+                "type": "number"
+              },
+              "variance": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "contract",
+              "mass",
+              "cdf",
+              "expectation",
+              "variance"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "input",
+          "trace"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "simulation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "trace": {
+            "type": "object",
+            "properties": {
+              "contract": {
+                "const": "probability.v1"
+              },
+              "sides": {
+                "enum": [
+                  2,
+                  6
+                ]
+              },
+              "draws": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10000
+              },
+              "seed": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 4294967295
+              },
+              "counts": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            },
+            "required": [
+              "contract",
+              "sides",
+              "draws",
+              "seed",
+              "counts"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "input",
+          "trace"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "thresholds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "trace": {
+            "type": "object",
+            "properties": {
+              "rows": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "score": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "actual": {
+                      "enum": [
+                        0,
+                        1
+                      ]
+                    },
+                    "predicted": {
+                      "enum": [
+                        0,
+                        1
+                      ]
+                    }
+                  },
+                  "required": [
+                    "score",
+                    "actual",
+                    "predicted"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "truePositive": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "falsePositive": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "falseNegative": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "trueNegative": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "rows",
+              "truePositive",
+              "falsePositive",
+              "falseNegative",
+              "trueNegative"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "input",
+          "trace"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "normal": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "density": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "input",
+          "density"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "intervals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "area": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "input",
+          "area"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "contract",
+    "events",
+    "bayes",
+    "binomial",
+    "simulation",
+    "thresholds",
+    "normal",
+    "intervals"
+  ],
+  "additionalProperties": false
+}
