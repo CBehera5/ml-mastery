@@ -184,15 +184,14 @@ def main():
         G.reject_ambiguous_knn_cutoffs = observe
         payloads = G.output_payloads()
         repeated = G.output_payloads()
-        assert payloads == repeated, "non-identical in-memory regeneration"
-        assert (FROZEN / "ms-e1.manifest.v1.json").read_bytes() == payloads["ms-e1.manifest.v1.json"]
-        assert (FROZEN / "ms-e1-test-reference-sealed.v1.json").read_bytes() == payloads["ms-e1-test-reference-sealed.v1.json"]
-        assert (FROZEN / "ms-e2-test-reference-sealed.v1.json").read_bytes() == payloads["ms-e2-test-reference-sealed.v1.json"], "sealed E2 output changed"
+        unchanged_e1 = all((FROZEN / name).read_bytes() == payloads[name] for name in ("ms-e1.manifest.v1.json", "ms-e1-test-reference-sealed.v1.json"))
+        unchanged_sealed = (FROZEN / "ms-e2-test-reference-sealed.v1.json").read_bytes() == payloads["ms-e2-test-reference-sealed.v1.json"]
         manifest = json.loads(payloads["ms-e2.manifest.v1.json"])
         assert all(r["groupId"] in manifest["fixture"]["developmentGroups"] for r in manifest["fixture"]["rows"])
         assert all("target" not in r for r in manifest["fixture"]["testFeatureRows"])
-        summary.update({"livePredictionVisitsPerRegeneration": len(live_queries) // 2,
-                        "byteIdenticalRegeneration": True, "msE1Unchanged": True, "sealedE2Unchanged": True,
+        summary.update({"rankingPassed": summary["passed"],
+                        "livePredictionVisitsPerRegeneration": len(live_queries) // 2,
+                        "byteIdenticalRegeneration": payloads == repeated, "msE1Unchanged": unchanged_e1, "sealedE2Unchanged": unchanged_sealed,
                         "frozenFilesUnchanged": True,
                         "payloadHashes": {name: hashlib.sha256(p).hexdigest() for name, p in payloads.items() if name != "parity-report.v1.json"}})
         impact = leaf_diff(json.loads((FROZEN / "ms-e2.manifest.v1.json").read_bytes()), manifest)
@@ -200,8 +199,21 @@ def main():
         # independently recorded local expectation before any freeze is allowed.
         if args.expect:
             expected = json.loads(args.expect.read_text())
-            assert summary["decisionDigest"] == expected["decisionDigest"], "cross-environment decision drift"
-            assert summary["payloadHashes"] == expected["payloadHashes"], "cross-environment payload drift"
+            summary["decisionDigestMatchesExpectation"] = summary["decisionDigest"] == expected["decisionDigest"]
+            summary["expectedPayloadHashDifferences"] = [name for name, digest in summary["payloadHashes"].items() if digest != expected["payloadHashes"].get(name)]
+        summary["passed"] = bool(summary["rankingPassed"] and payloads == repeated and unchanged_e1 and unchanged_sealed
+                                 and summary.get("decisionDigestMatchesExpectation", True)
+                                 and not summary.get("expectedPayloadHashDifferences", []))
+        # Preserve diagnostics on a failed gate; never relax it or discard the rankings.
+        payload_dir = args.out / "in-memory-payloads"
+        payload_dir.mkdir(exist_ok=True)
+        for name, payload in payloads.items():
+            (payload_dir / name).write_bytes(payload)
+        preservation_impact = {
+            name: leaf_diff(json.loads((FROZEN / name).read_bytes()), json.loads(payloads[name]))
+            for name in ("ms-e1.manifest.v1.json", "ms-e1-test-reference-sealed.v1.json", "ms-e2-test-reference-sealed.v1.json")
+        }
+        (args.out / "preservation-impact.json").write_bytes(G.canonical(preservation_impact))
     after = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in FROZEN.iterdir() if p.is_file()}
     assert before == after
     summary["environment"] = {"python": sys.version, "platform": platform.platform(), "threadpools": threadpool_info()}
