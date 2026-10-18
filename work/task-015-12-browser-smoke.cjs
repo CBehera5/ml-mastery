@@ -2,6 +2,16 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 const { chromium } = require(process.env.PLAYWRIGHT_PACKAGE_DIR);
+// Test-only answer fixtures stay in this verifier; no answers or stored mastery are
+// injected into the page. The disposable context earns evidence through the UI.
+const Module = require("node:module");
+const ts = require("typescript");
+const authoredPath = path.resolve("apps/web/app/supervised/model-selection/authored.ts");
+const authoredModule = new Module(authoredPath);
+authoredModule._compile(ts.transpileModule(fs.readFileSync(authoredPath, "utf8"), {
+  compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 },
+}).outputText, authoredPath);
+const independentForm = letter => authoredModule.exports.AUTHORED_FAMILIES.filter(family => family.id.endsWith(`assessment.${letter}`));
 
 async function main() {
   const browser = await chromium.launch({ headless: true, timeout: 15000 });
@@ -70,8 +80,10 @@ async function main() {
   assert.equal(await configuration.inputValue(), selected, "experiment selection should restore after reload");
   await page.getByRole("heading", { name: "Reference outcome" }).waitFor();
   await page.getByRole("link", { name: /Independent assessment/ }).first().click();
-  await page.getByRole("alert").getByText(/mastery remains unavailable/).waitFor();
-  assert.equal(await page.getByRole("button", { name: "Review all 24 objective families" }).isDisabled(), true);
+  await page.getByRole("group", { name: "Independent assessment answers" }).waitFor();
+  assert.equal(await page.getByRole("button", { name: "Review all 24 objective families" }).isEnabled(), true);
+  assert.equal(await page.getByText(/mastery remains unavailable/).count(), 0);
+  assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem("ml-math-lab:supervised:model-selection:full:v1")).mastery), null, "practice and experiment replay must not grant mastery");
 
   await page.goto(`${process.env.MODEL_SELECTION_PREVIEW_URL}/supervised/model-selection/ms04`, { waitUntil: "networkidle" });
   const e2Configuration = page.getByRole("combobox", { name: "MS-E2 configuration" });
@@ -96,13 +108,57 @@ async function main() {
   assert.equal(await e2Configuration.inputValue(), e2Selected, "MS-E2 configuration should restore after reload");
   await page.getByRole("heading", { name: "Reference outcome" }).waitFor();
 
+  const notebook = await page.request.get(`${process.env.MODEL_SELECTION_PREVIEW_URL}/notebooks/supervised-model-selection.ipynb`);
+  assert.equal(notebook.status(), 200);
+  assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem("ml-math-lab:supervised:model-selection:full:v1")).mastery), null, "practice, labs and notebook availability must not synthesize mastery");
+  await page.getByRole("link", { name: /Independent assessment/ }).first().click();
+  await page.getByRole("button", { name: "Review all 24 objective families" }).click();
+  const submitAttempt = page.getByRole("button", { name: "Submit confirmed attempt" });
+  assert.equal(await submitAttempt.isDisabled(), true, "unconfirmed independent submission must be blocked");
+  await page.getByRole("checkbox", { name: /I reviewed the whole attempt/ }).check();
+  await submitAttempt.click();
+  await page.getByRole("heading", { name: "Not yet mastered: 0/24" }).waitFor();
+  assert.equal(await page.getByRole("link", { name: "Targeted lesson recall", exact: true }).count(), 24);
+  await page.getByRole("button", { name: "Retry next independent form" }).click();
+  await page.getByRole("heading", { name: "Form B", exact: true }).waitFor();
+  const formB = independentForm("B");
+  assert.equal(formB.length, 24);
+  for (let index = 0; index < formB.length; index++) {
+    if ([0, 4, 8, 12].includes(index)) continue; // exactly 20/24; all six gates included
+    const family = formB[index];
+    for (let atomIndex = 0; atomIndex < family.atoms.length; atomIndex++) {
+      const atom = family.atoms[atomIndex], answer = family.accepted[0][atomIndex];
+      assert.equal(atom.kind, "choice"); assert.equal(answer.kind, "choice");
+      const optionIndex = atom.options.findIndex(option => option.id === answer.optionId);
+      await page.locator(`input[name="assessment-${index}-${atom.id}"]`).nth(optionIndex).check();
+    }
+  }
+  await page.getByRole("button", { name: "Review all 24 objective families" }).click();
+  assert.equal(await submitAttempt.isDisabled(), true, "each retry needs its own explicit confirmation");
+  await page.getByRole("checkbox", { name: /I reviewed the whole attempt/ }).check();
+  await submitAttempt.click();
+  await page.getByRole("heading", { name: "Mastery demonstrated: 20/24" }).waitFor();
+  const earned = await page.evaluate(() => JSON.parse(localStorage.getItem("ml-math-lab:supervised:model-selection:full:v1")).mastery);
+  assert.equal(earned.score, 20); assert.equal(earned.form, 1); assert.deepEqual(earned.critical, []);
+  await page.reload({ waitUntil: "networkidle" });
+  await page.getByRole("heading", { name: "Mastery demonstrated: 20/24" }).waitFor();
+  await page.screenshot({ path: path.join(evidenceDir, "model-selection-activation-20-of-24.png"), fullPage: true });
+  await page.getByRole("button", { name: "Retry next independent form" }).click();
+  await page.getByRole("heading", { name: "Form C", exact: true }).waitFor();
+  await page.getByRole("button", { name: "Review all 24 objective families" }).click();
+  await page.getByRole("checkbox", { name: /I reviewed the whole attempt/ }).check();
+  await submitAttempt.click();
+  await page.getByRole("heading", { name: "Not yet mastered: 0/24" }).waitFor();
+  const retained = await page.evaluate(() => JSON.parse(localStorage.getItem("ml-math-lab:supervised:model-selection:full:v1")).mastery);
+  assert.deepEqual(retained, earned, "a later failure must retain previously earned mastery");
+
   await page.setViewportSize({ width: 320, height: 860 });
   await page.goto(`${process.env.MODEL_SELECTION_PREVIEW_URL}/supervised/model-selection/ms04`, { waitUntil: "networkidle" });
   const dimensions = await page.evaluate(() => ({ viewport: document.documentElement.clientWidth, content: document.documentElement.scrollWidth }));
   assert.ok(dimensions.content <= dimensions.viewport + 1, `horizontal overflow at 320px: ${JSON.stringify(dimensions)}`);
   await page.screenshot({ path: path.join(evidenceDir, "model-selection-mobile-320.png"), fullPage: true });
   assert.deepEqual(errors, [], "browser console should have no page errors");
-  console.log(JSON.stringify({ status: "PASS", keyboardFocus: "Tab reaches the native selector with visible focus", configurationChange: "selectOption functional check; native popup keyboard selection is a separate headed-browser check", initial, selected, e2Initial, e2Selected, e2Fixture: "V3", authoredReferenceChanged: true, persistenceRestoration: true, assessment: "mastery remains disabled", viewport320: dimensions, browserErrors: errors.length }));
+  console.log(JSON.stringify({ status: "PASS", keyboardFocus: "Tab reaches the native selector with visible focus", configurationChange: "selectOption functional check; native popup keyboard selection is a separate headed-browser check", initial, selected, e2Initial, e2Selected, e2Fixture: "V3", authoredReferenceChanged: true, persistenceRestoration: true, assessment: "activated: unconfirmed blocked; blank A fails; confirmed B 20/24 passes; blank C preserves B mastery", noSyntheticMasteryFromPracticeLabsNotebook: true, disposableTestContext: true, viewport320: dimensions, browserErrors: errors.length }));
   } catch (error) {
     let state = { url: "unavailable", selectedConfiguration: null, focusedElement: null, viewport: null };
     try {
