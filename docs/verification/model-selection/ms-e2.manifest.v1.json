@@ -1,0 +1,4151 @@
+{
+  "candidateSpace": [
+    {
+      "candidateId": "prior-baseline-t0.50",
+      "complexityTier": 0,
+      "family": "prior-baseline",
+      "parameter": null,
+      "threshold": 0.5
+    },
+    {
+      "candidateId": "logistic-p0p1-t25",
+      "complexityTier": 1,
+      "family": "logistic",
+      "parameter": 0.1,
+      "threshold": 0.25
+    },
+    {
+      "candidateId": "logistic-p0p1-t50",
+      "complexityTier": 1,
+      "family": "logistic",
+      "parameter": 0.1,
+      "threshold": 0.5
+    },
+    {
+      "candidateId": "logistic-p0p1-t75",
+      "complexityTier": 1,
+      "family": "logistic",
+      "parameter": 0.1,
+      "threshold": 0.75
+    },
+    {
+      "candidateId": "logistic-p1p0-t25",
+      "complexityTier": 1,
+      "family": "logistic",
+      "parameter": 1.0,
+      "threshold": 0.25
+    },
+    {
+      "candidateId": "logistic-p1p0-t50",
+      "complexityTier": 1,
+      "family": "logistic",
+      "parameter": 1.0,
+      "threshold": 0.5
+    },
+    {
+      "candidateId": "logistic-p1p0-t75",
+      "complexityTier": 1,
+      "family": "logistic",
+      "parameter": 1.0,
+      "threshold": 0.75
+    },
+    {
+      "candidateId": "logistic-p10p0-t25",
+      "complexityTier": 3,
+      "family": "logistic",
+      "parameter": 10.0,
+      "threshold": 0.25
+    },
+    {
+      "candidateId": "logistic-p10p0-t50",
+      "complexityTier": 3,
+      "family": "logistic",
+      "parameter": 10.0,
+      "threshold": 0.5
+    },
+    {
+      "candidateId": "logistic-p10p0-t75",
+      "complexityTier": 3,
+      "family": "logistic",
+      "parameter": 10.0,
+      "threshold": 0.75
+    },
+    {
+      "candidateId": "tree-p1-t25",
+      "complexityTier": 2,
+      "family": "tree",
+      "parameter": 1,
+      "threshold": 0.25
+    },
+    {
+      "candidateId": "tree-p1-t50",
+      "complexityTier": 2,
+      "family": "tree",
+      "parameter": 1,
+      "threshold": 0.5
+    },
+    {
+      "candidateId": "tree-p1-t75",
+      "complexityTier": 2,
+      "family": "tree",
+      "parameter": 1,
+      "threshold": 0.75
+    },
+    {
+      "candidateId": "tree-p2-t25",
+      "complexityTier": 3,
+      "family": "tree",
+      "parameter": 2,
+      "threshold": 0.25
+    },
+    {
+      "candidateId": "tree-p2-t50",
+      "complexityTier": 3,
+      "family": "tree",
+      "parameter": 2,
+      "threshold": 0.5
+    },
+    {
+      "candidateId": "tree-p2-t75",
+      "complexityTier": 3,
+      "family": "tree",
+      "parameter": 2,
+      "threshold": 0.75
+    },
+    {
+      "candidateId": "tree-p4-t25",
+      "complexityTier": 4,
+      "family": "tree",
+      "parameter": 4,
+      "threshold": 0.25
+    },
+    {
+      "candidateId": "tree-p4-t50",
+      "complexityTier": 4,
+      "family": "tree",
+      "parameter": 4,
+      "threshold": 0.5
+    },
+    {
+      "candidateId": "tree-p4-t75",
+      "complexityTier": 4,
+      "family": "tree",
+      "parameter": 4,
+      "threshold": 0.75
+    },
+    {
+      "candidateId": "knn-p1-t25",
+      "complexityTier": 3,
+      "family": "knn",
+      "parameter": 1,
+      "threshold": 0.25
+    },
+    {
+      "candidateId": "knn-p1-t50",
+      "complexityTier": 3,
+      "family": "knn",
+      "parameter": 1,
+      "threshold": 0.5
+    },
+    {
+      "candidateId": "knn-p1-t75",
+      "complexityTier": 3,
+      "family": "knn",
+      "parameter": 1,
+      "threshold": 0.75
+    },
+    {
+      "candidateId": "knn-p3-t25",
+      "complexityTier": 4,
+      "family": "knn",
+      "parameter": 3,
+      "threshold": 0.25
+    },
+    {
+      "candidateId": "knn-p3-t50",
+      "complexityTier": 4,
+      "family": "knn",
+      "parameter": 3,
+      "threshold": 0.5
+    },
+    {
+      "candidateId": "knn-p3-t75",
+      "complexityTier": 4,
+      "family": "knn",
+      "parameter": 3,
+      "threshold": 0.75
+    },
+    {
+      "candidateId": "knn-p5-t25",
+      "complexityTier": 5,
+      "family": "knn",
+      "parameter": 5,
+      "threshold": 0.25
+    },
+    {
+      "candidateId": "knn-p5-t50",
+      "complexityTier": 5,
+      "family": "knn",
+      "parameter": 5,
+      "threshold": 0.5
+    },
+    {
+      "candidateId": "knn-p5-t75",
+      "complexityTier": 5,
+      "family": "knn",
+      "parameter": 5,
+      "threshold": 0.75
+    }
+  ],
+  "configurationCount": 11,
+  "configurationLimit": 64,
+  "configurations": [
+    {
+      "configId": "MS-E2-NESTED-GROUPED-CV-LEGAL",
+      "controls": {
+        "candidateSpace": 28,
+        "groupBoundary": "customer groups remain disjoint",
+        "innerFolds": 2,
+        "outerFolds": 3
+      },
+      "expected": {
+        "fitCount": 171,
+        "innerFoldsPerOuter": 2,
+        "nestedProcedureEstimate": {
+          "costRangePerRow": [
+            0.3333333333333333,
+            1.6666666666666667
+          ],
+          "interpretation": "descriptive outer-fold dispersion, not a confidence interval and not the final refit artifact",
+          "meanBalancedAccuracy": 0.7777777777777777,
+          "meanCostPerRow": 0.8055555555555557,
+          "sampleStandardDeviationBalancedAccuracy": 0.055555555555555525,
+          "sampleStandardDeviationCostPerRow": 0.7469072033193752
+        },
+        "outerFoldCount": 3,
+        "outerFolds": [
+          {
+            "fold": 1,
+            "innerBestCostPerRow": 1.0416666666666667,
+            "innerCandidateScores": [
+              {
+                "candidateId": "prior-baseline-t0.50",
+                "complexityTier": 0,
+                "meanBalancedAccuracy": 0.5,
+                "meanCostPerRow": 2.875
+              },
+              {
+                "candidateId": "logistic-p0p1-t25",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.6666666666666666,
+                "meanCostPerRow": 1.2083333333333335
+              },
+              {
+                "candidateId": "logistic-p0p1-t50",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.6111111111111112,
+                "meanCostPerRow": 2.7083333333333335
+              },
+              {
+                "candidateId": "logistic-p0p1-t75",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.5833333333333333,
+                "meanCostPerRow": 3.3333333333333335
+              },
+              {
+                "candidateId": "logistic-p1p0-t25",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.75,
+                "meanCostPerRow": 1.0833333333333335
+              },
+              {
+                "candidateId": "logistic-p1p0-t50",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.6944444444444444,
+                "meanCostPerRow": 1.875
+              },
+              {
+                "candidateId": "logistic-p1p0-t75",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.6944444444444444,
+                "meanCostPerRow": 2.5833333333333335
+              },
+              {
+                "candidateId": "logistic-p10p0-t25",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.7777777777777777,
+                "meanCostPerRow": 1.0416666666666667
+              },
+              {
+                "candidateId": "logistic-p10p0-t50",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.6944444444444444,
+                "meanCostPerRow": 1.875
+              },
+              {
+                "candidateId": "logistic-p10p0-t75",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.7361111111111112,
+                "meanCostPerRow": 2.166666666666667
+              },
+              {
+                "candidateId": "tree-p1-t25",
+                "complexityTier": 2,
+                "meanBalancedAccuracy": 0.6527777777777778,
+                "meanCostPerRow": 2.291666666666667
+              },
+              {
+                "candidateId": "tree-p1-t50",
+                "complexityTier": 2,
+                "meanBalancedAccuracy": 0.6527777777777778,
+                "meanCostPerRow": 2.291666666666667
+              },
+              {
+                "candidateId": "tree-p1-t75",
+                "complexityTier": 2,
+                "meanBalancedAccuracy": 0.6527777777777778,
+                "meanCostPerRow": 2.291666666666667
+              },
+              {
+                "candidateId": "tree-p2-t25",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.7777777777777777,
+                "meanCostPerRow": 1.0416666666666667
+              },
+              {
+                "candidateId": "tree-p2-t50",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.6527777777777778,
+                "meanCostPerRow": 2.291666666666667
+              },
+              {
+                "candidateId": "tree-p2-t75",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.625,
+                "meanCostPerRow": 2.625
+              },
+              {
+                "candidateId": "tree-p4-t25",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.7777777777777777,
+                "meanCostPerRow": 1.0416666666666667
+              },
+              {
+                "candidateId": "tree-p4-t50",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.6527777777777778,
+                "meanCostPerRow": 2.291666666666667
+              },
+              {
+                "candidateId": "tree-p4-t75",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.625,
+                "meanCostPerRow": 2.625
+              },
+              {
+                "candidateId": "knn-p1-t25",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.6527777777777778,
+                "meanCostPerRow": 2.291666666666667
+              },
+              {
+                "candidateId": "knn-p1-t50",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.6527777777777778,
+                "meanCostPerRow": 2.291666666666667
+              },
+              {
+                "candidateId": "knn-p1-t75",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.6527777777777778,
+                "meanCostPerRow": 2.291666666666667
+              },
+              {
+                "candidateId": "knn-p3-t25",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.6527777777777778,
+                "meanCostPerRow": 1.2083333333333333
+              },
+              {
+                "candidateId": "knn-p3-t50",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.7222222222222222,
+                "meanCostPerRow": 1.8333333333333335
+              },
+              {
+                "candidateId": "knn-p3-t75",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.6666666666666666,
+                "meanCostPerRow": 2.9166666666666665
+              },
+              {
+                "candidateId": "knn-p5-t25",
+                "complexityTier": 5,
+                "meanBalancedAccuracy": 0.6805555555555556,
+                "meanCostPerRow": 1.5416666666666667
+              },
+              {
+                "candidateId": "knn-p5-t50",
+                "complexityTier": 5,
+                "meanBalancedAccuracy": 0.6944444444444444,
+                "meanCostPerRow": 2.5833333333333335
+              },
+              {
+                "candidateId": "knn-p5-t75",
+                "complexityTier": 5,
+                "meanBalancedAccuracy": 0.75,
+                "meanCostPerRow": 2.5
+              }
+            ],
+            "innerFoldProvenance": [
+              [
+                {
+                  "costAndMetrics": {
+                    "confusion": {
+                      "FN": 0,
+                      "FP": 9,
+                      "TN": 0,
+                      "TP": 3
+                    },
+                    "costPerRow": 0.75,
+                    "metrics": {
+                      "accuracy": 0.25,
+                      "balancedAccuracy": 0.5,
+                      "confusion": {
+                        "FN": 0,
+                        "FP": 9,
+                        "TN": 0,
+                        "TP": 3
+                      },
+                      "f1Positive": 0.4,
+                      "logLoss": {
+                        "reason": "candidate does not expose class probabilities",
+                        "state": "not-produced"
+                      },
+                      "precisionPositive": 0.25,
+                      "recallPositive": 1.0
+                    },
+                    "predictions": [
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1
+                    ],
+                    "threshold": 0.5,
+                    "totalCost": 9.0
+                  },
+                  "fitGroupIds": [
+                    "G00",
+                    "G03",
+                    "G06"
+                  ],
+                  "fitPreprocessing": {
+                    "fitRowIds": [
+                      "E2-00-00",
+                      "E2-00-01",
+                      "E2-00-02",
+                      "E2-00-03",
+                      "E2-03-00",
+                      "E2-03-01",
+                      "E2-03-02",
+                      "E2-03-03",
+                      "E2-06-00",
+                      "E2-06-01",
+                      "E2-06-02",
+                      "E2-06-03"
+                    ],
+                    "steps": [
+                      {
+                        "estimator": "DummyClassifier",
+                        "name": "model"
+                      }
+                    ]
+                  },
+                  "fitRowIds": [
+                    "E2-00-00",
+                    "E2-00-01",
+                    "E2-00-02",
+                    "E2-00-03",
+                    "E2-03-00",
+                    "E2-03-01",
+                    "E2-03-02",
+                    "E2-03-03",
+                    "E2-06-00",
+                    "E2-06-01",
+                    "E2-06-02",
+                    "E2-06-03"
+                  ],
+                  "fold": 1,
+                  "positiveProbabilities": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5
+                  ],
+                  "scoreGroupIds": [
+                    "G01",
+                    "G04",
+                    "G07"
+                  ],
+                  "scoreRowIds": [
+                    "E2-01-00",
+                    "E2-01-01",
+                    "E2-01-02",
+                    "E2-01-03",
+                    "E2-04-00",
+                    "E2-04-01",
+                    "E2-04-02",
+                    "E2-04-03",
+                    "E2-07-00",
+                    "E2-07-01",
+                    "E2-07-02",
+                    "E2-07-03"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "costAndMetrics": {
+                    "confusion": {
+                      "FN": 6,
+                      "FP": 0,
+                      "TN": 6,
+                      "TP": 0
+                    },
+                    "costPerRow": 5.0,
+                    "metrics": {
+                      "accuracy": 0.5,
+                      "balancedAccuracy": 0.5,
+                      "confusion": {
+                        "FN": 6,
+                        "FP": 0,
+                        "TN": 6,
+                        "TP": 0
+                      },
+                      "f1Positive": 0.0,
+                      "logLoss": {
+                        "reason": "candidate does not expose class probabilities",
+                        "state": "not-produced"
+                      },
+                      "precisionPositive": 0.0,
+                      "recallPositive": 0.0
+                    },
+                    "predictions": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    "threshold": 0.5,
+                    "totalCost": 60.0
+                  },
+                  "fitGroupIds": [
+                    "G01",
+                    "G04",
+                    "G07"
+                  ],
+                  "fitPreprocessing": {
+                    "fitRowIds": [
+                      "E2-01-00",
+                      "E2-01-01",
+                      "E2-01-02",
+                      "E2-01-03",
+                      "E2-04-00",
+                      "E2-04-01",
+                      "E2-04-02",
+                      "E2-04-03",
+                      "E2-07-00",
+                      "E2-07-01",
+                      "E2-07-02",
+                      "E2-07-03"
+                    ],
+                    "steps": [
+                      {
+                        "estimator": "DummyClassifier",
+                        "name": "model"
+                      }
+                    ]
+                  },
+                  "fitRowIds": [
+                    "E2-01-00",
+                    "E2-01-01",
+                    "E2-01-02",
+                    "E2-01-03",
+                    "E2-04-00",
+                    "E2-04-01",
+                    "E2-04-02",
+                    "E2-04-03",
+                    "E2-07-00",
+                    "E2-07-01",
+                    "E2-07-02",
+                    "E2-07-03"
+                  ],
+                  "fold": 2,
+                  "positiveProbabilities": [
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25
+                  ],
+                  "scoreGroupIds": [
+                    "G00",
+                    "G03",
+                    "G06"
+                  ],
+                  "scoreRowIds": [
+                    "E2-00-00",
+                    "E2-00-01",
+                    "E2-00-02",
+                    "E2-00-03",
+                    "E2-03-00",
+                    "E2-03-01",
+                    "E2-03-02",
+                    "E2-03-03",
+                    "E2-06-00",
+                    "E2-06-01",
+                    "E2-06-02",
+                    "E2-06-03"
+                  ],
+                  "warnings": []
+                }
+              ]
+            ],
+            "outerFitPreprocessing": {
+              "fitRowIds": [
+                "E2-00-00",
+                "E2-00-01",
+                "E2-00-02",
+                "E2-00-03",
+                "E2-01-00",
+                "E2-01-01",
+                "E2-01-02",
+                "E2-01-03",
+                "E2-03-00",
+                "E2-03-01",
+                "E2-03-02",
+                "E2-03-03",
+                "E2-04-00",
+                "E2-04-01",
+                "E2-04-02",
+                "E2-04-03",
+                "E2-06-00",
+                "E2-06-01",
+                "E2-06-02",
+                "E2-06-03",
+                "E2-07-00",
+                "E2-07-01",
+                "E2-07-02",
+                "E2-07-03"
+              ],
+              "steps": [
+                {
+                  "estimator": "StandardScaler",
+                  "fitRowIds": [
+                    "E2-00-00",
+                    "E2-00-01",
+                    "E2-00-02",
+                    "E2-00-03",
+                    "E2-01-00",
+                    "E2-01-01",
+                    "E2-01-02",
+                    "E2-01-03",
+                    "E2-03-00",
+                    "E2-03-01",
+                    "E2-03-02",
+                    "E2-03-03",
+                    "E2-04-00",
+                    "E2-04-01",
+                    "E2-04-02",
+                    "E2-04-03",
+                    "E2-06-00",
+                    "E2-06-01",
+                    "E2-06-02",
+                    "E2-06-03",
+                    "E2-07-00",
+                    "E2-07-01",
+                    "E2-07-02",
+                    "E2-07-03"
+                  ],
+                  "mean": [
+                    8.15,
+                    60.5,
+                    2.0,
+                    0.16666666666666666,
+                    2.0
+                  ],
+                  "name": "scale",
+                  "scale": [
+                    5.00124984378905,
+                    12.698425099200294,
+                    1.224744871391589,
+                    0.3726779962499649,
+                    1.224744871391589
+                  ]
+                },
+                {
+                  "estimator": "LogisticRegression",
+                  "name": "model"
+                }
+              ]
+            },
+            "outerFitWarnings": [],
+            "outerTrainGroupIds": [
+              "G00",
+              "G01",
+              "G03",
+              "G04",
+              "G06",
+              "G07"
+            ],
+            "outerTrainRowIds": [
+              "E2-00-00",
+              "E2-00-01",
+              "E2-00-02",
+              "E2-00-03",
+              "E2-01-00",
+              "E2-01-01",
+              "E2-01-02",
+              "E2-01-03",
+              "E2-03-00",
+              "E2-03-01",
+              "E2-03-02",
+              "E2-03-03",
+              "E2-04-00",
+              "E2-04-01",
+              "E2-04-02",
+              "E2-04-03",
+              "E2-06-00",
+              "E2-06-01",
+              "E2-06-02",
+              "E2-06-03",
+              "E2-07-00",
+              "E2-07-01",
+              "E2-07-02",
+              "E2-07-03"
+            ],
+            "outerValidation": {
+              "metricsAndCost": {
+                "confusion": {
+                  "FN": 0,
+                  "FP": 4,
+                  "TN": 5,
+                  "TP": 3
+                },
+                "costPerRow": 0.3333333333333333,
+                "metrics": {
+                  "accuracy": 0.6666666666666666,
+                  "balancedAccuracy": 0.7777777777777778,
+                  "confusion": {
+                    "FN": 0,
+                    "FP": 4,
+                    "TN": 5,
+                    "TP": 3
+                  },
+                  "f1Positive": 0.6,
+                  "logLoss": {
+                    "reason": "candidate does not expose class probabilities",
+                    "state": "not-produced"
+                  },
+                  "precisionPositive": 0.42857142857142855,
+                  "recallPositive": 1.0
+                },
+                "predictions": [
+                  0,
+                  0,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1,
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "threshold": 0.25,
+                "totalCost": 4.0
+              },
+              "positiveProbabilities": [
+                0.018095478530722322,
+                0.08082731740406064,
+                0.29556942073970605,
+                0.8020951463150291,
+                0.12860853446262552,
+                0.2580939148809258,
+                0.6240498797793552,
+                0.8878979089471435,
+                0.012919420686866172,
+                0.05878155950333646,
+                0.37626776222056996,
+                0.5871022140712957
+              ],
+              "truth": [
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1
+              ]
+            },
+            "outerValidationGroupIds": [
+              "G02",
+              "G05",
+              "G08"
+            ],
+            "outerValidationRowIds": [
+              "E2-02-00",
+              "E2-02-01",
+              "E2-02-02",
+              "E2-02-03",
+              "E2-05-00",
+              "E2-05-01",
+              "E2-05-02",
+              "E2-05-03",
+              "E2-08-00",
+              "E2-08-01",
+              "E2-08-02",
+              "E2-08-03"
+            ],
+            "selectedByInnerDevelopment": {
+              "candidateId": "logistic-p1p0-t25",
+              "complexityTier": 1,
+              "family": "logistic",
+              "meanCostPerRow": 1.0833333333333335,
+              "parameter": 1.0,
+              "threshold": 0.25
+            }
+          },
+          {
+            "fold": 2,
+            "innerBestCostPerRow": 1.0,
+            "innerCandidateScores": [
+              {
+                "candidateId": "prior-baseline-t0.50",
+                "complexityTier": 0,
+                "meanBalancedAccuracy": 0.5,
+                "meanCostPerRow": 2.875
+              },
+              {
+                "candidateId": "logistic-p0p1-t25",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.6666666666666666,
+                "meanCostPerRow": 1.2083333333333335
+              },
+              {
+                "candidateId": "logistic-p0p1-t50",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.6388888888888888,
+                "meanCostPerRow": 2.6666666666666665
+              },
+              {
+                "candidateId": "logistic-p0p1-t75",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.5833333333333333,
+                "meanCostPerRow": 3.3333333333333335
+              },
+              {
+                "candidateId": "logistic-p1p0-t25",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.7777777777777777,
+                "meanCostPerRow": 1.0416666666666667
+              },
+              {
+                "candidateId": "logistic-p1p0-t50",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.7222222222222222,
+                "meanCostPerRow": 1.8333333333333335
+              },
+              {
+                "candidateId": "logistic-p1p0-t75",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.7638888888888888,
+                "meanCostPerRow": 2.125
+              },
+              {
+                "candidateId": "logistic-p10p0-t25",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.7638888888888888,
+                "meanCostPerRow": 1.4166666666666667
+              },
+              {
+                "candidateId": "logistic-p10p0-t50",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.7638888888888888,
+                "meanCostPerRow": 1.4166666666666667
+              },
+              {
+                "candidateId": "logistic-p10p0-t75",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.7777777777777777,
+                "meanCostPerRow": 1.75
+              },
+              {
+                "candidateId": "tree-p1-t25",
+                "complexityTier": 2,
+                "meanBalancedAccuracy": 0.8055555555555556,
+                "meanCostPerRow": 1.0
+              },
+              {
+                "candidateId": "tree-p1-t50",
+                "complexityTier": 2,
+                "meanBalancedAccuracy": 0.8055555555555556,
+                "meanCostPerRow": 1.0
+              },
+              {
+                "candidateId": "tree-p1-t75",
+                "complexityTier": 2,
+                "meanBalancedAccuracy": 0.8055555555555556,
+                "meanCostPerRow": 1.0
+              },
+              {
+                "candidateId": "tree-p2-t25",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.8055555555555556,
+                "meanCostPerRow": 1.0
+              },
+              {
+                "candidateId": "tree-p2-t50",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.8055555555555556,
+                "meanCostPerRow": 1.0
+              },
+              {
+                "candidateId": "tree-p2-t75",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.625,
+                "meanCostPerRow": 2.625
+              },
+              {
+                "candidateId": "tree-p4-t25",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.8055555555555556,
+                "meanCostPerRow": 1.0
+              },
+              {
+                "candidateId": "tree-p4-t50",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.8055555555555556,
+                "meanCostPerRow": 1.0
+              },
+              {
+                "candidateId": "tree-p4-t75",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.625,
+                "meanCostPerRow": 2.625
+              },
+              {
+                "candidateId": "knn-p1-t25",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.7222222222222222,
+                "meanCostPerRow": 1.8333333333333335
+              },
+              {
+                "candidateId": "knn-p1-t50",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.7222222222222222,
+                "meanCostPerRow": 1.8333333333333335
+              },
+              {
+                "candidateId": "knn-p1-t75",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.7222222222222222,
+                "meanCostPerRow": 1.8333333333333335
+              },
+              {
+                "candidateId": "knn-p3-t25",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.7222222222222222,
+                "meanCostPerRow": 1.125
+              },
+              {
+                "candidateId": "knn-p3-t50",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.7361111111111112,
+                "meanCostPerRow": 2.166666666666667
+              },
+              {
+                "candidateId": "knn-p3-t75",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.5277777777777778,
+                "meanCostPerRow": 3.4166666666666665
+              },
+              {
+                "candidateId": "knn-p5-t25",
+                "complexityTier": 5,
+                "meanBalancedAccuracy": 0.6388888888888888,
+                "meanCostPerRow": 1.9583333333333335
+              },
+              {
+                "candidateId": "knn-p5-t50",
+                "complexityTier": 5,
+                "meanBalancedAccuracy": 0.6944444444444444,
+                "meanCostPerRow": 2.5833333333333335
+              },
+              {
+                "candidateId": "knn-p5-t75",
+                "complexityTier": 5,
+                "meanBalancedAccuracy": 0.6666666666666666,
+                "meanCostPerRow": 2.9166666666666665
+              }
+            ],
+            "innerFoldProvenance": [
+              [
+                {
+                  "costAndMetrics": {
+                    "confusion": {
+                      "FN": 0,
+                      "FP": 9,
+                      "TN": 0,
+                      "TP": 3
+                    },
+                    "costPerRow": 0.75,
+                    "metrics": {
+                      "accuracy": 0.25,
+                      "balancedAccuracy": 0.5,
+                      "confusion": {
+                        "FN": 0,
+                        "FP": 9,
+                        "TN": 0,
+                        "TP": 3
+                      },
+                      "f1Positive": 0.4,
+                      "logLoss": {
+                        "reason": "candidate does not expose class probabilities",
+                        "state": "not-produced"
+                      },
+                      "precisionPositive": 0.25,
+                      "recallPositive": 1.0
+                    },
+                    "predictions": [
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1,
+                      1
+                    ],
+                    "threshold": 0.5,
+                    "totalCost": 9.0
+                  },
+                  "fitGroupIds": [
+                    "G00",
+                    "G03",
+                    "G06"
+                  ],
+                  "fitPreprocessing": {
+                    "fitRowIds": [
+                      "E2-00-00",
+                      "E2-00-01",
+                      "E2-00-02",
+                      "E2-00-03",
+                      "E2-03-00",
+                      "E2-03-01",
+                      "E2-03-02",
+                      "E2-03-03",
+                      "E2-06-00",
+                      "E2-06-01",
+                      "E2-06-02",
+                      "E2-06-03"
+                    ],
+                    "steps": [
+                      {
+                        "estimator": "DummyClassifier",
+                        "name": "model"
+                      }
+                    ]
+                  },
+                  "fitRowIds": [
+                    "E2-00-00",
+                    "E2-00-01",
+                    "E2-00-02",
+                    "E2-00-03",
+                    "E2-03-00",
+                    "E2-03-01",
+                    "E2-03-02",
+                    "E2-03-03",
+                    "E2-06-00",
+                    "E2-06-01",
+                    "E2-06-02",
+                    "E2-06-03"
+                  ],
+                  "fold": 1,
+                  "positiveProbabilities": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5,
+                    0.5
+                  ],
+                  "scoreGroupIds": [
+                    "G02",
+                    "G05",
+                    "G08"
+                  ],
+                  "scoreRowIds": [
+                    "E2-02-00",
+                    "E2-02-01",
+                    "E2-02-02",
+                    "E2-02-03",
+                    "E2-05-00",
+                    "E2-05-01",
+                    "E2-05-02",
+                    "E2-05-03",
+                    "E2-08-00",
+                    "E2-08-01",
+                    "E2-08-02",
+                    "E2-08-03"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "costAndMetrics": {
+                    "confusion": {
+                      "FN": 6,
+                      "FP": 0,
+                      "TN": 6,
+                      "TP": 0
+                    },
+                    "costPerRow": 5.0,
+                    "metrics": {
+                      "accuracy": 0.5,
+                      "balancedAccuracy": 0.5,
+                      "confusion": {
+                        "FN": 6,
+                        "FP": 0,
+                        "TN": 6,
+                        "TP": 0
+                      },
+                      "f1Positive": 0.0,
+                      "logLoss": {
+                        "reason": "candidate does not expose class probabilities",
+                        "state": "not-produced"
+                      },
+                      "precisionPositive": 0.0,
+                      "recallPositive": 0.0
+                    },
+                    "predictions": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    "threshold": 0.5,
+                    "totalCost": 60.0
+                  },
+                  "fitGroupIds": [
+                    "G02",
+                    "G05",
+                    "G08"
+                  ],
+                  "fitPreprocessing": {
+                    "fitRowIds": [
+                      "E2-02-00",
+                      "E2-02-01",
+                      "E2-02-02",
+                      "E2-02-03",
+                      "E2-05-00",
+                      "E2-05-01",
+                      "E2-05-02",
+                      "E2-05-03",
+                      "E2-08-00",
+                      "E2-08-01",
+                      "E2-08-02",
+                      "E2-08-03"
+                    ],
+                    "steps": [
+                      {
+                        "estimator": "DummyClassifier",
+                        "name": "model"
+                      }
+                    ]
+                  },
+                  "fitRowIds": [
+                    "E2-02-00",
+                    "E2-02-01",
+                    "E2-02-02",
+                    "E2-02-03",
+                    "E2-05-00",
+                    "E2-05-01",
+                    "E2-05-02",
+                    "E2-05-03",
+                    "E2-08-00",
+                    "E2-08-01",
+                    "E2-08-02",
+                    "E2-08-03"
+                  ],
+                  "fold": 2,
+                  "positiveProbabilities": [
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25
+                  ],
+                  "scoreGroupIds": [
+                    "G00",
+                    "G03",
+                    "G06"
+                  ],
+                  "scoreRowIds": [
+                    "E2-00-00",
+                    "E2-00-01",
+                    "E2-00-02",
+                    "E2-00-03",
+                    "E2-03-00",
+                    "E2-03-01",
+                    "E2-03-02",
+                    "E2-03-03",
+                    "E2-06-00",
+                    "E2-06-01",
+                    "E2-06-02",
+                    "E2-06-03"
+                  ],
+                  "warnings": []
+                }
+              ]
+            ],
+            "outerFitPreprocessing": {
+              "fitRowIds": [
+                "E2-00-00",
+                "E2-00-01",
+                "E2-00-02",
+                "E2-00-03",
+                "E2-02-00",
+                "E2-02-01",
+                "E2-02-02",
+                "E2-02-03",
+                "E2-03-00",
+                "E2-03-01",
+                "E2-03-02",
+                "E2-03-03",
+                "E2-05-00",
+                "E2-05-01",
+                "E2-05-02",
+                "E2-05-03",
+                "E2-06-00",
+                "E2-06-01",
+                "E2-06-02",
+                "E2-06-03",
+                "E2-08-00",
+                "E2-08-01",
+                "E2-08-02",
+                "E2-08-03"
+              ],
+              "steps": [
+                {
+                  "estimator": "StandardScaler",
+                  "fitRowIds": [
+                    "E2-00-00",
+                    "E2-00-01",
+                    "E2-00-02",
+                    "E2-00-03",
+                    "E2-02-00",
+                    "E2-02-01",
+                    "E2-02-02",
+                    "E2-02-03",
+                    "E2-03-00",
+                    "E2-03-01",
+                    "E2-03-02",
+                    "E2-03-03",
+                    "E2-05-00",
+                    "E2-05-01",
+                    "E2-05-02",
+                    "E2-05-03",
+                    "E2-06-00",
+                    "E2-06-01",
+                    "E2-06-02",
+                    "E2-06-03",
+                    "E2-08-00",
+                    "E2-08-01",
+                    "E2-08-02",
+                    "E2-08-03"
+                  ],
+                  "mean": [
+                    9.15,
+                    63.0,
+                    1.8333333333333333,
+                    0.20833333333333334,
+                    1.8333333333333333
+                  ],
+                  "name": "scale",
+                  "scale": [
+                    5.292683629313205,
+                    13.416407864998739,
+                    1.2133516482134197,
+                    0.40611643103370676,
+                    1.2133516482134197
+                  ]
+                },
+                {
+                  "estimator": "LogisticRegression",
+                  "name": "model"
+                }
+              ]
+            },
+            "outerFitWarnings": [],
+            "outerTrainGroupIds": [
+              "G00",
+              "G02",
+              "G03",
+              "G05",
+              "G06",
+              "G08"
+            ],
+            "outerTrainRowIds": [
+              "E2-00-00",
+              "E2-00-01",
+              "E2-00-02",
+              "E2-00-03",
+              "E2-02-00",
+              "E2-02-01",
+              "E2-02-02",
+              "E2-02-03",
+              "E2-03-00",
+              "E2-03-01",
+              "E2-03-02",
+              "E2-03-03",
+              "E2-05-00",
+              "E2-05-01",
+              "E2-05-02",
+              "E2-05-03",
+              "E2-06-00",
+              "E2-06-01",
+              "E2-06-02",
+              "E2-06-03",
+              "E2-08-00",
+              "E2-08-01",
+              "E2-08-02",
+              "E2-08-03"
+            ],
+            "outerValidation": {
+              "metricsAndCost": {
+                "confusion": {
+                  "FN": 0,
+                  "FP": 5,
+                  "TN": 4,
+                  "TP": 3
+                },
+                "costPerRow": 0.4166666666666667,
+                "metrics": {
+                  "accuracy": 0.5833333333333334,
+                  "balancedAccuracy": 0.7222222222222222,
+                  "confusion": {
+                    "FN": 0,
+                    "FP": 5,
+                    "TN": 4,
+                    "TP": 3
+                  },
+                  "f1Positive": 0.5454545454545454,
+                  "logLoss": {
+                    "reason": "candidate does not expose class probabilities",
+                    "state": "not-produced"
+                  },
+                  "precisionPositive": 0.375,
+                  "recallPositive": 1.0
+                },
+                "predictions": [
+                  0,
+                  1,
+                  1,
+                  1,
+                  0,
+                  0,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                "threshold": 0.25,
+                "totalCost": 5.0
+              },
+              "positiveProbabilities": [
+                0.10236471552912019,
+                0.4038571333761011,
+                0.8009724733227663,
+                0.9598512124740973,
+                0.013973343825541128,
+                0.08799387147725668,
+                0.33338233519487387,
+                0.7481699914689472,
+                0.058559650162474365,
+                0.26981478268986575,
+                0.6870234402177462,
+                0.9372853358918547
+              ],
+              "truth": [
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1
+              ]
+            },
+            "outerValidationGroupIds": [
+              "G01",
+              "G04",
+              "G07"
+            ],
+            "outerValidationRowIds": [
+              "E2-01-00",
+              "E2-01-01",
+              "E2-01-02",
+              "E2-01-03",
+              "E2-04-00",
+              "E2-04-01",
+              "E2-04-02",
+              "E2-04-03",
+              "E2-07-00",
+              "E2-07-01",
+              "E2-07-02",
+              "E2-07-03"
+            ],
+            "selectedByInnerDevelopment": {
+              "candidateId": "logistic-p1p0-t25",
+              "complexityTier": 1,
+              "family": "logistic",
+              "meanCostPerRow": 1.0416666666666667,
+              "parameter": 1.0,
+              "threshold": 0.25
+            }
+          },
+          {
+            "fold": 3,
+            "innerBestCostPerRow": 0.125,
+            "innerCandidateScores": [
+              {
+                "candidateId": "prior-baseline-t0.50",
+                "complexityTier": 0,
+                "meanBalancedAccuracy": 0.5,
+                "meanCostPerRow": 2.5
+              },
+              {
+                "candidateId": "logistic-p0p1-t25",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.861111111111111,
+                "meanCostPerRow": 0.20833333333333331
+              },
+              {
+                "candidateId": "logistic-p0p1-t50",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.5,
+                "meanCostPerRow": 2.5
+              },
+              {
+                "candidateId": "logistic-p0p1-t75",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.5,
+                "meanCostPerRow": 2.5
+              },
+              {
+                "candidateId": "logistic-p1p0-t25",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.9166666666666666,
+                "meanCostPerRow": 0.125
+              },
+              {
+                "candidateId": "logistic-p1p0-t50",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.8333333333333333,
+                "meanCostPerRow": 0.8333333333333334
+              },
+              {
+                "candidateId": "logistic-p1p0-t75",
+                "complexityTier": 1,
+                "meanBalancedAccuracy": 0.6666666666666666,
+                "meanCostPerRow": 1.6666666666666667
+              },
+              {
+                "candidateId": "logistic-p10p0-t25",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.9166666666666666,
+                "meanCostPerRow": 0.125
+              },
+              {
+                "candidateId": "logistic-p10p0-t50",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.8055555555555555,
+                "meanCostPerRow": 0.875
+              },
+              {
+                "candidateId": "logistic-p10p0-t75",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.75,
+                "meanCostPerRow": 1.25
+              },
+              {
+                "candidateId": "tree-p1-t25",
+                "complexityTier": 2,
+                "meanBalancedAccuracy": 0.7777777777777777,
+                "meanCostPerRow": 0.9166666666666667
+              },
+              {
+                "candidateId": "tree-p1-t50",
+                "complexityTier": 2,
+                "meanBalancedAccuracy": 0.7777777777777777,
+                "meanCostPerRow": 0.9166666666666667
+              },
+              {
+                "candidateId": "tree-p1-t75",
+                "complexityTier": 2,
+                "meanBalancedAccuracy": 0.7777777777777777,
+                "meanCostPerRow": 0.9166666666666667
+              },
+              {
+                "candidateId": "tree-p2-t25",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.9166666666666666,
+                "meanCostPerRow": 0.125
+              },
+              {
+                "candidateId": "tree-p2-t50",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.7777777777777777,
+                "meanCostPerRow": 0.9166666666666667
+              },
+              {
+                "candidateId": "tree-p2-t75",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.6388888888888888,
+                "meanCostPerRow": 1.7083333333333335
+              },
+              {
+                "candidateId": "tree-p4-t25",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.9166666666666666,
+                "meanCostPerRow": 0.125
+              },
+              {
+                "candidateId": "tree-p4-t50",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.7777777777777777,
+                "meanCostPerRow": 0.9166666666666667
+              },
+              {
+                "candidateId": "tree-p4-t75",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.6388888888888888,
+                "meanCostPerRow": 1.7083333333333335
+              },
+              {
+                "candidateId": "knn-p1-t25",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.5833333333333333,
+                "meanCostPerRow": 1.7916666666666665
+              },
+              {
+                "candidateId": "knn-p1-t50",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.5833333333333333,
+                "meanCostPerRow": 1.7916666666666665
+              },
+              {
+                "candidateId": "knn-p1-t75",
+                "complexityTier": 3,
+                "meanBalancedAccuracy": 0.5833333333333333,
+                "meanCostPerRow": 1.7916666666666665
+              },
+              {
+                "candidateId": "knn-p3-t25",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.8333333333333333,
+                "meanCostPerRow": 0.25
+              },
+              {
+                "candidateId": "knn-p3-t50",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.6388888888888888,
+                "meanCostPerRow": 1.7083333333333335
+              },
+              {
+                "candidateId": "knn-p3-t75",
+                "complexityTier": 4,
+                "meanBalancedAccuracy": 0.5,
+                "meanCostPerRow": 2.5
+              },
+              {
+                "candidateId": "knn-p5-t25",
+                "complexityTier": 5,
+                "meanBalancedAccuracy": 0.8888888888888888,
+                "meanCostPerRow": 0.45833333333333337
+              },
+              {
+                "candidateId": "knn-p5-t50",
+                "complexityTier": 5,
+                "meanBalancedAccuracy": 0.5833333333333333,
+                "meanCostPerRow": 2.0833333333333335
+              },
+              {
+                "candidateId": "knn-p5-t75",
+                "complexityTier": 5,
+                "meanBalancedAccuracy": 0.5,
+                "meanCostPerRow": 2.5
+              }
+            ],
+            "innerFoldProvenance": [
+              [
+                {
+                  "costAndMetrics": {
+                    "confusion": {
+                      "FN": 3,
+                      "FP": 0,
+                      "TN": 9,
+                      "TP": 0
+                    },
+                    "costPerRow": 2.5,
+                    "metrics": {
+                      "accuracy": 0.75,
+                      "balancedAccuracy": 0.5,
+                      "confusion": {
+                        "FN": 3,
+                        "FP": 0,
+                        "TN": 9,
+                        "TP": 0
+                      },
+                      "f1Positive": 0.0,
+                      "logLoss": {
+                        "reason": "candidate does not expose class probabilities",
+                        "state": "not-produced"
+                      },
+                      "precisionPositive": 0.0,
+                      "recallPositive": 0.0
+                    },
+                    "predictions": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    "threshold": 0.5,
+                    "totalCost": 30.0
+                  },
+                  "fitGroupIds": [
+                    "G01",
+                    "G04",
+                    "G07"
+                  ],
+                  "fitPreprocessing": {
+                    "fitRowIds": [
+                      "E2-01-00",
+                      "E2-01-01",
+                      "E2-01-02",
+                      "E2-01-03",
+                      "E2-04-00",
+                      "E2-04-01",
+                      "E2-04-02",
+                      "E2-04-03",
+                      "E2-07-00",
+                      "E2-07-01",
+                      "E2-07-02",
+                      "E2-07-03"
+                    ],
+                    "steps": [
+                      {
+                        "estimator": "DummyClassifier",
+                        "name": "model"
+                      }
+                    ]
+                  },
+                  "fitRowIds": [
+                    "E2-01-00",
+                    "E2-01-01",
+                    "E2-01-02",
+                    "E2-01-03",
+                    "E2-04-00",
+                    "E2-04-01",
+                    "E2-04-02",
+                    "E2-04-03",
+                    "E2-07-00",
+                    "E2-07-01",
+                    "E2-07-02",
+                    "E2-07-03"
+                  ],
+                  "fold": 1,
+                  "positiveProbabilities": [
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25
+                  ],
+                  "scoreGroupIds": [
+                    "G02",
+                    "G05",
+                    "G08"
+                  ],
+                  "scoreRowIds": [
+                    "E2-02-00",
+                    "E2-02-01",
+                    "E2-02-02",
+                    "E2-02-03",
+                    "E2-05-00",
+                    "E2-05-01",
+                    "E2-05-02",
+                    "E2-05-03",
+                    "E2-08-00",
+                    "E2-08-01",
+                    "E2-08-02",
+                    "E2-08-03"
+                  ],
+                  "warnings": []
+                },
+                {
+                  "costAndMetrics": {
+                    "confusion": {
+                      "FN": 3,
+                      "FP": 0,
+                      "TN": 9,
+                      "TP": 0
+                    },
+                    "costPerRow": 2.5,
+                    "metrics": {
+                      "accuracy": 0.75,
+                      "balancedAccuracy": 0.5,
+                      "confusion": {
+                        "FN": 3,
+                        "FP": 0,
+                        "TN": 9,
+                        "TP": 0
+                      },
+                      "f1Positive": 0.0,
+                      "logLoss": {
+                        "reason": "candidate does not expose class probabilities",
+                        "state": "not-produced"
+                      },
+                      "precisionPositive": 0.0,
+                      "recallPositive": 0.0
+                    },
+                    "predictions": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    "threshold": 0.5,
+                    "totalCost": 30.0
+                  },
+                  "fitGroupIds": [
+                    "G02",
+                    "G05",
+                    "G08"
+                  ],
+                  "fitPreprocessing": {
+                    "fitRowIds": [
+                      "E2-02-00",
+                      "E2-02-01",
+                      "E2-02-02",
+                      "E2-02-03",
+                      "E2-05-00",
+                      "E2-05-01",
+                      "E2-05-02",
+                      "E2-05-03",
+                      "E2-08-00",
+                      "E2-08-01",
+                      "E2-08-02",
+                      "E2-08-03"
+                    ],
+                    "steps": [
+                      {
+                        "estimator": "DummyClassifier",
+                        "name": "model"
+                      }
+                    ]
+                  },
+                  "fitRowIds": [
+                    "E2-02-00",
+                    "E2-02-01",
+                    "E2-02-02",
+                    "E2-02-03",
+                    "E2-05-00",
+                    "E2-05-01",
+                    "E2-05-02",
+                    "E2-05-03",
+                    "E2-08-00",
+                    "E2-08-01",
+                    "E2-08-02",
+                    "E2-08-03"
+                  ],
+                  "fold": 2,
+                  "positiveProbabilities": [
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25
+                  ],
+                  "scoreGroupIds": [
+                    "G01",
+                    "G04",
+                    "G07"
+                  ],
+                  "scoreRowIds": [
+                    "E2-01-00",
+                    "E2-01-01",
+                    "E2-01-02",
+                    "E2-01-03",
+                    "E2-04-00",
+                    "E2-04-01",
+                    "E2-04-02",
+                    "E2-04-03",
+                    "E2-07-00",
+                    "E2-07-01",
+                    "E2-07-02",
+                    "E2-07-03"
+                  ],
+                  "warnings": []
+                }
+              ]
+            ],
+            "outerFitPreprocessing": {
+              "fitRowIds": [
+                "E2-01-00",
+                "E2-01-01",
+                "E2-01-02",
+                "E2-01-03",
+                "E2-02-00",
+                "E2-02-01",
+                "E2-02-02",
+                "E2-02-03",
+                "E2-04-00",
+                "E2-04-01",
+                "E2-04-02",
+                "E2-04-03",
+                "E2-05-00",
+                "E2-05-01",
+                "E2-05-02",
+                "E2-05-03",
+                "E2-07-00",
+                "E2-07-01",
+                "E2-07-02",
+                "E2-07-03",
+                "E2-08-00",
+                "E2-08-01",
+                "E2-08-02",
+                "E2-08-03"
+              ],
+              "steps": [
+                {
+                  "estimator": "StandardScaler",
+                  "fitRowIds": [
+                    "E2-01-00",
+                    "E2-01-01",
+                    "E2-01-02",
+                    "E2-01-03",
+                    "E2-02-00",
+                    "E2-02-01",
+                    "E2-02-02",
+                    "E2-02-03",
+                    "E2-04-00",
+                    "E2-04-01",
+                    "E2-04-02",
+                    "E2-04-03",
+                    "E2-05-00",
+                    "E2-05-01",
+                    "E2-05-02",
+                    "E2-05-03",
+                    "E2-07-00",
+                    "E2-07-01",
+                    "E2-07-02",
+                    "E2-07-03",
+                    "E2-08-00",
+                    "E2-08-01",
+                    "E2-08-02",
+                    "E2-08-03"
+                  ],
+                  "mean": [
+                    10.149999999999999,
+                    65.5,
+                    2.0,
+                    0.20833333333333334,
+                    2.0
+                  ],
+                  "name": "scale",
+                  "scale": [
+                    5.00124984378905,
+                    12.698425099200294,
+                    1.224744871391589,
+                    0.40611643103370676,
+                    1.224744871391589
+                  ]
+                },
+                {
+                  "estimator": "LogisticRegression",
+                  "name": "model"
+                }
+              ]
+            },
+            "outerFitWarnings": [],
+            "outerTrainGroupIds": [
+              "G01",
+              "G02",
+              "G04",
+              "G05",
+              "G07",
+              "G08"
+            ],
+            "outerTrainRowIds": [
+              "E2-01-00",
+              "E2-01-01",
+              "E2-01-02",
+              "E2-01-03",
+              "E2-02-00",
+              "E2-02-01",
+              "E2-02-02",
+              "E2-02-03",
+              "E2-04-00",
+              "E2-04-01",
+              "E2-04-02",
+              "E2-04-03",
+              "E2-05-00",
+              "E2-05-01",
+              "E2-05-02",
+              "E2-05-03",
+              "E2-07-00",
+              "E2-07-01",
+              "E2-07-02",
+              "E2-07-03",
+              "E2-08-00",
+              "E2-08-01",
+              "E2-08-02",
+              "E2-08-03"
+            ],
+            "outerValidation": {
+              "metricsAndCost": {
+                "confusion": {
+                  "FN": 2,
+                  "FP": 0,
+                  "TN": 6,
+                  "TP": 4
+                },
+                "costPerRow": 1.6666666666666667,
+                "metrics": {
+                  "accuracy": 0.8333333333333334,
+                  "balancedAccuracy": 0.8333333333333333,
+                  "confusion": {
+                    "FN": 2,
+                    "FP": 0,
+                    "TN": 6,
+                    "TP": 4
+                  },
+                  "f1Positive": 0.8,
+                  "logLoss": {
+                    "reason": "candidate does not expose class probabilities",
+                    "state": "not-produced"
+                  },
+                  "precisionPositive": 1.0,
+                  "recallPositive": 0.6666666666666666
+                },
+                "predictions": [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  1,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "threshold": 0.25,
+                "totalCost": 20.0
+              },
+              "positiveProbabilities": [
+                0.07740442424823606,
+                0.11108966153384667,
+                0.19579711653348983,
+                0.3217182900292545,
+                0.11682807365052846,
+                0.20490252642630793,
+                0.3963621045947631,
+                0.4944607243008115,
+                0.06835606414661068,
+                0.12506300179944257,
+                0.21781450766854404,
+                0.3517029815562948
+              ],
+              "truth": [
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                1,
+                1
+              ]
+            },
+            "outerValidationGroupIds": [
+              "G00",
+              "G03",
+              "G06"
+            ],
+            "outerValidationRowIds": [
+              "E2-00-00",
+              "E2-00-01",
+              "E2-00-02",
+              "E2-00-03",
+              "E2-03-00",
+              "E2-03-01",
+              "E2-03-02",
+              "E2-03-03",
+              "E2-06-00",
+              "E2-06-01",
+              "E2-06-02",
+              "E2-06-03"
+            ],
+            "selectedByInnerDevelopment": {
+              "candidateId": "logistic-p0p1-t25",
+              "complexityTier": 1,
+              "family": "logistic",
+              "meanCostPerRow": 0.20833333333333331,
+              "parameter": 0.1,
+              "threshold": 0.25
+            }
+          }
+        ],
+        "selectionOptimismContrast": {
+          "description": "best inner-development score is a selection score; compare it with outer-fold performance of the entire selection procedure",
+          "meanInnerBestCostPerRow": 0.7222222222222223,
+          "meanOuterCostPerRow": 0.8055555555555557
+        }
+      },
+      "status": "reference-computed"
+    },
+    {
+      "configId": "MS-E2-GRID-SEARCH-DEV-LEGAL",
+      "controls": {
+        "candidateStateCount": 28,
+        "folds": 3,
+        "search": "full finite candidate grid"
+      },
+      "expected": {
+        "fitCount": 84,
+        "scores": [
+          {
+            "candidateId": "prior-baseline-t0.50",
+            "complexityTier": 0,
+            "meanBalancedAccuracy": 0.5,
+            "meanCostPerRow": 3.3333333333333335
+          },
+          {
+            "candidateId": "logistic-p0p1-t25",
+            "complexityTier": 1,
+            "meanBalancedAccuracy": 0.7592592592592592,
+            "meanCostPerRow": 0.8333333333333334
+          },
+          {
+            "candidateId": "logistic-p0p1-t50",
+            "complexityTier": 1,
+            "meanBalancedAccuracy": 0.7777777777777777,
+            "meanCostPerRow": 1.75
+          },
+          {
+            "candidateId": "logistic-p0p1-t75",
+            "complexityTier": 1,
+            "meanBalancedAccuracy": 0.5,
+            "meanCostPerRow": 3.3333333333333335
+          },
+          {
+            "candidateId": "logistic-p1p0-t25",
+            "complexityTier": 1,
+            "meanBalancedAccuracy": 0.7777777777777777,
+            "meanCostPerRow": 0.8055555555555557
+          },
+          {
+            "candidateId": "logistic-p1p0-t50",
+            "complexityTier": 1,
+            "meanBalancedAccuracy": 0.8333333333333334,
+            "meanCostPerRow": 1.1944444444444444
+          },
+          {
+            "candidateId": "logistic-p1p0-t75",
+            "complexityTier": 1,
+            "meanBalancedAccuracy": 0.7314814814814814,
+            "meanCostPerRow": 1.9722222222222223
+          },
+          {
+            "candidateId": "logistic-p10p0-t25",
+            "complexityTier": 3,
+            "meanBalancedAccuracy": 0.8148148148148149,
+            "meanCostPerRow": 0.75
+          },
+          {
+            "candidateId": "logistic-p10p0-t50",
+            "complexityTier": 3,
+            "meanBalancedAccuracy": 0.8333333333333334,
+            "meanCostPerRow": 1.1944444444444444
+          },
+          {
+            "candidateId": "logistic-p10p0-t75",
+            "complexityTier": 3,
+            "meanBalancedAccuracy": 0.7962962962962963,
+            "meanCostPerRow": 1.4444444444444446
+          },
+          {
+            "candidateId": "tree-p1-t25",
+            "complexityTier": 2,
+            "meanBalancedAccuracy": 0.8888888888888888,
+            "meanCostPerRow": 0.638888888888889
+          },
+          {
+            "candidateId": "tree-p1-t50",
+            "complexityTier": 2,
+            "meanBalancedAccuracy": 0.8888888888888888,
+            "meanCostPerRow": 0.638888888888889
+          },
+          {
+            "candidateId": "tree-p1-t75",
+            "complexityTier": 2,
+            "meanBalancedAccuracy": 0.7777777777777777,
+            "meanCostPerRow": 1.75
+          },
+          {
+            "candidateId": "tree-p2-t25",
+            "complexityTier": 3,
+            "meanBalancedAccuracy": 0.7777777777777777,
+            "meanCostPerRow": 0.8055555555555557
+          },
+          {
+            "candidateId": "tree-p2-t50",
+            "complexityTier": 3,
+            "meanBalancedAccuracy": 0.8888888888888888,
+            "meanCostPerRow": 0.638888888888889
+          },
+          {
+            "candidateId": "tree-p2-t75",
+            "complexityTier": 3,
+            "meanBalancedAccuracy": 0.7129629629629629,
+            "meanCostPerRow": 2.0
+          },
+          {
+            "candidateId": "tree-p4-t25",
+            "complexityTier": 4,
+            "meanBalancedAccuracy": 0.8333333333333334,
+            "meanCostPerRow": 0.7222222222222223
+          },
+          {
+            "candidateId": "tree-p4-t50",
+            "complexityTier": 4,
+            "meanBalancedAccuracy": 0.8055555555555555,
+            "meanCostPerRow": 1.0
+          },
+          {
+            "candidateId": "tree-p4-t75",
+            "complexityTier": 4,
+            "meanBalancedAccuracy": 0.6944444444444445,
+            "meanCostPerRow": 2.027777777777778
+          },
+          {
+            "candidateId": "knn-p1-t25",
+            "complexityTier": 3,
+            "meanBalancedAccuracy": 0.611111111111111,
+            "meanCostPerRow": 2.111111111111111
+          },
+          {
+            "candidateId": "knn-p1-t50",
+            "complexityTier": 3,
+            "meanBalancedAccuracy": 0.611111111111111,
+            "meanCostPerRow": 2.111111111111111
+          },
+          {
+            "candidateId": "knn-p1-t75",
+            "complexityTier": 3,
+            "meanBalancedAccuracy": 0.611111111111111,
+            "meanCostPerRow": 2.111111111111111
+          },
+          {
+            "candidateId": "knn-p3-t25",
+            "complexityTier": 4,
+            "meanBalancedAccuracy": 0.7592592592592592,
+            "meanCostPerRow": 0.8333333333333334
+          },
+          {
+            "candidateId": "knn-p3-t50",
+            "complexityTier": 4,
+            "meanBalancedAccuracy": 0.601851851851852,
+            "meanCostPerRow": 2.361111111111111
+          },
+          {
+            "candidateId": "knn-p3-t75",
+            "complexityTier": 4,
+            "meanBalancedAccuracy": 0.6388888888888888,
+            "meanCostPerRow": 2.5
+          },
+          {
+            "candidateId": "knn-p5-t25",
+            "complexityTier": 5,
+            "meanBalancedAccuracy": 0.7962962962962962,
+            "meanCostPerRow": 0.7777777777777778
+          },
+          {
+            "candidateId": "knn-p5-t50",
+            "complexityTier": 5,
+            "meanBalancedAccuracy": 0.8333333333333334,
+            "meanCostPerRow": 1.1944444444444444
+          },
+          {
+            "candidateId": "knn-p5-t75",
+            "complexityTier": 5,
+            "meanBalancedAccuracy": 0.5925925925925926,
+            "meanCostPerRow": 2.805555555555556
+          }
+        ],
+        "selected": {
+          "candidateId": "tree-p1-t50",
+          "complexityTier": 2,
+          "meanCostPerRow": 0.638888888888889
+        }
+      },
+      "status": "reference-computed"
+    },
+    {
+      "configId": "MS-E2-RANDOM-SEARCH-SEEDED-LEGAL",
+      "controls": {
+        "candidateStateCount": 8,
+        "folds": 3,
+        "search": "seeded finite candidate subset",
+        "seed": 20261018
+      },
+      "expected": {
+        "candidateIds": [
+          "knn-p5-t75",
+          "knn-p5-t25",
+          "logistic-p1p0-t75",
+          "tree-p1-t25",
+          "logistic-p0p1-t50",
+          "tree-p2-t50",
+          "tree-p4-t25",
+          "tree-p4-t50"
+        ],
+        "fitCount": 24,
+        "scores": [
+          {
+            "candidateId": "knn-p5-t75",
+            "complexityTier": 5,
+            "meanBalancedAccuracy": 0.5925925925925926,
+            "meanCostPerRow": 2.805555555555556
+          },
+          {
+            "candidateId": "knn-p5-t25",
+            "complexityTier": 5,
+            "meanBalancedAccuracy": 0.7962962962962962,
+            "meanCostPerRow": 0.7777777777777778
+          },
+          {
+            "candidateId": "logistic-p1p0-t75",
+            "complexityTier": 1,
+            "meanBalancedAccuracy": 0.7314814814814814,
+            "meanCostPerRow": 1.9722222222222223
+          },
+          {
+            "candidateId": "tree-p1-t25",
+            "complexityTier": 2,
+            "meanBalancedAccuracy": 0.8888888888888888,
+            "meanCostPerRow": 0.638888888888889
+          },
+          {
+            "candidateId": "logistic-p0p1-t50",
+            "complexityTier": 1,
+            "meanBalancedAccuracy": 0.7777777777777777,
+            "meanCostPerRow": 1.75
+          },
+          {
+            "candidateId": "tree-p2-t50",
+            "complexityTier": 3,
+            "meanBalancedAccuracy": 0.8888888888888888,
+            "meanCostPerRow": 0.638888888888889
+          },
+          {
+            "candidateId": "tree-p4-t25",
+            "complexityTier": 4,
+            "meanBalancedAccuracy": 0.8333333333333334,
+            "meanCostPerRow": 0.7222222222222223
+          },
+          {
+            "candidateId": "tree-p4-t50",
+            "complexityTier": 4,
+            "meanBalancedAccuracy": 0.8055555555555555,
+            "meanCostPerRow": 1.0
+          }
+        ],
+        "selected": {
+          "candidateId": "tree-p1-t25",
+          "complexityTier": 2,
+          "meanCostPerRow": 0.638888888888889
+        }
+      },
+      "status": "reference-computed"
+    },
+    {
+      "configId": "MS-E2-DEVELOPMENT-THRESHOLD-COST-LEGAL",
+      "controls": {
+        "falseNegativeCost": 10.0,
+        "falsePositiveCost": 1.0,
+        "positiveClass": 1,
+        "thresholds": [
+          0.25,
+          0.5,
+          0.75
+        ]
+      },
+      "expected": {
+        "fitRecords": [
+          {
+            "fitGroups": [
+              "G00",
+              "G01",
+              "G03",
+              "G04",
+              "G06",
+              "G07"
+            ],
+            "fitRows": [
+              "E2-00-00",
+              "E2-00-01",
+              "E2-00-02",
+              "E2-00-03",
+              "E2-01-00",
+              "E2-01-01",
+              "E2-01-02",
+              "E2-01-03",
+              "E2-03-00",
+              "E2-03-01",
+              "E2-03-02",
+              "E2-03-03",
+              "E2-04-00",
+              "E2-04-01",
+              "E2-04-02",
+              "E2-04-03",
+              "E2-06-00",
+              "E2-06-01",
+              "E2-06-02",
+              "E2-06-03",
+              "E2-07-00",
+              "E2-07-01",
+              "E2-07-02",
+              "E2-07-03"
+            ],
+            "fold": 1,
+            "pipeline": {
+              "fitRowIds": [
+                "E2-00-00",
+                "E2-00-01",
+                "E2-00-02",
+                "E2-00-03",
+                "E2-01-00",
+                "E2-01-01",
+                "E2-01-02",
+                "E2-01-03",
+                "E2-03-00",
+                "E2-03-01",
+                "E2-03-02",
+                "E2-03-03",
+                "E2-04-00",
+                "E2-04-01",
+                "E2-04-02",
+                "E2-04-03",
+                "E2-06-00",
+                "E2-06-01",
+                "E2-06-02",
+                "E2-06-03",
+                "E2-07-00",
+                "E2-07-01",
+                "E2-07-02",
+                "E2-07-03"
+              ],
+              "steps": [
+                {
+                  "estimator": "StandardScaler",
+                  "fitRowIds": [
+                    "E2-00-00",
+                    "E2-00-01",
+                    "E2-00-02",
+                    "E2-00-03",
+                    "E2-01-00",
+                    "E2-01-01",
+                    "E2-01-02",
+                    "E2-01-03",
+                    "E2-03-00",
+                    "E2-03-01",
+                    "E2-03-02",
+                    "E2-03-03",
+                    "E2-04-00",
+                    "E2-04-01",
+                    "E2-04-02",
+                    "E2-04-03",
+                    "E2-06-00",
+                    "E2-06-01",
+                    "E2-06-02",
+                    "E2-06-03",
+                    "E2-07-00",
+                    "E2-07-01",
+                    "E2-07-02",
+                    "E2-07-03"
+                  ],
+                  "mean": [
+                    8.15,
+                    60.5,
+                    2.0,
+                    0.16666666666666666,
+                    2.0
+                  ],
+                  "name": "scale",
+                  "scale": [
+                    5.00124984378905,
+                    12.698425099200294,
+                    1.224744871391589,
+                    0.3726779962499649,
+                    1.224744871391589
+                  ]
+                },
+                {
+                  "estimator": "LogisticRegression",
+                  "name": "model"
+                }
+              ]
+            },
+            "scoredGroups": [
+              "G02",
+              "G05",
+              "G08"
+            ],
+            "scoredRows": [
+              "E2-02-00",
+              "E2-02-01",
+              "E2-02-02",
+              "E2-02-03",
+              "E2-05-00",
+              "E2-05-01",
+              "E2-05-02",
+              "E2-05-03",
+              "E2-08-00",
+              "E2-08-01",
+              "E2-08-02",
+              "E2-08-03"
+            ]
+          },
+          {
+            "fitGroups": [
+              "G00",
+              "G02",
+              "G03",
+              "G05",
+              "G06",
+              "G08"
+            ],
+            "fitRows": [
+              "E2-00-00",
+              "E2-00-01",
+              "E2-00-02",
+              "E2-00-03",
+              "E2-02-00",
+              "E2-02-01",
+              "E2-02-02",
+              "E2-02-03",
+              "E2-03-00",
+              "E2-03-01",
+              "E2-03-02",
+              "E2-03-03",
+              "E2-05-00",
+              "E2-05-01",
+              "E2-05-02",
+              "E2-05-03",
+              "E2-06-00",
+              "E2-06-01",
+              "E2-06-02",
+              "E2-06-03",
+              "E2-08-00",
+              "E2-08-01",
+              "E2-08-02",
+              "E2-08-03"
+            ],
+            "fold": 2,
+            "pipeline": {
+              "fitRowIds": [
+                "E2-00-00",
+                "E2-00-01",
+                "E2-00-02",
+                "E2-00-03",
+                "E2-02-00",
+                "E2-02-01",
+                "E2-02-02",
+                "E2-02-03",
+                "E2-03-00",
+                "E2-03-01",
+                "E2-03-02",
+                "E2-03-03",
+                "E2-05-00",
+                "E2-05-01",
+                "E2-05-02",
+                "E2-05-03",
+                "E2-06-00",
+                "E2-06-01",
+                "E2-06-02",
+                "E2-06-03",
+                "E2-08-00",
+                "E2-08-01",
+                "E2-08-02",
+                "E2-08-03"
+              ],
+              "steps": [
+                {
+                  "estimator": "StandardScaler",
+                  "fitRowIds": [
+                    "E2-00-00",
+                    "E2-00-01",
+                    "E2-00-02",
+                    "E2-00-03",
+                    "E2-02-00",
+                    "E2-02-01",
+                    "E2-02-02",
+                    "E2-02-03",
+                    "E2-03-00",
+                    "E2-03-01",
+                    "E2-03-02",
+                    "E2-03-03",
+                    "E2-05-00",
+                    "E2-05-01",
+                    "E2-05-02",
+                    "E2-05-03",
+                    "E2-06-00",
+                    "E2-06-01",
+                    "E2-06-02",
+                    "E2-06-03",
+                    "E2-08-00",
+                    "E2-08-01",
+                    "E2-08-02",
+                    "E2-08-03"
+                  ],
+                  "mean": [
+                    9.15,
+                    63.0,
+                    1.8333333333333333,
+                    0.20833333333333334,
+                    1.8333333333333333
+                  ],
+                  "name": "scale",
+                  "scale": [
+                    5.292683629313205,
+                    13.416407864998739,
+                    1.2133516482134197,
+                    0.40611643103370676,
+                    1.2133516482134197
+                  ]
+                },
+                {
+                  "estimator": "LogisticRegression",
+                  "name": "model"
+                }
+              ]
+            },
+            "scoredGroups": [
+              "G01",
+              "G04",
+              "G07"
+            ],
+            "scoredRows": [
+              "E2-01-00",
+              "E2-01-01",
+              "E2-01-02",
+              "E2-01-03",
+              "E2-04-00",
+              "E2-04-01",
+              "E2-04-02",
+              "E2-04-03",
+              "E2-07-00",
+              "E2-07-01",
+              "E2-07-02",
+              "E2-07-03"
+            ]
+          },
+          {
+            "fitGroups": [
+              "G01",
+              "G02",
+              "G04",
+              "G05",
+              "G07",
+              "G08"
+            ],
+            "fitRows": [
+              "E2-01-00",
+              "E2-01-01",
+              "E2-01-02",
+              "E2-01-03",
+              "E2-02-00",
+              "E2-02-01",
+              "E2-02-02",
+              "E2-02-03",
+              "E2-04-00",
+              "E2-04-01",
+              "E2-04-02",
+              "E2-04-03",
+              "E2-05-00",
+              "E2-05-01",
+              "E2-05-02",
+              "E2-05-03",
+              "E2-07-00",
+              "E2-07-01",
+              "E2-07-02",
+              "E2-07-03",
+              "E2-08-00",
+              "E2-08-01",
+              "E2-08-02",
+              "E2-08-03"
+            ],
+            "fold": 3,
+            "pipeline": {
+              "fitRowIds": [
+                "E2-01-00",
+                "E2-01-01",
+                "E2-01-02",
+                "E2-01-03",
+                "E2-02-00",
+                "E2-02-01",
+                "E2-02-02",
+                "E2-02-03",
+                "E2-04-00",
+                "E2-04-01",
+                "E2-04-02",
+                "E2-04-03",
+                "E2-05-00",
+                "E2-05-01",
+                "E2-05-02",
+                "E2-05-03",
+                "E2-07-00",
+                "E2-07-01",
+                "E2-07-02",
+                "E2-07-03",
+                "E2-08-00",
+                "E2-08-01",
+                "E2-08-02",
+                "E2-08-03"
+              ],
+              "steps": [
+                {
+                  "estimator": "StandardScaler",
+                  "fitRowIds": [
+                    "E2-01-00",
+                    "E2-01-01",
+                    "E2-01-02",
+                    "E2-01-03",
+                    "E2-02-00",
+                    "E2-02-01",
+                    "E2-02-02",
+                    "E2-02-03",
+                    "E2-04-00",
+                    "E2-04-01",
+                    "E2-04-02",
+                    "E2-04-03",
+                    "E2-05-00",
+                    "E2-05-01",
+                    "E2-05-02",
+                    "E2-05-03",
+                    "E2-07-00",
+                    "E2-07-01",
+                    "E2-07-02",
+                    "E2-07-03",
+                    "E2-08-00",
+                    "E2-08-01",
+                    "E2-08-02",
+                    "E2-08-03"
+                  ],
+                  "mean": [
+                    10.149999999999999,
+                    65.5,
+                    2.0,
+                    0.20833333333333334,
+                    2.0
+                  ],
+                  "name": "scale",
+                  "scale": [
+                    5.00124984378905,
+                    12.698425099200294,
+                    1.224744871391589,
+                    0.40611643103370676,
+                    1.224744871391589
+                  ]
+                },
+                {
+                  "estimator": "LogisticRegression",
+                  "name": "model"
+                }
+              ]
+            },
+            "scoredGroups": [
+              "G00",
+              "G03",
+              "G06"
+            ],
+            "scoredRows": [
+              "E2-00-00",
+              "E2-00-01",
+              "E2-00-02",
+              "E2-00-03",
+              "E2-03-00",
+              "E2-03-01",
+              "E2-03-02",
+              "E2-03-03",
+              "E2-06-00",
+              "E2-06-01",
+              "E2-06-02",
+              "E2-06-03"
+            ]
+          }
+        ],
+        "model": "LogisticRegression(C=1.0) with StandardScaler; threshold selected from development OOF probabilities only",
+        "oofGroupIds": [
+          "G00",
+          "G00",
+          "G00",
+          "G00",
+          "G01",
+          "G01",
+          "G01",
+          "G01",
+          "G02",
+          "G02",
+          "G02",
+          "G02",
+          "G03",
+          "G03",
+          "G03",
+          "G03",
+          "G04",
+          "G04",
+          "G04",
+          "G04",
+          "G05",
+          "G05",
+          "G05",
+          "G05",
+          "G06",
+          "G06",
+          "G06",
+          "G06",
+          "G07",
+          "G07",
+          "G07",
+          "G07",
+          "G08",
+          "G08",
+          "G08",
+          "G08"
+        ],
+        "oofRowIds": [
+          "E2-00-00",
+          "E2-00-01",
+          "E2-00-02",
+          "E2-00-03",
+          "E2-01-00",
+          "E2-01-01",
+          "E2-01-02",
+          "E2-01-03",
+          "E2-02-00",
+          "E2-02-01",
+          "E2-02-02",
+          "E2-02-03",
+          "E2-03-00",
+          "E2-03-01",
+          "E2-03-02",
+          "E2-03-03",
+          "E2-04-00",
+          "E2-04-01",
+          "E2-04-02",
+          "E2-04-03",
+          "E2-05-00",
+          "E2-05-01",
+          "E2-05-02",
+          "E2-05-03",
+          "E2-06-00",
+          "E2-06-01",
+          "E2-06-02",
+          "E2-06-03",
+          "E2-07-00",
+          "E2-07-01",
+          "E2-07-02",
+          "E2-07-03",
+          "E2-08-00",
+          "E2-08-01",
+          "E2-08-02",
+          "E2-08-03"
+        ],
+        "positiveProbabilities": [
+          0.004567054582928685,
+          0.011982499980481585,
+          0.07603099902441239,
+          0.3582836007051436,
+          0.10236471552912019,
+          0.4038571333761011,
+          0.8009724733227663,
+          0.9598512124740973,
+          0.018095478530722322,
+          0.08082731740406064,
+          0.29556942073970605,
+          0.8020951463150291,
+          0.0132590772946287,
+          0.08355405161998126,
+          0.6135753287461003,
+          0.807589412409375,
+          0.013973343825541128,
+          0.08799387147725668,
+          0.33338233519487387,
+          0.7481699914689472,
+          0.12860853446262552,
+          0.2580939148809258,
+          0.6240498797793552,
+          0.8878979089471435,
+          0.002343044057766824,
+          0.015684974991814513,
+          0.0975694792925986,
+          0.4231608251553492,
+          0.058559650162474365,
+          0.26981478268986575,
+          0.6870234402177462,
+          0.9372853358918547,
+          0.012919420686866172,
+          0.05878155950333646,
+          0.37626776222056996,
+          0.5871022140712957
+        ],
+        "selectedCostPerRow": 0.8055555555555556,
+        "selectedThreshold": 0.25,
+        "thresholdCandidates": [
+          {
+            "confusion": {
+              "FN": 2,
+              "FP": 9,
+              "TN": 15,
+              "TP": 10
+            },
+            "costPerRow": 0.8055555555555556,
+            "metrics": {
+              "accuracy": 0.6944444444444444,
+              "balancedAccuracy": 0.7291666666666667,
+              "confusion": {
+                "FN": 2,
+                "FP": 9,
+                "TN": 15,
+                "TP": 10
+              },
+              "f1Positive": 0.6451612903225806,
+              "logLoss": {
+                "reason": "candidate does not expose class probabilities",
+                "state": "not-produced"
+              },
+              "precisionPositive": 0.5263157894736842,
+              "recallPositive": 0.8333333333333334
+            },
+            "predictions": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              1,
+              1,
+              0,
+              0,
+              1,
+              1
+            ],
+            "threshold": 0.25,
+            "totalCost": 29.0
+          },
+          {
+            "confusion": {
+              "FN": 4,
+              "FP": 3,
+              "TN": 21,
+              "TP": 8
+            },
+            "costPerRow": 1.1944444444444444,
+            "metrics": {
+              "accuracy": 0.8055555555555556,
+              "balancedAccuracy": 0.7708333333333333,
+              "confusion": {
+                "FN": 4,
+                "FP": 3,
+                "TN": 21,
+                "TP": 8
+              },
+              "f1Positive": 0.6956521739130435,
+              "logLoss": {
+                "reason": "candidate does not expose class probabilities",
+                "state": "not-produced"
+              },
+              "precisionPositive": 0.7272727272727273,
+              "recallPositive": 0.6666666666666666
+            },
+            "predictions": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "threshold": 0.5,
+            "totalCost": 43.0
+          },
+          {
+            "confusion": {
+              "FN": 7,
+              "FP": 1,
+              "TN": 23,
+              "TP": 5
+            },
+            "costPerRow": 1.9722222222222223,
+            "metrics": {
+              "accuracy": 0.7777777777777778,
+              "balancedAccuracy": 0.6875,
+              "confusion": {
+                "FN": 7,
+                "FP": 1,
+                "TN": 23,
+                "TP": 5
+              },
+              "f1Positive": 0.5555555555555556,
+              "logLoss": {
+                "reason": "candidate does not expose class probabilities",
+                "state": "not-produced"
+              },
+              "precisionPositive": 0.8333333333333334,
+              "recallPositive": 0.4166666666666667
+            },
+            "predictions": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "threshold": 0.75,
+            "totalCost": 71.0
+          }
+        ],
+        "tieRule": "minimum cost; then closest to 0.50; then higher threshold",
+        "truth": [
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "status": "reference-computed"
+    },
+    {
+      "configId": "MS-E2-SIMPLE-ADEQUATE-MODEL-LEGAL",
+      "controls": {
+        "costTolerancePerRow": 0.1,
+        "selectionRule": "simplest within predeclared cost tolerance of best grouped development score"
+      },
+      "expected": {
+        "allCandidates": [
+          {
+            "candidateId": "prior-baseline-t0.50",
+            "complexityTier": 0,
+            "meanCostPerRow": 3.3333333333333335
+          },
+          {
+            "candidateId": "logistic-p0p1-t25",
+            "complexityTier": 1,
+            "meanCostPerRow": 0.8333333333333334
+          },
+          {
+            "candidateId": "logistic-p0p1-t50",
+            "complexityTier": 1,
+            "meanCostPerRow": 1.75
+          },
+          {
+            "candidateId": "logistic-p0p1-t75",
+            "complexityTier": 1,
+            "meanCostPerRow": 3.3333333333333335
+          },
+          {
+            "candidateId": "logistic-p1p0-t25",
+            "complexityTier": 1,
+            "meanCostPerRow": 0.8055555555555557
+          },
+          {
+            "candidateId": "logistic-p1p0-t50",
+            "complexityTier": 1,
+            "meanCostPerRow": 1.1944444444444444
+          },
+          {
+            "candidateId": "logistic-p1p0-t75",
+            "complexityTier": 1,
+            "meanCostPerRow": 1.9722222222222223
+          },
+          {
+            "candidateId": "logistic-p10p0-t25",
+            "complexityTier": 3,
+            "meanCostPerRow": 0.75
+          },
+          {
+            "candidateId": "logistic-p10p0-t50",
+            "complexityTier": 3,
+            "meanCostPerRow": 1.1944444444444444
+          },
+          {
+            "candidateId": "logistic-p10p0-t75",
+            "complexityTier": 3,
+            "meanCostPerRow": 1.4444444444444446
+          },
+          {
+            "candidateId": "tree-p1-t25",
+            "complexityTier": 2,
+            "meanCostPerRow": 0.638888888888889
+          },
+          {
+            "candidateId": "tree-p1-t50",
+            "complexityTier": 2,
+            "meanCostPerRow": 0.638888888888889
+          },
+          {
+            "candidateId": "tree-p1-t75",
+            "complexityTier": 2,
+            "meanCostPerRow": 1.75
+          },
+          {
+            "candidateId": "tree-p2-t25",
+            "complexityTier": 3,
+            "meanCostPerRow": 0.8055555555555557
+          },
+          {
+            "candidateId": "tree-p2-t50",
+            "complexityTier": 3,
+            "meanCostPerRow": 0.638888888888889
+          },
+          {
+            "candidateId": "tree-p2-t75",
+            "complexityTier": 3,
+            "meanCostPerRow": 2.0
+          },
+          {
+            "candidateId": "tree-p4-t25",
+            "complexityTier": 4,
+            "meanCostPerRow": 0.7222222222222223
+          },
+          {
+            "candidateId": "tree-p4-t50",
+            "complexityTier": 4,
+            "meanCostPerRow": 1.0
+          },
+          {
+            "candidateId": "tree-p4-t75",
+            "complexityTier": 4,
+            "meanCostPerRow": 2.027777777777778
+          },
+          {
+            "candidateId": "knn-p1-t25",
+            "complexityTier": 3,
+            "meanCostPerRow": 2.111111111111111
+          },
+          {
+            "candidateId": "knn-p1-t50",
+            "complexityTier": 3,
+            "meanCostPerRow": 2.111111111111111
+          },
+          {
+            "candidateId": "knn-p1-t75",
+            "complexityTier": 3,
+            "meanCostPerRow": 2.111111111111111
+          },
+          {
+            "candidateId": "knn-p3-t25",
+            "complexityTier": 4,
+            "meanCostPerRow": 0.8333333333333334
+          },
+          {
+            "candidateId": "knn-p3-t50",
+            "complexityTier": 4,
+            "meanCostPerRow": 2.361111111111111
+          },
+          {
+            "candidateId": "knn-p3-t75",
+            "complexityTier": 4,
+            "meanCostPerRow": 2.5
+          },
+          {
+            "candidateId": "knn-p5-t25",
+            "complexityTier": 5,
+            "meanCostPerRow": 0.7777777777777778
+          },
+          {
+            "candidateId": "knn-p5-t50",
+            "complexityTier": 5,
+            "meanCostPerRow": 1.1944444444444444
+          },
+          {
+            "candidateId": "knn-p5-t75",
+            "complexityTier": 5,
+            "meanCostPerRow": 2.805555555555556
+          }
+        ],
+        "bestCandidate": {
+          "candidateId": "tree-p1-t50",
+          "complexityTier": 2,
+          "meanCostPerRow": 0.638888888888889
+        },
+        "selectedModelRefitRows": [
+          "G00",
+          "G01",
+          "G02",
+          "G03",
+          "G04",
+          "G05",
+          "G06",
+          "G07",
+          "G08"
+        ]
+      },
+      "status": "reference-computed"
+    },
+    {
+      "configId": "MS-E2-PERMUTATION-DEVELOPMENT-HOLDOUT",
+      "controls": {
+        "repeats": 8,
+        "scoring": "balanced_accuracy",
+        "seed": 20261018,
+        "usesFinalTest": false
+      },
+      "expected": {
+        "baseBalancedAccuracy": 0.8125,
+        "configurationId": "MS-E2-PERMUTATION-DEVELOPMENT-HOLDOUT",
+        "correlatedProxyPair": [
+          "support_calls",
+          "support_calls_proxy"
+        ],
+        "importanceMean": {
+          "late_payment": 0.0,
+          "monthly_charge": 0.0,
+          "support_calls": 0.046875,
+          "support_calls_proxy": 0.2109375,
+          "tenure_months": 0.0
+        },
+        "importanceStandardDeviation": {
+          "late_payment": 0.0,
+          "monthly_charge": 0.0,
+          "support_calls": 0.10711960313126631,
+          "support_calls_proxy": 0.12475562048961962,
+          "tenure_months": 0.0
+        },
+        "interpretation": "predictive score change on one permitted development holdout; not a causal effect; correlated proxies may substitute",
+        "randomState": 20261018,
+        "repeats": 8,
+        "scoringMetric": "balanced accuracy",
+        "trainGroupIds": [
+          "G00",
+          "G01",
+          "G02",
+          "G03",
+          "G04",
+          "G05"
+        ],
+        "trainRowIds": [
+          "E2-00-00",
+          "E2-00-01",
+          "E2-00-02",
+          "E2-00-03",
+          "E2-01-00",
+          "E2-01-01",
+          "E2-01-02",
+          "E2-01-03",
+          "E2-02-00",
+          "E2-02-01",
+          "E2-02-02",
+          "E2-02-03",
+          "E2-03-00",
+          "E2-03-01",
+          "E2-03-02",
+          "E2-03-03",
+          "E2-04-00",
+          "E2-04-01",
+          "E2-04-02",
+          "E2-04-03",
+          "E2-05-00",
+          "E2-05-01",
+          "E2-05-02",
+          "E2-05-03"
+        ],
+        "validationGroupIds": [
+          "G06",
+          "G07",
+          "G08"
+        ],
+        "validationRowIds": [
+          "E2-06-00",
+          "E2-06-01",
+          "E2-06-02",
+          "E2-06-03",
+          "E2-07-00",
+          "E2-07-01",
+          "E2-07-02",
+          "E2-07-03",
+          "E2-08-00",
+          "E2-08-01",
+          "E2-08-02",
+          "E2-08-03"
+        ]
+      },
+      "status": "reference-computed"
+    },
+    {
+      "configId": "MS-E2-FINAL-TEST-EVALUATION-ONCE",
+      "controls": {
+        "selectionCompleteBeforeReveal": true,
+        "testAccess": "single final evaluation",
+        "usesFinalTestForTuning": false
+      },
+      "referenceSidecar": "ms-e2-test-reference-sealed.v1.json",
+      "status": "sealed-until-choice-freeze"
+    },
+    {
+      "configId": "MS-E2-REJECT-ROW-WISE-SPLIT-GROUP-OVERLAP",
+      "message": "A repeated customer cannot appear on both sides of the evaluation boundary; no score is produced.",
+      "reasonCode": "split.customer-group-overlap",
+      "status": "rejected"
+    },
+    {
+      "configId": "MS-E2-REJECT-GLOBAL-PREPROCESS-FIT",
+      "message": "Fit each transformation inside the training fold; no score is produced.",
+      "reasonCode": "preprocessing.fit-outside-fold-training",
+      "status": "rejected"
+    },
+    {
+      "configId": "MS-E2-REJECT-TUNE-ON-OUTER-HOLDOUT",
+      "message": "Outer holdouts evaluate the complete selection procedure; they cannot choose its parameters.",
+      "reasonCode": "selection.outer-holdout-access",
+      "status": "rejected"
+    },
+    {
+      "configId": "MS-E2-REJECT-SELECT-ON-TEST",
+      "message": "The final test is opened once after the choice is frozen; no retuning score is produced.",
+      "reasonCode": "selection.final-test-access",
+      "status": "rejected"
+    }
+  ],
+  "costConvention": {
+    "falseNegative": 10.0,
+    "falsePositive": 1.0,
+    "positiveClass": 1,
+    "reported": "per scored row"
+  },
+  "experimentId": "MS-E2",
+  "fixture": {
+    "developmentGroups": [
+      "G00",
+      "G01",
+      "G02",
+      "G03",
+      "G04",
+      "G05",
+      "G06",
+      "G07",
+      "G08"
+    ],
+    "featureNames": [
+      "tenure_months",
+      "monthly_charge",
+      "support_calls",
+      "late_payment",
+      "support_calls_proxy"
+    ],
+    "fixtureId": "MS-E2-GROUPED-CHURN-V1",
+    "negativeClass": 0,
+    "partitions": {
+      "development": [
+        "E2-00-00",
+        "E2-00-01",
+        "E2-00-02",
+        "E2-00-03",
+        "E2-01-00",
+        "E2-01-01",
+        "E2-01-02",
+        "E2-01-03",
+        "E2-02-00",
+        "E2-02-01",
+        "E2-02-02",
+        "E2-02-03",
+        "E2-03-00",
+        "E2-03-01",
+        "E2-03-02",
+        "E2-03-03",
+        "E2-04-00",
+        "E2-04-01",
+        "E2-04-02",
+        "E2-04-03",
+        "E2-05-00",
+        "E2-05-01",
+        "E2-05-02",
+        "E2-05-03",
+        "E2-06-00",
+        "E2-06-01",
+        "E2-06-02",
+        "E2-06-03",
+        "E2-07-00",
+        "E2-07-01",
+        "E2-07-02",
+        "E2-07-03",
+        "E2-08-00",
+        "E2-08-01",
+        "E2-08-02",
+        "E2-08-03"
+      ],
+      "test": [
+        "E2-09-00",
+        "E2-09-01",
+        "E2-09-02",
+        "E2-09-03",
+        "E2-10-00",
+        "E2-10-01",
+        "E2-10-02",
+        "E2-10-03",
+        "E2-11-00",
+        "E2-11-01",
+        "E2-11-02",
+        "E2-11-03"
+      ]
+    },
+    "positiveClass": 1,
+    "problem": "fictional repeated-customer churn classification; group IDs are split metadata, never model features",
+    "proxyPair": [
+      "support_calls",
+      "support_calls_proxy"
+    ],
+    "rows": [
+      {
+        "features": {
+          "late_payment": 1.0,
+          "monthly_charge": 40.0,
+          "support_calls": 0.0,
+          "support_calls_proxy": 0.0,
+          "tenure_months": 1.0
+        },
+        "groupId": "G00",
+        "rowId": "E2-00-00",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 42.0,
+          "support_calls": 1.0,
+          "support_calls_proxy": 1.0,
+          "tenure_months": 1.1
+        },
+        "groupId": "G00",
+        "rowId": "E2-00-01",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 44.0,
+          "support_calls": 2.0,
+          "support_calls_proxy": 2.0,
+          "tenure_months": 1.2
+        },
+        "groupId": "G00",
+        "rowId": "E2-00-02",
+        "target": 1
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 46.0,
+          "support_calls": 3.0,
+          "support_calls_proxy": 3.0,
+          "tenure_months": 1.3
+        },
+        "groupId": "G00",
+        "rowId": "E2-00-03",
+        "target": 1
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 45.0,
+          "support_calls": 1.0,
+          "support_calls_proxy": 1.0,
+          "tenure_months": 3.0
+        },
+        "groupId": "G01",
+        "rowId": "E2-01-00",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 47.0,
+          "support_calls": 2.0,
+          "support_calls_proxy": 2.0,
+          "tenure_months": 3.1
+        },
+        "groupId": "G01",
+        "rowId": "E2-01-01",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 49.0,
+          "support_calls": 3.0,
+          "support_calls_proxy": 3.0,
+          "tenure_months": 3.2
+        },
+        "groupId": "G01",
+        "rowId": "E2-01-02",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 51.0,
+          "support_calls": 4.0,
+          "support_calls_proxy": 4.0,
+          "tenure_months": 3.3
+        },
+        "groupId": "G01",
+        "rowId": "E2-01-03",
+        "target": 1
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 50.0,
+          "support_calls": 0.0,
+          "support_calls_proxy": 0.0,
+          "tenure_months": 5.0
+        },
+        "groupId": "G02",
+        "rowId": "E2-02-00",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 52.0,
+          "support_calls": 1.0,
+          "support_calls_proxy": 1.0,
+          "tenure_months": 5.1
+        },
+        "groupId": "G02",
+        "rowId": "E2-02-01",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 54.0,
+          "support_calls": 2.0,
+          "support_calls_proxy": 2.0,
+          "tenure_months": 5.2
+        },
+        "groupId": "G02",
+        "rowId": "E2-02-02",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 1.0,
+          "monthly_charge": 56.0,
+          "support_calls": 3.0,
+          "support_calls_proxy": 3.0,
+          "tenure_months": 5.3
+        },
+        "groupId": "G02",
+        "rowId": "E2-02-03",
+        "target": 1
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 55.0,
+          "support_calls": 1.0,
+          "support_calls_proxy": 1.0,
+          "tenure_months": 7.0
+        },
+        "groupId": "G03",
+        "rowId": "E2-03-00",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 57.0,
+          "support_calls": 2.0,
+          "support_calls_proxy": 2.0,
+          "tenure_months": 7.1
+        },
+        "groupId": "G03",
+        "rowId": "E2-03-01",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 1.0,
+          "monthly_charge": 59.0,
+          "support_calls": 3.0,
+          "support_calls_proxy": 3.0,
+          "tenure_months": 7.2
+        },
+        "groupId": "G03",
+        "rowId": "E2-03-02",
+        "target": 1
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 61.0,
+          "support_calls": 4.0,
+          "support_calls_proxy": 4.0,
+          "tenure_months": 7.3
+        },
+        "groupId": "G03",
+        "rowId": "E2-03-03",
+        "target": 1
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 60.0,
+          "support_calls": 0.0,
+          "support_calls_proxy": 0.0,
+          "tenure_months": 9.0
+        },
+        "groupId": "G04",
+        "rowId": "E2-04-00",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 1.0,
+          "monthly_charge": 62.0,
+          "support_calls": 1.0,
+          "support_calls_proxy": 1.0,
+          "tenure_months": 9.1
+        },
+        "groupId": "G04",
+        "rowId": "E2-04-01",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 64.0,
+          "support_calls": 2.0,
+          "support_calls_proxy": 2.0,
+          "tenure_months": 9.2
+        },
+        "groupId": "G04",
+        "rowId": "E2-04-02",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 66.0,
+          "support_calls": 3.0,
+          "support_calls_proxy": 3.0,
+          "tenure_months": 9.3
+        },
+        "groupId": "G04",
+        "rowId": "E2-04-03",
+        "target": 1
+      },
+      {
+        "features": {
+          "late_payment": 1.0,
+          "monthly_charge": 65.0,
+          "support_calls": 1.0,
+          "support_calls_proxy": 1.0,
+          "tenure_months": 11.0
+        },
+        "groupId": "G05",
+        "rowId": "E2-05-00",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 67.0,
+          "support_calls": 2.0,
+          "support_calls_proxy": 2.0,
+          "tenure_months": 11.1
+        },
+        "groupId": "G05",
+        "rowId": "E2-05-01",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 69.0,
+          "support_calls": 3.0,
+          "support_calls_proxy": 3.0,
+          "tenure_months": 11.2
+        },
+        "groupId": "G05",
+        "rowId": "E2-05-02",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 71.0,
+          "support_calls": 4.0,
+          "support_calls_proxy": 4.0,
+          "tenure_months": 11.3
+        },
+        "groupId": "G05",
+        "rowId": "E2-05-03",
+        "target": 1
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 70.0,
+          "support_calls": 0.0,
+          "support_calls_proxy": 0.0,
+          "tenure_months": 13.0
+        },
+        "groupId": "G06",
+        "rowId": "E2-06-00",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 72.0,
+          "support_calls": 1.0,
+          "support_calls_proxy": 1.0,
+          "tenure_months": 13.1
+        },
+        "groupId": "G06",
+        "rowId": "E2-06-01",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 74.0,
+          "support_calls": 2.0,
+          "support_calls_proxy": 2.0,
+          "tenure_months": 13.2
+        },
+        "groupId": "G06",
+        "rowId": "E2-06-02",
+        "target": 1
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 76.0,
+          "support_calls": 3.0,
+          "support_calls_proxy": 3.0,
+          "tenure_months": 13.3
+        },
+        "groupId": "G06",
+        "rowId": "E2-06-03",
+        "target": 1
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 75.0,
+          "support_calls": 1.0,
+          "support_calls_proxy": 1.0,
+          "tenure_months": 15.0
+        },
+        "groupId": "G07",
+        "rowId": "E2-07-00",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 77.0,
+          "support_calls": 2.0,
+          "support_calls_proxy": 2.0,
+          "tenure_months": 15.1
+        },
+        "groupId": "G07",
+        "rowId": "E2-07-01",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 79.0,
+          "support_calls": 3.0,
+          "support_calls_proxy": 3.0,
+          "tenure_months": 15.2
+        },
+        "groupId": "G07",
+        "rowId": "E2-07-02",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 1.0,
+          "monthly_charge": 81.0,
+          "support_calls": 4.0,
+          "support_calls_proxy": 4.0,
+          "tenure_months": 15.3
+        },
+        "groupId": "G07",
+        "rowId": "E2-07-03",
+        "target": 1
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 80.0,
+          "support_calls": 0.0,
+          "support_calls_proxy": 0.0,
+          "tenure_months": 17.0
+        },
+        "groupId": "G08",
+        "rowId": "E2-08-00",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 82.0,
+          "support_calls": 1.0,
+          "support_calls_proxy": 1.0,
+          "tenure_months": 17.1
+        },
+        "groupId": "G08",
+        "rowId": "E2-08-01",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 1.0,
+          "monthly_charge": 84.0,
+          "support_calls": 2.0,
+          "support_calls_proxy": 2.0,
+          "tenure_months": 17.2
+        },
+        "groupId": "G08",
+        "rowId": "E2-08-02",
+        "target": 0
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 86.0,
+          "support_calls": 3.0,
+          "support_calls_proxy": 3.0,
+          "tenure_months": 17.3
+        },
+        "groupId": "G08",
+        "rowId": "E2-08-03",
+        "target": 1
+      }
+    ],
+    "sealedTestGroups": [
+      "G09",
+      "G10",
+      "G11"
+    ],
+    "sealedTestTargetRows": "see locked MS-E2 test reference sidecar; not included in learner-facing manifest",
+    "targetName": "churn_90d",
+    "testFeatureRows": [
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 85.0,
+          "support_calls": 1.0,
+          "support_calls_proxy": 1.0,
+          "tenure_months": 19.0
+        },
+        "groupId": "G09",
+        "rowId": "E2-09-00"
+      },
+      {
+        "features": {
+          "late_payment": 1.0,
+          "monthly_charge": 87.0,
+          "support_calls": 2.0,
+          "support_calls_proxy": 2.0,
+          "tenure_months": 19.1
+        },
+        "groupId": "G09",
+        "rowId": "E2-09-01"
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 89.0,
+          "support_calls": 3.0,
+          "support_calls_proxy": 3.0,
+          "tenure_months": 19.2
+        },
+        "groupId": "G09",
+        "rowId": "E2-09-02"
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 91.0,
+          "support_calls": 4.0,
+          "support_calls_proxy": 4.0,
+          "tenure_months": 19.3
+        },
+        "groupId": "G09",
+        "rowId": "E2-09-03"
+      },
+      {
+        "features": {
+          "late_payment": 1.0,
+          "monthly_charge": 90.0,
+          "support_calls": 0.0,
+          "support_calls_proxy": 0.0,
+          "tenure_months": 21.0
+        },
+        "groupId": "G10",
+        "rowId": "E2-10-00"
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 92.0,
+          "support_calls": 1.0,
+          "support_calls_proxy": 1.0,
+          "tenure_months": 21.1
+        },
+        "groupId": "G10",
+        "rowId": "E2-10-01"
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 94.0,
+          "support_calls": 2.0,
+          "support_calls_proxy": 2.0,
+          "tenure_months": 21.2
+        },
+        "groupId": "G10",
+        "rowId": "E2-10-02"
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 96.0,
+          "support_calls": 3.0,
+          "support_calls_proxy": 3.0,
+          "tenure_months": 21.3
+        },
+        "groupId": "G10",
+        "rowId": "E2-10-03"
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 95.0,
+          "support_calls": 1.0,
+          "support_calls_proxy": 1.0,
+          "tenure_months": 23.0
+        },
+        "groupId": "G11",
+        "rowId": "E2-11-00"
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 97.0,
+          "support_calls": 2.0,
+          "support_calls_proxy": 2.0,
+          "tenure_months": 23.1
+        },
+        "groupId": "G11",
+        "rowId": "E2-11-01"
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 99.0,
+          "support_calls": 3.0,
+          "support_calls_proxy": 3.0,
+          "tenure_months": 23.2
+        },
+        "groupId": "G11",
+        "rowId": "E2-11-02"
+      },
+      {
+        "features": {
+          "late_payment": 0.0,
+          "monthly_charge": 101.0,
+          "support_calls": 4.0,
+          "support_calls_proxy": 4.0,
+          "tenure_months": 23.3
+        },
+        "groupId": "G11",
+        "rowId": "E2-11-03"
+      }
+    ]
+  },
+  "interaction": "Predict the valid search, selected candidate, threshold cost, outer-fold behavior, and final-test rule before revealing each development trace; the sealed final result is revealed only after a choice is frozen.",
+  "manifestId": "TASK-015.12-MS-E2-V1",
+  "objectives": [
+    "MS02.O1",
+    "MS02.O2",
+    "MS02.O3",
+    "MS02.O4",
+    "MS03.O1",
+    "MS03.O2",
+    "MS03.O3",
+    "MS03.O4",
+    "MS04.O1",
+    "MS04.O2",
+    "MS04.O3",
+    "MS05.O1",
+    "MS05.O2",
+    "MS05.O3",
+    "MS06.O1",
+    "MS06.O2",
+    "MS06.O3"
+  ],
+  "simplicityRule": {
+    "costTolerancePerRow": 0.1,
+    "rule": "Among candidates no more than the stated cost tolerance above the minimum development CV cost, choose the lowest predeclared complexity tier, then candidate ID."
+  },
+  "textAlternative": "The lab provides row/group membership tables, exact fit/score IDs for every fold, candidate scores, threshold confusion tables, fold dispersion, and the explicit selection/test timeline.",
+  "title": "Selection and generalization",
+  "version": 1
+}

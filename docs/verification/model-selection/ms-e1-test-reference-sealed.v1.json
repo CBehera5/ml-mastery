@@ -1,0 +1,93 @@
+{
+  "evaluation": "none; MS-E1 comparison and selection expose training/development-validation results only",
+  "fixtures": [
+    {
+      "fixtureId": "MS-E1-HOUSE-PRICE-V1",
+      "testRows": [
+        {
+          "features": {
+            "age_years": 30.0,
+            "area_m2": 135.0,
+            "rooms": 7.0
+          },
+          "rowId": "HOUSE-15",
+          "target": 330.35
+        },
+        {
+          "features": {
+            "age_years": 32.0,
+            "area_m2": 140.0,
+            "rooms": 7.0
+          },
+          "rowId": "HOUSE-16",
+          "target": 330.14
+        },
+        {
+          "features": {
+            "age_years": 34.0,
+            "area_m2": 145.0,
+            "rooms": 7.0
+          },
+          "rowId": "HOUSE-17",
+          "target": 345.93
+        },
+        {
+          "features": {
+            "age_years": 36.0,
+            "area_m2": 150.0,
+            "rooms": 8.0
+          },
+          "rowId": "HOUSE-18",
+          "target": 347.22
+        }
+      ]
+    },
+    {
+      "fixtureId": "MS-E1-CHURN-V1",
+      "testRows": [
+        {
+          "features": {
+            "late_payment": 0.0,
+            "monthly_charge": 95.0,
+            "support_calls": 2.0,
+            "tenure_months": 84.0
+          },
+          "rowId": "CHURN-21",
+          "target": 0
+        },
+        {
+          "features": {
+            "late_payment": 1.0,
+            "monthly_charge": 132.0,
+            "support_calls": 5.0,
+            "tenure_months": 88.0
+          },
+          "rowId": "CHURN-22",
+          "target": 1
+        },
+        {
+          "features": {
+            "late_payment": 0.0,
+            "monthly_charge": 78.0,
+            "support_calls": 1.0,
+            "tenure_months": 92.0
+          },
+          "rowId": "CHURN-23",
+          "target": 0
+        },
+        {
+          "features": {
+            "late_payment": 1.0,
+            "monthly_charge": 160.0,
+            "support_calls": 7.0,
+            "tenure_months": 96.0
+          },
+          "rowId": "CHURN-24",
+          "target": 1
+        }
+      ]
+    }
+  ],
+  "referenceId": "TASK-015.12-MS-E1-TEST-REFERENCE-V1",
+  "visibility": "verification-only; not a learner-facing configuration payload"
+}

@@ -1,0 +1,4157 @@
+{
+  "configurationCount": 20,
+  "configurationLimit": 64,
+  "configurations": [
+    {
+      "candidateFamily": "mean",
+      "complexity": {
+        "kind": "distribution-or-baseline",
+        "parameterCount": 2,
+        "qualitative": "simple reference, not automatically adequate"
+      },
+      "configId": "MS-E1-REGRESSION-MEAN-BASELINE",
+      "evaluationBudget": {
+        "candidateFits": 1,
+        "sameTrainRows": true,
+        "searchFits": 0
+      },
+      "fixtureId": "MS-E1-HOUSE-PRICE-V1",
+      "interpretabilityTier": "very-high",
+      "parameters": {
+        "constant": null,
+        "quantile": null,
+        "strategy": "mean"
+      },
+      "preprocessing": {
+        "fitRowIds": [
+          "HOUSE-01",
+          "HOUSE-02",
+          "HOUSE-03",
+          "HOUSE-04",
+          "HOUSE-05",
+          "HOUSE-06",
+          "HOUSE-07",
+          "HOUSE-08",
+          "HOUSE-09",
+          "HOUSE-10"
+        ],
+        "steps": [
+          {
+            "estimator": "DummyRegressor",
+            "name": "model"
+          }
+        ]
+      },
+      "testOutcome": {
+        "state": "sealed-not-evaluated-in-MS-E1"
+      },
+      "testPartitionIds": [
+        "HOUSE-15",
+        "HOUSE-16",
+        "HOUSE-17",
+        "HOUSE-18"
+      ],
+      "training": {
+        "metrics": {
+          "mae": 26.503999999999998,
+          "r2": 0.0,
+          "rmse": 31.60614471902576
+        },
+        "predictions": [
+          227.41600000000003,
+          227.41600000000003,
+          227.41600000000003,
+          227.41600000000003,
+          227.41600000000003,
+          227.41600000000003,
+          227.41600000000003,
+          227.41600000000003,
+          227.41600000000003,
+          227.41600000000003
+        ],
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "HOUSE-01",
+          "HOUSE-02",
+          "HOUSE-03",
+          "HOUSE-04",
+          "HOUSE-05",
+          "HOUSE-06",
+          "HOUSE-07",
+          "HOUSE-08",
+          "HOUSE-09",
+          "HOUSE-10"
+        ],
+        "truth": [
+          179.0,
+          196.58,
+          201.87,
+          213.66,
+          213.45,
+          233.74,
+          237.53,
+          240.32,
+          282.61,
+          275.4
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "mae": 75.58399999999997,
+          "r2": -90.30782998936952,
+          "rmse": 76.00132765945604
+        },
+        "predictions": [
+          227.41600000000003,
+          227.41600000000003,
+          227.41600000000003,
+          227.41600000000003
+        ],
+        "primaryMetric": "mae",
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "HOUSE-11",
+          "HOUSE-12",
+          "HOUSE-13",
+          "HOUSE-14"
+        ],
+        "truth": [
+          293.19,
+          298.48,
+          314.27,
+          306.06
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "candidateFamily": "multiple",
+      "complexity": {
+        "kind": "linear-parameters",
+        "parameterCount": 4,
+        "qualitative": "coefficient interpretation depends on scaling, correlation, and design"
+      },
+      "configId": "MS-E1-REGRESSION-MULTIPLE-LINEAR",
+      "evaluationBudget": {
+        "candidateFits": 1,
+        "sameTrainRows": true,
+        "searchFits": 0
+      },
+      "fixtureId": "MS-E1-HOUSE-PRICE-V1",
+      "interpretabilityTier": "high",
+      "parameters": {
+        "memory": null,
+        "model__copy_X": true,
+        "model__fit_intercept": true,
+        "model__n_jobs": null,
+        "model__positive": false,
+        "model__tol": 1e-06,
+        "scale__copy": true,
+        "scale__with_mean": true,
+        "scale__with_std": true,
+        "transform_input": null,
+        "verbose": false
+      },
+      "preprocessing": {
+        "fitRowIds": [
+          "HOUSE-01",
+          "HOUSE-02",
+          "HOUSE-03",
+          "HOUSE-04",
+          "HOUSE-05",
+          "HOUSE-06",
+          "HOUSE-07",
+          "HOUSE-08",
+          "HOUSE-09",
+          "HOUSE-10"
+        ],
+        "steps": [
+          {
+            "estimator": "StandardScaler",
+            "fitRowIds": [
+              "HOUSE-01",
+              "HOUSE-02",
+              "HOUSE-03",
+              "HOUSE-04",
+              "HOUSE-05",
+              "HOUSE-06",
+              "HOUSE-07",
+              "HOUSE-08",
+              "HOUSE-09",
+              "HOUSE-10"
+            ],
+            "mean": [
+              87.0,
+              3.5,
+              10.8
+            ],
+            "name": "scale",
+            "scale": [
+              15.198684153570664,
+              1.02469507659596,
+              6.079473661428265
+            ]
+          },
+          {
+            "estimator": "LinearRegression",
+            "name": "model"
+          }
+        ]
+      },
+      "testOutcome": {
+        "state": "sealed-not-evaluated-in-MS-E1"
+      },
+      "testPartitionIds": [
+        "HOUSE-15",
+        "HOUSE-16",
+        "HOUSE-17",
+        "HOUSE-18"
+      ],
+      "training": {
+        "metrics": {
+          "mae": 5.47008547008547,
+          "r2": 0.9554604264290646,
+          "rmse": 6.670287478267714
+        },
+        "predictions": [
+          178.16666666666666,
+          185.8064957264957,
+          208.70760683760685,
+          212.5275213675214,
+          216.3474358974359,
+          239.24854700854704,
+          243.06846153846158,
+          246.88837606837612,
+          269.78948717948725,
+          273.60940170940177
+        ],
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "HOUSE-01",
+          "HOUSE-02",
+          "HOUSE-03",
+          "HOUSE-04",
+          "HOUSE-05",
+          "HOUSE-06",
+          "HOUSE-07",
+          "HOUSE-08",
+          "HOUSE-09",
+          "HOUSE-10"
+        ],
+        "truth": [
+          179.0,
+          196.58,
+          201.87,
+          213.66,
+          213.45,
+          233.74,
+          237.53,
+          240.32,
+          282.61,
+          275.4
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "mae": 7.410256410256395,
+          "r2": -0.414304264473524,
+          "rmse": 9.458855559674928
+        },
+        "predictions": [
+          277.42931623931634,
+          300.33042735042744,
+          304.150341880342,
+          307.9702564102565
+        ],
+        "primaryMetric": "mae",
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "HOUSE-11",
+          "HOUSE-12",
+          "HOUSE-13",
+          "HOUSE-14"
+        ],
+        "truth": [
+          293.19,
+          298.48,
+          314.27,
+          306.06
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "candidateFamily": "polynomial",
+      "complexity": {
+        "kind": "linear-parameters",
+        "parameterCount": 10,
+        "qualitative": "coefficient interpretation depends on scaling, correlation, and design"
+      },
+      "configId": "MS-E1-REGRESSION-POLYNOMIAL-DEGREE-2",
+      "evaluationBudget": {
+        "candidateFits": 1,
+        "sameTrainRows": true,
+        "searchFits": 0
+      },
+      "fixtureId": "MS-E1-HOUSE-PRICE-V1",
+      "interpretabilityTier": "medium",
+      "parameters": {
+        "expand__degree": 2,
+        "expand__include_bias": false,
+        "expand__interaction_only": false,
+        "expand__order": "C",
+        "memory": null,
+        "model__copy_X": true,
+        "model__fit_intercept": true,
+        "model__n_jobs": null,
+        "model__positive": false,
+        "model__tol": 1e-06,
+        "scale__copy": true,
+        "scale__with_mean": true,
+        "scale__with_std": true,
+        "transform_input": null,
+        "verbose": false
+      },
+      "preprocessing": {
+        "fitRowIds": [
+          "HOUSE-01",
+          "HOUSE-02",
+          "HOUSE-03",
+          "HOUSE-04",
+          "HOUSE-05",
+          "HOUSE-06",
+          "HOUSE-07",
+          "HOUSE-08",
+          "HOUSE-09",
+          "HOUSE-10"
+        ],
+        "steps": [
+          {
+            "estimator": "PolynomialFeatures",
+            "name": "expand"
+          },
+          {
+            "estimator": "StandardScaler",
+            "fitRowIds": [
+              "HOUSE-01",
+              "HOUSE-02",
+              "HOUSE-03",
+              "HOUSE-04",
+              "HOUSE-05",
+              "HOUSE-06",
+              "HOUSE-07",
+              "HOUSE-08",
+              "HOUSE-09",
+              "HOUSE-10"
+            ],
+            "mean": [
+              87.0,
+              3.5,
+              10.8,
+              7800.0,
+              319.5,
+              1032.0,
+              13.3,
+              43.8,
+              153.6
+            ],
+            "name": "scale",
+            "scale": [
+              15.198684153570664,
+              1.02469507659596,
+              6.079473661428265,
+              2615.1959773600142,
+              140.91575497438177,
+              683.3856890512121,
+              7.239475119095307,
+              32.11790777743781,
+              130.14699381852813
+            ]
+          },
+          {
+            "estimator": "LinearRegression",
+            "name": "model"
+          }
+        ]
+      },
+      "testOutcome": {
+        "state": "sealed-not-evaluated-in-MS-E1"
+      },
+      "testPartitionIds": [
+        "HOUSE-15",
+        "HOUSE-16",
+        "HOUSE-17",
+        "HOUSE-18"
+      ],
+      "training": {
+        "metrics": {
+          "mae": 1.8495726495726614,
+          "r2": 0.9953475290395201,
+          "rmse": 2.155824284949577
+        },
+        "predictions": [
+          178.46581196581195,
+          198.00165242165247,
+          202.8372364672365,
+          209.79105413105418,
+          213.68931623931627,
+          236.4907122507123,
+          239.1026495726496,
+          238.65903133903134,
+          279.42623931623933,
+          277.6962962962963
+        ],
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "HOUSE-01",
+          "HOUSE-02",
+          "HOUSE-03",
+          "HOUSE-04",
+          "HOUSE-05",
+          "HOUSE-06",
+          "HOUSE-07",
+          "HOUSE-08",
+          "HOUSE-09",
+          "HOUSE-10"
+        ],
+        "truth": [
+          179.0,
+          196.58,
+          201.87,
+          213.66,
+          213.45,
+          233.74,
+          237.53,
+          240.32,
+          282.61,
+          275.4
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "mae": 18.782407407407362,
+          "r2": -5.902621921999226,
+          "rmse": 20.89653176371887
+        },
+        "predictions": [
+          272.9107977207977,
+          331.6438176638177,
+          325.5719943019942,
+          316.44461538461525
+        ],
+        "primaryMetric": "mae",
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "HOUSE-11",
+          "HOUSE-12",
+          "HOUSE-13",
+          "HOUSE-14"
+        ],
+        "truth": [
+          293.19,
+          298.48,
+          314.27,
+          306.06
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "candidateFamily": "ridge",
+      "complexity": {
+        "kind": "linear-parameters",
+        "parameterCount": 4,
+        "qualitative": "coefficient interpretation depends on scaling, correlation, and design"
+      },
+      "configId": "MS-E1-REGRESSION-RIDGE-ALPHA-1",
+      "evaluationBudget": {
+        "candidateFits": 1,
+        "sameTrainRows": true,
+        "searchFits": 0
+      },
+      "fixtureId": "MS-E1-HOUSE-PRICE-V1",
+      "interpretabilityTier": "high",
+      "parameters": {
+        "memory": null,
+        "model__alpha": 1.0,
+        "model__copy_X": true,
+        "model__fit_intercept": true,
+        "model__max_iter": null,
+        "model__positive": false,
+        "model__random_state": null,
+        "model__solver": "svd",
+        "model__tol": 0.0001,
+        "scale__copy": true,
+        "scale__with_mean": true,
+        "scale__with_std": true,
+        "transform_input": null,
+        "verbose": false
+      },
+      "preprocessing": {
+        "fitRowIds": [
+          "HOUSE-01",
+          "HOUSE-02",
+          "HOUSE-03",
+          "HOUSE-04",
+          "HOUSE-05",
+          "HOUSE-06",
+          "HOUSE-07",
+          "HOUSE-08",
+          "HOUSE-09",
+          "HOUSE-10"
+        ],
+        "steps": [
+          {
+            "estimator": "StandardScaler",
+            "fitRowIds": [
+              "HOUSE-01",
+              "HOUSE-02",
+              "HOUSE-03",
+              "HOUSE-04",
+              "HOUSE-05",
+              "HOUSE-06",
+              "HOUSE-07",
+              "HOUSE-08",
+              "HOUSE-09",
+              "HOUSE-10"
+            ],
+            "mean": [
+              87.0,
+              3.5,
+              10.8
+            ],
+            "name": "scale",
+            "scale": [
+              15.198684153570664,
+              1.02469507659596,
+              6.079473661428265
+            ]
+          },
+          {
+            "estimator": "Ridge",
+            "name": "model"
+          }
+        ]
+      },
+      "testOutcome": {
+        "state": "sealed-not-evaluated-in-MS-E1"
+      },
+      "testPartitionIds": [
+        "HOUSE-15",
+        "HOUSE-16",
+        "HOUSE-17",
+        "HOUSE-18"
+      ],
+      "training": {
+        "metrics": {
+          "mae": 5.549200402573211,
+          "r2": 0.9516029403854692,
+          "rmse": 6.953140620776135
+        },
+        "predictions": [
+          178.06042531315026,
+          189.3018631523114,
+          207.59171041930176,
+          213.21242933888232,
+          218.8331482584629,
+          237.12299552545326,
+          242.74371444503385,
+          248.3644333646144,
+          266.65428063160476,
+          272.2749995511853
+        ],
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "HOUSE-01",
+          "HOUSE-02",
+          "HOUSE-03",
+          "HOUSE-04",
+          "HOUSE-05",
+          "HOUSE-06",
+          "HOUSE-07",
+          "HOUSE-08",
+          "HOUSE-09",
+          "HOUSE-10"
+        ],
+        "truth": [
+          179.0,
+          196.58,
+          201.87,
+          213.66,
+          213.45,
+          233.74,
+          237.53,
+          240.32,
+          282.61,
+          275.4
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "mae": 7.854858677764582,
+          "r2": -0.5665020372089746,
+          "rmse": 9.954802547030626
+        },
+        "predictions": [
+          277.8957184707659,
+          296.1855657377563,
+          301.80628465733685,
+          307.4270035769174
+        ],
+        "primaryMetric": "mae",
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "HOUSE-11",
+          "HOUSE-12",
+          "HOUSE-13",
+          "HOUSE-14"
+        ],
+        "truth": [
+          293.19,
+          298.48,
+          314.27,
+          306.06
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "candidateFamily": "lasso",
+      "complexity": {
+        "kind": "linear-parameters",
+        "parameterCount": 4,
+        "qualitative": "coefficient interpretation depends on scaling, correlation, and design"
+      },
+      "configId": "MS-E1-REGRESSION-LASSO-ALPHA-0.1",
+      "evaluationBudget": {
+        "candidateFits": 1,
+        "sameTrainRows": true,
+        "searchFits": 0
+      },
+      "fixtureId": "MS-E1-HOUSE-PRICE-V1",
+      "interpretabilityTier": "high-with-scale-caveat",
+      "parameters": {
+        "memory": null,
+        "model__alpha": 0.1,
+        "model__copy_X": true,
+        "model__fit_intercept": true,
+        "model__max_iter": 20000,
+        "model__positive": false,
+        "model__precompute": false,
+        "model__random_state": 20261018,
+        "model__selection": "cyclic",
+        "model__tol": 1e-09,
+        "model__warm_start": false,
+        "scale__copy": true,
+        "scale__with_mean": true,
+        "scale__with_std": true,
+        "transform_input": null,
+        "verbose": false
+      },
+      "preprocessing": {
+        "fitRowIds": [
+          "HOUSE-01",
+          "HOUSE-02",
+          "HOUSE-03",
+          "HOUSE-04",
+          "HOUSE-05",
+          "HOUSE-06",
+          "HOUSE-07",
+          "HOUSE-08",
+          "HOUSE-09",
+          "HOUSE-10"
+        ],
+        "steps": [
+          {
+            "estimator": "StandardScaler",
+            "fitRowIds": [
+              "HOUSE-01",
+              "HOUSE-02",
+              "HOUSE-03",
+              "HOUSE-04",
+              "HOUSE-05",
+              "HOUSE-06",
+              "HOUSE-07",
+              "HOUSE-08",
+              "HOUSE-09",
+              "HOUSE-10"
+            ],
+            "mean": [
+              87.0,
+              3.5,
+              10.8
+            ],
+            "name": "scale",
+            "scale": [
+              15.198684153570664,
+              1.02469507659596,
+              6.079473661428265
+            ]
+          },
+          {
+            "estimator": "Lasso",
+            "name": "model"
+          }
+        ]
+      },
+      "testOutcome": {
+        "state": "sealed-not-evaluated-in-MS-E1"
+      },
+      "testPartitionIds": [
+        "HOUSE-15",
+        "HOUSE-16",
+        "HOUSE-17",
+        "HOUSE-18"
+      ],
+      "training": {
+        "metrics": {
+          "mae": 5.458411322616863,
+          "r2": 0.9554502279593419,
+          "rmse": 6.671051100657512
+        },
+        "predictions": [
+          178.33172435831537,
+          185.93803835020987,
+          208.7726805885368,
+          212.57583758448405,
+          216.37899458043128,
+          239.2136368187582,
+          243.01679381470547,
+          246.8199508106527,
+          269.6545930489796,
+          273.4577500449269
+        ],
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "HOUSE-01",
+          "HOUSE-02",
+          "HOUSE-03",
+          "HOUSE-04",
+          "HOUSE-05",
+          "HOUSE-06",
+          "HOUSE-07",
+          "HOUSE-08",
+          "HOUSE-09",
+          "HOUSE-10"
+        ],
+        "truth": [
+          179.0,
+          196.58,
+          201.87,
+          213.66,
+          213.45,
+          233.74,
+          237.53,
+          240.32,
+          282.61,
+          275.4
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "mae": 7.3894498085685285,
+          "r2": -0.4487871646404804,
+          "rmse": 9.573471816719893
+        },
+        "predictions": [
+          277.26090704087414,
+          300.09554927920107,
+          303.8987062751483,
+          307.70186327109553
+        ],
+        "primaryMetric": "mae",
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "HOUSE-11",
+          "HOUSE-12",
+          "HOUSE-13",
+          "HOUSE-14"
+        ],
+        "truth": [
+          293.19,
+          298.48,
+          314.27,
+          306.06
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "candidateFamily": "tree",
+      "complexity": {
+        "depth": 2,
+        "kind": "single-tree",
+        "leaves": 4,
+        "nodes": 7,
+        "qualitative": "path-readable; one tree can be unstable"
+      },
+      "configId": "MS-E1-REGRESSION-TREE-DEPTH-2",
+      "evaluationBudget": {
+        "candidateFits": 1,
+        "sameTrainRows": true,
+        "searchFits": 0
+      },
+      "fixtureId": "MS-E1-HOUSE-PRICE-V1",
+      "interpretabilityTier": "medium",
+      "parameters": {
+        "ccp_alpha": 0.0,
+        "criterion": "squared_error",
+        "max_depth": 2,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "random_state": 20261018,
+        "splitter": "best"
+      },
+      "preprocessing": {
+        "fitRowIds": [
+          "HOUSE-01",
+          "HOUSE-02",
+          "HOUSE-03",
+          "HOUSE-04",
+          "HOUSE-05",
+          "HOUSE-06",
+          "HOUSE-07",
+          "HOUSE-08",
+          "HOUSE-09",
+          "HOUSE-10"
+        ],
+        "steps": [
+          {
+            "estimator": "DecisionTreeRegressor",
+            "name": "model"
+          }
+        ]
+      },
+      "testOutcome": {
+        "state": "sealed-not-evaluated-in-MS-E1"
+      },
+      "testPartitionIds": [
+        "HOUSE-15",
+        "HOUSE-16",
+        "HOUSE-17",
+        "HOUSE-18"
+      ],
+      "training": {
+        "metrics": {
+          "mae": 4.728333333333339,
+          "r2": 0.9706307831950337,
+          "rmse": 5.416487022662077
+        },
+        "predictions": [
+          187.79000000000002,
+          187.79000000000002,
+          209.66,
+          209.66,
+          209.66,
+          237.19666666666663,
+          237.19666666666663,
+          237.19666666666663,
+          279.005,
+          279.005
+        ],
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "HOUSE-01",
+          "HOUSE-02",
+          "HOUSE-03",
+          "HOUSE-04",
+          "HOUSE-05",
+          "HOUSE-06",
+          "HOUSE-07",
+          "HOUSE-08",
+          "HOUSE-09",
+          "HOUSE-10"
+        ],
+        "truth": [
+          179.0,
+          196.58,
+          201.87,
+          213.66,
+          213.45,
+          233.74,
+          237.53,
+          240.32,
+          282.61,
+          275.4
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "mae": 23.995000000000005,
+          "r2": -9.101378421849272,
+          "rmse": 25.278860239338325
+        },
+        "predictions": [
+          279.005,
+          279.005,
+          279.005,
+          279.005
+        ],
+        "primaryMetric": "mae",
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "HOUSE-11",
+          "HOUSE-12",
+          "HOUSE-13",
+          "HOUSE-14"
+        ],
+        "truth": [
+          293.19,
+          298.48,
+          314.27,
+          306.06
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "candidateFamily": "forest",
+      "complexity": {
+        "kind": "model-family",
+        "qualitative": "interpretation depends on model and data"
+      },
+      "configId": "MS-E1-REGRESSION-FOREST-16",
+      "evaluationBudget": {
+        "candidateFits": 1,
+        "sameTrainRows": true,
+        "searchFits": 0
+      },
+      "fixtureId": "MS-E1-HOUSE-PRICE-V1",
+      "interpretabilityTier": "lower",
+      "parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "criterion": "squared_error",
+        "max_depth": 3,
+        "max_features": 1.0,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 16,
+        "n_jobs": 1,
+        "oob_score": false,
+        "random_state": 20261018,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "preprocessing": {
+        "fitRowIds": [
+          "HOUSE-01",
+          "HOUSE-02",
+          "HOUSE-03",
+          "HOUSE-04",
+          "HOUSE-05",
+          "HOUSE-06",
+          "HOUSE-07",
+          "HOUSE-08",
+          "HOUSE-09",
+          "HOUSE-10"
+        ],
+        "steps": [
+          {
+            "estimator": "RandomForestRegressor",
+            "name": "model"
+          }
+        ]
+      },
+      "testOutcome": {
+        "state": "sealed-not-evaluated-in-MS-E1"
+      },
+      "testPartitionIds": [
+        "HOUSE-15",
+        "HOUSE-16",
+        "HOUSE-17",
+        "HOUSE-18"
+      ],
+      "training": {
+        "metrics": {
+          "mae": 7.893512202380961,
+          "r2": 0.8883711348292729,
+          "rmse": 10.559899358897876
+        },
+        "predictions": [
+          199.42046875000003,
+          199.42046875000003,
+          204.71468750000003,
+          207.15939583333335,
+          209.45064583333337,
+          232.61025297619048,
+          242.74054613095242,
+          242.74054613095242,
+          262.22065029761904,
+          262.22065029761904
+        ],
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "HOUSE-01",
+          "HOUSE-02",
+          "HOUSE-03",
+          "HOUSE-04",
+          "HOUSE-05",
+          "HOUSE-06",
+          "HOUSE-07",
+          "HOUSE-08",
+          "HOUSE-09",
+          "HOUSE-10"
+        ],
+        "truth": [
+          179.0,
+          196.58,
+          201.87,
+          213.66,
+          213.45,
+          233.74,
+          237.53,
+          240.32,
+          282.61,
+          275.4
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "mae": 40.779349702380955,
+          "r2": -26.287316577009932,
+          "rmse": 41.547757005030704
+        },
+        "predictions": [
+          262.22065029761904,
+          262.22065029761904,
+          262.22065029761904,
+          262.22065029761904
+        ],
+        "primaryMetric": "mae",
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "HOUSE-11",
+          "HOUSE-12",
+          "HOUSE-13",
+          "HOUSE-14"
+        ],
+        "truth": [
+          293.19,
+          298.48,
+          314.27,
+          306.06
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "candidateFamily": "boosting",
+      "complexity": {
+        "kind": "model-family",
+        "qualitative": "interpretation depends on model and data"
+      },
+      "configId": "MS-E1-REGRESSION-BOOSTING-12",
+      "evaluationBudget": {
+        "candidateFits": 1,
+        "sameTrainRows": true,
+        "searchFits": 0
+      },
+      "fixtureId": "MS-E1-HOUSE-PRICE-V1",
+      "interpretabilityTier": "lower",
+      "parameters": {
+        "alpha": 0.9,
+        "ccp_alpha": 0.0,
+        "criterion": "deprecated",
+        "init": null,
+        "learning_rate": 0.05,
+        "loss": "squared_error",
+        "max_depth": 1,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "n_estimators": 12,
+        "n_iter_no_change": null,
+        "random_state": 20261018,
+        "subsample": 1.0,
+        "tol": 0.0001,
+        "validation_fraction": 0.1,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "preprocessing": {
+        "fitRowIds": [
+          "HOUSE-01",
+          "HOUSE-02",
+          "HOUSE-03",
+          "HOUSE-04",
+          "HOUSE-05",
+          "HOUSE-06",
+          "HOUSE-07",
+          "HOUSE-08",
+          "HOUSE-09",
+          "HOUSE-10"
+        ],
+        "steps": [
+          {
+            "estimator": "GradientBoostingRegressor",
+            "name": "model"
+          }
+        ]
+      },
+      "testOutcome": {
+        "state": "sealed-not-evaluated-in-MS-E1"
+      },
+      "testPartitionIds": [
+        "HOUSE-15",
+        "HOUSE-16",
+        "HOUSE-17",
+        "HOUSE-18"
+      ],
+      "training": {
+        "metrics": {
+          "mae": 16.26542909161571,
+          "r2": 0.5505178287323623,
+          "rmse": 21.189843997175103
+        },
+        "predictions": [
+          217.17742909161572,
+          217.17742909161572,
+          217.17742909161572,
+          217.17742909161572,
+          217.17742909161572,
+          232.34534261653786,
+          232.34534261653786,
+          232.34534261653786,
+          245.61841334615394,
+          245.61841334615394
+        ],
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "HOUSE-01",
+          "HOUSE-02",
+          "HOUSE-03",
+          "HOUSE-04",
+          "HOUSE-05",
+          "HOUSE-06",
+          "HOUSE-07",
+          "HOUSE-08",
+          "HOUSE-09",
+          "HOUSE-10"
+        ],
+        "truth": [
+          179.0,
+          196.58,
+          201.87,
+          213.66,
+          213.45,
+          233.74,
+          237.53,
+          240.32,
+          282.61,
+          275.4
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "mae": 57.38158665384606,
+          "r2": -52.048805727292994,
+          "rmse": 57.930192791953004
+        },
+        "predictions": [
+          245.61841334615394,
+          245.61841334615394,
+          245.61841334615394,
+          245.61841334615394
+        ],
+        "primaryMetric": "mae",
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "HOUSE-11",
+          "HOUSE-12",
+          "HOUSE-13",
+          "HOUSE-14"
+        ],
+        "truth": [
+          293.19,
+          298.48,
+          314.27,
+          306.06
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "candidateFamily": "prior",
+      "complexity": {
+        "kind": "distribution-or-baseline",
+        "parameterCount": 2,
+        "qualitative": "simple reference, not automatically adequate"
+      },
+      "configId": "MS-E1-CLASSIFICATION-PRIOR-BASELINE",
+      "evaluationBudget": {
+        "candidateFits": 1,
+        "sameTrainRows": true,
+        "searchFits": 0
+      },
+      "fixtureId": "MS-E1-CHURN-V1",
+      "interpretabilityTier": "very-high",
+      "parameters": {
+        "constant": null,
+        "random_state": 20261018,
+        "strategy": "prior"
+      },
+      "preprocessing": {
+        "fitRowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "steps": [
+          {
+            "estimator": "DummyClassifier",
+            "name": "model"
+          }
+        ]
+      },
+      "testOutcome": {
+        "state": "sealed-not-evaluated-in-MS-E1"
+      },
+      "testPartitionIds": [
+        "CHURN-21",
+        "CHURN-22",
+        "CHURN-23",
+        "CHURN-24"
+      ],
+      "training": {
+        "metrics": {
+          "accuracy": 0.8125,
+          "balancedAccuracy": 0.5,
+          "confusion": {
+            "FN": 3,
+            "FP": 0,
+            "TN": 13,
+            "TP": 0
+          },
+          "f1Positive": 0.0,
+          "logLoss": 0.482577565177012,
+          "precisionPositive": 0.0,
+          "recallPositive": 0.0
+        },
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probabilitiesClassOrder01": [
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ]
+        ],
+        "rowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "truth": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "accuracy": 0.5,
+          "balancedAccuracy": 0.5,
+          "confusion": {
+            "FN": 2,
+            "FP": 0,
+            "TN": 2,
+            "TP": 0
+          },
+          "f1Positive": 0.0,
+          "logLoss": 0.940807899174958,
+          "precisionPositive": 0.0,
+          "recallPositive": 0.0
+        },
+        "predictions": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "primaryMetric": "balancedAccuracy",
+        "probabilitiesClassOrder01": [
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ],
+          [
+            0.8125,
+            0.1875
+          ]
+        ],
+        "rowIds": [
+          "CHURN-17",
+          "CHURN-18",
+          "CHURN-19",
+          "CHURN-20"
+        ],
+        "truth": [
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "candidateFamily": "logistic",
+      "complexity": {
+        "kind": "linear-parameters",
+        "parameterCount": 5,
+        "qualitative": "coefficient interpretation depends on scaling, correlation, and design"
+      },
+      "configId": "MS-E1-CLASSIFICATION-LOGISTIC-C1",
+      "evaluationBudget": {
+        "candidateFits": 1,
+        "sameTrainRows": true,
+        "searchFits": 0
+      },
+      "fixtureId": "MS-E1-CHURN-V1",
+      "interpretabilityTier": "high",
+      "parameters": {
+        "memory": null,
+        "model__C": 1.0,
+        "model__class_weight": null,
+        "model__dual": false,
+        "model__fit_intercept": true,
+        "model__intercept_scaling": 1,
+        "model__l1_ratio": 0.0,
+        "model__max_iter": 1000,
+        "model__n_jobs": null,
+        "model__penalty": "deprecated",
+        "model__random_state": 20261018,
+        "model__solver": "lbfgs",
+        "model__tol": 1e-09,
+        "model__verbose": 0,
+        "model__warm_start": false,
+        "scale__copy": true,
+        "scale__with_mean": true,
+        "scale__with_std": true,
+        "transform_input": null,
+        "verbose": false
+      },
+      "preprocessing": {
+        "fitRowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "steps": [
+          {
+            "estimator": "StandardScaler",
+            "fitRowIds": [
+              "CHURN-01",
+              "CHURN-02",
+              "CHURN-03",
+              "CHURN-04",
+              "CHURN-05",
+              "CHURN-06",
+              "CHURN-07",
+              "CHURN-08",
+              "CHURN-09",
+              "CHURN-10",
+              "CHURN-11",
+              "CHURN-12",
+              "CHURN-13",
+              "CHURN-14",
+              "CHURN-15",
+              "CHURN-16"
+            ],
+            "mean": [
+              31.9375,
+              98.75,
+              1.3125,
+              0.3125
+            ],
+            "name": "scale",
+            "scale": [
+              19.31796039311604,
+              22.47637648732553,
+              1.4882351124738322,
+              0.46351240544347894
+            ]
+          },
+          {
+            "estimator": "LogisticRegression",
+            "name": "model"
+          }
+        ]
+      },
+      "testOutcome": {
+        "state": "sealed-not-evaluated-in-MS-E1"
+      },
+      "testPartitionIds": [
+        "CHURN-21",
+        "CHURN-22",
+        "CHURN-23",
+        "CHURN-24"
+      ],
+      "training": {
+        "metrics": {
+          "accuracy": 1.0,
+          "balancedAccuracy": 1.0,
+          "confusion": {
+            "FN": 0,
+            "FP": 0,
+            "TN": 13,
+            "TP": 3
+          },
+          "f1Positive": 1.0,
+          "logLoss": 0.0712364181784437,
+          "precisionPositive": 1.0,
+          "recallPositive": 1.0
+        },
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "probabilitiesClassOrder01": [
+          [
+            0.988342462426108,
+            0.011657537573891933
+          ],
+          [
+            0.9938225201588058,
+            0.006177479841194232
+          ],
+          [
+            0.9579688999329335,
+            0.04203110006706647
+          ],
+          [
+            0.9770254952446192,
+            0.022974504755380744
+          ],
+          [
+            0.9884055579892962,
+            0.011594442010703851
+          ],
+          [
+            0.9110437825782324,
+            0.0889562174217676
+          ],
+          [
+            0.9941748323348241,
+            0.005825167665175926
+          ],
+          [
+            0.898511124929194,
+            0.10148887507080596
+          ],
+          [
+            0.9016988264251219,
+            0.09830117357487812
+          ],
+          [
+            0.9484210164222181,
+            0.05157898357778193
+          ],
+          [
+            0.9855878002881684,
+            0.014412199711831629
+          ],
+          [
+            0.27686517873833716,
+            0.7231348212616628
+          ],
+          [
+            0.9516293365297632,
+            0.048370663470236795
+          ],
+          [
+            0.1956802170611175,
+            0.8043197829388825
+          ],
+          [
+            0.9784660575185716,
+            0.02153394248142834
+          ],
+          [
+            0.05235687501586239,
+            0.9476431249841376
+          ]
+        ],
+        "rowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "truth": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "accuracy": 1.0,
+          "balancedAccuracy": 1.0,
+          "confusion": {
+            "FN": 0,
+            "FP": 0,
+            "TN": 2,
+            "TP": 2
+          },
+          "f1Positive": 1.0,
+          "logLoss": 0.07145922381580652,
+          "precisionPositive": 1.0,
+          "recallPositive": 1.0
+        },
+        "predictions": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "primaryMetric": "balancedAccuracy",
+        "probabilitiesClassOrder01": [
+          [
+            0.8964028731998739,
+            0.10359712680012613
+          ],
+          [
+            0.10462416398828656,
+            0.8953758360117134
+          ],
+          [
+            0.9496098429264429,
+            0.05039015707355714
+          ],
+          [
+            0.014154640335258262,
+            0.9858453596647417
+          ]
+        ],
+        "rowIds": [
+          "CHURN-17",
+          "CHURN-18",
+          "CHURN-19",
+          "CHURN-20"
+        ],
+        "truth": [
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "candidateFamily": "knn",
+      "complexity": {
+        "kind": "stored-neighbor-reference",
+        "qualitative": "prediction cost grows with stored observations and dimension",
+        "storedTrainingRows": 16
+      },
+      "configId": "MS-E1-CLASSIFICATION-KNN-K3",
+      "evaluationBudget": {
+        "candidateFits": 1,
+        "sameTrainRows": true,
+        "searchFits": 0
+      },
+      "fixtureId": "MS-E1-CHURN-V1",
+      "interpretabilityTier": "medium",
+      "parameters": {
+        "memory": null,
+        "model__algorithm": "brute",
+        "model__leaf_size": 30,
+        "model__metric": "minkowski",
+        "model__metric_params": null,
+        "model__n_jobs": null,
+        "model__n_neighbors": 3,
+        "model__p": 2,
+        "model__weights": "uniform",
+        "scale__copy": true,
+        "scale__with_mean": true,
+        "scale__with_std": true,
+        "transform_input": null,
+        "verbose": false
+      },
+      "preprocessing": {
+        "fitRowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "steps": [
+          {
+            "estimator": "StandardScaler",
+            "fitRowIds": [
+              "CHURN-01",
+              "CHURN-02",
+              "CHURN-03",
+              "CHURN-04",
+              "CHURN-05",
+              "CHURN-06",
+              "CHURN-07",
+              "CHURN-08",
+              "CHURN-09",
+              "CHURN-10",
+              "CHURN-11",
+              "CHURN-12",
+              "CHURN-13",
+              "CHURN-14",
+              "CHURN-15",
+              "CHURN-16"
+            ],
+            "mean": [
+              31.9375,
+              98.75,
+              1.3125,
+              0.3125
+            ],
+            "name": "scale",
+            "scale": [
+              19.31796039311604,
+              22.47637648732553,
+              1.4882351124738322,
+              0.46351240544347894
+            ]
+          },
+          {
+            "estimator": "KNeighborsClassifier",
+            "name": "model"
+          }
+        ]
+      },
+      "testOutcome": {
+        "state": "sealed-not-evaluated-in-MS-E1"
+      },
+      "testPartitionIds": [
+        "CHURN-21",
+        "CHURN-22",
+        "CHURN-23",
+        "CHURN-24"
+      ],
+      "training": {
+        "metrics": {
+          "accuracy": 1.0,
+          "balancedAccuracy": 1.0,
+          "confusion": {
+            "FN": 0,
+            "FP": 0,
+            "TN": 13,
+            "TP": 3
+          },
+          "f1Positive": 1.0,
+          "logLoss": -0.0,
+          "precisionPositive": 1.0,
+          "recallPositive": 1.0
+        },
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "probabilitiesClassOrder01": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "rowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "truth": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "accuracy": 1.0,
+          "balancedAccuracy": 1.0,
+          "confusion": {
+            "FN": 0,
+            "FP": 0,
+            "TN": 2,
+            "TP": 2
+          },
+          "f1Positive": 1.0,
+          "logLoss": -0.0,
+          "precisionPositive": 1.0,
+          "recallPositive": 1.0
+        },
+        "predictions": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "primaryMetric": "balancedAccuracy",
+        "probabilitiesClassOrder01": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "rowIds": [
+          "CHURN-17",
+          "CHURN-18",
+          "CHURN-19",
+          "CHURN-20"
+        ],
+        "truth": [
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "candidateFamily": "gaussian",
+      "complexity": {
+        "kind": "distribution-or-baseline",
+        "parameterCount": 10,
+        "qualitative": "simple reference, not automatically adequate"
+      },
+      "configId": "MS-E1-CLASSIFICATION-GAUSSIAN-NB",
+      "evaluationBudget": {
+        "candidateFits": 1,
+        "sameTrainRows": true,
+        "searchFits": 0
+      },
+      "fixtureId": "MS-E1-CHURN-V1",
+      "interpretabilityTier": "medium",
+      "parameters": {
+        "priors": null,
+        "var_smoothing": 1e-09
+      },
+      "preprocessing": {
+        "fitRowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "steps": [
+          {
+            "estimator": "GaussianNB",
+            "name": "model"
+          }
+        ]
+      },
+      "testOutcome": {
+        "state": "sealed-not-evaluated-in-MS-E1"
+      },
+      "testPartitionIds": [
+        "CHURN-21",
+        "CHURN-22",
+        "CHURN-23",
+        "CHURN-24"
+      ],
+      "training": {
+        "metrics": {
+          "accuracy": 1.0,
+          "balancedAccuracy": 1.0,
+          "confusion": {
+            "FN": 0,
+            "FP": 0,
+            "TN": 13,
+            "TP": 3
+          },
+          "f1Positive": 1.0,
+          "logLoss": 1.140520034161357e-08,
+          "precisionPositive": 1.0,
+          "recallPositive": 1.0
+        },
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "probabilitiesClassOrder01": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            1.0898319804344975e-18
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.9999999971459541,
+            2.8540458921135414e-09
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.7896024024360038e-07,
+            0.9999998210397596
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            6.68843529381054e-10,
+            0.9999999993311564
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            5.986039316333572e-14,
+            0.9999999999999405
+          ]
+        ],
+        "rowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "truth": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "accuracy": 1.0,
+          "balancedAccuracy": 1.0,
+          "confusion": {
+            "FN": 0,
+            "FP": 0,
+            "TN": 2,
+            "TP": 2
+          },
+          "f1Positive": 1.0,
+          "logLoss": 9.514677936229634e-11,
+          "precisionPositive": 1.0,
+          "recallPositive": 1.0
+        },
+        "predictions": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "primaryMetric": "balancedAccuracy",
+        "probabilitiesClassOrder01": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            3.805854788078068e-10,
+            0.9999999996194147
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.667097542385244e-15,
+            0.9999999999999982
+          ]
+        ],
+        "rowIds": [
+          "CHURN-17",
+          "CHURN-18",
+          "CHURN-19",
+          "CHURN-20"
+        ],
+        "truth": [
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "candidateFamily": "tree",
+      "complexity": {
+        "depth": 1,
+        "kind": "single-tree",
+        "leaves": 2,
+        "nodes": 3,
+        "qualitative": "path-readable; one tree can be unstable"
+      },
+      "configId": "MS-E1-CLASSIFICATION-TREE-DEPTH-2",
+      "evaluationBudget": {
+        "candidateFits": 1,
+        "sameTrainRows": true,
+        "searchFits": 0
+      },
+      "fixtureId": "MS-E1-CHURN-V1",
+      "interpretabilityTier": "medium",
+      "parameters": {
+        "ccp_alpha": 0.0,
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": 2,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "random_state": 20261018,
+        "splitter": "best"
+      },
+      "preprocessing": {
+        "fitRowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "steps": [
+          {
+            "estimator": "DecisionTreeClassifier",
+            "name": "model"
+          }
+        ]
+      },
+      "testOutcome": {
+        "state": "sealed-not-evaluated-in-MS-E1"
+      },
+      "testPartitionIds": [
+        "CHURN-21",
+        "CHURN-22",
+        "CHURN-23",
+        "CHURN-24"
+      ],
+      "training": {
+        "metrics": {
+          "accuracy": 1.0,
+          "balancedAccuracy": 1.0,
+          "confusion": {
+            "FN": 0,
+            "FP": 0,
+            "TN": 13,
+            "TP": 3
+          },
+          "f1Positive": 1.0,
+          "logLoss": -0.0,
+          "precisionPositive": 1.0,
+          "recallPositive": 1.0
+        },
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "probabilitiesClassOrder01": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "rowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "truth": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "accuracy": 1.0,
+          "balancedAccuracy": 1.0,
+          "confusion": {
+            "FN": 0,
+            "FP": 0,
+            "TN": 2,
+            "TP": 2
+          },
+          "f1Positive": 1.0,
+          "logLoss": -0.0,
+          "precisionPositive": 1.0,
+          "recallPositive": 1.0
+        },
+        "predictions": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "primaryMetric": "balancedAccuracy",
+        "probabilitiesClassOrder01": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "rowIds": [
+          "CHURN-17",
+          "CHURN-18",
+          "CHURN-19",
+          "CHURN-20"
+        ],
+        "truth": [
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "candidateFamily": "forest",
+      "complexity": {
+        "kind": "model-family",
+        "qualitative": "interpretation depends on model and data"
+      },
+      "configId": "MS-E1-CLASSIFICATION-FOREST-16",
+      "evaluationBudget": {
+        "candidateFits": 1,
+        "sameTrainRows": true,
+        "searchFits": 0
+      },
+      "fixtureId": "MS-E1-CHURN-V1",
+      "interpretabilityTier": "lower",
+      "parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": 3,
+        "max_features": "sqrt",
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 16,
+        "n_jobs": 1,
+        "oob_score": false,
+        "random_state": 20261018,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "preprocessing": {
+        "fitRowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "steps": [
+          {
+            "estimator": "RandomForestClassifier",
+            "name": "model"
+          }
+        ]
+      },
+      "testOutcome": {
+        "state": "sealed-not-evaluated-in-MS-E1"
+      },
+      "testPartitionIds": [
+        "CHURN-21",
+        "CHURN-22",
+        "CHURN-23",
+        "CHURN-24"
+      ],
+      "training": {
+        "metrics": {
+          "accuracy": 1.0,
+          "balancedAccuracy": 1.0,
+          "confusion": {
+            "FN": 0,
+            "FP": 0,
+            "TN": 13,
+            "TP": 3
+          },
+          "f1Positive": 1.0,
+          "logLoss": 0.06792456849705425,
+          "precisionPositive": 1.0,
+          "recallPositive": 1.0
+        },
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "probabilitiesClassOrder01": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.8385416666666667,
+            0.16145833333333331
+          ],
+          [
+            0.9791666666666667,
+            0.020833333333333332
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.8541666666666667,
+            0.14583333333333331
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.8385416666666667,
+            0.16145833333333331
+          ],
+          [
+            0.9166666666666667,
+            0.08333333333333333
+          ],
+          [
+            0.9791666666666667,
+            0.020833333333333332
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.21354166666666666,
+            0.7864583333333333
+          ],
+          [
+            0.9791666666666667,
+            0.020833333333333332
+          ],
+          [
+            0.11979166666666666,
+            0.8802083333333333
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.057291666666666664,
+            0.9427083333333333
+          ]
+        ],
+        "rowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "truth": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "accuracy": 1.0,
+          "balancedAccuracy": 1.0,
+          "confusion": {
+            "FN": 0,
+            "FP": 0,
+            "TN": 2,
+            "TP": 2
+          },
+          "f1Positive": 1.0,
+          "logLoss": 0.034762522680436,
+          "precisionPositive": 1.0,
+          "recallPositive": 1.0
+        },
+        "predictions": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "primaryMetric": "balancedAccuracy",
+        "probabilitiesClassOrder01": [
+          [
+            0.9791666666666667,
+            0.020833333333333332
+          ],
+          [
+            0.057291666666666664,
+            0.9427083333333333
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.057291666666666664,
+            0.9427083333333333
+          ]
+        ],
+        "rowIds": [
+          "CHURN-17",
+          "CHURN-18",
+          "CHURN-19",
+          "CHURN-20"
+        ],
+        "truth": [
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "candidateFamily": "boosting",
+      "complexity": {
+        "kind": "model-family",
+        "qualitative": "interpretation depends on model and data"
+      },
+      "configId": "MS-E1-CLASSIFICATION-BOOSTING-12",
+      "evaluationBudget": {
+        "candidateFits": 1,
+        "sameTrainRows": true,
+        "searchFits": 0
+      },
+      "fixtureId": "MS-E1-CHURN-V1",
+      "interpretabilityTier": "lower",
+      "parameters": {
+        "ccp_alpha": 0.0,
+        "criterion": "deprecated",
+        "init": null,
+        "learning_rate": 0.05,
+        "loss": "log_loss",
+        "max_depth": 1,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "n_estimators": 12,
+        "n_iter_no_change": null,
+        "random_state": 20261018,
+        "subsample": 1.0,
+        "tol": 0.0001,
+        "validation_fraction": 0.1,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "preprocessing": {
+        "fitRowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "steps": [
+          {
+            "estimator": "GradientBoostingClassifier",
+            "name": "model"
+          }
+        ]
+      },
+      "testOutcome": {
+        "state": "sealed-not-evaluated-in-MS-E1"
+      },
+      "testPartitionIds": [
+        "CHURN-21",
+        "CHURN-22",
+        "CHURN-23",
+        "CHURN-24"
+      ],
+      "training": {
+        "metrics": {
+          "accuracy": 1.0,
+          "balancedAccuracy": 1.0,
+          "confusion": {
+            "FN": 0,
+            "FP": 0,
+            "TN": 13,
+            "TP": 3
+          },
+          "f1Positive": 1.0,
+          "logLoss": 0.1944278442444017,
+          "precisionPositive": 1.0,
+          "recallPositive": 1.0
+        },
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "probabilitiesClassOrder01": [
+          [
+            0.8973559266642313,
+            0.10264407333576869
+          ],
+          [
+            0.8973559266642313,
+            0.10264407333576869
+          ],
+          [
+            0.8973559266642313,
+            0.10264407333576869
+          ],
+          [
+            0.8973559266642313,
+            0.10264407333576869
+          ],
+          [
+            0.8973559266642313,
+            0.10264407333576869
+          ],
+          [
+            0.8973559266642313,
+            0.10264407333576869
+          ],
+          [
+            0.8973559266642313,
+            0.10264407333576869
+          ],
+          [
+            0.8973559266642313,
+            0.10264407333576869
+          ],
+          [
+            0.8973559266642313,
+            0.10264407333576869
+          ],
+          [
+            0.8973559266642313,
+            0.10264407333576869
+          ],
+          [
+            0.8973559266642313,
+            0.10264407333576869
+          ],
+          [
+            0.4331365353887392,
+            0.5668634646112608
+          ],
+          [
+            0.8973559266642313,
+            0.10264407333576869
+          ],
+          [
+            0.4331365353887392,
+            0.5668634646112608
+          ],
+          [
+            0.8973559266642313,
+            0.10264407333576869
+          ],
+          [
+            0.4331365353887392,
+            0.5668634646112608
+          ]
+        ],
+        "rowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "truth": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "accuracy": 1.0,
+          "balancedAccuracy": 1.0,
+          "confusion": {
+            "FN": 0,
+            "FP": 0,
+            "TN": 2,
+            "TP": 2
+          },
+          "f1Positive": 1.0,
+          "logLoss": 0.33796975315304056,
+          "precisionPositive": 1.0,
+          "recallPositive": 1.0
+        },
+        "predictions": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "primaryMetric": "balancedAccuracy",
+        "probabilitiesClassOrder01": [
+          [
+            0.8973559266642313,
+            0.10264407333576869
+          ],
+          [
+            0.4331365353887392,
+            0.5668634646112608
+          ],
+          [
+            0.8973559266642313,
+            0.10264407333576869
+          ],
+          [
+            0.4331365353887392,
+            0.5668634646112608
+          ]
+        ],
+        "rowIds": [
+          "CHURN-17",
+          "CHURN-18",
+          "CHURN-19",
+          "CHURN-20"
+        ],
+        "truth": [
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "candidateFamily": "linear",
+      "complexity": {
+        "kind": "linear-parameters",
+        "parameterCount": 5,
+        "qualitative": "coefficient interpretation depends on scaling, correlation, and design"
+      },
+      "configId": "MS-E1-CLASSIFICATION-LINEAR-SVC-C1",
+      "evaluationBudget": {
+        "candidateFits": 1,
+        "sameTrainRows": true,
+        "searchFits": 0
+      },
+      "fixtureId": "MS-E1-CHURN-V1",
+      "interpretabilityTier": "medium",
+      "parameters": {
+        "memory": null,
+        "model__C": 1.0,
+        "model__break_ties": false,
+        "model__cache_size": 200,
+        "model__class_weight": null,
+        "model__coef0": 0.0,
+        "model__decision_function_shape": "ovr",
+        "model__degree": 3,
+        "model__gamma": "scale",
+        "model__kernel": "linear",
+        "model__max_iter": -1,
+        "model__probability": false,
+        "model__random_state": 20261018,
+        "model__shrinking": true,
+        "model__tol": 1e-08,
+        "model__verbose": false,
+        "scale__copy": true,
+        "scale__with_mean": true,
+        "scale__with_std": true,
+        "transform_input": null,
+        "verbose": false
+      },
+      "preprocessing": {
+        "fitRowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "steps": [
+          {
+            "estimator": "StandardScaler",
+            "fitRowIds": [
+              "CHURN-01",
+              "CHURN-02",
+              "CHURN-03",
+              "CHURN-04",
+              "CHURN-05",
+              "CHURN-06",
+              "CHURN-07",
+              "CHURN-08",
+              "CHURN-09",
+              "CHURN-10",
+              "CHURN-11",
+              "CHURN-12",
+              "CHURN-13",
+              "CHURN-14",
+              "CHURN-15",
+              "CHURN-16"
+            ],
+            "mean": [
+              31.9375,
+              98.75,
+              1.3125,
+              0.3125
+            ],
+            "name": "scale",
+            "scale": [
+              19.31796039311604,
+              22.47637648732553,
+              1.4882351124738322,
+              0.46351240544347894
+            ]
+          },
+          {
+            "estimator": "SVC",
+            "name": "model"
+          }
+        ]
+      },
+      "testOutcome": {
+        "state": "sealed-not-evaluated-in-MS-E1"
+      },
+      "testPartitionIds": [
+        "CHURN-21",
+        "CHURN-22",
+        "CHURN-23",
+        "CHURN-24"
+      ],
+      "training": {
+        "metrics": {
+          "accuracy": 1.0,
+          "balancedAccuracy": 1.0,
+          "confusion": {
+            "FN": 0,
+            "FP": 0,
+            "TN": 13,
+            "TP": 3
+          },
+          "f1Positive": 1.0,
+          "logLoss": {
+            "reason": "candidate does not expose class probabilities",
+            "state": "not-produced"
+          },
+          "precisionPositive": 1.0,
+          "recallPositive": 1.0
+        },
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "truth": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "accuracy": 1.0,
+          "balancedAccuracy": 1.0,
+          "confusion": {
+            "FN": 0,
+            "FP": 0,
+            "TN": 2,
+            "TP": 2
+          },
+          "f1Positive": 1.0,
+          "logLoss": {
+            "reason": "candidate does not expose class probabilities",
+            "state": "not-produced"
+          },
+          "precisionPositive": 1.0,
+          "recallPositive": 1.0
+        },
+        "predictions": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "primaryMetric": "balancedAccuracy",
+        "probabilitiesClassOrder01": {
+          "state": "not-produced"
+        },
+        "rowIds": [
+          "CHURN-17",
+          "CHURN-18",
+          "CHURN-19",
+          "CHURN-20"
+        ],
+        "truth": [
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "warnings": [
+        "FutureWarning: The `probability` parameter was deprecated in 1.9 and will be removed in version 1.11. Use `CalibratedClassifierCV(SVC(), ensemble=False)` instead of `SVC(probability=True)`"
+      ]
+    },
+    {
+      "candidateFamily": "mlp",
+      "complexity": {
+        "kind": "neural-network",
+        "qualitative": "parameter count does not equal explanation quality",
+        "trainableParameters": 25
+      },
+      "configId": "MS-E1-CLASSIFICATION-MLP-4-RELU",
+      "evaluationBudget": {
+        "candidateFits": 1,
+        "sameTrainRows": true,
+        "searchFits": 0
+      },
+      "fixtureId": "MS-E1-CHURN-V1",
+      "interpretabilityTier": "lower",
+      "parameters": {
+        "memory": null,
+        "model__activation": "relu",
+        "model__alpha": 0.1,
+        "model__batch_size": "auto",
+        "model__beta_1": 0.9,
+        "model__beta_2": 0.999,
+        "model__early_stopping": false,
+        "model__epsilon": 1e-08,
+        "model__hidden_layer_sizes": [
+          4
+        ],
+        "model__learning_rate": "constant",
+        "model__learning_rate_init": 0.001,
+        "model__max_fun": 15000,
+        "model__max_iter": 1000,
+        "model__momentum": 0.9,
+        "model__n_iter_no_change": 10,
+        "model__nesterovs_momentum": true,
+        "model__power_t": 0.5,
+        "model__random_state": 20261018,
+        "model__shuffle": true,
+        "model__solver": "lbfgs",
+        "model__tol": 1e-08,
+        "model__validation_fraction": 0.1,
+        "model__verbose": false,
+        "model__warm_start": false,
+        "scale__copy": true,
+        "scale__with_mean": true,
+        "scale__with_std": true,
+        "transform_input": null,
+        "verbose": false
+      },
+      "preprocessing": {
+        "fitRowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "steps": [
+          {
+            "estimator": "StandardScaler",
+            "fitRowIds": [
+              "CHURN-01",
+              "CHURN-02",
+              "CHURN-03",
+              "CHURN-04",
+              "CHURN-05",
+              "CHURN-06",
+              "CHURN-07",
+              "CHURN-08",
+              "CHURN-09",
+              "CHURN-10",
+              "CHURN-11",
+              "CHURN-12",
+              "CHURN-13",
+              "CHURN-14",
+              "CHURN-15",
+              "CHURN-16"
+            ],
+            "mean": [
+              31.9375,
+              98.75,
+              1.3125,
+              0.3125
+            ],
+            "name": "scale",
+            "scale": [
+              19.31796039311604,
+              22.47637648732553,
+              1.4882351124738322,
+              0.46351240544347894
+            ]
+          },
+          {
+            "estimator": "MLPClassifier",
+            "name": "model"
+          }
+        ]
+      },
+      "testOutcome": {
+        "state": "sealed-not-evaluated-in-MS-E1"
+      },
+      "testPartitionIds": [
+        "CHURN-21",
+        "CHURN-22",
+        "CHURN-23",
+        "CHURN-24"
+      ],
+      "training": {
+        "metrics": {
+          "accuracy": 1.0,
+          "balancedAccuracy": 1.0,
+          "confusion": {
+            "FN": 0,
+            "FP": 0,
+            "TN": 13,
+            "TP": 3
+          },
+          "f1Positive": 1.0,
+          "logLoss": 0.005334819740096253,
+          "precisionPositive": 1.0,
+          "recallPositive": 1.0
+        },
+        "predictions": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "probabilitiesClassOrder01": [
+          [
+            0.999940344671923,
+            5.965532807694634e-05
+          ],
+          [
+            0.9999885880483015,
+            1.1411951698529607e-05
+          ],
+          [
+            0.9987201723671235,
+            0.0012798276328764347
+          ],
+          [
+            0.9997115517462859,
+            0.00028844825371414714
+          ],
+          [
+            0.9999415094583584,
+            5.849054164166162e-05
+          ],
+          [
+            0.990818997035158,
+            0.00918100296484201
+          ],
+          [
+            0.9999902672869119,
+            9.7327130880866e-06
+          ],
+          [
+            0.9856313513926036,
+            0.014368648607396445
+          ],
+          [
+            0.9878980327888354,
+            0.012101967211164612
+          ],
+          [
+            0.9975226665510561,
+            0.0024773334489439076
+          ],
+          [
+            0.9998977736759755,
+            0.00010222632402440643
+          ],
+          [
+            0.030246891598887715,
+            0.9697531084011123
+          ],
+          [
+            0.9979282021841426,
+            0.002071797815857413
+          ],
+          [
+            0.011727745872367579,
+            0.9882722541276324
+          ],
+          [
+            0.9997083819018444,
+            0.00029161809815563146
+          ],
+          [
+            0.0003174846098678019,
+            0.9996825153901322
+          ]
+        ],
+        "rowIds": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "truth": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "validation": {
+        "metrics": {
+          "accuracy": 1.0,
+          "balancedAccuracy": 1.0,
+          "confusion": {
+            "FN": 0,
+            "FP": 0,
+            "TN": 2,
+            "TP": 2
+          },
+          "f1Positive": 1.0,
+          "logLoss": 0.005417330075703408,
+          "precisionPositive": 1.0,
+          "recallPositive": 1.0
+        },
+        "predictions": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "primaryMetric": "balancedAccuracy",
+        "probabilitiesClassOrder01": [
+          [
+            0.9831208833582145,
+            0.016879116641785555
+          ],
+          [
+            0.0017977277612150067,
+            0.998202272238785
+          ],
+          [
+            0.9972010615142989,
+            0.002798938485701082
+          ],
+          [
+            4.391840605000308e-05,
+            0.99995608159395
+          ]
+        ],
+        "rowIds": [
+          "CHURN-17",
+          "CHURN-18",
+          "CHURN-19",
+          "CHURN-20"
+        ],
+        "truth": [
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      "warnings": []
+    },
+    {
+      "configId": "MS-E1-REJECT-MISMATCHED-VALIDATION-ROWS",
+      "message": "Candidates must share the same validation row IDs; no ranking is computed.",
+      "reasonCode": "comparison.validation-rows-differ",
+      "status": "rejected"
+    },
+    {
+      "configId": "MS-E1-REJECT-GLOBAL-PREPROCESS-FIT",
+      "message": "Fit preprocessing only on training rows; no model score is computed.",
+      "reasonCode": "preprocessing.fit-outside-training",
+      "status": "rejected"
+    },
+    {
+      "configId": "MS-E1-REJECT-TEST-BASED-SELECTION",
+      "message": "The test set cannot select or tune candidates; no model score is computed.",
+      "reasonCode": "selection.final-test-access",
+      "status": "rejected"
+    }
+  ],
+  "experimentId": "MS-E1",
+  "fixtures": [
+    {
+      "allRows": [
+        {
+          "features": {
+            "age_years": 0.0,
+            "area_m2": 60.0,
+            "rooms": 2.0
+          },
+          "rowId": "HOUSE-01",
+          "target": 179.0
+        },
+        {
+          "features": {
+            "age_years": 4.0,
+            "area_m2": 70.0,
+            "rooms": 2.0
+          },
+          "rowId": "HOUSE-02",
+          "target": 196.58
+        },
+        {
+          "features": {
+            "age_years": 6.0,
+            "area_m2": 75.0,
+            "rooms": 3.0
+          },
+          "rowId": "HOUSE-03",
+          "target": 201.87
+        },
+        {
+          "features": {
+            "age_years": 8.0,
+            "area_m2": 80.0,
+            "rooms": 3.0
+          },
+          "rowId": "HOUSE-04",
+          "target": 213.66
+        },
+        {
+          "features": {
+            "age_years": 10.0,
+            "area_m2": 85.0,
+            "rooms": 3.0
+          },
+          "rowId": "HOUSE-05",
+          "target": 213.45
+        },
+        {
+          "features": {
+            "age_years": 12.0,
+            "area_m2": 90.0,
+            "rooms": 4.0
+          },
+          "rowId": "HOUSE-06",
+          "target": 233.74
+        },
+        {
+          "features": {
+            "age_years": 14.0,
+            "area_m2": 95.0,
+            "rooms": 4.0
+          },
+          "rowId": "HOUSE-07",
+          "target": 237.53
+        },
+        {
+          "features": {
+            "age_years": 16.0,
+            "area_m2": 100.0,
+            "rooms": 4.0
+          },
+          "rowId": "HOUSE-08",
+          "target": 240.32
+        },
+        {
+          "features": {
+            "age_years": 18.0,
+            "area_m2": 105.0,
+            "rooms": 5.0
+          },
+          "rowId": "HOUSE-09",
+          "target": 282.61
+        },
+        {
+          "features": {
+            "age_years": 20.0,
+            "area_m2": 110.0,
+            "rooms": 5.0
+          },
+          "rowId": "HOUSE-10",
+          "target": 275.4
+        },
+        {
+          "features": {
+            "age_years": 22.0,
+            "area_m2": 115.0,
+            "rooms": 5.0
+          },
+          "rowId": "HOUSE-11",
+          "target": 293.19
+        },
+        {
+          "features": {
+            "age_years": 24.0,
+            "area_m2": 120.0,
+            "rooms": 6.0
+          },
+          "rowId": "HOUSE-12",
+          "target": 298.48
+        },
+        {
+          "features": {
+            "age_years": 26.0,
+            "area_m2": 125.0,
+            "rooms": 6.0
+          },
+          "rowId": "HOUSE-13",
+          "target": 314.27
+        },
+        {
+          "features": {
+            "age_years": 28.0,
+            "area_m2": 130.0,
+            "rooms": 6.0
+          },
+          "rowId": "HOUSE-14",
+          "target": 306.06
+        }
+      ],
+      "featureNames": [
+        "area_m2",
+        "rooms",
+        "age_years"
+      ],
+      "fixtureId": "MS-E1-HOUSE-PRICE-V1",
+      "partitions": {
+        "test": [
+          "HOUSE-15",
+          "HOUSE-16",
+          "HOUSE-17",
+          "HOUSE-18"
+        ],
+        "train": [
+          "HOUSE-01",
+          "HOUSE-02",
+          "HOUSE-03",
+          "HOUSE-04",
+          "HOUSE-05",
+          "HOUSE-06",
+          "HOUSE-07",
+          "HOUSE-08",
+          "HOUSE-09",
+          "HOUSE-10"
+        ],
+        "validation": [
+          "HOUSE-11",
+          "HOUSE-12",
+          "HOUSE-13",
+          "HOUSE-14"
+        ]
+      },
+      "problem": "fictional house-price regression; target is thousands of fictional credits",
+      "sealedTestTargetIds": [
+        "HOUSE-15",
+        "HOUSE-16",
+        "HOUSE-17",
+        "HOUSE-18"
+      ],
+      "sealedTestTargetRows": "see verification-only test-reference sidecar",
+      "targetName": "price_kcredits",
+      "testFeatureRows": [
+        {
+          "features": {
+            "age_years": 30.0,
+            "area_m2": 135.0,
+            "rooms": 7.0
+          },
+          "rowId": "HOUSE-15"
+        },
+        {
+          "features": {
+            "age_years": 32.0,
+            "area_m2": 140.0,
+            "rooms": 7.0
+          },
+          "rowId": "HOUSE-16"
+        },
+        {
+          "features": {
+            "age_years": 34.0,
+            "area_m2": 145.0,
+            "rooms": 7.0
+          },
+          "rowId": "HOUSE-17"
+        },
+        {
+          "features": {
+            "age_years": 36.0,
+            "area_m2": 150.0,
+            "rooms": 8.0
+          },
+          "rowId": "HOUSE-18"
+        }
+      ]
+    },
+    {
+      "allRows": [
+        {
+          "features": {
+            "late_payment": 0.0,
+            "monthly_charge": 110.0,
+            "support_calls": 0.0,
+            "tenure_months": 3.0
+          },
+          "rowId": "CHURN-01",
+          "target": 0
+        },
+        {
+          "features": {
+            "late_payment": 0.0,
+            "monthly_charge": 85.0,
+            "support_calls": 0.0,
+            "tenure_months": 6.0
+          },
+          "rowId": "CHURN-02",
+          "target": 0
+        },
+        {
+          "features": {
+            "late_payment": 1.0,
+            "monthly_charge": 70.0,
+            "support_calls": 1.0,
+            "tenure_months": 8.0
+          },
+          "rowId": "CHURN-03",
+          "target": 0
+        },
+        {
+          "features": {
+            "late_payment": 0.0,
+            "monthly_charge": 105.0,
+            "support_calls": 1.0,
+            "tenure_months": 12.0
+          },
+          "rowId": "CHURN-04",
+          "target": 0
+        },
+        {
+          "features": {
+            "late_payment": 0.0,
+            "monthly_charge": 95.0,
+            "support_calls": 0.0,
+            "tenure_months": 17.0
+          },
+          "rowId": "CHURN-05",
+          "target": 0
+        },
+        {
+          "features": {
+            "late_payment": 0.0,
+            "monthly_charge": 125.0,
+            "support_calls": 2.0,
+            "tenure_months": 21.0
+          },
+          "rowId": "CHURN-06",
+          "target": 0
+        },
+        {
+          "features": {
+            "late_payment": 0.0,
+            "monthly_charge": 65.0,
+            "support_calls": 0.0,
+            "tenure_months": 23.0
+          },
+          "rowId": "CHURN-07",
+          "target": 0
+        },
+        {
+          "features": {
+            "late_payment": 1.0,
+            "monthly_charge": 80.0,
+            "support_calls": 1.0,
+            "tenure_months": 29.0
+          },
+          "rowId": "CHURN-08",
+          "target": 0
+        },
+        {
+          "features": {
+            "late_payment": 0.0,
+            "monthly_charge": 115.0,
+            "support_calls": 2.0,
+            "tenure_months": 34.0
+          },
+          "rowId": "CHURN-09",
+          "target": 0
+        },
+        {
+          "features": {
+            "late_payment": 0.0,
+            "monthly_charge": 105.0,
+            "support_calls": 1.0,
+            "tenure_months": 39.0
+          },
+          "rowId": "CHURN-10",
+          "target": 0
+        },
+        {
+          "features": {
+            "late_payment": 0.0,
+            "monthly_charge": 75.0,
+            "support_calls": 0.0,
+            "tenure_months": 43.0
+          },
+          "rowId": "CHURN-11",
+          "target": 0
+        },
+        {
+          "features": {
+            "late_payment": 1.0,
+            "monthly_charge": 130.0,
+            "support_calls": 3.0,
+            "tenure_months": 47.0
+          },
+          "rowId": "CHURN-12",
+          "target": 1
+        },
+        {
+          "features": {
+            "late_payment": 0.0,
+            "monthly_charge": 90.0,
+            "support_calls": 1.0,
+            "tenure_months": 51.0
+          },
+          "rowId": "CHURN-13",
+          "target": 0
+        },
+        {
+          "features": {
+            "late_payment": 1.0,
+            "monthly_charge": 118.0,
+            "support_calls": 4.0,
+            "tenure_months": 55.0
+          },
+          "rowId": "CHURN-14",
+          "target": 1
+        },
+        {
+          "features": {
+            "late_payment": 0.0,
+            "monthly_charge": 72.0,
+            "support_calls": 0.0,
+            "tenure_months": 59.0
+          },
+          "rowId": "CHURN-15",
+          "target": 0
+        },
+        {
+          "features": {
+            "late_payment": 1.0,
+            "monthly_charge": 140.0,
+            "support_calls": 5.0,
+            "tenure_months": 64.0
+          },
+          "rowId": "CHURN-16",
+          "target": 1
+        },
+        {
+          "features": {
+            "late_payment": 0.0,
+            "monthly_charge": 100.0,
+            "support_calls": 1.0,
+            "tenure_months": 68.0
+          },
+          "rowId": "CHURN-17",
+          "target": 0
+        },
+        {
+          "features": {
+            "late_payment": 1.0,
+            "monthly_charge": 125.0,
+            "support_calls": 4.0,
+            "tenure_months": 72.0
+          },
+          "rowId": "CHURN-18",
+          "target": 1
+        },
+        {
+          "features": {
+            "late_payment": 0.0,
+            "monthly_charge": 84.0,
+            "support_calls": 0.0,
+            "tenure_months": 76.0
+          },
+          "rowId": "CHURN-19",
+          "target": 0
+        },
+        {
+          "features": {
+            "late_payment": 1.0,
+            "monthly_charge": 150.0,
+            "support_calls": 6.0,
+            "tenure_months": 80.0
+          },
+          "rowId": "CHURN-20",
+          "target": 1
+        }
+      ],
+      "featureNames": [
+        "tenure_months",
+        "monthly_charge",
+        "support_calls",
+        "late_payment"
+      ],
+      "fixtureId": "MS-E1-CHURN-V1",
+      "negativeClass": 0,
+      "partitions": {
+        "test": [
+          "CHURN-21",
+          "CHURN-22",
+          "CHURN-23",
+          "CHURN-24"
+        ],
+        "train": [
+          "CHURN-01",
+          "CHURN-02",
+          "CHURN-03",
+          "CHURN-04",
+          "CHURN-05",
+          "CHURN-06",
+          "CHURN-07",
+          "CHURN-08",
+          "CHURN-09",
+          "CHURN-10",
+          "CHURN-11",
+          "CHURN-12",
+          "CHURN-13",
+          "CHURN-14",
+          "CHURN-15",
+          "CHURN-16"
+        ],
+        "validation": [
+          "CHURN-17",
+          "CHURN-18",
+          "CHURN-19",
+          "CHURN-20"
+        ]
+      },
+      "positiveClass": 1,
+      "problem": "fictional customer-churn classification; label 1 means churn in the declared future window",
+      "sealedTestTargetIds": [
+        "CHURN-21",
+        "CHURN-22",
+        "CHURN-23",
+        "CHURN-24"
+      ],
+      "sealedTestTargetRows": "see verification-only test-reference sidecar",
+      "targetName": "churn_90d",
+      "testFeatureRows": [
+        {
+          "features": {
+            "late_payment": 0.0,
+            "monthly_charge": 95.0,
+            "support_calls": 2.0,
+            "tenure_months": 84.0
+          },
+          "rowId": "CHURN-21"
+        },
+        {
+          "features": {
+            "late_payment": 1.0,
+            "monthly_charge": 132.0,
+            "support_calls": 5.0,
+            "tenure_months": 88.0
+          },
+          "rowId": "CHURN-22"
+        },
+        {
+          "features": {
+            "late_payment": 0.0,
+            "monthly_charge": 78.0,
+            "support_calls": 1.0,
+            "tenure_months": 92.0
+          },
+          "rowId": "CHURN-23"
+        },
+        {
+          "features": {
+            "late_payment": 1.0,
+            "monthly_charge": 160.0,
+            "support_calls": 7.0,
+            "tenure_months": 96.0
+          },
+          "rowId": "CHURN-24"
+        }
+      ]
+    }
+  ],
+  "interaction": "Learner predicts a validation comparison and complexity trade-off before the frozen result table is revealed.",
+  "manifestId": "TASK-015.12-MS-E1-V1",
+  "metricConventions": {
+    "classificationPositiveClass": 1,
+    "classificationPrimary": "balanced accuracy",
+    "logLossUnavailableForNoProbabilityEstimator": true,
+    "probabilityClassOrder": [
+      0,
+      1
+    ],
+    "regressionPrimary": "MAE",
+    "tieToleranceAbsolute": 1e-12
+  },
+  "objectives": [
+    "MS01.O1",
+    "MS01.O2",
+    "MS01.O3",
+    "MS01.O4",
+    "MS06.O1"
+  ],
+  "textAlternative": "Every row, target, split, fit boundary, prediction, metric and model-complexity description is represented in the synchronized numerical/text table.",
+  "title": "Fair model comparison",
+  "version": 1
+}

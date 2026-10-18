@@ -1,6 +1,10 @@
 # Supervised learning — founder review blueprint
 
-## Task015.11 — MLP experiment reference freeze complete; application pending authorization
+## 18 October 2026 — MLP acceptance closed; Task 015.12 bounded specification ready
+
+Task 015.11 MLP mastery activation passed independent CI at commit `8b37d1e8c75a33a0ee2f73265294385a95549ebb`; see [completion evidence](TASK_015_11_COMPLETION.md) and [workflow](https://github.com/CBehera5/ml-mastery/actions/runs/39107761702). Task 015.12 Model Selection & Comparison scope is documented in [the bounded specification](TASK_015_12_BOUNDED_SPECIFICATION.md); implementation has not begun and requires separate founder authorization. Genuine screen-reader, browser-zoom, Colab, and original-directory I/O remain open platform release obligations.
+
+## Earlier Task015.11 reference-freeze status — superseded 18 October 2026
 
 17 October2026. NN-E1/NN-E2 frozen at25/48 configurations;8 fitted runs,1024 sequential updates,1,030 finite-difference checks and maximum gradient error1.6872304942072702e−10 are recorded in the [trusted parity report](verification/multilayer-perceptrons/TRUSTED_PARITY_REPORT.md). Clean regeneration passes with unchanged hashes;535 accepted source files preserved. Approved NN01–05,20/40/60,five paired gates,16/20,two labs and one notebook remain unchanged. No application/notebook implementation,learner evidence or mastery changes. Genuine reader/browser zoom/Colab and original-directory I/O remain OPEN. See [implementation readiness](TASK_015_11_IMPLEMENTATION_READINESS.md). Await founder approval before implementation;Task015.12 not started. Older scope-only statuses below are historical.
 

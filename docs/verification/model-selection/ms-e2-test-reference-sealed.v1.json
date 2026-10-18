@@ -1,0 +1,341 @@
+{
+  "fixtureId": "MS-E2-GROUPED-CHURN-V1",
+  "metricsAndCost": {
+    "confusion": {
+      "FN": 0,
+      "FP": 1,
+      "TN": 7,
+      "TP": 4
+    },
+    "costPerRow": 0.08333333333333333,
+    "metrics": {
+      "accuracy": 0.9166666666666666,
+      "balancedAccuracy": 0.9375,
+      "confusion": {
+        "FN": 0,
+        "FP": 1,
+        "TN": 7,
+        "TP": 4
+      },
+      "f1Positive": 0.888888888888889,
+      "logLoss": {
+        "reason": "candidate does not expose class probabilities",
+        "state": "not-produced"
+      },
+      "precisionPositive": 0.8,
+      "recallPositive": 1.0
+    },
+    "predictions": [
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1
+    ],
+    "threshold": 0.5,
+    "totalCost": 1.0
+  },
+  "positiveProbabilities": [
+    0.08695652173913043,
+    0.08695652173913043,
+    0.7692307692307693,
+    0.7692307692307693,
+    0.08695652173913043,
+    0.08695652173913043,
+    0.08695652173913043,
+    0.7692307692307693,
+    0.08695652173913043,
+    0.08695652173913043,
+    0.7692307692307693,
+    0.7692307692307693
+  ],
+  "predictions": [
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1
+  ],
+  "referenceId": "TASK-015.12-MS-E2-FINAL-TEST-REFERENCE-V1",
+  "refitPreprocessing": {
+    "fitRowIds": [
+      "E2-00-00",
+      "E2-00-01",
+      "E2-00-02",
+      "E2-00-03",
+      "E2-01-00",
+      "E2-01-01",
+      "E2-01-02",
+      "E2-01-03",
+      "E2-02-00",
+      "E2-02-01",
+      "E2-02-02",
+      "E2-02-03",
+      "E2-03-00",
+      "E2-03-01",
+      "E2-03-02",
+      "E2-03-03",
+      "E2-04-00",
+      "E2-04-01",
+      "E2-04-02",
+      "E2-04-03",
+      "E2-05-00",
+      "E2-05-01",
+      "E2-05-02",
+      "E2-05-03",
+      "E2-06-00",
+      "E2-06-01",
+      "E2-06-02",
+      "E2-06-03",
+      "E2-07-00",
+      "E2-07-01",
+      "E2-07-02",
+      "E2-07-03",
+      "E2-08-00",
+      "E2-08-01",
+      "E2-08-02",
+      "E2-08-03"
+    ],
+    "steps": [
+      {
+        "estimator": "DecisionTreeClassifier",
+        "name": "model"
+      }
+    ]
+  },
+  "selectedCandidate": "tree-p1-t50",
+  "selectedThresholdFromDevelopmentCV": 0.5,
+  "testGroupIds": [
+    "G09",
+    "G10",
+    "G11"
+  ],
+  "testRowIds": [
+    "E2-09-00",
+    "E2-09-01",
+    "E2-09-02",
+    "E2-09-03",
+    "E2-10-00",
+    "E2-10-01",
+    "E2-10-02",
+    "E2-10-03",
+    "E2-11-00",
+    "E2-11-01",
+    "E2-11-02",
+    "E2-11-03"
+  ],
+  "testRows": [
+    {
+      "features": {
+        "late_payment": 0.0,
+        "monthly_charge": 85.0,
+        "support_calls": 1.0,
+        "support_calls_proxy": 1.0,
+        "tenure_months": 19.0
+      },
+      "groupId": "G09",
+      "rowId": "E2-09-00",
+      "target": 0
+    },
+    {
+      "features": {
+        "late_payment": 1.0,
+        "monthly_charge": 87.0,
+        "support_calls": 2.0,
+        "support_calls_proxy": 2.0,
+        "tenure_months": 19.1
+      },
+      "groupId": "G09",
+      "rowId": "E2-09-01",
+      "target": 0
+    },
+    {
+      "features": {
+        "late_payment": 0.0,
+        "monthly_charge": 89.0,
+        "support_calls": 3.0,
+        "support_calls_proxy": 3.0,
+        "tenure_months": 19.2
+      },
+      "groupId": "G09",
+      "rowId": "E2-09-02",
+      "target": 1
+    },
+    {
+      "features": {
+        "late_payment": 0.0,
+        "monthly_charge": 91.0,
+        "support_calls": 4.0,
+        "support_calls_proxy": 4.0,
+        "tenure_months": 19.3
+      },
+      "groupId": "G09",
+      "rowId": "E2-09-03",
+      "target": 1
+    },
+    {
+      "features": {
+        "late_payment": 1.0,
+        "monthly_charge": 90.0,
+        "support_calls": 0.0,
+        "support_calls_proxy": 0.0,
+        "tenure_months": 21.0
+      },
+      "groupId": "G10",
+      "rowId": "E2-10-00",
+      "target": 0
+    },
+    {
+      "features": {
+        "late_payment": 0.0,
+        "monthly_charge": 92.0,
+        "support_calls": 1.0,
+        "support_calls_proxy": 1.0,
+        "tenure_months": 21.1
+      },
+      "groupId": "G10",
+      "rowId": "E2-10-01",
+      "target": 0
+    },
+    {
+      "features": {
+        "late_payment": 0.0,
+        "monthly_charge": 94.0,
+        "support_calls": 2.0,
+        "support_calls_proxy": 2.0,
+        "tenure_months": 21.2
+      },
+      "groupId": "G10",
+      "rowId": "E2-10-02",
+      "target": 0
+    },
+    {
+      "features": {
+        "late_payment": 0.0,
+        "monthly_charge": 96.0,
+        "support_calls": 3.0,
+        "support_calls_proxy": 3.0,
+        "tenure_months": 21.3
+      },
+      "groupId": "G10",
+      "rowId": "E2-10-03",
+      "target": 1
+    },
+    {
+      "features": {
+        "late_payment": 0.0,
+        "monthly_charge": 95.0,
+        "support_calls": 1.0,
+        "support_calls_proxy": 1.0,
+        "tenure_months": 23.0
+      },
+      "groupId": "G11",
+      "rowId": "E2-11-00",
+      "target": 0
+    },
+    {
+      "features": {
+        "late_payment": 0.0,
+        "monthly_charge": 97.0,
+        "support_calls": 2.0,
+        "support_calls_proxy": 2.0,
+        "tenure_months": 23.1
+      },
+      "groupId": "G11",
+      "rowId": "E2-11-01",
+      "target": 0
+    },
+    {
+      "features": {
+        "late_payment": 0.0,
+        "monthly_charge": 99.0,
+        "support_calls": 3.0,
+        "support_calls_proxy": 3.0,
+        "tenure_months": 23.2
+      },
+      "groupId": "G11",
+      "rowId": "E2-11-02",
+      "target": 0
+    },
+    {
+      "features": {
+        "late_payment": 0.0,
+        "monthly_charge": 101.0,
+        "support_calls": 4.0,
+        "support_calls_proxy": 4.0,
+        "tenure_months": 23.3
+      },
+      "groupId": "G11",
+      "rowId": "E2-11-03",
+      "target": 1
+    }
+  ],
+  "trainRefitIds": [
+    "E2-00-00",
+    "E2-00-01",
+    "E2-00-02",
+    "E2-00-03",
+    "E2-01-00",
+    "E2-01-01",
+    "E2-01-02",
+    "E2-01-03",
+    "E2-02-00",
+    "E2-02-01",
+    "E2-02-02",
+    "E2-02-03",
+    "E2-03-00",
+    "E2-03-01",
+    "E2-03-02",
+    "E2-03-03",
+    "E2-04-00",
+    "E2-04-01",
+    "E2-04-02",
+    "E2-04-03",
+    "E2-05-00",
+    "E2-05-01",
+    "E2-05-02",
+    "E2-05-03",
+    "E2-06-00",
+    "E2-06-01",
+    "E2-06-02",
+    "E2-06-03",
+    "E2-07-00",
+    "E2-07-01",
+    "E2-07-02",
+    "E2-07-03",
+    "E2-08-00",
+    "E2-08-01",
+    "E2-08-02",
+    "E2-08-03"
+  ],
+  "truth": [
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+  ],
+  "visibility": "sealed verification/reference output; release only after explicit model and threshold freeze",
+  "warning": "This one final-test result cannot be used to change the model, threshold, calibration, features, preprocessing, or tuning. A failed result is reported honestly; it is not a retuning signal."
+}

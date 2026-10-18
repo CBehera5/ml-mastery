@@ -1,6 +1,14 @@
 # Cumulative Curriculum Quality Register
 
-## Task015.11 — MLP implementation complete; founder review pending
+## 18 October 2026 — Task 015.11 closed; Task 015.12 scope prepared
+
+MLP activation commit `8b37d1e8c75a33a0ee2f73265294385a95549ebb` passed [independent CI](https://github.com/CBehera5/ml-mastery/actions/runs/39107761702), including all frontend/Python regressions, typecheck/build, frozen reference/gradient validation, two fresh notebook kernels, and production browser smoke. `MASTERY_AVAILABLE` is true under the unchanged policy; see [closure evidence](TASK_015_11_COMPLETION.md). The exact approved Model Selection allocation is in [Task 015.12 bounded specification](TASK_015_12_BOUNDED_SPECIFICATION.md), with no implementation authorized or started. OPEN platform obligations: genuine screen reader, browser zoom, Google Colab, and original-directory I/O.
+
+## Task 015.12 — Approved scope and reference artifacts frozen; implementation pending
+
+The approved specification checksum is recorded in `verification/model-selection/scope-source.sha256`. MS-E1 compares regression/classification candidates on identical task-specific rows and metrics without using test targets; MS-E2 uses grouped nested development selection and a separately sealed final-test reference. There are 20/11 authored configurations within the 64-state lab cap, including seven typed rejection states. Pinned numerical reference generation and byte-identical regeneration pass; see [freeze report](verification/model-selection/REFERENCE_FREEZE_REPORT.md) and [hash lock](verification/model-selection/freeze-lock.v1.json). Existing objective/gate/mastery assignments and MLP evidence are unchanged. No notebook or app acceptance is claimed because implementation is not authorized. Continue tracking small synthetic sample limitations, selection variance, correlated-feature interpretation and the platform-release accessibility/Colab/I/O obligations.
+
+## Earlier Task015.11 blocked status — superseded 18 October 2026
 
 17 October 2026. Five lessons and 20 objective families cover network shapes/parameters, nonlinear activations, forward pass, gradients and plain SGD, capacity/regularization, leakage-safe preprocessing/checkpoint selection, and limits/comparison. Forty practice and 60 independent instances span three forms; NN01.O2–NN05.O2 are paired critical gates. Threshold remains 16/20 plus every paired gate in one confirmed attempt. Focused model suite:8/8; Python regression:2,607 passed. Frozen regeneration and gradient assertions pass; two fresh local notebook runs match. Full frontend runs remain incomplete with worker stalls; MLP UI test is undiscovered. Typecheck/build and fresh preview did not complete, so keyboard/320px remain unverified. Safe cleanup removed generated Next caches only. `MASTERY_AVAILABLE=false` until all required gates pass. See [recovery record](TASK_015_11_VERIFICATION_RECOVERY.md). Screen-reader,browser zoom,Colab and original-directory I/O remain open; finite authored assessments/local persistence and small synthetic fixtures remain formative-evidence risks. No later-task authorization inferred.
 

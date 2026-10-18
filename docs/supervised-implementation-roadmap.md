@@ -1,5 +1,9 @@
 # Supervised curriculum phased roadmap and founder decisions
 
+**18 October 2026 — Current disposition:** Task 015.11 MLP activation commit `8b37d1e8c75a33a0ee2f73265294385a95549ebb` passed [independent CI](https://github.com/CBehera5/ml-mastery/actions/runs/39107761702); Task 015.11 is accepted for implementation completeness. [Task 015.12 bounded specification](TASK_015_12_BOUNDED_SPECIFICATION.md) preserves MS01–06 and the approved 24/48/72, six-gate, 20/24 allocation. No 015.12 implementation is authorized or started. Genuine screen-reader, browser-zoom, Colab and original-directory I/O checks remain open for platform release.
+
+**18 October 2026 — Task 015.12 reference freeze:** The bounded spec SHA-256 is `6a15b2a3db4407c85ff480bc6460dfb78747cd9ff716dcd3bc951e063228e654`. Both authored manifests pass pinned-reference parity and byte-identical regeneration (20 MS-E1 states; 11 MS-E2 states). See [reference freeze report](verification/model-selection/REFERENCE_FREEZE_REPORT.md). This completes specification/reference preparation only; wait for separate implementation authorization.
+
 **Latest17 October2026:** Task015.4 LG01–06 implemented under separate founder authorization with unchanged frozen manifests and20/24+six-gate policy. [Completion](TASK_015_4_COMPLETION.md). Stop before015.5; older status entries remain historical.
 
 **17 October2026 latest:** Task015.3 RG01–06 implemented under separate founder authorization, with unchanged frozen fixtures and independent20/24+six-gate policy. [Completion](TASK_015_3_COMPLETION.md). Stop before015.4. Older pending-015.3 statements below are superseded on this boundary only.

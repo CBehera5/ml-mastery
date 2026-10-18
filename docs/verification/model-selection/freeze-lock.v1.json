@@ -1,0 +1,37 @@
+{
+  "approvedBaselineCommit": "8b37d1e8c75a33a0ee2f73265294385a95549ebb",
+  "configurationCounts": {
+    "MS-E1": 20,
+    "MS-E1-tested-model-configurations": 17,
+    "MS-E2": 11,
+    "MS-E2-rejections": 4
+  },
+  "lockId": "TASK-015.12-MODEL-SELECTION-FREEZE-V1",
+  "manifestIds": [
+    "TASK-015.12-MS-E1-V1",
+    "TASK-015.12-MS-E2-V1"
+  ],
+  "pythonProfile": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "python": "3.13.16",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "threadpoolctl": "3.7.0"
+  },
+  "schemaVersion": 1,
+  "sha256": {
+    "docs/TASK_015_12_BOUNDED_SPECIFICATION.md": "6a15b2a3db4407c85ff480bc6460dfb78747cd9ff716dcd3bc951e063228e654",
+    "docs/verification/model-selection/MODEL_SELECTION_REFERENCE_CONVENTIONS.md": "66a00a117985df70f89301030204f66489dc2d73d9328ef083eb5ccd0ef8d6bf",
+    "docs/verification/model-selection/REFERENCE_FREEZE_REPORT.md": "8ea8190609d28b89e5822d32b433245bf65e67205824a810268a8e99b9a15dff",
+    "docs/verification/model-selection/ms-e1-test-reference-sealed.v1.json": "e49ab1a1d0e79e37ca930de91d3bb89e4b19817c1250cd10ffbb110f28f6370d",
+    "docs/verification/model-selection/ms-e1.manifest.v1.json": "45dd552560225d23878686359c87ca8176d053199e1e965f053f801ba6a82765",
+    "docs/verification/model-selection/ms-e2-test-reference-sealed.v1.json": "a97538bf6b1ad7262dc8bae76cc74167b8ba5592ea0c09731e9a520c2f07abf6",
+    "docs/verification/model-selection/ms-e2.manifest.v1.json": "6450e60605520bf4657be76887e5c43ca56d643b8bee1ec68616f3f51f00b997",
+    "docs/verification/model-selection/parity-report.v1.json": "ff41c68f748b7fa13c87451af4f183fdeb056a679bf34375b521d3dca47b34d0",
+    "docs/verification/model-selection/scope-source.sha256": "6915c69e5f5d4194c39aab7d39bc25c76f473196200166a1ba86cb97f6a13391",
+    "docs/verification/multilayer-perceptrons/requirements-clean-verification.txt": "b4889b1c8abb008c065372e967242164a6f8471f9d5a7fb55eeca4db9bd51488",
+    "work/freeze-task-015-12.py": "ab7ad97b83a07c28cb27737125130d064556750fd4ea584a45c5c01c8fc27bc7"
+  }
+}

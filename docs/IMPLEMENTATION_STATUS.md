@@ -1,6 +1,14 @@
 # Implementation status
 
-## Task015.11 — MLP implementation complete; founder review pending
+## Task 015.11 — MLP accepted; mastery active; Task 015.12 bounded spec ready
+
+18 October 2026. Activation commit `8b37d1e8c75a33a0ee2f73265294385a95549ebb` passed [independent CI](https://github.com/CBehera5/ml-mastery/actions/runs/39107761702): 66 TypeScript runtime tests, 2,777 frontend tests, 2,607 Python tests, typecheck, production build, frozen-reference/gradient checks, and two fresh notebook kernels. Final browser smoke passed NN01/experiment state, persistence, assessment availability without synthetic mastery, and 320px layout. The approved 16/20 + all five paired gates/one confirmed attempt policy is unchanged. [Task 015.11 completion](TASK_015_11_COMPLETION.md). [Task 015.12 bounded specification](TASK_015_12_BOUNDED_SPECIFICATION.md) records the approved MS01–06,24/48/72,six-gate,20/24 allocation; implementation is not authorized or started. OPEN: genuine screen reader, browser zoom, Colab, and original-directory I/O.
+
+## Task 015.12 — Scope and reference freeze complete; implementation pending authorization
+
+18 October 2026. The approved bounded specification checksum is `6a15b2a3db4407c85ff480bc6460dfb78747cd9ff716dcd3bc951e063228e654`. MS-E1/MS-E2 have 20/11 frozen states (17/6 development references, one sealed final-test state in E2, and 3/4 rejections), within the 64-state ceiling. Pinned Python/scikit-learn parity and two byte-identical `--check` regenerations pass; output and scope hashes are in [the freeze lock](verification/model-selection/freeze-lock.v1.json) and [reference-freeze report](verification/model-selection/REFERENCE_FREEZE_REPORT.md). Approved six lessons, 24 objectives, 48 practice, 72 independent, six paired gates, and 20/24 mastery remain unchanged. No app, assessment, notebook, learner evidence or mastery behavior was implemented or changed. Await separate founder authorization. OPEN: genuine screen reader, browser zoom, Colab, and original-directory I/O.
+
+## Earlier Task015.11 blocked status — superseded 18 October 2026
 
 17 October 2026. [Completion report](TASK_015_11_COMPLETION.md),[recovery record](TASK_015_11_VERIFICATION_RECOVERY.md) and [objective coverage](task-015-11-objective-coverage.md): NN01–NN05,20 objectives,40 practice,60 independent instances,five paired O2 gates,16/20 plus all gates in one confirmed attempt. Focused MLP model contracts pass 8/8 under forks; full single-worker runs progress then stall without summary, and the UI test fails worker startup. Python suite:2,607 passed. Frozen regeneration passes 25/48 states,1,024 updates and all 1,030 gradient assertions; two local notebook runs match. Safe cleanup removed 312 MiB logical Next caches, but typecheck/build/preview remain stalled, so keyboard/320px are unverified. `MASTERY_AVAILABLE=false`; activation withheld. OPEN:genuine screen-reader,browser zoom,Colab and original-directory I/O. No Task015.12 work,deploy,migration or external learner testing.
 
