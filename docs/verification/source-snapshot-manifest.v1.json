@@ -1,6 +1,6 @@
 {
-  "aggregate_sha256": "a527eaa61e64befc76eaf5acd8bd540e05f671914ee7247136963803610fb730",
-  "content_sha256": "a7cbb1ef2b271412534193c6f1587348682177f25e041bfff4b67e76fa8b8bed",
+  "aggregate_sha256": "76aa79ddc6ed3f9693cbe022f15765a0829eb37a2576975a471bf5390b87da1f",
+  "content_sha256": "d2a3aa58c557fda0644c6043341e9c5b07bff62781171b2dfae9582195c2862c",
   "excluded_self_path": "docs/verification/source-snapshot-manifest.v1.json",
   "files": {
     ".env.example": "bd2962524d0ae66f4bc017c370f2fedfa7fdd77f43aa627bdbfdbb9441276383",
@@ -585,7 +585,7 @@
     "docs/verification/multilayer-perceptrons/nn-e2.manifest.v1.json": "0ce207f12e4b829b821b4e6d3a0a569ab64f580945300b1af6f1a9b061e49b56",
     "docs/verification/multilayer-perceptrons/parity-report.v1.json": "2913a406a34830f3e376f56dbb83e8496ac042b48078af63d380b80de9485069",
     "docs/verification/multilayer-perceptrons/requirements-clean-verification.txt": "b4889b1c8abb008c065372e967242164a6f8471f9d5a7fb55eeca4db9bd51488",
-    "docs/verification/multilayer-perceptrons/source-checksums.sha256": "5fe19ce7f8c9cd9e512a2c1d1a1c27302355199a8d22a4346246a29a39c9a262",
+    "docs/verification/multilayer-perceptrons/source-checksums.sha256": "a531c6397841c36a6d3e8d033e6736ad593632217912134b98b52836817b1b55",
     "docs/verification/multilayer-perceptrons/source-preservation-baseline.v1.json": "1898250b31d08c759bf6856087e15797e85aa01e89bb8b0fa183a3767af446f3",
     "docs/verification/multilayer-perceptrons/source-preservation.v1.json": "5225a91a0f9fdaa7a44c92b6bfe62f6238b6ab69a9c1380b928f91946374df00",
     "docs/verification/naive-bayes/PROBABILITY_SMOOTHING_VARIANCE_CONVENTIONS.md": "641c7cdc6aaa74bb0814bf697b133ca5d8d1952d3badba2aeba50114aefaffaa",
