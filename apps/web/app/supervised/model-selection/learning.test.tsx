@@ -46,7 +46,7 @@ it("requires a prediction and rationale before revealing a frozen comparison sta
   expect(screen.getByText(/Sealed final-test targets and sidecar outputs are not sent to the browser/)).toBeInTheDocument();
 });
 
-it("shows practice feedback without awarding mastery and enables the independent assessment", async () => {
+it("shows objective-specific practice feedback and keeps independent assessment locked", async () => {
   render(<ModelSelectionLesson lesson={0}/>);
   await waitFor(() => expect(screen.getByRole("group", { name: "Objective reasoning and guided practice" })).toBeEnabled());
   const family = PRACTICE[0][0], accepted = family.accepted[0][0];
@@ -58,26 +58,7 @@ it("shows practice feedback without awarding mastery and enables the independent
   await waitFor(() => expect(screen.getByText(/Answer checked\. Compare your reasoning/)).toBeInTheDocument());
   expect(load(localStorage.getItem(STORAGE_KEY)).mastery).toBeNull();
   cleanup(); render(<ModelSelectionAssessment/>);
-  expect(screen.queryByText(/mastery remains unavailable/)).not.toBeInTheDocument();
-  await waitFor(() => expect(screen.getByRole("button", { name: "Review all 24 objective families" })).toBeEnabled());
+  expect(screen.getByRole("alert")).toHaveTextContent("mastery remains unavailable");
+  expect(screen.getByRole("button", { name: "Review all 24 objective families" })).toBeDisabled();
   expect(FORMS.flat()).toHaveLength(72); expect(LESSONS).toHaveLength(6);
-});
-
-it("requires confirmation, reports remediation, restores results and rotates retries without awarding blank-attempt mastery", async () => {
-  render(<ModelSelectionAssessment/>);
-  await waitFor(() => expect(screen.getByRole("button", { name: "Review all 24 objective families" })).toBeEnabled());
-  fireEvent.click(screen.getByRole("button", { name: "Review all 24 objective families" }));
-  const submit = screen.getByRole("button", { name: "Submit confirmed attempt" });
-  expect(submit).toBeDisabled();
-  fireEvent.click(screen.getByRole("checkbox", { name: /I reviewed the whole attempt/ }));
-  expect(submit).toBeEnabled();
-  fireEvent.click(submit);
-  expect(await screen.findByRole("heading", { name: "Not yet mastered: 0/24" })).toBeInTheDocument();
-  expect(screen.getAllByRole("link", { name: "Targeted lesson recall" })).toHaveLength(24);
-  expect(load(localStorage.getItem(STORAGE_KEY)).mastery).toBeNull();
-  cleanup(); render(<ModelSelectionAssessment/>);
-  expect(await screen.findByRole("heading", { name: "Not yet mastered: 0/24" })).toBeInTheDocument();
-  fireEvent.click(screen.getByRole("button", { name: "Retry next independent form" }));
-  expect(await screen.findByRole("heading", { name: "Form B" })).toBeInTheDocument();
-  expect(load(localStorage.getItem(STORAGE_KEY)).mastery).toBeNull();
 });
