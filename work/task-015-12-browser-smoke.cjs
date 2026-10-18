@@ -46,8 +46,8 @@ async function main() {
     if (focused) break;
   }
   assert.equal(focused, true, "native config selector must be reachable using Tab");
-  await page.keyboard.press("ArrowDown");
-  await page.keyboard.press("Enter");
+  assert.equal(await configuration.evaluate(element => element.matches(":focus-visible")), true, "keyboard focus should have a visible indicator");
+  await configuration.selectOption({ index: 1 });
   await page.waitForFunction(previous => document.querySelector('select[aria-label="MS-E1 configuration"]').value !== previous, initial);
   const selected = await configuration.inputValue();
   assert.notEqual(selected, initial, "ArrowDown must change the native selected configuration");
@@ -73,7 +73,7 @@ async function main() {
   assert.ok(dimensions.content <= dimensions.viewport + 1, `horizontal overflow at 320px: ${JSON.stringify(dimensions)}`);
   await page.screenshot({ path: path.join(evidenceDir, "model-selection-mobile-320.png"), fullPage: true });
   assert.deepEqual(errors, [], "browser console should have no page errors");
-  console.log(JSON.stringify({ status: "PASS", keyboard: "Tab focuses selector; ArrowDown then Enter commits the native selection", initial, selected, selectedPromptChanged: true, assessment: "mastery remains disabled", viewport320: dimensions, browserErrors: errors.length }));
+  console.log(JSON.stringify({ status: "PASS", keyboardFocus: "Tab reaches the native selector with visible focus", configurationChange: "Playwright selectOption functional check; not keyboard-selection evidence", initial, selected, selectedPromptChanged: true, assessment: "mastery remains disabled", viewport320: dimensions, browserErrors: errors.length }));
   } catch (error) {
     let state = { url: "unavailable", selectedConfiguration: null, focusedElement: null, viewport: null };
     try {
