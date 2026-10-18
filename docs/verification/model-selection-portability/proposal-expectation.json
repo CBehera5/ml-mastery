@@ -1,0 +1,10 @@
+{
+  "decisionDigest": "b422836c222a9be57c30ebd18b0199ce3db2e025cb33bec818d95e7748bc2034",
+  "payloadHashes": {
+    "ms-e1-test-reference-sealed.v1.json": "e49ab1a1d0e79e37ca930de91d3bb89e4b19817c1250cd10ffbb110f28f6370d",
+    "ms-e1.manifest.v1.json": "45dd552560225d23878686359c87ca8176d053199e1e965f053f801ba6a82765",
+    "ms-e2-test-reference-sealed.v1.json": "99ad34c5d8fda7ff1e81cb36b4c57d77a83cab43d5c9f1e7ebdd944ad6cf9b32",
+    "ms-e2.manifest.v1.json": "7fdcd6063065068c670156ee498b014bcdcd53a68b1665bda04d88fffea158ac",
+    "scope-source.sha256": "6915c69e5f5d4194c39aab7d39bc25c76f473196200166a1ba86cb97f6a13391"
+  }
+}
