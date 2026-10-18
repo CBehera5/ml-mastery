@@ -30,7 +30,6 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 20.19.4
-          package-manager-cache: false
       - name: Record runner identity
         run: |
           mkdir -p "$TASK01512_EVIDENCE"
@@ -49,10 +48,10 @@ jobs:
         run: set -o pipefail; npm ci 2>&1 | tee "$TASK01512_EVIDENCE/npm-ci.log"
       - name: Full math runtime tests
         timeout-minutes: 20
-        run: set -o pipefail; npm run test:ts -- --pool=forks --maxWorkers=1 --minWorkers=1 --no-file-parallelism 2>&1 | tee "$TASK01512_EVIDENCE/frontend-ts.log"
+        run: set -o pipefail; npm run test:ts -- --pool=forks --maxWorkers=1 --no-file-parallelism 2>&1 | tee "$TASK01512_EVIDENCE/frontend-ts.log"
       - name: Full frontend regressions including Task 015.12
         timeout-minutes: 40
-        run: set -o pipefail; npm run test:web -- --pool=forks --maxWorkers=1 --minWorkers=1 --no-file-parallelism 2>&1 | tee "$TASK01512_EVIDENCE/frontend-web.log"
+        run: set -o pipefail; npm run test:web -- --pool=forks --maxWorkers=1 --no-file-parallelism 2>&1 | tee "$TASK01512_EVIDENCE/frontend-web.log"
       - name: Typecheck
         timeout-minutes: 25
         run: set -o pipefail; npm run typecheck 2>&1 | tee "$TASK01512_EVIDENCE/typecheck.log"
@@ -102,6 +101,11 @@ jobs:
           PYTHONPATH: python
           MPLCONFIGDIR: ${{ runner.temp }}/matplotlib
           LOKY_MAX_CPU_COUNT: "1"
+          OMP_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+          VECLIB_MAXIMUM_THREADS: "1"
+          NUMEXPR_NUM_THREADS: "1"
         run: set -o pipefail; python work/freeze-task-015-12.py --check 2>&1 | tee "$TASK01512_EVIDENCE/frozen-reference-check.log"
       - name: Execute notebook twice in fresh kernels
         timeout-minutes: 25
@@ -130,7 +134,6 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 20.19.4
-          package-manager-cache: false
       - name: Install and build final preview
         timeout-minutes: 40
         run: |
