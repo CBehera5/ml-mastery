@@ -37,7 +37,7 @@ async function main() {
   assert.equal(initialPayload.config.id, initial);
   assert.equal(JSON.stringify(initialPayload).includes("sealedTestTargetRows"), false);
   assert.equal(JSON.stringify(initialPayload).includes("testOutcome"), false);
-  const initialQuestion = initialPayload.config.predictionQuestion;
+  const initialPrompt = initialPayload.config.predictionQuestion;
 
   let focused = false;
   for (let index = 0; index < 80; index += 1) {
@@ -55,7 +55,8 @@ async function main() {
   assert.equal(selectedResponse.status(), 200);
   const selectedPayload = await selectedResponse.json();
   assert.equal(selectedPayload.config.id, selected);
-  assert.notEqual(selectedPayload.config.predictionQuestion, initialQuestion, "selected fixture should present its authored prompt");
+  assert.equal(selectedPayload.config.predictionQuestion, initialPrompt, "the authored prompt is shared across fitted candidate states");
+  assert.notEqual(selectedPayload.config.reference.configId, initialPayload.config.reference.configId, "selected fixture should load its distinct authored reference state");
   await page.getByText(selectedPayload.config.predictionQuestion, { exact: true }).waitFor();
   await page.getByText(`Selected state: ${selected}. Prior state: ${initial}.`).waitFor();
   await page.getByRole("combobox", { name: "Predict comparison outcome" }).selectOption("fair");
@@ -73,7 +74,7 @@ async function main() {
   assert.ok(dimensions.content <= dimensions.viewport + 1, `horizontal overflow at 320px: ${JSON.stringify(dimensions)}`);
   await page.screenshot({ path: path.join(evidenceDir, "model-selection-mobile-320.png"), fullPage: true });
   assert.deepEqual(errors, [], "browser console should have no page errors");
-  console.log(JSON.stringify({ status: "PASS", keyboardFocus: "Tab reaches the native selector with visible focus", configurationChange: "Playwright selectOption functional check; not keyboard-selection evidence", initial, selected, selectedPromptChanged: true, assessment: "mastery remains disabled", viewport320: dimensions, browserErrors: errors.length }));
+  console.log(JSON.stringify({ status: "PASS", keyboardFocus: "Tab reaches the native selector with visible focus", configurationChange: "Playwright selectOption functional check; not keyboard-selection evidence", initial, selected, authoredReferenceChanged: true, assessment: "mastery remains disabled", viewport320: dimensions, browserErrors: errors.length }));
   } catch (error) {
     let state = { url: "unavailable", selectedConfiguration: null, focusedElement: null, viewport: null };
     try {
