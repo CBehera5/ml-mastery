@@ -4,7 +4,7 @@ import { join } from "node:path";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-type Manifest = { manifestId: string; experimentId: string; fixtures?: Record<string, unknown>; fixture?: Record<string, unknown>; configurations: Record<string, unknown>[] };
+type Manifest = { manifestId: string; experimentId: string; version?: number; fixtures?: Record<string, unknown>; fixture?: Record<string, unknown>; configurations: Record<string, unknown>[] };
 let frozen: Manifest[] | null = null;
 function readManifests() {
   const directory = join(process.cwd(), "docs/verification/model-selection");
@@ -65,6 +65,6 @@ export async function GET(request: Request) {
   const manifest = frozen[lab], config = manifest.configurations.find(item => item.configId === id);
   if (!config) return Response.json({ error: "unsupported-reference" }, { status: 404 });
   const dataset = publicFixture(manifest);
-  return Response.json({ id: manifest.manifestId, fixture_version: `MS-reference-v1-${lab + 1}`, config: display(config, lab), dataset,
+  return Response.json({ id: manifest.manifestId, fixture_version: `MS-reference-v${manifest.version ?? 1}-${lab + 1}`, config: display(config, lab), dataset,
     sealed_test: "Test targets and sealed sidecar outputs are not sent to the browser." }, { headers: { "Cache-Control": "private, no-store" } });
 }

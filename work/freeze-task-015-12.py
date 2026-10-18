@@ -65,6 +65,7 @@ LOCK = OUT / "freeze-lock.v1.json"
 SEED = 20261018
 APPROVED_SCOPE_SHA256 = "6a15b2a3db4407c85ff480bc6460dfb78747cd9ff716dcd3bc951e063228e654"
 METRIC_TOLERANCE = 1e-12
+KNN_DISTANCE_EQUALITY_TOLERANCE = 0.0
 THRESHOLDS = (0.25, 0.5, 0.75)
 FN_COST = 10.0
 FP_COST = 1.0
@@ -175,6 +176,8 @@ def e2_fixture() -> dict[str, object]:
         for event_index in range(4):
             tenure = 2.0 * group_index + 1.0 + event_index * 0.1
             charge = 40.0 + 5.0 * group_index + 2.0 * event_index
+            if group_index == 0 and event_index == 0:
+                charge += 0.000001
             calls = event_index + (group_index % 2)
             late = int((group_index + event_index) % 5 == 0)
             positive = int(event_index == 3 or (event_index == 2 and group_index % 3 == 0))
@@ -183,7 +186,7 @@ def e2_fixture() -> dict[str, object]:
             ids.append(f"E2-{group_index:02d}-{event_index:02d}")
     targets = [int(event_index == 3 or (event_index == 2 and group_index % 3 == 0)) for group_index in range(12) for event_index in range(4)]
     return {
-        "fixtureId": "MS-E2-GROUPED-CHURN-V1",
+        "fixtureId": "MS-E2-GROUPED-CHURN-V2",
         "problem": "fictional repeated-customer churn classification; group IDs are split metadata, never model features",
         "featureNames": ["tenure_months", "monthly_charge", "support_calls", "late_payment", "support_calls_proxy"],
         "targetName": "churn_90d",
@@ -541,6 +544,8 @@ def eval_candidate_cv(
             with warnings.catch_warnings(record=True) as recorded:
                 warnings.simplefilter("always")
                 estimator.fit(x_train, y_train)
+            if family == "knn":
+                reject_ambiguous_knn_cutoffs(estimator, x_valid, y_train, train_ids, valid_ids, int(parameter))
             probabilities = estimator.predict_proba(x_valid)[:, 1]
             costs = cost_metrics(y_valid, probabilities, float(candidate["threshold"]))
             fold_results.append({
@@ -567,6 +572,36 @@ def eval_candidate_cv(
             "foldResults": fold_results,
         })
     return results
+
+
+def reject_ambiguous_knn_cutoffs(
+    estimator: Pipeline,
+    x_query: np.ndarray,
+    y_train: np.ndarray,
+    train_ids: list[str],
+    query_ids: list[str],
+    k: int,
+) -> None:
+    """Reject exact mixed-label ties crossing the kth-neighbor membership cutoff."""
+    model = estimator.named_steps["model"]
+    scaler = estimator.named_steps["scale"]
+    query_scaled = scaler.transform(x_query)
+    distances, neighbors = model.kneighbors(query_scaled, n_neighbors=len(y_train), return_distance=True)
+    for query_index, (query_distances, query_neighbors) in enumerate(zip(distances, neighbors, strict=True)):
+        cutoff = float(query_distances[k - 1])
+        tied_positions = np.flatnonzero(np.abs(query_distances - cutoff) <= KNN_DISTANCE_EQUALITY_TOLERANCE)
+        closer_positions = np.flatnonzero(query_distances < cutoff - KNN_DISTANCE_EQUALITY_TOLERANCE)
+        available_slots = k - len(closer_positions)
+        if len(tied_positions) <= available_slots:
+            continue
+        tied_indices = query_neighbors[tied_positions]
+        tied_labels = {int(y_train[index]) for index in tied_indices}
+        if len(tied_labels) > 1:
+            tied_rows = ",".join(train_ids[int(index)] for index in tied_indices)
+            raise ValueError(
+                f"knn.ambiguous-kth-neighbor: query={query_ids[query_index]} k={k} "
+                f"distance={cutoff:.17g} tiedRows={tied_rows}"
+            )
 
 
 def outer_fold_specs(fixture: dict[str, object]) -> list[dict[str, object]]:
@@ -604,6 +639,8 @@ def nested_grouped_reference(fixture: dict[str, object], candidates: list[dict[s
         x_valid, y_valid, _ = matrix(outer_valid, fixture["featureNames"])
         estimator = make_e2_model(selected["family"], selected["parameter"] if selected["parameter"] is not None else 0, selected["family"] in ("logistic", "knn"))
         estimator.fit(x_train, y_train)
+        if selected["family"] == "knn":
+            reject_ambiguous_knn_cutoffs(estimator, x_valid, y_train, outer_fold["trainIds"], outer_fold["validationIds"], int(selected["parameter"]))
         proba = estimator.predict_proba(x_valid)[:, 1]
         evaluated = cost_metrics(y_valid, proba, selected["threshold"])
         inner_best = min(float(item["meanCostPerRow"]) for item in candidate_scores)
@@ -725,7 +762,7 @@ def final_test_reference(fixture: dict[str, object], selected: dict[str, object]
     probabilities = estimator.predict_proba(x_test)[:, 1]
     applied = cost_metrics(y_test, probabilities, float(selected["threshold"]))
     return {
-        "referenceId": "TASK-015.12-MS-E2-FINAL-TEST-REFERENCE-V1",
+        "referenceId": "TASK-015.12-MS-E2-FINAL-TEST-REFERENCE-V2",
         "visibility": "sealed verification/reference output; release only after explicit model and threshold freeze",
         "fixtureId": fixture["fixtureId"],
         "testGroupIds": fixture["sealedTestGroups"],
@@ -809,10 +846,10 @@ def manifest_e2() -> tuple[dict[str, object], dict[str, object], dict[str, objec
         {"configId": "MS-E2-REJECT-SELECT-ON-TEST", "status": "rejected", "reasonCode": "selection.final-test-access", "message": "The final test is opened once after the choice is frozen; no retuning score is produced."},
     ]
     manifest = {
-        "manifestId": "TASK-015.12-MS-E2-V1",
+        "manifestId": "TASK-015.12-MS-E2-V2",
         "experimentId": "MS-E2",
         "title": "Selection and generalization",
-        "version": 1,
+        "version": 2,
         "objectives": ["MS02.O1", "MS02.O2", "MS02.O3", "MS02.O4", "MS03.O1", "MS03.O2", "MS03.O3", "MS03.O4", "MS04.O1", "MS04.O2", "MS04.O3", "MS05.O1", "MS05.O2", "MS05.O3", "MS06.O1", "MS06.O2", "MS06.O3"],
         "interaction": "Predict the valid search, selected candidate, threshold cost, outer-fold behavior, and final-test rule before revealing each development trace; the sealed final result is revealed only after a choice is frozen.",
         "fixture": public_fixture,
@@ -860,7 +897,7 @@ def output_payloads() -> dict[str, bytes]:
         e2, sealed_e2, e2_internal = manifest_e2()
     scope_checksum = f"{scope_hash}  docs/TASK_015_12_BOUNDED_SPECIFICATION.md\n".encode("utf-8")
     report = {
-        "reportId": "TASK-015.12-REFERENCE-PARITY-V1",
+        "reportId": "TASK-015.12-REFERENCE-PARITY-V2",
         "status": "PASS",
         "environment": {
             "python": sys.version.split()[0],
@@ -890,7 +927,7 @@ def output_payloads() -> dict[str, bytes]:
             "permutationBoundaryAssertion": e2_internal["parityDetails"]["permutationUsedOnlyDevelopmentIds"],
             "finalTestPredictionsFrozenInSidecar": True,
         },
-        "numericTolerance": {"metricAbsolute": METRIC_TOLERANCE, "logLossAbsolute": METRIC_TOLERANCE, "selectionTieAbsolute": METRIC_TOLERANCE},
+        "numericTolerance": {"metricAbsolute": METRIC_TOLERANCE, "logLossAbsolute": METRIC_TOLERANCE, "selectionTieAbsolute": METRIC_TOLERANCE, "knnDistanceEqualityAbsolute": KNN_DISTANCE_EQUALITY_TOLERANCE},
         "determinism": "No timestamps; fixed seeds; deterministic split order and candidate IDs; n_jobs/threadpool=1; byte comparison enforced by --check.",
     }
     payloads = {
@@ -913,9 +950,9 @@ def lock_payload(payloads: dict[str, bytes]) -> bytes:
     files["work/freeze-task-015-12.py"] = sha256(GENERATOR.read_bytes())
     files["docs/verification/multilayer-perceptrons/requirements-clean-verification.txt"] = sha256((ROOT / "docs/verification/multilayer-perceptrons/requirements-clean-verification.txt").read_bytes())
     return canonical({
-        "lockId": "TASK-015.12-MODEL-SELECTION-FREEZE-V1",
+        "lockId": "TASK-015.12-MODEL-SELECTION-FREEZE-V2",
         "schemaVersion": 1,
-        "manifestIds": ["TASK-015.12-MS-E1-V1", "TASK-015.12-MS-E2-V1"],
+        "manifestIds": ["TASK-015.12-MS-E1-V1", "TASK-015.12-MS-E2-V2"],
         "approvedBaselineCommit": "8b37d1e8c75a33a0ee2f73265294385a95549ebb",
         "configurationCounts": {"MS-E1": 20, "MS-E2": 11, "MS-E1-tested-model-configurations": 17, "MS-E2-rejections": 4},
         "pythonProfile": {"python": "3.13.16", "numpy": "2.5.4", "pandas": "3.0.6", "matplotlib": "3.11.2", "scikit-learn": "1.9.1", "scipy": "1.18.1", "threadpoolctl": "3.7.0"},

@@ -1,6 +1,6 @@
 # Task 015.12 — Experiment Reference Freeze Report
 
-**Status: MS-E1 and MS-E2 references frozen; application implementation is not authorized or started.**
+**Historical status:** initial MS-E1/MS-E2 V1 reference freeze (MS-E2 superseded by the authorized V2 repair below).
 
 ## Approved source and baseline
 
@@ -33,10 +33,10 @@ Verified using CPython 3.13.16, NumPy 2.5.4, pandas 3.0.6, Matplotlib 3.11.2, sc
 | Artifact | SHA-256 |
 |---|---|
 | MS-E1 manifest | `45dd552560225d23878686359c87ca8176d053199e1e965f053f801ba6a82765` |
-| MS-E2 manifest | `6450e60605520bf4657be76887e5c43ca56d643b8bee1ec68616f3f51f00b997` |
+| MS-E2 V2 manifest | `5f4d64efe6bd60346c59277477b456c5dfbc0f3a869e383392939f5d45100959` |
 | MS-E1 sealed test reference | `e49ab1a1d0e79e37ca930de91d3bb89e4b19817c1250cd10ffbb110f28f6370d` |
-| MS-E2 sealed test reference | `a97538bf6b1ad7262dc8bae76cc74167b8ba5592ea0c09731e9a520c2f07abf6` |
-| Parity report | `ff41c68f748b7fa13c87451af4f183fdeb056a679bf34375b521d3dca47b34d0` |
+| MS-E2 V2 sealed test reference | `99ad34c5d8fda7ff1e81cb36b4c57d77a83cab43d5c9f1e7ebdd944ad6cf9b32` |
+| V2 parity report | `b34e06a5eddaf648080eeb57a6c90f56e9dbc0f8060569f81aea9a4b8af604a6` |
 
 The reference sidecars are verification artifacts, not learner-facing experiment payloads. Deterministic regeneration necessarily recalculates the sealed reference locally for comparison; the authored selection process still opens the test partition only after the model choice is frozen and never uses it to tune.
 
@@ -45,3 +45,13 @@ The reference sidecars are verification artifacts, not learner-facing experiment
 No application, assessment, persistence, learner evidence, notebook, mastery flag, or dependency file was modified. No frontend/Python suite, app typecheck/build, browser test, notebook replay, deployment, or external learner test was run because this authorization is reference freezing only. The notebook and implementation acceptance checks remain future implementation gates. Genuine screen-reader, browser-zoom, Google Colab, and original-directory I/O obligations remain open platform-release requirements.
 
 There are no unresolved curriculum scope/count/mastery decisions for this reference freeze. The next step is separate founder authorization to implement Task 015.12; this report does not infer that authorization.
+
+## Authorized MS-E2 deterministic repair — V2
+
+Founder authorization on 18 October 2026 approved reuse of the existing KNN exact-distance tie semantics and a controlled MS-E2 re-freeze. V1 contained one confirmed ambiguous cutoff: full-development GroupKFold fold 1, query `E2-02-02` (truth 0), k=3, two closer class-0 rows, then conflicting-label tied candidates `E2-00-02` (class 1) and `E2-04-02` (class 0) at 1.1224238052891296. The positive neighbor yields vote share 1/3 and a positive decision at threshold 0.25; the negative yields share 0 and a negative decision. The V1 score record stores aggregate metrics only, so it does not establish which tied neighbor the historical reference selected. Current pinned local and independent ARM64 CI regeneration agree on the alternate aggregate, confirming tie-order sensitivity; the exact historical internal ordering cannot be recovered from V1 artifacts.
+
+V2 makes a single minimal fixture change: `E2-00-00.monthly_charge` 40.0 → 40.000001, leaving all targets, groups, partitions, candidate definitions, costs, thresholds and selection rules intact. The fixture/manifest/final-test reference/parity/lock version is MS-E2 V2; MS-E1 remains V1. Generator guard rejects mixed-label exact float64 ties crossing k membership, with equality tolerance 0.0 per the existing KNN convention (the 1e-12 metric tolerance is not used for neighbor membership). The V2 output generator tests the ambiguity guard on a synthetic tie and confirms the repaired authored CV fits are unambiguous.
+
+The complete V1→V2 output diff is reviewed. The affected `knn-p3-t25` mean balanced accuracy changes `0.7592592592592592` → `0.7407407407407408` and mean cost per row `0.8333333333333334` → `0.8611111111111112` in the development grid and the repeated candidate summary in the simplicity comparison. These are the decision-relevant differences caused by the ambiguous neighbor set and the 0.25 threshold. The 40.000001 input also changes scaler means/scales and full-precision Logistic Regression probabilities in `MS-E2-NESTED-GROUPED-CV-LEGAL` and `MS-E2-DEVELOPMENT-THRESHOLD-COST-LEGAL`; no associated predicted-label, confusion-matrix, threshold-selection, or selected-model changes occur. The sealed test sidecar's targets, probabilities, predictions and metrics are unchanged; only its fixture/reference version identifiers update. MS-E1 manifest and sidecar bytes remain unchanged.
+
+V2 hashes: MS-E1 manifest `45dd552560225d23878686359c87ca8176d053199e1e965f053f801ba6a82765` (unchanged); MS-E2 manifest `5f4d64efe6bd60346c59277477b456c5dfbc0f3a869e383392939f5d45100959`; MS-E1 sealed reference `e49ab1a1d0e79e37ca930de91d3bb89e4b19817c1250cd10ffbb110f28f6370d` (unchanged); MS-E2 sealed reference `99ad34c5d8fda7ff1e81cb36b4c57d77a83cab43d5c9f1e7ebdd944ad6cf9b32`; parity report `b34e06a5eddaf648080eeb57a6c90f56e9dbc0f8060569f81aea9a4b8af604a6`. Independent CI verification remains a separate acceptance gate.

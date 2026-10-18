@@ -4,10 +4,16 @@ import { GET } from "./route";
 
 describe("Task 015.12 frozen experiment endpoint", () => {
   it("serves only reviewed configurations and strips sealed test targets and outcomes", async () => {
-    for (const [lab, id] of [[0, "MS-E1-REGRESSION-MEAN-BASELINE"], [1, "MS-E2-FINAL-TEST-EVALUATION-ONCE"]] as const) {
+    for (const [lab, id, manifestId, version] of [
+      [0, "MS-E1-REGRESSION-MEAN-BASELINE", "TASK-015.12-MS-E1-V1", 1],
+      [1, "MS-E2-FINAL-TEST-EVALUATION-ONCE", "TASK-015.12-MS-E2-V2", 2],
+    ] as const) {
       const response = await GET(new Request(`http://local/api?lab=${lab}&id=${id}`));
       expect(response.status).toBe(200);
-      const body = await response.text();
+      const payload = await response.json() as { id: string; fixture_version: string };
+      expect(payload.id).toBe(manifestId);
+      expect(payload.fixture_version).toBe(`MS-reference-v${version}-${lab + 1}`);
+      const body = JSON.stringify(payload);
       for (const file of ["ms-e1-test-reference-sealed.v1.json", "ms-e2-test-reference-sealed.v1.json"]) {
         const sidecar = readFileSync(`docs/verification/model-selection/${file}`, "utf8");
         const parsed = JSON.parse(sidecar) as { fixtures?: { testRows?: { rowId: string; target: number }[] }[]; testRows?: { rowId: string; target: number }[] };
