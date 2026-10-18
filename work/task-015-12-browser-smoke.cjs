@@ -24,7 +24,7 @@ async function main() {
   const firstPractice = page.getByRole("radio").first();
   await firstPractice.check();
   await page.getByRole("button", { name: "Check MS01.O1" }).click();
-  await page.getByRole("status").filter({ hasText: "Correct for practice" }).waitFor();
+  await page.getByRole("status").filter({ hasText: "Answer checked. Compare your reasoning" }).waitFor();
   assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem("ml-math-lab:supervised:model-selection:full:v1")).practice[0].proof !== null), true);
   await page.reload({ waitUntil: "networkidle" });
   assert.equal(await page.getByRole("radio").first().isChecked(), true, "practice answer should restore after reload");
