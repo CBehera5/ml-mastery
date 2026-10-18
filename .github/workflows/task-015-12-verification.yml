@@ -106,7 +106,18 @@ jobs:
           MKL_NUM_THREADS: "1"
           VECLIB_MAXIMUM_THREADS: "1"
           NUMEXPR_NUM_THREADS: "1"
-        run: set -o pipefail; python work/freeze-task-015-12.py --check 2>&1 | tee "$TASK01512_EVIDENCE/frozen-reference-check.log"
+        run: |
+          set -euo pipefail
+          if PYTHONPATH=python MPLCONFIGDIR="$MPLCONFIGDIR" LOKY_MAX_CPU_COUNT=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 python work/freeze-task-015-12.py --check > "$TASK01512_EVIDENCE/frozen-reference-check.log" 2>&1; then
+            cat "$TASK01512_EVIDENCE/frozen-reference-check.log"
+          else
+            cat "$TASK01512_EVIDENCE/frozen-reference-check.log"
+            PYTHONPATH=python MPLCONFIGDIR="$MPLCONFIGDIR" LOKY_MAX_CPU_COUNT=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 python work/freeze-task-015-12.py --freeze 2>&1 | tee "$TASK01512_EVIDENCE/regenerated-freeze.log"
+            git diff -- docs/verification/model-selection > "$TASK01512_EVIDENCE/regenerated-freeze.diff"
+            cat "$TASK01512_EVIDENCE/regenerated-freeze.diff" >> "$TASK01512_EVIDENCE/frozen-reference-check.log"
+            git restore --worktree -- docs/verification/model-selection
+            exit 1
+          fi
       - name: Execute notebook twice in fresh kernels
         timeout-minutes: 25
         env:

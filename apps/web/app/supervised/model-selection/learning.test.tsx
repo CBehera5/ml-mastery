@@ -55,7 +55,7 @@ it("shows objective-specific practice feedback and keeps independent assessment 
   const label = option.options.find(item => item.id === accepted.optionId)!.label;
   fireEvent.click(screen.getByLabelText(label));
   fireEvent.click(screen.getByRole("button", { name: "Check MS01.O1" }));
-  await waitFor(() => expect(screen.getByText(/Correct for practice/)).toBeInTheDocument());
+  await waitFor(() => expect(screen.getByText(/Answer checked\. Compare your reasoning/)).toBeInTheDocument());
   expect(load(localStorage.getItem(STORAGE_KEY)).mastery).toBeNull();
   cleanup(); render(<ModelSelectionAssessment/>);
   expect(screen.getByRole("alert")).toHaveTextContent("mastery remains unavailable");
