@@ -2,9 +2,13 @@
 
 ## Current disposition
 
-Founder-authorized canonical freeze is complete locally; independent final-source
-verification is pending. Mastery remains disabled. This report will record complete
-final CI results before recommending closure of the reference-freeze task.
+**Canonical MS-E2 V3 freeze and complete independent verification passed. Stop for
+founder review; no mastery activation.** Final reviewed source:
+`cdb0e9d6b550ae56d3721165d5b31c4b7f922b66`. All four jobs in
+[GitHub Actions run 39121627746](https://github.com/CBehera5/ml-mastery/actions/runs/39121627746)
+completed successfully. MS-E1 is unchanged, and no unexpected canonical numerical
+difference occurred. The reference-repair task is ready for founder acceptance;
+overall Task 015.12 acceptance retains the open platform obligations listed below.
 
 ## Canonical policy
 
@@ -86,8 +90,29 @@ fixture/manifest/reference/report/lock IDs advance to V3. MS-E1 remains V1.
   changes and tests genuine Tab focus/visible focus separately. Native popup keyboard
   evidence comes from the headed check above, not from this functional assertion.
   It also checks V3 API values, sealed-data isolation, practice/experiment restoration,
-  prediction/reveal, assessment lock and 320px layout. A complete final-source rerun
-  remains required; partial results from the initial run are not closure evidence.
+  prediction/reveal, assessment lock and 320px layout. The complete final-source rerun
+  below passed; partial results from the initial run are not used as closure evidence.
+
+## Complete final independent CI
+
+Run [39121627746](https://github.com/CBehera5/ml-mastery/actions/runs/39121627746),
+source `cdb0e9d6b550ae56d3721165d5b31c4b7f922b66`, completed on 18 October 2026.
+All required jobs and their verification steps completed; none is counted from a
+skipped, incomplete or failed job.
+
+| Job | Final result |
+| --- | --- |
+| Canonical macOS ARM64 KNN ranking audit | PASS: all 972 cases; expected decision digest and proposed payload hashes match |
+| Frontend tests, typecheck and production build | PASS: 66 math-runtime tests, 2,794 frontend tests, typecheck and production build |
+| Python regressions, frozen references and fresh notebook kernels | PASS: 2,612 tests, 31 reference states byte-identical with all locked hashes, two matching fresh notebook kernels |
+| Production preview, experiment, keyboard and 320px browser checks | PASS: navigation, both experiments, V3 API/fixture values, prediction/reveal, practice and experiment restoration, assessment lock, visible Tab focus, 320px width and zero page/console errors |
+
+Local browser smoke also passed; the 320px document width equals the 320px viewport.
+The separate headed local native-menu test passes for both selectors and reload
+restoration. The headless job's `selectOption` result is explicitly functional evidence,
+not a substitute for that native-menu check. Desktop/mobile screenshots and traces,
+complete neighbor rankings, all logs, numerical diffs, manifests and lock are included
+in the founder evidence package.
 
 ## Acceptance boundaries
 
@@ -98,5 +123,10 @@ Screen-reader verification, browser zoom, Google Colab and original-directory I/
 reliability remain separate open platform obligations. No deployment, landing page,
 Project Studio, capstone, external learner test or unrelated curriculum change occurs.
 
-Recommendation pending complete CI: retain Task 015.12 as acceptance incomplete;
-review the completed canonical freeze and final verification before any later action.
+Recommendation: accept closure of this bounded canonical-reference repair after
+founder review. Keep overall Task 015.12 in **implementation delivered / acceptance
+incomplete** until genuine screen-reader, browser zoom, Google Colab and original-directory
+I/O verification obligations are resolved. Native configuration keyboard selection is
+now verified in the headed browser; it is no longer listed as untested. No broad
+accessibility conformance claim is made. Keep mastery disabled and do not infer
+authorization for activation, deployment or a subsequent milestone.

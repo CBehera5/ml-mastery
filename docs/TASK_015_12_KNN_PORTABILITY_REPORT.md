@@ -1,6 +1,15 @@
 # Task 015.12 — MS-E2 KNN fixture portability audit
 
-## Pre-freeze status
+## Superseding founder decision
+
+The founder accepted this audit at `ab6bed5`, retained macOS ARM64 as the canonical
+numerical environment, and approved the bounded correction for MS-E2 V3. The subsequent
+freeze and complete passing independent verification are documented in
+[the canonical freeze report](TASK_015_12_CANONICAL_FREEZE.md). Linux differences below
+remain portability limitations, not accepted reference changes. Measurements and the
+pre-decision stop record below are retained as historical evidence.
+
+## Historical pre-freeze status
 
 **Stop for founder review; no reference freeze performed.** The proposed KNN geometry
 passes locally and in independent macOS ARM64 and Linux x86-64 audits. macOS also
