@@ -141,8 +141,8 @@ async function run() {
 
     await page.goto(`${baseUrl}/supervised/mlp/mastery`, { waitUntil: "networkidle" });
     await page.getByRole("alert").filter({ hasText: "Module mastery remains unavailable" }).waitFor();
-    const disabledAnswers = page.locator("fieldset").filter({ has: page.getByRole("legend", { name: "Independent assessment answers" }) });
-    assert.equal(await disabledAnswers.isDisabled(), true, "independent submission remains disabled pending acceptance");
+    const disabledAnswers = page.locator("fieldset").filter({ hasText: "Independent assessment answers" });
+    assert.equal(await disabledAnswers.getAttribute("disabled"), "", "independent submission remains disabled pending acceptance");
     const before = await page.evaluate(key => JSON.parse(localStorage.getItem(key)), storageKey);
     assert.equal(before.mastery, null, "practice and labs never award mastery");
     await page.reload({ waitUntil: "networkidle" });
