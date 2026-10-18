@@ -2,9 +2,13 @@
 
 ## Pre-freeze status
 
-Local audit passes for the bounded proposal below. Independent pre-freeze audit is
-required before updating any reference. The V2 references are unchanged at this stage.
-Mastery remains disabled. This report does not close accessibility, Colab, or I/O obligations.
+**Stop for founder review; no reference freeze performed.** The proposed KNN geometry
+passes locally and in independent macOS ARM64 and Linux x86-64 audits. macOS also
+passes exact payload parity. Linux exposes broader floating-point reference differences,
+including MS-E1, which cannot be repaired or accepted by changing numerical policy
+within this authorization. The V2 references, production generator, existing KNN
+teaching contract, learner evidence and mastery settings remain unchanged.
+This report does not close accessibility, Colab, or I/O obligations.
 
 ## Complete coverage and confirmed failure
 
@@ -92,6 +96,56 @@ The audit workflow runs the same approved versions on macOS ARM64 and supplement
 Linux x86-64. Each must match the local decision digest and exact proposed payload
 hashes (excluding platform-bearing parity metadata). No frozen files are written.
 
+### Independent results — 18 October 2026
+
+Initial audit source `fd0fd4f06df207380bc5ea924e2e3e43881ebeed`:
+[run 39118352067](https://github.com/CBehera5/ml-mastery/actions/runs/39118352067).
+macOS passed; Linux failed exact MS-E1 preservation. The first audit version stopped
+at that assertion before saving its remaining evidence. The diagnostic correction
+preserves all outputs on failure without changing the fixture, criterion or arithmetic.
+
+Diagnostic source `18e01b7308f46b492970a90d95c24943baf21f23`:
+[run 39118535718](https://github.com/CBehera5/ml-mastery/actions/runs/39118535718).
+
+| Environment | KNN audit | Max distance error vs Decimal | Minimum relevant margin/T | Exact payload gate |
+| --- | --- | --- | --- | --- |
+| Local macOS 15.6.1 ARM64 | 972/972 pass | 3.4416913763379853e-15 | 8,634,219.687488435 | pass |
+| CI macOS 15.7.9 ARM64 | 972/972 pass | 2.942091015256665e-15 | 8,634,219.687488435 | pass |
+| CI Linux x86-64, glibc 2.39 | 972/972 pass | 2.0539125955565396e-15 | 8,634,219.687488435 | fail |
+
+All three match the decision digest above, covering neighbor label counts and all
+threshold predictions. All reverse-training-order predictions match. Each environment
+also generates byte-identical outputs across its own two runs. The two sealed sidecars
+are byte-identical across all three environments. No new KNN ambiguity was found.
+
+The Linux exact-reference failure is **not** a KNN membership failure:
+
+- MS-E1 manifest: 129 changed floating-point leaves; no changed non-float leaves.
+  Maximum difference 2.514943808762382e-11 occurs at
+  `/configurations/16/validation/probabilitiesClassOrder01/0/0`:
+  0.9831208833582145 (ARM64) vs 0.983120883333065 (Linux x86-64).
+  Of 22 changed metric leaves, the largest is validation log loss
+  0.005417330075703408 vs 0.005417330083438947, delta
+  7.735539639397437e-12, greater than the existing 1e-12 metric tolerance.
+- Proposed MS-E2 manifest: 36 changed floating-point probability leaves; no changed
+  predictions, selections, candidate costs, aggregate metrics or non-float leaves.
+  Maximum difference 1.7138808150463092e-09 occurs at
+  `/configurations/0/expected/outerFolds/2/outerValidation/positiveProbabilities/6`:
+  0.3963621045947631 vs 0.39636210630864394.
+- Both MS-E1 and MS-E2 sealed sidecars, as well as the scope checksum, match exactly.
+  Every frozen repository file hash is unchanged before/after each audit.
+
+The evidence package contains complete rankings for both CI environments, original
+summary files, in-memory payloads and `cross-environment-impact.json` with every
+local-versus-CI changed leaf. These differences are observed outputs; the audit does
+not establish a particular BLAS instruction or solver stopping path as their cause.
+
+Local full Python regression: **2,612 passed in 25.38s**. This includes three new
+portability tests: detecting both V2 fragile cutoffs, exhaustive proposed-fixture
+portability, and distinguishing exact/near/mixed-label cutoff behavior. Frontend,
+notebook and full post-freeze CI were not rerun because the pre-freeze gate did not
+pass and no production fixture/reference was changed.
+
 ## Reference-output impact before versioning
 
 Two in-memory regenerations are byte-identical. Compared with the existing V2 manifest,
@@ -109,10 +163,23 @@ The audit asserts the frozen-directory file hashes are unchanged before and afte
 
 ## Re-freeze readiness
 
-Do not freeze until both independent pre-freeze jobs pass. Any new ambiguity or payload
-drift requires a stop and report, not another fixture perturbation. After a pass, update
-only MS-E2-related versions/references and dependent report/lock, review the complete
-output diff, verify byte identity, run local regressions and the independent full workflow.
+**Not ready for an unrestricted cross-platform re-freeze.** KNN fixture redesign itself
+passes on every audited environment. No further fixture perturbation is recommended.
+The supported macOS ARM64 profile reproduces the complete proposed outputs exactly,
+but the supplemental Linux profile does not reproduce the existing MS-E1 numerical
+contract or exact MS-E2 logistic probabilities. Accepting those differences would
+require an explicit numerical portability policy or supported-platform decision.
+
+Stop for founder review rather than widening tolerance, rounding outputs, changing
+MS-E1, or treating the failing job as passed. The review decision is whether reference
+freeze support remains limited to the verified macOS ARM64 environment or whether
+cross-platform numerical acceptance is to be separately authorized and specified.
+No such decision has been inferred here.
+
+After the approved gate passes, update only MS-E2-related versions/references and the
+dependent report/lock, review the complete output diff, verify byte identity, run local
+frontend/Python regressions and the independent full workflow including notebook checks.
+The 20/24 threshold, six paired gates and `MASTERY_AVAILABLE=false` remain unchanged.
 
 Sources: [StandardScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)
 defines training mean and population variance; [Euclidean distances](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.euclidean_distances.html)
