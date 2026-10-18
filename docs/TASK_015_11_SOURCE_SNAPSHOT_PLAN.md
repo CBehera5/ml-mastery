@@ -43,10 +43,14 @@ The reviewed pre-manifest index contains 811 files (30,785,393 bytes). It contai
 
 `docs/verification/source-snapshot-manifest.v1.json` records SHA-256 for every pre-manifest staged path using repository-relative names and exact staged blob contents. It excludes only itself to avoid a self-referential hash. Its aggregate is the SHA-256 of the sorted-key JSON path-to-hash mapping; its `content_sha256` is computed over the manifest payload without that field using compact sorted-key JSON. Reproduction: enumerate `git ls-files -z`, omit the manifest path, hash each index blob (`git show :<path>`), sort by path, and apply the declared serialization.
 
+### Aggregate metadata correction
+
+Post-snapshot verification confirmed all 811 individual file hashes and the complete tracked path set, but the aggregate recorded in the initial snapshot commit (`d29c6efd935b6cd5926e19572b83050db495346ff04c8099dedff4f348c924f7`) did not match the serialization specified above. The metadata-only follow-up preserves that initial commit as its parent, recomputes the aggregate from the sorted-key compact JSON mapping, recomputes the manifest payload content hash, and refreshes this report. No application source, dependency lock, learner evidence, frozen numerical fixture or mastery policy is changed. The initial reviewed commit remains in history; this follow-up is the corrected publication baseline.
+
 ## CI readiness
 
 The workflow is manual-only; it was not dispatched. It pins Node 20.19.4/npm 10.8.2 and Python 3.13.16 and verifies bounded frontend, Python, numerical, notebook and browser checks. GitHub currently documents `macos-15` as an ARM64 M1 runner ([runner reference](https://docs.github.com/en/actions/reference/runners/github-hosted-runners)), and the official [`actions/python-versions` manifest](https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json) includes a CPython 3.13.16 macOS ARM64 build. This confirms label/artifact compatibility, not a successful CI run. The GitHub account's private-repository runner entitlements and actual workflow execution remain unverified.
 
 ## Remaining obligations
 
-No external publication, CI run, deployment or Task 015.12 implementation is authorized. Genuine screen-reader, browser-zoom and Google Colab verification remain open. Original-directory I/O reliability remains open. Review the initial commit and exact staged file list before creating a private GitHub repository or remote.
+Private publication to `CBehera5/ml-mastery`, a manual Task 015.11 workflow run, and an update of the Vercel production alias to `ml-math-lab` are authorized. They have not yet been executed: the GitHub CLI credentials are invalid, no remote exists, and Vercel CLI is not installed in the local environment. Genuine screen-reader, browser-zoom and Google Colab verification remain open. Original-directory I/O reliability remains open. Production deployment must use the verified corrected follow-up commit; never force-push or replace the reviewed parent commit.

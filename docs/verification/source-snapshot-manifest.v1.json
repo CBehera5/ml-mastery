@@ -1,6 +1,6 @@
 {
-  "aggregate_sha256": "d29c6efd935b6cd5926e19572b83050db495346ff04c8099dedff4f348c924f7",
-  "content_sha256": "c75b44fe5b050d7152e2f53498fec5b188162c4c41c5dc383f319f20806437ac",
+  "aggregate_sha256": "a527eaa61e64befc76eaf5acd8bd540e05f671914ee7247136963803610fb730",
+  "content_sha256": "a7cbb1ef2b271412534193c6f1587348682177f25e041bfff4b67e76fa8b8bed",
   "excluded_self_path": "docs/verification/source-snapshot-manifest.v1.json",
   "files": {
     ".env.example": "bd2962524d0ae66f4bc017c370f2fedfa7fdd77f43aa627bdbfdbb9441276383",
@@ -460,7 +460,7 @@
     "docs/TASK_015_11_CLEAN_ENVIRONMENT_VERIFICATION.md": "44e717ad74cd3ec69035a26b2ec631f78fc2518f241242b35cd317c64320ae67",
     "docs/TASK_015_11_COMPLETION.md": "f9f6ed30d1533d7faba5a0354eca522eb64f8c0157eb91a204571e35c0739bf3",
     "docs/TASK_015_11_IMPLEMENTATION_READINESS.md": "07e91c93921529a7fb38e66e741c1ac30b9267404915986fee537a09f6d6fa75",
-    "docs/TASK_015_11_SOURCE_SNAPSHOT_PLAN.md": "c3d4fd3feacc7debf6741f29a0b475d551a96781aeb24546e4c5dc44da6e59ee",
+    "docs/TASK_015_11_SOURCE_SNAPSHOT_PLAN.md": "3c50f6033824ced30c23240ffdc6079cf82993a00afaa9a84c7c64af3710114b",
     "docs/TASK_015_11_VERIFICATION_RECOVERY.md": "930243177147f258ae3bfbf8fc05710a1ce51cd73d9d0fefb149919e0c11ace6",
     "docs/TASK_015_1_COMPLETION.md": "4be4740a9de1a460905c4a12e9b6e2528fcb09c641ab6ef6a69393ae3eb1f972",
     "docs/TASK_015_1_PHASE_B_COMPLETION.md": "bf147cffda159fa44e98c886e34c03f1fdf304c02a6d1c83acdefe1bd7f5f624",
@@ -818,5 +818,5 @@
   "hash_algorithm": "SHA-256",
   "schema": "source-snapshot.manifest.v1",
   "source_file_count": 811,
-  "source_revision": "pre-initial-commit-index"
+  "source_revision": "metadata-correction-index-parent-8427e2c9d3268f65b52f7f7e09b36d7a4d75bf07"
 }
