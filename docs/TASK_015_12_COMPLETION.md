@@ -1,5 +1,8 @@
 # Task 015.12 — Implementation and Verification Report
 
+> **Current disposition — activation recovery passed.** `4a2bbf48c0e83c0e97d5ec14d8f8be5113896a8b` enables Model Selection mastery after a successful conventional-install disabled-baseline build. All four jobs in [fresh independent CI](https://github.com/CBehera5/ml-mastery/actions/runs/39154246996) completed successfully. See [recovery report](TASK_015_12_ACTIVATION_RECOVERY.md). Ready for founder closure review; no merge or deployment. Historical blocked/rollback entries below are superseded by this recovery. Screen-reader, zoom, Colab and original-directory I/O remain platform-release obligations.
+
+
 ## Latest activation attempt — disabled state restored
 
 18 October 2026. The founder-authorized activation candidate `55bac5f524f1cfb552a4ece48699e47bce1a117f` passed focused mastery gates and local regressions, but the production build failed because the agent reused dependencies through a symlink outside the clean verification root. `MASTERY_AVAILABLE=false` was restored immediately and the attempt stopped under the explicit founder stop condition. No new activation CI or browser result is claimed. [Full results and rollback disposition](TASK_015_12_MASTERY_ACTIVATION.md). No learner evidence, numerical reference, evaluator or persistence contract changed. Do not mark mastery activated or Task 015.12 formally closed from this attempt; earlier canonical verification remains historical evidence for the reference freeze.

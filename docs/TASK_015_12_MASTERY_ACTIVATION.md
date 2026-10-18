@@ -1,5 +1,8 @@
 # Task 015.12 — Controlled mastery activation and closure review
 
+> **Current disposition — activation recovery passed.** `4a2bbf48c0e83c0e97d5ec14d8f8be5113896a8b` enables Model Selection mastery after a successful conventional-install disabled-baseline build. All four jobs in [fresh independent CI](https://github.com/CBehera5/ml-mastery/actions/runs/39154246996) completed successfully. See [recovery report](TASK_015_12_ACTIVATION_RECOVERY.md). Ready for founder closure review; no merge or deployment. Historical blocked/rollback entries below are superseded by this recovery. Screen-reader, zoom, Colab and original-directory I/O remain platform-release obligations.
+
+
 ## Current status — activation rolled back; stop for founder review
 
 **Mastery remains disabled.** Candidate activation commit:
