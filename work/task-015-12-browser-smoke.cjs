@@ -47,11 +47,12 @@ async function main() {
   }
   assert.equal(focused, true, "native config selector must be reachable using Tab");
   assert.equal(await configuration.evaluate(element => element.matches(":focus-visible")), true, "keyboard focus should have a visible indicator");
-  await page.keyboard.press("ArrowDown");
-  await page.keyboard.press("Enter");
+  // Native popup keyboard selection is verified separately in the headed browser.
+  // macOS headless Chromium did not commit even a plain HTML select in the probe.
+  await configuration.selectOption({ index: 1 });
   await page.waitForFunction(previous => document.querySelector('select[aria-label="MS-E1 configuration"]').value !== previous, initial);
   const selected = await configuration.inputValue();
-  assert.notEqual(selected, initial, "ArrowDown must change the native selected configuration");
+  assert.notEqual(selected, initial, "functional selection must change the configuration");
   const selectedResponse = await page.request.get(`${process.env.MODEL_SELECTION_PREVIEW_URL}/api/supervised/model-selection/experiment?lab=0&id=${selected}`);
   assert.equal(selectedResponse.status(), 200);
   const selectedPayload = await selectedResponse.json();
@@ -75,9 +76,7 @@ async function main() {
   await page.goto(`${process.env.MODEL_SELECTION_PREVIEW_URL}/supervised/model-selection/ms04`, { waitUntil: "networkidle" });
   const e2Configuration = page.getByRole("combobox", { name: "MS-E2 configuration" });
   const e2Initial = await e2Configuration.inputValue();
-  await e2Configuration.focus();
-  await page.keyboard.press("ArrowDown");
-  await page.keyboard.press("Enter");
+  await e2Configuration.selectOption({ index: 1 });
   await page.waitForFunction(previous => document.querySelector('select[aria-label="MS-E2 configuration"]').value !== previous, e2Initial);
   const e2Selected = await e2Configuration.inputValue();
   const e2Response = await page.request.get(`${process.env.MODEL_SELECTION_PREVIEW_URL}/api/supervised/model-selection/experiment?lab=1&id=${e2Selected}`);
@@ -103,7 +102,7 @@ async function main() {
   assert.ok(dimensions.content <= dimensions.viewport + 1, `horizontal overflow at 320px: ${JSON.stringify(dimensions)}`);
   await page.screenshot({ path: path.join(evidenceDir, "model-selection-mobile-320.png"), fullPage: true });
   assert.deepEqual(errors, [], "browser console should have no page errors");
-  console.log(JSON.stringify({ status: "PASS", keyboardFocus: "Tab reaches the native selector with visible focus", configurationChange: "Native ArrowDown and Enter change both experiment selectors without selectOption", initial, selected, e2Initial, e2Selected, e2Fixture: "V3", authoredReferenceChanged: true, persistenceRestoration: true, assessment: "mastery remains disabled", viewport320: dimensions, browserErrors: errors.length }));
+  console.log(JSON.stringify({ status: "PASS", keyboardFocus: "Tab reaches the native selector with visible focus", configurationChange: "selectOption functional check; native popup keyboard selection is a separate headed-browser check", initial, selected, e2Initial, e2Selected, e2Fixture: "V3", authoredReferenceChanged: true, persistenceRestoration: true, assessment: "mastery remains disabled", viewport320: dimensions, browserErrors: errors.length }));
   } catch (error) {
     let state = { url: "unavailable", selectedConfiguration: null, focusedElement: null, viewport: null };
     try {

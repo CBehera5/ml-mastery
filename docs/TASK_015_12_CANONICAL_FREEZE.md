@@ -64,11 +64,30 @@ fixture/manifest/reference/report/lock IDs advance to V3. MS-E1 remains V1.
 - Canonical generator recomputes metrics independently and checks scikit-learn parity.
   Two complete `--check` runs pass byte identity and every locked hash.
 - Full local Python suite: **2,612 passed in 13.39s**.
-- Local frontend/TypeScript, typecheck/build, two fresh notebook kernels and independent
-  final-source GitHub Actions: results pending when this reviewed source was prepared.
-- Browser smoke now requires actual ArrowDown/Enter changes in both experiment
-  selectors, V3 API values, practice/experiment restoration, prediction/reveal,
-  assessment lock, visible Tab focus, and 320px layout. Passing results remain pending.
+- Clean local committed-source snapshot: **66 math-runtime tests and 2,794 frontend
+  tests passed**, plus typecheck and production build. The original directory stalled
+  on the full web suite/typecheck; bounded attempts were stopped and are not counted
+  as passes. Original-directory I/O reliability remains open.
+- Two fresh local notebook kernels passed with matching structured-output SHA-256
+  `134e21b507492443d6e5a4c577e6ef4ae9deff697d1d11adb12134490b195e63`.
+  The sandbox initially blocked loopback kernel sockets; the permitted rerun passed.
+- Headed local production browser: native Down opens the selector, another Down moves
+  to the next state, and Return commits. This passed for both MS-E1 and MS-E2 without
+  `selectOption` or DOM mutation; both selections restored after reload. AX traces,
+  screenshots and [verification metadata](verification/model-selection-portability/headed-keyboard-verification.json)
+  are retained. This is not screen-reader evidence.
+- Initial independent [run 39120885435](https://github.com/CBehera5/ml-mastery/actions/runs/39120885435)
+  at source `59e84ec9c99a48e07803a3a7b8f91bf9129a289d` passed the canonical audit,
+  66 math/2,794 frontend/2,612 Python tests, typecheck/build, frozen hashes and notebook
+  checks. Its browser job failed when CDP keyboard input did not commit the macOS
+  headless native menu. A plain HTML select probe reproduced that behavior; no app
+  error or numerical mismatch was found.
+- The corrected CI smoke explicitly uses `selectOption` for functional configuration
+  changes and tests genuine Tab focus/visible focus separately. Native popup keyboard
+  evidence comes from the headed check above, not from this functional assertion.
+  It also checks V3 API values, sealed-data isolation, practice/experiment restoration,
+  prediction/reveal, assessment lock and 320px layout. A complete final-source rerun
+  remains required; partial results from the initial run are not closure evidence.
 
 ## Acceptance boundaries
 
