@@ -25,3 +25,10 @@ Implementation commit `30557d6e4ea52e698fb820f7ea0f8447a8651b2d` passed all four
 A local final default-timeout suite failed timing/worker checks; it is retained as FAIL, not suppressed. A bounded retry with the same assertions and 20-second per-test scheduling allowance passed 2,849 tests. Local typecheck/build passed. Local Python 3.13.0 did not satisfy the frozen 3.13.16 interpreter gate; CI uses the approved interpreter. Original-directory/local-machine reliability remains open.
 
 **Bounded functional implementation PASS. Full Phase 2.1 acceptance recommendation FAIL pending mandatory actual 200%/400% zoom evidence; actual reader speech also remains OPEN.** Native Chrome control timed out, and no actual zoom was achieved. Founder acceptance remains pending; Discovery Tour remains unauthorized. This documentation disposition does not change the independently tested application.
+
+## 19 October 2026 Phase 2.1 native zoom closure
+
+Founder conditionally accepted functional `30557d6` and authorized genuine zoom closure. Native Chrome 155.0.8059.80 on macOS 15.6.1 verifies `/` and `/journey` at actual 200% and 400%: keyboard navigation, visible focus, text reflow, reachable content/actions and no page-level horizontal overflow. Measured viewport/scroll width pairs are 720/720 and 360/360; CSS zoom and pinch scale remain 1. [Scenario ledger and outstanding register](PHASE_2_1_ACCEPTANCE_CLOSURE.md) supersede earlier inability-to-test statements **only for these two public routes**. No application code changed.
+
+**Scoped zoom PASS; founder acceptance pending final exact-commit CI and review.** Screen-reader speech, Colab and original-directory I/O remain **OPEN**. Platform-wide zoom is not certified. No Discovery Tour, merge or deployment.
+

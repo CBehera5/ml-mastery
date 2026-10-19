@@ -1,5 +1,12 @@
 # Release accessibility and QA blockers
 
+## 19 October 2026 Phase 2.1 native zoom closure
+
+Founder conditionally accepted functional `30557d6` and authorized genuine zoom closure. Native Chrome 155.0.8059.80 on macOS 15.6.1 verifies `/` and `/journey` at actual 200% and 400%: keyboard navigation, visible focus, text reflow, reachable content/actions and no page-level horizontal overflow. Measured viewport/scroll width pairs are 720/720 and 360/360; CSS zoom and pinch scale remain 1. [Scenario ledger and outstanding register](PHASE_2_1_ACCEPTANCE_CLOSURE.md) supersede earlier inability-to-test statements **only for these two public routes**. No application code changed.
+
+**Scoped zoom PASS; founder acceptance pending final exact-commit CI and review.** Screen-reader speech, Colab and original-directory I/O remain **OPEN**. Platform-wide zoom is not certified. No Discovery Tour, merge or deployment.
+
+
 ## 19 October 2026 Phase 2.1 verification disposition
 
 Public landing and preserved `/journey` are implemented; [exact-source independent CI](https://github.com/CBehera5/ml-mastery/actions/runs/39232544289) passes on `30557d6`. Affected public/journey routes, native disclosure keyboard behavior, saved-record preservation and 320/390/768/1280/1440px geometry are verified within scope. Landing contrast pairs and sequential keyboard traversal are recorded separately.
