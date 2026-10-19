@@ -1,5 +1,10 @@
 # Release accessibility and QA blockers
 
+## 19 October 2026 Task 015 accepted and release obligations carried forward
+
+Task 015 implementation/mastery activation is founder-accepted; [closure](PHASE_2_01_TASK_015_CLOSURE.md) records successful exact-source independent CI. This acceptance does not waive genuine screen-reader, real 200%/400% zoom, Google Colab or original-directory I/O reliability. All four remain OPEN. Phase 2 now permits audit/specification only. [Audit plan](PHASE_2_07_CONTENT_QUALITY_AUDIT_PLAN.md) defines evidence/retest ownership and keeps real checks separate from viewport, AX, local-kernel and temporary-clone evidence. No release, merge or deployment authorized.
+
+
 ## Task015.10 implementation — current status
 
 17 October2026. [Completion report](TASK_015_10_COMPLETION.md):SV01–SV05 implemented;20 objectives,40 practice,60 independent instances,five paired O2 gates,16/20 in one confirmed attempt,two frozen labs(15/43 states) and one locally reproducible notebook. Full regressions,typecheck/build and live keyboard/320px checks verified in isolated QA. Mastery uses only the separate SVM scope;prior thresholds/evidence remain unchanged. Genuine screen-reader/browser zoom/Colab and original-directory I/O reliability remain OPEN. No later algorithm work authorized. Older freeze-only statements below are historical,superseded by this implementation entry.

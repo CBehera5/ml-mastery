@@ -1,5 +1,16 @@
 # Supervised curriculum phased roadmap and founder decisions
 
+## 19 October 2026 Task 015 founder closure and Phase 2 design only
+
+**Task 015 is closed for implementation completeness.** The founder accepted Model Selection mastery activation `4a2bbf48c0e83c0e97d5ec14d8f8be5113896a8b` and [independent CI 39154246996](https://github.com/CBehera5/ml-mastery/actions/runs/39154246996): all four jobs completed successfully. The source is on `task-015-12-knn-portability`, not merged into `origin/main`; no PR was recorded for that head at this review. No merge or deployment is authorized. [Closure report](PHASE_2_01_TASK_015_CLOSURE.md) records exact evidence and preserved boundaries.
+
+Model Selection mastery remains enabled under the approved 20/24 plus both components of all six paired gates in one confirmed independent attempt. No attempt pooling, practice/notebook mastery, policy changes, numerical changes or learner-evidence migration. Frozen MS-E1/MS-E2 references retain the accepted canonical macOS ARM64 contract. Earlier pending/blocked/disabled dispositions below are historical and superseded for current Task 015 implementation status.
+
+Phase 2 is **audit and design only**. [Review package](PHASE_2_REVIEW_PACKAGE.md) includes public/learner navigation, landing/free-lab specifications, reusable lesson design, content audit priorities, bounded roadmap and founder decisions. No application implementation, Project Studio/capstones, payment integration, external learner testing or unrelated curriculum work. Task 014/016/017/018 identities remain unchanged.
+
+**OPEN platform-release obligations:** genuine screen-reader use, real browser 200%/400% zoom, genuine Google Colab execution and original-directory I/O reliability. Scoped keyboard/320px, local kernels and clean-clone builds do not close these. Task 015 implementation closure is distinct from release acceptance.
+
+
 **18 October 2026 — Current disposition:** Task 015.11 MLP activation commit `8b37d1e8c75a33a0ee2f73265294385a95549ebb` passed [independent CI](https://github.com/CBehera5/ml-mastery/actions/runs/39107761702); Task 015.11 is accepted for implementation completeness. Task 015.12 is implemented within the approved MS01–06, 24/48/72, six-gate, 20/24 allocation; current acceptance is **blocked**, so `MASTERY_AVAILABLE=false`. Local frontend worker startup, typecheck, production build, preview, and browser checks remain incomplete. See [Task 015.12 report](TASK_015_12_COMPLETION.md). A bounded independent workflow is prepared but not yet executed. Genuine screen-reader, browser-zoom, Colab and original-directory I/O checks remain open for platform release.
 
 **18 October 2026 — Task 015.12 reference freeze:** The bounded spec SHA-256 is `6a15b2a3db4407c85ff480bc6460dfb78747cd9ff716dcd3bc951e063228e654`. Both authored manifests pass pinned-reference parity and byte-identical regeneration (20 MS-E1 states; 11 MS-E2 states). See [reference freeze report](verification/model-selection/REFERENCE_FREEZE_REPORT.md). This completes specification/reference preparation only; wait for separate implementation authorization.

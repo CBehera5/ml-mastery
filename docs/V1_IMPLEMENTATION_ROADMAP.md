@@ -1,5 +1,16 @@
 # V1 implementation roadmap
 
+## 19 October 2026 Task 015 founder closure and Phase 2 design only
+
+**Task 015 is closed for implementation completeness.** The founder accepted Model Selection mastery activation `4a2bbf48c0e83c0e97d5ec14d8f8be5113896a8b` and [independent CI 39154246996](https://github.com/CBehera5/ml-mastery/actions/runs/39154246996): all four jobs completed successfully. The source is on `task-015-12-knn-portability`, not merged into `origin/main`; no PR was recorded for that head at this review. No merge or deployment is authorized. [Closure report](PHASE_2_01_TASK_015_CLOSURE.md) records exact evidence and preserved boundaries.
+
+Model Selection mastery remains enabled under the approved 20/24 plus both components of all six paired gates in one confirmed independent attempt. No attempt pooling, practice/notebook mastery, policy changes, numerical changes or learner-evidence migration. Frozen MS-E1/MS-E2 references retain the accepted canonical macOS ARM64 contract. Earlier pending/blocked/disabled dispositions below are historical and superseded for current Task 015 implementation status.
+
+Phase 2 is **audit and design only**. [Review package](PHASE_2_REVIEW_PACKAGE.md) includes public/learner navigation, landing/free-lab specifications, reusable lesson design, content audit priorities, bounded roadmap and founder decisions. No application implementation, Project Studio/capstones, payment integration, external learner testing or unrelated curriculum work. Task 014/016/017/018 identities remain unchanged.
+
+**OPEN platform-release obligations:** genuine screen-reader use, real browser 200%/400% zoom, genuine Google Colab execution and original-directory I/O reliability. Scoped keyboard/320px, local kernels and clean-clone builds do not close these. Task 015 implementation closure is distinct from release acceptance.
+
+
 ## Task015.11 — MLP experiment reference freeze complete; application pending authorization
 
 17 October2026. NN-E1/NN-E2 frozen at25/48 configurations;8 fitted runs,1024 sequential updates,1,030 finite-difference checks and maximum gradient error1.6872304942072702e−10 are recorded in the [trusted parity report](verification/multilayer-perceptrons/TRUSTED_PARITY_REPORT.md). Clean regeneration passes with unchanged hashes;535 accepted source files preserved. Approved NN01–05,20/40/60,five paired gates,16/20,two labs and one notebook remain unchanged. No application/notebook implementation,learner evidence or mastery changes. Genuine reader/browser zoom/Colab and original-directory I/O remain OPEN. See [implementation readiness](TASK_015_11_IMPLEMENTATION_READINESS.md). Await founder approval before implementation;Task015.12 not started. Older scope-only statuses below are historical.
