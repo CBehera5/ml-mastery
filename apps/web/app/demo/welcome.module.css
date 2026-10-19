@@ -13,7 +13,7 @@
 .choices label { display: flex; align-items: center; gap: .7rem; padding: .6rem; min-height: 48px; color: #18372e; font-size: 1rem; font-weight: 550; cursor: pointer; }
 .choices input { display: inline-block; width: 1.1rem; height: 1.1rem; flex: 0 0 1.1rem; margin: 0; accent-color: #24604f; }
 .primary, .quiet { min-height: 44px; max-width: 100%; white-space: normal; text-align: left; border-radius: 8px; line-height: 1.5; }
-.primary { display: block; border: 1px solid #18372e; background: #18372e; color: white; padding: .7rem 1.1rem; margin: 1rem 0; font-weight: 750; }
+.primary { scroll-margin-block: 1rem; display: block; border: 1px solid #18372e; background: #18372e; color: white; padding: .7rem 1.1rem; margin: 1rem 0; font-weight: 750; }
 .primary:disabled { opacity: .6; cursor: default; }
 .quiet { display: block; border: 0; background: transparent; color: #20534b; padding: .5rem .25rem; text-decoration: underline; text-underline-offset: .2em; }
 .welcome .note { color: #4d625a; font-size: .9rem; }
