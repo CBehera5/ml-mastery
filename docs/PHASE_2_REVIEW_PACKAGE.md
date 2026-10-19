@@ -15,3 +15,7 @@
 ## Phase 2.1 specification checkpoint
 
 19 October 2026. The founder accepted the planning milestones and authorized a bounded navigation/availability/landing implementation specification only. [Phase 2.1 review package](PHASE_2_1_REVIEW_PACKAGE.md) narrows the earlier roadmap. No application implementation, merge or deployment; stop for founder review.
+
+## Guided free discovery tour design
+
+19 October 2026. Founder requested a separate 12–15-minute guided free discovery design using one fictional house-price example. [Tour design and wireframes](GUIDED_FREE_DISCOVERY_TOUR/00-Review-Index.md) cover entry, three learning stages, static Coming Soon Studio preview, summary/planned $39 information, isolated anonymous session model and acceptance plan. Design only; Phase 2.1 application scope is not silently expanded and no implementation, merge or deployment is authorized.

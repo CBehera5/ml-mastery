@@ -1,0 +1,376 @@
+{
+  "purpose": "Design oracle cross-check, not app acceptance or reference freeze",
+  "runtimeSource": "Existing compiled regression 1.0.0, protected source unchanged",
+  "independentOracle": "Python fractions exact arithmetic, same decimal inputs",
+  "runs": 24,
+  "inspectedStates": 264,
+  "maximumAbsoluteDifference": 1.5347723092418164e-12,
+  "scope": "weights, biases, MSE and gradients across 264 state visits",
+  "baseline": {
+    "schemaVersion": "1.0.0",
+    "shape": {
+      "observations": 6,
+      "features": 1
+    },
+    "parameters": {
+      "weights": [
+        42
+      ],
+      "bias": 140
+    },
+    "rows": [
+      {
+        "features": [
+          1
+        ],
+        "contributions": [
+          42
+        ],
+        "target": 178,
+        "prediction": 182,
+        "residual": 4,
+        "absoluteResidual": 4,
+        "squaredResidual": 16
+      },
+      {
+        "features": [
+          1.8
+        ],
+        "contributions": [
+          75.60000000000001
+        ],
+        "target": 213,
+        "prediction": 215.60000000000002,
+        "residual": 2.6000000000000227,
+        "absoluteResidual": 2.6000000000000227,
+        "squaredResidual": 6.760000000000118
+      },
+      {
+        "features": [
+          2.5
+        ],
+        "contributions": [
+          105
+        ],
+        "target": 246,
+        "prediction": 245,
+        "residual": -1,
+        "absoluteResidual": 1,
+        "squaredResidual": 1
+      },
+      {
+        "features": [
+          3.2
+        ],
+        "contributions": [
+          134.4
+        ],
+        "target": 278,
+        "prediction": 274.4,
+        "residual": -3.6000000000000227,
+        "absoluteResidual": 3.6000000000000227,
+        "squaredResidual": 12.960000000000164
+      },
+      {
+        "features": [
+          4
+        ],
+        "contributions": [
+          168
+        ],
+        "target": 316,
+        "prediction": 308,
+        "residual": -8,
+        "absoluteResidual": 8,
+        "squaredResidual": 64
+      },
+      {
+        "features": [
+          4.8
+        ],
+        "contributions": [
+          201.6
+        ],
+        "target": 349,
+        "prediction": 341.6,
+        "residual": -7.399999999999977,
+        "absoluteResidual": 7.399999999999977,
+        "squaredResidual": 54.759999999999664
+      }
+    ],
+    "metrics": {
+      "mae": 4.433333333333337,
+      "mse": 25.913333333333327,
+      "rmse": 5.090514053937316
+    }
+  },
+  "guided": {
+    "schemaVersion": "1.0.0",
+    "shape": {
+      "observations": 6,
+      "features": 1
+    },
+    "parameters": {
+      "weights": [
+        44
+      ],
+      "bias": 140
+    },
+    "rows": [
+      {
+        "features": [
+          1
+        ],
+        "contributions": [
+          44
+        ],
+        "target": 178,
+        "prediction": 184,
+        "residual": 6,
+        "absoluteResidual": 6,
+        "squaredResidual": 36
+      },
+      {
+        "features": [
+          1.8
+        ],
+        "contributions": [
+          79.2
+        ],
+        "target": 213,
+        "prediction": 219.2,
+        "residual": 6.199999999999989,
+        "absoluteResidual": 6.199999999999989,
+        "squaredResidual": 38.439999999999856
+      },
+      {
+        "features": [
+          2.5
+        ],
+        "contributions": [
+          110
+        ],
+        "target": 246,
+        "prediction": 250,
+        "residual": 4,
+        "absoluteResidual": 4,
+        "squaredResidual": 16
+      },
+      {
+        "features": [
+          3.2
+        ],
+        "contributions": [
+          140.8
+        ],
+        "target": 278,
+        "prediction": 280.8,
+        "residual": 2.8000000000000114,
+        "absoluteResidual": 2.8000000000000114,
+        "squaredResidual": 7.840000000000064
+      },
+      {
+        "features": [
+          4
+        ],
+        "contributions": [
+          176
+        ],
+        "target": 316,
+        "prediction": 316,
+        "residual": 0,
+        "absoluteResidual": 0,
+        "squaredResidual": 0
+      },
+      {
+        "features": [
+          4.8
+        ],
+        "contributions": [
+          211.2
+        ],
+        "target": 349,
+        "prediction": 351.2,
+        "residual": 2.1999999999999886,
+        "absoluteResidual": 2.1999999999999886,
+        "squaredResidual": 4.83999999999995
+      }
+    ],
+    "metrics": {
+      "mae": 3.5333333333333314,
+      "mse": 17.186666666666643,
+      "rmse": 4.145680482944464
+    }
+  },
+  "guidedTraining": {
+    "initialWeight": 44,
+    "initialBias": 140,
+    "rate": 0.01,
+    "trace": {
+      "schemaVersion": "1.0.0",
+      "entryConvention": "iteration 0 is the initial state; iteration k is the state after k updates",
+      "requestedIterations": 10,
+      "completedUpdates": 10,
+      "learningRate": 0.01,
+      "status": "completed",
+      "terminationReason": "iterations_completed",
+      "entries": [
+        {
+          "iteration": 0,
+          "weights": [
+            44
+          ],
+          "bias": 140,
+          "loss": 17.186666666666643,
+          "weightGradients": [
+            15.559999999999988
+          ],
+          "biasGradient": 7.066666666666663,
+          "status": "running",
+          "terminationReason": null
+        },
+        {
+          "iteration": 1,
+          "weights": [
+            43.8444
+          ],
+          "bias": 139.92933333333335,
+          "loss": 14.575740893422383,
+          "weightGradients": [
+            12.052418222222322
+          ],
+          "biasGradient": 6.028040000000042,
+          "status": "running",
+          "terminationReason": null
+        },
+        {
+          "iteration": 2,
+          "weights": [
+            43.723875817777774
+          ],
+          "bias": 139.86905293333334,
+          "loss": 12.94999431102856,
+          "weightGradients": [
+            9.303557791748098
+          ],
+          "biasGradient": 5.212456415851837,
+          "status": "running",
+          "terminationReason": null
+        },
+        {
+          "iteration": 3,
+          "weights": [
+            43.63084023986029
+          ],
+          "bias": 139.8169283691748,
+          "loss": 11.929641873313047,
+          "weightGradients": [
+            7.149393974391261
+          ],
+          "biasGradient": 4.571702121543959,
+          "status": "running",
+          "terminationReason": null
+        },
+        {
+          "iteration": 4,
+          "weights": [
+            43.55934630011638
+          ],
+          "bias": 139.77121134795937,
+          "loss": 11.281355164389572,
+          "weightGradients": [
+            5.461361559217755
+          ],
+          "biasGradient": 4.067986359923205,
+          "status": "running",
+          "terminationReason": null
+        },
+        {
+          "iteration": 5,
+          "weights": [
+            43.50473268452421
+          ],
+          "bias": 139.73053148436014,
+          "loss": 10.861783975817106,
+          "weightGradients": [
+            4.138689077813995
+          ],
+          "biasGradient": 3.6716881161431916,
+          "status": "running",
+          "terminationReason": null
+        },
+        {
+          "iteration": 6,
+          "weights": [
+            43.463345793746065
+          ],
+          "bias": 139.69381460319872,
+          "loss": 10.582857795754055,
+          "weightGradients": [
+            3.102390242513371
+          ],
+          "biasGradient": 3.3595899503330786,
+          "status": "running",
+          "terminationReason": null
+        },
+        {
+          "iteration": 7,
+          "weights": [
+            43.43232189132093
+          ],
+          "bias": 139.6602187036954,
+          "loss": 10.390468169495385,
+          "weightGradients": [
+            2.2905543393941037
+          ],
+          "biasGradient": 3.11349364734149,
+          "status": "running",
+          "terminationReason": null
+        },
+        {
+          "iteration": 8,
+          "weights": [
+            43.40941634792699
+          ],
+          "bias": 139.62908376722197,
+          "loss": 10.251371833306992,
+          "weightGradients": [
+            1.6546547628454755
+          ],
+          "biasGradient": 2.919135140822931,
+          "status": "running",
+          "terminationReason": null
+        },
+        {
+          "iteration": 9,
+          "weights": [
+            43.392869800298534
+          ],
+          "bias": 139.59989241581374,
+          "loss": 10.145144424691507,
+          "weightGradients": [
+            1.1566555858070546
+          ],
+          "biasGradient": 2.7653340133490376,
+          "status": "running",
+          "terminationReason": null
+        },
+        {
+          "iteration": 10,
+          "weights": [
+            43.38130324444047
+          ],
+          "bias": 139.57223907568024,
+          "loss": 10.059237102969787,
+          "weightGradients": [
+            0.7667436431583102
+          ],
+          "biasGradient": 2.643326860967183,
+          "status": "completed",
+          "terminationReason": "iterations_completed"
+        }
+      ]
+    }
+  },
+  "policy": "1e-10 used only as a scratch design-sanity assertion, not proposed as production tolerance or a change to any frozen contract"
+}

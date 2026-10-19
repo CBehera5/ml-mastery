@@ -1,0 +1,76 @@
+{
+  "status": "PROPOSED DESIGN INPUT ONLY \u2014 not a frozen reference",
+  "proposalVersion": "discovery.house.v1-draft",
+  "source": "apps/web/app/learn/linear-regression/lab-data.ts HOUSE_DATA and HOUSE_PARAMETERS, unchanged",
+  "rows": [
+    {
+      "id": "H01",
+      "area_thousand_ft2": 1.0,
+      "price_thousand_dollars": 178,
+      "role": "teaching/training"
+    },
+    {
+      "id": "H02",
+      "area_thousand_ft2": 1.8,
+      "price_thousand_dollars": 213,
+      "role": "teaching/training"
+    },
+    {
+      "id": "H03",
+      "area_thousand_ft2": 2.5,
+      "price_thousand_dollars": 246,
+      "role": "teaching/training"
+    },
+    {
+      "id": "H04",
+      "area_thousand_ft2": 3.2,
+      "price_thousand_dollars": 278,
+      "role": "teaching/training"
+    },
+    {
+      "id": "H05",
+      "area_thousand_ft2": 4.0,
+      "price_thousand_dollars": 316,
+      "role": "teaching/training"
+    },
+    {
+      "id": "H06",
+      "area_thousand_ft2": 4.8,
+      "price_thousand_dollars": 349,
+      "role": "teaching/training"
+    }
+  ],
+  "baseline": {
+    "weight": 42,
+    "bias": 140
+  },
+  "guidedMathCheckpoint": {
+    "weight": 44,
+    "bias": 140
+  },
+  "boundedWeights": [
+    40,
+    42,
+    44,
+    46
+  ],
+  "boundedBiases": [
+    130,
+    140,
+    150
+  ],
+  "learningRates": [
+    0.001,
+    0.01
+  ],
+  "maxUpdates": 10,
+  "challenge": {
+    "id": "T-ALG-01",
+    "queryArea": 2,
+    "weight": 44,
+    "bias": 140,
+    "expectedPrediction": 228,
+    "observedTarget": null,
+    "role": "unlabeled arithmetic challenge, never model evaluation"
+  }
+}
