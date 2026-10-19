@@ -10,9 +10,14 @@ import { NeuralNetworkXRay } from "./xray";
 const change = (label: string | RegExp, value: string) => fireEvent.change(screen.getByLabelText(label), { target: { value } });
 afterEach(cleanup);
 
+function renderLab() {
+  render(<NeuralNetworkXRay />);
+  fireEvent.click(screen.getByRole("button", { name: "Skip introduction — open full lab" }));
+}
+
 describe("Neural Network X-Ray", () => {
   it("renders the reference scenario", () => {
-    render(<NeuralNetworkXRay />);
+    renderLab();
     expect(screen.getByTestId("prediction")).toHaveTextContent("9");
     expect(screen.getByTestId("loss")).toHaveTextContent("9");
     expect(screen.getByLabelText("Input x1")).toHaveValue(2);
@@ -20,7 +25,7 @@ describe("Neural Network X-Ray", () => {
   });
 
   it("edits a weight and recalculates prediction and loss", () => {
-    render(<NeuralNetworkXRay />);
+    renderLab();
     change("Weight w1", "2");
     expect(screen.getByText(/Values changed/)).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: /Run forward pass/ }));
@@ -29,7 +34,7 @@ describe("Neural Network X-Ray", () => {
   });
 
   it("applies one gradient update", () => {
-    render(<NeuralNetworkXRay />);
+    renderLab();
     fireEvent.click(screen.getByRole("button", { name: "Apply one update" }));
     expect(screen.getByLabelText("Weight w1")).toHaveValue(1.12);
     expect(screen.getByLabelText("Weight w2")).toHaveValue(2.18);
@@ -39,7 +44,7 @@ describe("Neural Network X-Ray", () => {
   });
 
   it("resets parameters and history", () => {
-    render(<NeuralNetworkXRay />);
+    renderLab();
     fireEvent.click(screen.getByRole("button", { name: "Apply one update" }));
     fireEvent.click(screen.getByRole("button", { name: "Reset" }));
     expect(screen.getByLabelText("Weight w1")).toHaveValue(1);
@@ -48,7 +53,7 @@ describe("Neural Network X-Ray", () => {
   });
 
   it("trains for multiple steps and records before/after loss", () => {
-    render(<NeuralNetworkXRay />);
+    renderLab();
     change("Training steps (max 100)", "3");
     fireEvent.click(screen.getByRole("button", { name: "Train model" }));
     expect(screen.getByText("Step 3")).toBeInTheDocument();
@@ -57,7 +62,7 @@ describe("Neural Network X-Ray", () => {
   });
 
   it("displays forward and backward calculation-trace values", () => {
-    render(<NeuralNetworkXRay />);
+    renderLab();
     const forward = screen.getByRole("tabpanel", { name: "Forward pass calculations" });
     expect(within(forward).getByText("L = 9")).toBeInTheDocument();
     fireEvent.click(screen.getByRole("tab", { name: "Backward pass" }));
@@ -67,7 +72,7 @@ describe("Neural Network X-Ray", () => {
   });
 
   it("handles invalid input without replacing the current trace", () => {
-    render(<NeuralNetworkXRay />);
+    renderLab();
     change(/Learning rate η/, "0");
     fireEvent.click(screen.getByRole("button", { name: /Run forward pass/ }));
     expect(screen.getByRole("alert")).toHaveTextContent("greater than 0");
@@ -75,7 +80,7 @@ describe("Neural Network X-Ray", () => {
   });
 
   it("warns when training diverges", () => {
-    render(<NeuralNetworkXRay />);
+    renderLab();
     change(/Learning rate η/, "1");
     change("Training steps (max 100)", "2");
     fireEvent.click(screen.getByRole("button", { name: "Train model" }));
@@ -94,7 +99,7 @@ describe("Neural Network X-Ray", () => {
   });
 
   it("unlocks lesson navigation only after the required learner action", () => {
-    render(<NeuralNetworkXRay />);
+    renderLab();
     const next = screen.getByRole("button", { name: "Next" });
     expect(next).toBeDisabled();
     fireEvent.click(screen.getByRole("button", { name: /Run forward pass/ }));
@@ -109,7 +114,7 @@ describe("Neural Network X-Ray", () => {
   });
 
   it("shows gradient direction when a connection is selected in backward mode", () => {
-    render(<NeuralNetworkXRay />);
+    renderLab();
     fireEvent.click(screen.getByRole("tab", { name: /Backward gradients/ }));
     fireEvent.click(screen.getByRole("button", { name: /Select connection 1/ }));
     expect(screen.getByText(/Gradient -12/)).toBeInTheDocument();
@@ -117,7 +122,7 @@ describe("Neural Network X-Ray", () => {
   });
 
   it("keeps valid edits reactive and hides the trace for an invalid draft", () => {
-    render(<NeuralNetworkXRay />);
+    renderLab();
     change("Input x1", "3");
     expect(screen.getByTestId("prediction")).toHaveTextContent("10");
     expect(screen.getByText(/preview is synchronized/)).toBeInTheDocument();
@@ -127,7 +132,7 @@ describe("Neural Network X-Ray", () => {
   });
 
   it("highlights and explains the selected training-history step", () => {
-    render(<NeuralNetworkXRay />);
+    renderLab();
     fireEvent.click(screen.getByRole("button", { name: "Apply one update" }));
     const row = screen.getByRole("button", { name: /Step 1/ });
     expect(row).toHaveClass("selected");

@@ -201,6 +201,7 @@ jobs:
           test "$ready" = 1
           PLAYWRIGHT_PACKAGE_DIR="$RUNNER_TEMP/playwright/node_modules/playwright" MODEL_SELECTION_PREVIEW_URL="http://127.0.0.1:3030" node work/task-015-12-browser-smoke.cjs 2>&1 | tee "$TASK01512_EVIDENCE/browser-smoke.log"
           PLAYWRIGHT_PACKAGE_DIR="$RUNNER_TEMP/playwright/node_modules/playwright" PHASE21_PREVIEW_URL="http://127.0.0.1:3030" PHASE21_EVIDENCE="$TASK01512_EVIDENCE" node work/phase-2-1-browser-smoke.cjs 2>&1 | tee "$TASK01512_EVIDENCE/phase21-browser-smoke.log"
+          PLAYWRIGHT_PACKAGE_DIR="$RUNNER_TEMP/playwright/node_modules/playwright" PHASE21_PREVIEW_URL="http://127.0.0.1:3030" PHASE21_EVIDENCE="$TASK01512_EVIDENCE" node work/phase-3-2a-browser-smoke.cjs 2>&1 | tee "$TASK01512_EVIDENCE/phase32-browser-smoke.log"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: always()
         with:

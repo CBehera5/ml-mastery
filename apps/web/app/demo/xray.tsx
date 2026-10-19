@@ -4,6 +4,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { linearNeuronTrace, type LinearNeuronInput, type LinearNeuronTrace } from "@mlmath/runtime";
 import { BetaNav } from "../components/beta-nav";
 import { trackEvent } from "../lib/analytics";
+import { XRayWelcome } from "./welcome";
+import welcomeStyles from "./welcome.module.css";
 
 const REFERENCE: LinearNeuronInput = { inputs: [2, 3], weights: [1, 2], bias: 1, target: 12, learningRate: 0.01 };
 const MAX_TRAINING_STEPS = 100;
@@ -110,6 +112,17 @@ function CalculationInspector({ trace, updateTrace, view, onViewChange }: { trac
 }
 
 export function NeuralNetworkXRay() {
+  const [welcomeOpen, setWelcomeOpen] = useState(true);
+  const welcomeHeading = useRef<HTMLHeadingElement>(null);
+  const labHeading = useRef<HTMLHeadingElement>(null);
+  const entryRequested = useRef(false);
+  useEffect(() => {
+    if (entryRequested.current) {
+      (welcomeOpen ? welcomeHeading : labHeading).current?.focus();
+      entryRequested.current = false;
+    }
+  }, [welcomeOpen]);
+  const showWelcome = (open: boolean) => { entryRequested.current = true; setWelcomeOpen(open); };
   const initialTrace = useMemo(() => linearNeuronTrace(REFERENCE), []);
   const [draft, setDraft] = useState<Draft>(() => toDraft(REFERENCE));
   const [trace, setTrace] = useState(initialTrace);
@@ -164,7 +177,10 @@ export function NeuralNetworkXRay() {
 
   return <main>
     <BetaNav product={false} status={`Verified runtime · v${trace.schemaVersion}`} />
-    <section className="intro"><p className="eyebrow">Interactive model microscope</p><h1>See what a neural network <em>actually computes.</em></h1><p>Edit a value. Follow the signal. Watch one gradient update turn error into learning.</p></section>
+    {welcomeOpen && <XRayWelcome reference={initialTrace} headingRef={welcomeHeading} onEnter={() => showWelcome(false)} />}
+    <div hidden={welcomeOpen}>
+    <button type="button" className={welcomeStyles.replay} onClick={() => showWelcome(true)}>Replay introduction without resetting the model</button>
+    <section className="intro"><p className="eyebrow">Interactive model microscope</p><h1 ref={labHeading} tabIndex={-1}>See what a neural network <em>actually computes.</em></h1><p>Edit a value. Follow the signal. Watch one gradient update turn error into learning.</p></section>
     <GuidedLesson current={lessonStep} completed={completed} onPrevious={() => setLessonStep((step) => Math.max(0, step - 1))} onNext={() => setLessonStep((step) => Math.min(LESSONS.length - 1, step + 1))} />
     <section className="workspace" aria-label="Neural Network X-Ray workspace">
       <aside className="panel controls"><div className="panel-heading"><div><span className="step">01</span><h2>Set the experiment</h2></div><button type="button" onClick={reset}>Reset</button></div>
@@ -186,5 +202,6 @@ export function NeuralNetworkXRay() {
     <section className="panel history-panel" aria-labelledby="history-title"><div className="section-title-row"><div><span className="step">04</span><h2 id="history-title">Training history</h2></div><div className="history-actions"><button type="button" className="text-button" onClick={reset}>Reset experiment</button><button type="button" className="text-button" onClick={() => { setHistory([]); setSelectedHistoryStep(null); setWarning(null); }}>Clear history</button></div></div><div className="history-layout"><div><LossChart history={history} selectedStep={selectedHistoryStep} onSelectStep={setSelectedHistoryStep} />{selectedHistoryStep !== null && history[selectedHistoryStep - 1] && <p className={`history-explanation ${history[selectedHistoryStep - 1].after > history[selectedHistoryStep - 1].before ? "increase" : "decrease"}`}>{history[selectedHistoryStep - 1].after > history[selectedHistoryStep - 1].before ? "Loss increased: this update moved too far or in an unstable region. Try a smaller learning rate." : "Loss decreased: this update moved the prediction closer to the target."} Change: {format(history[selectedHistoryStep - 1].after - history[selectedHistoryStep - 1].before)}.</p>}</div><div className="history-list" aria-label="Loss before and after each update">{history.length === 0 ? <p>No updates recorded yet.</p> : history.map((point) => <button type="button" className={`history-row ${point.after > point.before ? "increase" : "decrease"} ${selectedHistoryStep === point.step ? "selected" : ""}`} key={point.step} onClick={() => setSelectedHistoryStep(point.step)}><span className="direction" aria-hidden="true">{point.after > point.before ? "↑" : "↓"}</span><div><strong>Step {point.step}</strong><span>{format(point.before)} → {format(point.after)}</span></div></button>)}</div></div></section>
     {lessonComplete && <section className="panel route-completion" aria-labelledby="demo-complete-title"><div><span aria-hidden="true">✓</span><div><p className="eyebrow">X-Ray complete</p><h2 id="demo-complete-title">You followed one full learning step.</h2><p>You connected inputs to a prediction, interpreted loss, inspected chain-rule gradients, and applied a descent update.</p></div></div><a className="button primary beta-link-button" href="/challenges/wrong-direction"><span>Continue to the debugging challenge</span><span aria-hidden="true">→</span></a></section>}
     <footer><p>One linear neuron. Every number exposed.</p><p>Calculations run locally in your browser using the verified ML Math Lab runtime.</p></footer>
+    </div>
   </main>;
 }
