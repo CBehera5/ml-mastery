@@ -24,7 +24,7 @@ Recommended route choice for approval: public `/` and learner `/journey`, with t
 
 Current source has no authentication middleware/session provider in the reviewed entry/navigation files. “Public versus authenticated navigation” therefore means specifying an honest boundary, not installing authentication. Unknown session state must never create a purchase/access gate. No cross-device or account-sync promise.
 
-The complete [route and component ledger](02-Routes-and-Components.md) defines destination changes, root-hash compatibility and permitted files.
+The complete [route and component ledger](PHASE_2_1_ROUTES_AND_COMPONENTS.md) defines destination changes, root-hash compatibility and permitted files.
 
 ## 3 Landing content and hierarchy
 
@@ -61,7 +61,7 @@ Reusing `LearningJourney` at `/journey` preserves recommendations, optional star
 
 Use four visible dashboard stages with first-three order preserved, add MLP and Model Selection catalog links and remove the unscoped MLOps display from the core path. This is presentation metadata only: keep internal stage/progress identities and recommendation matching intact. Project Studio remains a nonselectable Coming Soon item; do not render an empty “implemented content” panel for it. Math/Python/Algorithm stage selection remains reversible browsing, with no award.
 
-A short dashboard clarification must say that its saved-evidence summary covers supported existing scopes and that other module records remain in their own modules. Newly linked algorithm modules are available, but automatic resume/evidence aggregation for them is outside this tranche. Never call omitted scopes empty or unmastered. The [availability matrix](03-Availability-and-Reference-Mapping.md) lists exact allowed corrections, including the introductory MLP versus full neural-network distinction.
+A short dashboard clarification must say that its saved-evidence summary covers supported existing scopes and that other module records remain in their own modules. Newly linked algorithm modules are available, but automatic resume/evidence aggregation for them is outside this tranche. Never call omitted scopes empty or unmastered. The [availability matrix](PHASE_2_1_AVAILABILITY_AND_REFERENCE_MAPPING.md) lists exact allowed corrections, including the introductory MLP versus full neural-network distinction.
 
 ## 6 Technical safeguards
 
@@ -75,7 +75,7 @@ Keep existing skip-link intent, semantic navigation, disclosure close-on-link, o
 
 ## 7 Acceptance and implementation gate
 
-The [acceptance ledger](04-Acceptance-Risks-and-Decisions.md) is required for the eventual implementation, not claimed as passed by this specification. Founder first reviews this route choice, image mapping, layout and bounded file list. After a separate implementation authorization, changes must pass contract preservation, route/hash compatibility, desktop/mobile/keyboard checks, complete regressions/build and exact-commit independent CI. No merge or deployment is included.
+The [acceptance ledger](PHASE_2_1_ACCEPTANCE_RISKS_AND_DECISIONS.md) is required for the eventual implementation, not claimed as passed by this specification. Founder first reviews this route choice, image mapping, layout and bounded file list. After a separate implementation authorization, changes must pass contract preservation, route/hash compatibility, desktop/mobile/keyboard checks, complete regressions/build and exact-commit independent CI. No merge or deployment is included.
 
 Genuine screen-reader, actual 200%/400% browser zoom, Colab and original-directory I/O remain platform-release obligations. A future verification report must distinguish scoped new reader/zoom results from comprehensive platform acceptance; 320px screenshots and local notebook kernels never substitute.
 
