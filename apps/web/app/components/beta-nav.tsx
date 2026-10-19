@@ -3,7 +3,7 @@
 import Link from "next/link";
 import styles from "./beta-nav.module.css";
 
-export function BetaNav({ status }: { status?: string }) {
+export function BetaNav({ status, product = false }: { status?: string; product?: boolean }) {
   return (
     <nav className={`topbar beta-nav ${styles.navigation}`} aria-label="Learning navigation" onKeyDown={event => {
       if (event.key === "Escape") {
@@ -11,9 +11,9 @@ export function BetaNav({ status }: { status?: string }) {
         if (disclosure) { disclosure.open = false; disclosure.querySelector("summary")?.focus(); }
       }
     }}>
-      <Link className="brand" href="/">
+      <Link className="brand" href="/journey">
         <span className="brand-mark" aria-hidden="true">M</span>
-        <span>ML Math Lab</span>
+        <span>{product ? "ML Mastery" : "ML Math Lab"}</span>
       </Link>
       <div className={styles.links} onClick={event => {
         const summary = (event.target as HTMLElement).closest("summary");
@@ -26,7 +26,8 @@ export function BetaNav({ status }: { status?: string }) {
         if (disclosure) disclosure.open = false;
       }}>
         <details><summary>Browse topics</summary><div className={styles.menu}>
-          <Link href="/">Learning journey</Link>
+          <Link href="/journey">Learning journey</Link>
+          <Link href="/">Public home</Link>
           <Link href="/math">Math foundations</Link>
           <Link href="/python">Python foundations</Link>
           <Link href="/learn/linear-regression">Linear regression</Link>
@@ -39,8 +40,8 @@ export function BetaNav({ status }: { status?: string }) {
         </div></details>
         <details><summary>Help</summary><div className={styles.menu}>
           <Link href="/beta">Beta guide / Getting started</Link>
-          <Link href="/#getting-started">Choosing your starting point</Link>
-          <Link href="/#resources">Experiments and notebooks</Link>
+          <Link href="/journey#getting-started">Choosing your starting point</Link>
+          <Link href="/journey#resources">Experiments and notebooks</Link>
         </div></details>
       </div>
       {status && <span className="status-pill"><span aria-hidden="true">●</span>{status}</span>}

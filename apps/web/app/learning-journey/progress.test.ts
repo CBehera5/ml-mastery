@@ -32,7 +32,7 @@ const modules = [
 ];
 describe("read-only learning journey", () => {
   it("has truthful stage availability, real existing entry points and no future launch link", () => {
-    expect(STAGES.map(stage => stage.status)).toEqual(["Available", "Available", "Partly available", "Planned", "Future / unscoped"]);
+    expect(STAGES.map(stage => stage.status)).toEqual(["Available", "Available", "Available curriculum", "Coming Soon"]);
     expect(STAGES.slice(3).every(stage => stage.links.length === 0)).toBe(true);
     expect(CONNECTIONS).toHaveLength(5);
     expect(new Set(READ_KEYS).size).toBe(READ_KEYS.length);

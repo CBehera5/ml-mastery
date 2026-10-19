@@ -34,7 +34,7 @@ export function LearningJourney() {
   const stage = STAGES[activeStage];
   return <main className={styles.page}>
     <a className={styles.skip} href="#journey-content">Skip to your learning journey</a>
-    <BetaNav />
+    <BetaNav product />
     <div className={styles.container}>
       <header className={styles.intro} id="journey-content" tabIndex={-1}>
         <p className={styles.eyebrow}>Your learning journey</p>
@@ -54,7 +54,7 @@ export function LearningJourney() {
           <p role="status">{loaded ? returning ? "Saved learning activity found in this browser." : progress.warnings.length ? "Some progress is unavailable; it is not treated as zero." : "No saved learning activity found in the supported records." : "Checking local records…"}</p>
           <p>Lesson completion and independent mastery are different. Opening or skipping a topic awards neither.</p>
           <details><summary>View saved module states</summary>{progress.scopes.filter(scope => scope.active).length ? <ul>{progress.scopes.filter(scope => scope.active).map(scope => <li key={scope.title}><Link href={scope.href}>{scope.title}</Link><span>{scope.mastery}</span></li>)}</ul> : <p>{progress.warnings.length ? "Some module states are unknown. Open the original subject to inspect them." : "Complete practice or attempt an assessment to build evidence."}</p>}</details>
-          <small>Local to this browser and site address. No account or cross-device synchronization.</small>
+          <p>Only supported existing scopes appear here. Other module records remain in their own modules; omitted scopes are not treated as empty or unmastered.</p><small>Local to this browser and site address. No account or cross-device synchronization.</small>
         </aside>
       </section>
       {progress.warnings.length > 0 && <details className={styles.warning}><summary>Some saved progress could not be read</summary><ul>{progress.warnings.map((message, index) => <li key={`${index}:${message}`}>{message}</li>)}</ul><p>No record was rewritten, imported or reset. Open the original module for its supported recovery controls.</p></details>}
@@ -77,7 +77,7 @@ export function LearningJourney() {
         <div className={styles.sectionHeading}><h2 id="roadmap-title">From foundations to real ML work</h2><p>A suggested journey, not a prerequisite lock. Select a stage to explore.</p></div>
         <ol className={styles.stages} aria-label="Learning roadmap">
           {STAGES.map((item, index) => <li key={item.title}>
-            <span className={styles.step}>0{index + 1} <span aria-hidden="true">{index < 4 ? "→" : ""}</span></span>
+            <span className={styles.step}>0{index + 1} <span aria-hidden="true">{index < STAGES.length - 1 ? "→" : ""}</span></span>
             <span className={styles.availability}>{item.status}</span>
             {item.links.length ? <button type="button" aria-pressed={activeStage === index} aria-controls="stage-detail" onClick={() => setSelectedStage(index)}>{item.title}</button> : <h3>{item.title}</h3>}
             <p>{item.why}</p>
@@ -89,13 +89,13 @@ export function LearningJourney() {
           <ul>{stage.links.map(link => <li key={link.href}><Link href={link.href}>{link.title}</Link></li>)}</ul>
           <p>Available means implemented, not already mastered or fully accessibility-verified.</p>
         </div>
-        <p className={styles.hint}>The full Project Studio is planned. You can already try the <Link href="/learn/linear-regression/project">limited guided Regression housing bridge</Link>; it is not a production capstone. Other algorithm modules remain planned.</p>
+        <p className={styles.hint}>Project Studio — Coming Soon. You can already try the <Link href="/learn/linear-regression/project">limited guided Regression housing bridge</Link>; it is not a production capstone. The listed algorithm modules are available; additional future topics remain outside this curriculum.</p>
       </section>
       <section className={styles.connections} aria-labelledby="connections-title">
         <h2 id="connections-title">See how the ideas connect</h2>
         <p>Refresh one concept, then apply it. Relationships explain purpose; they do not transfer mastery.</p>
         {CONNECTIONS.map(connection => <details key={connection.title}><summary>{connection.title}</summary><p>{connection.why}</p><ul>{connection.links.map(link => <li key={link.href}><Link href={link.href}>{link.title}</Link></li>)}</ul></details>)}
-        <p className={styles.hint}>The X-Ray demonstrates one linear neuron. A full neural-network course is future content, not an available module.</p>
+        <p className={styles.hint}>The X-Ray demonstrates one linear neuron. Introductory Multilayer Perceptrons is available in Algorithm Lab; advanced neural-network courses remain outside this curriculum.</p>
       </section>
       <section className={styles.resources} id="resources" aria-labelledby="resources-title">
         <div><h2 id="resources-title">Practice tools</h2><ul><li><Link href="/demo">Neural Network X-Ray experiment</Link></li><li><Link href="/challenges/wrong-direction">Debug a wrong-direction update</Link></li><li><Link href="/math/integration">Connect the mathematics in practice</Link></li></ul></div>

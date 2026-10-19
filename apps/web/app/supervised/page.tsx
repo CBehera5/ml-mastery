@@ -30,7 +30,7 @@ export default function Page() {
     <section className={styles.card}><p>Model Selection &amp; Comparison connects fair comparisons, search, nested validation, decision costs, responsible interpretation and a reproducible final choice.</p><Link href="/supervised/model-selection">Open Model Selection &amp; Comparison</Link></section>
     {paths.map(([title, description, href, link]) => <PathCard key={href} title={title} description={description} href={href} link={link} />)}
     <section className={styles.card}><h2>Existing algorithm course</h2><Link href="/learn/linear-regression">Linear Regression: existing lessons and independent mastery</Link><p>Its content, progress and mastery are unchanged.</p></section>
-    <section className={styles.card}><h2>Planned, not available here</h2><p>Project Studio and capstones are planned and are not available yet.</p></section>
-    <Link href="/">Return to your learning journey</Link>
+    <section className={styles.card}><h2>Planned, not available here</h2><p>Project Studio — Coming Soon. The full Studio and capstones are not available yet.</p></section>
+    <Link href="/journey">Return to your learning journey</Link>
   </main>;
 }
