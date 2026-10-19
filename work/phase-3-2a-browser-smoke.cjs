@@ -67,9 +67,9 @@ fs.mkdirSync(out, { recursive: true });
   assert.equal(await page.evaluate(()=>localStorage.getItem('phase32-preservation-sentinel')),'unknown-version-raw');
   result.persistence.push('No welcome writes; arbitrary raw record intact; model/history/guide survive replay/skip');
   await replay(); await skip();
-  await page.locator('#learning-rate').fill('0'); await page.getByRole('alert').waitFor();
+  await page.locator('#learning-rate').fill('0'); await page.locator('.notice.error[role=alert]').waitFor();
   await replay(); await skip(); assert.equal(await page.locator('#learning-rate').inputValue(),'0');
-  assert.equal(await page.getByRole('alert').count(),1); result.states.push('Invalid draft retained');
+  assert.equal(await page.locator('.notice.error[role=alert]').count(),1); result.states.push('Invalid draft retained');
   assert.deepEqual(errors,[]); result.states.push('All reasoning branches, progressive reference, fresh/modified skip/replay and no new guide awards');
   fs.writeFileSync(path.join(out,'phase32-browser-result.json'),JSON.stringify(result,null,2));
  } finally { await browser.close(); }
