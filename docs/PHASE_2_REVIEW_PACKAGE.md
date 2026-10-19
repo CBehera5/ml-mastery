@@ -11,3 +11,7 @@
 - [Content Quality Audit Plan](PHASE_2_07_CONTENT_QUALITY_AUDIT_PLAN.md)
 - [Bounded Implementation Roadmap](PHASE_2_08_BOUNDED_IMPLEMENTATION_ROADMAP.md)
 - [Founder Decisions](PHASE_2_09_FOUNDER_DECISIONS.md)
+
+## Phase 2.1 specification checkpoint
+
+19 October 2026. The founder accepted the planning milestones and authorized a bounded navigation/availability/landing implementation specification only. [Phase 2.1 review package](PHASE_2_1_REVIEW_PACKAGE.md) narrows the earlier roadmap. No application implementation, merge or deployment; stop for founder review.
