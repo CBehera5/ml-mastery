@@ -1,5 +1,14 @@
 # Implementation status
 
+## 19 October 2026 Phase 2.1 public experience implemented and independently verified
+
+Founder authorized bounded Phase 2.1. Implementation source `30557d6e4ea52e698fb820f7ea0f8447a8651b2d` establishes public ML Mastery `/`, preserved `/journey`, corrected four-stage navigation/catalog, the unchanged primary `/demo` entry in ML Math Lab, informational planned $39 one-time purchase and Project Studio — Coming Soon. See [implementation scope and evidence](PHASE_2_1_IMPLEMENTATION.md).
+
+[Independent CI 39232544289](https://github.com/CBehera5/ml-mastery/actions/runs/39232544289) completed all four jobs successfully on that exact source: 2,849 frontend/66 math/2,612 Python regressions, typecheck/build, canonical KNN audit, byte-identical frozen MS references, two fresh notebook kernels, existing Model Selection browser workflow and new Phase 2.1 route/layout/storage/keyboard checks. Local machine default-timeout failures remain recorded; unchanged assertions pass independent CI and a bounded 20-second local diagnostic retry.
+
+**Functional implementation PASS; full Phase 2.1 acceptance remains NOT VERIFIED and acceptance is withheld pending required real 200%/400% zoom evidence.** Native browser control timed out; viewport checks are not actual zoom. Genuine screen-reader speech, Colab and original-directory I/O reliability remain OPEN. Founder acceptance is pending. Accepted Discovery Tour design, frozen references, progress/mastery semantics and free access are preserved. No Discovery Tour implementation, merge or deployment.
+
+
 ## 19 October 2026 Task 015 founder closure and Phase 2 design only
 
 **Task 015 is closed for implementation completeness.** The founder accepted Model Selection mastery activation `4a2bbf48c0e83c0e97d5ec14d8f8be5113896a8b` and [independent CI 39154246996](https://github.com/CBehera5/ml-mastery/actions/runs/39154246996): all four jobs completed successfully. The source is on `task-015-12-knn-portability`, not merged into `origin/main`; no PR was recorded for that head at this review. No merge or deployment is authorized. [Closure report](PHASE_2_01_TASK_015_CLOSURE.md) records exact evidence and preserved boundaries.

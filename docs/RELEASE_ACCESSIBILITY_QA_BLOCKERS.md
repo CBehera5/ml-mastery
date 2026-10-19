@@ -1,5 +1,12 @@
 # Release accessibility and QA blockers
 
+## 19 October 2026 Phase 2.1 verification disposition
+
+Public landing and preserved `/journey` are implemented; [exact-source independent CI](https://github.com/CBehera5/ml-mastery/actions/runs/39232544289) passes on `30557d6`. Affected public/journey routes, native disclosure keyboard behavior, saved-record preservation and 320/390/768/1280/1440px geometry are verified within scope. Landing contrast pairs and sequential keyboard traversal are recorded separately.
+
+Actual 200%/400% browser zoom and actual screen-reader speech remain OPEN because native app control did not become available; AX/viewport screenshots do not substitute. Genuine Colab and original-directory I/O reliability remain OPEN. Local default-timeout regressions encountered timing/worker failures; exact-source CI passed unchanged assertions, and a bounded 20-second local diagnostic retry passed all 2,849 frontend tests. High fileproviderd CPU/system load suggests possible sync contention, not a proven cause or closure. Full Phase 2.1 acceptance remains withheld pending required manual evidence and founder review. No Discovery Tour work, merge or deployment is authorized.
+
+
 ## 19 October 2026 Task 015 accepted and release obligations carried forward
 
 Task 015 implementation/mastery activation is founder-accepted; [closure](PHASE_2_01_TASK_015_CLOSURE.md) records successful exact-source independent CI. This acceptance does not waive genuine screen-reader, real 200%/400% zoom, Google Colab or original-directory I/O reliability. All four remain OPEN. Phase 2 now permits audit/specification only. [Audit plan](PHASE_2_07_CONTENT_QUALITY_AUDIT_PLAN.md) defines evidence/retest ownership and keeps real checks separate from viewport, AX, local-kernel and temporary-clone evidence. No release, merge or deployment authorized.
