@@ -12,7 +12,7 @@ Learner brands/journey links point to `/journey`; Browse includes Public home; H
 
 ## Verification and acceptance
 
-The focused tests preserve existing dashboard and progress safety assertions while checking the new public storage boundary, legacy route intent and truthful catalog. A dedicated manual Phase 2.1 workflow runs full frontend/math/Python regressions, typecheck/build, canonical KNN/frozen checks and a production browser navigation/layout/storage verifier on the exact implementation commit. Frozen checks are read-only; the workflow never regenerates references to make failures pass.
+The focused tests preserve existing dashboard and progress safety assertions while checking the new public storage boundary, legacy route intent and truthful catalog. The registered manual verification workflow with a scoped Phase 2.1 browser step runs full frontend/math/Python regressions, typecheck/build, canonical KNN/frozen checks and a production browser navigation/layout/storage verifier on the exact implementation commit. Frozen checks are read-only; the workflow never regenerates references to make failures pass.
 
 Verification results, changed-file/commit inventory, source-preservation checks, route ledger and screenshots are delivered in the founder's Phase 2.1 review package. Actual screen-reader speech and genuine browser zoom must remain OPEN if unavailable; responsive geometry and AX trees are not substitutes. Original-directory I/O investigation is separate from clean-checkout verification.
 

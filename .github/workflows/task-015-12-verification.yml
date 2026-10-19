@@ -144,16 +144,7 @@ jobs:
           NUMEXPR_NUM_THREADS: "1"
         run: |
           set -euo pipefail
-          if PYTHONPATH=python MPLCONFIGDIR="$MPLCONFIGDIR" LOKY_MAX_CPU_COUNT=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 python work/freeze-task-015-12.py --check > "$TASK01512_EVIDENCE/frozen-reference-check.log" 2>&1; then
-            cat "$TASK01512_EVIDENCE/frozen-reference-check.log"
-          else
-            cat "$TASK01512_EVIDENCE/frozen-reference-check.log"
-            PYTHONPATH=python MPLCONFIGDIR="$MPLCONFIGDIR" LOKY_MAX_CPU_COUNT=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 python work/freeze-task-015-12.py --freeze 2>&1 | tee "$TASK01512_EVIDENCE/regenerated-freeze.log"
-            git diff -- docs/verification/model-selection > "$TASK01512_EVIDENCE/regenerated-freeze.diff"
-            cat "$TASK01512_EVIDENCE/regenerated-freeze.diff" >> "$TASK01512_EVIDENCE/frozen-reference-check.log"
-            git restore --worktree -- docs/verification/model-selection
-            exit 1
-          fi
+          PYTHONPATH=python MPLCONFIGDIR="$MPLCONFIGDIR" LOKY_MAX_CPU_COUNT=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 python work/freeze-task-015-12.py --check 2>&1 | tee "$TASK01512_EVIDENCE/frozen-reference-check.log"
       - name: Execute notebook twice in fresh kernels
         timeout-minutes: 25
         env:
@@ -209,6 +200,7 @@ jobs:
           done
           test "$ready" = 1
           PLAYWRIGHT_PACKAGE_DIR="$RUNNER_TEMP/playwright/node_modules/playwright" MODEL_SELECTION_PREVIEW_URL="http://127.0.0.1:3030" node work/task-015-12-browser-smoke.cjs 2>&1 | tee "$TASK01512_EVIDENCE/browser-smoke.log"
+          PLAYWRIGHT_PACKAGE_DIR="$RUNNER_TEMP/playwright/node_modules/playwright" PHASE21_PREVIEW_URL="http://127.0.0.1:3030" PHASE21_EVIDENCE="$TASK01512_EVIDENCE" node work/phase-2-1-browser-smoke.cjs 2>&1 | tee "$TASK01512_EVIDENCE/phase21-browser-smoke.log"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: always()
         with:
