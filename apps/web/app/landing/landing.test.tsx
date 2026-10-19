@@ -3,6 +3,7 @@ import "@testing-library/jest-dom/vitest";
 import { afterEach, expect, it, vi } from "vitest";
 import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import Home from "../page";
+import { BetaNav } from "../components/beta-nav";
 import { STAGES } from "../learning-journey/catalog";
 afterEach(() => { cleanup(); vi.restoreAllMocks(); });
 it("opens public exploration without reading or writing learner storage", () => {
@@ -35,4 +36,12 @@ it("exposes accepted algorithm modules without a future launch or extra core sta
   expect(STAGES[2].links.map(link => link.href)).toEqual(expect.arrayContaining(["/supervised/mlp", "/supervised/model-selection"]));
   expect(STAGES[3].title).toBe("Project Studio — Coming Soon");
   expect(STAGES[3].links).toHaveLength(0);
+});
+
+it("distinguishes the product header from the interactive mathematics experience", () => {
+  const product = render(<BetaNav />);
+  expect(screen.getByRole("link", { name: "ML Mastery" })).toHaveAttribute("href", "/journey");
+  product.unmount();
+  render(<BetaNav product={false} />);
+  expect(screen.getByRole("link", { name: "ML Math Lab" })).toHaveAttribute("href", "/journey");
 });

@@ -8,7 +8,7 @@ Public `/` presents one dominant Try a Free Lab link to unchanged `/demo`, a fou
 
 `/journey` wraps the existing LearningJourney component. Its storage reader, recommendations, evidence codecs, grading and mastery policies are unchanged. Display metadata now uses Math Lab, Python Lab, Algorithm Lab and Project Studio — Coming Soon. Introductory MLP and Model Selection are linked truthfully; supported-scope progress is explicitly distinguished from curriculum availability. No new aggregate progress adapters are added.
 
-Learner brands/journey links point to `/journey`; Browse includes Public home; Help points to exact journey fragments. The Supervised hub's explicit return link follows the dashboard. Existing learning routes remain unchanged. Project Studio remains noninteractive and Coming Soon. No Discovery Tour files, frozen mathematical references, global charts, account, checkout, entitlement or payment behavior change.
+Learner navigation uses ML Mastery by default; `/demo` explicitly retains the ML Math Lab experience label. Learner brands/journey links point to `/journey`; Browse includes Public home; Help points to exact journey fragments. The Supervised hub's explicit return link follows the dashboard. Existing learning routes remain unchanged. Project Studio remains noninteractive and Coming Soon. No Discovery Tour files, frozen mathematical references, global charts, account, checkout, entitlement or payment behavior change.
 
 ## Verification and acceptance
 

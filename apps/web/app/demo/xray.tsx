@@ -163,7 +163,7 @@ export function NeuralNetworkXRay() {
   const reset = () => { const next = linearNeuronTrace(REFERENCE); setDraft(toDraft(REFERENCE)); setTrace(next); setLastUpdateTrace(next); setHistory([]); setDirty(false); setDraftValid(true); setError(null); setWarning(null); setView("forward"); setMode("forward"); setSelectedConnection(null); setSelectedHistoryStep(null); setTrainingSteps("10"); };
 
   return <main>
-    <BetaNav status={`Verified runtime · v${trace.schemaVersion}`} />
+    <BetaNav product={false} status={`Verified runtime · v${trace.schemaVersion}`} />
     <section className="intro"><p className="eyebrow">Interactive model microscope</p><h1>See what a neural network <em>actually computes.</em></h1><p>Edit a value. Follow the signal. Watch one gradient update turn error into learning.</p></section>
     <GuidedLesson current={lessonStep} completed={completed} onPrevious={() => setLessonStep((step) => Math.max(0, step - 1))} onNext={() => setLessonStep((step) => Math.min(LESSONS.length - 1, step + 1))} />
     <section className="workspace" aria-label="Neural Network X-Ray workspace">

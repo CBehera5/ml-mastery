@@ -3,7 +3,7 @@
 import Link from "next/link";
 import styles from "./beta-nav.module.css";
 
-export function BetaNav({ status, product = false }: { status?: string; product?: boolean }) {
+export function BetaNav({ status, product = true }: { status?: string; product?: boolean }) {
   return (
     <nav className={`topbar beta-nav ${styles.navigation}`} aria-label="Learning navigation" onKeyDown={event => {
       if (event.key === "Escape") {
