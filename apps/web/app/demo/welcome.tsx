@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type Ref } from "react";
 import type { LinearNeuronTrace } from "@mlmath/runtime";
 import styles from "./welcome.module.css";
+import { ParameterExperiment } from "./parameter-experiment";
 
 type Reason = "more" | "less" | "unsure";
 const feedback: Record<Reason, string> = {
@@ -53,6 +54,7 @@ export function XRayWelcome({ reference, headingRef, onEnter }: { reference: Lin
     {phase === "feedback" && <>
       <p>The rule creates an estimate; the recorded time helps us judge it. Any reasoning choice can continue.</p>
     </>}
+    {phase === "calculation" && contribution >= 2 && <ParameterExperiment reference={reference} />}
     <button ref={primaryAction} className={styles.primary} type="button" disabled={phase === "reason" && !reason} onClick={() => {
       if (phase === "reason") setPhase("feedback");
       else if (phase === "feedback") setPhase("calculation");
