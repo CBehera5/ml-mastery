@@ -5,12 +5,12 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { NeuralNetworkXRay } from "./xray";
 
 afterEach(() => { cleanup(); vi.restoreAllMocks(); });
-const click = (name: string) => fireEvent.click(screen.getByRole("button", { name, exact: true }));
+const click = (name: string) => fireEvent.click(screen.getByRole("button", { name }));
 const reach = () => {
-  fireEvent.click(screen.getByRole("radio", { name: "More time", exact: true }));
+  fireEvent.click(screen.getByRole("radio", { name: "More time" }));
   for (const name of ["Compare my reasoning", "See how 9 was calculated", "Add the distance contribution", "Add the baseline", "Try one weight change"]) click(name);
 };
-const choose = (name: string) => { fireEvent.click(within(screen.getByTestId("parameter-experiment")).getByRole("radio", { name, exact: true })); click("Check my prediction"); };
+const choose = (name: string) => { fireEvent.click(within(screen.getByTestId("parameter-experiment")).getByRole("radio", { name })); click("Check my prediction"); };
 
 describe("isolated distance-weight experiment", () => {
   it.each([["Increase", "makes the estimate larger"], ["Decrease", "adds time rather than removing"], ["Not sure", "compare before with after"]])("responds to %s without revealing the result before Try", (choice, feedback) => {
