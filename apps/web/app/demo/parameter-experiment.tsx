@@ -31,6 +31,7 @@ export function ParameterExperiment({ reference }: { reference: LinearNeuronTrac
   const announcement = stage === "ready" && direction ? explanations[direction]
     : stage === "result" && changed ? `Distance weight increased from ${startWeight} to ${nextWeight} minutes per kilometre. Prediction increased from ${before.prediction} to ${changed.prediction} minutes. Recorded outcome remains ${reference.input.target} minutes. Absolute error decreased from ${absoluteBefore} to ${absoluteAfter} minutes.`
     : stage === "restored" && changed ? `Example restored to ${startWeight} minutes per kilometre. Prediction returned from ${changed.prediction} to ${before.prediction} minutes. Absolute error increased from ${absoluteAfter} to ${absoluteBefore} minutes. Your full lab is unchanged.` : "";
+  useEffect(() => { heading.current?.focus(); }, []);
   useEffect(() => {
     if (replaying.current) { heading.current?.focus(); replaying.current = false; }
     else if (document.activeElement instanceof HTMLElement && section.current?.contains(document.activeElement)) document.activeElement.scrollIntoView?.({ block: "nearest" });

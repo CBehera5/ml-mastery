@@ -8,7 +8,7 @@ afterEach(() => { cleanup(); vi.restoreAllMocks(); });
 const click = (name: string) => fireEvent.click(screen.getByRole("button", { name, exact: true }));
 const reach = () => {
   fireEvent.click(screen.getByRole("radio", { name: "More time", exact: true }));
-  for (const name of ["Compare my reasoning", "See how 9 was calculated", "Add the distance contribution", "Add the baseline"]) click(name);
+  for (const name of ["Compare my reasoning", "See how 9 was calculated", "Add the distance contribution", "Add the baseline", "Try one weight change"]) click(name);
 };
 const choose = (name: string) => { fireEvent.click(within(screen.getByTestId("parameter-experiment")).getByRole("radio", { name, exact: true })); click("Check my prediction"); };
 

@@ -16,6 +16,7 @@ const feedback: Record<Reason, string> = {
 export function XRayWelcome({ reference, headingRef, onEnter }: { reference: LinearNeuronTrace; headingRef: Ref<HTMLHeadingElement>; onEnter: () => void }) {
   const [reason, setReason] = useState<Reason | "">("");
   const [phase, setPhase] = useState<"reason" | "feedback" | "calculation">("reason");
+  const [experimentOpen, setExperimentOpen] = useState(false);
   const [contribution, setContribution] = useState(0);
   const primaryAction = useRef<HTMLButtonElement>(null);
   useEffect(() => {
@@ -54,14 +55,15 @@ export function XRayWelcome({ reference, headingRef, onEnter }: { reference: Lin
     {phase === "feedback" && <>
       <p>The rule creates an estimate; the recorded time helps us judge it. Any reasoning choice can continue.</p>
     </>}
-    {phase === "calculation" && contribution >= 2 && <ParameterExperiment reference={reference} />}
-    <button ref={primaryAction} className={styles.primary} type="button" disabled={phase === "reason" && !reason} onClick={() => {
+    {phase === "calculation" && contribution >= 2 && experimentOpen && <ParameterExperiment reference={reference} />}
+    {!experimentOpen && <button ref={primaryAction} className={styles.primary} type="button" disabled={phase === "reason" && !reason} onClick={() => {
       if (phase === "reason") setPhase("feedback");
       else if (phase === "feedback") setPhase("calculation");
       else if (contribution < 2) setContribution(value => value + 1);
-      else onEnter();
-    }}>{phase === "reason" ? "Compare my reasoning" : phase === "feedback" ? "See how 9 was calculated" : contribution === 0 ? "Add the distance contribution" : contribution === 1 ? "Add the baseline" : "Open the full lab"}</button>
-    {phase !== "reason" && <button className={styles.quiet} type="button" onClick={() => { reviewing.current = true; setPhase("reason"); setContribution(0); }}>Review my reasoning</button>}
+      else setExperimentOpen(true);
+    }}>{phase === "reason" ? "Compare my reasoning" : phase === "feedback" ? "See how 9 was calculated" : contribution === 0 ? "Add the distance contribution" : contribution === 1 ? "Add the baseline" : "Try one weight change"}</button>}
+    {phase === "calculation" && contribution >= 2 && <button type="button" className={styles.quiet} onClick={onEnter}>Open the full lab</button>}
+    {phase !== "reason" && <button className={styles.quiet} type="button" onClick={() => { reviewing.current = true; setExperimentOpen(false); setPhase("reason"); setContribution(0); }}>Review my reasoning</button>}
     <p className={styles.note}>Next, the existing lab lets you inspect the error, squared loss and gradients, then try an update. This introduction awards no completion or mastery.</p>
   </section>;
 }
