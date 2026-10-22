@@ -26,3 +26,4 @@
 .code pre{background:#14241f;color:#e6f2ec;border-radius:.7rem;padding:1rem 1.2rem;overflow-x:auto;font-size:.9rem;line-height:1.6;margin:0}
 .code pre.out{background:#1f3a31;margin-top:2px;color:#b7e4cf}
 .steps{padding-left:1.4rem}.steps li{margin:.6rem 0}
+.check{border:1px solid #d3d8cb;border-radius:.7rem;padding:1rem 1.2rem;margin:1.3rem 0;background:#fff}.check legend{font-weight:700;padding:0 .4rem}.check label{display:block;margin:.4rem 0;cursor:pointer}.right{color:#1d6b46}.wrong{color:#87400b}.lead{font-size:1.15rem}
