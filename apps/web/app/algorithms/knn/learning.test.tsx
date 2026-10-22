@@ -1,4 +1,5 @@
 import {experimentGuide} from "../simple-experiment";
+import { LESSONS } from "./teaching";
 // @vitest-environment jsdom
 import React from "react";
 import "@testing-library/jest-dom/vitest";
@@ -10,7 +11,7 @@ import { load, STORAGE_KEY } from "./model";
 beforeEach(()=>localStorage.clear()); afterEach(cleanup);
 async function open(lesson=0){render(<KNNLesson lesson={lesson}/>);await waitFor(()=>expect(screen.getByRole("group",{name:"Objective understanding and guided practice"})).toBeEnabled());}
 it("teaches all16 objectives with mathematics, Python and comparison",async()=>{
- for(let lesson=0;lesson<4;lesson++){await open(lesson);for(let objective=1;objective<=4;objective++)expect(screen.getByRole("heading",{name:new RegExp(`^KN0${lesson+1}.O${objective}:`)})).toBeInTheDocument();expect(screen.getByRole("heading",{name:"Mathematics and symbols"})).toBeInTheDocument();expect(screen.getByRole("heading",{name:"KNN and comparison"})).toBeInTheDocument();cleanup();}
+ for(let lesson=0;lesson<4;lesson++){await open(lesson);for(let objective=1;objective<=4;objective++)expect(screen.getAllByRole("heading",{name:LESSONS[lesson].objectives[objective-1]})[0]).toBeInTheDocument();expect(screen.getByRole("heading",{name:"Mathematics and symbols"})).toBeInTheDocument();expect(screen.getByRole("heading",{name:"KNN and comparison"})).toBeInTheDocument();cleanup();}
 });
 it("restores correct practice without changing prior module records or awarding mastery",async()=>{
  const keys=["ml-math-lab:supervised:logistic:full:v1","regression-progress","python"];keys.forEach(key=>localStorage.setItem(key,"earlier-mastery"));await open();const region=within(screen.getByRole("region",{name:"Practice KN01.O1"}));fireEvent.change(region.getByRole("spinbutton"),{target:{value:"5"}});fireEvent.click(region.getByRole("radio",{name:/^A then B$/}));fireEvent.click(region.getByRole("button",{name: "Check my answer, KN01.O1"}));expect(region.getByRole("status")).toHaveTextContent("Correct.");expect(load(localStorage.getItem(STORAGE_KEY)).practice[0].proof).not.toBeNull();expect(load(localStorage.getItem(STORAGE_KEY)).mastery).toBeNull();keys.forEach(key=>expect(localStorage.getItem(key)).toBe("earlier-mastery"));cleanup();await open();expect(screen.getByRole("region",{name:"Practice KN01.O1"})).toHaveTextContent("Practice demonstrated; not mastery.");
@@ -22,5 +23,5 @@ it("shows rejection as no prediction rather than class0",async()=>{
  const config=configurations(1).find(c=>c.id==="KN-E2.reject.cutoff-tie.v1")!;render(<Graphic lab={1} config={config}/>);expect(screen.getByText(/Rejected configuration:/)).toHaveTextContent("No class prediction exists");
 });
 it("keeps assessment independent from overview completion",async()=>{
- render(<KNNOverview/>);expect(screen.getByText(/13\/16 families/)).toBeInTheDocument();cleanup();render(<KNNAssessment/>);expect(screen.getByText(/16 objectives; at least13/)).toBeInTheDocument();expect(screen.queryByText("Mastery demonstrated")).not.toBeInTheDocument();
+ render(<KNNOverview/>);expect(screen.getByText(/answer 13 of the 16 questions/)).toBeInTheDocument();cleanup();render(<KNNAssessment/>);expect(screen.getByText(/16 objectives; at least13/)).toBeInTheDocument();expect(screen.queryByText("Mastery demonstrated")).not.toBeInTheDocument();
 });

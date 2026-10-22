@@ -1,4 +1,5 @@
 import {experimentGuide} from "../simple-experiment";
+import { LESSONS } from "./teaching";
 // @vitest-environment jsdom
 import React from "react";
 import "@testing-library/jest-dom/vitest";
@@ -15,7 +16,7 @@ async function open(lesson = 0) {
 }
 for (let lesson = 0; lesson < 6; lesson++) it(`lesson ${lesson} teaches its four objectives and applications`, async () => {
   await open(lesson);
-  for (let objective = 1; objective <= 4; objective++) expect(screen.getByRole("heading", { name: new RegExp(`^DT0${lesson+1}.O${objective}:`) })).toBeInTheDocument();
+  for (let objective = 1; objective <= 4; objective++) expect(screen.getAllByRole("heading", { name: LESSONS[lesson].objectives[objective - 1] })[0]).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: "Mathematics and symbols" })).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: "Python application" })).toBeInTheDocument();
 });
@@ -48,7 +49,7 @@ for (const lab of [0, 1]) it(`lab ${lab} predicts before reveal and preserves fr
 });
 it("keeps overview completion separate from independent mastery", () => {
   render(<DecisionTreesOverview/>);
-  expect(screen.getByText(/20\/24 families/)).toBeInTheDocument();
+  expect(screen.getByText(/answer 20 of the 24 questions/)).toBeInTheDocument();
   cleanup(); render(<DecisionTreesAssessment/>);
   expect(screen.getByText(/24 objectives; at least20/)).toBeInTheDocument();
 });

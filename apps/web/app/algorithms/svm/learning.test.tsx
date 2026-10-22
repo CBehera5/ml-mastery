@@ -1,4 +1,5 @@
 import {Graphic} from "./graphic";
+import { LESSONS } from "./teaching";
 import {experimentGuide} from "../simple-experiment";
 // @vitest-environment jsdom
 import React from "react";
@@ -11,7 +12,7 @@ import {load,STORAGE_KEY} from "./model";
 afterEach(()=>{cleanup();localStorage.clear();});
 async function open(lesson=0){render(<SVMLesson lesson={lesson}/>);await waitFor(()=>expect(screen.getByRole("group",{name:"Objective understanding and guided practice"})).toBeEnabled());}
 for(let lesson=0;lesson<5;lesson++)it(`teaches all four SV0${lesson+1} objectives and applications`,async()=>{
- await open(lesson);for(let objective=1;objective<=4;objective++)expect(screen.getByRole("heading",{name:new RegExp(`^SV0${lesson+1}.O${objective}:`)})).toBeInTheDocument();
+ await open(lesson);for(let objective=1;objective<=4;objective++)expect(screen.getAllByRole("heading", { name: LESSONS[lesson].objectives[objective - 1] })[0]).toBeInTheDocument();
  expect(screen.getByRole("heading",{name:"Mathematics and symbols"})).toBeInTheDocument();expect(screen.getByRole("heading",{name:"Python application"})).toBeInTheDocument();
 });
 it("restores geometry practice without granting mastery or modifying earlier evidence",async()=>{
@@ -25,6 +26,6 @@ for(const lab of [0,1])it(`lab${lab} requires prediction,changes and a supported
  if(lab===0) expect(screen.getByRole("table",{name:"Manual scores,decisions and signed distances"})).toBeInTheDocument(); else {expect(screen.getByRole("table",{name:"Validation decision scores and classes"})).toBeInTheDocument();expect(screen.getByRole("table",{name:"Training supports and hinge violations"})).toBeInTheDocument();}
  fireEvent.change(screen.getByRole("combobox",{name:"Supported explanation"}),{target:{value:config.reasonId}});fireEvent.click(screen.getByRole("button",{name:"Check my explanation"}));expect(screen.getByText("Meaningful interaction demonstrated; not independent mastery.")).toBeInTheDocument();
 });
-it("keeps completion separate from the independent assessment",()=>{render(<SVMOverview/>);expect(screen.getByText(/16\/20 families/)).toBeInTheDocument();cleanup();render(<SVMAssessment/>);expect(screen.getByText(/20 objectives; at least16/)).toBeInTheDocument();});
+it("keeps completion separate from the independent assessment",()=>{render(<SVMOverview/>);expect(screen.getByText(/answer 16 of the 20 questions/)).toBeInTheDocument();cleanup();render(<SVMAssessment/>);expect(screen.getByText(/20 objectives; at least16/)).toBeInTheDocument();});
 
 it("preserves fitted linear margin numerical alternatives independently of the beginner geometry control",()=>{render(<Graphic config={configurations(0)[1]}/>);expect(screen.getByRole("table",{name:"Validation decision scores and classes"})).toBeInTheDocument();expect(screen.getByRole("table",{name:"Training supports and hinge violations"})).toBeInTheDocument();});

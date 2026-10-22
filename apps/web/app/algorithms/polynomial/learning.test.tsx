@@ -1,4 +1,5 @@
 import {experimentGuide} from "../simple-experiment";
+import { LESSONS } from "./teaching";
 // @vitest-environment jsdom
 import React from "react";
 import "@testing-library/jest-dom/vitest";
@@ -11,7 +12,7 @@ import { emptyState, load, serialize, STORAGE_KEY } from "./model";
 beforeEach(()=>localStorage.clear()); afterEach(cleanup);
 async function open(lesson=0) {render(<PolynomialLesson lesson={lesson}/>);await waitFor(()=>expect(screen.getByRole("group",{name:"Objective understanding and guided practice"})).toBeEnabled());}
 it("teaches all16 objectives with worked mathematics, Python, comparison and contextual recall",async()=>{
- for(let lesson=0;lesson<4;lesson++){await open(lesson);for(let objective=1;objective<=4;objective++)expect(screen.getByRole("heading",{name:new RegExp(`^PR0${lesson+1}.O${objective}:`)})).toBeInTheDocument();expect(screen.getByRole("heading",{name:"Mathematics and symbols"})).toBeInTheDocument();expect(screen.getByRole("link",{name:"Evaluation Foundations"})).toHaveAttribute("href","/algorithms/evaluation");cleanup();}
+ for(let lesson=0;lesson<4;lesson++){await open(lesson);for(let objective=1;objective<=4;objective++)expect(screen.getAllByRole("heading", { name: LESSONS[lesson].objectives[objective - 1] })[0]).toBeInTheDocument();expect(screen.getByRole("heading",{name:"Mathematics and symbols"})).toBeInTheDocument();expect(screen.getByRole("link",{name:"Evaluation Foundations"})).toHaveAttribute("href","/algorithms/evaluation");cleanup();}
 });
 it("persists polynomial practice without reading or overwriting earlier scopes",async()=>{
  const earlier=["ml-math-lab:supervised:ev:full:v1","ml-math-lab:supervised:ev:prototype:v1","ml-math-lab:python:sklearn:v1","regression-progress"];

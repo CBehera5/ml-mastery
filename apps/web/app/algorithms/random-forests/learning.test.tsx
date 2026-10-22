@@ -1,4 +1,5 @@
 import {experimentGuide} from "../simple-experiment";
+import { LESSONS } from "./teaching";
 // @vitest-environment jsdom
 import React from "react";
 import "@testing-library/jest-dom/vitest";
@@ -10,7 +11,7 @@ import {load,STORAGE_KEY} from "./model";
 afterEach(()=>{cleanup();localStorage.clear();});
 async function open(lesson=0){render(<RandomForestsLesson lesson={lesson}/>);await waitFor(()=>expect(screen.getByRole("group",{name:"Objective understanding and guided practice"})).toBeEnabled());}
 for(let lesson=0;lesson<5;lesson++)it(`teaches all four RF0${lesson+1} objectives and applications`,async()=>{
- await open(lesson);for(let objective=1;objective<=4;objective++)expect(screen.getByRole("heading",{name:new RegExp(`^RF0${lesson+1}.O${objective}:`)})).toBeInTheDocument();
+ await open(lesson);for(let objective=1;objective<=4;objective++)expect(screen.getAllByRole("heading", { name: LESSONS[lesson].objectives[objective - 1] })[0]).toBeInTheDocument();
  expect(screen.getByRole("heading",{name:"Mathematics and symbols"})).toBeInTheDocument();expect(screen.getByRole("heading",{name:"Python application"})).toBeInTheDocument();
 });
 it("restores mean practice without granting mastery or modifying earlier evidence",async()=>{
@@ -26,4 +27,4 @@ for(const lab of [0,1])it(`lab${lab} requires prediction,changes and a supported
  expect(screen.getByRole("table",{name:"Saved tree node conditions and predictions"})).toHaveStyle({minWidth:"520px"});
  fireEvent.change(screen.getByRole("combobox",{name:"Supported explanation"}),{target:{value:config.reasonId}});fireEvent.click(screen.getByRole("button",{name:"Check my explanation"}));expect(screen.getByText("Meaningful interaction demonstrated; not independent mastery.")).toBeInTheDocument();
 });
-it("keeps completion separate from the independent assessment",()=>{render(<RandomForestsOverview/>);expect(screen.getByText(/16\/20 families/)).toBeInTheDocument();cleanup();render(<RandomForestsAssessment/>);expect(screen.getByText(/20 objectives; at least16/)).toBeInTheDocument();});
+it("keeps completion separate from the independent assessment",()=>{render(<RandomForestsOverview/>);expect(screen.getByText(/answer 16 of the 20 questions/)).toBeInTheDocument();cleanup();render(<RandomForestsAssessment/>);expect(screen.getByText(/20 objectives; at least16/)).toBeInTheDocument();});

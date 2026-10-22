@@ -14,7 +14,7 @@ afterEach(() => { cleanup(); localStorage.clear(); vi.unstubAllGlobals(); });
 for (let lesson = 0; lesson < 6; lesson++) it(`teaches MS0${lesson + 1} objectives, worked reasoning and practical workflow`, async () => {
   render(<ModelSelectionLesson lesson={lesson}/>);
   await waitFor(() => expect(screen.getByRole("group", { name: "Objective reasoning and guided practice" })).toBeEnabled());
-  for (let objective = 1; objective <= 4; objective++) expect(screen.getByRole("heading", { name: new RegExp(`^MS0${lesson + 1}.O${objective}:`) })).toBeInTheDocument();
+  for (let objective = 1; objective <= 4; objective++) expect(screen.getAllByRole("heading", { name: LESSONS[lesson].objectives[objective - 1] })[0]).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: "Mathematical idea" })).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: "Python application" })).toBeInTheDocument();
 });

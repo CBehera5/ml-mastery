@@ -4,7 +4,7 @@ import Link from "next/link";
 import { PublicNav } from "../landing/public-nav";
 import { PathwayCard, PathwayFooter, type PathCard } from "../experience/pathway";
 import styles from "../experience/pathway.module.css";
-export const metadata:Metadata={title:"Python | ML Mastery",description:"Connect Python fundamentals, arrays, data tables and reliable preparation to machine-learning workflows."};
+export const metadata:Metadata={title:"Python",description:"Connect Python fundamentals, arrays, data tables and reliable preparation to machine-learning workflows."};
 const subjects:PathCard[]=[
  {title:"Python Essentials",outcome:"Write small programs and explain what each operation does.",detail:"8 lessons · Values, types, conditions, loops, functions and meaningful model inputs. Recommended first module.",href:"/python/essentials",action:"Open Python Essentials"},
  {title:"NumPy",outcome:"Follow arrays, shapes and vectorized predictions.",detail:"6 lessons · Array operations, broadcasting, matrix products and reductions. Helpful foundation: Python Essentials.",href:"/python/numpy",action:"Open NumPy"},
