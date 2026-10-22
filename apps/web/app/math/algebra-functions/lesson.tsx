@@ -10,6 +10,7 @@ import {JOURNEY} from "./journey";
 import {GraphStories} from "../teaching/algebra-stories";
 import {VariablesDiscovery} from "./variables-discovery";
 import {AlgebraShell} from "./shell";
+import {LessonPlayground,LessonCode,extraFor} from "../extras/registry";
 import {AlgebraExperiment} from "./experiment";
 import {useAlgebraEvidence} from "./use-evidence";
 import {finishLesson,recordActivity} from "./model";
@@ -27,9 +28,11 @@ export function AlgebraLesson({id}:{id:LessonId}){const c=LESSONS[id],j=JOURNEY[
   <section id="lesson-explore" tabIndex={-1}>
     <h3>Predict, then explore</h3><p className={styles.challenge}><strong>Before changing anything:</strong> {j.challenge}</p><p>{j.controls}</p>
     {id==="variables"&&<details><summary>Try a quick prediction</summary><VariablesDiscovery/></details>}
-    <AlgebraExperiment key={id} id={id} onExplore={()=>{if(loaded&&!activity)setEvidence(old=>recordActivity(old,id,new Date().toISOString()))}}/>
-    <p className={styles.note}>Explain the comparison in your own words. Moving a control records activity; it does not by itself demonstrate understanding.</p>
+    <div onChange={()=>{if(loaded&&!activity)setEvidence(old=>recordActivity(old,id,new Date().toISOString()))}} onClick={event=>{if((event.target as HTMLElement).closest("button")&&loaded&&!activity)setEvidence(old=>recordActivity(old,id,new Date().toISOString()))}}><LessonPlayground module="algebra" slug={id}/></div>
+    <details className="algebra-more" open={!extraFor("algebra",id)}><summary>{extraFor("algebra",id)?.moreLabel??"Explorer"}</summary><AlgebraExperiment key={id} id={id} onExplore={()=>{if(loaded&&!activity)setEvidence(old=>recordActivity(old,id,new Date().toISOString()))}}/></details>
+    <p className={styles.note}>In your own words: what changed, and why did the output change with it?</p>
   </section>
+  <LessonCode module="algebra" slug={id}/>
   <section id="lesson-understand" tabIndex={-1}>
     <BookExplanation module="algebra" lesson={id}/><details><summary>Relate the playground’s rule to this reading</summary>{j.reasoning.map(paragraph=><p key={paragraph}>{paragraph}</p>)}<p>{j.notation}</p></details>
     

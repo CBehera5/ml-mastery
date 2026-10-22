@@ -1,4 +1,4 @@
-.cell{display:grid;gap:.8rem;padding:clamp(1rem,2vw,1.4rem);border:1px solid #1f7568;border-radius:14px;background:linear-gradient(160deg,#f2faf7,#fffefa 60%)}
+.cell{display:grid;grid-template-columns:minmax(0,1fr);min-width:0;gap:.8rem;padding:clamp(1rem,2vw,1.4rem);border:1px solid #1f7568;border-radius:14px;background:linear-gradient(160deg,#f2faf7,#fffefa 60%)}
 .head h3{margin:.15rem 0 .35rem;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.3rem,2.6vw,1.75rem);font-weight:500}
 .badge{display:inline-block;margin:0;padding:.2rem .6rem;border-radius:999px;background:#1f7568;color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
 .note,.hint{margin:0;color:#4f5a54;font-size:.85rem;line-height:1.55}
