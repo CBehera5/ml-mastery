@@ -23,5 +23,5 @@ it("shows rejection as no prediction rather than class0",async()=>{
  const config=configurations(1).find(c=>c.id==="KN-E2.reject.cutoff-tie.v1")!;render(<Graphic lab={1} config={config}/>);expect(screen.getByText(/Rejected configuration:/)).toHaveTextContent("No class prediction exists");
 });
 it("keeps assessment independent from overview completion",async()=>{
- render(<KNNOverview/>);expect(screen.getByText(/13\/16 families/)).toBeInTheDocument();cleanup();render(<KNNAssessment/>);expect(screen.getByText(/16 objectives; at least13/)).toBeInTheDocument();expect(screen.queryByText("Mastery demonstrated")).not.toBeInTheDocument();
+ render(<KNNOverview/>);expect(screen.getByText(/answer 13 of the 16 questions/)).toBeInTheDocument();cleanup();render(<KNNAssessment/>);expect(screen.getByText(/16 objectives; at least13/)).toBeInTheDocument();expect(screen.queryByText("Mastery demonstrated")).not.toBeInTheDocument();
 });

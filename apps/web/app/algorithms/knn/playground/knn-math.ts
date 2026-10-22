@@ -25,3 +25,32 @@ export function standardise(points: readonly Customer[]) {
 }
 export type Scaler = ReturnType<typeof standardise>;
 export const toZ = (scaler: Scaler, bill: number, contacts: number): Point => [(bill - scaler.bill.mean) / scaler.bill.sd, (contacts - scaler.contacts.mean) / scaler.contacts.sd];
+
+/* ── A larger, noisy cohort for lessons 3 and 4: deterministic, so every number on the page is reproducible ── */
+export type Row = readonly [bill: number, contacts: number, churned: 0 | 1];
+function lcg(seed: number) { let s = seed >>> 0; return () => { s = (Math.imul(s, 1664525) + 1013904223) >>> 0; return s / 4294967296; }; }
+/** bill in ₹ hundreds (2..12), contacts 0..6. A customer is likely to churn when bill + 1.4 × contacts is high; `noise` flips that share of labels. */
+export function cohort(seed: number, n: number, cut: number, noise: number): Row[] {
+  const rand = lcg(seed), rows: Row[] = [];
+  for (let i = 0; i < n; i++) {
+    const bill = 2 + Math.round(rand() * 20) / 2, contacts = Math.floor(rand() * 7);
+    let label: 0 | 1 = bill + 1.4 * contacts > cut ? 1 : 0;
+    if (rand() < noise) label = label ? 0 : 1;
+    rows.push([bill, contacts, label]);
+  }
+  return rows;
+}
+export const predictRow = (train: readonly Row[], query: readonly [number, number], k: number): 0 | 1 => {
+  const ranked = train.map((r, i) => ({ r, i, d: Math.hypot(r[0] - query[0], r[1] - query[1]) })).sort((a, b) => a.d - b.d || a.i - b.i).slice(0, k);
+  return ranked.reduce((s, x) => s + x.r[2], 0) * 2 > k ? 1 : 0;
+};
+export const accuracyOn = (train: readonly Row[], test: readonly Row[], k: number) => test.filter(r => predictRow(train, [r[0], r[1]], k) === r[2]).length / test.length;
+export function confusion(train: readonly Row[], test: readonly Row[], k: number | "always-stay") {
+  let tp = 0, fp = 0, fn = 0, tn = 0;
+  for (const r of test) { const p = k === "always-stay" ? 0 : predictRow(train, [r[0], r[1]], k); if (p && r[2]) tp++; else if (p) fp++; else if (r[2]) fn++; else tn++; }
+  return { tp, fp, fn, tn, accuracy: (tp + tn) / test.length, recall: tp + fn ? tp / (tp + fn) : 0 };
+}
+/** Fixed splits used by lessons 3 and 4. */
+export const NOISY = cohort(1729, 200, 11, 0.2), NOISY_TRAIN = NOISY.slice(0, 120), NOISY_VALID = NOISY.slice(120);
+export const RARE = cohort(2024, 200, 15.5, 0.03), RARE_TRAIN = RARE.slice(0, 120), RARE_TEST = RARE.slice(120);
+export const toPython = (rows: readonly Row[]) => "[" + rows.map(r => `(${r[0]}, ${r[1]}, ${r[2]})`).join(", ") + "]";

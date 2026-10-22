@@ -1,8 +1,8 @@
 // @vitest-environment jsdom
 import { afterEach, beforeAll, describe, expect, it } from "vitest";
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { NeighborsPlayground, ScalePlayground } from "./knn-labs";
-import { CUSTOMERS, rank, standardise, toZ, vote, type Point } from "./knn-math";
+import { ChooseKPlayground, K_CHOICES, LimitsPlayground, NeighborsPlayground, ScalePlayground } from "./knn-labs";
+import { CUSTOMERS, NOISY_TRAIN, NOISY_VALID, RARE_TEST, RARE_TRAIN, accuracyOn, confusion, rank, standardise, toZ, vote, type Point } from "./knn-math";
 
 afterEach(cleanup);
 const readout = (name: string | RegExp) => screen.getByText(name).nextElementSibling!.textContent;
@@ -22,7 +22,32 @@ describe("every number quoted in the KNN playground lessons", () => {
   });
 });
 
+describe("lessons 3 and 4 quote real numbers", () => {
+  it("k = 1 is 92% on seen and 57.5% on unseen customers; the best unseen k is 3 at 69%", () => {
+    expect(accuracyOn(NOISY_TRAIN, NOISY_TRAIN, 1)).toBeCloseTo(0.9167, 3); expect(accuracyOn(NOISY_TRAIN, NOISY_VALID, 1)).toBeCloseTo(0.575, 3);
+    const unseen = K_CHOICES.map(k => accuracyOn(NOISY_TRAIN, NOISY_VALID, k)), best = Math.max(...unseen);
+    expect(K_CHOICES[unseen.indexOf(best)]).toBe(3); expect(best).toBeCloseTo(0.6875, 3);
+  });
+  it("14 of 80 left; k = 5 catches 11; always-stays is 82.5% accurate with zero recall", () => {
+    expect(RARE_TEST.filter(r => r[2]).length).toBe(14); expect(RARE_TEST.length).toBe(80);
+    expect(confusion(RARE_TRAIN, RARE_TEST, 5)).toMatchObject({ tp: 11, fn: 3, fp: 0, tn: 66 });
+    expect(confusion(RARE_TRAIN, RARE_TEST, "always-stay")).toMatchObject({ accuracy: 0.825, recall: 0 });
+  });
+});
+
 describe("the playgrounds", () => {
+  it("choose k: the gap closes as k grows and the shortcut finds the best k", () => {
+    render(<ChooseKPlayground />);
+    expect(readout("Right on seen customers")).toBe("92%"); expect(readout("Right on unseen customers")).toBe("57%");
+    fireEvent.click(screen.getByRole("button", { name: "Best on unseen customers" }));
+    expect(readout("Right on unseen customers")).toBe("69%");
+  });
+  it("limits: the baseline finds no leavers; k = 5 finds 11", () => {
+    render(<LimitsPlayground />);
+    expect(readout("Recall of leavers")).toBe("79%"); expect(readout("Missed leavers")).toBe("3");
+    fireEvent.click(screen.getByRole("button", { name: /Predict .stays. for everyone/ }));
+    expect(readout("Recall of leavers")).toBe("0%"); expect(readout("Accuracy")).toBe("82.5%");
+  });
   it("neighbors: the readout follows k and the presets", () => {
     render(<NeighborsPlayground />);
     expect(readout("Nearest, in order")).toMatch(/^N \(/); expect(readout("Prediction")).toBe("will stay");

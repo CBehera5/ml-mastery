@@ -2,9 +2,9 @@ import { beforeAll, describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import { loadPyodide } from "pyodide";
 import { PythonEngine } from "../../../components/live-python/engine";
-import { SCALE_CODE, VOTE_CODE } from "./knn-code";
+import { CHOOSE_CODE, LIMITS_CODE, SCALE_CODE, VOTE_CODE } from "./knn-code";
 
-describe.each([["vote", VOTE_CODE], ["scale", SCALE_CODE]] as const)("%s code cell runs for real", (_name, config) => {
+describe.each([["vote", VOTE_CODE], ["scale", SCALE_CODE], ["choose k", CHOOSE_CODE], ["limits", LIMITS_CODE]] as const)("%s code cell runs for real", (_name, config) => {
   let engine: PythonEngine;
   beforeAll(async () => { engine = new PythonEngine((await loadPyodide()) as unknown as ConstructorParameters<typeof PythonEngine>[0], readFileSync(new URL("../../../components/live-python/lesson_driver.py", import.meta.url), "utf8")); }, 120_000);
   const cell = config.cell;

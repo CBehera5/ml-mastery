@@ -1,6 +1,7 @@
 "use client";
 import type { CodeLabConfig } from "../../linear-regression/lessons/code-lab-section";
 import { CHECK_PRELUDE, preset, swap } from "../../../math/extras/helpers";
+import { NOISY_TRAIN, NOISY_VALID, RARE_TEST, RARE_TRAIN, toPython } from "./knn-math";
 
 /* KN01 · vote among neighbors, written from scratch in core Python */
 export const VOTE_STARTER = `# Past customers: (monthly bill in ₹ hundreds, support contacts, churned? 1 = yes)
@@ -89,4 +90,107 @@ export const SCALE_CODE: CodeLabConfig = {
   cell: { title: "mean(), std() and the scaled neighbors", starter: SCALE_STARTER, solution: SCALE_SOLUTION, checks: SCALE_CHECKS, expose: ["raw_ids", "scaled_ids"], presets: [preset("A cheaper, calmer customer", "Does the ruler still matter?", /^query = \(450, 5\)/m, "query = (400, 1)")] },
   reflections: [{ question: <>Why compute the mean and standard deviation from training customers only?</>, answer: <>A new customer should be judged by the ruler we built before we met them. Fitting the ruler on test customers lets information about the future leak into the model.</> }],
   footer: <>Raw: M, C, F — all low-bill customers who stayed. Standardised: L, J, M — high-contact customers, mostly churners. Nothing about the customer changed; only the ruler did.</>,
+};
+
+/* KN03 · choose k with unseen data */
+const KNN_PREDICT = `def knn_predict(train, query, k):
+    """Majority label among the k nearest training rows. Rows are (bill, contacts, churned)."""
+    ranked = sorted(train, key=lambda r: ((r[0] - query[0]) ** 2 + (r[1] - query[1]) ** 2) ** 0.5)
+    return 1 if sum(r[2] for r in ranked[:k]) * 2 > k else 0
+`;
+export const CHOOSE_STARTER = `train = ${toPython(NOISY_TRAIN)}
+valid = ${toPython(NOISY_VALID)}
+
+${KNN_PREDICT}
+def accuracy(train, test, k):
+    return 0.0   # TODO 1: the share of test rows whose label knn_predict gets right
+
+def best_k(train, valid, ks):
+    return ks[0]   # TODO 2: the k with the highest accuracy on the *valid* rows (first one wins a tie)
+
+ks = [1, 3, 5, 7, 9, 11, 13, 15]
+print("k = 1 on rows it has seen:  ", round(accuracy(train, train, 1), 3))
+print("k = 1 on rows it has not seen:", round(accuracy(train, valid, 1), 3))
+print("best k:", best_k(train, valid, ks))
+`;
+export const CHOOSE_SOLUTION = swap(CHOOSE_STARTER, [
+  ["    return 0.0   # TODO 1: the share of test rows whose label knn_predict gets right", "    right = sum(1 for r in test if knn_predict(train, (r[0], r[1]), k) == r[2])\n    return right / len(test)"],
+  ["    return ks[0]   # TODO 2: the k with the highest accuracy on the *valid* rows (first one wins a tie)", "    best = ks[0]\n    for k in ks:\n        if accuracy(train, valid, k) > accuracy(train, valid, best):\n            best = k\n    return best"],
+]);
+export const CHOOSE_CHECKS = CHECK_PRELUDE + `
+def _ref(train, test, k):
+    hits = 0
+    for r in test:
+        ranked = sorted(train, key=lambda t: ((t[0] - r[0]) ** 2 + (t[1] - r[1]) ** 2) ** 0.5)
+        hits += (1 if sum(t[2] for t in ranked[:k]) * 2 > k else 0) == r[2]
+    return hits / len(test)
+try:
+    results.append({"name": "accuracy on unseen rows matches the reference for k = 3", "passed": _close(accuracy(train, valid, 3), _ref(train, valid, 3)), "hint": "accuracy(train, valid, 3) returned %r. Count the rows where knn_predict equals the real label, then divide by the number of rows." % (accuracy(train, valid, 3),)})
+    results.append({"name": "k = 1 looks better on seen rows than on unseen rows", "passed": accuracy(train, train, 1) > accuracy(train, valid, 1) + 0.2, "hint": "On rows it has already seen, k = 1 should look much better, because each row is its own nearest neighbor."})
+    expected = max(ks, key=lambda k: (_ref(train, valid, k), -k))
+    results.append({"name": "best_k picks the best k on unseen rows", "passed": best_k(train, valid, ks) == expected, "hint": "best_k returned %r but the best k on the valid rows is %r. Compare accuracy on valid, not on train." % (best_k(train, valid, ks), expected)})
+    results.append({"name": "best_k is not simply the k that is best on training rows", "passed": best_k(train, valid, ks) != max(ks, key=lambda k: (_ref(train, train, k), -k)), "hint": "If you chose the k with the best training accuracy you would always get k = 1. Use the valid rows."})
+except Exception as exc:
+    results.append({"name": "Your functions run", "passed": False, "hint": str(exc)})
+`;
+export const CHOOSE_CODE: CodeLabConfig = {
+  id: "knnchoosecode", title: "Choose k with data it has not seen", intro: <p>Training accuracy always favors the smallest k, because a customer counts as its own neighbor. To choose honestly, score each k on customers the model did not train on.</p>,
+  bridge: [{ math: "accuracy = right answers ÷ rows", code: "right / len(test)", note: "A share between 0 and 1." }, { math: "k* = the k with the highest unseen accuracy", code: "accuracy(train, valid, k)", note: "Always score on rows that were not used to train." }],
+  cell: { title: "accuracy() and best_k()", starter: CHOOSE_STARTER, solution: CHOOSE_SOLUTION, checks: CHOOSE_CHECKS, expose: ["ks"], presets: [preset("Only odd k up to 7", "A smaller menu of candidates.", /^ks = \[.*\]/m, "ks = [1, 3, 5, 7]")] },
+  reflections: [{ question: <>Why must the final test set stay untouched while you choose k?</>, answer: <>Every time you look at it and adjust, it starts to guide your choices, so its score stops being a fair preview of new customers. Choose k on a development split, then test once.</> }],
+  footer: <>On unseen customers the score is bumpy and flat across the middle values of k. That is normal: take a modest k that does well on held-out data, not the one that merely flatters the training set.</>,
+};
+
+/* KN04 · accuracy versus recall */
+export const LIMITS_STARTER = `train = ${toPython(RARE_TRAIN)}
+test = ${toPython(RARE_TEST)}
+
+${KNN_PREDICT}
+def confusion(train, test, k):
+    tp = fp = fn = tn = 0
+    for r in test:
+        guess = knn_predict(train, (r[0], r[1]), k)
+        # TODO 1: add one to the right counter. tp = guessed 1 and really 1, fp = guessed 1 but really 0,
+        # fn = guessed 0 but really 1, tn = guessed 0 and really 0
+        pass
+    return tp, fp, fn, tn
+
+def recall(tp, fn):
+    return 0.0   # TODO 2: of the customers who really left, the share we caught
+
+tp, fp, fn, tn = confusion(train, test, 5)
+print("caught", tp, "missed", fn, "false alarms", fp)
+print("accuracy:", round((tp + tn) / len(test), 3), " recall:", round(recall(tp, fn), 3))
+print("accuracy of always saying 'stays':", round(sum(1 for r in test if r[2] == 0) / len(test), 3))
+`;
+export const LIMITS_SOLUTION = swap(LIMITS_STARTER, [
+  ["        # TODO 1: add one to the right counter. tp = guessed 1 and really 1, fp = guessed 1 but really 0,\n        # fn = guessed 0 but really 1, tn = guessed 0 and really 0\n        pass", "        if guess == 1 and r[2] == 1:\n            tp += 1\n        elif guess == 1:\n            fp += 1\n        elif r[2] == 1:\n            fn += 1\n        else:\n            tn += 1"],
+  ["    return 0.0   # TODO 2: of the customers who really left, the share we caught", "    return tp / (tp + fn) if tp + fn else 0.0"],
+]);
+export const LIMITS_CHECKS = CHECK_PRELUDE + `
+def _ref(train, test, k):
+    tp = fp = fn = tn = 0
+    for r in test:
+        ranked = sorted(train, key=lambda t: ((t[0] - r[0]) ** 2 + (t[1] - r[1]) ** 2) ** 0.5)
+        g = 1 if sum(t[2] for t in ranked[:k]) * 2 > k else 0
+        if g and r[2]: tp += 1
+        elif g: fp += 1
+        elif r[2]: fn += 1
+        else: tn += 1
+    return tp, fp, fn, tn
+try:
+    got = confusion(train, test, 5)
+    results.append({"name": "confusion counts match the reference for k = 5", "passed": tuple(got) == _ref(train, test, 5), "hint": "confusion returned %r. Use all four counters: tp, fp, fn, tn." % (got,)})
+    results.append({"name": "the four counts add up to every test row", "passed": sum(got) == len(test), "hint": "The counts add to %r but there are %r test rows. Every row belongs to exactly one cell." % (sum(got), len(test))})
+    results.append({"name": "recall(8, 2) = 0.8", "passed": _close(recall(8, 2), 0.8), "hint": "recall(8, 2) returned %r. It is caught ÷ (caught + missed)." % (recall(8, 2),)})
+    results.append({"name": "recall of an always-stays model is 0", "passed": recall(0, 14) == 0, "hint": "recall(0, 14) returned %r. If nobody who left is caught, recall is 0." % (recall(0, 14),)})
+except Exception as exc:
+    results.append({"name": "Your functions run", "passed": False, "hint": str(exc)})
+`;
+export const LIMITS_CODE: CodeLabConfig = {
+  id: "knnlimitscode", title: "Count who you catch and who you miss", intro: <p>A single accuracy number hides the mix of mistakes. Counting four cells shows who the errors land on.</p>,
+  bridge: [{ math: "recall = TP ÷ (TP + FN)", code: "tp / (tp + fn)", note: "Of customers who really left, the share we caught." }, { math: "accuracy = (TP + TN) ÷ all rows", code: "(tp + tn) / len(test)", note: "Looks good even when the rare group is missed." }],
+  cell: { title: "confusion() and recall()", starter: LIMITS_STARTER, solution: LIMITS_SOLUTION, checks: LIMITS_CHECKS, expose: [], presets: [preset("Ask 15 neighbors", "Does recall hold up?", /confusion\(train, test, 5\)/, "confusion(train, test, 15)")] },
+  reflections: [{ question: <>If only 17% of customers leave, why is “nobody leaves” a useful comparison?</>, answer: <>It scores about 83% without learning anything. A model has to beat that baseline, and on the customers you actually care about, before its accuracy means much.</> }],
+  footer: <>With k = 5 the model catches 11 of 14 leavers. The “nobody leaves” rule scores 82.5% accuracy and catches none of them.</>,
 };
