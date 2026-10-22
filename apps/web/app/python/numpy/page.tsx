@@ -1,3 +1,3 @@
 import { NumPyOverview } from "./learning";
-export const metadata = { title: "NumPy for Machine Learning | ML Math Lab" };
+export const metadata = { title: "NumPy for Machine Learning" };
 export default function Page() { return <NumPyOverview/>; }

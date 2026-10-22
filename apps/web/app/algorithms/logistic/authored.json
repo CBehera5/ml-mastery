@@ -441,7 +441,7 @@
       "explanation": "The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect.",
       "id": "LG01.O3.practice.A",
       "objective": "LG01.O3",
-      "prompt": "A churn training example: a feature has coefficient1. Change its value from1 to2, holding other features fixed. What changes?",
+      "prompt": "A churn training example: a feature has coefficient1. Change its value from 1 to 2, holding other features fixed. What changes?",
       "remediation": "Recall LG01.O3, the worked contrast and the prediction/evaluation boundary. The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect."
     },
     {
@@ -479,7 +479,7 @@
       "explanation": "The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect.",
       "id": "LG01.O3.practice.B",
       "objective": "LG01.O3",
-      "prompt": "A changed development cohort: a feature has coefficient1. Change its value from2 to3, holding other features fixed. What changes?",
+      "prompt": "A changed development cohort: a feature has coefficient1. Change its value from 2 to 3, holding other features fixed. What changes?",
       "remediation": "Recall LG01.O3, the worked contrast and the prediction/evaluation boundary. The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect."
     },
     {
@@ -517,7 +517,7 @@
       "explanation": "The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect.",
       "id": "LG01.O3.assessment.A",
       "objective": "LG01.O3",
-      "prompt": "An unseen-customer example: a feature has coefficient1. Change its value from3 to4, holding other features fixed. What changes?",
+      "prompt": "An unseen-customer example: a feature has coefficient1. Change its value from 3 to 4, holding other features fixed. What changes?",
       "remediation": "Recall LG01.O3, the worked contrast and the prediction/evaluation boundary. The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect."
     },
     {
@@ -555,7 +555,7 @@
       "explanation": "The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect.",
       "id": "LG01.O3.assessment.B",
       "objective": "LG01.O3",
-      "prompt": "A changed cost scenario: a feature has coefficient1. Change its value from4 to5, holding other features fixed. What changes?",
+      "prompt": "A changed cost scenario: a feature has coefficient1. Change its value from 4 to 5, holding other features fixed. What changes?",
       "remediation": "Recall LG01.O3, the worked contrast and the prediction/evaluation boundary. The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect."
     },
     {
@@ -593,7 +593,7 @@
       "explanation": "The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect.",
       "id": "LG01.O3.assessment.C",
       "objective": "LG01.O3",
-      "prompt": "A new deployment cohort: a feature has coefficient1. Change its value from5 to6, holding other features fixed. What changes?",
+      "prompt": "A new deployment cohort: a feature has coefficient1. Change its value from 5 to 6, holding other features fixed. What changes?",
       "remediation": "Recall LG01.O3, the worked contrast and the prediction/evaluation boundary. The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect."
     },
     {
@@ -1994,11 +1994,11 @@
       ],
       "code": "",
       "critical": false,
-      "explanation": "A false negative is actual class1 predicted0. Use the named positive class and equality convention before counting.",
+      "explanation": "A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting.",
       "id": "LG03.O3.practice.A",
       "objective": "LG03.O3",
       "prompt": "A churn training example: Actual labels[0,1,1], p=[.2,.6,.8], threshold=0.5. Count false negatives.",
-      "remediation": "Recall LG03.O3, the worked contrast and the prediction/evaluation boundary. A false negative is actual class1 predicted0. Use the named positive class and equality convention before counting."
+      "remediation": "Recall LG03.O3, the worked contrast and the prediction/evaluation boundary. A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting."
     },
     {
       "accepted": [
@@ -2018,11 +2018,11 @@
       ],
       "code": "",
       "critical": false,
-      "explanation": "A false negative is actual class1 predicted0. Use the named positive class and equality convention before counting.",
+      "explanation": "A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting.",
       "id": "LG03.O3.practice.B",
       "objective": "LG03.O3",
       "prompt": "A changed development cohort: Actual labels[0,1,1], p=[.2,.6,.8], threshold=0.6. Count false negatives.",
-      "remediation": "Recall LG03.O3, the worked contrast and the prediction/evaluation boundary. A false negative is actual class1 predicted0. Use the named positive class and equality convention before counting."
+      "remediation": "Recall LG03.O3, the worked contrast and the prediction/evaluation boundary. A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting."
     },
     {
       "accepted": [
@@ -2042,11 +2042,11 @@
       ],
       "code": "",
       "critical": false,
-      "explanation": "A false negative is actual class1 predicted0. Use the named positive class and equality convention before counting.",
+      "explanation": "A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting.",
       "id": "LG03.O3.assessment.A",
       "objective": "LG03.O3",
       "prompt": "An unseen-customer example: Actual labels[0,1,1], p=[.2,.6,.8], threshold=0.7. Count false negatives.",
-      "remediation": "Recall LG03.O3, the worked contrast and the prediction/evaluation boundary. A false negative is actual class1 predicted0. Use the named positive class and equality convention before counting."
+      "remediation": "Recall LG03.O3, the worked contrast and the prediction/evaluation boundary. A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting."
     },
     {
       "accepted": [
@@ -2066,11 +2066,11 @@
       ],
       "code": "",
       "critical": false,
-      "explanation": "A false negative is actual class1 predicted0. Use the named positive class and equality convention before counting.",
+      "explanation": "A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting.",
       "id": "LG03.O3.assessment.B",
       "objective": "LG03.O3",
       "prompt": "A changed cost scenario: Actual labels[0,1,1], p=[.2,.6,.8], threshold=1. Count false negatives.",
-      "remediation": "Recall LG03.O3, the worked contrast and the prediction/evaluation boundary. A false negative is actual class1 predicted0. Use the named positive class and equality convention before counting."
+      "remediation": "Recall LG03.O3, the worked contrast and the prediction/evaluation boundary. A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting."
     },
     {
       "accepted": [
@@ -2090,11 +2090,11 @@
       ],
       "code": "",
       "critical": false,
-      "explanation": "A false negative is actual class1 predicted0. Use the named positive class and equality convention before counting.",
+      "explanation": "A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting.",
       "id": "LG03.O3.assessment.C",
       "objective": "LG03.O3",
       "prompt": "A new deployment cohort: Actual labels[0,1,1], p=[.2,.6,.8], threshold=0. Count false negatives.",
-      "remediation": "Recall LG03.O3, the worked contrast and the prediction/evaluation boundary. A false negative is actual class1 predicted0. Use the named positive class and equality convention before counting."
+      "remediation": "Recall LG03.O3, the worked contrast and the prediction/evaluation boundary. A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting."
     },
     {
       "accepted": [
@@ -2121,7 +2121,7 @@
             },
             {
               "id": "supported",
-              "label": "Positive class1 has zero recall; majority accuracy alone does not establish useful detection"
+              "label": "Positive class 1 has zero recall; majority accuracy alone does not establish useful detection"
             }
           ]
         }
@@ -2131,7 +2131,7 @@
       "explanation": "Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined.",
       "id": "LG03.O4.practice.A",
       "objective": "LG03.O4",
-      "prompt": "A churn training example: one churn event in100 customers; all-stay predictions are99% accurate. What follows?",
+      "prompt": "A churn training example: one churn event in 100 customers; all-stay predictions are99% accurate. What follows?",
       "remediation": "Recall LG03.O4, the worked contrast and the prediction/evaluation boundary. Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined."
     },
     {
@@ -2155,7 +2155,7 @@
             },
             {
               "id": "supported",
-              "label": "Positive class1 has zero recall; majority accuracy alone does not establish useful detection"
+              "label": "Positive class 1 has zero recall; majority accuracy alone does not establish useful detection"
             },
             {
               "id": "wrong0",
@@ -2169,7 +2169,7 @@
       "explanation": "Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined.",
       "id": "LG03.O4.practice.B",
       "objective": "LG03.O4",
-      "prompt": "A changed development cohort: one churn event in100 customers; all-stay predictions are99% accurate. What follows?",
+      "prompt": "A changed development cohort: one churn event in 100 customers; all-stay predictions are99% accurate. What follows?",
       "remediation": "Recall LG03.O4, the worked contrast and the prediction/evaluation boundary. Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined."
     },
     {
@@ -2189,7 +2189,7 @@
           "options": [
             {
               "id": "supported",
-              "label": "Positive class1 has zero recall; majority accuracy alone does not establish useful detection"
+              "label": "Positive class 1 has zero recall; majority accuracy alone does not establish useful detection"
             },
             {
               "id": "wrong0",
@@ -2207,7 +2207,7 @@
       "explanation": "Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined.",
       "id": "LG03.O4.assessment.A",
       "objective": "LG03.O4",
-      "prompt": "An unseen-customer example: one churn event in100 customers; all-stay predictions are99% accurate. What follows?",
+      "prompt": "An unseen-customer example: one churn event in 100 customers; all-stay predictions are99% accurate. What follows?",
       "remediation": "Recall LG03.O4, the worked contrast and the prediction/evaluation boundary. Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined."
     },
     {
@@ -2235,7 +2235,7 @@
             },
             {
               "id": "supported",
-              "label": "Positive class1 has zero recall; majority accuracy alone does not establish useful detection"
+              "label": "Positive class 1 has zero recall; majority accuracy alone does not establish useful detection"
             }
           ]
         }
@@ -2245,7 +2245,7 @@
       "explanation": "Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined.",
       "id": "LG03.O4.assessment.B",
       "objective": "LG03.O4",
-      "prompt": "A changed cost scenario: one churn event in100 customers; all-stay predictions are99% accurate. What follows?",
+      "prompt": "A changed cost scenario: one churn event in 100 customers; all-stay predictions are99% accurate. What follows?",
       "remediation": "Recall LG03.O4, the worked contrast and the prediction/evaluation boundary. Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined."
     },
     {
@@ -2269,7 +2269,7 @@
             },
             {
               "id": "supported",
-              "label": "Positive class1 has zero recall; majority accuracy alone does not establish useful detection"
+              "label": "Positive class 1 has zero recall; majority accuracy alone does not establish useful detection"
             },
             {
               "id": "wrong0",
@@ -2283,7 +2283,7 @@
       "explanation": "Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined.",
       "id": "LG03.O4.assessment.C",
       "objective": "LG03.O4",
-      "prompt": "A new deployment cohort: one churn event in100 customers; all-stay predictions are99% accurate. What follows?",
+      "prompt": "A new deployment cohort: one churn event in 100 customers; all-stay predictions are99% accurate. What follows?",
       "remediation": "Recall LG03.O4, the worked contrast and the prediction/evaluation boundary. Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined."
     },
     {
@@ -3173,11 +3173,11 @@
       ],
       "code": "",
       "critical": false,
-      "explanation": "Select the column for class1 from predict_proba; prediction uses learned training state, not the new row's outcome.",
+      "explanation": "Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome.",
       "id": "LG05.O1.practice.A",
       "objective": "LG05.O1",
       "prompt": "A churn training example: fit is complete; classes_=[0,1], probability row=[0.75,0.25]. What is p(churn)?",
-      "remediation": "Recall LG05.O1, the worked contrast and the prediction/evaluation boundary. Select the column for class1 from predict_proba; prediction uses learned training state, not the new row's outcome."
+      "remediation": "Recall LG05.O1, the worked contrast and the prediction/evaluation boundary. Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome."
     },
     {
       "accepted": [
@@ -3211,11 +3211,11 @@
       ],
       "code": "",
       "critical": false,
-      "explanation": "Select the column for class1 from predict_proba; prediction uses learned training state, not the new row's outcome.",
+      "explanation": "Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome.",
       "id": "LG05.O1.practice.B",
       "objective": "LG05.O1",
       "prompt": "A changed development cohort: fit is complete; classes_=[0,1], probability row=[0.5,0.5]. What is p(churn)?",
-      "remediation": "Recall LG05.O1, the worked contrast and the prediction/evaluation boundary. Select the column for class1 from predict_proba; prediction uses learned training state, not the new row's outcome."
+      "remediation": "Recall LG05.O1, the worked contrast and the prediction/evaluation boundary. Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome."
     },
     {
       "accepted": [
@@ -3249,11 +3249,11 @@
       ],
       "code": "",
       "critical": false,
-      "explanation": "Select the column for class1 from predict_proba; prediction uses learned training state, not the new row's outcome.",
+      "explanation": "Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome.",
       "id": "LG05.O1.assessment.A",
       "objective": "LG05.O1",
       "prompt": "An unseen-customer example: fit is complete; classes_=[0,1], probability row=[0.25,0.75]. What is p(churn)?",
-      "remediation": "Recall LG05.O1, the worked contrast and the prediction/evaluation boundary. Select the column for class1 from predict_proba; prediction uses learned training state, not the new row's outcome."
+      "remediation": "Recall LG05.O1, the worked contrast and the prediction/evaluation boundary. Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome."
     },
     {
       "accepted": [
@@ -3287,11 +3287,11 @@
       ],
       "code": "",
       "critical": false,
-      "explanation": "Select the column for class1 from predict_proba; prediction uses learned training state, not the new row's outcome.",
+      "explanation": "Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome.",
       "id": "LG05.O1.assessment.B",
       "objective": "LG05.O1",
       "prompt": "A changed cost scenario: fit is complete; classes_=[0,1], probability row=[0.09999999999999998,0.9]. What is p(churn)?",
-      "remediation": "Recall LG05.O1, the worked contrast and the prediction/evaluation boundary. Select the column for class1 from predict_proba; prediction uses learned training state, not the new row's outcome."
+      "remediation": "Recall LG05.O1, the worked contrast and the prediction/evaluation boundary. Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome."
     },
     {
       "accepted": [
@@ -3325,11 +3325,11 @@
       ],
       "code": "",
       "critical": false,
-      "explanation": "Select the column for class1 from predict_proba; prediction uses learned training state, not the new row's outcome.",
+      "explanation": "Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome.",
       "id": "LG05.O1.assessment.C",
       "objective": "LG05.O1",
       "prompt": "A new deployment cohort: fit is complete; classes_=[0,1], probability row=[0.9,0.1]. What is p(churn)?",
-      "remediation": "Recall LG05.O1, the worked contrast and the prediction/evaluation boundary. Select the column for class1 from predict_proba; prediction uses learned training state, not the new row's outcome."
+      "remediation": "Recall LG05.O1, the worked contrast and the prediction/evaluation boundary. Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome."
     },
     {
       "accepted": [

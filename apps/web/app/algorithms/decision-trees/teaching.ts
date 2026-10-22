@@ -5,7 +5,7 @@ export const LESSONS = [
     "lab": 0,
     "why": "House prices can change differently across neighborhoods and area ranges. A decision tree asks a sequence of feature questions and sends each house to a local prediction. For churn, the same mechanism sends a customer to a class-proportion leaf. The targets differ; routing is shared.",
     "intuition": "Picture a map cut by vertical or horizontal lines. Each split divides only the region that reached that node. Follow a path like a flowchart; the conjunction of its questions identifies a leaf. Training chooses the questions; inference only follows them.",
-    "worked": "Saved illustrative house rule: area<=2 predicts3; otherwise area<=5 predicts7; otherwise9, in100000 currency units. Query area4 goes right then left and predicts7. Query area2 goes left and predicts3. This supplied example is not claimed to be the optimal fitted tree.",
+    "worked": "Saved illustrative house rule: area<=2 predicts3; otherwise area<=5 predicts7; otherwise9, in 100000 currency units. Query area4 goes right then left and predicts7. Query area2 goes left and predicts3. This supplied example is not claimed to be the optimal fitted tree.",
     "changed": "Change the query to area6: the saved tree predicts9 without learning anything new. Separately changing a training sale price and refitting can change the tree. These are different operations. Trace both cases before using the regression experiment.",
     "math": "A node compares x_j<=t: x_j is feature j of one row, t is a stored threshold. Left includes equality; right means x_j>t. A path is an AND of conditions, not their average. In two dimensions these cuts are axis-aligned. Frozen sklearn inputs use float32; display rounding never decides membership.",
     "python": "from sklearn.tree import DecisionTreeRegressor\nmodel = DecisionTreeRegressor(criterion='squared_error', max_depth=2, min_samples_leaf=1, random_state=1729)\nmodel.fit(X_train, y_train)\nprices = model.predict(X_dev)\npaths = model.decision_path(X_dev)",
@@ -56,7 +56,7 @@ export const LESSONS = [
     "why": "A churn team needs class decisions and an account of the class mix behind them. A mean price does not answer that question. Gini measures how mixed observed class labels are, helping choose splits that separate them.",
     "intuition": "Imagine each node as a basket of stays and churns. A good split separates baskets with different class proportions. A pure basket has no observed mixing, but a tiny pure basket is not proof that every future customer will match it.",
     "worked": "Parent counts[2,2] give p=[.5,.5] and Gini1-(.25+.25)=.5. Children[2,0] and[0,2] have Gini0; weighted child Gini0 and gain.5. A leaf[1,3] outputs probabilities[.25,.75] in order0=stays,1=churns and predicts1.",
-    "changed": "Children[3,0] and[1,2] of size3 each have Gini0 and4/9; weighted child impurity2/9. Parent[4,2] has Gini4/9, so gain2/9. With unequal sizes, use actual size weights. Leaf[1,1] ties and predicts the first sorted class0. A one-class fitted dataset has only that class in its probability columns.",
+    "changed": "Children[3,0] and[1,2] of size3 each have Gini0 and4/9; weighted child impurity2/9. Parent[4,2] has Gini4/9, so gain2/9. With unequal sizes, use actual size weights. Leaf[1,1] ties and predicts the first sorted class 0. A one-class fitted dataset has only that class in its probability columns.",
     "math": "For class c, p_c=count_c/n and Gini G=1-sum_c(p_c^2). Gain subtracts size-weighted child Gini from parent Gini. Leaf fractions are model probabilities, not guaranteed calibration. Context only: entropy H=-sum p_c log2(p_c), with0 log2(0)=0. Balanced binary H=1 bit versus G=.5; pure nodes give0 for both. Different scales are not interchangeable scores.",
     "python": "from sklearn.tree import DecisionTreeClassifier\nmodel = DecisionTreeClassifier(criterion='gini', max_depth=2, min_samples_leaf=1, random_state=1729)\nmodel.fit(X_train, y_train)\nclasses = model.classes_\nprobabilities = model.predict_proba(X_dev)\nlabels = model.predict(X_dev)",
     "comparison": "Recall Logistic probability versus class decisions and EV imbalance/cost metrics. A tree gives local class frequencies; Logistic gives sigmoid probabilities. Neither a pure leaf nor high accuracy certifies calibration or causality. Entropy is a contextual comparison only, never a fitted option here.",
@@ -67,7 +67,7 @@ export const LESSONS = [
       "Separate impurity from held-out success"
     ],
     "notes": [
-      "Use class proportions, not raw counts squared. Binary Gini ranges from0 to.5.",
+      "Use class proportions, not raw counts squared. Binary Gini ranges from 0 to.5.",
       "Size weighting and categorical output are both mandatory: a numeric class-code mean is not the classification leaf decision.",
       "[9,1] has Gini.18, lower than[5,5] at.5; always predicting the majority can still miss every rare positive.",
       "Training purity can increase while unseen error worsens. Read confusion counts, subgroup errors and probability evidence."
@@ -81,7 +81,7 @@ export const LESSONS = [
     "why": "More splits can capture useful structure or chase sample-specific noise. A housing model selected for minimum training error can disappoint on new houses. Complexity controls make this trade-off visible rather than treating depth as a score to maximize.",
     "intuition": "A shallow map has broad regions; a deep map has many small patches. One changed training target can reshape patches. Pruning removes weak subtrees, while minimum leaf size prevents tiny groups from being created in the first place.",
     "worked": "In frozen DT-E1 base data, depth1 gives train MSE3 and development MSE3. Depth2 reduces train MSE to.375 but raises development MSE to5.0625. Training improvement did not imply generalization improvement. Both models use the same training and development row IDs.",
-    "changed": "Switch to the changed-row fixture, where the last house target changes12 to8. Compare structures and errors instead of assuming every prediction changes. Then inspect min-leaf2 and the training-derived pruning-alpha states; a simpler tree can help or hurt development error.",
+    "changed": "Switch to the changed-row fixture, where the last house target changes12 to 8. Compare structures and errors instead of assuming every prediction changes. Then inspect min-leaf2 and the training-derived pruning-alpha states; a simpler tree can help or hurt development error.",
     "math": "Depth counts edges from root to leaf. min_samples_leaf constrains each child. Cost-complexity objective R_alpha(T)=R(T)+alpha*number_of_leaves, where R is total sample-weighted leaf impurity, not an unnormalized SSE. Larger alpha penalizes complexity. Derive candidate paths within training or each CV training fold.",
     "python": "from sklearn.tree import DecisionTreeRegressor\nbase = DecisionTreeRegressor(criterion='squared_error', random_state=1729)\npath = base.cost_complexity_pruning_path(X_train, y_train)\nmodels = [DecisionTreeRegressor(criterion='squared_error', ccp_alpha=float(alpha), random_state=1729).fit(X_train, y_train) for alpha in path.ccp_alphas]\n# Complete fold-local selection is in the trusted notebook",
     "comparison": "Recall Polynomial degree and regularization bias-variance trade-offs. A pruned tree is not automatically best: compare unseen development evidence, costs and stability. Forests are a future conceptual contrast, not fitted in this module.",
@@ -145,7 +145,7 @@ export const LESSONS = [
       "Translate all path conditions with AND and state observed coverage; do not omit a branch condition.",
       "Reject causal claims and global guarantees; explain correlation, cardinality, sample dependence and coverage.",
       "Linear coefficient structure and piecewise trees differ; compare error evidence rather than an API or universal ranking.",
-      "Report subgroup counts,uncertainty,shift,refit instability and the inability to extrapolate slopes beyond leaf regions."
+      "Report subgroup counts, uncertainty,shift,refit instability and the inability to extrapolate slopes beyond leaf regions."
     ],
     "transfer": "Explain the supported local fitted rule and training importance while rejecting causal or globally reliable claims without appropriate evidence."
   }

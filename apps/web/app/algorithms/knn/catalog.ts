@@ -27,7 +27,7 @@ export const LABS: readonly Manifest[] = freeze([first, second].map(manifest => 
   configurations: (manifest.configurations as RawState[]).map(config => {
     const dataset = (manifest.datasets as Dataset[]).find(item => item.id === config.dataset_id);
     return { id: config.id, fixture: config.dataset_id ?? "permission-diagnostic", controls: { query: config.query_index ?? "not applicable", k: config.k ?? "rejected", weighting: config.weights ?? "not applicable", scaled: config.scaled ?? false },
-      prediction_question: "Predict class0, class1, or rejection, then explain why before comparing the frozen result.",
+      prediction_question: "Predict class 0, class 1, or rejection, then explain why before comparing the frozen result.",
       expected: { ...config, labels: dataset?.labels ?? [], reason: config.outcome ? "rejection-boundary" : "distance-selects-labels-vote" },
       why: config.outcome ? config.outcome.reason : `${config.text} ${manifest.explanation}` };
   })

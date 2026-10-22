@@ -2011,7 +2011,7 @@
       "explanation": "Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation.",
       "id": "PR03.O3.practice.A",
       "objective": "PR03.O3",
-      "prompt": "A feature is multiplied by100 before an L2 coefficient penalty. Is the same alpha automatically the same model preference?",
+      "prompt": "A feature is multiplied by 100 before an L2 coefficient penalty. Is the same alpha automatically the same model preference?",
       "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation."
     },
     {
@@ -2049,7 +2049,7 @@
       "explanation": "Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation.",
       "id": "PR03.O3.practice.B",
       "objective": "PR03.O3",
-      "prompt": "A feature is multiplied by100 before an L2 coefficient penalty. Is the same alpha automatically the same model preference?",
+      "prompt": "A feature is multiplied by 100 before an L2 coefficient penalty. Is the same alpha automatically the same model preference?",
       "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation."
     },
     {
@@ -2087,7 +2087,7 @@
       "explanation": "Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation.",
       "id": "PR03.O3.independent.A",
       "objective": "PR03.O3",
-      "prompt": "A feature is multiplied by100 before an L2 coefficient penalty. Is the same alpha automatically the same model preference?",
+      "prompt": "A feature is multiplied by 100 before an L2 coefficient penalty. Is the same alpha automatically the same model preference?",
       "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation."
     },
     {
@@ -2125,7 +2125,7 @@
       "explanation": "Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation.",
       "id": "PR03.O3.independent.B",
       "objective": "PR03.O3",
-      "prompt": "A feature is multiplied by100 before an L2 coefficient penalty. Is the same alpha automatically the same model preference?",
+      "prompt": "A feature is multiplied by 100 before an L2 coefficient penalty. Is the same alpha automatically the same model preference?",
       "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation."
     },
     {
@@ -2163,7 +2163,7 @@
       "explanation": "Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation.",
       "id": "PR03.O3.independent.C",
       "objective": "PR03.O3",
-      "prompt": "A feature is multiplied by100 before an L2 coefficient penalty. Is the same alpha automatically the same model preference?",
+      "prompt": "A feature is multiplied by 100 before an L2 coefficient penalty. Is the same alpha automatically the same model preference?",
       "remediation": "Return to the worked contrast and trace columns, coefficients, support and fit IDs. Polynomial powers have different scales. Fit scaling on each fold training set before penalized fitting; do not learn scaling from validation."
     },
     {

@@ -53,7 +53,7 @@ function Practice({ index, module }: { index: number; module: ReturnType<typeof 
 }
 export function Graphic({ config }: { lab:number; config:Config }) {
  const value=config.expected;
- if(value.outcome)return <p>Rejected configuration: {String((value.outcome as {reason:string}).reason)}. No class prediction exists; rejection is not class0.</p>;
+ if(value.outcome)return <p>Rejected configuration: {String((value.outcome as {reason:string}).reason)}. No class prediction exists; rejection is not class 0.</p>;
  const distances=value.distances_in_training_order as number[], selected=value.selected_indices as number[], totals=value.class_totals_0_1 as number[];
  const points=value.transformed_rows as number[][], query=value.transformed_query as number[];
  const labels=value.labels as number[];
