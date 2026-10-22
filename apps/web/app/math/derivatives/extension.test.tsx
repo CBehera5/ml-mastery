@@ -78,6 +78,6 @@ describe("Calculus essential completion", () => {
     const view = render(<CalculusEssentials />); await waitFor(() => expect(screen.getByRole("alert")).toHaveTextContent("cannot be saved"));
     fireEvent.change(screen.getByRole("slider", { name: "Partial derivative x" }), { target: { value: 2 } }); expect(localStorage.getItem(EXTENSION_KEY)).toBe(future); view.unmount();
     vi.spyOn(Storage.prototype, "getItem").mockImplementation(() => { throw new Error("blocked"); });
-    render(<DerivativesTopic />); await waitFor(() => expect(screen.getAllByRole("alert").length).toBeGreaterThanOrEqual(2)); expect(screen.getByRole("heading", { name: "Complete the Calculus essentials" })).toBeInTheDocument();
+    render(<DerivativesTopic />); await waitFor(() => expect(screen.getAllByRole("alert").length).toBeGreaterThanOrEqual(2)); expect(screen.getByRole("heading", { name: "Beyond one smooth curve" })).toBeInTheDocument();
   });
 });

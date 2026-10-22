@@ -20,6 +20,7 @@ describe("linear regression overview", () => {
     expect(screen.getByRole("link", { name: /functions and graphs/i })).toHaveAttribute("href", "/math/functions-derivatives");
     expect(screen.getByRole("link", { name: /derivatives and gradients/i })).toHaveAttribute("href", "/math/derivatives");
     expect(screen.getByRole("heading", { name: "Completion and mastery are separate." })).toBeInTheDocument();
-    expect(screen.getByText(/3 verified lessons/)).toBeInTheDocument();
+    expect(screen.getByText(/Nine lessons, from first estimate to independent practice/)).toBeInTheDocument();
+    expect(screen.queryByText(/mastery remains unavailable/i)).not.toBeInTheDocument();
   });
 });

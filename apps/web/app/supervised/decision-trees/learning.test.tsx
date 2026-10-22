@@ -1,3 +1,4 @@
+import {experimentGuide} from "../simple-experiment";
 // @vitest-environment jsdom
 import React from "react";
 import "@testing-library/jest-dom/vitest";
@@ -34,15 +35,15 @@ it("restores practice without reading or changing earlier learner scopes", async
 });
 for (const lab of [0, 1]) it(`lab ${lab} predicts before reveal and preserves frozen numerical alternatives`, async () => {
   await open(lab === 0 ? 0 : 2);
-  expect(screen.getByRole("button", { name: "Reveal frozen outcome" })).toBeDisabled();
-  const config = configurations(lab)[1];
-  fireEvent.change(screen.getByRole("combobox", { name: "Experiment configuration" }), { target: { value: config.id } });
+  expect(screen.getByRole("button", { name: "Show the result" })).toBeDisabled();
+  const config=configurations(lab).find(c=>c.id===experimentGuide("decision-trees",lab===0?0:2).options[1].id)!;
+  fireEvent.click(screen.getByRole("radio",{name:experimentGuide("decision-trees",lab===0?0:2).options[1].label}));
   fireEvent.change(screen.getByRole("combobox", { name: "Your prediction" }), { target: { value: config.predictionOptions[0].id } });
   fireEvent.change(screen.getByRole("combobox", { name: "Predicted reason" }), { target: { value: "causal" } });
-  fireEvent.click(screen.getByRole("button", { name: "Reveal frozen outcome" }));
+  fireEvent.click(screen.getByRole("button", { name: "Show the result" }));
   expect(screen.getByRole("heading", { name: "Experiment result" })).toHaveTextContent("Observed outcome");
   fireEvent.change(screen.getByRole("combobox", { name: "Supported explanation" }), { target: { value: config.reasonId } });
-  fireEvent.click(screen.getByRole("button", { name: "Check experiment explanation" }));
+  fireEvent.click(screen.getByRole("button", { name: "Check my explanation" }));
   expect(screen.getByText("Meaningful interaction demonstrated; not independent mastery.")).toBeInTheDocument();
 });
 it("keeps overview completion separate from independent mastery", () => {

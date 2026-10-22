@@ -1,3 +1,5 @@
+import {editorialMetadata} from "../../../experience/editorial-metadata";
+export async function generateMetadata({params}:{params:Promise<{lesson:string}>}) { const {lesson}=await params; return editorialMetadata(`/supervised/model-selection/${lesson}`); }
 import { notFound } from "next/navigation";
 import { ModelSelectionLesson } from "../learning";
 import { LESSONS } from "../teaching";

@@ -1,3 +1,4 @@
+import {editorialMetadata} from "../../../experience/editorial-metadata";
 import { MlpAssessment } from "../learning";
-export const metadata = { title: "MLP Independent Assessment | ML Mastery" };
+export const metadata = editorialMetadata("/supervised/mlp/mastery");
 export default function Page() { return <MlpAssessment/>; }

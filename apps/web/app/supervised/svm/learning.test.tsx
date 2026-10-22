@@ -1,3 +1,5 @@
+import {Graphic} from "./graphic";
+import {experimentGuide} from "../simple-experiment";
 // @vitest-environment jsdom
 import React from "react";
 import "@testing-library/jest-dom/vitest";
@@ -18,9 +20,11 @@ it("restores geometry practice without granting mastery or modifying earlier evi
  expect(practice.getByRole("status")).toHaveTextContent("Correct.");expect(load(localStorage.getItem(STORAGE_KEY)).mastery).toBeNull();prior.forEach(key=>expect(localStorage.getItem(key)).toBe("earlier-evidence"));cleanup();await open(0);expect(screen.getByRole("region",{name:"Practice SV01.O1"})).toHaveTextContent("Practice demonstrated");
 });
 for(const lab of [0,1])it(`lab${lab} requires prediction,changes and a supported explanation;shows OOB missingness`,async()=>{
- await open(lab===0?0:2);expect(screen.getByRole("button",{name:"Reveal frozen outcome"})).toBeDisabled();const config=configurations(lab)[1];
- fireEvent.change(screen.getByRole("combobox",{name:"Experiment configuration"}),{target:{value:config.id}});fireEvent.change(screen.getByRole("combobox",{name:"Your prediction"}),{target:{value:config.predictionOptions[0].id}});fireEvent.change(screen.getByRole("combobox",{name:"Predicted reason"}),{target:{value:"probability"}});fireEvent.click(screen.getByRole("button",{name:"Reveal frozen outcome"}));
- expect(screen.getByRole("table",{name:"Validation decision scores and classes"})).toBeInTheDocument();expect(screen.getByRole("table",{name:"Training supports and hinge violations"})).toBeInTheDocument();
- fireEvent.change(screen.getByRole("combobox",{name:"Supported explanation"}),{target:{value:config.reasonId}});fireEvent.click(screen.getByRole("button",{name:"Check experiment explanation"}));expect(screen.getByText("Meaningful interaction demonstrated; not independent mastery.")).toBeInTheDocument();
+ await open(lab===0?0:2);fireEvent.click(screen.getByRole("radio",{name:experimentGuide("svm",lab===0?0:2).options[0].label}));expect(screen.getByRole("button",{name:"Show the result"})).toBeDisabled();const config=configurations(lab).find(c=>c.id===experimentGuide("svm",lab===0?0:2).options[1].id)!;
+ fireEvent.click(screen.getByRole("radio",{name:experimentGuide("svm",lab===0?0:2).options[1].label}));fireEvent.change(screen.getByRole("combobox",{name:"Your prediction"}),{target:{value:config.predictionOptions[0].id}});fireEvent.change(screen.getByRole("combobox",{name:"Predicted reason"}),{target:{value:"probability"}});fireEvent.click(screen.getByRole("button",{name:"Show the result"}));
+ if(lab===0) expect(screen.getByRole("table",{name:"Manual scores,decisions and signed distances"})).toBeInTheDocument(); else {expect(screen.getByRole("table",{name:"Validation decision scores and classes"})).toBeInTheDocument();expect(screen.getByRole("table",{name:"Training supports and hinge violations"})).toBeInTheDocument();}
+ fireEvent.change(screen.getByRole("combobox",{name:"Supported explanation"}),{target:{value:config.reasonId}});fireEvent.click(screen.getByRole("button",{name:"Check my explanation"}));expect(screen.getByText("Meaningful interaction demonstrated; not independent mastery.")).toBeInTheDocument();
 });
 it("keeps completion separate from the independent assessment",()=>{render(<SVMOverview/>);expect(screen.getByText(/16\/20 families/)).toBeInTheDocument();cleanup();render(<SVMAssessment/>);expect(screen.getByText(/20 objectives; at least16/)).toBeInTheDocument();});
+
+it("preserves fitted linear margin numerical alternatives independently of the beginner geometry control",()=>{render(<Graphic config={configurations(0)[1]}/>);expect(screen.getByRole("table",{name:"Validation decision scores and classes"})).toBeInTheDocument();expect(screen.getByRole("table",{name:"Training supports and hinge violations"})).toBeInTheDocument();});

@@ -1,0 +1,2987 @@
+{
+  "assessment": "supervised.logistic.mastery.2.0.0",
+  "families": [
+    {
+      "id": "LG01.O1.assessment.v2.A",
+      "objective": "LG01.O1",
+      "critical": false,
+      "prompt": "A saved one-signal rule has coefficient 1 and baseline 0. The new signal is 0. Calculate the probability of leaves with sigmoid; report a probability, not a percentage.",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Calculated value (retain at least 10 decimal places for nonterminating results)"
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0.5
+          }
+        ]
+      ],
+      "explanation": "Apply the stated operations to this case; retain full precision until the result.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Apply the stated operations to this case; retain full precision until the result."
+    },
+    {
+      "id": "LG01.O2.assessment.v2.A",
+      "objective": "LG01.O2",
+      "critical": true,
+      "prompt": "A team keeps the fitted model and customer row fixed, changing the contact threshold from 0.4 to 0.8. Does it need to fit again?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Wait until the future outcome is known before any prediction."
+            },
+            {
+              "id": "wrong1",
+              "label": "Treat every new decision as a new parameter fit."
+            },
+            {
+              "id": "supported",
+              "label": "No; apply the new threshold to the existing probability."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "The probability comes from the saved score; a decision rule can change without updating fitted parameters."
+            },
+            {
+              "id": "alternative0",
+              "label": "A threshold is one of the fitted score coefficients."
+            },
+            {
+              "id": "alternative1",
+              "label": "The observed outcome must be an input to every probability calculation."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "The probability comes from the saved score; a decision rule can change without updating fitted parameters.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. The probability comes from the saved score; a decision rule can change without updating fitted parameters."
+    },
+    {
+      "id": "LG01.O3.assessment.v2.A",
+      "objective": "LG01.O3",
+      "critical": false,
+      "prompt": "For z=w*x+b, hold x=2 and b fixed. Change w from 0.5 to 1.0. What is the change in z and the corresponding odds multiplier?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "The odds do not change unless the decision threshold changes."
+            },
+            {
+              "id": "supported",
+              "label": "Score change 1; odds multiply by exp(1)."
+            },
+            {
+              "id": "wrong0",
+              "label": "Score change 0.5; probability changes by 0.5."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "Score change 1; odds multiply by exp(1).",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Score change 1; odds multiply by exp(1)."
+    },
+    {
+      "id": "LG01.O4.assessment.v2.A",
+      "objective": "LG01.O4",
+      "critical": false,
+      "prompt": "A binary model returns a probability matrix for 2 customers. classes_ is [1, 0]; one row is [0.7, 0.3]. Which interpretation is correct?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "The full shape is (2, 2); that row has p(leaves)=0.7."
+            },
+            {
+              "id": "wrong0",
+              "label": "The full shape is (2,); always take the second entry as p(leaves)."
+            },
+            {
+              "id": "wrong1",
+              "label": "Each class column is a different customer; row identity is unnecessary."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "The full shape is (2, 2); that row has p(leaves)=0.7.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. The full shape is (2, 2); that row has p(leaves)=0.7."
+    },
+    {
+      "id": "LG02.O1.assessment.v2.A",
+      "objective": "LG02.O1",
+      "critical": false,
+      "prompt": "An observed label is 0 and the saved probability of leaves is 0.2. Calculate the natural-log row loss.",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Calculated value (retain at least 10 decimal places for nonterminating results)"
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0.2231435513142097
+          }
+        ]
+      ],
+      "explanation": "Apply the stated operations to this case; retain full precision until the result.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Apply the stated operations to this case; retain full precision until the result."
+    },
+    {
+      "id": "LG02.O2.assessment.v2.A",
+      "objective": "LG02.O2",
+      "critical": true,
+      "prompt": "Training-fold labels fit each candidate; validation labels select C; the final-test labels are unseen during selection. Is this boundary valid?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "This is valid whenever the final accuracy improves."
+            },
+            {
+              "id": "supported",
+              "label": "Yes, for the stated development protocol."
+            },
+            {
+              "id": "wrong0",
+              "label": "Any label-dependent choice is forbidden, including permitted development comparison."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "alternative1",
+              "label": "The numerical loss alone establishes which rows were permitted to influence the workflow."
+            },
+            {
+              "id": "mechanism",
+              "label": "Validation labels may compare declared choices; they must not enter the fitted parameters of the fit they evaluate."
+            },
+            {
+              "id": "alternative0",
+              "label": "Only direct copying of a label into an input can be leakage."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "Validation labels may compare declared choices; they must not enter the fitted parameters of the fit they evaluate.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Validation labels may compare declared choices; they must not enter the fitted parameters of the fit they evaluate."
+    },
+    {
+      "id": "LG02.O3.assessment.v2.A",
+      "objective": "LG02.O3",
+      "critical": false,
+      "prompt": "For an unweighted single training row, y=0, p=0.2, and no penalty, use dL/dz=p-y. Calculate dL/dz.",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Calculated value (retain at least 10 decimal places for nonterminating results)"
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0.2
+          }
+        ]
+      ],
+      "explanation": "Apply the stated operations to this case; retain full precision until the result.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Apply the stated operations to this case; retain full precision until the result."
+    },
+    {
+      "id": "LG02.O4.assessment.v2.A",
+      "objective": "LG02.O4",
+      "critical": false,
+      "prompt": "One observed label is 0. Compare p(leaves)=0.4 with 0.2, using threshold 0.5. Which claim follows?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Their log losses must agree because their actions agree."
+            },
+            {
+              "id": "wrong1",
+              "label": "Only the hard action matters when calculating log loss."
+            },
+            {
+              "id": "supported",
+              "label": "The second probability has lower log loss; both actions are stays at threshold 0.5."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "The second probability has lower log loss; both actions are stays at threshold 0.5.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. The second probability has lower log loss; both actions are stays at threshold 0.5."
+    },
+    {
+      "id": "LG03.O1.assessment.v2.A",
+      "objective": "LG03.O1",
+      "critical": false,
+      "prompt": "For fixed probabilities [0.3, 0.55, 0.85], threshold 0.55, and equality counted positive, which action list is correct?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Moving the threshold requires new probabilities first."
+            },
+            {
+              "id": "supported",
+              "label": "[0, 1, 1]"
+            },
+            {
+              "id": "wrong0",
+              "label": "[1, 0, 0]"
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "[0, 1, 1]",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. [0, 1, 1]"
+    },
+    {
+      "id": "LG03.O2.assessment.v2.A",
+      "objective": "LG03.O2",
+      "critical": true,
+      "prompt": "On development rows, threshold 0.6 has cost 4 and threshold 0.8 cost 7. These were declared candidates; final-test labels remain sealed. Which action is defensible?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Choose 0.6 under this development cost rule and freeze it before final testing."
+            },
+            {
+              "id": "wrong0",
+              "label": "Refit the model whenever a threshold is applied."
+            },
+            {
+              "id": "wrong1",
+              "label": "Use final-test labels to choose a better threshold before reporting the same final score."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "alternative0",
+              "label": "Threshold choice changes the fitted probability scale automatically."
+            },
+            {
+              "id": "alternative1",
+              "label": "Cost-based policy selection is immune to held-out data restrictions."
+            },
+            {
+              "id": "mechanism",
+              "label": "This is a permitted development choice, not evidence that 0.6 is universally best."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "This is a permitted development choice, not evidence that 0.6 is universally best.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. This is a permitted development choice, not evidence that 0.6 is universally best."
+    },
+    {
+      "id": "LG03.O3.assessment.v2.A",
+      "objective": "LG03.O3",
+      "critical": false,
+      "prompt": "Actual labels [1, 0, 1, 0]; saved p(leaves) [0.2, 0.8, 0.7, 0.1]; threshold 0.5 with equality positive. How many false negatives occur?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Calculated value (retain at least 10 decimal places for nonterminating results)"
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 1
+          }
+        ]
+      ],
+      "explanation": "Apply the stated operations to this case; retain full precision until the result.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Apply the stated operations to this case; retain full precision until the result."
+    },
+    {
+      "id": "LG03.O4.assessment.v2.A",
+      "objective": "LG03.O4",
+      "critical": false,
+      "prompt": "Of 200 customers, 4 leave. An all-stay policy gets 196 cases correct. What is the relevant limit?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A metric with a zero denominator should always be reported as perfect."
+            },
+            {
+              "id": "supported",
+              "label": "Accuracy is 98%, but recall of leaves is 0; report positive support and error costs."
+            },
+            {
+              "id": "wrong0",
+              "label": "High accuracy proves useful detection of the positive class."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "Accuracy is 98%, but recall of leaves is 0; report positive support and error costs.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Accuracy is 98%, but recall of leaves is 0; report positive support and error costs."
+    },
+    {
+      "id": "LG04.O1.assessment.v2.A",
+      "objective": "LG04.O1",
+      "critical": false,
+      "prompt": "Area-like input units are multiplied by 100 with the underlying signal unchanged. To preserve the same score before a penalty, what happens to its coefficient?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Divide that coefficient by 100; the unchanged score can require a different coefficient magnitude."
+            },
+            {
+              "id": "wrong0",
+              "label": "Coefficient magnitude has no relationship to feature units."
+            },
+            {
+              "id": "wrong1",
+              "label": "A fixed random seed repairs any globally fitted preprocessing."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "Divide that coefficient by 100; the unchanged score can require a different coefficient magnitude.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Divide that coefficient by 100; the unchanged score can require a different coefficient magnitude."
+    },
+    {
+      "id": "LG04.O2.assessment.v2.A",
+      "objective": "LG04.O2",
+      "critical": true,
+      "prompt": "With coefficients and training-row count fixed, compare C=0.2 and C=2 in sum(w\u00b2)/(2*C*n). Which has the larger penalty?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Larger C always means both a stronger penalty and better development predictions."
+            },
+            {
+              "id": "wrong1",
+              "label": "Treat an unsupported fit as a valid zero-probability model."
+            },
+            {
+              "id": "supported",
+              "label": "C=0.2 gives ten times the penalty."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "C is in the denominator, so inverse strength must be interpreted before comparing fitted outcomes."
+            },
+            {
+              "id": "alternative0",
+              "label": "C equals a fixed probability increment for each customer."
+            },
+            {
+              "id": "alternative1",
+              "label": "Solver choice and evaluation evidence have no bearing on a fitted result."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "C is in the denominator, so inverse strength must be interpreted before comparing fitted outcomes.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. C is in the denominator, so inverse strength must be interpreted before comparing fitted outcomes."
+    },
+    {
+      "id": "LG04.O3.assessment.v2.A",
+      "objective": "LG04.O3",
+      "critical": false,
+      "prompt": "For z=2*x1-x2+1 and threshold 0.5, what is the boundary?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A threshold is a replacement for missing nonlinear features in every dataset."
+            },
+            {
+              "id": "supported",
+              "label": "The line 2*x1-x2+1=0; sigmoid does not make it a curved raw-input boundary."
+            },
+            {
+              "id": "wrong0",
+              "label": "The S-shaped probability conversion guarantees any curved classification boundary."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "The line 2*x1-x2+1=0; sigmoid does not make it a curved raw-input boundary.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. The line 2*x1-x2+1=0; sigmoid does not make it a curved raw-input boundary."
+    },
+    {
+      "id": "LG04.O4.assessment.v2.A",
+      "objective": "LG04.O4",
+      "critical": false,
+      "prompt": "An almost separated training sample yields weights 100 times larger after the iteration cap is raised. What should a report do?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Inspect convergence and coefficient stability rather than claim perfect training fit proves a reliable model."
+            },
+            {
+              "id": "wrong0",
+              "label": "Treat perfect training accuracy as proof of calibrated future risk."
+            },
+            {
+              "id": "wrong1",
+              "label": "A fixed seed or returned vector establishes convergence and generalization."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "Inspect convergence and coefficient stability rather than claim perfect training fit proves a reliable model.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Inspect convergence and coefficient stability rather than claim perfect training fit proves a reliable model."
+    },
+    {
+      "id": "LG05.O1.assessment.v2.A",
+      "objective": "LG05.O1",
+      "critical": false,
+      "prompt": "A saved model reports classes_=[1, 0] and one probability row [0.35, 0.65]. What is p(leaves), and is the customer outcome needed for prediction?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Always select the second column; the classes_ order is irrelevant."
+            },
+            {
+              "id": "wrong1",
+              "label": "Fit on this future customer label before predicting its probability."
+            },
+            {
+              "id": "supported",
+              "label": "p(leaves)=0.35; prediction uses saved fitted state and eligible inputs, not the future label."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "p(leaves)=0.35; prediction uses saved fitted state and eligible inputs, not the future label.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. p(leaves)=0.35; prediction uses saved fitted state and eligible inputs, not the future label."
+    },
+    {
+      "id": "LG05.O2.assessment.v2.A",
+      "objective": "LG05.O2",
+      "critical": true,
+      "prompt": "A day-0 cancellation model uses a flag first recorded on day 10. Validation accuracy rises. Is the feature eligible?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Passing any object named pipeline automatically proves fit provenance."
+            },
+            {
+              "id": "supported",
+              "label": "No; the flag is unavailable at the stated prediction time."
+            },
+            {
+              "id": "wrong0",
+              "label": "A good validation score is sufficient to certify feature and preprocessing eligibility."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "alternative1",
+              "label": "The prediction date does not matter if all columns are numerical."
+            },
+            {
+              "id": "mechanism",
+              "label": "A later outcome-related observation cannot be supplied to a day-0 predictor, regardless of its validation score."
+            },
+            {
+              "id": "alternative0",
+              "label": "Only targets can leak; observing held-out inputs during preprocessing is always harmless."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "A later outcome-related observation cannot be supplied to a day-0 predictor, regardless of its validation score.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. A later outcome-related observation cannot be supplied to a day-0 predictor, regardless of its validation score."
+    },
+    {
+      "id": "LG05.O3.assessment.v2.A",
+      "objective": "LG05.O3",
+      "critical": false,
+      "prompt": "Feature rows are ordered [C,A,B], but targets are ordered [A,B,C]. What must happen before fold-local fitting?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Align feature and target rows by identity, then fit both scaler and model only on each fold\u2019s training rows."
+            },
+            {
+              "id": "wrong0",
+              "label": "Matching array lengths alone establishes correct target alignment."
+            },
+            {
+              "id": "wrong1",
+              "label": "Shuffle only the targets so their order looks random."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "Align feature and target rows by identity, then fit both scaler and model only on each fold\u2019s training rows.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Align feature and target rows by identity, then fit both scaler and model only on each fold\u2019s training rows."
+    },
+    {
+      "id": "LG05.O4.assessment.v2.A",
+      "objective": "LG05.O4",
+      "critical": false,
+      "prompt": "A prior baseline and Logistic are scored on identical development rows with the same target window and cost rule. Is this a fair starting comparison?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Any two printed scores are directly comparable regardless of rows."
+            },
+            {
+              "id": "wrong1",
+              "label": "A more complex model needs no matched baseline evidence."
+            },
+            {
+              "id": "supported",
+              "label": "Yes as a starting protocol; report both results and their limits under the same evidence permissions."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "Yes as a starting protocol; report both results and their limits under the same evidence permissions.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Yes as a starting protocol; report both results and their limits under the same evidence permissions."
+    },
+    {
+      "id": "LG06.O1.assessment.v2.A",
+      "objective": "LG06.O1",
+      "critical": false,
+      "prompt": "A subgroup has two churn events and both are detected. What should the report say?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Error costs and denominators can be omitted when accuracy is available."
+            },
+            {
+              "id": "supported",
+              "label": "Report 2/2 with the small denominator and uncertainty; do not certify future subgroup reliability."
+            },
+            {
+              "id": "wrong0",
+              "label": "A perfect observed percentage proves reliable subgroup performance."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "Report 2/2 with the small denominator and uncertainty; do not certify future subgroup reliability.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Report 2/2 with the small denominator and uncertainty; do not certify future subgroup reliability."
+    },
+    {
+      "id": "LG06.O2.assessment.v2.A",
+      "objective": "LG06.O2",
+      "critical": true,
+      "prompt": "A customer has estimated churn probability 0.8. Does that establish that contacting them prevents churn?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No; predicted risk is not the causal benefit of the contact intervention."
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes; any high probability or coefficient directly identifies an intervention effect."
+            },
+            {
+              "id": "wrong1",
+              "label": "A good training score makes population and conditioning irrelevant."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "alternative0",
+              "label": "A probability guarantees the outcome for each person assigned that value."
+            },
+            {
+              "id": "alternative1",
+              "label": "Correct ranking establishes calibration and causation together."
+            },
+            {
+              "id": "mechanism",
+              "label": "The model describes an observational outcome association; intervention benefit needs separate causal evidence."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "The model describes an observational outcome association; intervention benefit needs separate causal evidence.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. The model describes an observational outcome association; intervention benefit needs separate causal evidence."
+    },
+    {
+      "id": "LG06.O3.assessment.v2.A",
+      "objective": "LG06.O3",
+      "critical": false,
+      "prompt": "On identical development IDs with the same target and cost rule, Logistic cost is 8 and a supplied nonlinear candidate cost is 6. What is justified?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "The nonlinear candidate must be superior on every future population."
+            },
+            {
+              "id": "wrong1",
+              "label": "A lower development cost proves calibration and causal validity."
+            },
+            {
+              "id": "supported",
+              "label": "The supplied nonlinear candidate has lower development cost here; check protocol and operational tradeoffs before choosing."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "The supplied nonlinear candidate has lower development cost here; check protocol and operational tradeoffs before choosing.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. The supplied nonlinear candidate has lower development cost here; check protocol and operational tradeoffs before choosing."
+    },
+    {
+      "id": "LG06.O4.assessment.v2.A",
+      "objective": "LG06.O4",
+      "critical": false,
+      "prompt": "Two probability lists [0.2,0.4,0.8] and [0.1,0.3,0.9] preserve ordering and labels at threshold 0.5. What remains to evaluate?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Equal hard accuracy fully describes a probability model."
+            },
+            {
+              "id": "supported",
+              "label": "Evaluate probability quality and calibration separately; the shared ordering and actions do not determine log loss."
+            },
+            {
+              "id": "wrong0",
+              "label": "The same ranking proves identical probability quality."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "Evaluate probability quality and calibration separately; the shared ordering and actions do not determine log loss.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Evaluate probability quality and calibration separately; the shared ordering and actions do not determine log loss."
+    },
+    {
+      "id": "LG01.O1.assessment.v2.B",
+      "objective": "LG01.O1",
+      "critical": false,
+      "prompt": "A saved one-signal rule has coefficient 1 and baseline 0. The new signal is 1.386294361119891. Calculate the probability of leaves with sigmoid; report a probability, not a percentage.",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Calculated value (retain at least 10 decimal places for nonterminating results)"
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0.8
+          }
+        ]
+      ],
+      "explanation": "Apply the stated operations to this case; retain full precision until the result.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Apply the stated operations to this case; retain full precision until the result."
+    },
+    {
+      "id": "LG01.O2.assessment.v2.B",
+      "objective": "LG01.O2",
+      "critical": true,
+      "prompt": "A newly observed training label is used to take a loss-reducing parameter step. Is this only threshold selection?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Treat every new decision as a new parameter fit."
+            },
+            {
+              "id": "supported",
+              "label": "No; this changes fitted parameters."
+            },
+            {
+              "id": "wrong0",
+              "label": "Wait until the future outcome is known before any prediction."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "alternative0",
+              "label": "A threshold is one of the fitted score coefficients."
+            },
+            {
+              "id": "alternative1",
+              "label": "The observed outcome must be an input to every probability calculation."
+            },
+            {
+              "id": "mechanism",
+              "label": "A label-dependent parameter update changes the score rule, whereas thresholding only converts its output into an action."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "A label-dependent parameter update changes the score rule, whereas thresholding only converts its output into an action.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. A label-dependent parameter update changes the score rule, whereas thresholding only converts its output into an action."
+    },
+    {
+      "id": "LG01.O3.assessment.v2.B",
+      "objective": "LG01.O3",
+      "critical": false,
+      "prompt": "For z=w*x+b, hold x=3 and b fixed. Change w from 2 to 1.5. What is the change in z and the corresponding odds multiplier?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Score change -1.5; odds multiply by exp(-1.5)."
+            },
+            {
+              "id": "wrong0",
+              "label": "Score change -0.5; probability changes by -0.5."
+            },
+            {
+              "id": "wrong1",
+              "label": "The odds do not change unless the decision threshold changes."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "Score change -1.5; odds multiply by exp(-1.5).",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Score change -1.5; odds multiply by exp(-1.5)."
+    },
+    {
+      "id": "LG01.O4.assessment.v2.B",
+      "objective": "LG01.O4",
+      "critical": false,
+      "prompt": "A binary model returns a probability matrix for 4 customers. classes_ is [0, 1]; one row is [0.65, 0.35]. Which interpretation is correct?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "The full shape is (4,); always take the second entry as p(leaves)."
+            },
+            {
+              "id": "wrong1",
+              "label": "Each class column is a different customer; row identity is unnecessary."
+            },
+            {
+              "id": "supported",
+              "label": "The full shape is (4, 2); that row has p(leaves)=0.35."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "The full shape is (4, 2); that row has p(leaves)=0.35.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. The full shape is (4, 2); that row has p(leaves)=0.35."
+    },
+    {
+      "id": "LG02.O1.assessment.v2.B",
+      "objective": "LG02.O1",
+      "critical": false,
+      "prompt": "An observed label is 1 and the saved probability of leaves is 0.8. Calculate the natural-log row loss.",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Calculated value (retain at least 10 decimal places for nonterminating results)"
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0.2231435513142097
+          }
+        ]
+      ],
+      "explanation": "Apply the stated operations to this case; retain full precision until the result.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Apply the stated operations to this case; retain full precision until the result."
+    },
+    {
+      "id": "LG02.O2.assessment.v2.B",
+      "objective": "LG02.O2",
+      "critical": true,
+      "prompt": "After inspecting final-test loss, an engineer changes C and reports only the improved test result. Is that still a final evaluation of frozen choices?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No; the final test influenced model selection."
+            },
+            {
+              "id": "wrong0",
+              "label": "Any label-dependent choice is forbidden, including permitted development comparison."
+            },
+            {
+              "id": "wrong1",
+              "label": "This is valid whenever the final accuracy improves."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Using final-test feedback to choose C spends that test as selection evidence, even without putting its labels directly in a gradient."
+            },
+            {
+              "id": "alternative0",
+              "label": "Only direct copying of a label into an input can be leakage."
+            },
+            {
+              "id": "alternative1",
+              "label": "The numerical loss alone establishes which rows were permitted to influence the workflow."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "Using final-test feedback to choose C spends that test as selection evidence, even without putting its labels directly in a gradient.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Using final-test feedback to choose C spends that test as selection evidence, even without putting its labels directly in a gradient."
+    },
+    {
+      "id": "LG02.O3.assessment.v2.B",
+      "objective": "LG02.O3",
+      "critical": false,
+      "prompt": "For an unweighted single training row, y=1, p=0.7, and no penalty, use dL/dz=p-y. Calculate dL/dz.",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Calculated value (retain at least 10 decimal places for nonterminating results)"
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": -0.30000000000000004
+          }
+        ]
+      ],
+      "explanation": "Apply the stated operations to this case; retain full precision until the result.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Apply the stated operations to this case; retain full precision until the result."
+    },
+    {
+      "id": "LG02.O4.assessment.v2.B",
+      "objective": "LG02.O4",
+      "critical": false,
+      "prompt": "One observed label is 1. Compare p(leaves)=0.8 with 0.6, using threshold 0.5. Which claim follows?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Only the hard action matters when calculating log loss."
+            },
+            {
+              "id": "supported",
+              "label": "The first probability has lower log loss; both actions are leaves at threshold 0.5."
+            },
+            {
+              "id": "wrong0",
+              "label": "Their log losses must agree because their actions agree."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "The first probability has lower log loss; both actions are leaves at threshold 0.5.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. The first probability has lower log loss; both actions are leaves at threshold 0.5."
+    },
+    {
+      "id": "LG03.O1.assessment.v2.B",
+      "objective": "LG03.O1",
+      "critical": false,
+      "prompt": "For fixed probabilities [0.1, 0.6, 0.7], threshold 0.7, and equality counted positive, which action list is correct?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "[0, 0, 1]"
+            },
+            {
+              "id": "wrong0",
+              "label": "[1, 1, 0]"
+            },
+            {
+              "id": "wrong1",
+              "label": "Moving the threshold requires new probabilities first."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "[0, 0, 1]",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. [0, 0, 1]"
+    },
+    {
+      "id": "LG03.O2.assessment.v2.B",
+      "objective": "LG03.O2",
+      "critical": true,
+      "prompt": "An analyst picks threshold 0.8 because it wins on final-test labels, then calls that same score independent. What should change?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Refit the model whenever a threshold is applied."
+            },
+            {
+              "id": "wrong1",
+              "label": "Use final-test labels to choose a better threshold before reporting the same final score."
+            },
+            {
+              "id": "supported",
+              "label": "Treat that result as selection evidence; obtain a genuinely untouched evaluation before an independent claim."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "alternative1",
+              "label": "Cost-based policy selection is immune to held-out data restrictions."
+            },
+            {
+              "id": "mechanism",
+              "label": "Changing only the threshold still uses outcome information to choose a decision policy."
+            },
+            {
+              "id": "alternative0",
+              "label": "Threshold choice changes the fitted probability scale automatically."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "Changing only the threshold still uses outcome information to choose a decision policy.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Changing only the threshold still uses outcome information to choose a decision policy."
+    },
+    {
+      "id": "LG03.O3.assessment.v2.B",
+      "objective": "LG03.O3",
+      "critical": false,
+      "prompt": "Actual labels [0, 1, 1, 1]; saved p(leaves) [0.4, 0.3, 0.9, 0.6]; threshold 0.5 with equality positive. How many false negatives occur?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Calculated value (retain at least 10 decimal places for nonterminating results)"
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 1
+          }
+        ]
+      ],
+      "explanation": "Apply the stated operations to this case; retain full precision until the result.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Apply the stated operations to this case; retain full precision until the result."
+    },
+    {
+      "id": "LG03.O4.assessment.v2.B",
+      "objective": "LG03.O4",
+      "critical": false,
+      "prompt": "Two evaluations have 90% accuracy: one has 10 actual positives and misses all 10; the other has 50 positives and misses 10. What must be reported?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "The same accuracy hides different positive-class recall; include counts and prevalence."
+            },
+            {
+              "id": "wrong0",
+              "label": "High accuracy proves useful detection of the positive class."
+            },
+            {
+              "id": "wrong1",
+              "label": "A metric with a zero denominator should always be reported as perfect."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "The same accuracy hides different positive-class recall; include counts and prevalence.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. The same accuracy hides different positive-class recall; include counts and prevalence."
+    },
+    {
+      "id": "LG04.O1.assessment.v2.B",
+      "objective": "LG04.O1",
+      "critical": false,
+      "prompt": "Two inputs have very different numerical scales. Why standardize before an L2-penalized fit?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Coefficient magnitude has no relationship to feature units."
+            },
+            {
+              "id": "wrong1",
+              "label": "A fixed random seed repairs any globally fitted preprocessing."
+            },
+            {
+              "id": "supported",
+              "label": "The penalty acts on coefficient magnitudes, whose numerical sizes depend on the feature rulers."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "The penalty acts on coefficient magnitudes, whose numerical sizes depend on the feature rulers.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. The penalty acts on coefficient magnitudes, whose numerical sizes depend on the feature rulers."
+    },
+    {
+      "id": "LG04.O2.assessment.v2.B",
+      "objective": "LG04.O2",
+      "critical": true,
+      "prompt": "An lbfgs fit is requested with an unsupported L1-only penalty in this verified workflow. How should its absent result be classified?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Treat an unsupported fit as a valid zero-probability model."
+            },
+            {
+              "id": "supported",
+              "label": "Unsupported configuration; do not compare it as a valid model with poor probability."
+            },
+            {
+              "id": "wrong0",
+              "label": "Larger C always means both a stronger penalty and better development predictions."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "alternative0",
+              "label": "C equals a fixed probability increment for each customer."
+            },
+            {
+              "id": "alternative1",
+              "label": "Solver choice and evaluation evidence have no bearing on a fitted result."
+            },
+            {
+              "id": "mechanism",
+              "label": "A mathematical penalty exists separately from whether a particular solver/workflow supports optimizing it."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "A mathematical penalty exists separately from whether a particular solver/workflow supports optimizing it.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. A mathematical penalty exists separately from whether a particular solver/workflow supports optimizing it."
+    },
+    {
+      "id": "LG04.O3.assessment.v2.B",
+      "objective": "LG04.O3",
+      "critical": false,
+      "prompt": "A raw two-feature target forms a ring around the other class. Does sigmoid alone let one linear score draw that ring boundary?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No; the probability conversion does not create the missing nonlinear feature geometry."
+            },
+            {
+              "id": "wrong0",
+              "label": "The S-shaped probability conversion guarantees any curved classification boundary."
+            },
+            {
+              "id": "wrong1",
+              "label": "A threshold is a replacement for missing nonlinear features in every dataset."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "No; the probability conversion does not create the missing nonlinear feature geometry.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. No; the probability conversion does not create the missing nonlinear feature geometry."
+    },
+    {
+      "id": "LG04.O4.assessment.v2.B",
+      "objective": "LG04.O4",
+      "critical": false,
+      "prompt": "A solver returns coefficients along with a convergence warning. Is merely having a returned vector enough?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Treat perfect training accuracy as proof of calibrated future risk."
+            },
+            {
+              "id": "wrong1",
+              "label": "A fixed seed or returned vector establishes convergence and generalization."
+            },
+            {
+              "id": "supported",
+              "label": "No; report the warning and investigate convergence before interpreting the fit as solved."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "No; report the warning and investigate convergence before interpreting the fit as solved.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. No; report the warning and investigate convergence before interpreting the fit as solved."
+    },
+    {
+      "id": "LG05.O1.assessment.v2.B",
+      "objective": "LG05.O1",
+      "critical": false,
+      "prompt": "A saved model reports classes_=[0, 1] and one probability row [0.2, 0.8]. What is p(leaves), and is the customer outcome needed for prediction?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Fit on this future customer label before predicting its probability."
+            },
+            {
+              "id": "supported",
+              "label": "p(leaves)=0.8; prediction uses saved fitted state and eligible inputs, not the future label."
+            },
+            {
+              "id": "wrong0",
+              "label": "Always select the second column; the classes_ order is irrelevant."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "p(leaves)=0.8; prediction uses saved fitted state and eligible inputs, not the future label.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. p(leaves)=0.8; prediction uses saved fitted state and eligible inputs, not the future label."
+    },
+    {
+      "id": "LG05.O2.assessment.v2.B",
+      "objective": "LG05.O2",
+      "critical": true,
+      "prompt": "An outer-training scaler is fitted once before inner cross-validation. Does that guarantee each inner validation fold is unseen by preprocessing?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No; fit a scaler separately on each inner training fold."
+            },
+            {
+              "id": "wrong0",
+              "label": "A good validation score is sufficient to certify feature and preprocessing eligibility."
+            },
+            {
+              "id": "wrong1",
+              "label": "Passing any object named pipeline automatically proves fit provenance."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Outer-training rows include the inner validation rows, so fitting once outside the inner folds crosses that evaluation boundary."
+            },
+            {
+              "id": "alternative0",
+              "label": "Only targets can leak; observing held-out inputs during preprocessing is always harmless."
+            },
+            {
+              "id": "alternative1",
+              "label": "The prediction date does not matter if all columns are numerical."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "Outer-training rows include the inner validation rows, so fitting once outside the inner folds crosses that evaluation boundary.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Outer-training rows include the inner validation rows, so fitting once outside the inner folds crosses that evaluation boundary."
+    },
+    {
+      "id": "LG05.O3.assessment.v2.B",
+      "objective": "LG05.O3",
+      "critical": false,
+      "prompt": "A scaler is fitted on all rows, then its transformed matrix is passed to CV. What repair protects each validation fold?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Matching array lengths alone establishes correct target alignment."
+            },
+            {
+              "id": "wrong1",
+              "label": "Shuffle only the targets so their order looks random."
+            },
+            {
+              "id": "supported",
+              "label": "Pass an unfitted scaler/model pipeline to CV so every fold learns its own preprocessing and model."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "Pass an unfitted scaler/model pipeline to CV so every fold learns its own preprocessing and model.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Pass an unfitted scaler/model pipeline to CV so every fold learns its own preprocessing and model."
+    },
+    {
+      "id": "LG05.O4.assessment.v2.B",
+      "objective": "LG05.O4",
+      "critical": false,
+      "prompt": "Logistic is evaluated on last month\u2019s easy cases and the baseline on this month\u2019s harder cases. What can their accuracy gap establish?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A more complex model needs no matched baseline evidence."
+            },
+            {
+              "id": "supported",
+              "label": "It cannot isolate model quality; align the evaluation population and protocol first."
+            },
+            {
+              "id": "wrong0",
+              "label": "Any two printed scores are directly comparable regardless of rows."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "It cannot isolate model quality; align the evaluation population and protocol first.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. It cannot isolate model quality; align the evaluation population and protocol first."
+    },
+    {
+      "id": "LG06.O1.assessment.v2.B",
+      "objective": "LG06.O1",
+      "critical": false,
+      "prompt": "A policy lowers false negatives by 1 but adds 20 false positives. Can accuracy alone choose the business policy?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No; state the counts, relevant error costs and population before choosing."
+            },
+            {
+              "id": "wrong0",
+              "label": "A perfect observed percentage proves reliable subgroup performance."
+            },
+            {
+              "id": "wrong1",
+              "label": "Error costs and denominators can be omitted when accuracy is available."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "No; state the counts, relevant error costs and population before choosing.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. No; state the counts, relevant error costs and population before choosing."
+    },
+    {
+      "id": "LG06.O2.assessment.v2.B",
+      "objective": "LG06.O2",
+      "critical": true,
+      "prompt": "In a suitable large evaluation, customers assigned near 0.7 churn around 70% of the time. What does this support?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Yes; any high probability or coefficient directly identifies an intervention effect."
+            },
+            {
+              "id": "wrong1",
+              "label": "A good training score makes population and conditioning irrelevant."
+            },
+            {
+              "id": "supported",
+              "label": "Evidence of calibration in that range and population, with sampling limits."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "alternative1",
+              "label": "Correct ranking establishes calibration and causation together."
+            },
+            {
+              "id": "mechanism",
+              "label": "Calibration is about agreement of probability estimates and outcome frequencies, not a guarantee about one customer or a shifted population."
+            },
+            {
+              "id": "alternative0",
+              "label": "A probability guarantees the outcome for each person assigned that value."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "Calibration is about agreement of probability estimates and outcome frequencies, not a guarantee about one customer or a shifted population.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Calibration is about agreement of probability estimates and outcome frequencies, not a guarantee about one customer or a shifted population."
+    },
+    {
+      "id": "LG06.O3.assessment.v2.B",
+      "objective": "LG06.O3",
+      "critical": false,
+      "prompt": "On identical development IDs with the same target and cost rule, Logistic cost is 5 and a supplied nonlinear candidate cost is 5. What is justified?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A lower development cost proves calibration and causal validity."
+            },
+            {
+              "id": "supported",
+              "label": "The cost evidence ties; consider operational constraints and further permitted development evidence."
+            },
+            {
+              "id": "wrong0",
+              "label": "The nonlinear candidate must be superior on every future population."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "The cost evidence ties; consider operational constraints and further permitted development evidence.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. The cost evidence ties; consider operational constraints and further permitted development evidence."
+    },
+    {
+      "id": "LG06.O4.assessment.v2.B",
+      "objective": "LG06.O4",
+      "critical": false,
+      "prompt": "A model\u2019s ranking is unchanged after all probabilities become more extreme. Which conclusion is safe?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Preserved ranking does not establish unchanged log loss or calibration."
+            },
+            {
+              "id": "wrong0",
+              "label": "The same ranking proves identical probability quality."
+            },
+            {
+              "id": "wrong1",
+              "label": "Equal hard accuracy fully describes a probability model."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "Preserved ranking does not establish unchanged log loss or calibration.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Preserved ranking does not establish unchanged log loss or calibration."
+    },
+    {
+      "id": "LG01.O1.assessment.v2.C",
+      "objective": "LG01.O1",
+      "critical": false,
+      "prompt": "A saved one-signal rule has coefficient 1 and baseline 0. The new signal is -1.386294361119891. Calculate the probability of leaves with sigmoid; report a probability, not a percentage.",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Calculated value (retain at least 10 decimal places for nonterminating results)"
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0.2
+          }
+        ]
+      ],
+      "explanation": "Apply the stated operations to this case; retain full precision until the result.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Apply the stated operations to this case; retain full precision until the result."
+    },
+    {
+      "id": "LG01.O2.assessment.v2.C",
+      "objective": "LG01.O2",
+      "critical": true,
+      "prompt": "A saved model receives a new customer row with no future outcome yet available. May it still estimate a probability?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Yes; apply the saved preprocessing and model to the available inputs."
+            },
+            {
+              "id": "wrong0",
+              "label": "Wait until the future outcome is known before any prediction."
+            },
+            {
+              "id": "wrong1",
+              "label": "Treat every new decision as a new parameter fit."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "alternative1",
+              "label": "The observed outcome must be an input to every probability calculation."
+            },
+            {
+              "id": "mechanism",
+              "label": "Inference requires eligible inputs and saved fitted state; the future outcome is needed later for evaluation, not to calculate this prediction."
+            },
+            {
+              "id": "alternative0",
+              "label": "A threshold is one of the fitted score coefficients."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "Inference requires eligible inputs and saved fitted state; the future outcome is needed later for evaluation, not to calculate this prediction.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Inference requires eligible inputs and saved fitted state; the future outcome is needed later for evaluation, not to calculate this prediction."
+    },
+    {
+      "id": "LG01.O3.assessment.v2.C",
+      "objective": "LG01.O3",
+      "critical": false,
+      "prompt": "For z=w*x+b, hold x=-2 and b fixed. Change w from 0.5 to 1.5. What is the change in z and the corresponding odds multiplier?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Score change 1; probability changes by 1."
+            },
+            {
+              "id": "wrong1",
+              "label": "The odds do not change unless the decision threshold changes."
+            },
+            {
+              "id": "supported",
+              "label": "Score change -2; odds multiply by exp(-2)."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "Score change -2; odds multiply by exp(-2).",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Score change -2; odds multiply by exp(-2)."
+    },
+    {
+      "id": "LG01.O4.assessment.v2.C",
+      "objective": "LG01.O4",
+      "critical": false,
+      "prompt": "A binary model returns a probability matrix for 3 customers. classes_ is [1, 0]; one row is [0.2, 0.8]. Which interpretation is correct?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Each class column is a different customer; row identity is unnecessary."
+            },
+            {
+              "id": "supported",
+              "label": "The full shape is (3, 2); that row has p(leaves)=0.2."
+            },
+            {
+              "id": "wrong0",
+              "label": "The full shape is (3,); always take the second entry as p(leaves)."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "The full shape is (3, 2); that row has p(leaves)=0.2.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. The full shape is (3, 2); that row has p(leaves)=0.2."
+    },
+    {
+      "id": "LG02.O1.assessment.v2.C",
+      "objective": "LG02.O1",
+      "critical": false,
+      "prompt": "An observed label is 0 and the saved probability of leaves is 0.4. Calculate the natural-log row loss.",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Calculated value (retain at least 10 decimal places for nonterminating results)"
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0.5108256237659907
+          }
+        ]
+      ],
+      "explanation": "Apply the stated operations to this case; retain full precision until the result.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Apply the stated operations to this case; retain full precision until the result."
+    },
+    {
+      "id": "LG02.O2.assessment.v2.C",
+      "objective": "LG02.O2",
+      "critical": true,
+      "prompt": "A validation customer label enters a gradient while the updated model is still scored on that customer as held out. Is this valid?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Any label-dependent choice is forbidden, including permitted development comparison."
+            },
+            {
+              "id": "wrong1",
+              "label": "This is valid whenever the final accuracy improves."
+            },
+            {
+              "id": "supported",
+              "label": "No; this row influenced the fit being evaluated."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "alternative0",
+              "label": "Only direct copying of a label into an input can be leakage."
+            },
+            {
+              "id": "alternative1",
+              "label": "The numerical loss alone establishes which rows were permitted to influence the workflow."
+            },
+            {
+              "id": "mechanism",
+              "label": "A row cannot supply the parameter-update signal and simultaneously be held out from that same fit."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "A row cannot supply the parameter-update signal and simultaneously be held out from that same fit.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. A row cannot supply the parameter-update signal and simultaneously be held out from that same fit."
+    },
+    {
+      "id": "LG02.O3.assessment.v2.C",
+      "objective": "LG02.O3",
+      "critical": false,
+      "prompt": "For an unweighted single training row, y=0, p=0.4, and no penalty, use dL/dz=p-y. Calculate dL/dz.",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Calculated value (retain at least 10 decimal places for nonterminating results)"
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0.4
+          }
+        ]
+      ],
+      "explanation": "Apply the stated operations to this case; retain full precision until the result.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Apply the stated operations to this case; retain full precision until the result."
+    },
+    {
+      "id": "LG02.O4.assessment.v2.C",
+      "objective": "LG02.O4",
+      "critical": false,
+      "prompt": "One observed label is 1. Compare p(leaves)=0.1 with 0.3, using threshold 0.5. Which claim follows?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "The second probability has lower log loss, although both actions are stays at threshold 0.5."
+            },
+            {
+              "id": "wrong0",
+              "label": "Their log losses must agree because their actions agree."
+            },
+            {
+              "id": "wrong1",
+              "label": "Only the hard action matters when calculating log loss."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "The second probability has lower log loss, although both actions are stays at threshold 0.5.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. The second probability has lower log loss, although both actions are stays at threshold 0.5."
+    },
+    {
+      "id": "LG03.O1.assessment.v2.C",
+      "objective": "LG03.O1",
+      "critical": false,
+      "prompt": "For fixed probabilities [0.2, 0.4, 0.9], threshold 0.4, and equality counted positive, which action list is correct?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "[1, 0, 0]"
+            },
+            {
+              "id": "wrong1",
+              "label": "Moving the threshold requires new probabilities first."
+            },
+            {
+              "id": "supported",
+              "label": "[0, 1, 1]"
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "[0, 1, 1]",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. [0, 1, 1]"
+    },
+    {
+      "id": "LG03.O2.assessment.v2.C",
+      "objective": "LG03.O2",
+      "critical": true,
+      "prompt": "A deployed threshold is frozen at 0.6. A new unlabeled customer has saved probability 0.6. What follows under the declared equality rule?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Use final-test labels to choose a better threshold before reporting the same final score."
+            },
+            {
+              "id": "supported",
+              "label": "Predict positive without refitting; evaluate later when the outcome exists."
+            },
+            {
+              "id": "wrong0",
+              "label": "Refit the model whenever a threshold is applied."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Applying a frozen decision rule to a new probability is inference, not threshold tuning or parameter fitting."
+            },
+            {
+              "id": "alternative0",
+              "label": "Threshold choice changes the fitted probability scale automatically."
+            },
+            {
+              "id": "alternative1",
+              "label": "Cost-based policy selection is immune to held-out data restrictions."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "Applying a frozen decision rule to a new probability is inference, not threshold tuning or parameter fitting.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Applying a frozen decision rule to a new probability is inference, not threshold tuning or parameter fitting."
+    },
+    {
+      "id": "LG03.O3.assessment.v2.C",
+      "objective": "LG03.O3",
+      "critical": false,
+      "prompt": "Actual labels [1, 0, 0, 1]; saved p(leaves) [0.4, 0.6, 0.2, 0.1]; threshold 0.5 with equality positive. How many false negatives occur?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Calculated value (retain at least 10 decimal places for nonterminating results)"
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 2
+          }
+        ]
+      ],
+      "explanation": "Apply the stated operations to this case; retain full precision until the result.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Apply the stated operations to this case; retain full precision until the result."
+    },
+    {
+      "id": "LG03.O4.assessment.v2.C",
+      "objective": "LG03.O4",
+      "critical": false,
+      "prompt": "A contact policy predicts no positives in a sample containing 6 actual churn events. How should precision and recall be described?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "High accuracy proves useful detection of the positive class."
+            },
+            {
+              "id": "wrong1",
+              "label": "A metric with a zero denominator should always be reported as perfect."
+            },
+            {
+              "id": "supported",
+              "label": "Precision is undefined because there are no predicted positives; recall is 0."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "Precision is undefined because there are no predicted positives; recall is 0.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Precision is undefined because there are no predicted positives; recall is 0."
+    },
+    {
+      "id": "LG04.O1.assessment.v2.C",
+      "objective": "LG04.O1",
+      "critical": false,
+      "prompt": "A validation input is extreme. Why must its value be excluded when learning the scaler for a fit evaluated on that row?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A fixed random seed repairs any globally fitted preprocessing."
+            },
+            {
+              "id": "supported",
+              "label": "That row would otherwise influence the preprocessing learned by the fit being evaluated."
+            },
+            {
+              "id": "wrong0",
+              "label": "Coefficient magnitude has no relationship to feature units."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "That row would otherwise influence the preprocessing learned by the fit being evaluated.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. That row would otherwise influence the preprocessing learned by the fit being evaluated."
+    },
+    {
+      "id": "LG04.O2.assessment.v2.C",
+      "objective": "LG04.O2",
+      "critical": true,
+      "prompt": "Two existing L2 fits use C=0.5 and C=5. The larger-C fit has worse development log loss. Is that a contradiction?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No; weaker regularization need not improve held-out probability quality."
+            },
+            {
+              "id": "wrong0",
+              "label": "Larger C always means both a stronger penalty and better development predictions."
+            },
+            {
+              "id": "wrong1",
+              "label": "Treat an unsupported fit as a valid zero-probability model."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "alternative1",
+              "label": "Solver choice and evaluation evidence have no bearing on a fitted result."
+            },
+            {
+              "id": "mechanism",
+              "label": "C controls the fitting preference, while the observed development result evaluates the resulting fit."
+            },
+            {
+              "id": "alternative0",
+              "label": "C equals a fixed probability increment for each customer."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "C controls the fitting preference, while the observed development result evaluates the resulting fit.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. C controls the fitting preference, while the observed development result evaluates the resulting fit."
+    },
+    {
+      "id": "LG04.O3.assessment.v2.C",
+      "objective": "LG04.O3",
+      "critical": false,
+      "prompt": "For the same linear score, changing threshold from 0.5 to 0.8 changes which part of its geometry?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "The S-shaped probability conversion guarantees any curved classification boundary."
+            },
+            {
+              "id": "wrong1",
+              "label": "A threshold is a replacement for missing nonlinear features in every dataset."
+            },
+            {
+              "id": "supported",
+              "label": "The score level selected as the boundary changes; this does not create an arbitrary nonlinear boundary."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "The score level selected as the boundary changes; this does not create an arbitrary nonlinear boundary.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. The score level selected as the boundary changes; this does not create an arbitrary nonlinear boundary."
+    },
+    {
+      "id": "LG04.O4.assessment.v2.C",
+      "objective": "LG04.O4",
+      "critical": false,
+      "prompt": "Two different fixed seeds return nearly identical training accuracy but very different coefficients. What should be investigated?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A fixed seed or returned vector establishes convergence and generalization."
+            },
+            {
+              "id": "supported",
+              "label": "Coefficient stability, data separation and regularization; accuracy alone does not resolve the difference."
+            },
+            {
+              "id": "wrong0",
+              "label": "Treat perfect training accuracy as proof of calibrated future risk."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "Coefficient stability, data separation and regularization; accuracy alone does not resolve the difference.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Coefficient stability, data separation and regularization; accuracy alone does not resolve the difference."
+    },
+    {
+      "id": "LG05.O1.assessment.v2.C",
+      "objective": "LG05.O1",
+      "critical": false,
+      "prompt": "A saved model reports classes_=[1, 0] and one probability row [0.6, 0.4]. What is p(leaves), and is the customer outcome needed for prediction?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "p(leaves)=0.6; prediction uses saved fitted state and eligible inputs, not the future label."
+            },
+            {
+              "id": "wrong0",
+              "label": "Always select the second column; the classes_ order is irrelevant."
+            },
+            {
+              "id": "wrong1",
+              "label": "Fit on this future customer label before predicting its probability."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "p(leaves)=0.6; prediction uses saved fitted state and eligible inputs, not the future label.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. p(leaves)=0.6; prediction uses saved fitted state and eligible inputs, not the future label."
+    },
+    {
+      "id": "LG05.O2.assessment.v2.C",
+      "objective": "LG05.O2",
+      "critical": true,
+      "prompt": "A complete unfitted pipeline is refitted on every fold-training subset; validation rows are transformed with that fold\u2019s saved scaler. Is this preprocessing boundary valid?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "A good validation score is sufficient to certify feature and preprocessing eligibility."
+            },
+            {
+              "id": "wrong1",
+              "label": "Passing any object named pipeline automatically proves fit provenance."
+            },
+            {
+              "id": "supported",
+              "label": "Yes, provided no other prohibited information entered those fitted steps."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "alternative0",
+              "label": "Only targets can leak; observing held-out inputs during preprocessing is always harmless."
+            },
+            {
+              "id": "alternative1",
+              "label": "The prediction date does not matter if all columns are numerical."
+            },
+            {
+              "id": "mechanism",
+              "label": "The learned scaler and estimator use only the training IDs for the fold being evaluated."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "The learned scaler and estimator use only the training IDs for the fold being evaluated.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. The learned scaler and estimator use only the training IDs for the fold being evaluated."
+    },
+    {
+      "id": "LG05.O3.assessment.v2.C",
+      "objective": "LG05.O3",
+      "critical": false,
+      "prompt": "A target table is joined on a nonunique customer ID, duplicating feature rows unexpectedly. What is the first defensible repair?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Shuffle only the targets so their order looks random."
+            },
+            {
+              "id": "supported",
+              "label": "Resolve and validate the join identity and multiplicity before constructing aligned training folds."
+            },
+            {
+              "id": "wrong0",
+              "label": "Matching array lengths alone establishes correct target alignment."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "Resolve and validate the join identity and multiplicity before constructing aligned training folds.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Resolve and validate the join identity and multiplicity before constructing aligned training folds."
+    },
+    {
+      "id": "LG05.O4.assessment.v2.C",
+      "objective": "LG05.O4",
+      "critical": false,
+      "prompt": "A baseline receives prediction-time inputs, but Logistic also receives a future cancellation flag. Are matched row IDs enough?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No; align information availability as well as row IDs, target and metric."
+            },
+            {
+              "id": "wrong0",
+              "label": "Any two printed scores are directly comparable regardless of rows."
+            },
+            {
+              "id": "wrong1",
+              "label": "A more complex model needs no matched baseline evidence."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "No; align information availability as well as row IDs, target and metric.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. No; align information availability as well as row IDs, target and metric."
+    },
+    {
+      "id": "LG06.O1.assessment.v2.C",
+      "objective": "LG06.O1",
+      "critical": false,
+      "prompt": "A subgroup has no observed positives. Can its positive-class recall be reported as verified 100%?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "A perfect observed percentage proves reliable subgroup performance."
+            },
+            {
+              "id": "wrong1",
+              "label": "Error costs and denominators can be omitted when accuracy is available."
+            },
+            {
+              "id": "supported",
+              "label": "No; the recall denominator is zero, so recall is undefined for that sample."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "No; the recall denominator is zero, so recall is undefined for that sample.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. No; the recall denominator is zero, so recall is undefined for that sample."
+    },
+    {
+      "id": "LG06.O2.assessment.v2.C",
+      "objective": "LG06.O2",
+      "critical": true,
+      "prompt": "An observational coefficient implies an odds multiplier above 1. May the team conclude that changing that feature will cause more cancellations?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A good training score makes population and conditioning irrelevant."
+            },
+            {
+              "id": "supported",
+              "label": "No; a conditional association alone does not identify the intervention effect."
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes; any high probability or coefficient directly identifies an intervention effect."
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Reason for that decision",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Other influences and how observations were generated can explain association without establishing causation."
+            },
+            {
+              "id": "alternative0",
+              "label": "A probability guarantees the outcome for each person assigned that value."
+            },
+            {
+              "id": "alternative1",
+              "label": "Correct ranking establishes calibration and causation together."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "explanation": "Other influences and how observations were generated can explain association without establishing causation.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Other influences and how observations were generated can explain association without establishing causation."
+    },
+    {
+      "id": "LG06.O3.assessment.v2.C",
+      "objective": "LG06.O3",
+      "critical": false,
+      "prompt": "On identical development IDs with the same target and cost rule, Logistic cost is 3 and a supplied nonlinear candidate cost is 7. What is justified?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Logistic has lower development cost here; this does not make it universally best."
+            },
+            {
+              "id": "wrong0",
+              "label": "The nonlinear candidate must be superior on every future population."
+            },
+            {
+              "id": "wrong1",
+              "label": "A lower development cost proves calibration and causal validity."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "Logistic has lower development cost here; this does not make it universally best.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Logistic has lower development cost here; this does not make it universally best."
+    },
+    {
+      "id": "LG06.O4.assessment.v2.C",
+      "objective": "LG06.O4",
+      "critical": false,
+      "prompt": "Two models have the same accuracy on 100 rows but disagree on probability confidence. Which report is sufficient?",
+      "code": "",
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Your decision",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "The same ranking proves identical probability quality."
+            },
+            {
+              "id": "wrong1",
+              "label": "Equal hard accuracy fully describes a probability model."
+            },
+            {
+              "id": "supported",
+              "label": "Include probability quality and relevant calibration evidence as well as decisions and sample context."
+            }
+          ]
+        }
+      ],
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "explanation": "Include probability quality and relevant calibration evidence as well as decisions and sample context.",
+      "remediation": "Reconstruct the inputs and the permitted operation before deciding. Include probability quality and relevant calibration evidence as well as decisions and sample context."
+    }
+  ]
+}

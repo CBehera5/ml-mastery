@@ -1,49 +1,12 @@
 import Link from "next/link";
 import { PublicNav } from "./public-nav";
-import styles from "./landing.module.css";
-
-const stages = [
-  { title: "Math Lab", status: "Available", description: "Understand the ideas behind models.", outcome: "Connect equations, vectors, probability and gradients to predictions.", href: "/math", action: "Explore mathematics" },
-  { title: "Python Lab", status: "Available", description: "Turn ideas into reliable code.", outcome: "Work with Python, NumPy, pandas, visualization, data preparation and scikit-learn.", href: "/python", action: "Explore Python" },
-  { title: "Algorithm Lab", status: "Available curriculum", description: "See how models learn and compare them.", outcome: "Study regression, classification, introductory neural networks and model selection.", href: "/supervised", action: "Explore algorithms" },
-  { title: "Project Studio", status: "Coming Soon", description: "Bring your skills together in future guided projects.", outcome: "The full Studio and capstones are not available yet.", href: null, action: null },
+import { NextStep } from "./next-step";
+import { PathwayCard, PathwayFooter, type PathCard } from "../experience/pathway";
+import styles from "../experience/pathway.module.css";
+const stages:PathCard[]=[
+ {title:"Math",outcome:"Understand the language behind a prediction.",detail:"Explore functions, vectors, change, uncertainty and optimization.",href:"/math",action:"Explore Math"},
+ {title:"Python",outcome:"Turn an idea into code you can explain.",detail:"Build skills with Python, arrays, tables, data preparation and scikit-learn.",href:"/python",action:"Explore Python"},
+ {title:"Algorithms",outcome:"Understand how models predict, learn and fail.",detail:"Explore regression, classification and evaluation through existing learning paths.",href:"/supervised",action:"Explore Algorithms"},
+ {title:"Projects",outcome:"Bring data, models and decisions together.",detail:"The full Project Studio and capstones are planned. Review what is available today.",href:"/projects",action:"View project availability",status:"Full studio coming soon"},
 ];
-
-export function Landing() {
-  return <div className={styles.page}>
-    <a className={styles.skip} href="#main-content">Skip to main content</a>
-    <PublicNav />
-    <main className={styles.main} id="main-content" tabIndex={-1}>
-      <section className={styles.hero} aria-labelledby="welcome-title">
-        <p className={styles.eyebrow}>Understand it. Try it. Build on it.</p>
-        <h1 id="welcome-title">Machine learning<br /> <span>finally makes sense.</span></h1>
-        <p className={styles.intro}>Explore the maths, connect it to Python, and see how models learn — one clear step at a time.</p>
-        <div className={styles.actions}><Link className={styles.primary} href="/demo">Try a Free Lab <span aria-hidden="true">↗</span></Link><Link href="/journey">My learning journey <span aria-hidden="true">→</span></Link></div>
-        <p className={styles.caption}>Start in <strong>ML Math Lab</strong>: explore one linear neuron, its inputs, weights, prediction and one learning step. No sign-up required.</p>
-      </section>
-      <section className={styles.path} id="learning-stages" aria-labelledby="stages-title">
-        <div className={styles.sectionHeading}><p className={styles.eyebrow}>Your path through machine learning</p><h2 id="stages-title">From an idea to a model.</h2><p>Four stages. Explore the available learning in any order.</p></div>
-        <ol className={styles.stages} aria-label="Four learning stages">
-          {stages.map((stage, index) => <li key={stage.title}>
-            <span className={styles.number} aria-hidden="true">0{index + 1}</span>
-            <h3>{stage.title}{!stage.href && <> <span className={styles.soon}>— Coming Soon</span></>}</h3>
-            {stage.href && <p className={styles.status}>{stage.status}</p>}
-            <p className={styles.description}>{stage.description}</p>
-            <p className={styles.outcome}>{stage.outcome}</p>
-            {stage.href && <Link href={stage.href}>{stage.action} <span aria-hidden="true">→</span></Link>}
-          </li>)}
-        </ol>
-      </section>
-      <aside className={styles.offer} aria-labelledby="offer-title"><div><p className={styles.eyebrow}>Planned full program</p><h2 id="offer-title">$39 one-time purchase</h2></div><p>Informational only. Purchase is not available yet. Included scope and availability will be confirmed before sale. <strong>Project Studio — Coming Soon.</strong> Existing free learning remains open to explore.</p></aside>
-    </main>
-    <footer className={styles.footer}>
-      <p>Practice and lesson completion are separate from independent mastery.</p>
-      <p>Learning progress is local to your browser and site address. No account or cross-device synchronization.</p>
-      <div className={styles.utilities}>
-        <section id="getting-started" aria-labelledby="starting-title"><h2 id="starting-title">Choose your starting point</h2><Link href="/journey#getting-started">Choose your starting point in My learning journey</Link></section>
-        <section id="resources" aria-labelledby="resources-title"><h2 id="resources-title">Experiments and notebooks</h2><Link href="/journey#resources">Open experiments and notebooks in My learning journey</Link></section>
-      </div>
-      <div className={styles.footerLinks}><span>ML Mastery · Interactive mathematics in ML Math Lab</span><Link href="/beta">Help</Link><Link href="/journey">My learning journey</Link></div>
-    </footer>
-  </div>;
-}
+export function Landing(){return <div className={styles.page}><a className={styles.skip} href="#main-content">Skip to main content</a><PublicNav/><main id="main-content" tabIndex={-1} className={styles.container}><header className={styles.hero}><div><p className={styles.eyebrow}>A learning path for curious beginners</p><h1>Understand the ideas.<br/>Then build models.</h1><p>Connect the mathematics, Python and practical decisions behind machine learning. Start from the foundations or return to your next useful step.</p><div className={styles.actions}><a className={styles.primary} href="#next-step">Find my next step →</a><a href="#learning-stages">Explore the learning path ↓</a></div></div><aside className={styles.outcome}><p className={styles.eyebrow}>What you are working toward</p><h2>Build a model.<br/>Explain your decisions.</h2><ul><li>Frame a useful prediction problem.</li><li>Connect its mathematics to Python.</li><li>Prepare data and evaluate predictions.</li><li>Explain limitations and model choices.</li></ul><p className={styles.note}>These are intended full-program outcomes. V1 refinement and learner validation are ongoing; the full Project Studio is not yet available.</p></aside></header><NextStep/><section id="learning-stages" className={styles.section} aria-labelledby="path-title"><div className={styles.sectionHeading}><div><p className={styles.eyebrow}>One connected curriculum</p><h2 id="path-title">Four sections. One learning path.</h2></div><p>Math gives you the language. Python makes it executable. Algorithms connect the ideas. Projects bring them together. Explore freely; the order is recommended.</p></div><div className={styles.fourGrid}>{stages.map((item,index)=><PathwayCard key={item.title} item={item} index={index}/>)}</div></section><section className={styles.section} aria-labelledby="approach-title"><p className={styles.eyebrow}>Our teaching direction</p><h2 id="approach-title">Learn why, then learn how.</h2><p>The shared lesson structure we are developing connects a real problem to an explanation you can apply.</p><ol className={styles.steps}>{["Problem","Intuition","Experiment","Mathematics","Python","Application","Self-check"].map(step=><li key={step}>{step}</li>)}</ol></section><section id="projects" className={`${styles.section} ${styles.banner}`} aria-labelledby="projects-title"><p className={styles.eyebrow}>Projects · availability</p><h2 id="projects-title">Start applying. Build toward independence.</h2><p>The existing Linear Regression guided housing project connects data preparation, training and evaluation. It is a guided exercise, separate from the planned full Project Studio and three capstones.</p><Link href="/learn/linear-regression/project">Explore the guided housing project →</Link><p className={styles.note}>Full Project Studio: coming soon. No purchase is currently available. The planned full program is $39 one time; included scope will be confirmed before sale.</p></section><section id="getting-started" className={styles.section}><h2>Choose the help you need.</h2><p>New to the subject? <Link href="/math/algebra-functions/variables">Begin with variables and equations</Link>. Prefer a familiar prediction problem? <Link href="/learn/linear-regression/why">Try the housing introduction</Link>.</p><p id="resources">Returning learners can open the <Link href="/journey#getting-started">existing starting-point options</Link> or <Link href="/journey#resources">experiments and notebooks</Link>. Your earlier links and records remain available.</p></section></main><PathwayFooter/></div>;}

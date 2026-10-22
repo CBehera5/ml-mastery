@@ -1,47 +1,39 @@
 // @vitest-environment jsdom
 import "@testing-library/jest-dom/vitest";
-import { afterEach, expect, it, vi } from "vitest";
-import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
+import { afterEach,beforeEach,expect,it,vi } from "vitest";
+import { cleanup,fireEvent,render,screen,within,waitFor } from "@testing-library/react";
 import Home from "../page";
-import { BetaNav } from "../components/beta-nav";
-import { STAGES } from "../learning-journey/catalog";
-afterEach(() => { cleanup(); vi.restoreAllMocks(); });
-it("opens public exploration without reading or writing learner storage", () => {
-  const read = vi.spyOn(Storage.prototype, "getItem");
-  const write = vi.spyOn(Storage.prototype, "setItem");
-  const remove = vi.spyOn(Storage.prototype, "removeItem");
-  render(<Home />);
-  expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Machine learning finally makes sense.");
-  expect(screen.getByRole("link", { name: /Try a Free Lab/ })).toHaveAttribute("href", "/demo");
-  expect(screen.getByRole("list", { name: "Four learning stages" }).children).toHaveLength(4);
-  expect(screen.getByRole("heading", { name: "Project Studio — Coming Soon" })).toBeInTheDocument();
-  expect(screen.queryByRole("link", { name: /Project Studio/ })).not.toBeInTheDocument();
-  expect(screen.getByRole("heading", { name: "$39 one-time purchase" })).toBeInTheDocument();
-  expect(screen.getByText(/Purchase is not available yet/)).toBeInTheDocument();
-  expect(read).not.toHaveBeenCalled(); expect(write).not.toHaveBeenCalled(); expect(remove).not.toHaveBeenCalled();
+import MathPage from "../math/page";
+import * as progress from "../learning-journey/progress";
+beforeEach(()=>localStorage.clear());afterEach(()=>{cleanup();vi.restoreAllMocks();});
+it("combines outcomes, four sections and a read-only starting suggestion",async()=>{
+ const read=vi.spyOn(Storage.prototype,"getItem"),write=vi.spyOn(Storage.prototype,"setItem"),remove=vi.spyOn(Storage.prototype,"removeItem");render(<Home/>);
+ expect(screen.getByRole("heading",{level:1})).toHaveTextContent("Understand the ideas.Then build models.");
+ expect(await screen.findByRole("link",{name:"Start learning →"})).toHaveAttribute("href","/math/algebra-functions/variables");
+ const nav=screen.getByRole("navigation",{name:"Main navigation"});
+ for(const [name,href] of [["Math","/math"],["Python","/python"],["Algorithms","/supervised"],["Projects","/projects"]])expect(within(nav).getAllByRole("link",{name})[0]).toHaveAttribute("href",href);
+ expect(screen.getByText(/intended full-program outcomes/)).toBeInTheDocument();
+ expect(screen.getByText(/Full Project Studio: coming soon/)).toBeInTheDocument();
+ expect(read.mock.calls.every(([key])=>progress.READ_KEYS.includes(key))).toBe(true);
+ expect(write).not.toHaveBeenCalled();expect(remove).not.toHaveBeenCalled();
 });
-it("preserves legacy root intent and keyboard-closeable public menu", () => {
-  render(<Home />);
-  expect(screen.getByRole("link", { name: "Choose your starting point in My learning journey" })).toHaveAttribute("href", "/journey#getting-started");
-  expect(screen.getByRole("link", { name: "Open experiments and notebooks in My learning journey" })).toHaveAttribute("href", "/journey#resources");
-  const nav = screen.getByRole("navigation", { name: "Public navigation" });
-  fireEvent.click(within(nav).getByText("Menu", { selector: "summary" }));
-  const link = within(nav).getByRole("link", { name: "Learning stages" });
-  fireEvent.keyDown(link, { key: "Escape" });
-  expect(link.closest("details")).not.toHaveAttribute("open");
-  expect(within(nav).getByText("Menu", { selector: "summary" })).toHaveFocus();
+it("continues validated supported activity without pretending to track all algorithms",async()=>{
+ vi.spyOn(progress,"readJourneyProgress").mockResolvedValue({scopes:[{title:"Python Essentials",href:"/python/essentials",active:true,mastery:"Not yet",target:{title:"Functions",href:"/python/essentials/p05",stage:"Python",why:"Connect inputs to outputs.",detail:"Suggested continuation."}}],warnings:[]});
+ render(<Home/>);expect(await screen.findByRole("link",{name:"Continue learning →"})).toHaveAttribute("href","/python/essentials/p05");
+ expect(screen.getByText(/Other algorithm modules retain their own progress/)).toBeInTheDocument();
 });
-it("exposes accepted algorithm modules without a future launch or extra core stage", () => {
-  expect(STAGES).toHaveLength(4);
-  expect(STAGES[2].links.map(link => link.href)).toEqual(expect.arrayContaining(["/supervised/mlp", "/supervised/model-selection"]));
-  expect(STAGES[3].title).toBe("Project Studio — Coming Soon");
-  expect(STAGES[3].links).toHaveLength(0);
+it("keeps unreadable progress unknown and never resets it",async()=>{
+ vi.spyOn(progress,"readJourneyProgress").mockRejectedValue(Error("unavailable"));const write=vi.spyOn(Storage.prototype,"setItem");render(<Home/>);
+ expect(await screen.findByText(/Some saved progress is unavailable/)).toBeInTheDocument();expect(write).not.toHaveBeenCalled();
 });
-
-it("distinguishes the product header from the interactive mathematics experience", () => {
-  const product = render(<BetaNav />);
-  expect(screen.getByRole("link", { name: "ML Mastery" })).toHaveAttribute("href", "/journey");
-  product.unmount();
-  render(<BetaNav product={false} />);
-  expect(screen.getByRole("link", { name: "ML Math Lab" })).toHaveAttribute("href", "/journey");
+it("closes the mobile section menu with Escape and restores focus",async()=>{
+ render(<Home/>);await screen.findByRole("link",{name:"Start learning →"});
+ const summary=screen.getByText("Menu",{selector:"summary"});fireEvent.click(summary);const menu=summary.closest("details")!;
+ fireEvent.keyDown(within(menu).getByRole("link",{name:"Math"}),{key:"Escape"});expect(menu).not.toHaveAttribute("open");expect(summary).toHaveFocus();
+});
+it("uses matching cards on Math and preserves every subject and integration route",()=>{
+ render(<MathPage/>);const nav=screen.getByRole("navigation",{name:"Main navigation"});expect(within(nav).getAllByRole("link",{name:"Math"})[0]).toHaveAttribute("aria-current","page");
+ const routes=["/math/algebra-functions","/math/linear-algebra","/math/derivatives","/math/probability","/math/statistics","/math/optimization","/math/integration"];
+ for(const href of routes)expect(document.querySelector(`a[href="${href}"]`)).toBeInTheDocument();
+ expect(screen.getByRole("link",{name:"Explore Python →"})).toHaveAttribute("href","/python");
 });

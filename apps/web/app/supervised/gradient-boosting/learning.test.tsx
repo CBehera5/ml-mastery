@@ -1,3 +1,4 @@
+import {experimentGuide} from "../simple-experiment";
 // @vitest-environment jsdom
 import React from "react";
 import "@testing-library/jest-dom/vitest";
@@ -18,9 +19,9 @@ it("restores residual practice without granting mastery or modifying earlier evi
  expect(practice.getByRole("status")).toHaveTextContent("Correct.");expect(load(localStorage.getItem(STORAGE_KEY)).mastery).toBeNull();prior.forEach(key=>expect(localStorage.getItem(key)).toBe("earlier-evidence"));cleanup();await open(0);expect(screen.getByRole("region",{name:"Practice GB01.O1"})).toHaveTextContent("Practice demonstrated");
 });
 for(const lab of [0,1])it(`lab${lab} requires prediction,changes and a supported explanation;shows OOB missingness`,async()=>{
- await open(lab===0?0:2);expect(screen.getByRole("button",{name:"Reveal frozen outcome"})).toBeDisabled();const config=configurations(lab)[1];
- fireEvent.change(screen.getByRole("combobox",{name:"Experiment configuration"}),{target:{value:config.id}});fireEvent.change(screen.getByRole("combobox",{name:"Your prediction"}),{target:{value:config.predictionOptions[0].id}});fireEvent.change(screen.getByRole("combobox",{name:"Predicted reason"}),{target:{value:"causal"}});fireEvent.click(screen.getByRole("button",{name:"Reveal frozen outcome"}));
+ await open(lab===0?0:2);expect(screen.getByRole("button",{name:"Show the result"})).toBeDisabled();const config=configurations(lab).find(c=>c.id===experimentGuide("gradient-boosting",lab===0?0:2).options[1].id)!;
+ fireEvent.click(screen.getByRole("radio",{name:experimentGuide("gradient-boosting",lab===0?0:2).options[1].label}));fireEvent.change(screen.getByRole("combobox",{name:"Your prediction"}),{target:{value:config.predictionOptions[0].id}});fireEvent.change(screen.getByRole("combobox",{name:"Predicted reason"}),{target:{value:"causal"}});fireEvent.click(screen.getByRole("button",{name:"Show the result"}));
  expect(screen.getByRole("table",{name:"Training and validation loss by stage"})).toBeInTheDocument();expect(screen.getByText(/test data is neither displayed nor evaluated/)).toBeInTheDocument();
- fireEvent.change(screen.getByRole("combobox",{name:"Supported explanation"}),{target:{value:config.reasonId}});fireEvent.click(screen.getByRole("button",{name:"Check experiment explanation"}));expect(screen.getByText("Meaningful interaction demonstrated; not independent mastery.")).toBeInTheDocument();
+ fireEvent.change(screen.getByRole("combobox",{name:"Supported explanation"}),{target:{value:config.reasonId}});fireEvent.click(screen.getByRole("button",{name:"Check my explanation"}));expect(screen.getByText("Meaningful interaction demonstrated; not independent mastery.")).toBeInTheDocument();
 });
 it("keeps completion separate from the independent assessment",()=>{render(<GradientBoostingOverview/>);expect(screen.getByText(/20\/24 families/)).toBeInTheDocument();cleanup();render(<GradientBoostingAssessment/>);expect(screen.getByText(/24 objectives; at least20/)).toBeInTheDocument();});

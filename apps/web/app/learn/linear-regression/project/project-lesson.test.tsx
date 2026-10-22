@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import "@testing-library/jest-dom/vitest";
-import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
+import { cleanup, fireEvent, render as rtlRender, screen, waitFor, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { awardMastery, createEmptyEvidence, evidenceStorageKey, markLessonState, recordProjectMilestone } from "../../foundation/evidence";
 import { ProjectLesson } from "./project-lesson";
@@ -8,6 +8,8 @@ import { DEFAULT_CONFIG, PROJECT_ID, PROJECT_OBJECTIVES, PROJECT_SESSION_KEY, pr
 const key=evidenceStorageKey("linear-regression");
 beforeEach(()=>localStorage.clear());
 afterEach(()=>{cleanup();vi.restoreAllMocks()});
+// Legacy workflow assertions inspect all stages; focused navigation is tested separately.
+function render(ui:Parameters<typeof rtlRender>[0]){const result=rtlRender(ui);fireEvent.click(screen.getByRole("button",{name:"Show all stages"}));return result}
 function fillStage(index:number){
  const exercises=projectExercises(runProject(DEFAULT_CONFIG),"area-age")[index];
  exercises.forEach(check=>{const field=screen.getByRole("group",{name:check.prompt});if(check.kind==="numerical")fireEvent.change(within(field).getByRole("spinbutton"),{target:{value:check.expected.toFixed(2)}});else if(check.kind==="conceptual")fireEvent.click(within(field).getByRole("radio",{name:check.options.find(option=>option.id===check.expectedOptionId)!.label}))});
@@ -83,4 +85,18 @@ describe("guided applied project",()=>{
   vi.spyOn(Storage.prototype,"setItem").mockImplementation(()=>{throw new Error("storage unavailable")});render(<ProjectLesson/>);
   expect(screen.getByRole("alert")).toHaveTextContent("progress cannot be saved reliably");expect(screen.getByRole("button",{name:"Check stage 1"})).toBeEnabled();
  });
+});
+
+it("focuses the current project stage without changing earned evidence",async()=>{
+ rtlRender(<ProjectLesson/>);
+ await waitFor(()=>expect(screen.getByRole("button",{name:"Check stage 1"})).toBeEnabled());
+ expect(screen.queryByRole("button",{name:"Check stage 6"})).not.toBeInTheDocument();
+ const before=localStorage.getItem(key);
+ fireEvent.click(screen.getByRole("link",{name:"6. Explain the result"}));
+ expect(screen.getByRole("button",{name:"Check stage 6"})).toBeDisabled();
+ expect(document.activeElement).toBe(screen.getByRole("heading",{name:"Explain the result"}));
+ expect(screen.queryByRole("button",{name:"Check stage 1"})).not.toBeInTheDocument();
+ expect(localStorage.getItem(key)).toBe(before);
+ fireEvent.click(screen.getByRole("button",{name:"Show all stages"}));
+ expect(screen.getByRole("button",{name:"Check stage 1"})).toBeInTheDocument();
 });

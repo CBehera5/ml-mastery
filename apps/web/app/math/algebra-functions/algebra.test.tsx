@@ -16,3 +16,36 @@ describe("Algebra lessons and independent evidence",()=>{
  it("awards mastery only on successful independent submission and preserves it on reload",async()=>{const view=render(<AlgebraAssessment/>);await ready();await waitFor(()=>expect(screen.getByRole("button",{name:"Review responses before submitting"})).toBeEnabled());answerAssessment();fireEvent.click(screen.getByRole("button",{name:"Review responses before submitting"}));fireEvent.click(screen.getByRole("checkbox"));fireEvent.click(screen.getByRole("button",{name:"Submit Algebra assessment"}));expect(screen.getByRole("heading",{name:"Algebra mastery criteria met"})).toBeInTheDocument();await waitFor(()=>expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).objectives[MASTERY_OBJECTIVE].mastered).toBe(true));view.unmount();render(<AlgebraAssessment/>);await waitFor(()=>expect(screen.getByRole("heading",{name:"Algebra mastery criteria met"})).toBeInTheDocument())});
  it("restores partial responses, resets review confirmation, rejects forged submitted drafts and reports save failure",async()=>{localStorage.setItem(DRAFT_KEY,JSON.stringify({version:1,variant:"v01",phase:"review",responses:{"variables.solve":{kind:"numerical",value:5}}}));let view=render(<AlgebraAssessment/>);await ready();await waitFor(()=>expect(screen.getByRole("spinbutton",{name:"Numerical answer for Q3"})).toHaveValue(5));expect(screen.queryByRole("checkbox")).not.toBeInTheDocument();view.unmount();localStorage.setItem(DRAFT_KEY,JSON.stringify({version:1,variant:"v01",phase:"submitted",attemptId:"forged",responses:{}}));view=render(<AlgebraAssessment/>);await ready();await waitFor(()=>expect(screen.getByRole("progressbar")).toBeInTheDocument());expect(screen.queryByRole("heading",{name:"Algebra mastery criteria met"})).not.toBeInTheDocument();view.unmount();vi.spyOn(Storage.prototype,"setItem").mockImplementation(()=>{throw new Error("blocked")});render(<AlgebraLesson id="variables"/>);await waitFor(()=>expect(screen.getByRole("alert")).toHaveTextContent("cannot be saved reliably"))});
 });
+
+describe("Variables guided discovery pilot",()=>{
+ it.each([["11 dollars","Your prediction matches"],["14 dollars","does not double"],["I’m not sure yet","build your explanation"]])("separates observed change from prediction feedback: %s",async(label,feedback)=>{render(<AlgebraLesson id="variables"/>);await ready();const reveal=screen.getByRole("button",{name:"Reveal the comparison"});expect(reveal).toBeDisabled();fireEvent.click(screen.getByRole("radio",{name:label}));fireEvent.click(reveal);expect(screen.getByText(/Before: 7 dollars at 2 km. After: 11 dollars at 4 km. Change: \+4 dollars/)).toBeInTheDocument();expect(screen.getByText(new RegExp(feedback))).toBeInTheDocument();expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).objectives["algebra.functions.variables.activity"]).toBeUndefined();fireEvent.click(screen.getByRole("button",{name:"Reset prediction"}));expect(reveal).toBeDisabled();expect(screen.queryByText(/Before: 7 dollars at 2 km/)).not.toBeInTheDocument();expect(screen.getByRole("heading",{level:1,name:"What goes into a delivery bill?"})).toBeInTheDocument();expect(screen.getByRole("link",{name:"1. Variables and equations"})).toHaveAttribute("aria-current","page");});
+});
+
+describe("Connected Algebra journey",()=>{
+ it.each(LESSON_IDS)("puts exploration before formal explanation and gives %s a transfer and next step",async id=>{
+  const {container}=render(<AlgebraLesson id={id}/>);await ready();
+  const sequence=[...container.querySelectorAll('#algebra-content > section[id]')].map(node=>node.id);
+  expect(sequence).toEqual(["lesson-question","lesson-explore","lesson-understand","lesson-apply","equation-literacy","lesson-checks","lesson-next"]);
+  expect(screen.getByRole("navigation",{name:"In this Algebra lesson"})).toBeInTheDocument();
+  expect(screen.getByRole("heading",{name:"Try a different situation"})).toBeInTheDocument();
+  expect(screen.getByRole("heading",{name:"Carry this idea forward"})).toBeInTheDocument();
+  fireEvent.click(screen.getByText("Compare your reasoning",{exact:true}));
+  expect(screen.getByText(/This reflection is unscored and is not saved/)).toBeInTheDocument();
+  expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).masteryEvidence).toEqual([]);
+ });
+ it("keeps compounding and the selected exponential curve distinct",async()=>{
+  render(<AlgebraLesson id="powers"/>);await ready();
+  fireEvent.change(screen.getByRole("combobox",{name:"Compounding intervals"}),{target:{value:"10"}});
+  const statuses=screen.getAllByRole("status").map(node=>node.textContent);
+  expect(statuses.some(text=>text?.includes("output = 4"))).toBe(true);
+  expect(statuses.some(text=>text?.includes("2.59374"))).toBe(true);
+  expect(screen.getByText(/it does not change the selected exponential curve/)).toBeInTheDocument();
+ });
+ it("keeps transformed-curve controls separate from the fixed composition example",async()=>{
+  render(<AlgebraLesson id="transformations"/>);await ready();
+  fireEvent.change(screen.getByRole("slider",{name:"Vertical shift k"}),{target:{value:"3"}});
+  expect(screen.getAllByRole("status").some(node=>node.textContent?.includes("selected composition at x=2 gives 11"))).toBe(true);
+  fireEvent.change(screen.getByRole("combobox",{name:"Composition order"}),{target:{value:"g-after-f"}});
+  expect(screen.getAllByRole("status").some(node=>node.textContent?.includes("selected composition at x=2 gives 49"))).toBe(true);
+ });
+});

@@ -1,3 +1,4 @@
+import {editorialMetadata} from "../../experience/editorial-metadata";
 import { RegularizationOverview } from "./learning";
-export const metadata = { title: "Ridge, Lasso and Elastic Net | ML Mastery" };
+export const metadata = editorialMetadata("/supervised/regularization");
 export default function Page() { return <RegularizationOverview/>; }

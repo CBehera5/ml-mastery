@@ -1,3 +1,4 @@
+import {experimentGuide} from "../simple-experiment";
 // @vitest-environment jsdom
 import React from "react";
 import "@testing-library/jest-dom/vitest";
@@ -35,12 +36,11 @@ it("requires a prediction and rationale before revealing a frozen comparison sta
   vi.stubGlobal("fetch", mockFetch);
   render(<ModelSelectionLesson lesson={0}/>);
   await waitFor(() => expect(screen.getByText("What comparison evidence is valid?")).toBeInTheDocument());
-  const select = screen.getByRole("combobox", { name: "MS-E1 configuration" });
-  fireEvent.change(select, { target: { value: second } });
+  fireEvent.click(screen.getByRole("radio", { name: experimentGuide("model-selection",0).options[1].label }));
   await waitFor(() => expect(mockFetch).toHaveBeenCalledWith(expect.stringContaining(encodeURIComponent(second))));
-  fireEvent.change(screen.getByRole("combobox", { name: "Predict comparison outcome" }), { target: { value: "fair" } });
+  fireEvent.change(await screen.findByRole("combobox", { name: "Predict comparison outcome" }), { target: { value: "fair" } });
   fireEvent.change(screen.getByRole("combobox", { name: "Predict why this result is valid" }), { target: { value: "mechanism" } });
-  const reveal = screen.getByRole("button", { name: "Reveal reference outcome" });
+  const reveal = screen.getByRole("button", { name: "Show the result" });
   expect(reveal).toBeEnabled(); fireEvent.click(reveal);
   expect(await screen.findByText(/Your prediction matches the reference classification/)).toBeInTheDocument();
   expect(screen.getByText(/Sealed final-test targets and sidecar outputs are not sent to the browser/)).toBeInTheDocument();

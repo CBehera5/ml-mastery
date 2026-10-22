@@ -20,7 +20,7 @@ describe("Optimization learning and acceptance boundaries",()=>{
   it("offers six independently accessible lessons without completion-based mastery",async()=>{
     render(<OptimizationOverview/>);await screen.findByText(/Independent mastery not yet earned/);
     expect(screen.getByText(/24 deterministic items/)).toHaveTextContent("20 correct");
-    expect(screen.getAllByRole("link",{name:/Losses, objectives and gradients/})).toHaveLength(2);
+    expect(screen.getAllByRole("link",{name:/Explore losses, objectives and gradients/})).toHaveLength(1);
   });
   it("records practice independently, persists it and never overwrites Statistics",async()=>{
     localStorage.setItem("ml-math-lab:evidence:math.statistics:v1","preserve");

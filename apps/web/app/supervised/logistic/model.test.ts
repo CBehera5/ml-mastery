@@ -162,3 +162,57 @@ it("restores review to active, validates canonical encoding and rejects invented
   expect(() => load(JSON.stringify(state, null, 2))).toThrow();
   state.practice[0].proof = canonical({ variant: 0, answers: wrong(PRACTICE[0][0]) }); expect(validateState(state)).toBe(false);
 });
+
+it("archives a version 1 attempt exactly and starts version 2 without reinterpreting historical mastery", async()=>{
+ const { ASSESSMENT, LEGACY_ASSESSMENT, LEGACY_FORMS }=await import("./catalog");
+ const old=emptyState();old.assessment=LEGACY_ASSESSMENT;old.revision=7;
+ const answers=LEGACY_FORMS[0].map(family=>canonical(family.accepted[0]));
+ const summary={...score(0,answers.map(unpack),LEGACY_FORMS),id:"old-pass",form:0,at,assessment:LEGACY_ASSESSMENT};
+ old.mastery=summary;old.history=[summary];old.latest={id:"old-pass",form:0,phase:"results",answers,result:summary};
+ old.draft={id:"unfinished-v1",form:1,phase:"active",answers:LEGACY_FORMS[1].map(family=>canonical(family.accepted[0])),result:null};
+ old.practice[0].answers=canonical(PRACTICE[0][0].accepted[0]);
+ const raw=canonical(old),memory=new Map([[STORAGE_KEY,raw]]);
+ const store=new ModuleStore({getItem:key=>memory.get(key)??null,setItem:(key,value)=>{memory.set(key,value);}});
+ const migrated=store.hydrate();
+ expect(memory.get(STORAGE_KEY)).toBe(raw);
+ expect(memory.get(`${STORAGE_KEY}:assessment-v1-archive:7`)).toBe(raw);
+ expect(migrated.assessment).toBe(ASSESSMENT);
+ expect(migrated.mastery).toEqual(summary);expect(migrated.latest).toEqual(old.latest);expect(migrated.history).toEqual(old.history);
+ expect(migrated.practice).toEqual(old.practice);expect(migrated.labs).toEqual(old.labs);expect(migrated.transfers).toEqual(old.transfers);
+ expect(migrated.draft.answers.every(answer=>unpack(answer).every(item=>item.kind==="unanswered"))).toBe(true);
+ expect(migrated.draft.id).not.toBe(old.draft.id);
+ expect(store.warning).toMatch(/version 2 starts a fresh attempt/);
+ store.save(migrated);expect(load(memory.get(STORAGE_KEY)!).mastery).toEqual(summary);
+ expect(memory.get(`${STORAGE_KEY}:assessment-v1-archive:7`)).toBe(raw);
+ const reviewed={...store.state,draft:{...store.state.draft,phase:"review" as const}};
+ const failed=confirmAttempt(reviewed,true,at);expect(failed.draft.result?.assessment).toBe(ASSESSMENT);
+ expect(failed.draft.result?.passed).toBe(false);expect(failed.mastery).toEqual(summary);
+ expect(load(serialize(failed)).history[0]).toEqual(summary);
+});
+it("does not overwrite legacy progress when the archive cannot be saved",async()=>{
+ const {LEGACY_ASSESSMENT}=await import("./catalog");const old=emptyState();old.assessment=LEGACY_ASSESSMENT;
+ const raw=canonical(old),memory=new Map([[STORAGE_KEY,raw]]);
+ const store=new ModuleStore({getItem:key=>memory.get(key)??null,setItem:()=>{throw Error("quota");}});
+ store.hydrate();expect(store.writable).toBe(false);store.save(store.state);expect(memory.get(STORAGE_KEY)).toBe(raw);
+});
+it("uses new transfer tasks, balanced correct-option positions and unchanged mastery gates",()=>{
+ const fingerprints=(family:Family)=>JSON.stringify({prompt:family.prompt.split(": ").slice(1).join(": ")||family.prompt,code:family.code,atoms:family.atoms.map(atom=>atom.kind==="choice"?{kind:atom.kind,options:atom.options.map(option=>option.label).sort()}:atom)});
+ const practice=new Set(PRACTICE.flat().map(fingerprints));
+ expect(FORMS.flat().filter(family=>practice.has(fingerprints(family)))).toHaveLength(0);
+ for(const form of FORMS){
+  const positions=new Set(form.filter(f=>f.atoms[0].kind==="choice").map(f=>(f.atoms[0] as Extract<typeof f.atoms[0],{kind:"choice"}>).options.findIndex(option=>option.id==="supported")));
+  expect(positions.size).toBe(3);expect(form.filter(f=>f.critical)).toHaveLength(6);
+ }
+});
+it("checks the revised numeric keys against independently stated worked calculations",()=>{
+ const expected=[
+  [0.5,0.8,0.2],
+  [-Math.log(0.8),-Math.log(0.8),-Math.log(0.6)],
+  [0.2,-0.3,0.4],
+  [1,1,2],
+ ];
+ [0,4,6,10].forEach((objective,row)=>FORMS.forEach((form,column)=>{
+  const answer=form[objective].accepted[0][0];expect(answer.kind).toBe("number");
+  if(answer.kind==="number")expect(answer.value).toBeCloseTo(expected[row][column],12);
+ }));
+});

@@ -1,12 +1,17 @@
 "use client";
+import {EquationReader} from "../../experience/equation-literacy/equation-reader";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { BetaNav } from "../../components/beta-nav";
+import { PublicNav } from "../../landing/public-nav";
+import {PathwayFooter} from "../../experience/pathway";
+import shared from "../../experience/pathway.module.css";
+import {PythonCards,PythonReflection,PythonNext,lessonRoute} from "../journey-components";
+import {PYTHON_JOURNEYS} from "../journey";
 import { AnswerInput } from "../foundation/learning";
 import { validResponse, type Answer, type Family } from "../foundation/contracts";
 import { Outcome, Chart } from "./outcome";
 import { CONCEPT_NOTES } from "./teaching";
-import styles from "../foundation/lesson.module.css";
+import styles from "../journey.module.css";
 import { ACTIVITIES, ACTIVITY_REASONS, activityPredictions, ASSESSMENT, INDEPENDENT_FORMS, LESSONS, MASTERY_AVAILABLE, PRACTICE_FORMS, referenceCase as workedCase } from "./catalog";
 import { alternate, changeActivity, checkActivity, confirmAttempt, emptyState, familyResponse, lessonComplete, MASTERY, ModuleStore, practiceSubmit, recover, resetLesson, retry, type State } from "./model";
 
@@ -33,18 +38,15 @@ function useModule() {
   }
   return { store, state, setState, loaded, message, setMessage, act };
 }
-function Nav() {
-  return <nav aria-label="Visualization navigation"><Link href="/python/visualization">Visualization overview</Link>{LESSONS.map((lesson, index) => <Link key={lesson.slug} href={`/python/visualization/${lesson.slug}`}>{lesson.slug.toUpperCase()}</Link>)}<Link href="/python/visualization/mastery">Independent assessment</Link></nav>;
-}
-function Frame({ children, message, title }: { children: React.ReactNode; message: string; title: string }) {
-  return <main className={styles.page} style={{ overflowWrap: "anywhere" }}><BetaNav status="Python Visualization"/><a href="#visualization-content">Skip to Visualization content</a><Nav/><header id="visualization-content" tabIndex={-1}><h1>{title}</h1></header>{message && <p role="alert">{message}</p>}{children}</main>;
-}
+function Nav({current}:{current?:number}) {return <details className={styles.navigation}><summary>Module learning path</summary><nav aria-label="Visualization navigation"><Link href="/python/visualization">Module overview</Link><ol>{LESSONS.map((item,index)=><li key={item.slug}><Link aria-current={current===index?"page":undefined} href={lessonRoute("visualization",item.slug)}>{item.title}</Link></li>)}</ol><Link href="/python/visualization/mastery">Independent assessment</Link></nav></details>;}
+function Frame({children,message,title,overview=false,lesson}:{children:React.ReactNode;message:string;title:string;overview?:boolean;lesson?:number}){return <div className={shared.page}><main className={styles.page}><a className={shared.skip} href="#visualization-content">Skip to lesson content</a><PublicNav active="Python"/><p><Link href="/python">← Python learning path</Link></p>{!overview&&<Nav current={lesson}/>}<header id="visualization-content" tabIndex={-1}><p className={styles.eyebrow}>Python · visualization</p><h1>{title}</h1></header>{message&&<p role="alert">{message}</p>}{children}<PathwayFooter/></main></div>;}
+
 export function VisualizationOverview() {
   const module = useModule();
   const [reset, setReset] = useState(false);
-  return <Frame title="Python Visualization for machine learning" message={module.message}><p>Five lessons connect measurements to chart choice, distributions, paired relationships, robust summaries and transparent visual claims. There is no hosted Python execution. Prior Mathematics remains available through recall links; lesson order is recommended, not a navigation lock.</p>
+  return <Frame overview title="Python Visualization for machine learning" message={module.message}><p>Five lessons connect measurements to chart choice, distributions, paired relationships, robust summaries and transparent visual claims. There is no hosted Python execution. Prior Mathematics remains available through recall links; lesson order is recommended, not a navigation lock.</p>
     <p role="status">{!module.loaded ? "Loading Visualization progress…" : module.state.evidence.objectives[MASTERY]?.mastered ? "Visualization mastery previously earned for this assessment version." : "Visualization mastery not yet earned. Lesson completion does not award it."}</p>
-    <ol>{LESSONS.map((lesson, index) => <li key={lesson.slug}><Link href={`/python/visualization/${lesson.slug}`}>{lesson.slug.toUpperCase()} — {lesson.title}</Link><p>{lesson.motivation} · {lessonComplete(module.state, index) ? "Lesson completed" : "Lesson not completed"}</p></li>)}</ol>
+    <PythonCards module="visualization" lessons={LESSONS}/><details><summary>Lesson completion records</summary><ul>{LESSONS.map((item,index)=><li key={item.slug}>{item.title}: {lessonComplete(module.state,index)?"Lesson completed":"Lesson not completed"}</li>)}</ul></details>
     <section className={styles.card}><h2>Independent demonstration</h2><p>20 objective families per form; 16/20 plus all five critical gates in the same confirmed attempt. Three complete forms rotate on unlimited retries. Both decision and reasoning must pass each critical gate. Only independently correct objectives in a passing attempt receive mastery.</p><Link href="/python/visualization/mastery">Open independent assessment</Link><p>{MASTERY_AVAILABLE ? "Complete assessment verification released for this version." : "Mastery remains unavailable until the full version passes verification."}</p></section>
     <section className={styles.card}><h2>Notebook and scope</h2><a href="/notebooks/python-visualization.ipynb" download>Download the reproducible Visualization notebook</a><p>Trusted local code and embedded fictional records only. Notebook execution/download never grants platform mastery. Genuine Colab, screen-reader and browser-zoom verification remain open.</p></section>
     <section className={styles.card}><h2>Reset only this module</h2><label><input type="checkbox" checked={reset} onChange={event => setReset(event.target.checked)}/>Confirm removing this Visualization module's practice, assessment history and mastery. Essentials, NumPy, pandas, Math and Regression remain untouched.</label><button disabled={!module.loaded || !reset} onClick={() => {
@@ -87,25 +89,28 @@ function Lab({ lesson, module }: { lesson: number; module: ReturnType<typeof use
 export function VisualizationLesson({ lesson }: { lesson: number }) {
   const module = useModule(), content = LESSONS[lesson];
   const [reset, setReset] = useState(false);
-  return <Frame title={`${content.slug.toUpperCase()} — ${content.title}`} message={module.message}>
+  return <Frame lesson={lesson} title={PYTHON_JOURNEYS["visualization"][lesson][0]} message={module.message}>
+    <p className={styles.eyebrow}>Lesson {lesson+1} of {LESSONS.length} · {content.title}</p><p>{content.motivation}</p><nav className={styles.local} aria-label="In this Python lesson"><a href="#experiment">Explore</a><a href="#lesson-explain">Understand</a><a href="#lesson-practice">Code and practice</a><a href="#lesson-transfer">Reflect</a><a href="#lesson-next">Next step</a></nav>
     <p role="status">{!module.loaded ? "Loading local progress…" : lessonComplete(module.state, lesson) ? "Lesson completed. Independent module mastery is separate." : "Lesson in progress; four correct practice families and a meaningful explained experiment are required."}</p>
-    <p>Prerequisite recall: {content.prerequisites} <Link href="/math/algebra-functions">Algebra functions</Link> · <Link href="/python/numpy">NumPy recall</Link> · <Link href="/math/statistics">Statistics</Link> · <Link href="/math/statistics/relationships">Correlation versus causation experiment</Link>. Direct entry is allowed.</p>
-    <section className={styles.card}><h2>Why this exists</h2><p>{content.motivation}</p><p><strong>Mathematical intuition:</strong> {content.math}</p><p><strong>Terminology:</strong> {content.terms}</p><p><strong>Worked starting point:</strong> {content.worked}</p><p><strong>Now change the conditions:</strong> {content.progression}</p><p><strong>Common misconception:</strong> {content.misconception}</p></section>
+    <details><summary>Need a quick refresher?</summary><p>Prerequisite recall: {content.prerequisites} <Link href="/math/algebra-functions">Algebra functions</Link> · <Link href="/python/numpy">NumPy recall</Link> · <Link href="/math/statistics">Statistics</Link> · <Link href="/math/statistics/relationships">Correlation versus causation experiment</Link>. Direct entry is allowed.</p></details>
+    <aside className={styles.discovery}><h2>Predict, then explore</h2><p>{content.progression}</p><p>Read the shown Python, predict the outcome, then reveal it. Change one configuration and explain the difference. These activities use authored reference cases; they do not execute your code in the browser.</p></aside><fieldset disabled={!module.loaded}><legend>Explore one controlled change</legend><Lab lesson={lesson} module={module}/></fieldset>
+    <section id="lesson-explain" className={styles.card}><h2>Why this exists</h2><p>{content.motivation}</p><p><strong>Mathematical intuition:</strong> {content.math}</p><p><strong>Terminology:</strong> {content.terms}</p><p><strong>Worked starting point:</strong> {content.worked}</p><p><strong>Now change the conditions:</strong> {content.progression}</p><p><strong>Common misconception:</strong> {content.misconception}</p></section>
     <p>Charts encode supplied observations, not causal proof. Inspect exact coordinates, units, bins, limits and summary conventions in the numerical alternatives. The browser shows authored reference charts, not execution of learner code. chart_spec is our trusted metadata-capture helper, not a Matplotlib API; the notebook defines it before use.</p>
     <section className={styles.card}><h2>Build the mental model before tracing syntax</h2>{CONCEPT_NOTES[lesson].map(paragraph => <p key={paragraph}>{paragraph}</p>)}</section>
-    <fieldset disabled={!module.loaded}><legend>Visualization teaching and guided practice</legend>
+    <fieldset id="lesson-practice" disabled={!module.loaded}><legend>Visualization teaching and guided practice</legend>
       {content.objectives.map((objective, offset) => {
         const work = workedCase(lesson, offset);
         return <section key={objective.id}><div className={styles.card}><h2>{objective.id}: {objective.outcome}{objective.introductory ? " — introductory" : ""}</h2>
           <p>{work.reason}</p>
           <h3>Worked numerical / coordinate example</h3><pre tabIndex={0} aria-label={`${objective.id} worked Python`}><code>{work.code}</code></pre><Chart charts={work.charts} label={`${objective.id} worked chart`}/><Outcome value={work.expected} label={`${objective.id} worked outcome`}/><p>{work.reason}</p><p>Misconception: {work.misconception} {objective.remediation}</p>
-          <p><strong>ML application:</strong> {content.motivation} Use this check to justify the data/result before passing it into a model, not merely to recognize syntax.</p><p><strong>Success means:</strong> {objective.assessment}</p>
+          <p><strong>Success means:</strong> {objective.assessment}</p>
         </div><PracticePanel index={lesson * 4 + offset} module={module}/></section>;
       })}
-      <Lab lesson={lesson} module={module}/>
+
       <section className={styles.card}><h2>Scoped lesson reset</h2><label><input type="checkbox" checked={reset} onChange={event => setReset(event.target.checked)}/>Confirm clearing only this lesson's practice/drafts/activity. Independent assessment history and earned mastery will remain.</label><button disabled={!reset} onClick={() => { module.act(state => resetLesson(state, lesson, true, now())); setReset(false); }}>Reset lesson practice only</button></section>
     </fieldset>
     <p><Link href="/python/visualization/mastery">Independent assessment</Link> · <a href="/notebooks/python-visualization.ipynb" download>Visualization notebook</a>. Neither lesson completion nor notebook use awards mastery.</p>
+    <PythonReflection module="visualization" lesson={lesson} reference={content.misconception}/><details><summary>Read a larger ML expression</summary><EquationReader key={content.slug} module="python-visualization"/></details><PythonNext module="visualization" lesson={lesson} lessons={LESSONS}/>
   </Frame>;
 }
 export function VisualizationAssessment() {

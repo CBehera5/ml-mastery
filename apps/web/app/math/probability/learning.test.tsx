@@ -20,7 +20,7 @@ describe("Probability learning experience",()=>{
     render(<ProbabilityOverview/>);
     expect(screen.getByRole("heading",{name:"Probability for machine learning"})).toBeInTheDocument();
     await screen.findByText(/Independent mastery not yet earned/);
-    expect(screen.getAllByRole("link",{name:/Understanding probability/})).toHaveLength(2);
+    expect(screen.getAllByRole("link",{name:/Explore understanding probability/})).toHaveLength(1);
   });
   it("records a practice objective but not mastery and retains other module keys",async()=>{
     localStorage.setItem("legacy-algebra","preserve");

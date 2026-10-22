@@ -1,3 +1,4 @@
+import {editorialMetadata} from "../../experience/editorial-metadata";
 import { ProbabilityOverview } from "./learning";
-export const metadata = { title: "Probability Foundations | ML Math Lab" };
+export const metadata = editorialMetadata("/math/probability");
 export default function Page() { return <ProbabilityOverview/>; }

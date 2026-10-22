@@ -1,36 +1,28 @@
+import {editorialMetadata} from "../experience/editorial-metadata";
+import journey from "./journey.module.css";
 import Link from "next/link";
-import { BetaNav } from "../components/beta-nav";
-import styles from "./foundation/lesson.module.css";
-
-export const metadata = { title: "Supervised learning | ML Mastery" };
-
-const paths = [
-  ["Available: Ridge, Lasso and Elastic Net", "Six lessons connect coefficient preferences, conditional sparsity, scaling and leakage-safe selection.", "/supervised/regularization", "Open regularized regression"],
-  ["Available: Logistic Regression", "Six lessons connect churn probabilities, log loss, threshold decisions and leakage-safe classification.", "/supervised/logistic", "Open Logistic Regression"],
-  ["Available: K-Nearest Neighbors", "Four lessons connect distances, votes, units and leakage-safe neighbor selection.", "/supervised/knn", "Open K-Nearest Neighbors"],
-  ["Available: Naive Bayes", "Four lessons connect priors, count smoothing, Gaussian densities and honest probabilistic evaluation.", "/supervised/naive-bayes", "Open Naive Bayes"],
-  ["Available: Decision Trees", "Six lessons connect regression leaves, Gini splits, depth, pruning and leakage-safe evaluation.", "/supervised/decision-trees", "Open Decision Trees"],
-  ["Available: Random Forests", "Five lessons connect bootstrap diversity, price means, probability averages, OOB limits and honest importance.", "/supervised/random-forests", "Open Random Forests"],
-  ["Available: Gradient Boosting", "Six lessons connect sequential correction, regression residuals, classification gradients and validation-stage selection.", "/supervised/gradient-boosting", "Open Gradient Boosting"],
-  ["Available: Support Vector Machines", "Five lessons connect margin geometry, C, RBF locality, training-only scaling and honest classification.", "/supervised/svm", "Open Support Vector Machines"],
-  ["Available: Introductory Multilayer Perceptrons", "Five lessons connect nonlinear units, forward passes, gradients, fold-safe evaluation and model limitations.", "/supervised/mlp", "Open introductory MLP"],
-] as const;
-
-function PathCard({ title, description, href, link }: { title: string; description: string; href: string; link: string }) {
-  return <section className={styles.card}><h2>{title}</h2><p>{description}</p><Link href={href}>{link}</Link></section>;
-}
-
-export default function Page() {
-  return <main className={styles.page}>
-    <BetaNav status="Supervised learning" />
-    <header><p>ML Mastery — Learn Machine Learning by Doing.</p><h1>Supervised learning</h1><p>Real problem → Visual intuition → Experiment → Mathematics → Python → Evaluation → Comparison.</p></header>
-    <section className={styles.card}><h2>Original EV01 prototype</h2><p>EV01 teaches targets, feature availability, split boundaries and the limits of predictive claims. Its original practice and records remain intact. Prototype completion does not award the separate full-module mastery.</p><Link href="/supervised/evaluation/ev01">Start EV01: Define the prediction moment</Link></section>
-    <section className={styles.card}><h2>Available: Evaluation Foundations</h2><p>Six lessons connect prediction permissions, honest comparisons, classification costs, probability quality, uncertainty and fold-local workflows. Full-module practice and independent mastery are separate from the preserved EV01 prototype.</p><Link href="/supervised/evaluation">Open Evaluation Foundations</Link></section>
-    <PathCard title="Available learning paths" description="Polynomial Regression connects curved features and model flexibility." href="/supervised/polynomial" link="Open Polynomial Regression" />
-    <section className={styles.card}><p>Model Selection &amp; Comparison connects fair comparisons, search, nested validation, decision costs, responsible interpretation and a reproducible final choice.</p><Link href="/supervised/model-selection">Open Model Selection &amp; Comparison</Link></section>
-    {paths.map(([title, description, href, link]) => <PathCard key={href} title={title} description={description} href={href} link={link} />)}
-    <section className={styles.card}><h2>Existing algorithm course</h2><Link href="/learn/linear-regression">Linear Regression: existing lessons and independent mastery</Link><p>Its content, progress and mastery are unchanged.</p></section>
-    <section className={styles.card}><h2>Planned, not available here</h2><p>Project Studio — Coming Soon. The full Studio and capstones are not available yet.</p></section>
-    <Link href="/journey">Return to your learning journey</Link>
-  </main>;
-}
+import { PublicNav } from "../landing/public-nav";
+import { PathwayCard, PathwayFooter, type PathCard } from "../experience/pathway";
+import styles from "../experience/pathway.module.css";
+export const metadata = editorialMetadata("/supervised");
+const groups:{id:string;title:string;why:string;items:PathCard[]}[]=[
+ {id:"regression",title:"Predict a numerical amount",why:"Start with a house-price question, then explore curves and coefficient penalties.",items:[
+ {title:"Linear Regression",outcome:"Explain a numerical prediction and how its settings are learned.",detail:"9 lessons and activities · Equations, errors, updates, multiple inputs, implementation and limits. Recommended first algorithm.",href:"/learn/linear-regression",action:"Open Linear Regression"},
+ {title:"Polynomial Regression",outcome:"Explain how additional input features can represent a curve.",detail:"4 lessons · Curved features, flexibility and validation. Helpful foundation: Linear Regression.",href:"/supervised/polynomial",action:"Open Polynomial Regression"},
+ {title:"Ridge, Lasso & Elastic Net",outcome:"Explain how coefficient penalties change a fitted model.",detail:"6 lessons · Regularization, scaling, sparsity and careful selection.",href:"/supervised/regularization",action:"Open Regularization"}]},
+ {id:"classification",title:"Predict a category or probability",why:"Compare different ways to reason about a named outcome, without treating predictions as causal guarantees.",items:[
+ {title:"Logistic Regression",outcome:"Connect a score to probability and a separate decision.",detail:"6 lessons · Log loss, thresholds, regularization, workflows and limits.",href:"/supervised/logistic",action:"Open Logistic Regression"},
+ {title:"K-Nearest Neighbors",outcome:"Explain a prediction using nearby labeled observations.",detail:"4 lessons · Distances, votes, feature scales and neighbor selection.",href:"/supervised/knn",action:"Open K-Nearest Neighbors"},
+ {title:"Naive Bayes",outcome:"Combine prior class information with evidence from features.",detail:"4 lessons · Counts, smoothing, densities and probability interpretation.",href:"/supervised/naive-bayes",action:"Open Naive Bayes"},
+ {title:"Support Vector Machines",outcome:"Explain a separating boundary and the margin around it.",detail:"5 lessons · Margins, C, kernels, scaling and classification limits.",href:"/supervised/svm",action:"Open Support Vector Machines"}]},
+ {id:"trees",title:"Learn with trees and ensembles",why:"Follow a sequence of questions, then see how multiple models can combine or correct predictions.",items:[
+ {title:"Decision Trees",outcome:"Trace an observation through splits to a leaf prediction.",detail:"6 lessons · Partitions, class mixtures, depth, pruning and evaluation.",href:"/supervised/decision-trees",action:"Open Decision Trees"},
+ {title:"Random Forests",outcome:"Explain why different trees can be useful together.",detail:"5 lessons · Resampling, aggregation, out-of-bag evidence and interpretation.",href:"/supervised/random-forests",action:"Open Random Forests"},
+ {title:"Gradient Boosting",outcome:"Explain how successive models correct remaining errors.",detail:"6 lessons · Sequential updates, residuals, classification and stage selection.",href:"/supervised/gradient-boosting",action:"Open Gradient Boosting"}]},
+ {id:"neural",title:"Connect the ideas in a neural network",why:"Build from weighted sums to small nonlinear networks; this is an introductory path rather than a general deep-learning curriculum.",items:[
+ {title:"Multilayer Perceptrons",outcome:"Trace a forward pass and explain the role of nonlinear units.",detail:"5 lessons · Shapes, activations, gradients, evaluation and limitations.",href:"/supervised/mlp",action:"Open introductory MLP"}]},
+ {id:"evaluation",title:"Evaluate and compare honestly",why:"Review these foundations early. Comparing models requires matching data, metrics and information boundaries.",items:[
+ {title:"Evaluation Foundations",outcome:"Define what a model can legitimately know and what its score means.",detail:"6 lessons · Prediction time, split boundaries, errors, probability quality and uncertainty.",href:"/supervised/evaluation",action:"Open Evaluation Foundations"},
+ {title:"Model Selection & Comparison",outcome:"Choose between candidates using permitted development evidence.",detail:"6 lessons · Fair comparisons, search, validation and responsible final evaluation.",href:"/supervised/model-selection",action:"Open Model Selection & Comparison"}]},
+];
+export default function AlgorithmsPage(){let offset=0;return <div className={styles.page}><a className={styles.skip} href="#main-content">Skip to main content</a><PublicNav active="Algorithms"/><main id="main-content" tabIndex={-1} className={styles.container}><header className={styles.hero}><div><p className={styles.eyebrow}>03 · Machine-learning algorithms</p><h1>Understand the model.<br/>Explain the prediction.</h1><p>Learn what each model is for, how it works and when it can mislead. Start with a familiar prediction problem, then compare approaches using sound evaluation.</p><div className={styles.actions}><Link className={styles.primary} href="/learn/linear-regression/why">Start Linear Regression →</Link><a href="#subjects">Browse learning paths ↓</a></div></div><aside className={styles.outcome}><p className={styles.eyebrow}>Section learning goals</p><h2>Choose a model<br/>with reasons.</h2><ul><li>Connect a problem to an appropriate model.</li><li>Trace predictions and explain learning.</li><li>Compare models on the same evidence.</li><li>Describe limitations without causal shortcuts.</li></ul><p className={styles.note}>Helpful foundations: Math, Python and data preparation. These are learning goals; implementation availability does not establish independent mastery or final learner validation.</p></aside></header><section id="subjects" className={styles.section}><p className={styles.eyebrow}>Choose by the problem you want to solve</p><h2>Find the right starting point.</h2><p>Thirteen learning paths, including Linear Regression and evaluation. The order below is a guide, not a route lock.</p><nav className={`${styles.steps} ${styles.groupNav}`} aria-label="Algorithm groups">{groups.map(group=><a key={group.id} href={`#${group.id}`}>{group.title}</a>)}</nav></section>{groups.map(group=>{const start=offset;offset+=group.items.length;return <section id={group.id} key={group.id} className={styles.section} aria-labelledby={`${group.id}-title`}><div className={styles.sectionHeading}><h2 id={`${group.id}-title`}>{group.title}</h2><p>{group.why}</p></div><ol className={journey.path}>{group.items.map((item,index)=><li className={journey.step} key={item.title}><PathwayCard item={item} index={start+index}/></li>)}</ol></section>;})}<section className={`${styles.section} ${styles.banner}`}><h2>Apply a complete workflow.</h2><p>Explore the existing guided housing exercise and see which larger projects are still planned.</p><Link href="/projects">Explore Projects →</Link></section><section className={styles.section}><details><summary>Earlier evaluation practice and records</summary><p>The <Link href="/supervised/evaluation/ev01">original EV01 prototype</Link> remains available. Its records are separate from the full Evaluation Foundations module.</p><Link href="/journey">View supported learning records</Link></details><p className={styles.note}>Lesson refinement, manual accessibility and real learner validation are ongoing. This page does not change any model, assessment or saved progress.</p></section></main><PathwayFooter/></div>;}

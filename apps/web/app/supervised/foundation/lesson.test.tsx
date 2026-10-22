@@ -66,12 +66,14 @@ it("preserves a foreign/corrupt record and warns rather than silently overwritin
   expect(screen.getByRole("alert")).toHaveTextContent("memory only");
   expect(localStorage.getItem(STORAGE_KEY)).toBe("unsupported-original");
 });
-it("provides overview/discovery without invented new courses or module assessment", () => {
+it("presents current algorithm paths and preserves the separate original EV01 prototype", () => {
   render(<Overview />);
-  expect(screen.getByRole("link", { name: "Start EV01: Define the prediction moment" })).toHaveAttribute("href", "/supervised/evaluation/ev01");
-  expect(screen.getByRole("heading", { name: "Planned, not available here" })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: "Start Linear Regression →" })).toHaveAttribute("href", "/learn/linear-regression/why");
   expect(screen.getByRole("link", { name: "Open Logistic Regression" })).toHaveAttribute("href", "/supervised/logistic");
-  expect(screen.queryByRole("link", { name: /KNN|EV mastery/ })).not.toBeInTheDocument();
+  expect(screen.getByRole("link", { name: "Open K-Nearest Neighbors" })).toHaveAttribute("href", "/supervised/knn");
+  fireEvent.click(screen.getByText("Earlier evaluation practice and records"));
+  expect(screen.getByRole("link", { name: "original EV01 prototype" })).toHaveAttribute("href", "/supervised/evaluation/ev01");
+  expect(screen.queryByRole("link", { name: /EV mastery/ })).not.toBeInTheDocument();
 });
 it("keeps focus on objective feedback when the checked variant becomes exhausted", async () => {
   await open();

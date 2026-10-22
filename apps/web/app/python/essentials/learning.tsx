@@ -1,10 +1,15 @@
 "use client";
+import {EquationReader} from "../../experience/equation-literacy/equation-reader";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { BetaNav } from "../../components/beta-nav";
+import { PublicNav } from "../../landing/public-nav";
+import {PathwayFooter} from "../../experience/pathway";
+import shared from "../../experience/pathway.module.css";
+import {PythonCards,PythonReflection,PythonNext,lessonRoute} from "../journey-components";
+import {PYTHON_JOURNEYS} from "../journey";
 import { AnswerInput, REMEDIATION } from "../foundation/learning";
 import { validResponse, type Answer, type Family } from "../foundation/contracts";
-import styles from "../foundation/lesson.module.css";
+import styles from "../journey.module.css";
 import { ACTIVITIES, ACTIVITY_REASONS, activityPredictions, ASSESSMENT, INDEPENDENT_FORMS, LESSONS, MASTERY_AVAILABLE, PRACTICE_FORMS, workedCase } from "./catalog";
 import { alternate, changeActivity, checkActivity, confirmAttempt, emptyState, familyResponse, lessonComplete, MASTERY, ModuleStore, practiceSubmit, previewP01, recover, resetLesson, retry, type Preview, type State } from "./model";
 
@@ -31,12 +36,9 @@ function useModule() {
   }
   return { store, state, setState, loaded, message, setMessage, act };
 }
-function Nav() {
-  return <nav aria-label="Essentials navigation"><Link href="/python/essentials">Essentials overview</Link>{LESSONS.map((lesson, index) => <Link key={lesson.slug} href={index === 0 ? "/python/essentials/p01/module" : `/python/essentials/${lesson.slug}`}>{lesson.slug.toUpperCase()}</Link>)}<Link href="/python/essentials/mastery">Independent assessment</Link></nav>;
-}
-function Frame({ children, message, title }: { children: React.ReactNode; message: string; title: string }) {
-  return <main className={styles.page}><BetaNav status="Python Essentials"/><a href="#essentials-content">Skip to Essentials content</a><Nav/><header id="essentials-content"><h1>{title}</h1></header>{message && <p role="alert">{message}</p>}{children}</main>;
-}
+function Nav({current}:{current?:number}) {return <details className={styles.navigation}><summary>Module learning path</summary><nav aria-label="Essentials navigation"><Link href="/python/essentials">Module overview</Link><ol>{LESSONS.map((item,index)=><li key={item.slug}><Link aria-current={current===index?"page":undefined} href={lessonRoute("essentials",item.slug)}>{item.title}</Link></li>)}</ol><Link href="/python/essentials/mastery">Independent assessment</Link></nav></details>;}
+function Frame({children,message,title,overview=false,lesson}:{children:React.ReactNode;message:string;title:string;overview?:boolean;lesson?:number}){return <div className={shared.page}><main className={styles.page}><a className={shared.skip} href="#essentials-content">Skip to lesson content</a><PublicNav active="Python"/><p><Link href="/python">← Python learning path</Link></p>{!overview&&<Nav current={lesson}/>}<header id="essentials-content" tabIndex={-1}><p className={styles.eyebrow}>Python · essentials</p><h1>{title}</h1></header>{message&&<p role="alert">{message}</p>}{children}<PathwayFooter/></main></div>;}
+
 function TransferPanel({ module }: { module: ReturnType<typeof useModule> }) {
   const [preview, setPreview] = useState<Preview | null>(null);
   const [consent, setConsent] = useState(false);
@@ -63,9 +65,9 @@ function TransferPanel({ module }: { module: ReturnType<typeof useModule> }) {
 export function EssentialsOverview() {
   const module = useModule();
   const [reset, setReset] = useState(false);
-  return <Frame title="Python Essentials for machine learning" message={module.message}><p>Eight lessons connect values, ordered records, reliable transformations and small validated programs. There is no hosted Python execution. Prior Mathematics remains available through recall links; lesson order is recommended, not a navigation lock.</p>
+  return <Frame overview title="Python Essentials for machine learning" message={module.message}><p>Eight lessons connect values, ordered records, reliable transformations and small validated programs. There is no hosted Python execution. Prior Mathematics remains available through recall links; lesson order is recommended, not a navigation lock.</p>
     <p role="status">{!module.loaded ? "Loading Essentials progress…" : module.state.evidence.objectives[MASTERY]?.mastered ? "Essentials mastery previously earned for this assessment version." : "Essentials mastery not yet earned. Lesson completion does not award it."}</p>
-    <ol>{LESSONS.map((lesson, index) => <li key={lesson.slug}><Link href={index === 0 ? "/python/essentials/p01/module" : `/python/essentials/${lesson.slug}`}>{lesson.slug.toUpperCase()} — {lesson.title}</Link><p>{lesson.motivation} · {lessonComplete(module.state, index) ? "Lesson completed" : "Lesson not completed"}</p></li>)}</ol>
+    <PythonCards module="essentials" lessons={LESSONS}/><details><summary>Lesson completion records</summary><ul>{LESSONS.map((item,index)=><li key={item.slug}>{item.title}: {lessonComplete(module.state,index)?"Lesson completed":"Lesson not completed"}</li>)}</ul></details>
     <section className={styles.card}><h2>Independent demonstration</h2><p>32 objective families per form; 26/32 plus all eight critical gates in the same confirmed attempt. Three complete forms rotate on unlimited retries. Both decision and reasoning must pass each critical gate. Only independently correct objectives in a passing attempt receive mastery.</p><Link href="/python/essentials/mastery">Open independent assessment</Link><p>{MASTERY_AVAILABLE ? "Complete assessment verification released for this version." : "Mastery remains unavailable until the full version passes verification."}</p></section>
     <TransferPanel module={module}/>
     <section className={styles.card}><h2>Notebook and scope</h2><a href="/notebooks/python-essentials.ipynb" download>Download the reproducible Essentials notebook</a><p>Trusted local code and embedded fictional records only. Notebook execution/download never grants platform mastery. Genuine Colab, screen-reader and browser-zoom verification remain open.</p></section>
@@ -109,26 +111,29 @@ function Lab({ lesson, module }: { lesson: number; module: ReturnType<typeof use
 export function EssentialsLesson({ lesson }: { lesson: number }) {
   const module = useModule(), content = LESSONS[lesson];
   const [reset, setReset] = useState(false);
-  return <Frame title={`${content.slug.toUpperCase()} — ${content.title}`} message={module.message}>
+  return <Frame lesson={lesson} title={PYTHON_JOURNEYS["essentials"][lesson][0]} message={module.message}>
+    <p className={styles.eyebrow}>Lesson {lesson+1} of {LESSONS.length} · {content.title}</p><p>{content.motivation}</p><nav className={styles.local} aria-label="In this Python lesson"><a href="#experiment">Explore</a><a href="#lesson-explain">Understand</a><a href="#lesson-practice">Code and practice</a><a href="#lesson-transfer">Reflect</a><a href="#lesson-next">Next step</a></nav>
     <p role="status">{!module.loaded ? "Loading local progress…" : lessonComplete(module.state, lesson) ? "Lesson completed. Independent module mastery is separate." : "Lesson in progress; four correct practice families and a meaningful explained experiment are required."}</p>
-    <p>Prerequisite recall: {content.prerequisites} <Link href="/math/algebra-functions">Algebra functions</Link> · <Link href="/math/statistics">Statistics</Link>. Direct entry is allowed.</p>
-    <section className={styles.card}><h2>Why this exists</h2><p>{content.motivation}</p><p><strong>Mathematical intuition:</strong> {content.math}</p><p><strong>Terminology:</strong> {content.terms}</p><p><strong>Worked starting point:</strong> {content.worked}</p><p><strong>Now change the conditions:</strong> {content.progression}</p><p><strong>Common misconception:</strong> {content.misconception}</p></section>
+    <details><summary>Need a quick refresher?</summary><p>Prerequisite recall: {content.prerequisites} <Link href="/math/algebra-functions">Algebra functions</Link> · <Link href="/math/statistics">Statistics</Link>. Direct entry is allowed.</p></details>
+    <aside className={styles.discovery}><h2>Predict, then explore</h2><p>{content.progression}</p><p>Read the shown Python, predict the outcome, then reveal it. Change one configuration and explain the difference. These activities use authored reference cases; they do not execute your code in the browser.</p></aside><fieldset disabled={!module.loaded}><legend>Explore one controlled change</legend><Lab lesson={lesson} module={module}/></fieldset>
+    <section id="lesson-explain" className={styles.card}><h2>Why this exists</h2><p>{content.motivation}</p><p><strong>Mathematical intuition:</strong> {content.math}</p><p><strong>Terminology:</strong> {content.terms}</p><p><strong>Worked starting point:</strong> {content.worked}</p><p><strong>Now change the conditions:</strong> {content.progression}</p><p><strong>Common misconception:</strong> {content.misconception}</p></section>
     <p>Structured outcomes use normalized JSON traces: true/false/null correspond to Python True/False/None; tuple pairs appear as ordered arrays. Where collection types matter, explicit type names are assessed. These are not promises of identical Python print formatting.</p>
     {lesson === 0 && <p><Link href="/python/essentials/p01">Revisit the unchanged original P01 lesson and its worked explanations</Link>. Module practice uses the same P01 question/experiment semantics; copying original evidence remains opt-in from the overview.</p>}
-    <fieldset disabled={!module.loaded}><legend>Essentials teaching and guided practice</legend>
+    <fieldset id="lesson-practice" disabled={!module.loaded}><legend>Essentials teaching and guided practice</legend>
       {content.objectives.map((objective, offset) => {
         const work = workedCase(lesson, offset);
         return <section key={objective.id}><div className={styles.card}><h2>{objective.id}: {objective.outcome}</h2>
           {objective.introductory && <p>Introductory recognition only; no advanced class design or inheritance requirement.</p>}
           <p>{work?.reason ?? PRACTICE_FORMS[0][offset].explanation}</p>
           {work ? <><h3>Worked numerical / state example</h3><pre><code>{work.code}</code></pre><p>Reference outcome/error: {JSON.stringify(work.expected)}.</p><p>Misconception contrast: {JSON.stringify(work.wrong)} is not this program's outcome. {objective.remediation}</p></> : <><h3>Worked P01 reference</h3><pre><code>{PRACTICE_FORMS[0][offset].code}</code></pre><ul>{workedResponses(PRACTICE_FORMS[0][offset]).map(response => <li key={response}>{response}</li>)}</ul></>}
-          <p><strong>ML application:</strong> {content.motivation} Use this check to justify the data/result before passing it into a model, not merely to recognize syntax.</p><p><strong>Success means:</strong> {objective.assessment}</p>
+          <p><strong>Success means:</strong> {objective.assessment}</p>
         </div><PracticePanel index={lesson * 4 + offset} module={module}/></section>;
       })}
-      <Lab lesson={lesson} module={module}/>
+
       <section className={styles.card}><h2>Scoped lesson reset</h2><label><input type="checkbox" checked={reset} onChange={event => setReset(event.target.checked)}/>Confirm clearing only this lesson's practice/drafts/activity. Independent assessment history and earned mastery will remain.</label><button disabled={!reset} onClick={() => { module.act(state => resetLesson(state, lesson, true, now())); setReset(false); }}>Reset lesson practice only</button></section>
     </fieldset>
     <p><Link href="/python/essentials/mastery">Independent assessment</Link> · <a href="/notebooks/python-essentials.ipynb" download>Essentials notebook</a>. Neither lesson completion nor notebook use awards mastery.</p>
+    <PythonReflection module="essentials" lesson={lesson} reference={content.misconception}/><details><summary>Read a larger ML expression</summary><EquationReader key={content.slug} module="python-essentials"/></details><PythonNext module="essentials" lesson={lesson} lessons={LESSONS}/>
   </Frame>;
 }
 export function EssentialsAssessment() {
