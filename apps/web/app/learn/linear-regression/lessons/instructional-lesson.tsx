@@ -64,7 +64,7 @@ residual_k = estimate_k - recorded_price_k`}</code></pre><p>Assignment (=) names
    <div onChangeCapture={event=>{if(id==="equation")return;const element=event.target;if(element instanceof HTMLInputElement&&(element.type==="range"||element.type==="number")&&element.value!==""&&Number.isFinite(Number(element.value)))explore()}} onClickCapture={event=>{if(id==="equation")return;const button=(event.target as HTMLElement).closest("button");if(button&&!button.disabled&&(button.textContent==="Step"||button.getAttribute("aria-pressed")==="false"))explore()}}>{typeof children==="function"?children(explore,value=>{setDiscovered(value);if(!value){setTransferAnswer("");setTransferRevealed(false)}},lessonContent):children}</div>
   </section>
   {id!=="equation"&&lessonContent}
-  {after}
+  {(id!=="equation"||showExplanation)&&after}
   <section className={`why-summary ${complete?"complete":""}`} aria-live="polite"><h2>{complete?(id==="equation"?"Existing lesson checks complete":"Lesson outcome demonstrated"):"Build the evidence"}</h2><p>{content.checks.filter(check=>check.objectiveIds.every(objective=>evidence.objectives[objective]?.completed)).length} of {content.checks.length} checks complete. {explored?"Experiment recorded.":"Experiment interaction still required."}</p><p>Completion records these objectives locally; it does not award mastery. Independent mastery will require unfamiliar examples and critical-objective evidence in the later assessment.</p>{storageError&&<p role="alert">Browser storage is unavailable. Progress works in this visit but cannot be saved reliably.</p>}</section>
  </div>;
 }
