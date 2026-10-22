@@ -21,6 +21,8 @@ import { LIM_CODE as SV_LIM_CODE, MARG_CODE as SV_MARG_CODE, RBF_CODE as SV_RBF_
 import { LimitsPlayground as SvLimitsPlayground, MarginPlayground as SvMarginPlayground, RbfPlayground as SvRbfPlayground, ScalePlayground as SvScalePlayground, SoftMarginPlayground as SvSoftMarginPlayground } from "../svm/playground/sv-labs";
 import { EV1_CODE, EV2_CODE, EV3_CODE, EV4_CODE, EV5_CODE, EV6_CODE } from "../module/playground/ev-code";
 import { CapacityPlayground, ConfusionPlayground, ErrorPlayground, HonestPlayground, MomentPlayground, ProbabilityPlayground } from "../module/playground/ev-labs";
+import { MS1_CODE, MS2_CODE, MS3_CODE, MS4_CODE, MS5_CODE, MS6_CODE } from "../model-selection/playground/ms-code";
+import { CostPlayground, DecidePlayground, FairPlayground, NestedPlayground, ReliancePlayground, SearchPlayground } from "../model-selection/playground/ms-labs";
 
 export type AlgoExtra = { Playground?: ComponentType; code?: CodeLabConfig };
 /** One entry per lesson, keyed `module/lessonIndex` (zero-based). A lesson page shows its playground before the formal experiment and its code cell in the Python section. */
@@ -71,6 +73,12 @@ export const ALGO_EXTRAS: Record<string, AlgoExtra> = {
   "evaluation/3": { Playground: ProbabilityPlayground, code: EV4_CODE },
   "evaluation/4": { Playground: CapacityPlayground, code: EV5_CODE },
   "evaluation/5": { Playground: HonestPlayground, code: EV6_CODE },
+  "model-selection/0": { Playground: FairPlayground, code: MS1_CODE },
+  "model-selection/1": { Playground: SearchPlayground, code: MS2_CODE },
+  "model-selection/2": { Playground: NestedPlayground, code: MS3_CODE },
+  "model-selection/3": { Playground: CostPlayground, code: MS4_CODE },
+  "model-selection/4": { Playground: ReliancePlayground, code: MS5_CODE },
+  "model-selection/5": { Playground: DecidePlayground, code: MS6_CODE },
   "logistic/0": { Playground: SigmoidPlayground, code: SIG_CODE },
   "logistic/1": { Playground: LossPlayground, code: LOSS_CODE },
   "logistic/2": { Playground: ThresholdPlayground, code: THR_CODE },
