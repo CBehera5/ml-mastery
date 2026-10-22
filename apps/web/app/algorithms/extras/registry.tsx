@@ -17,6 +17,8 @@ import { AVG_CODE, BAG_CODE, IMP_CODE, OOB_CODE, VOTE_CODE as RF_VOTE_CODE } fro
 import { AveragePlayground, BagPlayground, ImportancePlayground, OobPlayground, VotePlayground } from "../random-forests/playground/rf-labs";
 import { CMP_CODE, LOG_CODE, SEQ_CODE, SQ_CODE, STOP_CODE, TRANS_CODE } from "../gradient-boosting/playground/gb-code";
 import { ComparePlayground, LeakTransformPlayground, LogLossPlayground as GbLogLossPlayground, SequentialPlayground, SquaredPlayground, StopPlayground } from "../gradient-boosting/playground/gb-labs";
+import { LIM_CODE as SV_LIM_CODE, MARG_CODE as SV_MARG_CODE, RBF_CODE as SV_RBF_CODE, SCALE_CODE as SV_SCALE_CODE, SOFT_CODE as SV_SOFT_CODE } from "../svm/playground/sv-code";
+import { LimitsPlayground as SvLimitsPlayground, MarginPlayground as SvMarginPlayground, RbfPlayground as SvRbfPlayground, ScalePlayground as SvScalePlayground, SoftMarginPlayground as SvSoftMarginPlayground } from "../svm/playground/sv-labs";
 
 export type AlgoExtra = { Playground?: ComponentType; code?: CodeLabConfig };
 /** One entry per lesson, keyed `module/lessonIndex` (zero-based). A lesson page shows its playground before the formal experiment and its code cell in the Python section. */
@@ -56,6 +58,11 @@ export const ALGO_EXTRAS: Record<string, AlgoExtra> = {
   "gradient-boosting/3": { Playground: StopPlayground, code: STOP_CODE },
   "gradient-boosting/4": { Playground: LeakTransformPlayground, code: TRANS_CODE },
   "gradient-boosting/5": { Playground: ComparePlayground, code: CMP_CODE },
+            "svm/0": { Playground: SvMarginPlayground, code: SV_MARG_CODE },
+  "svm/1": { Playground: SvSoftMarginPlayground, code: SV_SOFT_CODE },
+  "svm/2": { Playground: SvRbfPlayground, code: SV_RBF_CODE },
+  "svm/3": { Playground: SvScalePlayground, code: SV_SCALE_CODE },
+  "svm/4": { Playground: SvLimitsPlayground, code: SV_LIM_CODE },
   "logistic/0": { Playground: SigmoidPlayground, code: SIG_CODE },
   "logistic/1": { Playground: LossPlayground, code: LOSS_CODE },
   "logistic/2": { Playground: ThresholdPlayground, code: THR_CODE },
