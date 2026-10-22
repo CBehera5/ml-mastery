@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PublicNav } from "../landing/public-nav";
 import { PathwayCard, PathwayFooter, type PathCard } from "../experience/pathway";
 import styles from "../experience/pathway.module.css";
-export const metadata:Metadata={title:"Projects | ML Mastery",description:"Explore the existing guided housing exercise and the planned ML Mastery capstones. Full Project Studio is not yet available."};
+export const metadata:Metadata={title:"Projects",description:"Explore the existing guided housing exercise and the planned ML Mastery capstones. Full Project Studio is not yet available."};
 const available:PathCard={title:"Guided housing workflow",outcome:"Connect preparation, training and evaluation in one exercise.",detail:"Existing Linear Regression activity · Follow a fictional housing problem through guided decisions. This is not the full House Price capstone.",href:"/algorithms/linear-regression/project",action:"Open guided housing project",status:"Available guided exercise"};
 const planned:PathCard[]=[
  {title:"House Price",outcome:"Work toward a complete numerical-prediction project.",detail:"Planned capstone · Connect data preparation, model comparison, evaluation and communication of limitations.",action:"Not yet available",status:"Planned capstone"},

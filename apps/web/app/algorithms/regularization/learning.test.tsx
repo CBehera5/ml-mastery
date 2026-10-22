@@ -1,4 +1,5 @@
 import {experimentGuide} from "../simple-experiment";
+import { LESSONS } from "./teaching";
 // @vitest-environment jsdom
 import React from "react";
 import "@testing-library/jest-dom/vitest";
@@ -11,7 +12,7 @@ import { emptyState, load, serialize, STORAGE_KEY } from "./model";
 beforeEach(()=>localStorage.clear()); afterEach(cleanup);
 async function open(lesson=0){render(<RegularizationLesson lesson={lesson}/>);await waitFor(()=>expect(screen.getByRole("group",{name:"Objective understanding and guided practice"})).toBeEnabled());}
 it("teaches all24 objectives with contextual recall, mathematics, Python and comparison",async()=>{
- for(let lesson=0;lesson<6;lesson++){await open(lesson);for(let objective=1;objective<=4;objective++)expect(screen.getByRole("heading",{name:new RegExp(`^RG0${lesson+1}.O${objective}:`)})).toBeInTheDocument();expect(screen.getByRole("heading",{name:"Mathematics and symbols"})).toBeInTheDocument();expect(screen.getByRole("heading",{name:"Regularization and comparison"})).toBeInTheDocument();cleanup();}
+ for(let lesson=0;lesson<6;lesson++){await open(lesson);for(let objective=1;objective<=4;objective++)expect(screen.getAllByRole("heading", { name: LESSONS[lesson].objectives[objective - 1] })[0]).toBeInTheDocument();expect(screen.getByRole("heading",{name:"Mathematics and symbols"})).toBeInTheDocument();expect(screen.getByRole("heading",{name:"Regularization and comparison"})).toBeInTheDocument();cleanup();}
 });
 it("saves correct practice and restores without touching earlier module evidence",async()=>{
  const old=["ml-math-lab:supervised:polynomial:full:v1","ml-math-lab:supervised:ev:full:v1","python","regression-progress"];old.forEach(key=>localStorage.setItem(key,"earlier-mastery"));await open();const region=within(screen.getByRole("region",{name:"Practice RG01.O3"}));fireEvent.change(region.getByRole("spinbutton"),{target:{value:"8"}});fireEvent.click(region.getByRole("button",{name: "Check my answer, RG01.O3"}));expect(region.getByRole("status")).toHaveTextContent("Correct.");expect(load(localStorage.getItem(STORAGE_KEY)).practice[2].proof).not.toBeNull();expect(load(localStorage.getItem(STORAGE_KEY)).mastery).toBeNull();old.forEach(key=>expect(localStorage.getItem(key)).toBe("earlier-mastery"));cleanup();await open();expect(screen.getByRole("region",{name:"Practice RG01.O3"})).toHaveTextContent("Practice demonstrated; not mastery.");

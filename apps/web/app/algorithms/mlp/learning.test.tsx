@@ -14,7 +14,7 @@ afterEach(() => { cleanup(); localStorage.clear(); vi.unstubAllGlobals(); });
 for (let lesson = 0; lesson < 5; lesson++) it(`teaches NN0${lesson + 1} objectives and practical examples`, async () => {
   render(<MlpLesson lesson={lesson}/>);
   await waitFor(() => expect(screen.getByRole("group", { name: "Objective understanding and guided practice" })).toBeEnabled());
-  for (let objective = 1; objective <= 4; objective++) expect(screen.getByRole("heading", { name: new RegExp(`^NN0${lesson + 1}.O${objective}:`) })).toBeInTheDocument();
+  for (let objective = 1; objective <= 4; objective++) expect(screen.getAllByRole("heading", { name: LESSONS[lesson].objectives[objective - 1] })[0]).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: "Mathematics and symbols" })).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: "Python application" })).toBeInTheDocument();
 });

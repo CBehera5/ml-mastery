@@ -1,4 +1,5 @@
 import {experimentGuide} from "../simple-experiment";
+import { LESSONS } from "./teaching";
 // @vitest-environment jsdom
 import React from "react";
 import "@testing-library/jest-dom/vitest";
@@ -15,7 +16,7 @@ async function open(lesson = 0) {
 }
 for (let lesson = 0; lesson < 6; lesson++) it(`lesson ${lesson} teaches its four objectives and applications`, async () => {
   await open(lesson);
-  for (let objective = 1; objective <= 4; objective++) expect(screen.getByRole("heading", { name: new RegExp(`^DT0${lesson+1}.O${objective}:`) })).toBeInTheDocument();
+  for (let objective = 1; objective <= 4; objective++) expect(screen.getAllByRole("heading", { name: LESSONS[lesson].objectives[objective - 1] })[0]).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: "Mathematics and symbols" })).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: "Python application" })).toBeInTheDocument();
 });

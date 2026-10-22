@@ -1,4 +1,5 @@
 import {Graphic} from "./graphic";
+import { LESSONS } from "./teaching";
 import {experimentGuide} from "../simple-experiment";
 // @vitest-environment jsdom
 import React from "react";
@@ -11,7 +12,7 @@ import {load,STORAGE_KEY} from "./model";
 afterEach(()=>{cleanup();localStorage.clear();});
 async function open(lesson=0){render(<SVMLesson lesson={lesson}/>);await waitFor(()=>expect(screen.getByRole("group",{name:"Objective understanding and guided practice"})).toBeEnabled());}
 for(let lesson=0;lesson<5;lesson++)it(`teaches all four SV0${lesson+1} objectives and applications`,async()=>{
- await open(lesson);for(let objective=1;objective<=4;objective++)expect(screen.getByRole("heading",{name:new RegExp(`^SV0${lesson+1}.O${objective}:`)})).toBeInTheDocument();
+ await open(lesson);for(let objective=1;objective<=4;objective++)expect(screen.getAllByRole("heading", { name: LESSONS[lesson].objectives[objective - 1] })[0]).toBeInTheDocument();
  expect(screen.getByRole("heading",{name:"Mathematics and symbols"})).toBeInTheDocument();expect(screen.getByRole("heading",{name:"Python application"})).toBeInTheDocument();
 });
 it("restores geometry practice without granting mastery or modifying earlier evidence",async()=>{
