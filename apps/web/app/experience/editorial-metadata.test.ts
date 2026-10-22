@@ -10,13 +10,13 @@ describe('Math and Algorithm editorial metadata',()=>{
  it('names lesson topics without internal lesson codes',()=>{
   const titles=Object.values(pages).map(x=>x.title);expect(new Set(titles).size).toBe(titles.length);
   for(const title of titles){expect(title).not.toMatch(/\b(?:PR|LG|KN|NB|SV|DT|RF|GB|NN|EV|MS|RG)\d{2}\b/);expect(title).toMatch(/\| ML Mastery$/);}
-  expect(editorialMetadata('/supervised/polynomial/pr01').title).toContain('Polynomial Regression');
-  expect(editorialMetadata('/supervised/model-selection/ms03').title).toContain('Model Selection');
+  expect(editorialMetadata('/algorithms/polynomial/pr01').title).toContain('Polynomial Regression');
+  expect(editorialMetadata('/algorithms/model-selection/ms03').title).toContain('Model Selection');
  });
  it('distinguishes transfer practice and legacy evidence scopes',()=>{
   expect(editorialMetadata('/math/integration').description).toContain('not a lesson about calculating integrals');
   expect(editorialMetadata('/math/linear-algebra/assessment').description).not.toBe(editorialMetadata('/math/linear-algebra/mastery').description);
-  expect(editorialMetadata('/supervised/evaluation/ev01').description).toContain('separate');
+  expect(editorialMetadata('/algorithms/evaluation/ev01').description).toContain('separate');
  });
  it('does not invent canonical URLs or guarantees for unknown pages',()=>{
   expect(editorialMetadata('/unknown')).toEqual({});

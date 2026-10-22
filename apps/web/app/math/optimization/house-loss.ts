@@ -1,6 +1,6 @@
 // The house-price loss surface used by the Optimization lesson-1 playground.
 // Same data and the same mean-squared-error loss as the Linear Regression module.
-import { HOUSE_DATA } from "../../learn/linear-regression/lab-data";
+import { HOUSE_DATA } from "../../algorithms/linear-regression/lab-data";
 
 export const AREAS: number[] = HOUSE_DATA.features.map((row) => row[0]);
 export const PRICES: number[] = [...HOUSE_DATA.targets];

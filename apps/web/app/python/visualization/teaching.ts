@@ -1,7 +1,7 @@
 export const CONCEPT_NOTES = [
   [
     "A Figure is the page containing an Axes coordinate system. Each point communicates two measurements. Follow each axis back to its source column before interpreting a slope; code variable names do not become visible units automatically.",
-    "For the area slice, 100×area−2×10+50 predicts130,230,330 in thousands of dollars. Age stays fixed. The line shows this supplied function over ordered area, not sale observations, model validation or an intervention experiment.",
+    "For the area slice, 100×area−2×10+50 predicts130,230,330 in ₹ lakh. Age stays fixed. The line shows this supplied function over ordered area, not sale observations, model validation or an intervention experiment.",
     "Connect a line only when order or continuity is justified. For arbitrary customer IDs use points without invented connecting order. Label series and use both markers and text so the numerical alternative carries the same meaning without color."
   ],
   [

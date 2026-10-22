@@ -1,5 +1,5 @@
 "use client";
-import { CodeLabSection, type CodeLabConfig } from "../../learn/linear-regression/lessons/code-lab-section";
+import { CodeLabSection, type CodeLabConfig } from "../../algorithms/linear-regression/lessons/code-lab-section";
 import type { PythonRuntime } from "../../components/live-python/client";
 import type { CellPreset } from "../../components/live-python/live-python-cell";
 

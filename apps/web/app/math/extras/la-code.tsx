@@ -1,5 +1,5 @@
 "use client";
-import type { CodeLabConfig } from "../../learn/linear-regression/lessons/code-lab-section";
+import type { CodeLabConfig } from "../../algorithms/linear-regression/lessons/code-lab-section";
 import { CHECK_PRELUDE, preset, swap } from "./helpers";
 
 export const FAIL = `except Exception as exc:

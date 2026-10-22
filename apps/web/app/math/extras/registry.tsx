@@ -1,6 +1,6 @@
 "use client";
 import type { ComponentType } from "react";
-import { CodeLabSection, type CodeLabConfig } from "../../learn/linear-regression/lessons/code-lab-section";
+import { CodeLabSection, type CodeLabConfig } from "../../algorithms/linear-regression/lessons/code-lab-section";
 import { LossPlayground } from "../optimization/loss-playground";
 import { OBJECTIVE_CODE } from "../optimization/objectives-python";
 import { GeometryPlayground, RegularizationPlayground, ResponsiblePlayground, StabilityPlayground, UpdatesPlayground } from "./optimization-labs";

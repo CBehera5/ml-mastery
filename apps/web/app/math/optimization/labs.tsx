@@ -1,7 +1,7 @@
 "use client";
 import {useMemo,useState} from "react";
 import {optimizationGrid,optimizationRegressionComparison,optimizationSlice,optimizationState,optimizationTrainingTrace,type ObjectiveKind,type OptimizationEntry,type OptimizationInput} from "@mlmath/runtime";
-import {GradientLab} from "../../learn/linear-regression/labs/gradient-lab";
+import {GradientLab} from "../../algorithms/linear-regression/labs/gradient-lab";
 const show=(value:number|null)=>value===null?"unavailable":Number(value.toFixed(6)).toString();
 const shapes:[ObjectiveKind,string][]=[["quadratic","Round quadratic: (a−3)²+b²"],["anisotropic","Narrow bowl: (a−3)²+k b²"],["coupled","Coupled coordinates: (a+b)²"],["saddle","Saddle: a²−b²"],["double-well","Double well: (a²−1)²+b²"]];
 function Slider({label,value,onChange,min=0,max=1,step=.1}:{label:string;value:number;onChange:(value:number)=>void;min?:number;max?:number;step?:number}) {

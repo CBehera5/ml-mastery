@@ -2,14 +2,14 @@ import {calculusExtensionModule,calculusExtensionLesson,calculusExtensionObjecti
 import {geometryObjectives,geometryLessons,geometryLabs,moduleAssessment,geometryExerciseIds} from "../../math/linear-algebra/geometry-catalog";
 import {linearAlgebraModule,linearAlgebraLessons,linearAlgebraObjectives,linearAlgebraLabs,linearAlgebraAssessment,linearAlgebraExerciseIds} from "../../math/linear-algebra/catalog";
 import {algebraModule,algebraLessons,algebraObjectives,algebraLabs,algebraAssessment,algebraExerciseIds} from "../../math/algebra-functions/catalog";
-import { ASSESSMENT_ID, BLUEPRINT, MASTERY_OBJECTIVES, assessmentQuestions } from "../linear-regression/mastery/assessment";
-import { PROJECT_ID, PROJECT_OBJECTIVES, projectExercises, STAGES } from "../linear-regression/project/project-model";
-import { INSTRUCTIONS, INSTRUCTIONAL_IDS, INSTRUCTIONAL_OUTCOMES, instructionalObjectiveIds, type InstructionalId } from "../linear-regression/lessons/instructional-content";
+import { ASSESSMENT_ID, BLUEPRINT, MASTERY_OBJECTIVES, assessmentQuestions } from "../../algorithms/linear-regression/mastery/assessment";
+import { PROJECT_ID, PROJECT_OBJECTIVES, projectExercises, STAGES } from "../../algorithms/linear-regression/project/project-model";
+import { INSTRUCTIONS, INSTRUCTIONAL_IDS, INSTRUCTIONAL_OUTCOMES, instructionalObjectiveIds, type InstructionalId } from "../../algorithms/linear-regression/lessons/instructional-content";
 import { DERIVATIVE_MODULES } from "../../math/derivatives/curriculum";
-import { regressionLessonStatus, REGRESSION_LESSONS } from "../linear-regression/curriculum";
-import { REGRESSION_KIND_EXERCISE, SIZE_PREDICTION_EXERCISE, SUITABILITY_EXERCISE, WHY_OBJECTIVES } from "../linear-regression/lessons/why-content";
-import { ERRORS_EXERCISES, ERRORS_OBJECTIVES } from "../linear-regression/lessons/errors-content";
-import { IMPLEMENTATION_EXERCISES, IMPLEMENTATION_OBJECTIVES } from "../linear-regression/lessons/implementation-content";
+import { regressionLessonStatus, REGRESSION_LESSONS } from "../../algorithms/linear-regression/curriculum";
+import { REGRESSION_KIND_EXERCISE, SIZE_PREDICTION_EXERCISE, SUITABILITY_EXERCISE, WHY_OBJECTIVES } from "../../algorithms/linear-regression/lessons/why-content";
+import { ERRORS_EXERCISES, ERRORS_OBJECTIVES } from "../../algorithms/linear-regression/lessons/errors-content";
+import { IMPLEMENTATION_EXERCISES, IMPLEMENTATION_OBJECTIVES } from "../../algorithms/linear-regression/lessons/implementation-content";
 import type { CurriculumCatalogV1, CurriculumLesson, ImplementationStatus } from "./curriculum";
 import { probabilityModule, probabilityLessons, probabilityObjectives, probabilityLabs, probabilityExerciseIds, probabilityAssessment } from "../../math/probability/catalog";
 import { statisticsModule, statisticsLessons, statisticsObjectives, statisticsLabs, statisticsExerciseIds, statisticsAssessment } from "../../math/statistics/catalog";
@@ -46,7 +46,7 @@ const regressionLessons: CurriculumLesson[] = REGRESSION_LESSONS.map((lesson) =>
   summary: lesson.summary,
   kind: lesson.type,
   order: lesson.number,
-  route: `/learn/linear-regression/${lesson.id}`,
+  route: `/algorithms/linear-regression/${lesson.id}`,
   estimatedMinutes: Number.parseInt(lesson.duration, 10),
   status: regressionStatus(lesson.id),
   availability: "available",

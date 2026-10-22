@@ -60,7 +60,7 @@ describe("P01 learner experience and isolation", () => {
   it("does not count correct arithmetic with an incorrect critical explanation", async () => {
     await openLesson();
     const region = section(1);
-    fireEvent.click(within(region).getByRole("radio", { name: "250 ($k), numeric prediction" }));
+    fireEvent.click(within(region).getByRole("radio", { name: "250 (₹ lakh), numeric prediction" }));
     fireEvent.click(within(region).getByRole("radio", { name: /A digit in quotes is already numeric/ }));
     fireEvent.click(within(region).getByRole("button", { name: "Check P01.O2" }));
     expect(within(region).getByRole("status")).toHaveTextContent("Not yet");

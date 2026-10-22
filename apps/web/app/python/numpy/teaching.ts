@@ -16,7 +16,7 @@ export const CONCEPT_NOTES = [
   ],
   [
     "X has one observation per row and an ordered feature per column. w stores one coefficient per feature in the same order. b is a scalar baseline. The notation ŷ=Xw+b means one predicted target per observation, not one prediction per feature cell.",
-    "For house [area=2, age=10], coefficients [100,-2] and baseline 50, the contributions are [200,-20] ($k). Their sum is 180; adding the baseline once gives 230 ($k). The next house [1,5] gives 100-10+50=140. The coefficient units are $k per corresponding feature unit; b is in $k.",
+    "For house [area=2, age=10], coefficients [100,-2] and baseline 50, the contributions are [200,-20] (₹ lakh). Their sum is 180; adding the baseline once gives 230 (₹ lakh). The next house [1,5] gives 100-10+50=140. The coefficient units are ₹ lakh per corresponding feature unit; b is in ₹ lakh.",
     "X*w retains each contribution, while X@w contracts the feature axis. Summing (X*w+b) across features adds the baseline twice in this two-feature example. Residual ŷ−y compares prediction and observed target for the same row; a shuffled target or reversed sign is a different calculation. Check loop/array values and shapes rather than grading machine-dependent speed.",
   ],
   [

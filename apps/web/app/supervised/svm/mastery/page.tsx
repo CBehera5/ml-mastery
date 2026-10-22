@@ -1,4 +1,0 @@
-import {editorialMetadata} from "../../../experience/editorial-metadata";
-import { SVMAssessment } from "../learning";
-export const metadata = editorialMetadata("/supervised/svm/mastery");
-export default function Page() { return <SVMAssessment/>; }

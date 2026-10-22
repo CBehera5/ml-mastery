@@ -28,7 +28,7 @@ describe("P01 immutable fixtures and strict finite adapters", () => {
         expect(gradeFamily(definition, response)).toMatchObject({ correct: false });
       }
       const response = acceptedResponse(definition);
-      response.answers[0].answer = { kind: "choice", optionId: "dollars" };
+      response.answers[0].answer = { kind: "choice", optionId: "rupees" };
       expect(gradeFamily(definition, response)).toMatchObject({ correct: false });
     }
   });

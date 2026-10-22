@@ -17,7 +17,7 @@ export function AnswerInput({ atom, answer, change, name }: { atom: Atom; answer
 }
 export const REMEDIATION = [
   { worked: "rooms='3' stores text even though it looks numeric. has_garage=True stores bool, not a room count.", prompt: "A new record stores distance='2.5'. What is its type?", options: ["Text str, not float.", "Always a float because of its decimal point."], answer: 0 },
-  { worked: "3 × 100 + 50 = 350 ($k). Multiply first; area units cancel weight's $k/unit. '3'*3 repeats text as '333'.", prompt: "Why is '3'*3 not a numeric price?", options: ["It is the number 9 in dollars.", "It is repeated text with no numeric price units."], answer: 1 },
+  { worked: "3 × 100 + 50 = 350 (₹ lakh). Multiply first; area units cancel weight's ₹ lakh/unit. '3'*3 repeats text as '333'.", prompt: "Why is '3'*3 not a numeric price?", options: ["It is the number 9 in rupees.", "It is repeated text with no numeric price units."], answer: 1 },
   { worked: "area=2; area=area+1 stores 3. area==2 returns False without changing area.", prompt: "After area=4, does area==5 store 5?", options: ["Yes, == assigns the right-hand value.", "No, it returns False and area remains 4."], answer: 1 },
   { worked: "(float('2')+1)*100 and float('2')*100+100 both give 300. float('unknown') raises ValueError rather than silently producing zero.", prompt: "What does float('unknown') produce?", options: ["A ValueError, not a replacement prediction.", "A numeric zero."], answer: 0 },
 ];
@@ -86,11 +86,11 @@ export function PythonP01() {
       <p><strong>Changed case:</strong> <code>distance = '2.5'</code> is text. It needs a deliberate, valid conversion before numeric prediction. A postcode should usually stay text. Choose conversion based on meaning, not appearance.</p>
     </section>
     <section className={styles.card}><h2>2. Weighted predictions carry units</h2>
-      <p>Suppose area is measured in hundreds of square metres. A simple model assigns a weight of 100 thousand dollars per area unit and a baseline price of 50 thousand dollars.</p>
-      <p><strong>Prediction = area × weight + bias.</strong> Area is the measured feature; weight converts one area unit to price; bias is the baseline. <code>$k</code> means thousands of dollars. This is the same <Link href="/math/algebra-functions/variables">weighted-sum idea from Algebra</Link>, not a new law of house prices.</p>
+      <p>Suppose area is measured in hundreds of square metres. A simple model assigns a weight of 100 ₹ lakh per area unit and a baseline price of 50 ₹ lakh.</p>
+      <p><strong>Prediction = area × weight + bias.</strong> Area is the measured feature; weight converts one area unit to price; bias is the baseline. <code>₹ lakh</code> means ₹ lakh. This is the same <Link href="/math/algebra-functions/variables">weighted-sum idea from Algebra</Link>, not a new law of house prices.</p>
       <pre><code>{"area = 2\nweight = 100\nbias = 50\nprediction = area * weight + bias"}</code></pre>
-      <ol><li>Substitute numeric values: 2 × 100 + 50.</li><li>Multiplication happens before addition: 200 + 50 = 250.</li><li>Area units cancel the weight's per-area unit, leaving 250 ($k), or $250,000.</li></ol>
-      <p><strong>Changed case:</strong> area 4 gives 450 ($k). Doubling the area does not double the full prediction because the bias is added only once.</p>
+      <ol><li>Substitute numeric values: 2 × 100 + 50.</li><li>Multiplication happens before addition: 200 + 50 = 250.</li><li>Area units cancel the weight's per-area unit, leaving 250 (₹ lakh), or $250,000.</li></ol>
+      <p><strong>Changed case:</strong> area 4 gives 450 (₹ lakh). Doubling the area does not double the full prediction because the bias is added only once.</p>
       <p><strong>Misconception:</strong> <code>'2' * 3</code> gives <code>'222'</code>. Repeating text is not numerical multiplication, and it has no numeric price units. Python's valid operation can still be the wrong ML reasoning.</p>
     </section>
     <fieldset disabled={!ready} className={styles.activity}><legend>Interactive learning and saved practice</legend>

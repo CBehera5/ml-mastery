@@ -16,7 +16,7 @@ describe("trusted Python / TypeScript fixture parity", () => {
         expect(definitions[1][variant].code).toContain(`bias = ${item.bias}`);
         const atom = definitions[1][variant].atoms[0];
         if (atom.kind !== "choice") throw Error("Expected choice");
-        expect(atom.options.find(option => option.id === "correct")!.label).toBe(`${item.prediction} ($k), numeric prediction`);
+        expect(atom.options.find(option => option.id === "correct")!.label).toBe(`${item.prediction} (₹ lakh), numeric prediction`);
         expect(definitions[2][variant].accepted[0][0]).toEqual({ kind: "number", value: item.final });
         expect(item.comparison).toBe(false);
         expect(definitions[3][variant].explanation).toContain(String(item.grouped));

@@ -23,7 +23,7 @@ export function descendBowl(a0: number, b0: number, k: number, lr: number, steps
 export const stableLimit = (k: number) => 1 / Math.max(1, k);
 
 /** Ridge on the six-house data, intercept free: w = Sxy / (Sxx + m·λ). */
-import { HOUSE_DATA } from "../../learn/linear-regression/lab-data";
+import { HOUSE_DATA } from "../../algorithms/linear-regression/lab-data";
 const X = HOUSE_DATA.features.map((r) => r[0]), Y = [...HOUSE_DATA.targets];
 const m = X.length, xm = X.reduce((a, c) => a + c, 0) / m, ym = Y.reduce((a, c) => a + c, 0) / m;
 const Sxx = X.reduce((s, x) => s + (x - xm) ** 2, 0), Sxy = X.reduce((s, x, i) => s + (x - xm) * (Y[i] - ym), 0);

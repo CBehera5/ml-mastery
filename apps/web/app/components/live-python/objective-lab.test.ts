@@ -4,7 +4,7 @@ import { loadPyodide } from "pyodide";
 import { regressionTrainingTrace } from "@mlmath/runtime";
 import { PythonEngine } from "./engine";
 import { OBJECTIVE_CHECKS, OBJECTIVE_PRESETS, OBJECTIVE_SOLUTION, OBJECTIVE_STARTER } from "../../math/optimization/objectives-python";
-import { HOUSE_DATA } from "../../learn/linear-regression/lab-data";
+import { HOUSE_DATA } from "../../algorithms/linear-regression/lab-data";
 
 let engine: PythonEngine;
 beforeAll(async () => { engine = new PythonEngine((await loadPyodide()) as unknown as ConstructorParameters<typeof PythonEngine>[0], readFileSync(new URL("./lesson_driver.py", import.meta.url), "utf8")); }, 120_000);

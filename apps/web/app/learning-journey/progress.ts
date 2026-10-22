@@ -27,7 +27,7 @@ export const EVIDENCE_SCOPES = [
   { scope: "math.statistics", version: "statistics.foundations.v1", prefix: "statistics.foundations", title: "Statistics", href: "/math/statistics", mastery: "statistics.foundations.mastery.v1", lessons: ["data", "center", "spread", "distributions", "relationships", "sampling", "ml"] },
   { scope: "math.optimization", version: "optimization.foundations.v1", prefix: "optimization.foundations", title: "Optimization", href: "/math/optimization", mastery: "optimization.foundations.mastery.v1", lessons: ["objectives", "updates", "geometry", "stability", "regularization", "responsible"] },
   { scope: "math.integration", version: "math.integration.v1", prefix: "math.integration", title: "Math integration practice", href: "/math/integration", mastery: "", lessons: [] },
-  { scope: "linear-regression", version: "linear-regression.v1", prefix: "linear-regression", title: "Linear Regression", href: "/learn/linear-regression", mastery: "linear-regression.mastery.objective", lessons: ["why", "equation", "errors", "gradient-descent", "multiple-features", "implementation", "failure-modes", "project", "mastery"] },
+  { scope: "linear-regression", version: "linear-regression.v1", prefix: "linear-regression", title: "Linear Regression", href: "/algorithms/linear-regression", mastery: "linear-regression.mastery.objective", lessons: ["why", "equation", "errors", "gradient-descent", "multiple-features", "implementation", "failure-modes", "project", "mastery"] },
 ] as const;
 export const PYTHON_KEYS = PYTHON_MODULES.map(module => `ml-math-lab:python:${module.id}:v${module.id === "essentials" ? 2 : 1}`);
 export const EXTRA_KEYS = ["ml-math-lab:python:essentials:v1", "ml-math-lab:topic:derivatives:v1", "ml-math-lab:assessment:linear-regression:mastery:v1", "ml-math-lab:project:linear-regression:bridge:v1"];
@@ -118,18 +118,18 @@ export async function readJourneyProgress(storage: ReadPort): Promise<JourneyPro
     return { title: "Derivatives pilot", href: "/math/derivatives", active, mastery: state.mastered ? "Pilot mastery demonstrated; extension is separate" : "Pilot mastery not yet demonstrated", target: active ? { title: "Derivatives", href: "/math/derivatives", stage: "Math Foundations / Calculus", why: "Derivatives explain how a loss changes when a model parameter changes.", detail: "Suggested continuation from the historical pilot. Choose an internal topic; no exact last visit was saved." } : undefined };
   });
   await read(EXTRA_KEYS[2], "Regression assessment draft", async raw => {
-    const model = await import("../learn/linear-regression/mastery/assessment");
+    const model = await import("../algorithms/linear-regression/mastery/assessment");
     const input: unknown = JSON.parse(raw), state = model.parseAssessmentDraft(raw);
     if (!record(input) || input.version !== state.version || input.assessmentVersion !== state.assessmentVersion || input.variant !== state.variant || !["active", "review", "submitted"].includes(String(input.phase)) || (input.phase === "submitted") !== (state.phase === "submitted") || !record(input.responses) || canonical(input.responses) !== canonical(state.responses)) throw Error("Unsupported draft");
     const active = state.phase !== "submitted" && Object.keys(state.responses).length > 0;
-    return { title: "Regression assessment draft", href: "/learn/linear-regression/mastery", active, mastery: "Draft answers do not award mastery", target: active ? { title: "Independent Regression assessment", href: "/learn/linear-regression/mastery", stage: "ML Algorithms / Linear Regression", why: "Check prediction, fitting and evaluation understanding before claiming competence.", detail: "Resume saved answers. Native review and explicit submission remain required." } : undefined };
+    return { title: "Regression assessment draft", href: "/algorithms/linear-regression/mastery", active, mastery: "Draft answers do not award mastery", target: active ? { title: "Independent Regression assessment", href: "/algorithms/linear-regression/mastery", stage: "ML Algorithms / Linear Regression", why: "Check prediction, fitting and evaluation understanding before claiming competence.", detail: "Resume saved answers. Native review and explicit submission remain required." } : undefined };
   });
   await read(EXTRA_KEYS[3], "Regression guided bridge", async raw => {
-    const model = await import("../learn/linear-regression/project/project-model");
+    const model = await import("../algorithms/linear-regression/project/project-model");
     const input: unknown = JSON.parse(raw), state = model.parseProjectSession(raw);
     if (!bounded(input, 262144) || canonical(input) !== canonical(state)) throw Error("Unsupported bridge record");
     const active = state.hasRun || state.inspected.length > 0 || Object.keys(state.answers).length > 0 || canonical(state.config) !== canonical(model.emptySession().config);
-    return { title: "Regression guided bridge", href: "/learn/linear-regression/project", active, mastery: "Guided project activity is not independent mastery", target: active ? { title: "Guided Regression housing bridge", href: "/learn/linear-regression/project", stage: "ML Algorithms / applied Regression practice", why: "Connect preparation, training and held-out metrics in a small fictional workflow.", detail: "This existing bridge is not the planned full Project Studio." } : undefined };
+    return { title: "Regression guided bridge", href: "/algorithms/linear-regression/project", active, mastery: "Guided project activity is not independent mastery", target: active ? { title: "Guided Regression housing bridge", href: "/algorithms/linear-regression/project", stage: "ML Algorithms / applied Regression practice", why: "Connect preparation, training and held-out metrics in a small fictional workflow.", detail: "This existing bridge is not the planned full Project Studio." } : undefined };
   });
   for (const id of LEGACY_LESSONS) await read(`ml-math-lab:lesson:${id}:v1`, id, raw => {
     const flags: unknown = JSON.parse(raw);

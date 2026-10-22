@@ -5,7 +5,7 @@ import pytest
 from mlmath import regression_evaluation_trace, regression_gradient_trace, regression_update_trace, regression_metrics
 
 ROOT = Path(__file__).resolve().parents[2]
-REFERENCE = json.loads((ROOT / "apps/web/app/learn/linear-regression/mastery/math-reference.v1.json").read_text())["variants"]
+REFERENCE = json.loads((ROOT / "apps/web/app/algorithms/linear-regression/mastery/math-reference.v1.json").read_text())["variants"]
 
 @pytest.mark.parametrize("index", range(12))
 def test_mastery_numerical_variant_reference(index):
