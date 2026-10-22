@@ -24,6 +24,8 @@ function submit() {
   expect(screen.getByRole("button", { name: "Submit core assessment" })).toBeDisabled();
   fireEvent.click(screen.getByRole("checkbox")); fireEvent.click(screen.getByRole("button", { name: "Submit core assessment" }));
 }
+/** The new playgrounds add their own live readouts (<dl>); these tests target the original explorers' status paragraphs. */
+const legacyStatus = (scope: { getAllByRole: (role: string) => HTMLElement[] }) => scope.getAllByRole("status").filter(node => node.tagName !== "DL")[0];
 describe("Linear Algebra core UI and persistence", () => {
   it("keeps copying separate from new understanding/mastery and resets only the original lesson", async () => {
     localStorage.setItem("ml-math-lab:lesson:matrices-multiplication:v1", "[true,false,false,false,false]");
@@ -87,7 +89,7 @@ describe("Linear Algebra core UI and persistence", () => {
     const view = render(<CoreLearning lesson="vectors" />); await ready();
     const dot = within(document.getElementById("core-dot")!);
     fireEvent.change(dot.getByRole("slider", { name: "v component 1" }), { target: { value: 0 } });
-    expect(dot.getByRole("status")).toHaveTextContent("Projection onto zero v is undefined");
+    expect(legacyStatus(dot)).toHaveTextContent("Projection onto zero v is undefined");
     fireEvent.change(screen.getByRole("spinbutton", { name: /Calculate vector magnitude/ }), { target: { value: 7 } });
     fireEvent.click(screen.getByRole("button", { name: "Check: Calculate vector magnitude." }));
     expect(screen.getByText(/Reconsider: Use √/)).toBeInTheDocument();
@@ -99,8 +101,8 @@ describe("Linear Algebra core UI and persistence", () => {
   it("restores a critical failure, retries changed questions and persists mastery without deleting history", async () => {
     let view = render(<CoreAssessment />); await ready();
     answerAssessment("v01", true); expect(screen.queryByText(/Worked result:/)).not.toBeInTheDocument(); submit();
-    expect(screen.getByRole("status")).toHaveTextContent("15/16");
-    expect(screen.getByRole("status")).toHaveTextContent("no new mastery");
+    expect(legacyStatus(screen)).toHaveTextContent("15/16");
+    expect(legacyStatus(screen)).toHaveTextContent("no new mastery");
     await waitFor(() => expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).masteryEvidence).toEqual([]));
     view.unmount(); view = render(<CoreAssessment />);
     await waitFor(() => expect(screen.getByRole("heading", { name: "Review before another core attempt" })).toBeInTheDocument());

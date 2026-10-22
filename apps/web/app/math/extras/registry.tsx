@@ -8,6 +8,8 @@ import { FunctionsPlayground, GraphsPlayground, LogarithmsPlayground, PowersPlay
 import { FN_CODE, GR_CODE, LOG_CODE, POW_CODE, TR_CODE, VAR_CODE } from "./algebra-code";
 import { GradientCheckPlayground, RulesPlayground, SecantsPlayground, StepSizePlayground } from "./calc-labs";
 import { DBG_CODE, RULE_CODE, SEC_CODE, STEP_CODE } from "./calc-code";
+import { DotPlayground, EigenPlayground, InversePlayground, MatMulPlayground, MatVecPlayground, SpanPlayground, TransformPlayground, VectorsPlayground } from "./la-labs";
+import { LA_DOT, LA_EG, LA_IN, LA_MM, LA_MV, LA_SP, LA_TR, LA_VEC } from "./la-code";
 import { GEOMETRY_CODE, REG_CODE, RESP_CODE, STABILITY_CODE, UPDATES_CODE } from "./optimization-code";
 
 export type Extra = { Playground?: ComponentType<{ onDone?: () => void }>; code?: CodeLabConfig; moreLabel?: string };
@@ -33,6 +35,16 @@ Object.assign(EXTRAS, {
   "calculus/rules": { Playground: RulesPlayground, code: RULE_CODE, moreLabel: "The rule cards and the worked example" },
   "calculus/lab": { Playground: StepSizePlayground, code: STEP_CODE, moreLabel: "The original three-views lab" },
   "calculus/debug": { Playground: GradientCheckPlayground, code: DBG_CODE, moreLabel: "The original debugging walk-through" },
+});
+Object.assign(EXTRAS, {
+  "linear/vectors": { Playground: VectorsPlayground, code: LA_VEC, moreLabel: "The original vector explorer" },
+  "linear/dot": { Playground: DotPlayground, code: LA_DOT, moreLabel: "The original dot-product explorer" },
+  "linear/matrix-vector": { Playground: MatVecPlayground, code: LA_MV, moreLabel: "The original rectangular batch explorer" },
+  "linear/matrix-matrix": { Playground: MatMulPlayground, code: LA_MM, moreLabel: "The original row-column explorer" },
+  "linear/transform": { Playground: TransformPlayground, code: LA_TR, moreLabel: "The original transformation explorer" },
+  "linear/span": { Playground: SpanPlayground, code: LA_SP, moreLabel: "The original span explorer" },
+  "linear/inverse": { Playground: InversePlayground, code: LA_IN, moreLabel: "The original inverse explorer" },
+  "linear/eigen": { Playground: EigenPlayground, code: LA_EG, moreLabel: "The original eigenvector explorer" },
 });
 export const extraFor = (module: string, slug: string): Extra | undefined => EXTRAS[`${module}/${slug}`];
 export function LessonPlayground({ module, slug, onDone }: { module: string; slug: string; onDone?: () => void }) { const P = extraFor(module, slug)?.Playground; return P ? <P onDone={onDone} /> : null; }

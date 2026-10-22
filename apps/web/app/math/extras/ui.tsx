@@ -51,3 +51,10 @@ export function Chart({ label, xDomain, yDomain, xTicks, yTicks, xLabel, yLabel,
 }
 export const curvePoints = (f: (x: number) => number, x0: number, x1: number, sx: (x: number) => number, sy: (y: number) => number, n = 120) =>
   Array.from({ length: n + 1 }, (_, i) => { const x = x0 + (i / n) * (x1 - x0); return `${sx(x)},${sy(f(x))}`; }).join(" ");
+
+/** Converts a pointer event on a Chart (default 460×290 frame) into data coordinates. */
+export function pointerToData(e: { clientX: number; clientY: number; currentTarget: Element }, xDomain: [number, number], yDomain: [number, number], width = 460, height = 290) {
+  const svg = (e.currentTarget as SVGElement).ownerSVGElement ?? (e.currentTarget as SVGSVGElement), r = svg.getBoundingClientRect();
+  const px = ((e.clientX - r.left) * width) / (r.width || width), py = ((e.clientY - r.top) * height) / (r.height || height);
+  return [xDomain[0] + ((px - 48) / (width - 60)) * (xDomain[1] - xDomain[0]), yDomain[1] - ((py - 12) / (height - 52)) * (yDomain[1] - yDomain[0])] as [number, number];
+}
