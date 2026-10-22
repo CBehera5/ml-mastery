@@ -24,3 +24,10 @@ Starter runs without error and fails checks with hints; solution passes all; eve
 
 ## 5. Wiring
 Pass `before` / `after` to `InstructionalLesson` (see `labs/lab-router.tsx`). For standalone labs, wrap in a fragment.
+
+## 6. Visual rule: every lesson must show, not just tell
+Each lesson needs at least one visual that carries meaning the text cannot, chosen from:
+- **Diagram** (SVG, with a text equivalent): a process or structure, e.g. the data → model → loss → update loop.
+- **Chart driven by the learner's own code**: `FitPlot`, `SignedBars`, `LossCurve`, or a new one in `components/live-python/`.
+- **Interactive playground** (sliders/drag, no code): when a feel for a quantity matters more than the exact numbers, e.g. a draggable loss surface, a learning-rate slider.
+Rules: unscored, reduced-motion safe, keyboard operable, text equivalent, and numbers asserted in tests.
