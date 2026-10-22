@@ -13,6 +13,8 @@ import { CONF_CODE as LG_CONF_CODE, FLOW_CODE, GEO_CODE, LOSS_CODE, SIG_CODE, TH
 import { BoundaryPlayground, ConfidencePlayground as LgConfidencePlayground, LeakPlayground, LossPlayground, SigmoidPlayground, ThresholdPlayground } from "../logistic/playground/lg-labs";
 import { ALIGN_CODE, DEPTH_CODE, GINI_CODE, PART_CODE, RULE_CODE, SPLIT_CODE } from "../decision-trees/playground/dt-code";
 import { AlignPlayground, DepthPlayground, GiniPlayground, PartitionPlayground, RulePlayground, SplitPlayground } from "../decision-trees/playground/dt-labs";
+import { AVG_CODE, BAG_CODE, IMP_CODE, OOB_CODE, VOTE_CODE as RF_VOTE_CODE } from "../random-forests/playground/rf-code";
+import { AveragePlayground, BagPlayground, ImportancePlayground, OobPlayground, VotePlayground } from "../random-forests/playground/rf-labs";
 
 export type AlgoExtra = { Playground?: ComponentType; code?: CodeLabConfig };
 /** One entry per lesson, keyed `module/lessonIndex` (zero-based). A lesson page shows its playground before the formal experiment and its code cell in the Python section. */
@@ -41,6 +43,11 @@ export const ALGO_EXTRAS: Record<string, AlgoExtra> = {
   "decision-trees/3": { Playground: DepthPlayground, code: DEPTH_CODE },
   "decision-trees/4": { Playground: AlignPlayground, code: ALIGN_CODE },
   "decision-trees/5": { Playground: RulePlayground, code: RULE_CODE },
+  "random-forests/0": { Playground: BagPlayground, code: BAG_CODE },
+  "random-forests/1": { Playground: AveragePlayground, code: AVG_CODE },
+  "random-forests/2": { Playground: VotePlayground, code: RF_VOTE_CODE },
+  "random-forests/3": { Playground: OobPlayground, code: OOB_CODE },
+  "random-forests/4": { Playground: ImportancePlayground, code: IMP_CODE },
   "logistic/0": { Playground: SigmoidPlayground, code: SIG_CODE },
   "logistic/1": { Playground: LossPlayground, code: LOSS_CODE },
   "logistic/2": { Playground: ThresholdPlayground, code: THR_CODE },
