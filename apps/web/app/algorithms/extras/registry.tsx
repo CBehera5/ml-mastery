@@ -23,6 +23,8 @@ import { EV1_CODE, EV2_CODE, EV3_CODE, EV4_CODE, EV5_CODE, EV6_CODE } from "../m
 import { CapacityPlayground, ConfusionPlayground, ErrorPlayground, HonestPlayground, MomentPlayground, ProbabilityPlayground } from "../module/playground/ev-labs";
 import { MS1_CODE, MS2_CODE, MS3_CODE, MS4_CODE, MS5_CODE, MS6_CODE } from "../model-selection/playground/ms-code";
 import { CostPlayground, DecidePlayground, FairPlayground, NestedPlayground, ReliancePlayground, SearchPlayground } from "../model-selection/playground/ms-labs";
+import { NN1_CODE, NN2_CODE, NN3_CODE, NN4_CODE, NN5_CODE } from "../mlp/playground/nn-code";
+import { CapacityNnPlayground, DescentPlayground, NeuronPlayground, SafePlayground as NnSafePlayground, WorthPlayground } from "../mlp/playground/nn-labs";
 
 export type AlgoExtra = { Playground?: ComponentType; code?: CodeLabConfig };
 /** One entry per lesson, keyed `module/lessonIndex` (zero-based). A lesson page shows its playground before the formal experiment and its code cell in the Python section. */
@@ -79,6 +81,11 @@ export const ALGO_EXTRAS: Record<string, AlgoExtra> = {
   "model-selection/3": { Playground: CostPlayground, code: MS4_CODE },
   "model-selection/4": { Playground: ReliancePlayground, code: MS5_CODE },
   "model-selection/5": { Playground: DecidePlayground, code: MS6_CODE },
+  "mlp/0": { Playground: NeuronPlayground, code: NN1_CODE },
+  "mlp/1": { Playground: DescentPlayground, code: NN2_CODE },
+  "mlp/2": { Playground: CapacityNnPlayground, code: NN3_CODE },
+  "mlp/3": { Playground: NnSafePlayground, code: NN4_CODE },
+  "mlp/4": { Playground: WorthPlayground, code: NN5_CODE },
   "logistic/0": { Playground: SigmoidPlayground, code: SIG_CODE },
   "logistic/1": { Playground: LossPlayground, code: LOSS_CODE },
   "logistic/2": { Playground: ThresholdPlayground, code: THR_CODE },
