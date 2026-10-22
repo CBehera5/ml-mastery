@@ -24,6 +24,8 @@ function submitModule() {
   expect(screen.getByRole("button", { name: "Submit module assessment" })).toBeDisabled();
   fireEvent.click(screen.getByRole("checkbox")); fireEvent.click(screen.getByRole("button", { name: "Submit module assessment" }));
 }
+/** The new playgrounds add their own live readouts (<dl>); these tests target the original explorers' status paragraphs. */
+const legacyStatus = (scope: { getAllByRole: (role: string) => HTMLElement[] }) => scope.getAllByRole("status").filter(node => node.tagName !== "DL")[0];
 describe("geometry lessons and module assessment v2", () => {
   it.each(["transformations", "eigenvectors"] as GeometryLesson[])("completes %s only after concept exploration and checks; preserves prior state", async lesson => {
     const core = emptyCore(); core.objectives[CORE_MASTERY] = { completed: true, mastered: true, evidenceIds: ["existing-core-pass"], updatedAt: "2026-10-15T12:00:00Z" };
@@ -56,9 +58,9 @@ describe("geometry lessons and module assessment v2", () => {
     expect(span.getAllByRole("status").some(node => node.textContent?.includes("span only a line"))).toBe(true);
     const inverse = within(screen.getByRole("region", { name: GEOMETRY_CONTENT.inverse.title }));
     fireEvent.change(inverse.getByRole("combobox", { name: "Transformation A" }), { target: { value: "near" } });
-    expect(inverse.getByRole("status")).toHaveTextContent("Rank=2"); expect(inverse.getByRole("status")).toHaveTextContent("Mathematically invertible, but near-singular");
+    expect(legacyStatus(inverse)).toHaveTextContent("Rank=2"); expect(legacyStatus(inverse)).toHaveTextContent("Mathematically invertible, but near-singular");
     fireEvent.change(inverse.getByRole("combobox", { name: "Transformation A" }), { target: { value: "collapse" } });
-    expect(inverse.getByRole("status")).toHaveTextContent("Singular: no unique inverse");
+    expect(legacyStatus(inverse)).toHaveTextContent("Singular: no unique inverse");
     fireEvent.change(screen.getByRole("spinbutton", { name: "Geometry answer: Map a vector using matrix columns and row sums." }), { target: { value: 99 } });
     fireEvent.click(screen.getByRole("button", { name: "Check geometry: Map a vector using matrix columns and row sums." }));
     expect(screen.getByText(/Reconsider: The first row/)).toBeInTheDocument();
@@ -67,19 +69,19 @@ describe("geometry lessons and module assessment v2", () => {
   it("explains zero/negative eigenvalues, excludes zero inputs and handles rotations without invented eigenpairs", async () => {
     render(<GeometryLearning lesson="eigenvectors" />); await ready();
     const example = screen.getByRole("combobox", { name: "Eigenvector example" });
-    fireEvent.change(example, { target: { value: "reflection" } }); expect(screen.getByRole("status")).toHaveTextContent("λ=-1");
+    fireEvent.change(example, { target: { value: "reflection" } }); expect(legacyStatus(screen)).toHaveTextContent("λ=-1");
     fireEvent.change(screen.getByRole("slider", { name: "Candidate vector coordinate 1" }), { target: { value: 0 } });
-    expect(screen.getByRole("status")).toHaveTextContent("zero vector is excluded");
+    expect(legacyStatus(screen)).toHaveTextContent("zero vector is excluded");
     fireEvent.change(example, { target: { value: "collapse" } }); fireEvent.change(screen.getByRole("slider", { name: "Candidate vector coordinate 2" }), { target: { value: 1 } });
-    expect(screen.getByRole("status")).toHaveTextContent("eigenvalue zero");
-    fireEvent.change(example, { target: { value: "rotation" } }); expect(screen.getByRole("status")).toHaveTextContent("not an eigenvector");
+    expect(legacyStatus(screen)).toHaveTextContent("eigenvalue zero");
+    fireEvent.change(example, { target: { value: "rotation" } }); expect(legacyStatus(screen)).toHaveTextContent("not an eigenvector");
     expect(within(screen.getByRole("table", { name: "Chosen known eigenpairs, not a general eigensolver" })).getAllByRole("row")).toHaveLength(1);
   });
   it("restores a 31/32 critical failure, retries v2 coverage and persists expanded mastery separately", async () => {
     localStorage.setItem(CORE_KEY, "existing core mastery bytes"); localStorage.setItem(CORE_DRAFT_KEY, "existing core draft bytes");
     let view = render(<ModuleAssessment />); await ready();
     enterModuleAnswers("v01", true); expect(screen.queryByText(/Worked result:/)).not.toBeInTheDocument(); submitModule();
-    expect(screen.getByRole("status")).toHaveTextContent("31/32"); expect(screen.getByRole("status")).toHaveTextContent("no new mastery");
+    expect(legacyStatus(screen)).toHaveTextContent("31/32"); expect(legacyStatus(screen)).toHaveTextContent("no new mastery");
     await waitFor(() => expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).masteryEvidence).toEqual([]));
     expect(screen.getByRole("link", { name: `Review ${GEOMETRY_CONTENT.transform.title} →` })).toHaveAttribute("href", "/math/linear-algebra/transformations#geometry-transform");
     view.unmount(); view = render(<ModuleAssessment />);

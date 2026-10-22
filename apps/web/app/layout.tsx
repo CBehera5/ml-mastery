@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Neural Network X-Ray | ML Math Lab",
-  description: "See every number inside a linear neuron—from forward pass to gradient update.",
+  title: { default: "ML Mastery", template: "%s | ML Mastery" },
+  description: "Learn the mathematics and Python behind machine learning, with every number inspectable.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {

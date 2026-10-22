@@ -1,11 +1,27 @@
+"use client";
+import {useId,useState} from "react";
 import content from "./book-content.json";
 import styles from "./book-lesson.module.css";
 type Reading = {title:string;pages:string;story:string;predict:string;headers:string[];rows:string[][];relationship:string;ml:string;caution:string;figure:string;alt:string;module:string;width:number;height:number};
 const readings: Record<string,Reading> = content.lessons;
 const books: Record<string,string> = content.books;
+/** Story, then a prediction the learner commits to before the explorer. Unscored: it never touches progress or mastery. */
 export function BookOpening({module,lesson}:{module:string;lesson:string}) {
- const reading=readings[`${module}/${lesson}`]; if(!reading)return null;
- return <section className={styles.opening} aria-label="The book’s question"><h3>{reading.title}</h3><p>{reading.story}</p><aside className={styles.predict}><strong>Pause and predict</strong><p>{reading.predict}</p></aside><p>Use the playground’s displayed inputs when testing this idea.</p></section>;
+ const reading=readings[`${module}/${lesson}`];
+ const [guess,setGuess]=useState(""),[locked,setLocked]=useState<string|null>(null);
+ const id=useId();
+ if(!reading)return null;
+ return <section className={styles.opening} aria-label="The book’s question"><h3>{reading.title}</h3><p>{reading.story}</p>
+  <div className={styles.predict}><strong>Pause and predict</strong><p id={`${id}-q`}>{reading.predict}</p>
+   {locked===null?<>
+    <label className={styles.guessLabel} htmlFor={`${id}-guess`}>Your guess, in a few words</label>
+    <textarea id={`${id}-guess`} className={styles.guess} rows={2} maxLength={280} value={guess} onChange={event=>setGuess(event.target.value)} aria-describedby={`${id}-q`}/>
+    <div className={styles.predictActions}>
+     <button type="button" className={styles.lock} disabled={guess.trim()===""} onClick={()=>setLocked(guess.trim())}>Lock in my guess</button>
+     <button type="button" className={styles.skip} onClick={()=>setLocked("")}>I’m not sure. Let me explore</button>
+    </div></>
+   :<p role="status" className={styles.locked}>{locked===""?"No guess yet, and that is fine. Explore below, then decide what you think.":<>Your guess: <q>{locked}</q> Now test it in the explorer below, then come back and see if you would change it.</>}</p>}
+  </div></section>;
 }
 export function BookExplanation({module,lesson}:{module:string;lesson:string}) {
  const reading=readings[`${module}/${lesson}`]; if(!reading)return null;

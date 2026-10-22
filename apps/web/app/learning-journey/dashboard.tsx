@@ -69,7 +69,7 @@ export function LearningJourney() {
           </fieldset>
           {experience === "guided" && <p>Begin with <Link href="/math/algebra-functions/variables">variables, equations and units</Link>, or <Link href="/python/essentials/p01/module">Python values and names</Link>. Full explanations and practice remain available.</p>}
           {experience === "refresher" && <div><p>Revisit existing explanations and worked examples. No condensed replacement course or automatic credit.</p><ul><li><Link href="/math/algebra-functions/functions">Functions and outputs</Link></li><li><Link href="/math/derivatives">Derivatives and gradients</Link></li><li><Link href="/python/numpy/n05">Matrix multiplication in NumPy</Link></li><li><Link href="/python/preparation/t05">Leakage and fold-local preparation</Link></li></ul></div>}
-          {experience === "challenge" && <div><p>Choose an existing independent assessment. Its full threshold, critical gates, retries and confirmation still apply. This is not a universal placement test.</p><ul>{PYTHON_MODULES.map(module => <li key={module.id}><Link href={`/python/${module.id}/mastery`}>{module.title} assessment</Link></li>)}<li><Link href="/learn/linear-regression/mastery">Linear Regression assessment</Link></li></ul></div>}
+          {experience === "challenge" && <div><p>Choose an existing independent assessment. Its full threshold, critical gates, retries and confirmation still apply. This is not a universal placement test.</p><ul>{PYTHON_MODULES.map(module => <li key={module.id}><Link href={`/python/${module.id}/mastery`}>{module.title} assessment</Link></li>)}<li><Link href="/algorithms/linear-regression/mastery">Linear Regression assessment</Link></li></ul></div>}
           <p className={styles.hint}>Optional, reversible choices for this visit only. No ability profile is saved and no route is locked.</p>
         </details>
       </section>
@@ -89,7 +89,7 @@ export function LearningJourney() {
           <ul>{stage.links.map(link => <li key={link.href}><Link href={link.href}>{link.title}</Link></li>)}</ul>
           <p>Available means implemented, not already mastered or fully accessibility-verified.</p>
         </div>
-        <p className={styles.hint}>Project Studio — Coming Soon. You can already try the <Link href="/learn/linear-regression/project">limited guided Regression housing bridge</Link>; it is not a production capstone. The listed algorithm modules are available; additional future topics remain outside this curriculum.</p>
+        <p className={styles.hint}>Project Studio — Coming Soon. You can already try the <Link href="/algorithms/linear-regression/project">limited guided Regression housing bridge</Link>; it is not a production capstone. The listed algorithm modules are available; additional future topics remain outside this curriculum.</p>
       </section>
       <section className={styles.connections} aria-labelledby="connections-title">
         <h2 id="connections-title">See how the ideas connect</h2>

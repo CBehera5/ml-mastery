@@ -16,8 +16,8 @@ export const CONCEPT_NOTES = [
   ],
   [
     "Scaling is a coordinate transformation learned from training observations. In z=(x−μ_train)/σ_train, x is a measured feature, μ_train is the saved training mean and σ_train the saved population standard deviation. z is unitless; its inverse returns the original units.",
-    "For training1,3, the mean is2 and population variance is((1−2)²+(3−2)²)/2=1. Thus training coordinates are−1,1 and held-out5 maps to3. Dividing by n−1 gives sample variance2, not this StandardScaler contract. A held-out extreme must not move the training coordinate system.",
-    "The pinned scaler gives a constant training feature4,4 scale1 and variance0: both train values map to0, while a new5 maps to1. This is deliberately different from an existing Math runtime that guards undefined standardization; neither old semantics nor the library fixture should be rewritten to hide the distinction. Better conditioning or equal ranges alone cannot demonstrate better generalization."
+    "For training1,3, the mean is2 and population variance is((1−2)²+(3−2)²)/2=1. Thus training coordinates are−1,1 and held-out 5 maps to 3. Dividing by n−1 gives sample variance2, not this StandardScaler contract. A held-out extreme must not move the training coordinate system.",
+    "The pinned scaler gives a constant training feature4,4 scale1 and variance0: both train values map to 0, while a new5 maps to 1. This is deliberately different from an existing Math runtime that guards undefined standardization; neither old semantics nor the library fixture should be rewritten to hide the distinction. Better conditioning or equal ranges alone cannot demonstrate better generalization."
   ],
   [
     "A fold is a temporary training/validation partition of development observations. Its validation rows stand in for unseen data during a comparison. Before learning any imputation, scale or vocabulary, identify exactly which IDs are permitted to fit in that fold. Repeated-fold APIs belong to the later scikit-learn curriculum; this lesson traces the local boundary first.",
@@ -26,7 +26,7 @@ export const CONCEPT_NOTES = [
   ],
   [
     "An outlier is an unusual observation, not proof of error. It may be a valid rare house, a recording error or a population the model must serve. Preserving, investigating, capping and deleting answer different questions and can change population coverage; none is automatic cleaning.",
-    "A supplied training-only cap50 years maps a held-out80 to50 under that declared policy, while preservation retains80. Choosing the cap because it improves the final-test score leaks the test into selection. Explain the trade-off and selection provenance, rather than inventing a universally correct cap.",
+    "A supplied training-only cap50 years maps a held-out 80 to 50 under that declared policy, while preservation retains80. Choosing the cap because it improves the final-test score leaks the test into selection. Explain the trade-off and selection provenance, rather than inventing a universally correct cap.",
     "A reproducible preparation report records the source/version/hash, retained and split IDs, units, exact environment, seed where used, fitted parameters, branch/vocabulary/column order and limitations. Reordering input data can change a seeded split. A same-width but reordered feature table is not automatically compatible: reject unsupported schema changes and require an explicit reviewed mapping."
   ]
 ] as const;

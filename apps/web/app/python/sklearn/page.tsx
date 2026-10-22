@@ -1,3 +1,3 @@
 import { SklearnOverview } from "./learning";
-export const metadata = { title: "Sklearn for Machine Learning | ML Math Lab" };
+export const metadata = { title: "Sklearn for Machine Learning" };
 export default function Page() { return <SklearnOverview/>; }

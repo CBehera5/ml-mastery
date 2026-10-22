@@ -18,8 +18,8 @@ function fill(incorrectKey?:string) {
 }
 describe("Optimization learning and acceptance boundaries",()=>{
   it("offers six independently accessible lessons without completion-based mastery",async()=>{
-    render(<OptimizationOverview/>);await screen.findByText(/Independent mastery not yet earned/);
-    expect(screen.getByText(/24 deterministic items/)).toHaveTextContent("20 correct");
+    render(<OptimizationOverview/>);await screen.findByText(/Mastery isn’t earned yet/);
+    expect(screen.getByText(/24 questions/)).toHaveTextContent("20 right");
     expect(screen.getAllByRole("link",{name:/Explore losses, objectives and gradients/})).toHaveLength(1);
   });
   it("records practice independently, persists it and never overwrites Statistics",async()=>{
@@ -31,7 +31,7 @@ describe("Optimization learning and acceptance boundaries",()=>{
     await waitFor(()=>expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).objectives["optimization.foundations.loss-units"].completed).toBe(true));
     expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).masteryEvidence).toHaveLength(0);
     expect(localStorage.getItem("ml-math-lab:evidence:math.statistics:v1")).toBe("preserve");
-    view.unmount();render(<OptimizationLesson slug="objectives"/>);await screen.findByText("Check your understanding — evidence recorded");
+    view.unmount();render(<OptimizationLesson slug="objectives"/>);await screen.findByText("Check your understanding — done");
   });
   it("rejects a convergence misconception at 23/24 and requires explicit review consent",async()=>{
     render(<OptimizationAssessment/>);await screen.findByRole("button",{name:"Review all answers"});

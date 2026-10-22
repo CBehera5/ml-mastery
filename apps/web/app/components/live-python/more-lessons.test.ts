@@ -3,8 +3,8 @@ import { readFileSync } from "node:fs";
 import { loadPyodide } from "pyodide";
 import { regressionEvaluationTrace } from "@mlmath/runtime";
 import { PythonEngine } from "./engine";
-import * as C from "../../learn/linear-regression/lessons/more-python-content";
-import { HOUSE_DATA, MULTI_FEATURE_DATA, MULTI_PARAMETERS, MULTI_TARGETS, HOUSE_PARAMETERS } from "../../learn/linear-regression/lab-data";
+import * as C from "../../algorithms/linear-regression/lessons/more-python-content";
+import { HOUSE_DATA, MULTI_FEATURE_DATA, MULTI_PARAMETERS, MULTI_TARGETS, HOUSE_PARAMETERS } from "../../algorithms/linear-regression/lab-data";
 
 let engine: PythonEngine;
 beforeAll(async () => { engine = new PythonEngine((await loadPyodide()) as unknown as ConstructorParameters<typeof PythonEngine>[0], readFileSync(new URL("./lesson_driver.py", import.meta.url), "utf8")); }, 120_000);

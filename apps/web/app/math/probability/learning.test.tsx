@@ -19,7 +19,7 @@ describe("Probability learning experience",()=>{
   it("opens six independent lessons without implying mastery",async()=>{
     render(<ProbabilityOverview/>);
     expect(screen.getByRole("heading",{name:"Probability for machine learning"})).toBeInTheDocument();
-    await screen.findByText(/Independent mastery not yet earned/);
+    await screen.findByText(/Mastery isn’t earned yet/);
     expect(screen.getAllByRole("link",{name:/Explore understanding probability/})).toHaveLength(1);
   });
   it("records a practice objective but not mastery and retains other module keys",async()=>{
@@ -34,7 +34,7 @@ describe("Probability learning experience",()=>{
     expect(screen.getByRole("button",{name:"Record experiment reflection"})).toBeDisabled();
     fireEvent.click(screen.getByRole("button",{name:"Independent population"}));
     fireEvent.click(screen.getByRole("button",{name:"Record experiment reflection"}));
-    await screen.findByText(/Experiment recorded/);
+    await screen.findByText(/Saved\. Answer the four checks/);
   });
   it("requires review and explicit confirmation; records failed attempts and alternate retry",async()=>{
     render(<ProbabilityAssessment/>);

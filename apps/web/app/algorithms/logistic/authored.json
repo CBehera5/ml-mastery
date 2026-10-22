@@ -1,0 +1,5345 @@
+{
+  "content": "supervised.logistic.1.0.0",
+  "families": [
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0.25
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A linear score becomes probability through sigmoid; odds=exp(score). Do not treat probability as a class label.",
+      "id": "LG01.O1.practice.A",
+      "objective": "LG01.O1",
+      "prompt": "A churn training example: intercept0, weight1, x=ln(0.3333333333333333). Calculate p(churn)=sigmoid(x), not a hard label.",
+      "remediation": "Recall LG01.O1, the worked contrast and the prediction/evaluation boundary. A linear score becomes probability through sigmoid; odds=exp(score). Do not treat probability as a class label."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0.5
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A linear score becomes probability through sigmoid; odds=exp(score). Do not treat probability as a class label.",
+      "id": "LG01.O1.practice.B",
+      "objective": "LG01.O1",
+      "prompt": "A changed development cohort: intercept0, weight1, x=ln(1.0). Calculate p(churn)=sigmoid(x), not a hard label.",
+      "remediation": "Recall LG01.O1, the worked contrast and the prediction/evaluation boundary. A linear score becomes probability through sigmoid; odds=exp(score). Do not treat probability as a class label."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0.75
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A linear score becomes probability through sigmoid; odds=exp(score). Do not treat probability as a class label.",
+      "id": "LG01.O1.assessment.A",
+      "objective": "LG01.O1",
+      "prompt": "An unseen-customer example: intercept0, weight1, x=ln(3.0). Calculate p(churn)=sigmoid(x), not a hard label.",
+      "remediation": "Recall LG01.O1, the worked contrast and the prediction/evaluation boundary. A linear score becomes probability through sigmoid; odds=exp(score). Do not treat probability as a class label."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0.9
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A linear score becomes probability through sigmoid; odds=exp(score). Do not treat probability as a class label.",
+      "id": "LG01.O1.assessment.B",
+      "objective": "LG01.O1",
+      "prompt": "A changed cost scenario: intercept0, weight1, x=ln(9.000000000000002). Calculate p(churn)=sigmoid(x), not a hard label.",
+      "remediation": "Recall LG01.O1, the worked contrast and the prediction/evaluation boundary. A linear score becomes probability through sigmoid; odds=exp(score). Do not treat probability as a class label."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0.1
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A linear score becomes probability through sigmoid; odds=exp(score). Do not treat probability as a class label.",
+      "id": "LG01.O1.assessment.C",
+      "objective": "LG01.O1",
+      "prompt": "A new deployment cohort: intercept0, weight1, x=ln(0.11111111111111112). Calculate p(churn)=sigmoid(x), not a hard label.",
+      "remediation": "Recall LG01.O1, the worked contrast and the prediction/evaluation boundary. A linear score becomes probability through sigmoid; odds=exp(score). Do not treat probability as a class label."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Fit parameters on training labels, predict saved-model probabilities, then apply a chosen threshold"
+            },
+            {
+              "id": "wrong0",
+              "label": "Moving a threshold refits model coefficients"
+            },
+            {
+              "id": "wrong1",
+              "label": "Predicting on a new row must fit its outcome label"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Thresholding a saved probability changes the action, not model parameters or the probability; fitting needs permitted training data."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Thresholding a saved probability changes the action, not model parameters or the probability; fitting needs permitted training data.",
+      "id": "LG01.O2.practice.A",
+      "objective": "LG01.O2",
+      "prompt": "A churn training example: which sequence correctly distinguishes learning and decisions?",
+      "remediation": "Recall LG01.O2, the worked contrast and the prediction/evaluation boundary. Thresholding a saved probability changes the action, not model parameters or the probability; fitting needs permitted training data."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Moving a threshold refits model coefficients"
+            },
+            {
+              "id": "wrong1",
+              "label": "Predicting on a new row must fit its outcome label"
+            },
+            {
+              "id": "supported",
+              "label": "Fit parameters on training labels, predict saved-model probabilities, then apply a chosen threshold"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            },
+            {
+              "id": "mechanism",
+              "label": "Thresholding a saved probability changes the action, not model parameters or the probability; fitting needs permitted training data."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Thresholding a saved probability changes the action, not model parameters or the probability; fitting needs permitted training data.",
+      "id": "LG01.O2.practice.B",
+      "objective": "LG01.O2",
+      "prompt": "A changed development cohort: which sequence correctly distinguishes learning and decisions?",
+      "remediation": "Recall LG01.O2, the worked contrast and the prediction/evaluation boundary. Thresholding a saved probability changes the action, not model parameters or the probability; fitting needs permitted training data."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Predicting on a new row must fit its outcome label"
+            },
+            {
+              "id": "supported",
+              "label": "Fit parameters on training labels, predict saved-model probabilities, then apply a chosen threshold"
+            },
+            {
+              "id": "wrong0",
+              "label": "Moving a threshold refits model coefficients"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Thresholding a saved probability changes the action, not model parameters or the probability; fitting needs permitted training data."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Thresholding a saved probability changes the action, not model parameters or the probability; fitting needs permitted training data.",
+      "id": "LG01.O2.assessment.A",
+      "objective": "LG01.O2",
+      "prompt": "An unseen-customer example: which sequence correctly distinguishes learning and decisions?",
+      "remediation": "Recall LG01.O2, the worked contrast and the prediction/evaluation boundary. Thresholding a saved probability changes the action, not model parameters or the probability; fitting needs permitted training data."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Fit parameters on training labels, predict saved-model probabilities, then apply a chosen threshold"
+            },
+            {
+              "id": "wrong0",
+              "label": "Moving a threshold refits model coefficients"
+            },
+            {
+              "id": "wrong1",
+              "label": "Predicting on a new row must fit its outcome label"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            },
+            {
+              "id": "mechanism",
+              "label": "Thresholding a saved probability changes the action, not model parameters or the probability; fitting needs permitted training data."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Thresholding a saved probability changes the action, not model parameters or the probability; fitting needs permitted training data.",
+      "id": "LG01.O2.assessment.B",
+      "objective": "LG01.O2",
+      "prompt": "A changed cost scenario: which sequence correctly distinguishes learning and decisions?",
+      "remediation": "Recall LG01.O2, the worked contrast and the prediction/evaluation boundary. Thresholding a saved probability changes the action, not model parameters or the probability; fitting needs permitted training data."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Moving a threshold refits model coefficients"
+            },
+            {
+              "id": "wrong1",
+              "label": "Predicting on a new row must fit its outcome label"
+            },
+            {
+              "id": "supported",
+              "label": "Fit parameters on training labels, predict saved-model probabilities, then apply a chosen threshold"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Thresholding a saved probability changes the action, not model parameters or the probability; fitting needs permitted training data."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Thresholding a saved probability changes the action, not model parameters or the probability; fitting needs permitted training data.",
+      "id": "LG01.O2.assessment.C",
+      "objective": "LG01.O2",
+      "prompt": "A new deployment cohort: which sequence correctly distinguishes learning and decisions?",
+      "remediation": "Recall LG01.O2, the worked contrast and the prediction/evaluation boundary. Thresholding a saved probability changes the action, not model parameters or the probability; fitting needs permitted training data."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "The probability must increase by one percentage point"
+            },
+            {
+              "id": "wrong1",
+              "label": "The coefficient is the causal effect of intervention"
+            },
+            {
+              "id": "supported",
+              "label": "A one-unit feature change adds1 to log-odds, not1 to probability"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect.",
+      "id": "LG01.O3.practice.A",
+      "objective": "LG01.O3",
+      "prompt": "A churn training example: a feature has coefficient1. Change its value from 1 to 2, holding other features fixed. What changes?",
+      "remediation": "Recall LG01.O3, the worked contrast and the prediction/evaluation boundary. The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "The coefficient is the causal effect of intervention"
+            },
+            {
+              "id": "supported",
+              "label": "A one-unit feature change adds1 to log-odds, not1 to probability"
+            },
+            {
+              "id": "wrong0",
+              "label": "The probability must increase by one percentage point"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect.",
+      "id": "LG01.O3.practice.B",
+      "objective": "LG01.O3",
+      "prompt": "A changed development cohort: a feature has coefficient1. Change its value from 2 to 3, holding other features fixed. What changes?",
+      "remediation": "Recall LG01.O3, the worked contrast and the prediction/evaluation boundary. The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "A one-unit feature change adds1 to log-odds, not1 to probability"
+            },
+            {
+              "id": "wrong0",
+              "label": "The probability must increase by one percentage point"
+            },
+            {
+              "id": "wrong1",
+              "label": "The coefficient is the causal effect of intervention"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect.",
+      "id": "LG01.O3.assessment.A",
+      "objective": "LG01.O3",
+      "prompt": "An unseen-customer example: a feature has coefficient1. Change its value from 3 to 4, holding other features fixed. What changes?",
+      "remediation": "Recall LG01.O3, the worked contrast and the prediction/evaluation boundary. The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "The probability must increase by one percentage point"
+            },
+            {
+              "id": "wrong1",
+              "label": "The coefficient is the causal effect of intervention"
+            },
+            {
+              "id": "supported",
+              "label": "A one-unit feature change adds1 to log-odds, not1 to probability"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect.",
+      "id": "LG01.O3.assessment.B",
+      "objective": "LG01.O3",
+      "prompt": "A changed cost scenario: a feature has coefficient1. Change its value from 4 to 5, holding other features fixed. What changes?",
+      "remediation": "Recall LG01.O3, the worked contrast and the prediction/evaluation boundary. The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "The coefficient is the causal effect of intervention"
+            },
+            {
+              "id": "supported",
+              "label": "A one-unit feature change adds1 to log-odds, not1 to probability"
+            },
+            {
+              "id": "wrong0",
+              "label": "The probability must increase by one percentage point"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect.",
+      "id": "LG01.O3.assessment.C",
+      "objective": "LG01.O3",
+      "prompt": "A new deployment cohort: a feature has coefficient1. Change its value from 5 to 6, holding other features fixed. What changes?",
+      "remediation": "Recall LG01.O3, the worked contrast and the prediction/evaluation boundary. The conditional odds multiply by exp(1); probability change depends on the starting logit and is not a causal effect."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Two class columns would incorrectly create two observations per row"
+            },
+            {
+              "id": "supported",
+              "label": "The class axis is missing: require shape(n,2), then select the positive column by class identity"
+            },
+            {
+              "id": "wrong0",
+              "label": "Treat shape(n,) as the complete two-class probability matrix"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Raw binary probabilities have shape(n,2). A selected positive-column vector or hard-label vector can have shape(n,), but is not the full predict_proba matrix.",
+      "id": "LG01.O4.practice.A",
+      "objective": "LG01.O4",
+      "prompt": "A churn training example: Raw binary predict_proba for1 rows is reported with shape(1,), before selecting a class column. What is wrong?",
+      "remediation": "Recall LG01.O4, the worked contrast and the prediction/evaluation boundary. Raw binary probabilities have shape(n,2). A selected positive-column vector or hard-label vector can have shape(n,), but is not the full predict_proba matrix."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "The class axis is missing: require shape(n,2), then select the positive column by class identity"
+            },
+            {
+              "id": "wrong0",
+              "label": "Treat shape(n,) as the complete two-class probability matrix"
+            },
+            {
+              "id": "wrong1",
+              "label": "Two class columns would incorrectly create two observations per row"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Raw binary probabilities have shape(n,2). A selected positive-column vector or hard-label vector can have shape(n,), but is not the full predict_proba matrix.",
+      "id": "LG01.O4.practice.B",
+      "objective": "LG01.O4",
+      "prompt": "A changed development cohort: Raw binary predict_proba for2 rows is reported with shape(2,), before selecting a class column. What is wrong?",
+      "remediation": "Recall LG01.O4, the worked contrast and the prediction/evaluation boundary. Raw binary probabilities have shape(n,2). A selected positive-column vector or hard-label vector can have shape(n,), but is not the full predict_proba matrix."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Treat shape(n,) as the complete two-class probability matrix"
+            },
+            {
+              "id": "wrong1",
+              "label": "Two class columns would incorrectly create two observations per row"
+            },
+            {
+              "id": "supported",
+              "label": "The class axis is missing: require shape(n,2), then select the positive column by class identity"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Raw binary probabilities have shape(n,2). A selected positive-column vector or hard-label vector can have shape(n,), but is not the full predict_proba matrix.",
+      "id": "LG01.O4.assessment.A",
+      "objective": "LG01.O4",
+      "prompt": "An unseen-customer example: Raw binary predict_proba for3 rows is reported with shape(3,), before selecting a class column. What is wrong?",
+      "remediation": "Recall LG01.O4, the worked contrast and the prediction/evaluation boundary. Raw binary probabilities have shape(n,2). A selected positive-column vector or hard-label vector can have shape(n,), but is not the full predict_proba matrix."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Two class columns would incorrectly create two observations per row"
+            },
+            {
+              "id": "supported",
+              "label": "The class axis is missing: require shape(n,2), then select the positive column by class identity"
+            },
+            {
+              "id": "wrong0",
+              "label": "Treat shape(n,) as the complete two-class probability matrix"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Raw binary probabilities have shape(n,2). A selected positive-column vector or hard-label vector can have shape(n,), but is not the full predict_proba matrix.",
+      "id": "LG01.O4.assessment.B",
+      "objective": "LG01.O4",
+      "prompt": "A changed cost scenario: Raw binary predict_proba for4 rows is reported with shape(4,), before selecting a class column. What is wrong?",
+      "remediation": "Recall LG01.O4, the worked contrast and the prediction/evaluation boundary. Raw binary probabilities have shape(n,2). A selected positive-column vector or hard-label vector can have shape(n,), but is not the full predict_proba matrix."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "The class axis is missing: require shape(n,2), then select the positive column by class identity"
+            },
+            {
+              "id": "wrong0",
+              "label": "Treat shape(n,) as the complete two-class probability matrix"
+            },
+            {
+              "id": "wrong1",
+              "label": "Two class columns would incorrectly create two observations per row"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Raw binary probabilities have shape(n,2). A selected positive-column vector or hard-label vector can have shape(n,), but is not the full predict_proba matrix.",
+      "id": "LG01.O4.assessment.C",
+      "objective": "LG01.O4",
+      "prompt": "A new deployment cohort: Raw binary predict_proba for5 rows is reported with shape(5,), before selecting a class column. What is wrong?",
+      "remediation": "Recall LG01.O4, the worked contrast and the prediction/evaluation boundary. Raw binary probabilities have shape(n,2). A selected positive-column vector or hard-label vector can have shape(n,), but is not the full predict_proba matrix."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 1.3862943611198906
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Loss is minus the natural logarithm of the probability assigned to the observed class, not the thresholded label.",
+      "id": "LG02.O1.practice.A",
+      "objective": "LG02.O1",
+      "prompt": "A churn training example: Observed y=1, p=0.25. Calculate natural-log loss for this row.",
+      "remediation": "Recall LG02.O1, the worked contrast and the prediction/evaluation boundary. Loss is minus the natural logarithm of the probability assigned to the observed class, not the thresholded label."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0.6931471805599453
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Loss is minus the natural logarithm of the probability assigned to the observed class, not the thresholded label.",
+      "id": "LG02.O1.practice.B",
+      "objective": "LG02.O1",
+      "prompt": "A changed development cohort: Observed y=1, p=0.5. Calculate natural-log loss for this row.",
+      "remediation": "Recall LG02.O1, the worked contrast and the prediction/evaluation boundary. Loss is minus the natural logarithm of the probability assigned to the observed class, not the thresholded label."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0.2876820724517809
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Loss is minus the natural logarithm of the probability assigned to the observed class, not the thresholded label.",
+      "id": "LG02.O1.assessment.A",
+      "objective": "LG02.O1",
+      "prompt": "An unseen-customer example: Observed y=1, p=0.75. Calculate natural-log loss for this row.",
+      "remediation": "Recall LG02.O1, the worked contrast and the prediction/evaluation boundary. Loss is minus the natural logarithm of the probability assigned to the observed class, not the thresholded label."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0.10536051565782628
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Loss is minus the natural logarithm of the probability assigned to the observed class, not the thresholded label.",
+      "id": "LG02.O1.assessment.B",
+      "objective": "LG02.O1",
+      "prompt": "A changed cost scenario: Observed y=1, p=0.9. Calculate natural-log loss for this row.",
+      "remediation": "Recall LG02.O1, the worked contrast and the prediction/evaluation boundary. Loss is minus the natural logarithm of the probability assigned to the observed class, not the thresholded label."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 2.3025850929940455
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Loss is minus the natural logarithm of the probability assigned to the observed class, not the thresholded label.",
+      "id": "LG02.O1.assessment.C",
+      "objective": "LG02.O1",
+      "prompt": "A new deployment cohort: Observed y=1, p=0.1. Calculate natural-log loss for this row.",
+      "remediation": "Recall LG02.O1, the worked contrast and the prediction/evaluation boundary. Loss is minus the natural logarithm of the probability assigned to the observed class, not the thresholded label."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Final-test labels may update parameters if accuracy improves"
+            },
+            {
+              "id": "wrong1",
+              "label": "Use validation/test labels in the gradient because probability is not a label"
+            },
+            {
+              "id": "supported",
+              "label": "Training labels only; held-out labels evaluate and final-test labels must not fit or select"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Log loss depends on the observed label and supplies the training signal; held-out labels must not influence parameter updates or selection."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Log loss depends on the observed label and supplies the training signal; held-out labels must not influence parameter updates or selection.",
+      "id": "LG02.O2.practice.A",
+      "objective": "LG02.O2",
+      "prompt": "A churn training example: which labels may influence a model-fitting log-loss gradient?",
+      "remediation": "Recall LG02.O2, the worked contrast and the prediction/evaluation boundary. Log loss depends on the observed label and supplies the training signal; held-out labels must not influence parameter updates or selection."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Use validation/test labels in the gradient because probability is not a label"
+            },
+            {
+              "id": "supported",
+              "label": "Training labels only; held-out labels evaluate and final-test labels must not fit or select"
+            },
+            {
+              "id": "wrong0",
+              "label": "Final-test labels may update parameters if accuracy improves"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            },
+            {
+              "id": "mechanism",
+              "label": "Log loss depends on the observed label and supplies the training signal; held-out labels must not influence parameter updates or selection."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Log loss depends on the observed label and supplies the training signal; held-out labels must not influence parameter updates or selection.",
+      "id": "LG02.O2.practice.B",
+      "objective": "LG02.O2",
+      "prompt": "A changed development cohort: which labels may influence a model-fitting log-loss gradient?",
+      "remediation": "Recall LG02.O2, the worked contrast and the prediction/evaluation boundary. Log loss depends on the observed label and supplies the training signal; held-out labels must not influence parameter updates or selection."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Training labels only; held-out labels evaluate and final-test labels must not fit or select"
+            },
+            {
+              "id": "wrong0",
+              "label": "Final-test labels may update parameters if accuracy improves"
+            },
+            {
+              "id": "wrong1",
+              "label": "Use validation/test labels in the gradient because probability is not a label"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Log loss depends on the observed label and supplies the training signal; held-out labels must not influence parameter updates or selection."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Log loss depends on the observed label and supplies the training signal; held-out labels must not influence parameter updates or selection.",
+      "id": "LG02.O2.assessment.A",
+      "objective": "LG02.O2",
+      "prompt": "An unseen-customer example: which labels may influence a model-fitting log-loss gradient?",
+      "remediation": "Recall LG02.O2, the worked contrast and the prediction/evaluation boundary. Log loss depends on the observed label and supplies the training signal; held-out labels must not influence parameter updates or selection."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Final-test labels may update parameters if accuracy improves"
+            },
+            {
+              "id": "wrong1",
+              "label": "Use validation/test labels in the gradient because probability is not a label"
+            },
+            {
+              "id": "supported",
+              "label": "Training labels only; held-out labels evaluate and final-test labels must not fit or select"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            },
+            {
+              "id": "mechanism",
+              "label": "Log loss depends on the observed label and supplies the training signal; held-out labels must not influence parameter updates or selection."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Log loss depends on the observed label and supplies the training signal; held-out labels must not influence parameter updates or selection.",
+      "id": "LG02.O2.assessment.B",
+      "objective": "LG02.O2",
+      "prompt": "A changed cost scenario: which labels may influence a model-fitting log-loss gradient?",
+      "remediation": "Recall LG02.O2, the worked contrast and the prediction/evaluation boundary. Log loss depends on the observed label and supplies the training signal; held-out labels must not influence parameter updates or selection."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Use validation/test labels in the gradient because probability is not a label"
+            },
+            {
+              "id": "supported",
+              "label": "Training labels only; held-out labels evaluate and final-test labels must not fit or select"
+            },
+            {
+              "id": "wrong0",
+              "label": "Final-test labels may update parameters if accuracy improves"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Log loss depends on the observed label and supplies the training signal; held-out labels must not influence parameter updates or selection."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Log loss depends on the observed label and supplies the training signal; held-out labels must not influence parameter updates or selection.",
+      "id": "LG02.O2.assessment.C",
+      "objective": "LG02.O2",
+      "prompt": "A new deployment cohort: which labels may influence a model-fitting log-loss gradient?",
+      "remediation": "Recall LG02.O2, the worked contrast and the prediction/evaluation boundary. Log loss depends on the observed label and supplies the training signal; held-out labels must not influence parameter updates or selection."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": -0.75
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "For a positive training label, dL/dz=p−1 is negative; a negative gradient step pushes its logit upward. This is not sklearn's optimizer.",
+      "id": "LG02.O3.practice.A",
+      "objective": "LG02.O3",
+      "prompt": "A churn training example: Unweighted one-row illustration y=1,p=0.25, no penalty. Calculate dL/dz.",
+      "remediation": "Recall LG02.O3, the worked contrast and the prediction/evaluation boundary. For a positive training label, dL/dz=p−1 is negative; a negative gradient step pushes its logit upward. This is not sklearn's optimizer."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": -0.5
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "For a positive training label, dL/dz=p−1 is negative; a negative gradient step pushes its logit upward. This is not sklearn's optimizer.",
+      "id": "LG02.O3.practice.B",
+      "objective": "LG02.O3",
+      "prompt": "A changed development cohort: Unweighted one-row illustration y=1,p=0.5, no penalty. Calculate dL/dz.",
+      "remediation": "Recall LG02.O3, the worked contrast and the prediction/evaluation boundary. For a positive training label, dL/dz=p−1 is negative; a negative gradient step pushes its logit upward. This is not sklearn's optimizer."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": -0.25
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "For a positive training label, dL/dz=p−1 is negative; a negative gradient step pushes its logit upward. This is not sklearn's optimizer.",
+      "id": "LG02.O3.assessment.A",
+      "objective": "LG02.O3",
+      "prompt": "An unseen-customer example: Unweighted one-row illustration y=1,p=0.75, no penalty. Calculate dL/dz.",
+      "remediation": "Recall LG02.O3, the worked contrast and the prediction/evaluation boundary. For a positive training label, dL/dz=p−1 is negative; a negative gradient step pushes its logit upward. This is not sklearn's optimizer."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": -0.09999999999999998
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "For a positive training label, dL/dz=p−1 is negative; a negative gradient step pushes its logit upward. This is not sklearn's optimizer.",
+      "id": "LG02.O3.assessment.B",
+      "objective": "LG02.O3",
+      "prompt": "A changed cost scenario: Unweighted one-row illustration y=1,p=0.9, no penalty. Calculate dL/dz.",
+      "remediation": "Recall LG02.O3, the worked contrast and the prediction/evaluation boundary. For a positive training label, dL/dz=p−1 is negative; a negative gradient step pushes its logit upward. This is not sklearn's optimizer."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": -0.9
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "For a positive training label, dL/dz=p−1 is negative; a negative gradient step pushes its logit upward. This is not sklearn's optimizer.",
+      "id": "LG02.O3.assessment.C",
+      "objective": "LG02.O3",
+      "prompt": "A new deployment cohort: Unweighted one-row illustration y=1,p=0.1, no penalty. Calculate dL/dz.",
+      "remediation": "Recall LG02.O3, the worked contrast and the prediction/evaluation boundary. For a positive training label, dL/dz=p−1 is negative; a negative gradient step pushes its logit upward. This is not sklearn's optimizer."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Both labels are correct, but p=.9 has smaller log loss for this observed positive"
+            },
+            {
+              "id": "wrong0",
+              "label": "Equal classification accuracy implies equal log loss"
+            },
+            {
+              "id": "wrong1",
+              "label": "A correctly classified row always has zero log loss"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Correct hard decisions need not have equal probability quality. For exact y=0,p=1 loss is infinite, separately from library clipping.",
+      "id": "LG02.O4.practice.A",
+      "objective": "LG02.O4",
+      "prompt": "A churn training example: two models predict positive at threshold.5 for y=1, with p=.6 and p=.9. What differs?",
+      "remediation": "Recall LG02.O4, the worked contrast and the prediction/evaluation boundary. Correct hard decisions need not have equal probability quality. For exact y=0,p=1 loss is infinite, separately from library clipping."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Equal classification accuracy implies equal log loss"
+            },
+            {
+              "id": "wrong1",
+              "label": "A correctly classified row always has zero log loss"
+            },
+            {
+              "id": "supported",
+              "label": "Both labels are correct, but p=.9 has smaller log loss for this observed positive"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Correct hard decisions need not have equal probability quality. For exact y=0,p=1 loss is infinite, separately from library clipping.",
+      "id": "LG02.O4.practice.B",
+      "objective": "LG02.O4",
+      "prompt": "A changed development cohort: two models predict positive at threshold.5 for y=1, with p=.6 and p=.9. What differs?",
+      "remediation": "Recall LG02.O4, the worked contrast and the prediction/evaluation boundary. Correct hard decisions need not have equal probability quality. For exact y=0,p=1 loss is infinite, separately from library clipping."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A correctly classified row always has zero log loss"
+            },
+            {
+              "id": "supported",
+              "label": "Both labels are correct, but p=.9 has smaller log loss for this observed positive"
+            },
+            {
+              "id": "wrong0",
+              "label": "Equal classification accuracy implies equal log loss"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Correct hard decisions need not have equal probability quality. For exact y=0,p=1 loss is infinite, separately from library clipping.",
+      "id": "LG02.O4.assessment.A",
+      "objective": "LG02.O4",
+      "prompt": "An unseen-customer example: two models predict positive at threshold.5 for y=1, with p=.6 and p=.9. What differs?",
+      "remediation": "Recall LG02.O4, the worked contrast and the prediction/evaluation boundary. Correct hard decisions need not have equal probability quality. For exact y=0,p=1 loss is infinite, separately from library clipping."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Both labels are correct, but p=.9 has smaller log loss for this observed positive"
+            },
+            {
+              "id": "wrong0",
+              "label": "Equal classification accuracy implies equal log loss"
+            },
+            {
+              "id": "wrong1",
+              "label": "A correctly classified row always has zero log loss"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Correct hard decisions need not have equal probability quality. For exact y=0,p=1 loss is infinite, separately from library clipping.",
+      "id": "LG02.O4.assessment.B",
+      "objective": "LG02.O4",
+      "prompt": "A changed cost scenario: two models predict positive at threshold.5 for y=1, with p=.6 and p=.9. What differs?",
+      "remediation": "Recall LG02.O4, the worked contrast and the prediction/evaluation boundary. Correct hard decisions need not have equal probability quality. For exact y=0,p=1 loss is infinite, separately from library clipping."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Equal classification accuracy implies equal log loss"
+            },
+            {
+              "id": "wrong1",
+              "label": "A correctly classified row always has zero log loss"
+            },
+            {
+              "id": "supported",
+              "label": "Both labels are correct, but p=.9 has smaller log loss for this observed positive"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Correct hard decisions need not have equal probability quality. For exact y=0,p=1 loss is infinite, separately from library clipping.",
+      "id": "LG02.O4.assessment.C",
+      "objective": "LG02.O4",
+      "prompt": "A new deployment cohort: two models predict positive at threshold.5 for y=1, with p=.6 and p=.9. What differs?",
+      "remediation": "Recall LG02.O4, the worked contrast and the prediction/evaluation boundary. Correct hard decisions need not have equal probability quality. For exact y=0,p=1 loss is infinite, separately from library clipping."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Threshold changes the probabilities themselves"
+            },
+            {
+              "id": "wrong1",
+              "label": "Use greater-than strictly and always call equality negative"
+            },
+            {
+              "id": "supported",
+              "label": "[0, 1, 1]"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Equality predicts positive; thresholding never changes the stored probabilities or refits the model.",
+      "id": "LG03.O1.practice.A",
+      "objective": "LG03.O1",
+      "prompt": "A churn training example: Fixed p=[.2,.6,.8], threshold=0.5; use p>=threshold. Predict labels.",
+      "remediation": "Recall LG03.O1, the worked contrast and the prediction/evaluation boundary. Equality predicts positive; thresholding never changes the stored probabilities or refits the model."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Use greater-than strictly and always call equality negative"
+            },
+            {
+              "id": "supported",
+              "label": "[0, 1, 1]"
+            },
+            {
+              "id": "wrong0",
+              "label": "Threshold changes the probabilities themselves"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Equality predicts positive; thresholding never changes the stored probabilities or refits the model.",
+      "id": "LG03.O1.practice.B",
+      "objective": "LG03.O1",
+      "prompt": "A changed development cohort: Fixed p=[.2,.6,.8], threshold=0.6; use p>=threshold. Predict labels.",
+      "remediation": "Recall LG03.O1, the worked contrast and the prediction/evaluation boundary. Equality predicts positive; thresholding never changes the stored probabilities or refits the model."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "[0, 0, 1]"
+            },
+            {
+              "id": "wrong0",
+              "label": "Threshold changes the probabilities themselves"
+            },
+            {
+              "id": "wrong1",
+              "label": "Use greater-than strictly and always call equality negative"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Equality predicts positive; thresholding never changes the stored probabilities or refits the model.",
+      "id": "LG03.O1.assessment.A",
+      "objective": "LG03.O1",
+      "prompt": "An unseen-customer example: Fixed p=[.2,.6,.8], threshold=0.7; use p>=threshold. Predict labels.",
+      "remediation": "Recall LG03.O1, the worked contrast and the prediction/evaluation boundary. Equality predicts positive; thresholding never changes the stored probabilities or refits the model."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Threshold changes the probabilities themselves"
+            },
+            {
+              "id": "wrong1",
+              "label": "Use greater-than strictly and always call equality negative"
+            },
+            {
+              "id": "supported",
+              "label": "[0, 0, 0]"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Equality predicts positive; thresholding never changes the stored probabilities or refits the model.",
+      "id": "LG03.O1.assessment.B",
+      "objective": "LG03.O1",
+      "prompt": "A changed cost scenario: Fixed p=[.2,.6,.8], threshold=1; use p>=threshold. Predict labels.",
+      "remediation": "Recall LG03.O1, the worked contrast and the prediction/evaluation boundary. Equality predicts positive; thresholding never changes the stored probabilities or refits the model."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Use greater-than strictly and always call equality negative"
+            },
+            {
+              "id": "supported",
+              "label": "[1, 1, 1]"
+            },
+            {
+              "id": "wrong0",
+              "label": "Threshold changes the probabilities themselves"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Equality predicts positive; thresholding never changes the stored probabilities or refits the model.",
+      "id": "LG03.O1.assessment.C",
+      "objective": "LG03.O1",
+      "prompt": "A new deployment cohort: Fixed p=[.2,.6,.8], threshold=0; use p>=threshold. Predict labels.",
+      "remediation": "Recall LG03.O1, the worked contrast and the prediction/evaluation boundary. Equality predicts positive; thresholding never changes the stored probabilities or refits the model."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A lower development cost means the model was retrained"
+            },
+            {
+              "id": "supported",
+              "label": "Select it on development costs, freeze it, and keep final-test feedback out of selection"
+            },
+            {
+              "id": "wrong0",
+              "label": "Retune it after every final-test score"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Changing a threshold is a decision rule, not retraining. Honest selection uses development data, not repeated final-test inspection."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Changing a threshold is a decision rule, not retraining. Honest selection uses development data, not repeated final-test inspection.",
+      "id": "LG03.O2.practice.A",
+      "objective": "LG03.O2",
+      "prompt": "A churn training example: a threshold reduces development decision cost. What is permitted?",
+      "remediation": "Recall LG03.O2, the worked contrast and the prediction/evaluation boundary. Changing a threshold is a decision rule, not retraining. Honest selection uses development data, not repeated final-test inspection."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Select it on development costs, freeze it, and keep final-test feedback out of selection"
+            },
+            {
+              "id": "wrong0",
+              "label": "Retune it after every final-test score"
+            },
+            {
+              "id": "wrong1",
+              "label": "A lower development cost means the model was retrained"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            },
+            {
+              "id": "mechanism",
+              "label": "Changing a threshold is a decision rule, not retraining. Honest selection uses development data, not repeated final-test inspection."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Changing a threshold is a decision rule, not retraining. Honest selection uses development data, not repeated final-test inspection.",
+      "id": "LG03.O2.practice.B",
+      "objective": "LG03.O2",
+      "prompt": "A changed development cohort: a threshold reduces development decision cost. What is permitted?",
+      "remediation": "Recall LG03.O2, the worked contrast and the prediction/evaluation boundary. Changing a threshold is a decision rule, not retraining. Honest selection uses development data, not repeated final-test inspection."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Retune it after every final-test score"
+            },
+            {
+              "id": "wrong1",
+              "label": "A lower development cost means the model was retrained"
+            },
+            {
+              "id": "supported",
+              "label": "Select it on development costs, freeze it, and keep final-test feedback out of selection"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Changing a threshold is a decision rule, not retraining. Honest selection uses development data, not repeated final-test inspection."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Changing a threshold is a decision rule, not retraining. Honest selection uses development data, not repeated final-test inspection.",
+      "id": "LG03.O2.assessment.A",
+      "objective": "LG03.O2",
+      "prompt": "An unseen-customer example: a threshold reduces development decision cost. What is permitted?",
+      "remediation": "Recall LG03.O2, the worked contrast and the prediction/evaluation boundary. Changing a threshold is a decision rule, not retraining. Honest selection uses development data, not repeated final-test inspection."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A lower development cost means the model was retrained"
+            },
+            {
+              "id": "supported",
+              "label": "Select it on development costs, freeze it, and keep final-test feedback out of selection"
+            },
+            {
+              "id": "wrong0",
+              "label": "Retune it after every final-test score"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            },
+            {
+              "id": "mechanism",
+              "label": "Changing a threshold is a decision rule, not retraining. Honest selection uses development data, not repeated final-test inspection."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Changing a threshold is a decision rule, not retraining. Honest selection uses development data, not repeated final-test inspection.",
+      "id": "LG03.O2.assessment.B",
+      "objective": "LG03.O2",
+      "prompt": "A changed cost scenario: a threshold reduces development decision cost. What is permitted?",
+      "remediation": "Recall LG03.O2, the worked contrast and the prediction/evaluation boundary. Changing a threshold is a decision rule, not retraining. Honest selection uses development data, not repeated final-test inspection."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Select it on development costs, freeze it, and keep final-test feedback out of selection"
+            },
+            {
+              "id": "wrong0",
+              "label": "Retune it after every final-test score"
+            },
+            {
+              "id": "wrong1",
+              "label": "A lower development cost means the model was retrained"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Changing a threshold is a decision rule, not retraining. Honest selection uses development data, not repeated final-test inspection."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Changing a threshold is a decision rule, not retraining. Honest selection uses development data, not repeated final-test inspection.",
+      "id": "LG03.O2.assessment.C",
+      "objective": "LG03.O2",
+      "prompt": "A new deployment cohort: a threshold reduces development decision cost. What is permitted?",
+      "remediation": "Recall LG03.O2, the worked contrast and the prediction/evaluation boundary. Changing a threshold is a decision rule, not retraining. Honest selection uses development data, not repeated final-test inspection."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting.",
+      "id": "LG03.O3.practice.A",
+      "objective": "LG03.O3",
+      "prompt": "A churn training example: Actual labels[0,1,1], p=[.2,.6,.8], threshold=0.5. Count false negatives.",
+      "remediation": "Recall LG03.O3, the worked contrast and the prediction/evaluation boundary. A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting.",
+      "id": "LG03.O3.practice.B",
+      "objective": "LG03.O3",
+      "prompt": "A changed development cohort: Actual labels[0,1,1], p=[.2,.6,.8], threshold=0.6. Count false negatives.",
+      "remediation": "Recall LG03.O3, the worked contrast and the prediction/evaluation boundary. A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 1
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting.",
+      "id": "LG03.O3.assessment.A",
+      "objective": "LG03.O3",
+      "prompt": "An unseen-customer example: Actual labels[0,1,1], p=[.2,.6,.8], threshold=0.7. Count false negatives.",
+      "remediation": "Recall LG03.O3, the worked contrast and the prediction/evaluation boundary. A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 2
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting.",
+      "id": "LG03.O3.assessment.B",
+      "objective": "LG03.O3",
+      "prompt": "A changed cost scenario: Actual labels[0,1,1], p=[.2,.6,.8], threshold=1. Count false negatives.",
+      "remediation": "Recall LG03.O3, the worked contrast and the prediction/evaluation boundary. A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "number",
+            "value": 0
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "number",
+          "label": "Decision or calculation"
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting.",
+      "id": "LG03.O3.assessment.C",
+      "objective": "LG03.O3",
+      "prompt": "A new deployment cohort: Actual labels[0,1,1], p=[.2,.6,.8], threshold=0. Count false negatives.",
+      "remediation": "Recall LG03.O3, the worked contrast and the prediction/evaluation boundary. A false negative is actual class 1 predicted0. Use the named positive class and equality convention before counting."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "99% accuracy proves excellent churn probability estimates"
+            },
+            {
+              "id": "wrong1",
+              "label": "There are no errors relevant to the positive class"
+            },
+            {
+              "id": "supported",
+              "label": "Positive class 1 has zero recall; majority accuracy alone does not establish useful detection"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined.",
+      "id": "LG03.O4.practice.A",
+      "objective": "LG03.O4",
+      "prompt": "A churn training example: one churn event in 100 customers; all-stay predictions are99% accurate. What follows?",
+      "remediation": "Recall LG03.O4, the worked contrast and the prediction/evaluation boundary. Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "There are no errors relevant to the positive class"
+            },
+            {
+              "id": "supported",
+              "label": "Positive class 1 has zero recall; majority accuracy alone does not establish useful detection"
+            },
+            {
+              "id": "wrong0",
+              "label": "99% accuracy proves excellent churn probability estimates"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined.",
+      "id": "LG03.O4.practice.B",
+      "objective": "LG03.O4",
+      "prompt": "A changed development cohort: one churn event in 100 customers; all-stay predictions are99% accurate. What follows?",
+      "remediation": "Recall LG03.O4, the worked contrast and the prediction/evaluation boundary. Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Positive class 1 has zero recall; majority accuracy alone does not establish useful detection"
+            },
+            {
+              "id": "wrong0",
+              "label": "99% accuracy proves excellent churn probability estimates"
+            },
+            {
+              "id": "wrong1",
+              "label": "There are no errors relevant to the positive class"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined.",
+      "id": "LG03.O4.assessment.A",
+      "objective": "LG03.O4",
+      "prompt": "An unseen-customer example: one churn event in 100 customers; all-stay predictions are99% accurate. What follows?",
+      "remediation": "Recall LG03.O4, the worked contrast and the prediction/evaluation boundary. Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "99% accuracy proves excellent churn probability estimates"
+            },
+            {
+              "id": "wrong1",
+              "label": "There are no errors relevant to the positive class"
+            },
+            {
+              "id": "supported",
+              "label": "Positive class 1 has zero recall; majority accuracy alone does not establish useful detection"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined.",
+      "id": "LG03.O4.assessment.B",
+      "objective": "LG03.O4",
+      "prompt": "A changed cost scenario: one churn event in 100 customers; all-stay predictions are99% accurate. What follows?",
+      "remediation": "Recall LG03.O4, the worked contrast and the prediction/evaluation boundary. Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "There are no errors relevant to the positive class"
+            },
+            {
+              "id": "supported",
+              "label": "Positive class 1 has zero recall; majority accuracy alone does not establish useful detection"
+            },
+            {
+              "id": "wrong0",
+              "label": "99% accuracy proves excellent churn probability estimates"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined.",
+      "id": "LG03.O4.assessment.C",
+      "objective": "LG03.O4",
+      "prompt": "A new deployment cohort: one churn event in 100 customers; all-stay predictions are99% accurate. What follows?",
+      "remediation": "Recall LG03.O4, the worked contrast and the prediction/evaluation boundary. Prevalence changes accuracy interpretation; state positive class, denominators and decision costs. No predicted positives makes precision undefined."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Scaling can safely learn from all rows because it ignores labels"
+            },
+            {
+              "id": "supported",
+              "label": "Scaling changes penalty geometry and must learn only from each fold training set"
+            },
+            {
+              "id": "wrong0",
+              "label": "All feature scales leave the penalty geometry identical"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Changing feature units changes coefficient magnitudes; globally learned statistics leak held-out inputs even without targets.",
+      "id": "LG04.O1.practice.A",
+      "objective": "LG04.O1",
+      "prompt": "A churn training example: why fit scaling inside training folds before a coefficient penalty?",
+      "remediation": "Recall LG04.O1, the worked contrast and the prediction/evaluation boundary. Changing feature units changes coefficient magnitudes; globally learned statistics leak held-out inputs even without targets."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Scaling changes penalty geometry and must learn only from each fold training set"
+            },
+            {
+              "id": "wrong0",
+              "label": "All feature scales leave the penalty geometry identical"
+            },
+            {
+              "id": "wrong1",
+              "label": "Scaling can safely learn from all rows because it ignores labels"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Changing feature units changes coefficient magnitudes; globally learned statistics leak held-out inputs even without targets.",
+      "id": "LG04.O1.practice.B",
+      "objective": "LG04.O1",
+      "prompt": "A changed development cohort: why fit scaling inside training folds before a coefficient penalty?",
+      "remediation": "Recall LG04.O1, the worked contrast and the prediction/evaluation boundary. Changing feature units changes coefficient magnitudes; globally learned statistics leak held-out inputs even without targets."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "All feature scales leave the penalty geometry identical"
+            },
+            {
+              "id": "wrong1",
+              "label": "Scaling can safely learn from all rows because it ignores labels"
+            },
+            {
+              "id": "supported",
+              "label": "Scaling changes penalty geometry and must learn only from each fold training set"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Changing feature units changes coefficient magnitudes; globally learned statistics leak held-out inputs even without targets.",
+      "id": "LG04.O1.assessment.A",
+      "objective": "LG04.O1",
+      "prompt": "An unseen-customer example: why fit scaling inside training folds before a coefficient penalty?",
+      "remediation": "Recall LG04.O1, the worked contrast and the prediction/evaluation boundary. Changing feature units changes coefficient magnitudes; globally learned statistics leak held-out inputs even without targets."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Scaling can safely learn from all rows because it ignores labels"
+            },
+            {
+              "id": "supported",
+              "label": "Scaling changes penalty geometry and must learn only from each fold training set"
+            },
+            {
+              "id": "wrong0",
+              "label": "All feature scales leave the penalty geometry identical"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Changing feature units changes coefficient magnitudes; globally learned statistics leak held-out inputs even without targets.",
+      "id": "LG04.O1.assessment.B",
+      "objective": "LG04.O1",
+      "prompt": "A changed cost scenario: why fit scaling inside training folds before a coefficient penalty?",
+      "remediation": "Recall LG04.O1, the worked contrast and the prediction/evaluation boundary. Changing feature units changes coefficient magnitudes; globally learned statistics leak held-out inputs even without targets."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Scaling changes penalty geometry and must learn only from each fold training set"
+            },
+            {
+              "id": "wrong0",
+              "label": "All feature scales leave the penalty geometry identical"
+            },
+            {
+              "id": "wrong1",
+              "label": "Scaling can safely learn from all rows because it ignores labels"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Changing feature units changes coefficient magnitudes; globally learned statistics leak held-out inputs even without targets.",
+      "id": "LG04.O1.assessment.C",
+      "objective": "LG04.O1",
+      "prompt": "A new deployment cohort: why fit scaling inside training folds before a coefficient penalty?",
+      "remediation": "Recall LG04.O1, the worked contrast and the prediction/evaluation boundary. Changing feature units changes coefficient magnitudes; globally learned statistics leak held-out inputs even without targets."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Larger C weakens regularization; reject the unsupported lbfgs/L1 tuple"
+            },
+            {
+              "id": "wrong0",
+              "label": "Larger C means a larger penalty and lbfgs supports every penalty"
+            },
+            {
+              "id": "wrong1",
+              "label": "Equal numeric C and Ridge alpha imply identical strength"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "C is inverse strength under the declared objective, not RG alpha; a mathematical penalty does not make every solver combination supported."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "C is inverse strength under the declared objective, not RG alpha; a mathematical penalty does not make every solver combination supported.",
+      "id": "LG04.O2.practice.A",
+      "objective": "LG04.O2",
+      "prompt": "A churn training example: in the frozen binary L2/lbfgs workflow, how should larger C and an lbfgs/L1 request be treated?",
+      "remediation": "Recall LG04.O2, the worked contrast and the prediction/evaluation boundary. C is inverse strength under the declared objective, not RG alpha; a mathematical penalty does not make every solver combination supported."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Larger C means a larger penalty and lbfgs supports every penalty"
+            },
+            {
+              "id": "wrong1",
+              "label": "Equal numeric C and Ridge alpha imply identical strength"
+            },
+            {
+              "id": "supported",
+              "label": "Larger C weakens regularization; reject the unsupported lbfgs/L1 tuple"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            },
+            {
+              "id": "mechanism",
+              "label": "C is inverse strength under the declared objective, not RG alpha; a mathematical penalty does not make every solver combination supported."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "C is inverse strength under the declared objective, not RG alpha; a mathematical penalty does not make every solver combination supported.",
+      "id": "LG04.O2.practice.B",
+      "objective": "LG04.O2",
+      "prompt": "A changed development cohort: in the frozen binary L2/lbfgs workflow, how should larger C and an lbfgs/L1 request be treated?",
+      "remediation": "Recall LG04.O2, the worked contrast and the prediction/evaluation boundary. C is inverse strength under the declared objective, not RG alpha; a mathematical penalty does not make every solver combination supported."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Equal numeric C and Ridge alpha imply identical strength"
+            },
+            {
+              "id": "supported",
+              "label": "Larger C weakens regularization; reject the unsupported lbfgs/L1 tuple"
+            },
+            {
+              "id": "wrong0",
+              "label": "Larger C means a larger penalty and lbfgs supports every penalty"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "C is inverse strength under the declared objective, not RG alpha; a mathematical penalty does not make every solver combination supported."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "C is inverse strength under the declared objective, not RG alpha; a mathematical penalty does not make every solver combination supported.",
+      "id": "LG04.O2.assessment.A",
+      "objective": "LG04.O2",
+      "prompt": "An unseen-customer example: in the frozen binary L2/lbfgs workflow, how should larger C and an lbfgs/L1 request be treated?",
+      "remediation": "Recall LG04.O2, the worked contrast and the prediction/evaluation boundary. C is inverse strength under the declared objective, not RG alpha; a mathematical penalty does not make every solver combination supported."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Larger C weakens regularization; reject the unsupported lbfgs/L1 tuple"
+            },
+            {
+              "id": "wrong0",
+              "label": "Larger C means a larger penalty and lbfgs supports every penalty"
+            },
+            {
+              "id": "wrong1",
+              "label": "Equal numeric C and Ridge alpha imply identical strength"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            },
+            {
+              "id": "mechanism",
+              "label": "C is inverse strength under the declared objective, not RG alpha; a mathematical penalty does not make every solver combination supported."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "C is inverse strength under the declared objective, not RG alpha; a mathematical penalty does not make every solver combination supported.",
+      "id": "LG04.O2.assessment.B",
+      "objective": "LG04.O2",
+      "prompt": "A changed cost scenario: in the frozen binary L2/lbfgs workflow, how should larger C and an lbfgs/L1 request be treated?",
+      "remediation": "Recall LG04.O2, the worked contrast and the prediction/evaluation boundary. C is inverse strength under the declared objective, not RG alpha; a mathematical penalty does not make every solver combination supported."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Larger C means a larger penalty and lbfgs supports every penalty"
+            },
+            {
+              "id": "wrong1",
+              "label": "Equal numeric C and Ridge alpha imply identical strength"
+            },
+            {
+              "id": "supported",
+              "label": "Larger C weakens regularization; reject the unsupported lbfgs/L1 tuple"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "C is inverse strength under the declared objective, not RG alpha; a mathematical penalty does not make every solver combination supported."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "C is inverse strength under the declared objective, not RG alpha; a mathematical penalty does not make every solver combination supported.",
+      "id": "LG04.O2.assessment.C",
+      "objective": "LG04.O2",
+      "prompt": "A new deployment cohort: in the frozen binary L2/lbfgs workflow, how should larger C and an lbfgs/L1 request be treated?",
+      "remediation": "Recall LG04.O2, the worked contrast and the prediction/evaluation boundary. C is inverse strength under the declared objective, not RG alpha; a mathematical penalty does not make every solver combination supported."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "The sigmoid automatically makes any curved boundary learnable"
+            },
+            {
+              "id": "wrong1",
+              "label": "Logistic must win because its probabilities are nonlinear"
+            },
+            {
+              "id": "supported",
+              "label": "A linear logit boundary may underfit; compare fair development alternatives rather than promise a curved separator"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Sigmoid curves the probability scale but does not make the raw-input decision boundary an arbitrary nonlinear shape.",
+      "id": "LG04.O3.practice.A",
+      "objective": "LG04.O3",
+      "prompt": "A churn training example: raw two-feature classes surround a circular region. What limitation matters?",
+      "remediation": "Recall LG04.O3, the worked contrast and the prediction/evaluation boundary. Sigmoid curves the probability scale but does not make the raw-input decision boundary an arbitrary nonlinear shape."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Logistic must win because its probabilities are nonlinear"
+            },
+            {
+              "id": "supported",
+              "label": "A linear logit boundary may underfit; compare fair development alternatives rather than promise a curved separator"
+            },
+            {
+              "id": "wrong0",
+              "label": "The sigmoid automatically makes any curved boundary learnable"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Sigmoid curves the probability scale but does not make the raw-input decision boundary an arbitrary nonlinear shape.",
+      "id": "LG04.O3.practice.B",
+      "objective": "LG04.O3",
+      "prompt": "A changed development cohort: raw two-feature classes surround a circular region. What limitation matters?",
+      "remediation": "Recall LG04.O3, the worked contrast and the prediction/evaluation boundary. Sigmoid curves the probability scale but does not make the raw-input decision boundary an arbitrary nonlinear shape."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "A linear logit boundary may underfit; compare fair development alternatives rather than promise a curved separator"
+            },
+            {
+              "id": "wrong0",
+              "label": "The sigmoid automatically makes any curved boundary learnable"
+            },
+            {
+              "id": "wrong1",
+              "label": "Logistic must win because its probabilities are nonlinear"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Sigmoid curves the probability scale but does not make the raw-input decision boundary an arbitrary nonlinear shape.",
+      "id": "LG04.O3.assessment.A",
+      "objective": "LG04.O3",
+      "prompt": "An unseen-customer example: raw two-feature classes surround a circular region. What limitation matters?",
+      "remediation": "Recall LG04.O3, the worked contrast and the prediction/evaluation boundary. Sigmoid curves the probability scale but does not make the raw-input decision boundary an arbitrary nonlinear shape."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "The sigmoid automatically makes any curved boundary learnable"
+            },
+            {
+              "id": "wrong1",
+              "label": "Logistic must win because its probabilities are nonlinear"
+            },
+            {
+              "id": "supported",
+              "label": "A linear logit boundary may underfit; compare fair development alternatives rather than promise a curved separator"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Sigmoid curves the probability scale but does not make the raw-input decision boundary an arbitrary nonlinear shape.",
+      "id": "LG04.O3.assessment.B",
+      "objective": "LG04.O3",
+      "prompt": "A changed cost scenario: raw two-feature classes surround a circular region. What limitation matters?",
+      "remediation": "Recall LG04.O3, the worked contrast and the prediction/evaluation boundary. Sigmoid curves the probability scale but does not make the raw-input decision boundary an arbitrary nonlinear shape."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Logistic must win because its probabilities are nonlinear"
+            },
+            {
+              "id": "supported",
+              "label": "A linear logit boundary may underfit; compare fair development alternatives rather than promise a curved separator"
+            },
+            {
+              "id": "wrong0",
+              "label": "The sigmoid automatically makes any curved boundary learnable"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Sigmoid curves the probability scale but does not make the raw-input decision boundary an arbitrary nonlinear shape.",
+      "id": "LG04.O3.assessment.C",
+      "objective": "LG04.O3",
+      "prompt": "A new deployment cohort: raw two-feature classes surround a circular region. What limitation matters?",
+      "remediation": "Recall LG04.O3, the worked contrast and the prediction/evaluation boundary. Sigmoid curves the probability scale but does not make the raw-input decision boundary an arbitrary nonlinear shape."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Ignore convergence warnings if training accuracy is perfect"
+            },
+            {
+              "id": "supported",
+              "label": "Inspect scaling, penalty, convergence and held-out behavior; do not assume a stable finite unregularized solution"
+            },
+            {
+              "id": "wrong0",
+              "label": "A large coefficient proves causal importance"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Separation and weak regularization can yield unstable coefficients; a returned vector or reproducible seed is not a convergence/generalization guarantee.",
+      "id": "LG04.O4.practice.A",
+      "objective": "LG04.O4",
+      "prompt": "A churn training example: an almost separated sample yields very large weights or a convergence warning. What is defensible?",
+      "remediation": "Recall LG04.O4, the worked contrast and the prediction/evaluation boundary. Separation and weak regularization can yield unstable coefficients; a returned vector or reproducible seed is not a convergence/generalization guarantee."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Inspect scaling, penalty, convergence and held-out behavior; do not assume a stable finite unregularized solution"
+            },
+            {
+              "id": "wrong0",
+              "label": "A large coefficient proves causal importance"
+            },
+            {
+              "id": "wrong1",
+              "label": "Ignore convergence warnings if training accuracy is perfect"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Separation and weak regularization can yield unstable coefficients; a returned vector or reproducible seed is not a convergence/generalization guarantee.",
+      "id": "LG04.O4.practice.B",
+      "objective": "LG04.O4",
+      "prompt": "A changed development cohort: an almost separated sample yields very large weights or a convergence warning. What is defensible?",
+      "remediation": "Recall LG04.O4, the worked contrast and the prediction/evaluation boundary. Separation and weak regularization can yield unstable coefficients; a returned vector or reproducible seed is not a convergence/generalization guarantee."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "A large coefficient proves causal importance"
+            },
+            {
+              "id": "wrong1",
+              "label": "Ignore convergence warnings if training accuracy is perfect"
+            },
+            {
+              "id": "supported",
+              "label": "Inspect scaling, penalty, convergence and held-out behavior; do not assume a stable finite unregularized solution"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Separation and weak regularization can yield unstable coefficients; a returned vector or reproducible seed is not a convergence/generalization guarantee.",
+      "id": "LG04.O4.assessment.A",
+      "objective": "LG04.O4",
+      "prompt": "An unseen-customer example: an almost separated sample yields very large weights or a convergence warning. What is defensible?",
+      "remediation": "Recall LG04.O4, the worked contrast and the prediction/evaluation boundary. Separation and weak regularization can yield unstable coefficients; a returned vector or reproducible seed is not a convergence/generalization guarantee."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Ignore convergence warnings if training accuracy is perfect"
+            },
+            {
+              "id": "supported",
+              "label": "Inspect scaling, penalty, convergence and held-out behavior; do not assume a stable finite unregularized solution"
+            },
+            {
+              "id": "wrong0",
+              "label": "A large coefficient proves causal importance"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Separation and weak regularization can yield unstable coefficients; a returned vector or reproducible seed is not a convergence/generalization guarantee.",
+      "id": "LG04.O4.assessment.B",
+      "objective": "LG04.O4",
+      "prompt": "A changed cost scenario: an almost separated sample yields very large weights or a convergence warning. What is defensible?",
+      "remediation": "Recall LG04.O4, the worked contrast and the prediction/evaluation boundary. Separation and weak regularization can yield unstable coefficients; a returned vector or reproducible seed is not a convergence/generalization guarantee."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Inspect scaling, penalty, convergence and held-out behavior; do not assume a stable finite unregularized solution"
+            },
+            {
+              "id": "wrong0",
+              "label": "A large coefficient proves causal importance"
+            },
+            {
+              "id": "wrong1",
+              "label": "Ignore convergence warnings if training accuracy is perfect"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Separation and weak regularization can yield unstable coefficients; a returned vector or reproducible seed is not a convergence/generalization guarantee.",
+      "id": "LG04.O4.assessment.C",
+      "objective": "LG04.O4",
+      "prompt": "A new deployment cohort: an almost separated sample yields very large weights or a convergence warning. What is defensible?",
+      "remediation": "Recall LG04.O4, the worked contrast and the prediction/evaluation boundary. Separation and weak regularization can yield unstable coefficients; a returned vector or reproducible seed is not a convergence/generalization guarantee."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "0.25"
+            },
+            {
+              "id": "wrong0",
+              "label": "0.75"
+            },
+            {
+              "id": "wrong1",
+              "label": "A new row requires refitting on its label"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome.",
+      "id": "LG05.O1.practice.A",
+      "objective": "LG05.O1",
+      "prompt": "A churn training example: fit is complete; classes_=[0,1], probability row=[0.75,0.25]. What is p(churn)?",
+      "remediation": "Recall LG05.O1, the worked contrast and the prediction/evaluation boundary. Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Both columns are labels"
+            },
+            {
+              "id": "wrong1",
+              "label": "A new row requires refitting on its label"
+            },
+            {
+              "id": "supported",
+              "label": "0.5"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome.",
+      "id": "LG05.O1.practice.B",
+      "objective": "LG05.O1",
+      "prompt": "A changed development cohort: fit is complete; classes_=[0,1], probability row=[0.5,0.5]. What is p(churn)?",
+      "remediation": "Recall LG05.O1, the worked contrast and the prediction/evaluation boundary. Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A new row requires refitting on its label"
+            },
+            {
+              "id": "supported",
+              "label": "0.75"
+            },
+            {
+              "id": "wrong0",
+              "label": "0.25"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome.",
+      "id": "LG05.O1.assessment.A",
+      "objective": "LG05.O1",
+      "prompt": "An unseen-customer example: fit is complete; classes_=[0,1], probability row=[0.25,0.75]. What is p(churn)?",
+      "remediation": "Recall LG05.O1, the worked contrast and the prediction/evaluation boundary. Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "0.9"
+            },
+            {
+              "id": "wrong0",
+              "label": "0.09999999999999998"
+            },
+            {
+              "id": "wrong1",
+              "label": "A new row requires refitting on its label"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome.",
+      "id": "LG05.O1.assessment.B",
+      "objective": "LG05.O1",
+      "prompt": "A changed cost scenario: fit is complete; classes_=[0,1], probability row=[0.09999999999999998,0.9]. What is p(churn)?",
+      "remediation": "Recall LG05.O1, the worked contrast and the prediction/evaluation boundary. Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "0.9"
+            },
+            {
+              "id": "wrong1",
+              "label": "A new row requires refitting on its label"
+            },
+            {
+              "id": "supported",
+              "label": "0.1"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome.",
+      "id": "LG05.O1.assessment.C",
+      "objective": "LG05.O1",
+      "prompt": "A new deployment cohort: fit is complete; classes_=[0,1], probability row=[0.9,0.1]. What is p(churn)?",
+      "remediation": "Recall LG05.O1, the worked contrast and the prediction/evaluation boundary. Select the column for class 1 from predict_proba; prediction uses learned training state, not the new row's outcome."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Any feature is allowed if correlation is high"
+            },
+            {
+              "id": "wrong1",
+              "label": "A pipeline name guarantees validity even when its scaler was prefit globally"
+            },
+            {
+              "id": "supported",
+              "label": "No: reject unavailable target-derived features and fit learned transforms only on training/fold-training rows"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Prediction-time availability and separate fold-only fitting protect evaluation; good arithmetic or accuracy does not repair leakage."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Prediction-time availability and separate fold-only fitting protect evaluation; good arithmetic or accuracy does not repair leakage.",
+      "id": "LG05.O2.practice.A",
+      "objective": "LG05.O2",
+      "prompt": "A churn training example: a cancellation flag recorded after the prediction date or a globally fitted scaler improves a score. Is it valid?",
+      "remediation": "Recall LG05.O2, the worked contrast and the prediction/evaluation boundary. Prediction-time availability and separate fold-only fitting protect evaluation; good arithmetic or accuracy does not repair leakage."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A pipeline name guarantees validity even when its scaler was prefit globally"
+            },
+            {
+              "id": "supported",
+              "label": "No: reject unavailable target-derived features and fit learned transforms only on training/fold-training rows"
+            },
+            {
+              "id": "wrong0",
+              "label": "Any feature is allowed if correlation is high"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            },
+            {
+              "id": "mechanism",
+              "label": "Prediction-time availability and separate fold-only fitting protect evaluation; good arithmetic or accuracy does not repair leakage."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Prediction-time availability and separate fold-only fitting protect evaluation; good arithmetic or accuracy does not repair leakage.",
+      "id": "LG05.O2.practice.B",
+      "objective": "LG05.O2",
+      "prompt": "A changed development cohort: a cancellation flag recorded after the prediction date or a globally fitted scaler improves a score. Is it valid?",
+      "remediation": "Recall LG05.O2, the worked contrast and the prediction/evaluation boundary. Prediction-time availability and separate fold-only fitting protect evaluation; good arithmetic or accuracy does not repair leakage."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No: reject unavailable target-derived features and fit learned transforms only on training/fold-training rows"
+            },
+            {
+              "id": "wrong0",
+              "label": "Any feature is allowed if correlation is high"
+            },
+            {
+              "id": "wrong1",
+              "label": "A pipeline name guarantees validity even when its scaler was prefit globally"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Prediction-time availability and separate fold-only fitting protect evaluation; good arithmetic or accuracy does not repair leakage."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Prediction-time availability and separate fold-only fitting protect evaluation; good arithmetic or accuracy does not repair leakage.",
+      "id": "LG05.O2.assessment.A",
+      "objective": "LG05.O2",
+      "prompt": "An unseen-customer example: a cancellation flag recorded after the prediction date or a globally fitted scaler improves a score. Is it valid?",
+      "remediation": "Recall LG05.O2, the worked contrast and the prediction/evaluation boundary. Prediction-time availability and separate fold-only fitting protect evaluation; good arithmetic or accuracy does not repair leakage."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Any feature is allowed if correlation is high"
+            },
+            {
+              "id": "wrong1",
+              "label": "A pipeline name guarantees validity even when its scaler was prefit globally"
+            },
+            {
+              "id": "supported",
+              "label": "No: reject unavailable target-derived features and fit learned transforms only on training/fold-training rows"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            },
+            {
+              "id": "mechanism",
+              "label": "Prediction-time availability and separate fold-only fitting protect evaluation; good arithmetic or accuracy does not repair leakage."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Prediction-time availability and separate fold-only fitting protect evaluation; good arithmetic or accuracy does not repair leakage.",
+      "id": "LG05.O2.assessment.B",
+      "objective": "LG05.O2",
+      "prompt": "A changed cost scenario: a cancellation flag recorded after the prediction date or a globally fitted scaler improves a score. Is it valid?",
+      "remediation": "Recall LG05.O2, the worked contrast and the prediction/evaluation boundary. Prediction-time availability and separate fold-only fitting protect evaluation; good arithmetic or accuracy does not repair leakage."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A pipeline name guarantees validity even when its scaler was prefit globally"
+            },
+            {
+              "id": "supported",
+              "label": "No: reject unavailable target-derived features and fit learned transforms only on training/fold-training rows"
+            },
+            {
+              "id": "wrong0",
+              "label": "Any feature is allowed if correlation is high"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Prediction-time availability and separate fold-only fitting protect evaluation; good arithmetic or accuracy does not repair leakage."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Prediction-time availability and separate fold-only fitting protect evaluation; good arithmetic or accuracy does not repair leakage.",
+      "id": "LG05.O2.assessment.C",
+      "objective": "LG05.O2",
+      "prompt": "A new deployment cohort: a cancellation flag recorded after the prediction date or a globally fitted scaler improves a score. Is it valid?",
+      "remediation": "Recall LG05.O2, the worked contrast and the prediction/evaluation boundary. Prediction-time availability and separate fold-only fitting protect evaluation; good arithmetic or accuracy does not repair leakage."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "entries": [
+              {
+                "optionId": "align",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ],
+        [
+          {
+            "entries": [
+              {
+                "optionId": "align_alias",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "slots",
+          "label": "Decision or calculation",
+          "slots": [
+            {
+              "id": "step1",
+              "label": "Pipeline step1",
+              "options": [
+                {
+                  "id": "align",
+                  "label": "Align feature/target row IDs"
+                },
+                {
+                  "id": "align_alias",
+                  "label": "The identical row-ID alignment (alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Fold-training scaler fit"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit or select using final-test rows"
+                }
+              ]
+            },
+            {
+              "id": "step2",
+              "label": "Pipeline step2",
+              "options": [
+                {
+                  "id": "align",
+                  "label": "Align feature/target row IDs"
+                },
+                {
+                  "id": "align_alias",
+                  "label": "The identical row-ID alignment (alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Fold-training scaler fit"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit or select using final-test rows"
+                }
+              ]
+            },
+            {
+              "id": "step3",
+              "label": "Pipeline step3",
+              "options": [
+                {
+                  "id": "align",
+                  "label": "Align feature/target row IDs"
+                },
+                {
+                  "id": "align_alias",
+                  "label": "The identical row-ID alignment (alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Fold-training scaler fit"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit or select using final-test rows"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Align features/targets by row ID, fit the scaler on each fold training set, then fit the estimator on those same rows. Pass the whole unfitted pipeline to CV.",
+      "id": "LG05.O3.practice.A",
+      "objective": "LG05.O3",
+      "prompt": "A churn training example: Repair the whole fold-local classification pipeline; preserve aligned targets and select the pipeline within development CV.",
+      "remediation": "Recall LG05.O3, the worked contrast and the prediction/evaluation boundary. Align features/targets by row ID, fit the scaler on each fold training set, then fit the estimator on those same rows. Pass the whole unfitted pipeline to CV."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "entries": [
+              {
+                "optionId": "align",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ],
+        [
+          {
+            "entries": [
+              {
+                "optionId": "align_alias",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "slots",
+          "label": "Decision or calculation",
+          "slots": [
+            {
+              "id": "step1",
+              "label": "Pipeline step1",
+              "options": [
+                {
+                  "id": "align",
+                  "label": "Align feature/target row IDs"
+                },
+                {
+                  "id": "align_alias",
+                  "label": "The identical row-ID alignment (alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Fold-training scaler fit"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit or select using final-test rows"
+                }
+              ]
+            },
+            {
+              "id": "step2",
+              "label": "Pipeline step2",
+              "options": [
+                {
+                  "id": "align",
+                  "label": "Align feature/target row IDs"
+                },
+                {
+                  "id": "align_alias",
+                  "label": "The identical row-ID alignment (alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Fold-training scaler fit"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit or select using final-test rows"
+                }
+              ]
+            },
+            {
+              "id": "step3",
+              "label": "Pipeline step3",
+              "options": [
+                {
+                  "id": "align",
+                  "label": "Align feature/target row IDs"
+                },
+                {
+                  "id": "align_alias",
+                  "label": "The identical row-ID alignment (alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Fold-training scaler fit"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit or select using final-test rows"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Align features/targets by row ID, fit the scaler on each fold training set, then fit the estimator on those same rows. Pass the whole unfitted pipeline to CV.",
+      "id": "LG05.O3.practice.B",
+      "objective": "LG05.O3",
+      "prompt": "A changed development cohort: Repair the whole fold-local classification pipeline; preserve aligned targets and select the pipeline within development CV.",
+      "remediation": "Recall LG05.O3, the worked contrast and the prediction/evaluation boundary. Align features/targets by row ID, fit the scaler on each fold training set, then fit the estimator on those same rows. Pass the whole unfitted pipeline to CV."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "entries": [
+              {
+                "optionId": "align",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ],
+        [
+          {
+            "entries": [
+              {
+                "optionId": "align_alias",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "slots",
+          "label": "Decision or calculation",
+          "slots": [
+            {
+              "id": "step1",
+              "label": "Pipeline step1",
+              "options": [
+                {
+                  "id": "align",
+                  "label": "Align feature/target row IDs"
+                },
+                {
+                  "id": "align_alias",
+                  "label": "The identical row-ID alignment (alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Fold-training scaler fit"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit or select using final-test rows"
+                }
+              ]
+            },
+            {
+              "id": "step2",
+              "label": "Pipeline step2",
+              "options": [
+                {
+                  "id": "align",
+                  "label": "Align feature/target row IDs"
+                },
+                {
+                  "id": "align_alias",
+                  "label": "The identical row-ID alignment (alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Fold-training scaler fit"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit or select using final-test rows"
+                }
+              ]
+            },
+            {
+              "id": "step3",
+              "label": "Pipeline step3",
+              "options": [
+                {
+                  "id": "align",
+                  "label": "Align feature/target row IDs"
+                },
+                {
+                  "id": "align_alias",
+                  "label": "The identical row-ID alignment (alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Fold-training scaler fit"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit or select using final-test rows"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Align features/targets by row ID, fit the scaler on each fold training set, then fit the estimator on those same rows. Pass the whole unfitted pipeline to CV.",
+      "id": "LG05.O3.assessment.A",
+      "objective": "LG05.O3",
+      "prompt": "An unseen-customer example: Repair the whole fold-local classification pipeline; preserve aligned targets and select the pipeline within development CV.",
+      "remediation": "Recall LG05.O3, the worked contrast and the prediction/evaluation boundary. Align features/targets by row ID, fit the scaler on each fold training set, then fit the estimator on those same rows. Pass the whole unfitted pipeline to CV."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "entries": [
+              {
+                "optionId": "align",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ],
+        [
+          {
+            "entries": [
+              {
+                "optionId": "align_alias",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "slots",
+          "label": "Decision or calculation",
+          "slots": [
+            {
+              "id": "step1",
+              "label": "Pipeline step1",
+              "options": [
+                {
+                  "id": "align",
+                  "label": "Align feature/target row IDs"
+                },
+                {
+                  "id": "align_alias",
+                  "label": "The identical row-ID alignment (alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Fold-training scaler fit"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit or select using final-test rows"
+                }
+              ]
+            },
+            {
+              "id": "step2",
+              "label": "Pipeline step2",
+              "options": [
+                {
+                  "id": "align",
+                  "label": "Align feature/target row IDs"
+                },
+                {
+                  "id": "align_alias",
+                  "label": "The identical row-ID alignment (alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Fold-training scaler fit"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit or select using final-test rows"
+                }
+              ]
+            },
+            {
+              "id": "step3",
+              "label": "Pipeline step3",
+              "options": [
+                {
+                  "id": "align",
+                  "label": "Align feature/target row IDs"
+                },
+                {
+                  "id": "align_alias",
+                  "label": "The identical row-ID alignment (alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Fold-training scaler fit"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit or select using final-test rows"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Align features/targets by row ID, fit the scaler on each fold training set, then fit the estimator on those same rows. Pass the whole unfitted pipeline to CV.",
+      "id": "LG05.O3.assessment.B",
+      "objective": "LG05.O3",
+      "prompt": "A changed cost scenario: Repair the whole fold-local classification pipeline; preserve aligned targets and select the pipeline within development CV.",
+      "remediation": "Recall LG05.O3, the worked contrast and the prediction/evaluation boundary. Align features/targets by row ID, fit the scaler on each fold training set, then fit the estimator on those same rows. Pass the whole unfitted pipeline to CV."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "entries": [
+              {
+                "optionId": "align",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ],
+        [
+          {
+            "entries": [
+              {
+                "optionId": "align_alias",
+                "slotId": "step1"
+              },
+              {
+                "optionId": "scale",
+                "slotId": "step2"
+              },
+              {
+                "optionId": "model",
+                "slotId": "step3"
+              }
+            ],
+            "kind": "slots"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "slots",
+          "label": "Decision or calculation",
+          "slots": [
+            {
+              "id": "step1",
+              "label": "Pipeline step1",
+              "options": [
+                {
+                  "id": "align",
+                  "label": "Align feature/target row IDs"
+                },
+                {
+                  "id": "align_alias",
+                  "label": "The identical row-ID alignment (alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Fold-training scaler fit"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit or select using final-test rows"
+                }
+              ]
+            },
+            {
+              "id": "step2",
+              "label": "Pipeline step2",
+              "options": [
+                {
+                  "id": "align",
+                  "label": "Align feature/target row IDs"
+                },
+                {
+                  "id": "align_alias",
+                  "label": "The identical row-ID alignment (alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Fold-training scaler fit"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit or select using final-test rows"
+                }
+              ]
+            },
+            {
+              "id": "step3",
+              "label": "Pipeline step3",
+              "options": [
+                {
+                  "id": "align",
+                  "label": "Align feature/target row IDs"
+                },
+                {
+                  "id": "align_alias",
+                  "label": "The identical row-ID alignment (alias)"
+                },
+                {
+                  "id": "scale",
+                  "label": "Fold-training scaler fit"
+                },
+                {
+                  "id": "model",
+                  "label": "Estimator fit on the same fold training rows"
+                },
+                {
+                  "id": "test_fit",
+                  "label": "Fit or select using final-test rows"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Align features/targets by row ID, fit the scaler on each fold training set, then fit the estimator on those same rows. Pass the whole unfitted pipeline to CV.",
+      "id": "LG05.O3.assessment.C",
+      "objective": "LG05.O3",
+      "prompt": "A new deployment cohort: Repair the whole fold-local classification pipeline; preserve aligned targets and select the pipeline within development CV.",
+      "remediation": "Recall LG05.O3, the worked contrast and the prediction/evaluation boundary. Align features/targets by row ID, fit the scaler on each fold training set, then fit the estimator on those same rows. Pass the whole unfitted pipeline to CV."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No: compare on identical held-out IDs, target definition and metric/cost protocol"
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes: higher raw accuracy always identifies the better model"
+            },
+            {
+              "id": "wrong1",
+              "label": "Training accuracy is sufficient to replace a baseline comparison"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Baselines are meaningful only with aligned evaluation rows and the same information permissions.",
+      "id": "LG05.O4.practice.A",
+      "objective": "LG05.O4",
+      "prompt": "A churn training example: a DummyClassifier scores on easy rows and Logistic on different rows. Can their accuracy be compared as a fair model test?",
+      "remediation": "Recall LG05.O4, the worked contrast and the prediction/evaluation boundary. Baselines are meaningful only with aligned evaluation rows and the same information permissions."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Yes: higher raw accuracy always identifies the better model"
+            },
+            {
+              "id": "wrong1",
+              "label": "Training accuracy is sufficient to replace a baseline comparison"
+            },
+            {
+              "id": "supported",
+              "label": "No: compare on identical held-out IDs, target definition and metric/cost protocol"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Baselines are meaningful only with aligned evaluation rows and the same information permissions.",
+      "id": "LG05.O4.practice.B",
+      "objective": "LG05.O4",
+      "prompt": "A changed development cohort: a DummyClassifier scores on easy rows and Logistic on different rows. Can their accuracy be compared as a fair model test?",
+      "remediation": "Recall LG05.O4, the worked contrast and the prediction/evaluation boundary. Baselines are meaningful only with aligned evaluation rows and the same information permissions."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Training accuracy is sufficient to replace a baseline comparison"
+            },
+            {
+              "id": "supported",
+              "label": "No: compare on identical held-out IDs, target definition and metric/cost protocol"
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes: higher raw accuracy always identifies the better model"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Baselines are meaningful only with aligned evaluation rows and the same information permissions.",
+      "id": "LG05.O4.assessment.A",
+      "objective": "LG05.O4",
+      "prompt": "An unseen-customer example: a DummyClassifier scores on easy rows and Logistic on different rows. Can their accuracy be compared as a fair model test?",
+      "remediation": "Recall LG05.O4, the worked contrast and the prediction/evaluation boundary. Baselines are meaningful only with aligned evaluation rows and the same information permissions."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "No: compare on identical held-out IDs, target definition and metric/cost protocol"
+            },
+            {
+              "id": "wrong0",
+              "label": "Yes: higher raw accuracy always identifies the better model"
+            },
+            {
+              "id": "wrong1",
+              "label": "Training accuracy is sufficient to replace a baseline comparison"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Baselines are meaningful only with aligned evaluation rows and the same information permissions.",
+      "id": "LG05.O4.assessment.B",
+      "objective": "LG05.O4",
+      "prompt": "A changed cost scenario: a DummyClassifier scores on easy rows and Logistic on different rows. Can their accuracy be compared as a fair model test?",
+      "remediation": "Recall LG05.O4, the worked contrast and the prediction/evaluation boundary. Baselines are meaningful only with aligned evaluation rows and the same information permissions."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Yes: higher raw accuracy always identifies the better model"
+            },
+            {
+              "id": "wrong1",
+              "label": "Training accuracy is sufficient to replace a baseline comparison"
+            },
+            {
+              "id": "supported",
+              "label": "No: compare on identical held-out IDs, target definition and metric/cost protocol"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Baselines are meaningful only with aligned evaluation rows and the same information permissions.",
+      "id": "LG05.O4.assessment.C",
+      "objective": "LG05.O4",
+      "prompt": "A new deployment cohort: a DummyClassifier scores on easy rows and Logistic on different rows. Can their accuracy be compared as a fair model test?",
+      "remediation": "Recall LG05.O4, the worked contrast and the prediction/evaluation boundary. Baselines are meaningful only with aligned evaluation rows and the same information permissions."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "A small subgroup's zero observed errors proves universal fairness"
+            },
+            {
+              "id": "wrong1",
+              "label": "Only overall accuracy needs reporting"
+            },
+            {
+              "id": "supported",
+              "label": "State error counts/costs and subgroup sample limits rather than certify fairness from a small percentage"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "False positives and negatives have different consequences; unstable small-subgroup estimates need uncertainty and context.",
+      "id": "LG06.O1.practice.A",
+      "objective": "LG06.O1",
+      "prompt": "A churn training example: a false negative misses a future churn event; a small subgroup has few events. What should a report do?",
+      "remediation": "Recall LG06.O1, the worked contrast and the prediction/evaluation boundary. False positives and negatives have different consequences; unstable small-subgroup estimates need uncertainty and context."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Only overall accuracy needs reporting"
+            },
+            {
+              "id": "supported",
+              "label": "State error counts/costs and subgroup sample limits rather than certify fairness from a small percentage"
+            },
+            {
+              "id": "wrong0",
+              "label": "A small subgroup's zero observed errors proves universal fairness"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "False positives and negatives have different consequences; unstable small-subgroup estimates need uncertainty and context.",
+      "id": "LG06.O1.practice.B",
+      "objective": "LG06.O1",
+      "prompt": "A changed development cohort: a false negative misses a future churn event; a small subgroup has few events. What should a report do?",
+      "remediation": "Recall LG06.O1, the worked contrast and the prediction/evaluation boundary. False positives and negatives have different consequences; unstable small-subgroup estimates need uncertainty and context."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "State error counts/costs and subgroup sample limits rather than certify fairness from a small percentage"
+            },
+            {
+              "id": "wrong0",
+              "label": "A small subgroup's zero observed errors proves universal fairness"
+            },
+            {
+              "id": "wrong1",
+              "label": "Only overall accuracy needs reporting"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "False positives and negatives have different consequences; unstable small-subgroup estimates need uncertainty and context.",
+      "id": "LG06.O1.assessment.A",
+      "objective": "LG06.O1",
+      "prompt": "An unseen-customer example: a false negative misses a future churn event; a small subgroup has few events. What should a report do?",
+      "remediation": "Recall LG06.O1, the worked contrast and the prediction/evaluation boundary. False positives and negatives have different consequences; unstable small-subgroup estimates need uncertainty and context."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "A small subgroup's zero observed errors proves universal fairness"
+            },
+            {
+              "id": "wrong1",
+              "label": "Only overall accuracy needs reporting"
+            },
+            {
+              "id": "supported",
+              "label": "State error counts/costs and subgroup sample limits rather than certify fairness from a small percentage"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "False positives and negatives have different consequences; unstable small-subgroup estimates need uncertainty and context.",
+      "id": "LG06.O1.assessment.B",
+      "objective": "LG06.O1",
+      "prompt": "A changed cost scenario: a false negative misses a future churn event; a small subgroup has few events. What should a report do?",
+      "remediation": "Recall LG06.O1, the worked contrast and the prediction/evaluation boundary. False positives and negatives have different consequences; unstable small-subgroup estimates need uncertainty and context."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "Only overall accuracy needs reporting"
+            },
+            {
+              "id": "supported",
+              "label": "State error counts/costs and subgroup sample limits rather than certify fairness from a small percentage"
+            },
+            {
+              "id": "wrong0",
+              "label": "A small subgroup's zero observed errors proves universal fairness"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "False positives and negatives have different consequences; unstable small-subgroup estimates need uncertainty and context.",
+      "id": "LG06.O1.assessment.C",
+      "objective": "LG06.O1",
+      "prompt": "A new deployment cohort: a false negative misses a future churn event; a small subgroup has few events. What should a report do?",
+      "remediation": "Recall LG06.O1, the worked contrast and the prediction/evaluation boundary. False positives and negatives have different consequences; unstable small-subgroup estimates need uncertainty and context."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A probability guarantees the same event rate in every future population"
+            },
+            {
+              "id": "supported",
+              "label": "A conditional model association, not a causal intervention effect or guaranteed future risk"
+            },
+            {
+              "id": "wrong0",
+              "label": "The coefficient proves an intervention prevents churn"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Calibration, conditioning and population shift limit probability interpretation; odds ratios are not intervention effects."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Calibration, conditioning and population shift limit probability interpretation; odds ratios are not intervention effects.",
+      "id": "LG06.O2.practice.A",
+      "objective": "LG06.O2",
+      "prompt": "A churn training example: a coefficient odds ratio or predicted probability is high. What is justified?",
+      "remediation": "Recall LG06.O2, the worked contrast and the prediction/evaluation boundary. Calibration, conditioning and population shift limit probability interpretation; odds ratios are not intervention effects."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "A conditional model association, not a causal intervention effect or guaranteed future risk"
+            },
+            {
+              "id": "wrong0",
+              "label": "The coefficient proves an intervention prevents churn"
+            },
+            {
+              "id": "wrong1",
+              "label": "A probability guarantees the same event rate in every future population"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            },
+            {
+              "id": "mechanism",
+              "label": "Calibration, conditioning and population shift limit probability interpretation; odds ratios are not intervention effects."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Calibration, conditioning and population shift limit probability interpretation; odds ratios are not intervention effects.",
+      "id": "LG06.O2.practice.B",
+      "objective": "LG06.O2",
+      "prompt": "A changed development cohort: a coefficient odds ratio or predicted probability is high. What is justified?",
+      "remediation": "Recall LG06.O2, the worked contrast and the prediction/evaluation boundary. Calibration, conditioning and population shift limit probability interpretation; odds ratios are not intervention effects."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "The coefficient proves an intervention prevents churn"
+            },
+            {
+              "id": "wrong1",
+              "label": "A probability guarantees the same event rate in every future population"
+            },
+            {
+              "id": "supported",
+              "label": "A conditional model association, not a causal intervention effect or guaranteed future risk"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Calibration, conditioning and population shift limit probability interpretation; odds ratios are not intervention effects."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Calibration, conditioning and population shift limit probability interpretation; odds ratios are not intervention effects.",
+      "id": "LG06.O2.assessment.A",
+      "objective": "LG06.O2",
+      "prompt": "An unseen-customer example: a coefficient odds ratio or predicted probability is high. What is justified?",
+      "remediation": "Recall LG06.O2, the worked contrast and the prediction/evaluation boundary. Calibration, conditioning and population shift limit probability interpretation; odds ratios are not intervention effects."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A probability guarantees the same event rate in every future population"
+            },
+            {
+              "id": "supported",
+              "label": "A conditional model association, not a causal intervention effect or guaranteed future risk"
+            },
+            {
+              "id": "wrong0",
+              "label": "The coefficient proves an intervention prevents churn"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            },
+            {
+              "id": "mechanism",
+              "label": "Calibration, conditioning and population shift limit probability interpretation; odds ratios are not intervention effects."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Calibration, conditioning and population shift limit probability interpretation; odds ratios are not intervention effects.",
+      "id": "LG06.O2.assessment.B",
+      "objective": "LG06.O2",
+      "prompt": "A changed cost scenario: a coefficient odds ratio or predicted probability is high. What is justified?",
+      "remediation": "Recall LG06.O2, the worked contrast and the prediction/evaluation boundary. Calibration, conditioning and population shift limit probability interpretation; odds ratios are not intervention effects."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          },
+          {
+            "kind": "choice",
+            "optionId": "mechanism"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "A conditional model association, not a causal intervention effect or guaranteed future risk"
+            },
+            {
+              "id": "wrong0",
+              "label": "The coefficient proves an intervention prevents churn"
+            },
+            {
+              "id": "wrong1",
+              "label": "A probability guarantees the same event rate in every future population"
+            }
+          ]
+        },
+        {
+          "id": "reason",
+          "kind": "choice",
+          "label": "Explain the mechanism or protected boundary",
+          "options": [
+            {
+              "id": "mechanism",
+              "label": "Calibration, conditioning and population shift limit probability interpretation; odds ratios are not intervention effects."
+            },
+            {
+              "id": "shortcut",
+              "label": "A good training score makes probabilities causal and final-test fitting or threshold selection valid."
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": true,
+      "explanation": "Calibration, conditioning and population shift limit probability interpretation; odds ratios are not intervention effects.",
+      "id": "LG06.O2.assessment.C",
+      "objective": "LG06.O2",
+      "prompt": "A new deployment cohort: a coefficient odds ratio or predicted probability is high. What is justified?",
+      "remediation": "Recall LG06.O2, the worked contrast and the prediction/evaluation boundary. Calibration, conditioning and population shift limit probability interpretation; odds ratios are not intervention effects."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Investigate a fair reproducible comparison and failure modes without declaring a universal winner"
+            },
+            {
+              "id": "wrong0",
+              "label": "Always choose Logistic regardless of the question"
+            },
+            {
+              "id": "wrong1",
+              "label": "One development result proves the candidate wins in every population"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Logistic offers a linear logit mechanism; supplied KNN/tree candidates are comparisons, not automatically superior or newly implemented models.",
+      "id": "LG06.O3.practice.A",
+      "objective": "LG06.O3",
+      "prompt": "A churn training example: a supplied nonlinear candidate has lower development cost than Logistic on the same rows. What is sensible?",
+      "remediation": "Recall LG06.O3, the worked contrast and the prediction/evaluation boundary. Logistic offers a linear logit mechanism; supplied KNN/tree candidates are comparisons, not automatically superior or newly implemented models."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Always choose Logistic regardless of the question"
+            },
+            {
+              "id": "wrong1",
+              "label": "One development result proves the candidate wins in every population"
+            },
+            {
+              "id": "supported",
+              "label": "Investigate a fair reproducible comparison and failure modes without declaring a universal winner"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Logistic offers a linear logit mechanism; supplied KNN/tree candidates are comparisons, not automatically superior or newly implemented models.",
+      "id": "LG06.O3.practice.B",
+      "objective": "LG06.O3",
+      "prompt": "A changed development cohort: a supplied nonlinear candidate has lower development cost than Logistic on the same rows. What is sensible?",
+      "remediation": "Recall LG06.O3, the worked contrast and the prediction/evaluation boundary. Logistic offers a linear logit mechanism; supplied KNN/tree candidates are comparisons, not automatically superior or newly implemented models."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "One development result proves the candidate wins in every population"
+            },
+            {
+              "id": "supported",
+              "label": "Investigate a fair reproducible comparison and failure modes without declaring a universal winner"
+            },
+            {
+              "id": "wrong0",
+              "label": "Always choose Logistic regardless of the question"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Logistic offers a linear logit mechanism; supplied KNN/tree candidates are comparisons, not automatically superior or newly implemented models.",
+      "id": "LG06.O3.assessment.A",
+      "objective": "LG06.O3",
+      "prompt": "An unseen-customer example: a supplied nonlinear candidate has lower development cost than Logistic on the same rows. What is sensible?",
+      "remediation": "Recall LG06.O3, the worked contrast and the prediction/evaluation boundary. Logistic offers a linear logit mechanism; supplied KNN/tree candidates are comparisons, not automatically superior or newly implemented models."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Investigate a fair reproducible comparison and failure modes without declaring a universal winner"
+            },
+            {
+              "id": "wrong0",
+              "label": "Always choose Logistic regardless of the question"
+            },
+            {
+              "id": "wrong1",
+              "label": "One development result proves the candidate wins in every population"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Logistic offers a linear logit mechanism; supplied KNN/tree candidates are comparisons, not automatically superior or newly implemented models.",
+      "id": "LG06.O3.assessment.B",
+      "objective": "LG06.O3",
+      "prompt": "A changed cost scenario: a supplied nonlinear candidate has lower development cost than Logistic on the same rows. What is sensible?",
+      "remediation": "Recall LG06.O3, the worked contrast and the prediction/evaluation boundary. Logistic offers a linear logit mechanism; supplied KNN/tree candidates are comparisons, not automatically superior or newly implemented models."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Always choose Logistic regardless of the question"
+            },
+            {
+              "id": "wrong1",
+              "label": "One development result proves the candidate wins in every population"
+            },
+            {
+              "id": "supported",
+              "label": "Investigate a fair reproducible comparison and failure modes without declaring a universal winner"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Logistic offers a linear logit mechanism; supplied KNN/tree candidates are comparisons, not automatically superior or newly implemented models.",
+      "id": "LG06.O3.assessment.C",
+      "objective": "LG06.O3",
+      "prompt": "A new deployment cohort: a supplied nonlinear candidate has lower development cost than Logistic on the same rows. What is sensible?",
+      "remediation": "Recall LG06.O3, the worked contrast and the prediction/evaluation boundary. Logistic offers a linear logit mechanism; supplied KNN/tree candidates are comparisons, not automatically superior or newly implemented models."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Equal ranking proves equal calibrated risk"
+            },
+            {
+              "id": "wrong1",
+              "label": "A fixed seed removes population shift"
+            },
+            {
+              "id": "supported",
+              "label": "Ranking does not establish calibration; assess probability quality and shift/linear-boundary limitations"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Equal ordering or hard accuracy can coexist with different log loss. Calibration is not certified by rank or a fixed seed.",
+      "id": "LG06.O4.practice.A",
+      "objective": "LG06.O4",
+      "prompt": "A churn training example: two score sets rank customers identically but have different probability confidence. What must be reported?",
+      "remediation": "Recall LG06.O4, the worked contrast and the prediction/evaluation boundary. Equal ordering or hard accuracy can coexist with different log loss. Calibration is not certified by rank or a fixed seed."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A fixed seed removes population shift"
+            },
+            {
+              "id": "supported",
+              "label": "Ranking does not establish calibration; assess probability quality and shift/linear-boundary limitations"
+            },
+            {
+              "id": "wrong0",
+              "label": "Equal ranking proves equal calibrated risk"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Equal ordering or hard accuracy can coexist with different log loss. Calibration is not certified by rank or a fixed seed.",
+      "id": "LG06.O4.practice.B",
+      "objective": "LG06.O4",
+      "prompt": "A changed development cohort: two score sets rank customers identically but have different probability confidence. What must be reported?",
+      "remediation": "Recall LG06.O4, the worked contrast and the prediction/evaluation boundary. Equal ordering or hard accuracy can coexist with different log loss. Calibration is not certified by rank or a fixed seed."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "supported",
+              "label": "Ranking does not establish calibration; assess probability quality and shift/linear-boundary limitations"
+            },
+            {
+              "id": "wrong0",
+              "label": "Equal ranking proves equal calibrated risk"
+            },
+            {
+              "id": "wrong1",
+              "label": "A fixed seed removes population shift"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Equal ordering or hard accuracy can coexist with different log loss. Calibration is not certified by rank or a fixed seed.",
+      "id": "LG06.O4.assessment.A",
+      "objective": "LG06.O4",
+      "prompt": "An unseen-customer example: two score sets rank customers identically but have different probability confidence. What must be reported?",
+      "remediation": "Recall LG06.O4, the worked contrast and the prediction/evaluation boundary. Equal ordering or hard accuracy can coexist with different log loss. Calibration is not certified by rank or a fixed seed."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong0",
+              "label": "Equal ranking proves equal calibrated risk"
+            },
+            {
+              "id": "wrong1",
+              "label": "A fixed seed removes population shift"
+            },
+            {
+              "id": "supported",
+              "label": "Ranking does not establish calibration; assess probability quality and shift/linear-boundary limitations"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Equal ordering or hard accuracy can coexist with different log loss. Calibration is not certified by rank or a fixed seed.",
+      "id": "LG06.O4.assessment.B",
+      "objective": "LG06.O4",
+      "prompt": "A changed cost scenario: two score sets rank customers identically but have different probability confidence. What must be reported?",
+      "remediation": "Recall LG06.O4, the worked contrast and the prediction/evaluation boundary. Equal ordering or hard accuracy can coexist with different log loss. Calibration is not certified by rank or a fixed seed."
+    },
+    {
+      "accepted": [
+        [
+          {
+            "kind": "choice",
+            "optionId": "supported"
+          }
+        ]
+      ],
+      "atoms": [
+        {
+          "id": "decision",
+          "kind": "choice",
+          "label": "Decision or calculation",
+          "options": [
+            {
+              "id": "wrong1",
+              "label": "A fixed seed removes population shift"
+            },
+            {
+              "id": "supported",
+              "label": "Ranking does not establish calibration; assess probability quality and shift/linear-boundary limitations"
+            },
+            {
+              "id": "wrong0",
+              "label": "Equal ranking proves equal calibrated risk"
+            }
+          ]
+        }
+      ],
+      "code": "",
+      "critical": false,
+      "explanation": "Equal ordering or hard accuracy can coexist with different log loss. Calibration is not certified by rank or a fixed seed.",
+      "id": "LG06.O4.assessment.C",
+      "objective": "LG06.O4",
+      "prompt": "A new deployment cohort: two score sets rank customers identically but have different probability confidence. What must be reported?",
+      "remediation": "Recall LG06.O4, the worked contrast and the prediction/evaluation boundary. Equal ordering or hard accuracy can coexist with different log loss. Calibration is not certified by rank or a fixed seed."
+    }
+  ]
+}

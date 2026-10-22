@@ -18,7 +18,7 @@ describe("Algebra lessons and independent evidence",()=>{
 });
 
 describe("Variables guided discovery pilot",()=>{
- it.each([["11 dollars","Your prediction matches"],["14 dollars","does not double"],["I’m not sure yet","build your explanation"]])("separates observed change from prediction feedback: %s",async(label,feedback)=>{render(<AlgebraLesson id="variables"/>);await ready();const reveal=screen.getByRole("button",{name:"Reveal the comparison"});expect(reveal).toBeDisabled();fireEvent.click(screen.getByRole("radio",{name:label}));fireEvent.click(reveal);expect(screen.getByText(/Before: 7 dollars at 2 km. After: 11 dollars at 4 km. Change: \+4 dollars/)).toBeInTheDocument();expect(screen.getByText(new RegExp(feedback))).toBeInTheDocument();expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).objectives["algebra.functions.variables.activity"]).toBeUndefined();fireEvent.click(screen.getByRole("button",{name:"Reset prediction"}));expect(reveal).toBeDisabled();expect(screen.queryByText(/Before: 7 dollars at 2 km/)).not.toBeInTheDocument();expect(screen.getByRole("heading",{level:1,name:"What goes into a delivery bill?"})).toBeInTheDocument();expect(screen.getByRole("link",{name:"1. Variables and equations"})).toHaveAttribute("aria-current","page");});
+ it.each([["11 rupees","Your prediction matches"],["14 rupees","does not double"],["I’m not sure yet","build your explanation"]])("separates observed change from prediction feedback: %s",async(label,feedback)=>{render(<AlgebraLesson id="variables"/>);await ready();const reveal=screen.getByRole("button",{name:"Reveal the comparison"});expect(reveal).toBeDisabled();fireEvent.click(screen.getByRole("radio",{name:label}));fireEvent.click(reveal);expect(screen.getByText(/Before: 7 rupees at 2 km. After: 11 rupees at 4 km. Change: \+4 rupees/)).toBeInTheDocument();expect(screen.getByText(new RegExp(feedback))).toBeInTheDocument();expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).objectives["algebra.functions.variables.activity"]).toBeUndefined();fireEvent.click(screen.getByRole("button",{name:"Reset prediction"}));expect(reveal).toBeDisabled();expect(screen.queryByText(/Before: 7 rupees at 2 km/)).not.toBeInTheDocument();expect(screen.getByRole("heading",{level:1,name:"What goes into a delivery bill?"})).toBeInTheDocument();expect(screen.getByRole("link",{name:"1. Variables and equations"})).toHaveAttribute("aria-current","page");});
 });
 
 describe("Connected Algebra journey",()=>{
@@ -30,7 +30,7 @@ describe("Connected Algebra journey",()=>{
   expect(screen.getByRole("heading",{name:"Try a different situation"})).toBeInTheDocument();
   expect(screen.getByRole("heading",{name:"Carry this idea forward"})).toBeInTheDocument();
   fireEvent.click(screen.getByText("Compare your reasoning",{exact:true}));
-  expect(screen.getByText(/This reflection is unscored and is not saved/)).toBeInTheDocument();
+  expect(screen.getByText(/Not scored or saved/)).toBeInTheDocument();
   expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).masteryEvidence).toEqual([]);
  });
  it("keeps compounding and the selected exponential curve distinct",async()=>{

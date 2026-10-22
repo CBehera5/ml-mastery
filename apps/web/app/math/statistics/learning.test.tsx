@@ -18,9 +18,9 @@ function fill(incorrectKey?:string) {
 }
 describe("Statistics teaching and evidence",()=>{
   it("opens seven lessons and keeps completion separate from mastery",async()=>{
-    render(<StatisticsOverview/>);await screen.findByText(/Independent mastery not yet earned/);
+    render(<StatisticsOverview/>);await screen.findByText(/Mastery isn’t earned yet/);
     expect(screen.getAllByRole("link",{name:/Explore understanding data/})).toHaveLength(1);
-    expect(screen.getByText(/28 deterministic items/)).toHaveTextContent("23 correct");
+    expect(screen.getByText(/28 questions/)).toHaveTextContent("23 right");
   });
   it("records an objective, retains other module storage and survives reload",async()=>{
     localStorage.setItem("ml-math-lab:evidence:math.probability:v1","preserve");
@@ -31,7 +31,7 @@ describe("Statistics teaching and evidence",()=>{
     await waitFor(()=>expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).objectives["statistics.foundations.population"].completed).toBe(true));
     expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).masteryEvidence).toHaveLength(0);
     expect(localStorage.getItem("ml-math-lab:evidence:math.probability:v1")).toBe("preserve");
-    view.unmount();render(<StatisticsLesson slug="data"/>);await screen.findByText("Check your understanding — evidence recorded");
+    view.unmount();render(<StatisticsLesson slug="data"/>);await screen.findByText("Check your understanding — done");
   });
   it("makes causal interpretation critical even at 27/28 and supports review/edit/retry",async()=>{
     render(<StatisticsAssessment/>);await screen.findByRole("button",{name:"Review all answers"});

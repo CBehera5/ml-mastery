@@ -11,7 +11,7 @@ it("combines outcomes, four sections and a read-only starting suggestion",async(
  expect(screen.getByRole("heading",{level:1})).toHaveTextContent("Understand the ideas.Then build models.");
  expect(await screen.findByRole("link",{name:"Start learning →"})).toHaveAttribute("href","/math/algebra-functions/variables");
  const nav=screen.getByRole("navigation",{name:"Main navigation"});
- for(const [name,href] of [["Math","/math"],["Python","/python"],["Algorithms","/supervised"],["Projects","/projects"]])expect(within(nav).getAllByRole("link",{name})[0]).toHaveAttribute("href",href);
+ for(const [name,href] of [["Math","/math"],["Python","/python"],["Algorithms","/algorithms"],["Projects","/projects"]])expect(within(nav).getAllByRole("link",{name})[0]).toHaveAttribute("href",href);
  expect(screen.getByText(/intended full-program outcomes/)).toBeInTheDocument();
  expect(screen.getByText(/Full Project Studio: coming soon/)).toBeInTheDocument();
  expect(read.mock.calls.every(([key])=>progress.READ_KEYS.includes(key))).toBe(true);

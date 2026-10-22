@@ -3,8 +3,8 @@ import { readFileSync } from "node:fs";
 import { loadPyodide } from "pyodide";
 import { regressionTrainingTrace } from "@mlmath/runtime";
 import { PythonEngine } from "./engine";
-import { GRADIENT_CHECKS, GRADIENT_PRESETS, GRADIENT_SOLUTION, GRADIENT_STARTER } from "../../learn/linear-regression/lessons/gradient-python-content";
-import { HOUSE_DATA } from "../../learn/linear-regression/lab-data";
+import { GRADIENT_CHECKS, GRADIENT_PRESETS, GRADIENT_SOLUTION, GRADIENT_STARTER } from "../../algorithms/linear-regression/lessons/gradient-python-content";
+import { HOUSE_DATA } from "../../algorithms/linear-regression/lab-data";
 
 // These tests run REAL Python (Pyodide) so the lesson's code and hidden checks are verified,
 // not mocked. Loading takes a few seconds the first time.

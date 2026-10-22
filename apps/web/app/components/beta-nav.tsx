@@ -30,13 +30,13 @@ export function BetaNav({ status, product = true }: { status?: string; product?:
           <Link href="/">Public home</Link>
           <Link href="/math">Math foundations</Link>
           <Link href="/python">Python foundations</Link>
-          <Link href="/learn/linear-regression">Linear regression</Link>
-          <Link href="/supervised">Supervised learning</Link>
+          <Link href="/algorithms/linear-regression">Linear regression</Link>
+          <Link href="/algorithms">Supervised learning</Link>
         </div></details>
         <details><summary>Challenges</summary><div className={styles.menu}>
           <Link href="/demo">X-Ray experiment</Link>
           <Link href="/challenges/wrong-direction">Debug challenge</Link>
-          <Link href="/learn/linear-regression/mastery">Regression mastery challenge</Link>
+          <Link href="/algorithms/linear-regression/mastery">Regression mastery challenge</Link>
         </div></details>
         <details><summary>Help</summary><div className={styles.menu}>
           <Link href="/beta">Beta guide / Getting started</Link>

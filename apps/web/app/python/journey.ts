@@ -2,7 +2,7 @@ export const PYTHON_JOURNEYS = {
   "essentials": [
     [
       "How can a few names express a real prediction?",
-      "If a price is stored in thousands rather than dollars, why must the units of the calculation change too?"
+      "If a price is stored in thousands rather than rupees, why must the units of the calculation change too?"
     ],
     [
       "When do two names point to the same changing data?",

@@ -1,0 +1,17 @@
+.playground{margin:1.75rem 0;padding:1.25rem 1.4rem;background:#fff;border:1px solid #d9dfd4;border-radius:1rem}
+.grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:1rem;align-items:start}
+.map,.fit{margin:0}
+.map svg,.fit svg{width:100%;height:auto;display:block;touch-action:none;border-radius:.5rem}
+.fit svg{touch-action:auto}
+.map figcaption,.fit figcaption{font-size:.85rem;color:#50615a;margin-top:.4rem;line-height:1.5}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+.controls label{display:block;font-size:.9rem;font-weight:600}
+.controls input[type=range]{display:block;width:100%;margin-top:.3rem;min-height:1.6rem}
+.readout{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem;margin:.5rem 0}
+.readout div{background:#f4f2e8;border-radius:.6rem;padding:.6rem .8rem}
+.readout dt{font-size:.75rem;color:#50615a}.readout dd{margin:.15rem 0 0;font-size:1.25rem;font-weight:700;color:#16211c;font-variant-numeric:tabular-nums}
+.actions{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin-top:.8rem}
+.actions select{margin-left:.35rem;padding:.35rem}
+.note{font-size:.85rem;color:#50615a;margin:.8rem 0 0}
+@media (max-width:720px){.grid{grid-template-columns:1fr}.readout{grid-template-columns:repeat(2,minmax(0,1fr))}.controls{grid-template-columns:1fr}}
+.actions button{width:auto;flex:0 0 auto;display:inline-block}
