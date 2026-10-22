@@ -49,7 +49,7 @@ for (const lab of [0, 1]) it(`lab ${lab} predicts before reveal and preserves fr
 });
 it("keeps overview completion separate from independent mastery", () => {
   render(<DecisionTreesOverview/>);
-  expect(screen.getByText(/20\/24 families/)).toBeInTheDocument();
+  expect(screen.getByText(/answer 20 of the 24 questions/)).toBeInTheDocument();
   cleanup(); render(<DecisionTreesAssessment/>);
   expect(screen.getByText(/24 objectives; at least20/)).toBeInTheDocument();
 });

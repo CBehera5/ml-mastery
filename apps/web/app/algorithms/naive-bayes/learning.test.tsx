@@ -24,7 +24,7 @@ for(const sample of [{id:"NB-E1.supplied.allzero.v1",lesson:0,text:/Undefined po
  const config=configurations(sample.lesson===0?0:1).find(c=>c.id===sample.id)!;render(<Graphic lab={sample.lesson===0?0:1} config={config}/>);expect(screen.getByText(sample.text)).toHaveTextContent("No class prediction exists");expect(screen.queryByRole("table",{name:"Class priors,log scores and normalized posteriors"})).not.toBeInTheDocument();
 });
 it("keeps independent mastery separate from overview completion",async()=>{
- render(<NaiveBayesOverview/>);expect(screen.getByText(/13\/16 families/)).toBeInTheDocument();cleanup();render(<NaiveBayesAssessment/>);expect(screen.getByText(/16 objectives; at least13/)).toBeInTheDocument();
+ render(<NaiveBayesOverview/>);expect(screen.getByText(/answer 13 of the 16 questions/)).toBeInTheDocument();cleanup();render(<NaiveBayesAssessment/>);expect(screen.getByText(/16 objectives; at least13/)).toBeInTheDocument();
 });
 it("distinguishes valid log zero support from undefined posterior without changing the frozen value",async()=>{
  const config=configurations(0).find(c=>c.id==="NB-E1.supplied.3.v1")!;render(<Graphic lab={0} config={config}/>);expect(screen.getAllByText(/log of exact zero support; not an undefined posterior/).length).toBeGreaterThan(0);expect(configurations(0).find(item=>item.id==="NB-E1.supplied.3.v1")!.expected.log_class_scores).toEqual([{tag:"infinity",sign:"negative"},Math.log(.25)]);

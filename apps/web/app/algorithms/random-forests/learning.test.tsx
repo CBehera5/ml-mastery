@@ -27,4 +27,4 @@ for(const lab of [0,1])it(`lab${lab} requires prediction,changes and a supported
  expect(screen.getByRole("table",{name:"Saved tree node conditions and predictions"})).toHaveStyle({minWidth:"520px"});
  fireEvent.change(screen.getByRole("combobox",{name:"Supported explanation"}),{target:{value:config.reasonId}});fireEvent.click(screen.getByRole("button",{name:"Check my explanation"}));expect(screen.getByText("Meaningful interaction demonstrated; not independent mastery.")).toBeInTheDocument();
 });
-it("keeps completion separate from the independent assessment",()=>{render(<RandomForestsOverview/>);expect(screen.getByText(/16\/20 families/)).toBeInTheDocument();cleanup();render(<RandomForestsAssessment/>);expect(screen.getByText(/20 objectives; at least16/)).toBeInTheDocument();});
+it("keeps completion separate from the independent assessment",()=>{render(<RandomForestsOverview/>);expect(screen.getByText(/answer 16 of the 20 questions/)).toBeInTheDocument();cleanup();render(<RandomForestsAssessment/>);expect(screen.getByText(/20 objectives; at least16/)).toBeInTheDocument();});
