@@ -11,6 +11,8 @@ import { ELASTIC_CODE, INTERP_CODE, LASSO_CODE, RIDGE_CODE, SAFE_CODE, WHY_CODE 
 import { ElasticPlayground, InterpretPlayground, LassoPlayground, RidgePlayground, SafePlayground, WhyPlayground } from "../regularization/playground/reg-labs";
 import { CONF_CODE as LG_CONF_CODE, FLOW_CODE, GEO_CODE, LOSS_CODE, SIG_CODE, THR_CODE } from "../logistic/playground/lg-code";
 import { BoundaryPlayground, ConfidencePlayground as LgConfidencePlayground, LeakPlayground, LossPlayground, SigmoidPlayground, ThresholdPlayground } from "../logistic/playground/lg-labs";
+import { ALIGN_CODE, DEPTH_CODE, GINI_CODE, PART_CODE, RULE_CODE, SPLIT_CODE } from "../decision-trees/playground/dt-code";
+import { AlignPlayground, DepthPlayground, GiniPlayground, PartitionPlayground, RulePlayground, SplitPlayground } from "../decision-trees/playground/dt-labs";
 
 export type AlgoExtra = { Playground?: ComponentType; code?: CodeLabConfig };
 /** One entry per lesson, keyed `module/lessonIndex` (zero-based). A lesson page shows its playground before the formal experiment and its code cell in the Python section. */
@@ -33,6 +35,12 @@ export const ALGO_EXTRAS: Record<string, AlgoExtra> = {
   "regularization/3": { Playground: ElasticPlayground, code: ELASTIC_CODE },
   "regularization/4": { Playground: SafePlayground, code: SAFE_CODE },
   "regularization/5": { Playground: InterpretPlayground, code: INTERP_CODE },
+  "decision-trees/0": { Playground: PartitionPlayground, code: PART_CODE },
+  "decision-trees/1": { Playground: SplitPlayground, code: SPLIT_CODE },
+  "decision-trees/2": { Playground: GiniPlayground, code: GINI_CODE },
+  "decision-trees/3": { Playground: DepthPlayground, code: DEPTH_CODE },
+  "decision-trees/4": { Playground: AlignPlayground, code: ALIGN_CODE },
+  "decision-trees/5": { Playground: RulePlayground, code: RULE_CODE },
   "logistic/0": { Playground: SigmoidPlayground, code: SIG_CODE },
   "logistic/1": { Playground: LossPlayground, code: LOSS_CODE },
   "logistic/2": { Playground: ThresholdPlayground, code: THR_CODE },
