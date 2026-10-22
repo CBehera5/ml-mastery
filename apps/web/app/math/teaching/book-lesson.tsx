@@ -20,7 +20,7 @@ export function BookOpening({module,lesson}:{module:string;lesson:string}) {
      <button type="button" className={styles.lock} disabled={guess.trim()===""} onClick={()=>setLocked(guess.trim())}>Lock in my guess</button>
      <button type="button" className={styles.skip} onClick={()=>setLocked("")}>I’m not sure. Let me explore</button>
     </div></>
-   :<p role="status" className={styles.locked}>{locked===""?"No guess yet, and that is fine. Explore below, then decide what you think.":<>Your guess: <q>{locked}</q>. Test it in the explorer below, then come back and see if you would change it.</>}</p>}
+   :<p role="status" className={styles.locked}>{locked===""?"No guess yet, and that is fine. Explore below, then decide what you think.":<>Your guess: <q>{locked}</q> Now test it in the explorer below, then come back and see if you would change it.</>}</p>}
   </div></section>;
 }
 export function BookExplanation({module,lesson}:{module:string;lesson:string}) {
