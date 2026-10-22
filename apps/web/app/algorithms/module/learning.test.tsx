@@ -28,7 +28,7 @@ it("stores only full-EV practice and preserves prototype and prior module bytes"
   await open();
   const region = within(screen.getByRole("region", { name: "Practice EV02.O3" }));
   fireEvent.change(region.getByRole("spinbutton"), { target: { value: "0.4" } });
-  fireEvent.click(region.getByRole("button", { name: "Check EV02.O3" }));
+  fireEvent.click(region.getByRole("button", { name: "Check my answer, EV02.O3" }));
   expect(region.getByRole("status")).toHaveTextContent("Correct.");
   expect(load(localStorage.getItem(STORAGE_KEY)).practice[6].proof).not.toBeNull();
   expect(load(localStorage.getItem(STORAGE_KEY)).mastery).toBeNull();
@@ -59,7 +59,7 @@ it("requires prediction, clears stale results, and preserves endpoint rendering 
 it("warns and preserves corrupt storage while still allowing in-memory practice", async () => {
   localStorage.setItem(STORAGE_KEY, "foreign-record"); await open();
   expect(screen.getByRole("alert")).toHaveTextContent("in memory only");
-  fireEvent.click(screen.getByRole("button", { name: "Check EV02.O1" }));
+  fireEvent.click(screen.getByRole("button", { name: "Check my answer, EV02.O1" }));
   expect(localStorage.getItem(STORAGE_KEY)).toBe("foreign-record");
 });
 it.runIf(MASTERY_AVAILABLE)("does not leak independent correctness, requires review and confirms a complete attempt", async () => {

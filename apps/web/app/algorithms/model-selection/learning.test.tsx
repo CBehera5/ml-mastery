@@ -54,7 +54,7 @@ it("shows practice feedback without awarding mastery and enables the independent
   const option = family.atoms[0]; if (option.kind !== "choice") throw Error("Expected a choice atom.");
   const label = option.options.find(item => item.id === accepted.optionId)!.label;
   fireEvent.click(screen.getByLabelText(label));
-  fireEvent.click(screen.getByRole("button", { name: "Check MS01.O1" }));
+  fireEvent.click(screen.getByRole("button", { name: "Check my answer, MS01.O1" }));
   await waitFor(() => expect(screen.getByText(/Answer checked\. Compare your reasoning/)).toBeInTheDocument());
   expect(load(localStorage.getItem(STORAGE_KEY)).mastery).toBeNull();
   cleanup(); render(<ModelSelectionAssessment/>);

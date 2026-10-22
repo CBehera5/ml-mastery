@@ -25,7 +25,7 @@ it("restores practice without reading or changing earlier learner scopes", async
   await open();
   const practice = within(screen.getByRole("region", { name: "Practice DT01.O1" }));
   fireEvent.change(practice.getByRole("spinbutton"), { target: { value: String((PRACTICE[0][0].accepted[0][0] as {value:number}).value) } });
-  fireEvent.click(practice.getByRole("button", { name: "Check DT01.O1" }));
+  fireEvent.click(practice.getByRole("button", { name: "Check my answer, DT01.O1" }));
   expect(practice.getByRole("status")).toHaveTextContent("Correct.");
   expect(load(localStorage.getItem(STORAGE_KEY)).practice[0].proof).not.toBeNull();
   expect(load(localStorage.getItem(STORAGE_KEY)).mastery).toBeNull();

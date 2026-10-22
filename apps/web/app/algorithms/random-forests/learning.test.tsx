@@ -15,7 +15,7 @@ for(let lesson=0;lesson<5;lesson++)it(`teaches all four RF0${lesson+1} objective
 });
 it("restores mean practice without granting mastery or modifying earlier evidence",async()=>{
  const prior=["ml-math-lab:supervised:decision-trees:full:v1","python","regression-progress"];prior.forEach(key=>localStorage.setItem(key,"earlier-evidence"));await open(1);
- const practice=within(screen.getByRole("region",{name:"Practice RF02.O1"}));fireEvent.change(practice.getByRole("spinbutton"),{target:{value:String((PRACTICE[0][4].accepted[0][0] as {value:number}).value)}});fireEvent.click(practice.getByRole("button",{name:"Check RF02.O1"}));
+ const practice=within(screen.getByRole("region",{name:"Practice RF02.O1"}));fireEvent.change(practice.getByRole("spinbutton"),{target:{value:String((PRACTICE[0][4].accepted[0][0] as {value:number}).value)}});fireEvent.click(practice.getByRole("button",{name: "Check my answer, RF02.O1"}));
  expect(practice.getByRole("status")).toHaveTextContent("Correct.");expect(load(localStorage.getItem(STORAGE_KEY)).mastery).toBeNull();prior.forEach(key=>expect(localStorage.getItem(key)).toBe("earlier-evidence"));cleanup();await open(1);expect(screen.getByRole("region",{name:"Practice RF02.O1"})).toHaveTextContent("Practice demonstrated");
 });
 for(const lab of [0,1])it(`lab${lab} requires prediction,changes and a supported explanation;shows OOB missingness`,async()=>{
