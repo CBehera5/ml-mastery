@@ -1,0 +1,574 @@
+{
+  "/learn/linear-regression": {
+    "title": "Linear Regression | ML Mastery",
+    "description": "A nine-lesson pathway from prediction intuition to independent linear-regression reasoning."
+  },
+  "/learn/linear-regression/equation": {
+    "title": "Linear Regression: From Intuition to Equation | ML Mastery",
+    "description": "Explain how a per-area amount and a baseline combine into a price estimate."
+  },
+  "/learn/linear-regression/errors": {
+    "title": "Linear Regression: Measuring Prediction Errors | ML Mastery",
+    "description": "Compare residuals, MAE, MSE, and RMSE and explain their tradeoffs."
+  },
+  "/learn/linear-regression/failure-modes": {
+    "title": "When Linear Regression Fails | ML Mastery",
+    "description": "Diagnose underfitting, outliers, nonlinearity, scaling, leakage, and correlated features."
+  },
+  "/learn/linear-regression/gradient-descent": {
+    "title": "Linear Regression: How Gradient Descent Learns | ML Mastery",
+    "description": "Explain gradients, learning rate, updates, convergence, and divergence."
+  },
+  "/learn/linear-regression/implementation": {
+    "title": "Linear Regression: Implementing the Algorithm | ML Mastery",
+    "description": "Translate predictions, errors and parameter updates into Python, then compare a complete workflow in the notebook."
+  },
+  "/learn/linear-regression/mastery": {
+    "title": "Linear Regression: Independent Mastery Challenge | ML Mastery",
+    "description": "Solve an unfamiliar prediction problem with justified mathematical and modeling choices."
+  },
+  "/learn/linear-regression/multiple-features": {
+    "title": "Multiple Linear Regression | ML Mastery",
+    "description": "Use feature and weight vectors, matrix multiplication, and feature scaling."
+  },
+  "/learn/linear-regression/project": {
+    "title": "Linear Regression: Real-World Application | ML Mastery",
+    "description": "Build and evaluate a complete regression workflow and explain its limitations."
+  },
+  "/learn/linear-regression/why": {
+    "title": "Why Linear Regression Exists | ML Mastery",
+    "description": "Frame a prediction problem using features, targets, observations, and estimates."
+  },
+  "/math": {
+    "title": "Math for Machine Learning | ML Mastery",
+    "description": "Connect algebra, linear algebra, calculus, probability, statistics and optimization through explained examples, graphs and interactive practice."
+  },
+  "/math/algebra-functions": {
+    "title": "Algebra and Functions | ML Mastery",
+    "description": "Turn real problems into equations, read functions and graphs, and connect powers, the number e, logarithms and composition to machine learning."
+  },
+  "/math/algebra-functions/assessment": {
+    "title": "Algebra and Functions: Core Assessment | ML Mastery",
+    "description": "Check your algebra and functions reasoning with an independent assessment. Review results and revisit concepts that need more practice."
+  },
+  "/math/algebra-functions/functions": {
+    "title": "Algebra and Functions: Functions, domains and outputs | ML Mastery",
+    "description": "Writing f(x) names the result of applying f to x; it does not mean f multiplied by x."
+  },
+  "/math/algebra-functions/graphs": {
+    "title": "Algebra and Functions: Graphs, slopes and intercepts | ML Mastery",
+    "description": "The intercept is the starting charge. A prediction line makes starting level and sensitivity visible."
+  },
+  "/math/algebra-functions/logarithms": {
+    "title": "Algebra and Functions: Logarithms undo exponentials | ML Mastery",
+    "description": "log_b(a) is the exponent needed to turn b into a. Log-likelihoods turn many tiny probability products into manageable sums."
+  },
+  "/math/algebra-functions/powers": {
+    "title": "Algebra and Functions: Powers, growth and the number e | ML Mastery",
+    "description": "e is the limiting factor (1 + 1/n)^n as n grows. Natural exponentials appear in sigmoid probabilities and softmax."
+  },
+  "/math/algebra-functions/transformations": {
+    "title": "Algebra and Functions: Transformations and composition | ML Mastery",
+    "description": "g(f(x)) means apply f first, then g. A preprocessing step followed by a model is a composition."
+  },
+  "/math/algebra-functions/variables": {
+    "title": "Algebra and Functions: Variables and equations | ML Mastery",
+    "description": "The equals sign asserts that two expressions have the same value."
+  },
+  "/math/derivatives": {
+    "title": "Calculus for Machine Learning: Derivatives and Gradients | ML Mastery",
+    "description": "Discover derivatives through changing quantities, then connect secants, chain rule, partial derivatives, gradients and accumulation to learning."
+  },
+  "/math/functions-derivatives": {
+    "title": "Functions and Derivatives: Quick Review | ML Mastery",
+    "description": "Review functions, graph slopes and local sensitivity in the original compact derivative activity. Continue to the full Calculus path for deeper practice."
+  },
+  "/math/integration": {
+    "title": "Math Transfer Practice: Apply Concepts Together | ML Mastery",
+    "description": "Combine mathematical reasoning in new prediction scenarios. This is cross-topic transfer practice, not a lesson about calculating integrals."
+  },
+  "/math/linear-algebra": {
+    "title": "Linear Algebra | ML Mastery",
+    "description": "Use vectors, dot products and matrices to express predictions. Explore transformations, span, invertibility and eigenvector intuition."
+  },
+  "/math/linear-algebra/assessment": {
+    "title": "Linear Algebra: Core Assessment | ML Mastery",
+    "description": "Check vector and matrix reasoning in the original Linear Algebra core assessment. Review its results separately from the expanded module assessment."
+  },
+  "/math/linear-algebra/eigenvectors": {
+    "title": "Linear Algebra: Eigenvectors and PCA Intuition | ML Mastery",
+    "description": "Find directions that a transformation scales without turning. Explore eigenvalues and the connection to principal component analysis."
+  },
+  "/math/linear-algebra/mastery": {
+    "title": "Linear Algebra: Independent Assessment | ML Mastery",
+    "description": "Assess transformations, span, inverses and eigenvector intuition alongside core Linear Algebra. Expanded mastery remains separate from the original core assessment."
+  },
+  "/math/linear-algebra/transformations": {
+    "title": "Linear Algebra: Transformations, Span and Inverses | ML Mastery",
+    "description": "See how matrices move vectors, preserve or lose directions, and determine whether a transformation can be uniquely reversed."
+  },
+  "/math/matrices-multiplication": {
+    "title": "Linear Algebra: Matrices and Multiplication | ML Mastery",
+    "description": "Organize observations into a matrix, calculate batches of predictions and follow the order and dimensions of matrix products."
+  },
+  "/math/optimization": {
+    "title": "Optimization | ML Mastery",
+    "description": "Define an objective, follow gradient updates and inspect stability. Understand geometry, regularization and validation before declaring improvement."
+  },
+  "/math/optimization/geometry": {
+    "title": "Optimization: Landscape geometry and scaling | ML Mastery",
+    "description": "Curvature describes how slope changes. Feature scaling and parameterization affect training geometry."
+  },
+  "/math/optimization/mastery": {
+    "title": "Optimization: Independent Assessment | ML Mastery",
+    "description": "Check your optimization reasoning with an independent assessment. Review results and revisit concepts that need more practice."
+  },
+  "/math/optimization/objectives": {
+    "title": "Optimization: Losses, objectives and gradients | ML Mastery",
+    "description": "An objective ranks choices; constraints define which choices are allowed."
+  },
+  "/math/optimization/regularization": {
+    "title": "Optimization: Regularization and the objective tradeoff | ML Mastery",
+    "description": "For (w−3)²+λw², set 2(w−3)+2λw=0. L2 penalties shrink weights; L1 penalties can encourage exact zeros."
+  },
+  "/math/optimization/responsible": {
+    "title": "Optimization: Honest optimization and ML decisions | ML Mastery",
+    "description": "Hyperparameter search and early stopping are model-selection procedures."
+  },
+  "/math/optimization/stability": {
+    "title": "Optimization: Finite-run progress and numerical stability | ML Mastery",
+    "description": "For a quadratic, a suitable Newton step can reach its stationary point exactly."
+  },
+  "/math/optimization/updates": {
+    "title": "Optimization: Gradient updates and learning rates | ML Mastery",
+    "description": "The update w_new = w_old − η∇L uses the gradient at the old point."
+  },
+  "/math/probability": {
+    "title": "Probability | ML Mastery",
+    "description": "Reason about uncertain outcomes, overlapping events, conditional probabilities and Bayes’ rule using counts, distributions and model examples."
+  },
+  "/math/probability/bayes": {
+    "title": "Probability: Bayes and base rates | ML Mastery",
+    "description": "Bayes’ rule updates a prior by accounting for how likely the evidence is under each possibility."
+  },
+  "/math/probability/conditional": {
+    "title": "Probability: Conditional probability | ML Mastery",
+    "description": "P(spam | free) = 120/160 = 0.75. Evaluate a diagnostic signal within the population to which it is applied."
+  },
+  "/math/probability/distributions": {
+    "title": "Probability: Random variables and distributions | ML Mastery",
+    "description": "A random variable maps outcomes to numerical values. Noise, labels and predictions require distributional assumptions."
+  },
+  "/math/probability/mastery": {
+    "title": "Probability: Independent Assessment | ML Mastery",
+    "description": "Check your probability reasoning with an independent assessment. Review results and revisit concepts that need more practice."
+  },
+  "/math/probability/ml": {
+    "title": "Probability: Probability in machine learning | ML Mastery",
+    "description": "Maximizing likelihood means selecting settings that assign high probability to the observed data under a specified model."
+  },
+  "/math/probability/multiple-events": {
+    "title": "Probability: Counting and multiple events | ML Mastery",
+    "description": "P(A or B) = P(A)+P(B)−P(A and B). Combining signals often requires dependence assumptions."
+  },
+  "/math/probability/understanding": {
+    "title": "Probability: Understanding probability | ML Mastery",
+    "description": "Probability compares an event with a specified sample space. Probability provides a language for uncertainty."
+  },
+  "/math/statistics": {
+    "title": "Statistics | ML Mastery",
+    "description": "Describe data with useful summaries and charts, then distinguish sampling uncertainty, association, causation and honest model evaluation."
+  },
+  "/math/statistics/center": {
+    "title": "Statistics: Measures of central tendency | ML Mastery",
+    "description": "The mean balances every numerical value. Squared-error models target a conditional mean; absolute-error objectives target a conditional median under standard conditions."
+  },
+  "/math/statistics/data": {
+    "title": "Statistics: Understanding data | ML Mastery",
+    "description": "Data type and question determine the representation. Before training a model, inspect missing values, unusual observations, distributions and relationships."
+  },
+  "/math/statistics/distributions": {
+    "title": "Statistics: Distributions and visualization | ML Mastery",
+    "description": "Standard deviation describes individual spread. Uncertainty about an estimated model metric differs from the variation among individual examples."
+  },
+  "/math/statistics/mastery": {
+    "title": "Statistics: Independent Assessment | ML Mastery",
+    "description": "Check your statistics reasoning with an independent assessment. Review results and revisit concepts that need more practice."
+  },
+  "/math/statistics/ml": {
+    "title": "Statistics: Statistics in machine learning | ML Mastery",
+    "description": "Precision asks how many flagged cases were correct; recall asks how many actual positives were found."
+  },
+  "/math/statistics/relationships": {
+    "title": "Statistics: Relationships without causal shortcuts | ML Mastery",
+    "description": "Correlation summarizes linear association. A predictive feature can be useful without being a safe lever to change."
+  },
+  "/math/statistics/sampling": {
+    "title": "Statistics: Sampling and inference | ML Mastery",
+    "description": "For mean 62, known population SD 12 and n=36, an approximate normal interval is 62 ± 1.96×2 = [58.08, 65.92]."
+  },
+  "/math/statistics/spread": {
+    "title": "Statistics: Variability and spread | ML Mastery",
+    "description": "Population variance divides by N for the full specified population."
+  },
+  "/math/vectors-dot-product": {
+    "title": "Linear Algebra: Vectors and Dot Products | ML Mastery",
+    "description": "Represent measurements as vectors, calculate weighted sums and projections, and connect their geometry to predictions with interactive examples."
+  },
+  "/supervised": {
+    "title": "Machine Learning Algorithms and Evaluation | ML Mastery",
+    "description": "Explore regression, classification, trees, ensembles and neural networks with worked examples, visual explanations and model-evaluation practice."
+  },
+  "/supervised/decision-trees": {
+    "title": "Decision Trees | ML Mastery",
+    "description": "Follow feature questions to leaf predictions. Compare impurity, depth, pruning, numerical targets and the limits of tree explanations."
+  },
+  "/supervised/decision-trees/dt01": {
+    "title": "Decision Trees: Partition feature space | ML Mastery",
+    "description": "House prices can change differently across neighborhoods and area ranges."
+  },
+  "/supervised/decision-trees/dt02": {
+    "title": "Decision Trees: Regression leaves | ML Mastery",
+    "description": "For house prices we need a numeric prediction, not a class vote."
+  },
+  "/supervised/decision-trees/dt03": {
+    "title": "Decision Trees: Classification leaves | ML Mastery",
+    "description": "A churn team needs class decisions and an account of the class mix behind them."
+  },
+  "/supervised/decision-trees/dt04": {
+    "title": "Decision Trees: Depth and stability | ML Mastery",
+    "description": "More splits can capture useful structure or chase sample-specific noise."
+  },
+  "/supervised/decision-trees/dt05": {
+    "title": "Decision Trees: Fit safely | ML Mastery",
+    "description": "A tree can exploit a leaked cancellation flag as easily as a legitimate feature."
+  },
+  "/supervised/decision-trees/dt06": {
+    "title": "Decision Trees: Explain rules and limits | ML Mastery",
+    "description": "Stakeholders want to know why a model flags a customer or prices a house."
+  },
+  "/supervised/decision-trees/mastery": {
+    "title": "Decision Trees: Independent Assessment | ML Mastery",
+    "description": "Check your decision trees reasoning with an independent assessment. Review results and revisit concepts that need more practice."
+  },
+  "/supervised/evaluation": {
+    "title": "Model Evaluation | ML Mastery",
+    "description": "Choose metrics and validation designs that match the prediction task. Distinguish accuracy, decision costs, ranking, calibration and uncertainty."
+  },
+  "/supervised/evaluation/ev01": {
+    "title": "Model Evaluation: Prediction Moment — Original Practice | ML Mastery",
+    "description": "Use the original prediction-moment activity to identify available features and future-information leakage. Its saved progress is separate from the full course."
+  },
+  "/supervised/evaluation/lessons/ev01": {
+    "title": "Model Evaluation: Define the prediction moment | ML Mastery",
+    "description": "Before predicting a house price, churn or documentation review outcome, decide what a row means and when a decision is made."
+  },
+  "/supervised/evaluation/lessons/ev02": {
+    "title": "Model Evaluation: Estimate generalization | ML Mastery",
+    "description": "A house-price team needs to choose a useful model, not win a contest on the data it already saw."
+  },
+  "/supervised/evaluation/lessons/ev03": {
+    "title": "Model Evaluation: Classification decisions and costs | ML Mastery",
+    "description": "A documentation review queue needs to find material problems without overwhelming reviewers."
+  },
+  "/supervised/evaluation/lessons/ev04": {
+    "title": "Model Evaluation: Probabilities versus ranking | ML Mastery",
+    "description": "A review team may rank items well while overstating their risk."
+  },
+  "/supervised/evaluation/lessons/ev05": {
+    "title": "Model Evaluation: Bias, variance and uncertainty | ML Mastery",
+    "description": "A more flexible predictor can memorize noisy training homes and perform worse on new ones."
+  },
+  "/supervised/evaluation/lessons/ev06": {
+    "title": "Model Evaluation: Honest workflow report | ML Mastery",
+    "description": "A reproducible score is useful only when the full learning workflow respected information boundaries."
+  },
+  "/supervised/evaluation/mastery": {
+    "title": "Model Evaluation: Independent Assessment | ML Mastery",
+    "description": "Check your model evaluation reasoning with an independent assessment. Review results and revisit concepts that need more practice."
+  },
+  "/supervised/gradient-boosting": {
+    "title": "Gradient Boosting | ML Mastery",
+    "description": "Build predictions as a sequence of corrections. Understand residuals, loss gradients, learning rate and validation-based stopping."
+  },
+  "/supervised/gradient-boosting/gb01": {
+    "title": "Gradient Boosting: Sequential correction | ML Mastery",
+    "description": "A house-price model still misses systematic patterns after its first estimate."
+  },
+  "/supervised/gradient-boosting/gb02": {
+    "title": "Gradient Boosting: Squared-error regression | ML Mastery",
+    "description": "Calculate residuals and follow how a new correction tree reduces squared error in a staged regression model."
+  },
+  "/supervised/gradient-boosting/gb03": {
+    "title": "Gradient Boosting: Classification loss | ML Mastery",
+    "description": "Connect class probabilities, log-loss and score gradients to the correction targets used in binary gradient boosting."
+  },
+  "/supervised/gradient-boosting/gb04": {
+    "title": "Gradient Boosting: Stage count and stopping | ML Mastery",
+    "description": "A model can keep improving its training fit while learning noise."
+  },
+  "/supervised/gradient-boosting/gb05": {
+    "title": "Gradient Boosting: Workflow and leakage | ML Mastery",
+    "description": "A sophisticated ensemble can still produce meaningless evaluation when information crosses partitions."
+  },
+  "/supervised/gradient-boosting/gb06": {
+    "title": "Gradient Boosting: Compare and diagnose | ML Mastery",
+    "description": "Choosing a model is a claim about a task, population and cost, not a leaderboard identity."
+  },
+  "/supervised/gradient-boosting/mastery": {
+    "title": "Gradient Boosting: Independent Assessment | ML Mastery",
+    "description": "Check your gradient boosting reasoning with an independent assessment. Review results and revisit concepts that need more practice."
+  },
+  "/supervised/knn": {
+    "title": "K-Nearest Neighbors | ML Mastery",
+    "description": "Use distances and nearby labeled observations to make predictions. Explore neighbor count, feature scaling, voting and the limits of similarity."
+  },
+  "/supervised/knn/kn01": {
+    "title": "K-Nearest Neighbors: Vote among neighbors | ML Mastery",
+    "description": "A churn team wants to predict a new customer from similar past customers."
+  },
+  "/supervised/knn/kn02": {
+    "title": "K-Nearest Neighbors: Scale defines closeness | ML Mastery",
+    "description": "Currency differences can overwhelm support-contact differences even when contact patterns matter for churn."
+  },
+  "/supervised/knn/kn03": {
+    "title": "K-Nearest Neighbors: Choose k honestly | ML Mastery",
+    "description": "A model that memorizes noisy customer labels can look excellent on training data and fail new customers."
+  },
+  "/supervised/knn/kn04": {
+    "title": "K-Nearest Neighbors: Workflow and limits | ML Mastery",
+    "description": "A deployable prediction story needs honest error analysis and inference costs, not just a successful fit call."
+  },
+  "/supervised/knn/mastery": {
+    "title": "K-Nearest Neighbors: Independent Assessment | ML Mastery",
+    "description": "Check your k-nearest neighbors reasoning with an independent assessment. Review results and revisit concepts that need more practice."
+  },
+  "/supervised/logistic": {
+    "title": "Logistic Regression | ML Mastery",
+    "description": "Learn how a score becomes a probability, how log-loss trains a classifier, and how thresholds change decisions without retraining."
+  },
+  "/supervised/logistic/lg01": {
+    "title": "Logistic Regression: From score to probability | ML Mastery",
+    "description": "Turn a weighted score into a class probability with the sigmoid, then distinguish that probability from a thresholded decision."
+  },
+  "/supervised/logistic/lg02": {
+    "title": "Logistic Regression: Learn with log loss | ML Mastery",
+    "description": "Two models can make identical correct decisions yet assign very different confidence."
+  },
+  "/supervised/logistic/lg03": {
+    "title": "Logistic Regression: Thresholds and imbalance | ML Mastery",
+    "description": "Missing a customer who will churn and contacting a customer who would stay have different consequences."
+  },
+  "/supervised/logistic/lg04": {
+    "title": "Logistic Regression: Regularization and geometry | ML Mastery",
+    "description": "A flexible coefficient fit can chase a small or nearly separated sample."
+  },
+  "/supervised/logistic/lg05": {
+    "title": "Logistic Regression: Trusted classification workflow | ML Mastery",
+    "description": "Apparently accurate churn prediction can be invalid if a future cancellation flag leaks the outcome, rows lose alignment, or the scaler sees held-out data."
+  },
+  "/supervised/logistic/lg06": {
+    "title": "Logistic Regression: Explain limits | ML Mastery",
+    "description": "A customer-level probability is useful only with an honest statement of its limitations."
+  },
+  "/supervised/logistic/mastery": {
+    "title": "Logistic Regression: Independent Assessment | ML Mastery",
+    "description": "Check your logistic regression reasoning with an independent assessment. Review results and revisit concepts that need more practice."
+  },
+  "/supervised/mlp": {
+    "title": "Multilayer Perceptrons | ML Mastery",
+    "description": "Trace a small neural network from weighted sums to activations, gradients and updates. Explore capacity, regularization and safe evaluation."
+  },
+  "/supervised/mlp/mastery": {
+    "title": "Multilayer Perceptrons: Independent Assessment | ML Mastery",
+    "description": "Check your multilayer perceptrons reasoning with an independent assessment. Review results and revisit concepts that need more practice."
+  },
+  "/supervised/mlp/nn01": {
+    "title": "Multilayer Perceptrons: Beyond one neuron | ML Mastery",
+    "description": "A linear churn rule can miss interactions such as activity mattering differently for new and long-time customers."
+  },
+  "/supervised/mlp/nn02": {
+    "title": "Multilayer Perceptrons: Learn through gradients | ML Mastery",
+    "description": "A model learns by changing parameters to reduce a defined loss on permitted training examples."
+  },
+  "/supervised/mlp/nn03": {
+    "title": "Multilayer Perceptrons: Capacity and regularization | ML Mastery",
+    "description": "More hidden units increase flexibility but can also fit noise."
+  },
+  "/supervised/mlp/nn04": {
+    "title": "Multilayer Perceptrons: Reproducible and safe workflow | ML Mastery",
+    "description": "A technically correct network can still earn a misleading score if preprocessing or stopping learns from validation, test or an outer fold."
+  },
+  "/supervised/mlp/nn05": {
+    "title": "Multilayer Perceptrons: Interpretation and limitations | ML Mastery",
+    "description": "An MLP may model nonlinear relationships, but its flexibility does not establish causality or make every hidden unit a human-readable concept."
+  },
+  "/supervised/model-selection": {
+    "title": "Model Selection | ML Mastery",
+    "description": "Compare complete model workflows fairly. Learn why search consumes evidence and how nested, grouped and temporal validation protect conclusions."
+  },
+  "/supervised/model-selection/mastery": {
+    "title": "Model Selection: Independent Assessment | ML Mastery",
+    "description": "Check your model selection reasoning with an independent assessment. Review results and revisit concepts that need more practice."
+  },
+  "/supervised/model-selection/ms01": {
+    "title": "Model Selection: Compare models fairly | ML Mastery",
+    "description": "A price team can make any algorithm look better by changing the homes it scores."
+  },
+  "/supervised/model-selection/ms02": {
+    "title": "Model Selection: Search consumes information | ML Mastery",
+    "description": "Trying many configurations increases the chance that one looks unusually good by luck."
+  },
+  "/supervised/model-selection/ms03": {
+    "title": "Model Selection: Nested and structured validation | ML Mastery",
+    "description": "Repeated customers, documents from one source, and future time periods are not independent rows."
+  },
+  "/supervised/model-selection/ms04": {
+    "title": "Model Selection: Imbalance, thresholds and cost | ML Mastery",
+    "description": "A churn or documentation-review system can achieve high accuracy while missing the cases that matter."
+  },
+  "/supervised/model-selection/ms05": {
+    "title": "Model Selection: Interpret responsibly | ML Mastery",
+    "description": "Interpret a selected model without treating prediction as causation. Examine feature importance, uncertainty and deployment limits."
+  },
+  "/supervised/model-selection/ms06": {
+    "title": "Model Selection: Make a reproducible final decision | ML Mastery",
+    "description": "Make a reproducible model choice using metrics, constraints and a documented validation process, not the largest score alone."
+  },
+  "/supervised/naive-bayes": {
+    "title": "Naive Bayes | ML Mastery",
+    "description": "Build a classifier from priors and feature likelihoods. Explore conditional independence, smoothing, continuous measurements and calibration."
+  },
+  "/supervised/naive-bayes/mastery": {
+    "title": "Naive Bayes: Independent Assessment | ML Mastery",
+    "description": "Check your naive bayes reasoning with an independent assessment. Review results and revisit concepts that need more practice."
+  },
+  "/supervised/naive-bayes/nb01": {
+    "title": "Naive Bayes: Combine class evidence | ML Mastery",
+    "description": "A documentation review team needs to prioritize likely Needs Improvement documents before human review."
+  },
+  "/supervised/naive-bayes/nb02": {
+    "title": "Naive Bayes: Counts and smoothing | ML Mastery",
+    "description": "A word absent from a small class sample can otherwise eliminate that class for every document containing it."
+  },
+  "/supervised/naive-bayes/nb03": {
+    "title": "Naive Bayes: Continuous likelihoods | ML Mastery",
+    "description": "Use class-conditional Gaussian densities for continuous measurements, and distinguish density values from probabilities."
+  },
+  "/supervised/naive-bayes/nb04": {
+    "title": "Naive Bayes: Evaluate probabilistic shortcuts | ML Mastery",
+    "description": "A documentation model is useful only if it helps human reviewers on genuinely unseen documents without pretending that confidence is truth."
+  },
+  "/supervised/polynomial": {
+    "title": "Polynomial Regression | ML Mastery",
+    "description": "Learn how polynomial features turn linear calculations into curves, then use validation to balance flexibility, overfitting and extrapolation risk."
+  },
+  "/supervised/polynomial/mastery": {
+    "title": "Polynomial Regression: Independent Assessment | ML Mastery",
+    "description": "Check your polynomial regression reasoning with an independent assessment. Review results and revisit concepts that need more practice."
+  },
+  "/supervised/polynomial/pr01": {
+    "title": "Polynomial Regression: Curves from features | ML Mastery",
+    "description": "House-price residuals can bend with area: a straight line repeatedly misses small and large homes in one direction."
+  },
+  "/supervised/polynomial/pr02": {
+    "title": "Polynomial Regression: Interactions and capacity | ML Mastery",
+    "description": "Build squared and interaction features to model effects that depend on several inputs, then examine the added capacity."
+  },
+  "/supervised/polynomial/pr03": {
+    "title": "Polynomial Regression: Degree and regularization | ML Mastery",
+    "description": "Use validation to choose polynomial degree and regularization rather than selecting the curve with the smallest training error."
+  },
+  "/supervised/polynomial/pr04": {
+    "title": "Polynomial Regression: Limits and alternatives | ML Mastery",
+    "description": "Recognize extrapolation and numerical risks in polynomial models, and compare other feature families for the same problem."
+  },
+  "/supervised/random-forests": {
+    "title": "Random Forests | ML Mastery",
+    "description": "Understand how resampled trees combine predictions. Explore diversity, averaging, class probabilities, out-of-bag checks and feature importance."
+  },
+  "/supervised/random-forests/mastery": {
+    "title": "Random Forests: Independent Assessment | ML Mastery",
+    "description": "Check your random forests reasoning with an independent assessment. Review results and revisit concepts that need more practice."
+  },
+  "/supervised/random-forests/rf01": {
+    "title": "Random Forests: Diversity before averaging | ML Mastery",
+    "description": "A house-price tree can change sharply after one sale changes."
+  },
+  "/supervised/random-forests/rf02": {
+    "title": "Random Forests: Regression aggregation | ML Mastery",
+    "description": "Combine numerical predictions from several trees and explain what averaging can reduce, what it preserves and why correlation matters."
+  },
+  "/supervised/random-forests/rf03": {
+    "title": "Random Forests: Classification aggregation | ML Mastery",
+    "description": "A churn team needs class decisions and the probability evidence behind them."
+  },
+  "/supervised/random-forests/rf04": {
+    "title": "Random Forests: OOB and validation | ML Mastery",
+    "description": "Identify out-of-bag rows for each tree and explain when OOB evidence is useful, incomplete or reused during model selection."
+  },
+  "/supervised/random-forests/rf05": {
+    "title": "Random Forests: Importance and comparison | ML Mastery",
+    "description": "An importance plot can help investigate a forest, but it can also encourage invalid claims about what causes churn or which features are useless."
+  },
+  "/supervised/regularization": {
+    "title": "Ridge, Lasso and Elastic Net | ML Mastery",
+    "description": "Compare Ridge, Lasso and Elastic Net: coefficient shrinkage, sparse selection, correlated features and training-only validation."
+  },
+  "/supervised/regularization/mastery": {
+    "title": "Ridge, Lasso and Elastic Net: Independent Assessment | ML Mastery",
+    "description": "Check your ridge, lasso and elastic net reasoning with an independent assessment. Review results and revisit concepts that need more practice."
+  },
+  "/supervised/regularization/rg01": {
+    "title": "Ridge, Lasso and Elastic Net: Why Penalize | ML Mastery",
+    "description": "A housing model may fit eight observed prices closely while assigning large opposing weights to area and room-related features."
+  },
+  "/supervised/regularization/rg02": {
+    "title": "Ridge, Lasso and Elastic Net: Ridge | ML Mastery",
+    "description": "When area and room-related measurements overlap, a small noisy sample may give unstable unregularized weights."
+  },
+  "/supervised/regularization/rg03": {
+    "title": "Ridge, Lasso and Elastic Net: Lasso | ML Mastery",
+    "description": "A housing feature table may contain many competing measurements."
+  },
+  "/supervised/regularization/rg04": {
+    "title": "Ridge, Lasso and Elastic Net: Elastic Net | ML Mastery",
+    "description": "A sparse model can be useful, yet correlated groups can make pure L1 selection fragile."
+  },
+  "/supervised/regularization/rg05": {
+    "title": "Ridge, Lasso and Elastic Net: Safe Fitting and Selection | ML Mastery",
+    "description": "A beautifully regularized model can still have a misleading evaluation if scaling, feature selection or alpha tuning sees held-out data."
+  },
+  "/supervised/regularization/rg06": {
+    "title": "Ridge, Lasso and Elastic Net: Interpretation and Comparison | ML Mastery",
+    "description": "A model report should explain what predictions and coefficients support, where they can fail, and whether extra complexity is justified."
+  },
+  "/supervised/svm": {
+    "title": "Support Vector Machines | ML Mastery",
+    "description": "Understand margins, hinge loss and kernels, then compare how scaling, C and gamma affect a support vector classifier."
+  },
+  "/supervised/svm/mastery": {
+    "title": "Support Vector Machines: Independent Assessment | ML Mastery",
+    "description": "Check your support vector machines reasoning with an independent assessment. Review results and revisit concepts that need more practice."
+  },
+  "/supervised/svm/sv01": {
+    "title": "Support Vector Machines: Margin geometry | ML Mastery",
+    "description": "A churn team wants a rule that separates customer profiles without treating every small training perturbation as a new rule."
+  },
+  "/supervised/svm/sv02": {
+    "title": "Support Vector Machines: Soft margins and C | ML Mastery",
+    "description": "Real customer groups overlap and some observations are noisy."
+  },
+  "/supervised/svm/sv03": {
+    "title": "Support Vector Machines: RBF locality | ML Mastery",
+    "description": "A single straight separator can miss a local nonlinear customer pattern."
+  },
+  "/supervised/svm/sv04": {
+    "title": "Support Vector Machines: Safe scaled workflow | ML Mastery",
+    "description": "Changing a feature from index units to hundredths changes the geometry seen by SVM."
+  },
+  "/supervised/svm/sv05": {
+    "title": "Support Vector Machines: Limits and comparison | ML Mastery",
+    "description": "A margin rule is useful only for the question, population and resource budget it was evaluated on."
+  }
+}

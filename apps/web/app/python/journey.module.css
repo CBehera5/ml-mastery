@@ -1,0 +1,29 @@
+.page { max-width: 1180px; margin: 0 auto; padding: 20px; line-height: 1.7; color: #1b2d25; background: #f7f6ef; min-height: 100vh; font-family: Arial,Helvetica,sans-serif; }
+.page nav { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.page nav a { display: inline-flex; align-items: center; min-height: 44px; }
+.page :global(.beta-nav-links) { flex-wrap: wrap; justify-content: flex-start; gap: 8px 14px; }
+.page :global(.beta-nav-links) a { flex-shrink: 0; overflow-wrap: normal; }
+.page h1 { font-size: clamp(1.9rem, 6vw, 3rem); line-height: 1.2; }
+.page h2 { font-size: 1.4rem; line-height: 1.4; }
+.page a { color: #245e4f; text-decoration: underline; overflow-wrap: anywhere; }
+.card { padding: 20px; border: 1px solid #d7ded5; border-radius: 14px; margin: 22px 0; background: #fffef9; min-width: 0; }
+.activity { min-width: 0; padding: 0; border: 0; }
+.page fieldset { min-width: 0; margin: 16px 0; }
+.page legend { max-width: 100%; white-space: normal; }
+.page label { display: block; margin: 12px 0; overflow-wrap: anywhere; color: #1b2d25; }
+.page legend, .page th { color: #1b2d25; }
+.page input[type="radio"], .page input[type="checkbox"] { margin-right: 10px; width: 20px; height: 20px; vertical-align: middle; }
+.page select, .page input[type="number"] { display: block; width: 100%; max-width: 100%; min-height: 44px; padding: 8px; color: #1b2d25; background: #ffffff; border: 1px solid #7a9185; border-radius: 6px; font-size: 1rem; }
+.page select { text-overflow: ellipsis; }
+.page button { min-height: 44px; max-width: 100%; white-space: normal; padding: 9px 14px; margin: 8px 10px 8px 0; color: #ffffff; background: #245e4f; border: 2px solid transparent; border-radius: 6px; font: inherit; line-height: 1.4; cursor: pointer; }
+.page button:disabled { background: #67796e; color: #f4f6ff; cursor: not-allowed; }
+.page :focus-visible { outline: 3px solid #ac4d24; outline-offset: 3px; }
+.page pre { max-width: 100%; overflow-x: auto; padding: 12px; background: #19382e; color:#f7f6ef; font-size: .95rem; border-radius: 6px; }
+.page p, .page li { overflow-wrap: anywhere; }
+.page table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.page th, .page td { border: 1px solid #bdcbbf; padding: 8px; text-align: left; overflow-wrap: anywhere; }
+.page small { display: block; }
+@media (max-width: 480px) { .page { padding: 12px; } .card { padding: 12px; } .page fieldset { padding: 8px; } .page th, .page td { padding: 4px; font-size: .85rem; } }
+
+.page h1,.page h2,.page h3{font-family:Georgia,serif;font-weight:500;letter-spacing:-.025em}.page h1{font-size:clamp(2.5rem,5vw,4rem)}.page a{text-underline-offset:4px}.page label:has(> input:is([type=radio],[type=checkbox])){display:flex;align-items:flex-start;gap:.65rem}.page input:is([type=radio],[type=checkbox]){display:inline-block;flex:0 0 20px;min-width:20px;margin:.3rem 0 0;padding:0}.navigation{margin:1.5rem 0}.navigation summary{cursor:pointer;font-weight:700}.navigation nav{display:block}.navigation ol{display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1rem;padding-left:1.5rem}.path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;padding:0;gap:2.5rem}.step{position:relative;display:flex;min-width:0}.step>article{width:100%;box-sizing:border-box}.discovery{padding:1.3rem;margin:1.5rem 0;background:#e4eee5;border-left:3px solid #267164;border-radius:0 12px 12px 0}.discovery h2{margin-top:0}.local{display:flex;gap:1rem;flex-wrap:wrap;margin:1.5rem 0}.eyebrow{font-size:.8rem;font-weight:bold;color:#245e4f;letter-spacing:.08em;text-transform:uppercase}.page section[id]{scroll-margin-top:20px}.overviewState{font-size:.9rem;color:#53625a}.page pre{white-space:pre;overflow-x:auto}.page :global([class*="cardTop"]) small{display:inline}.page :global([class*="cardTop"]) span{flex-shrink:0}
+@media(min-width:1001px){.step:not(:nth-child(3n)):not(:last-child)::after{content:"→";position:absolute;left:calc(100% + 6px);top:50%;width:28px;border-bottom:2px dotted #89a395;color:#547c6b}}@media(max-width:1000px){.path,.navigation ol{grid-template-columns:1fr}.step:not(:last-child)::after{content:"↓";position:absolute;left:1.5rem;top:100%;height:2.5rem;border-left:2px dotted #89a395;padding-left:.3rem}}

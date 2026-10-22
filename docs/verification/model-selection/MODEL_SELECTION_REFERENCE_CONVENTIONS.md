@@ -1,5 +1,28 @@
 # Model Selection experiment reference conventions v1
 
+## Current canonical policy — founder-approved MS-E2 V3
+
+The founder accepted the full KNN portability audit at `ab6bed5` and retained
+**macOS ARM64 as Task 015.12's canonical numerical reference environment** on
+18 October 2026. Canonical generation requires Darwin/arm64, CPython 3.13.16,
+the exact dependency versions below, fixed seeds and one numerical thread.
+`output_payloads()` rejects other operating-system/architecture combinations.
+Byte-identical regeneration and locked hashes are required in this environment.
+No global tolerance, score-tie rule or existing algorithm-module contract is changed.
+
+The audited V3 fixture restores `E2-00-00.monthly_charge` to 40.0 and changes
+`E2-00-02`/`E2-06-02` charges to 44.001/74.001. All 972 candidate/query audit
+records must pass the documented scale-aware admission margin in
+`docs/TASK_015_12_KNN_PORTABILITY_REPORT.md`; the runtime KNN exact cutoff
+equality guard remains 0.0. Same-label equal-distance exchanges are harmless
+under uniform weights; mixed-label cutoffs are rejected, never resolved by row order.
+
+Linux x86-64 passes the KNN geometry audit but differs in existing MS-E1 numerical
+outputs and MS-E2 logistic probabilities. These are documented portability limitations,
+not accepted canonical outputs. Linux results do not update hashes or widen tolerances.
+MS-E1 remains V1 and its manifest/sidecar bytes remain unchanged. Prior V1/V2 repair
+descriptions below are historical; the audited V3 correction supersedes the failed V2 edit.
+
 **Scope:** Task 015.12 MS-E1/MS-E2 reference freeze only. This does not implement the application or change the approved six-lesson, 24-family, 48-practice, 72-independent, six-gate, 20/24 curriculum allocation.
 
 ## Source and reproducibility

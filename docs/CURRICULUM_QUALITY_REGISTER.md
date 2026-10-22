@@ -1,5 +1,32 @@
 # Cumulative Curriculum Quality Register
 
+## 19 October 2026 Task 015 founder closure and Phase 2 design only
+
+**Task 015 is closed for implementation completeness.** The founder accepted Model Selection mastery activation `4a2bbf48c0e83c0e97d5ec14d8f8be5113896a8b` and [independent CI 39154246996](https://github.com/CBehera5/ml-mastery/actions/runs/39154246996): all four jobs completed successfully. The source is on `task-015-12-knn-portability`, not merged into `origin/main`; no PR was recorded for that head at this review. No merge or deployment is authorized. [Closure report](PHASE_2_01_TASK_015_CLOSURE.md) records exact evidence and preserved boundaries.
+
+Model Selection mastery remains enabled under the approved 20/24 plus both components of all six paired gates in one confirmed independent attempt. No attempt pooling, practice/notebook mastery, policy changes, numerical changes or learner-evidence migration. Frozen MS-E1/MS-E2 references retain the accepted canonical macOS ARM64 contract. Earlier pending/blocked/disabled dispositions below are historical and superseded for current Task 015 implementation status.
+
+Phase 2 is **audit and design only**. [Review package](PHASE_2_REVIEW_PACKAGE.md) includes public/learner navigation, landing/free-lab specifications, reusable lesson design, content audit priorities, bounded roadmap and founder decisions. No application implementation, Project Studio/capstones, payment integration, external learner testing or unrelated curriculum work. Task 014/016/017/018 identities remain unchanged.
+
+**OPEN platform-release obligations:** genuine screen-reader use, real browser 200%/400% zoom, genuine Google Colab execution and original-directory I/O reliability. Scoped keyboard/320px, local kernels and clean-clone builds do not close these. Task 015 implementation closure is distinct from release acceptance.
+
+
+### Phase 2 audit findings carried for review
+
+| IDs | Priority | State and next scope |
+|---|---|---|
+| P2-01–03 | P0 | Open: public/journey split decision, four-stage truthful inventory, missing accepted-algorithm catalog and read-only resume coverage |
+| P2-05, P2-07 | P0 | Open: Python hub policy density and candidate low-readability dark-theme shared navigation and pale Supervised hub headings; measure contrast before remediation |
+| P2-11 | P0 | Open: absent pricing page and interest-only beta path; no approved sale, price or entitlement change |
+| P2-04,06,08–10,12 | P1 | Open: hub consistency/order, human lesson titles, meaningful visuals, curated free entry and Curriculum Explorer |
+| P2-13 | Release P0 | Open: genuine accessibility/zoom/Colab and original-directory I/O; prior scoped tests are not substitutes |
+
+[Experience audit](PHASE_2_02_PHASE_2_EXPERIENCE_AUDIT.md) contains source/screen evidence, limitations and exact bounded proposals. Findings are not silently fixed. Representative inspection is not a comprehensive curriculum-depth pass or external learning-efficacy evidence. Future issue-level corrections require separate authorization.
+
+## 18 October 2026 — Task 015.12 canonical freeze verified; acceptance review
+
+The founder-approved MS-E2 V3 correction is canonically frozen on macOS ARM64; MS-E1 numerical artifacts remain byte-identical. Reviewed source `cdb0e9d6b550ae56d3721165d5b31c4b7f922b66` passed all four jobs in [CI 39121627746](https://github.com/CBehera5/ml-mastery/actions/runs/39121627746), including the 972-case KNN audit, full regressions, typecheck/build, frozen checks, two notebook kernels and production browser/persistence/320px checks. Native configuration selection/restoration passed separately in the headed local browser; CI functional selection is not misrepresented as native-popup evidence. [Canonical report](TASK_015_12_CANONICAL_FREEZE.md). Reference repair is ready for founder review; overall acceptance retains screen-reader, zoom, Colab and original-directory I/O obligations. Mastery remains disabled; counts, thresholds, paired gates and existing learner evidence are unchanged. Linux numerical differences remain documented limitations. No deployment, external learner test or subsequent curriculum work.
+
 ## 18 October 2026 — Task 015.12 implementation delivered; acceptance blocked
 
 MS01–MS06 have authored teaching, 120 bounded assessment instances, two reference-backed experiments, isolated versioned persistence, and a deterministic notebook. Earlier independent CI passed frontend, typecheck/build, Python and Chromium smoke stages but failed frozen-reference verification because MS-E2 had a mixed-label exact-distance kth-neighbor tie. The authorized repair retains exact computed float64 tie semantics, rejects ambiguous cutoffs, and minimally perturbs one fictional MS-E2 feature for V2. Local Python 3.13.16 freeze regeneration plus two checks pass; the full Python suite passes 2,609 tests; MS-E1 hashes remain unchanged. Independent CI against this repair is pending. `MASTERY_AVAILABLE=false`. Native select Arrow-key change, genuine screen reader, browser zoom, Colab execution and original-directory I/O remain unverified. Pedagogical risks: the finite authored bank and compact synthetic fixtures are formative rather than external learner evidence; model rankings can vary by sampling; interpretability is context-dependent. No deployment, external learner testing or subsequent task.

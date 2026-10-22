@@ -1,13 +1,18 @@
 "use client";
+import {EquationReader} from "../../experience/equation-literacy/equation-reader";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { BetaNav } from "../../components/beta-nav";
+import { PublicNav } from "../../landing/public-nav";
+import {PathwayFooter} from "../../experience/pathway";
+import shared from "../../experience/pathway.module.css";
+import {PythonCards,PythonReflection,PythonNext,lessonRoute} from "../journey-components";
+import {PYTHON_JOURNEYS} from "../journey";
 import { AnswerInput } from "../foundation/learning";
 import { validResponse, type Answer, type Family } from "../foundation/contracts";
 import { Outcome } from "./outcome";
 import { CONCEPT_NOTES } from "./teaching";
 import { DATASET } from "./catalog";
-import styles from "../foundation/lesson.module.css";
+import styles from "../journey.module.css";
 import { ACTIVITIES, ACTIVITY_REASONS, activityPredictions, ASSESSMENT, INDEPENDENT_FORMS, LESSONS, MASTERY_AVAILABLE, PRACTICE_FORMS, referenceCase as workedCase } from "./catalog";
 import { alternate, changeActivity, checkActivity, confirmAttempt, emptyState, familyResponse, lessonComplete, MASTERY, ModuleStore, practiceSubmit, recover, resetLesson, retry, type State } from "./model";
 
@@ -34,18 +39,15 @@ function useModule() {
   }
   return { store, state, setState, loaded, message, setMessage, act };
 }
-function Nav() {
-  return <nav aria-label="Sklearn navigation"><Link href="/python/sklearn">Sklearn overview</Link>{LESSONS.map((lesson, index) => <Link key={lesson.slug} href={`/python/sklearn/${lesson.slug}`}>{lesson.slug.toUpperCase()}</Link>)}<Link href="/python/sklearn/mastery">Independent assessment</Link></nav>;
-}
-function Frame({ children, message, title }: { children: React.ReactNode; message: string; title: string }) {
-  return <main className={styles.page} style={{ overflowWrap: "anywhere" }}><BetaNav status="Python Sklearn"/><a href="#sklearn-content">Skip to Sklearn content</a><Nav/><header id="sklearn-content"><h1>{title}</h1></header>{message && <p role="alert">{message}</p>}{children}</main>;
-}
+function Nav({current}:{current?:number}) {return <details className={styles.navigation}><summary>Module learning path</summary><nav aria-label="Sklearn navigation"><Link href="/python/sklearn">Module overview</Link><ol>{LESSONS.map((item,index)=><li key={item.slug}><Link aria-current={current===index?"page":undefined} href={lessonRoute("sklearn",item.slug)}>{item.title}</Link></li>)}</ol><Link href="/python/sklearn/mastery">Independent assessment</Link></nav></details>;}
+function Frame({children,message,title,overview=false,lesson}:{children:React.ReactNode;message:string;title:string;overview?:boolean;lesson?:number}){return <div className={shared.page}><main className={styles.page}><a className={shared.skip} href="#sklearn-content">Skip to lesson content</a><PublicNav active="Python"/><p><Link href="/python">← Python learning path</Link></p>{!overview&&<Nav current={lesson}/>}<header id="sklearn-content" tabIndex={-1}><p className={styles.eyebrow}>Python · sklearn</p><h1>{title}</h1></header>{message&&<p role="alert">{message}</p>}{children}<PathwayFooter/></main></div>;}
+
 export function SklearnOverview() {
   const module = useModule();
   const [reset, setReset] = useState(false);
-  return <Frame title="Python Sklearn for machine learning" message={module.message}><p>Five lessons connect the estimator lifecycle, fair baselines, honest metrics, fold-local pipelines and test-independent model comparison. There is no hosted Python execution. Prior Mathematics remains available through recall links; lesson order is recommended, not a navigation lock.</p>
+  return <Frame overview title="Python Sklearn for machine learning" message={module.message}><p>Five lessons connect the estimator lifecycle, fair baselines, honest metrics, fold-local pipelines and test-independent model comparison. There is no hosted Python execution. Prior Mathematics remains available through recall links; lesson order is recommended, not a navigation lock.</p>
     <p role="status">{!module.loaded ? "Loading Sklearn progress…" : module.state.evidence.objectives[MASTERY]?.mastered ? "Sklearn mastery previously earned for this assessment version." : "Sklearn mastery not yet earned. Lesson completion does not award it."}</p>
-    <ol>{LESSONS.map((lesson, index) => <li key={lesson.slug}><Link href={`/python/sklearn/${lesson.slug}`}>{lesson.slug.toUpperCase()} — {lesson.title}</Link><p>{lesson.motivation} · {lessonComplete(module.state, index) ? "Lesson completed" : "Lesson not completed"}</p></li>)}</ol>
+    <PythonCards module="sklearn" lessons={LESSONS}/><details><summary>Lesson completion records</summary><ul>{LESSONS.map((item,index)=><li key={item.slug}>{item.title}: {lessonComplete(module.state,index)?"Lesson completed":"Lesson not completed"}</li>)}</ul></details>
     <section className={styles.card}><h2>Independent demonstration</h2><p>20 objective families per form; 16/20 plus all seven critical gates in the same confirmed attempt. Three complete forms rotate on unlimited retries. Both decision and reasoning must pass each critical gate. Only independently correct objectives in a passing attempt receive mastery.</p><Link href="/python/sklearn/mastery">Open independent assessment</Link><p>{MASTERY_AVAILABLE ? "Complete assessment verification released for this version." : "Mastery remains unavailable until the full version passes verification."}</p></section>
     <section className={styles.card}><h2>Notebook and execution boundaries</h2><a href="/notebooks/python-sklearn.ipynb" download>Download the reproducible Sklearn notebook</a><p>Trusted local code and embedded fictional records only. Notebook execution/download never grants platform mastery. Genuine Colab, screen-reader and browser-zoom verification remain open.</p></section>
     <section className={styles.card}><h2>Reset only this module</h2><label><input type="checkbox" checked={reset} onChange={event => setReset(event.target.checked)}/>Confirm removing this Sklearn module's practice, assessment history and mastery. Essentials, Math and Regression remain untouched.</label><button disabled={!module.loaded || !reset} onClick={() => {
@@ -88,26 +90,29 @@ function Lab({ lesson, module }: { lesson: number; module: ReturnType<typeof use
 export function SklearnLesson({ lesson }: { lesson: number }) {
   const module = useModule(), content = LESSONS[lesson];
   const [reset, setReset] = useState(false);
-  return <Frame title={`${content.slug.toUpperCase()} — ${content.title}`} message={module.message}>
+  return <Frame lesson={lesson} title={PYTHON_JOURNEYS["sklearn"][lesson][0]} message={module.message}>
+    <p className={styles.eyebrow}>Lesson {lesson+1} of {LESSONS.length} · {content.title}</p><p>{content.motivation}</p><nav className={styles.local} aria-label="In this Python lesson"><a href="#experiment">Explore</a><a href="#lesson-explain">Understand</a><a href="#lesson-practice">Code and practice</a><a href="#lesson-transfer">Reflect</a><a href="#lesson-next">Next step</a></nav>
     <p role="status">{!module.loaded ? "Loading local progress…" : lessonComplete(module.state, lesson) ? "Lesson completed. Independent module mastery is separate." : "Lesson in progress; four correct practice families and a meaningful explained experiment are required."}</p>
-    <p>Prerequisite recall: {content.prerequisites} <Link href="/math/algebra-functions">Algebra functions</Link> · <Link href="/python/numpy">NumPy recall</Link> · <Link href="/math/statistics">Statistics</Link> · <Link href="/math/statistics/relationships">Correlation versus causation experiment</Link> · <Link href="/python/pandas">pandas recall</Link> · <Link href="/python/visualization">Visualization recall</Link> · <Link href="/python/preparation">Data Preparation recall</Link> · <Link href="/learn/linear-regression">Regression recall</Link> · <Link href="/python/essentials">Python Essentials recall</Link>. Direct entry is allowed.</p>
-    <section className={styles.card}><h2>Why this exists</h2><p>{content.motivation}</p><p><strong>Mathematical intuition:</strong> {content.math}</p><p><strong>Terminology:</strong> {content.terms}</p><p><strong>Worked starting point:</strong> {content.worked}</p><p><strong>Now change the conditions:</strong> {content.progression}</p><p><strong>Common misconception:</strong> {content.misconception}</p></section>
+    <details><summary>Need a quick refresher?</summary><p>Prerequisite recall: {content.prerequisites} <Link href="/math/algebra-functions">Algebra functions</Link> · <Link href="/python/numpy">NumPy recall</Link> · <Link href="/math/statistics">Statistics</Link> · <Link href="/math/statistics/relationships">Correlation versus causation experiment</Link> · <Link href="/python/pandas">pandas recall</Link> · <Link href="/python/visualization">Visualization recall</Link> · <Link href="/python/preparation">Data Preparation recall</Link> · <Link href="/learn/linear-regression">Regression recall</Link> · <Link href="/python/essentials">Python Essentials recall</Link>. Direct entry is allowed.</p></details>
+    <aside className={styles.discovery}><h2>Predict, then explore</h2><p>{content.progression}</p><p>Read the shown Python, predict the outcome, then reveal it. Change one configuration and explain the difference. These activities use authored reference cases; they do not execute your code in the browser.</p></aside><fieldset disabled={!module.loaded}><legend>Explore one controlled change</legend><Lab lesson={lesson} module={module}/></fieldset>
+    <section id="lesson-explain" className={styles.card}><h2>Why this exists</h2><p>{content.motivation}</p><p><strong>Mathematical intuition:</strong> {content.math}</p><p><strong>Terminology:</strong> {content.terms}</p><p><strong>Worked starting point:</strong> {content.worked}</p><p><strong>Now change the conditions:</strong> {content.progression}</p><p><strong>Common misconception:</strong> {content.misconception}</p></section>
     <p>Normalized traces include fit row IDs, saved statistics, transformed values and ordered feature schemas. A missing tag is not zero or an empty string. true/false are Boolean values. These are structured reference outcomes, not exact library display formatting.</p>
     <section className={styles.card}><h2>Build the mental model before tracing syntax</h2>{CONCEPT_NOTES[lesson].map(paragraph => <p key={paragraph}>{paragraph}</p>)}</section>
     {lesson === 3 && <section className={styles.card}><h2>Canonical fictional source before overlays</h2><p>{DATASET.manifest.id}; source SHA-256: <code style={{ overflowWrap: "anywhere", whiteSpace: "normal" }}>{DATASET.manifest.sha256}</code>. The source has16 unique house IDs. Development validation/folds use only H01–H12; H13–H16 remain the final test. Tiny worked arrays are separately named examples. price is the target and future_price is quarantined, not a feature.</p><Outcome value={DATASET.table} label="Canonical housing source"/></section>}
-    <fieldset disabled={!module.loaded}><legend>Sklearn teaching and guided practice</legend>
+    <fieldset id="lesson-practice" disabled={!module.loaded}><legend>Sklearn teaching and guided practice</legend>
       {content.objectives.map((objective, offset) => {
         const work = workedCase(lesson, offset);
         return <section key={objective.id}><div className={styles.card}><h2>{objective.id}: {objective.outcome}</h2><p>{objective.introductory ? "Introductory, noncritical objective: cautious comparison reasoning, not formal inference." : "Essential objective."}</p>
           <p>{work.reason}</p>
           <h3>Worked numerical / coordinate example</h3><pre tabIndex={0} aria-label={`${objective.id} worked Python`}><code>{work.code}</code></pre><Outcome value={work.expected} label={`${objective.id} worked outcome`}/><p>{work.reason}</p><p>Misconception: {work.misconception} {objective.remediation}</p>
-          <p><strong>ML application:</strong> {content.motivation} Use this check to justify the data/result before passing it into a model, not merely to recognize syntax.</p><p><strong>Success means:</strong> {objective.assessment}</p>
+          <p><strong>Success means:</strong> {objective.assessment}</p>
         </div><PracticePanel index={lesson * 4 + offset} module={module}/></section>;
       })}
-      <Lab lesson={lesson} module={module}/>
+
       <section className={styles.card}><h2>Scoped lesson reset</h2><label><input type="checkbox" checked={reset} onChange={event => setReset(event.target.checked)}/>Confirm clearing only this lesson's practice/drafts/activity. Independent assessment history and earned mastery will remain.</label><button disabled={!reset} onClick={() => { module.act(state => resetLesson(state, lesson, true, now())); setReset(false); }}>Reset lesson practice only</button></section>
     </fieldset>
     <p><Link href="/python/sklearn/mastery">Independent assessment</Link> · <a href="/notebooks/python-sklearn.ipynb" download>Sklearn notebook</a>. Neither lesson completion nor notebook use awards mastery.</p>
+    <PythonReflection module="sklearn" lesson={lesson} reference={content.misconception}/><details><summary>Read a larger ML expression</summary><EquationReader key={content.slug} module="python-sklearn"/></details><PythonNext module="sklearn" lesson={lesson} lessons={LESSONS}/>
   </Frame>;
 }
 export function SklearnAssessment() {

@@ -6,10 +6,10 @@
     "MS-E2": 11,
     "MS-E2-rejections": 4
   },
-  "lockId": "TASK-015.12-MODEL-SELECTION-FREEZE-V2",
+  "lockId": "TASK-015.12-MODEL-SELECTION-FREEZE-V3",
   "manifestIds": [
     "TASK-015.12-MS-E1-V1",
-    "TASK-015.12-MS-E2-V2"
+    "TASK-015.12-MS-E2-V3"
   ],
   "pythonProfile": {
     "matplotlib": "3.11.2",
@@ -23,15 +23,15 @@
   "schemaVersion": 1,
   "sha256": {
     "docs/TASK_015_12_BOUNDED_SPECIFICATION.md": "6a15b2a3db4407c85ff480bc6460dfb78747cd9ff716dcd3bc951e063228e654",
-    "docs/verification/model-selection/MODEL_SELECTION_REFERENCE_CONVENTIONS.md": "0c287f39d227fcdb09682a946d8eb60ee6757ec886a461bb14abc28cb21662af",
-    "docs/verification/model-selection/REFERENCE_FREEZE_REPORT.md": "40eab88f8e852ba517f17078e5ef1f79c712a0b32fbc8fb46c1c10fb3f8c7e93",
+    "docs/verification/model-selection/MODEL_SELECTION_REFERENCE_CONVENTIONS.md": "8232a6eb8170f1fd2fe1992311449b31cf3ed5dc168707fcd1a40b3b2f5dd3f4",
+    "docs/verification/model-selection/REFERENCE_FREEZE_REPORT.md": "3cc32927c3426302b5401471ce1118aca94a1c48863024b9f031d61cae65f3a3",
     "docs/verification/model-selection/ms-e1-test-reference-sealed.v1.json": "e49ab1a1d0e79e37ca930de91d3bb89e4b19817c1250cd10ffbb110f28f6370d",
     "docs/verification/model-selection/ms-e1.manifest.v1.json": "45dd552560225d23878686359c87ca8176d053199e1e965f053f801ba6a82765",
-    "docs/verification/model-selection/ms-e2-test-reference-sealed.v1.json": "99ad34c5d8fda7ff1e81cb36b4c57d77a83cab43d5c9f1e7ebdd944ad6cf9b32",
-    "docs/verification/model-selection/ms-e2.manifest.v1.json": "5f4d64efe6bd60346c59277477b456c5dfbc0f3a869e383392939f5d45100959",
-    "docs/verification/model-selection/parity-report.v1.json": "b34e06a5eddaf648080eeb57a6c90f56e9dbc0f8060569f81aea9a4b8af604a6",
+    "docs/verification/model-selection/ms-e2-test-reference-sealed.v1.json": "cac4d9d2723ec3aac9161338fc08fa0d5bcc4783e2d499695bbe9655f3abe641",
+    "docs/verification/model-selection/ms-e2.manifest.v1.json": "7d4a37d2b38a850dc88f1de203c3166fcb2563b58e236c3e048cd9b6f85c7b07",
+    "docs/verification/model-selection/parity-report.v1.json": "acc3801c8610198a51e40bc71e162c28bd7101ee2655a5f7bbe64f4211f2a9d3",
     "docs/verification/model-selection/scope-source.sha256": "6915c69e5f5d4194c39aab7d39bc25c76f473196200166a1ba86cb97f6a13391",
     "docs/verification/multilayer-perceptrons/requirements-clean-verification.txt": "b4889b1c8abb008c065372e967242164a6f8471f9d5a7fb55eeca4db9bd51488",
-    "work/freeze-task-015-12.py": "e9dc1f92da9978f047ef8c76a746ae0dea94b1e6ae5c11dc123b18817104b5aa"
+    "work/freeze-task-015-12.py": "ec1c8bb754ef21e4d96307c3a8ccdb6d5e0acb969c5b599401799455b96e0fd6"
   }
 }

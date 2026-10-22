@@ -2,7 +2,8 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { matrixMatrixTrace, matrixVectorTrace } from "@mlmath/runtime";
-import { BetaNav } from "../../components/beta-nav";
+import { PublicNav } from "../../landing/public-nav";
+import { LinearPath } from "../linear-algebra/journey";
 import { useLessonProgress } from "../lesson-progress";
 import { CoreLearning } from "../linear-algebra/core-learning";
 
@@ -29,8 +30,8 @@ export function MatricesLesson(){
  const edit=(kind:"row"|"weight",r:number,c:number,value:string)=>{const n=Number(value);if(!value.trim()||!Number.isFinite(n)||Math.abs(n)>100){setInputError("Use a finite value between −100 and 100. The previous valid value is retained.");return;}setInputError("");if(kind==="row")setRows(x=>x.map((row,i)=>i===r?row.map((v,j)=>j===c?n:v):row));else setWeights(w=>w.map((v,j)=>j===c?n:v));mark(1);};
  const copy=async()=>{mark(3);try{await navigator.clipboard?.writeText(CODE);}catch{}};
  const verifyDebug=()=>{const ok=debugChoice==="restore";setDebugResult(ok?"correct":"incorrect");if(ok)mark(4);};
- return <main className="math-lesson-page matrix-page la-page">{storageError&&<p role="alert">Lesson progress is unavailable or unsupported. Existing data is preserved; changes stay in memory until you explicitly reset this lesson.</p>}<a className="la-skip" href="#linear-algebra-content">Skip to lesson content</a><BetaNav status="Math foundation · Lesson 02"/>
-  <header className="math-lesson-hero"><div><p className="eyebrow">Math intuition pathway</p><h1>One matrix. <em>Many predictions.</em></h1><p>We know how to score one house with a dot product. How can we predict 1,000 houses efficiently?</p><Link className="refresher-link" href="/math/vectors-dot-product">← Review vectors & dot products</Link></div><div className="lesson-meta panel"><span>LESSON OUTCOME</span><strong>Organize examples, multiply compatible shapes, and debug a matrix contract.</strong><p>About 15 minutes · Vectors recommended</p></div></header>
+ return <main className="math-lesson-page matrix-page la-page">{storageError&&<p role="alert">Lesson progress is unavailable or unsupported. Existing data is preserved; changes stay in memory until you explicitly reset this lesson.</p>}<a className="la-skip" href="#linear-algebra-content">Skip to lesson content</a><PublicNav active="Math"/><LinearPath current={1}/>
+  <header className="math-lesson-hero"><div><p className="eyebrow">Math intuition pathway</p><h1>One matrix. <em>Many predictions.</em></h1><p>We know how to score one house with a dot product. How can we predict 1,000 houses efficiently?</p><Link className="refresher-link" href="/math/vectors-dot-product">← Review vectors & dot products</Link></div><div className="lesson-meta panel"><span>LESSON OUTCOME</span><strong>Organize examples, multiply compatible shapes, and debug a matrix contract.</strong><p>Builds on vectors and dot products</p></div></header>
   <CoreLearning lesson="matrices" />
   <h2 id="existing-house-lab">Existing five-stage house lab</h2>
   <p>Historical stage flags remain separate from new objective evidence. Reset below affects only these five flags.</p>

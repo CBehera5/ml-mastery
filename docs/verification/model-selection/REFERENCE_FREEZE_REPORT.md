@@ -1,5 +1,38 @@
 # Task 015.12 — Experiment Reference Freeze Report
 
+## Current canonical freeze — MS-E2 V3
+
+Founder authorization accepted audit source `ab6bed5` and retained the pinned macOS
+ARM64 profile as the canonical numerical environment. The pre-freeze 972-case audit
+passes with decision digest `b422836c222a9be57c30ebd18b0199ce3db2e025cb33bec818d95e7748bc2034`.
+No Linux differences are accepted and no numerical tolerance is increased.
+
+V3 restores `E2-00-00.monthly_charge` 40.000001 → 40.0; changes E2-00-02
+44.0 → 44.001 and E2-06-02 74.0 → 74.001. It exactly matches the audited proposal
+except for version identifiers. Compared with V2, the manifest changes 68 leaves:
+three charges, eight scaler/preprocessing leaves, 54 full-precision probabilities, and
+three version fields. The complete before/after numerical diff is stored in
+`docs/verification/model-selection-portability/v2-to-v3-output-diff.json`.
+Selections, thresholds, class predictions, confusion matrices, candidate scores,
+aggregate metrics and permutation results are unchanged. The final selected candidate
+remains `tree-p1-t50`. Test targets, features, predictions, probabilities and metrics are
+unchanged; only the sealed fixture/reference version identifiers advance to V3.
+All target definitions, GroupKFold memberships, training-only scaling and development-only
+selection boundaries are preserved. The exact mixed-label cutoff rejection guard is unchanged.
+
+| Canonical artifact | SHA-256 |
+| --- | --- |
+| MS-E1 V1 manifest (unchanged) | `45dd552560225d23878686359c87ca8176d053199e1e965f053f801ba6a82765` |
+| MS-E1 V1 sealed sidecar (unchanged) | `e49ab1a1d0e79e37ca930de91d3bb89e4b19817c1250cd10ffbb110f28f6370d` |
+| MS-E2 V3 manifest | `7d4a37d2b38a850dc88f1de203c3166fcb2563b58e236c3e048cd9b6f85c7b07` |
+| MS-E2 V3 sealed sidecar | `cac4d9d2723ec3aac9161338fc08fa0d5bcc4783e2d499695bbe9655f3abe641` |
+| V3 parity report | `acc3801c8610198a51e40bc71e162c28bd7101ee2655a5f7bbe64f4211f2a9d3` |
+
+The dependent V3 lock records these hashes plus the policy, source generator and report
+hashes. Full independent final-source results are recorded separately in
+`docs/TASK_015_12_CANONICAL_FREEZE.md`, so adding CI evidence does not mutate this
+locked reference report. Mastery is not activated by this freeze.
+
 **Historical status:** initial MS-E1/MS-E2 V1 reference freeze (MS-E2 superseded by the authorized V2 repair below).
 
 ## Approved source and baseline

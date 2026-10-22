@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import {editorialMetadata} from "../../../experience/editorial-metadata";
 import { GeometryLearning } from "../geometry-learning";
-export const metadata: Metadata = { title: "Linear transformations, span and undo | ML Math Lab" };
+export const metadata = editorialMetadata("/math/linear-algebra/transformations");
 export default function TransformationsPage() { return <GeometryLearning lesson="transformations" />; }

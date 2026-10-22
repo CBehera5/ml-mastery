@@ -1,5 +1,47 @@
 # Implementation status
 
+## 19 October 2026 Phase 2.1 native zoom closure
+
+Founder conditionally accepted functional `30557d6` and authorized genuine zoom closure. Native Chrome 155.0.8059.80 on macOS 15.6.1 verifies `/` and `/journey` at actual 200% and 400%: keyboard navigation, visible focus, text reflow, reachable content/actions and no page-level horizontal overflow. Measured viewport/scroll width pairs are 720/720 and 360/360; CSS zoom and pinch scale remain 1. [Scenario ledger and outstanding register](PHASE_2_1_ACCEPTANCE_CLOSURE.md) supersede earlier inability-to-test statements **only for these two public routes**. No application code changed.
+
+**Scoped zoom PASS; founder acceptance pending final exact-commit CI and review.** Screen-reader speech, Colab and original-directory I/O remain **OPEN**. Platform-wide zoom is not certified. No Discovery Tour, merge or deployment.
+
+
+## 19 October 2026 Phase 2.1 public experience implemented and independently verified
+
+Founder authorized bounded Phase 2.1. Implementation source `30557d6e4ea52e698fb820f7ea0f8447a8651b2d` establishes public ML Mastery `/`, preserved `/journey`, corrected four-stage navigation/catalog, the unchanged primary `/demo` entry in ML Math Lab, informational planned $39 one-time purchase and Project Studio — Coming Soon. See [implementation scope and evidence](PHASE_2_1_IMPLEMENTATION.md).
+
+[Independent CI 39232544289](https://github.com/CBehera5/ml-mastery/actions/runs/39232544289) completed all four jobs successfully on that exact source: 2,849 frontend/66 math/2,612 Python regressions, typecheck/build, canonical KNN audit, byte-identical frozen MS references, two fresh notebook kernels, existing Model Selection browser workflow and new Phase 2.1 route/layout/storage/keyboard checks. Local machine default-timeout failures remain recorded; unchanged assertions pass independent CI and a bounded 20-second local diagnostic retry.
+
+**Functional implementation PASS; full Phase 2.1 acceptance remains NOT VERIFIED and acceptance is withheld pending required real 200%/400% zoom evidence.** Native browser control timed out; viewport checks are not actual zoom. Genuine screen-reader speech, Colab and original-directory I/O reliability remain OPEN. Founder acceptance is pending. Accepted Discovery Tour design, frozen references, progress/mastery semantics and free access are preserved. No Discovery Tour implementation, merge or deployment.
+
+
+## 19 October 2026 Task 015 founder closure and Phase 2 design only
+
+**Task 015 is closed for implementation completeness.** The founder accepted Model Selection mastery activation `4a2bbf48c0e83c0e97d5ec14d8f8be5113896a8b` and [independent CI 39154246996](https://github.com/CBehera5/ml-mastery/actions/runs/39154246996): all four jobs completed successfully. The source is on `task-015-12-knn-portability`, not merged into `origin/main`; no PR was recorded for that head at this review. No merge or deployment is authorized. [Closure report](PHASE_2_01_TASK_015_CLOSURE.md) records exact evidence and preserved boundaries.
+
+Model Selection mastery remains enabled under the approved 20/24 plus both components of all six paired gates in one confirmed independent attempt. No attempt pooling, practice/notebook mastery, policy changes, numerical changes or learner-evidence migration. Frozen MS-E1/MS-E2 references retain the accepted canonical macOS ARM64 contract. Earlier pending/blocked/disabled dispositions below are historical and superseded for current Task 015 implementation status.
+
+Phase 2 is **audit and design only**. [Review package](PHASE_2_REVIEW_PACKAGE.md) includes public/learner navigation, landing/free-lab specifications, reusable lesson design, content audit priorities, bounded roadmap and founder decisions. No application implementation, Project Studio/capstones, payment integration, external learner testing or unrelated curriculum work. Task 014/016/017/018 identities remain unchanged.
+
+**OPEN platform-release obligations:** genuine screen-reader use, real browser 200%/400% zoom, genuine Google Colab execution and original-directory I/O reliability. Scoped keyboard/320px, local kernels and clean-clone builds do not close these. Task 015 implementation closure is distinct from release acceptance.
+
+
+> **Current disposition — activation recovery passed.** `4a2bbf48c0e83c0e97d5ec14d8f8be5113896a8b` enables Model Selection mastery after a successful conventional-install disabled-baseline build. All four jobs in [fresh independent CI](https://github.com/CBehera5/ml-mastery/actions/runs/39154246996) completed successfully. See [recovery report](TASK_015_12_ACTIVATION_RECOVERY.md). Ready for founder closure review; no merge or deployment. Historical blocked/rollback entries below are superseded by this recovery. Screen-reader, zoom, Colab and original-directory I/O remain platform-release obligations.
+
+
+## Task 015.12 — Mastery activation attempted; rolled back at build gate
+
+18 October 2026. Candidate `55bac5f524f1cfb552a4ece48699e47bce1a117f` passed 68 focused activation checks, 2,845 frontend/66 math/2,612 Python regressions, typecheck, frozen-reference/KNN checks and two notebook kernels. Its local production build rejected the agent-created clean copy's symlinked dependency directory. The rollback guard restored `MASTERY_AVAILABLE=false`; disabled-state tests/helper were restored. Per the founder's explicit stop condition, no setup repair/retry, new activation CI or activated browser check was attempted. [Activation failure report](TASK_015_12_MASTERY_ACTIVATION.md). Existing learner records and numerical references are unchanged. Activation/formal closure remain blocked; the earlier canonical CI is not activation evidence.
+
+## Task 015.12 — Canonical V3 freeze verified; founder review
+
+18 October 2026. The founder retained macOS ARM64 as the canonical reference environment and approved the audited two-charge correction/restoration at `ab6bed5`. MS-E2 V3 is frozen with reviewed output differences; MS-E1 remains byte-identical. Final source `cdb0e9d6b550ae56d3721165d5b31c4b7f922b66` passed all four jobs in [independent CI 39121627746](https://github.com/CBehera5/ml-mastery/actions/runs/39121627746): 972 KNN cases, 2,612 Python/2,794 frontend/66 math tests, typecheck/build, frozen hashes, two fresh notebook kernels and production browser smoke including persistence/320px. Native Down/Return selection and restoration passed separately in a headed local browser. [Canonical freeze report](TASK_015_12_CANONICAL_FREEZE.md). Stop for founder review of the reference repair. `MASTERY_AVAILABLE=false`; 20/24, six paired gates, one confirmed attempt and existing learner evidence remain unchanged. Screen-reader, zoom, Colab and original-directory I/O obligations remain open. Linux differences remain documented limitations, with no numerical-policy widening. Earlier sections below are historical.
+
+## Task 015.12 — Portability audit complete; stop before re-freeze
+
+18 October 2026. The V2 repair failed CI on its KNN tie. The subsequent bounded redesign is proposed only: restore E2-00-00 charge to 40.0 and offset E2-00-02/E2-06-02 by 0.001. All 972 KNN prediction/configuration records pass locally and on independent macOS ARM64/Linux x86-64 CI. macOS matches exact proposed payloads; Linux exposes existing MS-E1 numerical drift and MS-E2 logistic probability drift. No new KNN ambiguity was found, but the complete portability gate fails. Stop for founder review of supported environments/numerical policy; no reference freeze, production fixture change, tolerance widening or MS-E1 change was performed. Local Python: 2,612 passed. Full evidence and exact differences: [portability report](TASK_015_12_KNN_PORTABILITY_REPORT.md), [independent diagnostic run](https://github.com/CBehera5/ml-mastery/actions/runs/39118535718). Mastery remains disabled; learner evidence, thresholds/gates and platform obligations remain unchanged. Earlier status sections below are historical.
+
 ## Task 015.12 — Model Selection & Comparison implementation delivered; acceptance blocked
 
 18 October 2026. MS01–MS06, 24 objective families, 48 practice variants, 72 independent assessment instances, six paired critical gates, two bounded experiment routes, isolated versioned progress, and one notebook are implemented. On commit `5a609647e6652cfe436d2a19729f4437f9bca851`, independent [GitHub Actions](https://github.com/CBehera5/ml-mastery/actions/runs/39115704290) passed the front-end suites, typecheck, production build, Python regressions, and browser smoke, but the workflow’s frozen-reference gate failed on the ambiguous MS-E2 KNN kth-neighbor tie. The founder-authorized repair is now applied locally: an explicit exact-distance mixed-label cutoff rejection plus a minimal MS-E2 V2 fixture perturbation. Local Python 3.13.16 `--freeze` and two `--check` runs pass, and the full Python suite passes 2,609 tests. MS-E1 hashes remain unchanged; updated V2 hashes and the reviewed output diff are in [the reference freeze report](verification/model-selection/REFERENCE_FREEZE_REPORT.md). Independent CI against the repaired commit is pending. `MASTERY_AVAILABLE=false`; do not grant mastery until all required gates pass. Genuine native select Arrow-key change, screen reader, browser zoom, Google Colab, and original-directory I/O remain open obligations. No deployment or Task 015.13 work.

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import {editorialMetadata} from "../../../experience/editorial-metadata";
 import { CoreAssessment } from "../assessment";
-export const metadata: Metadata = { title: "Linear Algebra core assessment | ML Math Lab" };
+export const metadata = editorialMetadata("/math/linear-algebra/assessment");
 export default function AssessmentPage() { return <CoreAssessment />; }

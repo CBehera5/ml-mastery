@@ -1,0 +1,2236 @@
+{
+  "books": {
+    "linear": {
+      "title": "Linear Regression · Book 8",
+      "file": "Linear-Regression-Book-8.pdf"
+    },
+    "polynomial": {
+      "title": "Polynomial Regression · Book 9",
+      "file": "Polynomial-Regression-Book-9 (1).pdf"
+    },
+    "regularization": {
+      "title": "Ridge, Lasso and Elastic Net · Book 10",
+      "file": "Ridge-Lasso-and-Elastic-Net-Book-10.pdf"
+    },
+    "logistic": {
+      "title": "Logistic Regression · Book 11",
+      "file": "Logistic-Regression-Book-11.pdf"
+    },
+    "knn": {
+      "title": "K-Nearest Neighbors · Book 12",
+      "file": "K-Nearest-Neighbors-Book-12.pdf"
+    },
+    "naive-bayes": {
+      "title": "Naive Bayes · Book 13",
+      "file": "Naive-Bayes-Book-13.pdf"
+    },
+    "svm": {
+      "title": "Support Vector Machines · Book 14",
+      "file": "Support-Vector-Machines-Book-14.pdf"
+    },
+    "decision-trees": {
+      "title": "Decision Trees · Book 15",
+      "file": "Decision-Trees-Book-15.pdf"
+    },
+    "random-forests": {
+      "title": "Random Forest · Book 16",
+      "file": "Random-Forest-Book-16.pdf"
+    },
+    "gradient-boosting": {
+      "title": "Gradient Boosting · Book 17",
+      "file": "Gradient-Boosting-Book-17.pdf"
+    },
+    "mlp": {
+      "title": "Multilayer Perceptron · Book 18",
+      "file": "Multilayer-Perceptron-Book-18.pdf"
+    },
+    "evaluation": {
+      "title": "Evaluation Foundations · Book 19",
+      "file": "Evaluation-Foundations-Book-19.pdf"
+    }
+  },
+  "readings": {
+    "linear/problem": {
+      "title": "A useful prediction starts with a question",
+      "pages": "4–5",
+      "story": "A buyer asks what an unlisted flat might cost. Past sales supply observed areas and recorded prices. A model supplies an estimate for a new area; it does not reveal a hidden true price.",
+      "predict": "What pattern would you look for before choosing a straight line?",
+      "equation": "predicted price = intercept + slope × area",
+      "explain": "The feature is the supplied area; the target is the recorded sale price. Training chooses the slope and intercept using permitted past observations.",
+      "headers": [
+        "Quantity",
+        "Role"
+      ],
+      "rows": [
+        [
+          "Area",
+          "Known input"
+        ],
+        [
+          "Recorded price",
+          "Observed target"
+        ],
+        [
+          "Predicted price",
+          "Calculated estimate"
+        ]
+      ],
+      "figure": "linear-4-0.png",
+      "chart": "Read area along the horizontal axis and recorded prices vertically. Each dot is one sale. A rising cloud suggests a positive association, while its vertical scatter warns that area is not the whole story.",
+      "caution": "The book uses hundreds of square feet and ₹ lakh. The existing housing lesson uses its own labelled units and values, including the 245→255 coefficient experiment. Do not mix them.",
+      "module": "linear",
+      "width": 1093,
+      "height": 722
+    },
+    "linear/errors": {
+      "title": "Make every miss count without cancelling",
+      "pages": "6–7",
+      "story": "A line predicts 30 for an observation recorded as 35. Its residual is +5. Another residual could be negative; adding signed misses could hide both.",
+      "predict": "Why square each miss before averaging?",
+      "equation": "residual = y − ŷ; MSE = mean(residual²); RMSE = √MSE",
+      "explain": "y means recorded target and ŷ the prediction. MSE emphasizes large misses; RMSE returns to the target’s units. MAE averages absolute misses.",
+      "headers": [
+        "Residual",
+        "Squared miss"
+      ],
+      "rows": [
+        [
+          "−2",
+          "4"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "4",
+          "16"
+        ],
+        [
+          "Mean of squares",
+          "7"
+        ]
+      ],
+      "figure": "linear-6-0.png",
+      "chart": "The vertical segments run from observations to predictions: longer segments mean larger errors. Compare the two panels’ lines and residual lengths; the annotated MSE values belong to the source simulation.",
+      "caution": "RMSE is not a guaranteed error bound for an individual house. MAE reduces sensitivity to extreme errors compared with MSE; it does not ignore them.",
+      "module": "linear",
+      "width": 1584,
+      "height": 653
+    },
+    "linear/fit": {
+      "title": "Move the settings toward smaller error",
+      "pages": "8–10",
+      "story": "For observations (1,2), (2,3), (3,5), a least-squares line has slope 1.5 and intercept 1/3. A formula and an iterative search can solve the same objective under suitable conditions.",
+      "predict": "If the loss rises as a setting increases, which small movement should you try?",
+      "equation": "w_new = w_old − learning_rate × loss_gradient",
+      "explain": "A gradient is a local sensitivity. Subtracting it proposes a downhill step; the learning rate scales that step.",
+      "headers": [
+        "Method",
+        "What it does"
+      ],
+      "rows": [
+        [
+          "Least squares",
+          "Solve the linear fit numerically"
+        ],
+        [
+          "Gradient descent",
+          "Repeat local updates"
+        ],
+        [
+          "Validation",
+          "Check usefulness on unseen cases"
+        ]
+      ],
+      "figure": "linear-8-0.png",
+      "chart": "The horizontal axis varies slope while the intercept is fixed at the book’s chosen value. The vertical axis is training MSE. The bottom is the best slope on this slice, not a complete picture of every parameter combination.",
+      "caution": "Convexity does not guarantee a unique solution or convergence for every learning rate. Collinear inputs can make coefficients nonunique; stable solvers avoid explicitly inverting XᵀX.",
+      "module": "linear",
+      "width": 1070,
+      "height": 624
+    },
+    "linear/features": {
+      "title": "Each feature contributes in its own units",
+      "pages": "11–12",
+      "story": "A flat’s estimate may depend on area, age and distance to transport. A coefficient describes the model’s response while the other supplied features remain fixed.",
+      "predict": "With an age coefficient of −0.85 lakh per year, what changes for four additional years?",
+      "equation": "ŷ = b + w_area × area + w_age × age + w_distance × distance",
+      "explain": "Multiply each feature by its matching coefficient, then add the baseline. This is a vector dot product plus a bias.",
+      "headers": [
+        "Change",
+        "Model prediction change"
+      ],
+      "rows": [
+        [
+          "Age +1, others fixed",
+          "−0.85 lakh"
+        ],
+        [
+          "Age +4, others fixed",
+          "−3.4 lakh"
+        ],
+        [
+          "Same information in duplicate columns",
+          "Coefficients can become unstable"
+        ]
+      ],
+      "figure": "linear-11-0.png",
+      "chart": "The left panel compares predicted and recorded prices; the right shows coefficient directions and units. The age bar points negative. These fitted coefficients and scores are book examples, not a causal study.",
+      "caution": "“Other inputs fixed” is a mathematical comparison. It does not prove that ageing or moving a flat would cause that price change. Correlated features complicate interpretation.",
+      "module": "linear",
+      "width": 1584,
+      "height": 634
+    },
+    "linear/diagnostics": {
+      "title": "A good score can hide a bad pattern",
+      "pages": "13–15",
+      "story": "A mean-only baseline leaves squared error 5,620 in the source example; the fitted line leaves 281. R² compares these errors, while residual plots show what that single number hides.",
+      "predict": "Could a curved residual pattern remain even with a high R²?",
+      "equation": "R² = 1 − residual_sum_of_squares / total_sum_of_squares",
+      "explain": "The denominator uses variation around the evaluated targets’ mean in the standard definition. Compare an explicit training-mean deployment baseline separately.",
+      "headers": [
+        "Residual pattern",
+        "Question to investigate"
+      ],
+      "rows": [
+        [
+          "Curve",
+          "Is the model shape too rigid?"
+        ],
+        [
+          "Widening fan",
+          "Does error spread change with the prediction?"
+        ],
+        [
+          "Isolated point",
+          "Is it unusual, erroneous or influential?"
+        ]
+      ],
+      "figure": "linear-14-1.png",
+      "chart": "Each panel places fitted values horizontally and residuals vertically. Compare scatter around zero with a curve and a widening fan. These are diagnostic clues, not automatic diagnoses or permission to delete data.",
+      "caution": "R² can be negative and is undefined for a constant target under the mathematical ratio. A tidy residual plot does not establish calibration, causality or safe extrapolation.",
+      "module": "linear",
+      "width": 1698,
+      "height": 539
+    },
+    "linear/workflow": {
+      "title": "Keep the final exam out of model development",
+      "pages": "15–17",
+      "story": "A fitted line may extend far beyond the largest observed house. Its numerical prediction still exists there, but the data no longer directly supports the assumed trend.",
+      "predict": "Would a precise-looking number make an unseen range trustworthy?",
+      "equation": "fit on training → choose on validation → evaluate on held-out test",
+      "explain": "Estimate preprocessing from training data only, including within cross-validation folds. Report units, baseline comparisons, errors and important limitations.",
+      "headers": [
+        "Step",
+        "Reason"
+      ],
+      "rows": [
+        [
+          "Inspect observations",
+          "Find missingness and suspicious values"
+        ],
+        [
+          "Fit a complete pipeline",
+          "Keep learned transformations inside training"
+        ],
+        [
+          "Hold out final evidence",
+          "Avoid choosing settings from test results"
+        ]
+      ],
+      "figure": "linear-15-0.png",
+      "chart": "The shaded region begins beyond the observed area range. The extrapolated line keeps rising, but no additional dots support that extension. The warning concerns evidence, not whether the equation can be evaluated.",
+      "caution": "Being inside the training range also does not guarantee accuracy. These readings add context without changing the existing project, saved work or mastery requirements.",
+      "module": "linear",
+      "width": 1093,
+      "height": 639
+    },
+    "polynomial/features": {
+      "title": "A curve can still be linear in its weights",
+      "pages": "4–6",
+      "story": "Braking distance bends upward as speed increases. Instead of discarding weighted sums, create new columns from the original speed: v, v² and possibly higher powers.",
+      "predict": "What does adding v² let the prediction do that b + wv cannot?",
+      "equation": "ŷ = b + w₁v + w₂v²",
+      "explain": "The input is transformed, but each learned weight still multiplies a fixed feature. That is what “linear in the parameters” means.",
+      "headers": [
+        "v",
+        "Features [1, v, v²]"
+      ],
+      "rows": [
+        [
+          "1",
+          "[1, 1, 1]"
+        ],
+        [
+          "2",
+          "[1, 2, 4]"
+        ],
+        [
+          "3",
+          "[1, 3, 9]"
+        ]
+      ],
+      "figure": "polynomial-5-0.png",
+      "chart": "Follow the arrows: one speed becomes several feature columns, which enter an ordinary linear model. The boxes represent constructed measurements, not separately observed data.",
+      "caution": "The braking example and the existing housing playground use different datasets. A squared term permits curvature; it does not guarantee the chosen shape is correct.",
+      "module": "polynomial",
+      "width": 1253,
+      "height": 425
+    },
+    "polynomial/capacity": {
+      "title": "More freedom can fit the noise too",
+      "pages": "7–9",
+      "story": "A high-degree curve can follow every training point, including accidental measurement noise. The question is whether its flexibility transfers to new observations.",
+      "predict": "Should the curve with the smallest training error automatically win?",
+      "equation": "degree controls the highest included power",
+      "explain": "Higher degree adds parameters and potential shapes. Use validation or cross-validation to choose degree; preserve final test data for evaluation.",
+      "headers": [
+        "Fit",
+        "Likely concern to investigate"
+      ],
+      "rows": [
+        [
+          "Too rigid",
+          "Systematic residual structure"
+        ],
+        [
+          "Moderate flexibility",
+          "Can capture useful curvature"
+        ],
+        [
+          "Very flexible",
+          "Can memorize noise"
+        ]
+      ],
+      "figure": "polynomial-7-0.png",
+      "chart": "Compare the panels using the same dots. Higher-degree curves become increasingly wiggly between observations. Training and source “test” annotations illustrate behavior; choose settings using validation rather than those test outcomes.",
+      "caution": "A train–evaluation gap alone does not prove overfitting; distribution shift and split problems are alternatives. Validation errors also have uncertainty.",
+      "module": "polynomial",
+      "width": 1660,
+      "height": 995
+    },
+    "polynomial/tails": {
+      "title": "Outside the data, high powers dominate",
+      "pages": "10–11",
+      "story": "A degree-nine braking curve can look reasonable inside its observed range yet turn sharply downward outside it. A good interpolation picture does not validate extrapolation.",
+      "predict": "Would a negative predicted braking distance be a meaningful physical answer?",
+      "equation": "as |v| grows, the highest nonzero power can dominate",
+      "explain": "Large feature magnitudes and correlated polynomial columns can make fitting numerically difficult. Scaling helps but does not guarantee good conditioning or physical plausibility.",
+      "headers": [
+        "Question",
+        "Check"
+      ],
+      "rows": [
+        [
+          "Range",
+          "Is the query supported by observations?"
+        ],
+        [
+          "Units",
+          "How large are the powers?"
+        ],
+        [
+          "Plausibility",
+          "Does the answer respect the problem?"
+        ]
+      ],
+      "figure": "polynomial-10-0.png",
+      "chart": "Speed is horizontal and predicted stopping distance vertical. The high-degree curve dives after the observed points end, while the low-degree curve remains smoother. The source’s true law is known because it is a simulation.",
+      "caution": "Do not infer a universal safe polynomial degree from this one example. A physical constraint may be needed even for a low-degree model.",
+      "module": "polynomial",
+      "width": 1187,
+      "height": 683
+    },
+    "polynomial/families": {
+      "title": "Create features that match the pattern",
+      "pages": "12–15",
+      "story": "A repeating energy-use pattern may need sine and cosine features rather than a huge polynomial. A threshold effect may be represented by a hinge; two measurements may interact.",
+      "predict": "What would an area × location feature allow a housing model to express?",
+      "equation": "ŷ = b + w₁x + w₂sin(0.8x)",
+      "explain": "The sine is a known transformation. The learned coefficients still combine fixed features. Interactions let one feature’s model sensitivity depend on another.",
+      "headers": [
+        "Feature family",
+        "Possible structure"
+      ],
+      "rows": [
+        [
+          "Powers",
+          "Smooth bends"
+        ],
+        [
+          "Sines and cosines",
+          "Repeating cycles"
+        ],
+        [
+          "Hinges",
+          "Changes after thresholds"
+        ],
+        [
+          "Products",
+          "Interactions between inputs"
+        ]
+      ],
+      "figure": "polynomial-12-0.png",
+      "chart": "The left panel uses a sine feature to follow a wave; the right combines hinge features into a piecewise line. Compare the resulting shapes with the dots rather than assuming one family is universally best.",
+      "caution": "Creating many interactions can produce far more features than rows. Select and scale within training folds; use regularization and validation where appropriate.",
+      "module": "polynomial",
+      "width": 1584,
+      "height": 615
+    },
+    "regularization/need": {
+      "title": "A model needs a preference when data is scarce",
+      "pages": "4–5",
+      "story": "A lender has 30 past examples and 20 features. Several noisy columns may receive convincing-looking coefficients simply because they happen to match this small sample.",
+      "predict": "Would a nonzero fitted coefficient prove that a feature contains a stable signal?",
+      "equation": "total objective = data loss + penalty",
+      "explain": "A penalty expresses a preference among possible fits. It can trade a worse training fit for more stable predictions, but useful generalization must still be measured.",
+      "headers": [
+        "Evidence",
+        "What it means"
+      ],
+      "rows": [
+        [
+          "Training fit",
+          "Agreement on fitting examples"
+        ],
+        [
+          "Validation fit",
+          "Development evidence for new cases"
+        ],
+        [
+          "Coefficient magnitude",
+          "Depends on units and other features"
+        ]
+      ],
+      "figure": "regularization-4-0.png",
+      "chart": "Each bar is a feature’s coefficient. Compare the fitted bars with the simulation’s known true weights. In real data those true weights are usually unavailable.",
+      "caution": "Ordinary least squares can still be solved with more features than rows, often nonuniquely. A pseudoinverse can select one solution; regularization addresses additional stability and preference questions.",
+      "module": "regularization",
+      "width": 1337,
+      "height": 605
+    },
+    "regularization/ridge": {
+      "title": "A squared penalty pulls weights toward zero",
+      "pages": "6–7",
+      "story": "For one weight, fitting prefers w=3. Ridge adds a cost proportional to w², moving the optimum toward zero as the penalty grows.",
+      "predict": "At penalty 1, is the optimum 3, 1.5 or 0?",
+      "equation": "L(w) = (w−3)² + λw²; optimum w = 3/(1+λ)",
+      "explain": "λ, read “lambda,” is the penalty strength. This formula belongs to this scalar objective and normalization.",
+      "headers": [
+        "λ",
+        "Optimal w"
+      ],
+      "rows": [
+        [
+          "0",
+          "3"
+        ],
+        [
+          "1",
+          "1.5"
+        ],
+        [
+          "3",
+          "0.75"
+        ]
+      ],
+      "figure": "regularization-6-0.png",
+      "chart": "Read penalty strength along the log-scaled horizontal axis and coefficients vertically. Paths generally shrink in overall magnitude as penalty increases. Individual coefficients need not move monotonically in correlated multi-feature models.",
+      "caution": "Ridge can produce exact zero coefficients in special cases; “never zero” is too absolute. Library loss normalization can change the numerical meaning of a penalty value. Intercept treatment must be stated.",
+      "module": "regularization",
+      "width": 1622,
+      "height": 653
+    },
+    "regularization/lasso": {
+      "title": "A corner in the penalty can create exact zeros",
+      "pages": "8–10",
+      "story": "For the same fit-to-3 problem, replacing λw² with λ|w| changes the geometry at zero. Above a threshold, the optimum can land exactly at zero.",
+      "predict": "For λ=6, how does Lasso differ from Ridge in this scalar example?",
+      "equation": "L(w) = (w−3)² + λ|w|; optimum = max(3−λ/2, 0)",
+      "explain": "Absolute value grows linearly with magnitude. Its corner at zero allows a range of small effects to be set exactly to zero.",
+      "headers": [
+        "λ",
+        "Lasso optimum",
+        "Ridge optimum"
+      ],
+      "rows": [
+        [
+          "2",
+          "2",
+          "1"
+        ],
+        [
+          "6",
+          "0",
+          "≈0.4286"
+        ]
+      ],
+      "figure": "regularization-8-0.png",
+      "chart": "Follow the two weight paths as penalty increases. The Lasso path reaches zero at 6; Ridge approaches zero gradually in this specific example. The shared starting point makes the comparison controlled.",
+      "caution": "A selected feature is not automatically causally important or truly relevant. Correlated inputs can make Lasso selection unstable.",
+      "module": "regularization",
+      "width": 1114,
+      "height": 624
+    },
+    "regularization/elastic": {
+      "title": "Blend sparsity with stability across related features",
+      "pages": "11–13",
+      "story": "Several sensors may measure nearly the same signal. Lasso can favor one of them, while an L2 component encourages related coefficients to share the burden.",
+      "predict": "Would selecting one sensor prove that the others contain no information?",
+      "equation": "penalty = α[ρΣ|w| + (1−ρ)Σw²/2]",
+      "explain": "α sets overall strength; ρ mixes the absolute and squared penalties. Here ρ=1 is L1 and ρ=0 is the displayed L2 convention.",
+      "headers": [
+        "Penalty shape",
+        "Tendency"
+      ],
+      "rows": [
+        [
+          "Circle, L2",
+          "Shrinkage"
+        ],
+        [
+          "Diamond, L1",
+          "Axis-aligned zeros"
+        ],
+        [
+          "Rounded diamond",
+          "A combination of both"
+        ]
+      ],
+      "figure": "regularization-11-0.png",
+      "chart": "The contours represent equal data loss. The shaded regions limit coefficient magnitude. Where a low contour first touches a region shows how its geometry can favor different solutions.",
+      "caution": "This two-dimensional picture is intuition, not a proof that every Lasso solution lies at a corner or every Elastic Net fit keeps an entire feature group.",
+      "module": "regularization",
+      "width": 1716,
+      "height": 501
+    },
+    "regularization/select": {
+      "title": "Choose the penalty without leaking the answer",
+      "pages": "14–15",
+      "story": "Increasing a penalty changes model complexity. A cross-validation curve compares held-out development error across strengths while fitting each candidate on its allowed training folds.",
+      "predict": "Why would choosing by training error tend to favor too little regularization?",
+      "equation": "fit preprocessing and model inside each training fold",
+      "explain": "A fold is one development partition. Its validation rows assess the candidate but must not supply the scaler or feature-selection settings.",
+      "headers": [
+        "Stage",
+        "Permitted use"
+      ],
+      "rows": [
+        [
+          "Training fold",
+          "Estimate scaling and coefficients"
+        ],
+        [
+          "Validation fold",
+          "Compare settings"
+        ],
+        [
+          "Final test",
+          "Assess the chosen workflow"
+        ]
+      ],
+      "figure": "regularization-14-0.png",
+      "chart": "The horizontal axis is penalty strength on a log scale; vertical values are cross-validation errors. Inspect the broad low-error region, not just a visually precise minimum. The plotted best values belong to the book’s run.",
+      "caution": "A pipeline wrapping an estimator that performs its own internal CV can still scale before its internal splits. For strict fold isolation, cross-validate the entire scaler-plus-estimator pipeline.",
+      "module": "regularization",
+      "width": 1584,
+      "height": 596
+    },
+    "regularization/interpret": {
+      "title": "A coefficient changes when its units change",
+      "pages": "15–16",
+      "story": "Switching a measurement from centimetres to metres makes one input unit 100 times larger. An unpenalized coefficient must change reciprocally to represent the same predictions. A coefficient penalty notices that change.",
+      "predict": "Would equal raw coefficient magnitudes mean equal real-world importance?",
+      "equation": "contribution = coefficient × feature value",
+      "explain": "Interpret coefficients alongside units, scaling, correlations and the objective. Compare predictive evidence using the same information boundary.",
+      "headers": [
+        "Change",
+        "Consequence"
+      ],
+      "rows": [
+        [
+          "Change units",
+          "Coefficient magnitude changes"
+        ],
+        [
+          "Change scaling with a penalty",
+          "The preferred fit can change"
+        ],
+        [
+          "Correlated features",
+          "Credit may be shared or unstable"
+        ]
+      ],
+      "figure": "regularization-15-0.png",
+      "chart": "The horizontal axis changes one feature’s scale; the vertical axis expresses contributions in common units. The paths show that a penalty can alter the fitted relationship when scaling changes.",
+      "caution": "Standardization is a modeling choice, not a guarantee of fairness or true feature importance. Weight decay and L2 penalties are not universally identical for adaptive optimizers.",
+      "module": "regularization",
+      "width": 1043,
+      "height": 605
+    },
+    "logistic/probability": {
+      "title": "Separate a score, a probability and a decision",
+      "pages": "4–7",
+      "story": "A student either passes or does not. A straight prediction line can leave the interval from zero to one. Logistic regression keeps the weighted score, then transforms it with a sigmoid.",
+      "predict": "What probability should a score of zero produce?",
+      "equation": "z = b + wx; p = 1/(1+e^(−z))",
+      "explain": "z is an unrestricted score; e is the natural exponential base; p is the model’s probability for class 1. A threshold converts p into a decision afterward.",
+      "headers": [
+        "Score z",
+        "Sigmoid probability"
+      ],
+      "rows": [
+        [
+          "−2",
+          "≈0.1192"
+        ],
+        [
+          "0",
+          "0.5"
+        ],
+        [
+          "2",
+          "≈0.8808"
+        ]
+      ],
+      "figure": "logistic-7-0.png",
+      "chart": "Read the score horizontally and probability vertically. The curve rises most sharply near zero and flattens toward its limits. The dots annotate exact score locations, not observed class frequencies.",
+      "caution": "A probability-shaped output is not automatically calibrated. Not every classifier uses a sigmoid or produces probabilities directly.",
+      "module": "logistic",
+      "width": 1114,
+      "height": 654
+    },
+    "logistic/loss": {
+      "title": "A confident wrong answer should be expensive",
+      "pages": "8–9",
+      "story": "For an outcome that really is class 1, assigning probability 0.01 is a much stronger mistake than assigning 0.5. Log-loss records that distinction.",
+      "predict": "Which forecast gets the larger loss: p=0.9 or p=0.01 when y=1?",
+      "equation": "L = −[y ln(p) + (1−y) ln(1−p)]",
+      "explain": "y is the recorded binary label. ln is the natural logarithm. The gradient with respect to a coefficient is (p−y) times its input, for one unregularized example.",
+      "headers": [
+        "p for true class 1",
+        "−ln(p)"
+      ],
+      "rows": [
+        [
+          "0.9",
+          "≈0.1054"
+        ],
+        [
+          "0.5",
+          "≈0.6931"
+        ],
+        [
+          "0.01",
+          "≈4.6052"
+        ]
+      ],
+      "figure": "logistic-8-0.png",
+      "chart": "In the left panel, probability assigned to class 1 is horizontal and loss vertical; the true label is 1. Loss grows sharply near zero. The right panel is a particular parameter slice, not proof of a unique optimum for every dataset.",
+      "caution": "Separable unregularized data may have no finite logistic optimum. Convergence depends on solver settings and assumptions, not convexity alone.",
+      "module": "logistic",
+      "width": 1584,
+      "height": 615
+    },
+    "logistic/threshold": {
+      "title": "The probability does not choose the action",
+      "pages": "10–13",
+      "story": "A probability of 0.4 could trigger review under a 0.3 threshold and no review under a 0.5 threshold. The model output is unchanged; the action rule changed.",
+      "predict": "If missing a positive is costly, which direction should you consider moving the threshold?",
+      "equation": "predict class 1 when p ≥ threshold",
+      "explain": "Lowering a threshold on fixed scores cannot reduce recall, but precision need not change monotonically in every finite dataset. Costs, capacity and uncertainty matter.",
+      "headers": [
+        "p",
+        "Threshold",
+        "Decision"
+      ],
+      "rows": [
+        [
+          "0.4",
+          "0.3",
+          "Positive"
+        ],
+        [
+          "0.4",
+          "0.5",
+          "Negative"
+        ]
+      ],
+      "figure": "logistic-13-1.png",
+      "chart": "Threshold runs horizontally; precision and recall are vertical. Follow each labelled curve separately. The book’s curves show one simulated trade-off and do not prescribe a universal cutoff.",
+      "caution": "Choose a threshold on development evidence, not by repeatedly inspecting final-test results. A higher coefficient changes modeled odds, not an established causal effect.",
+      "module": "logistic",
+      "width": 1114,
+      "height": 624
+    },
+    "logistic/geometry": {
+      "title": "Change the features to change the boundary’s shape",
+      "pages": "10–12",
+      "story": "With raw inputs, a logistic score has a linear boundary. Squared and interaction features can express a curved boundary while the score remains linear in its learned weights.",
+      "predict": "Why can a ring-shaped class defeat a straight boundary?",
+      "equation": "z = b + w₁x₁ + w₂x₂ + w₃x₁² + …",
+      "explain": "A boundary is where a specified probability threshold changes the assigned class. For threshold 0.5, it is where z=0.",
+      "headers": [
+        "Choice",
+        "What it changes"
+      ],
+      "rows": [
+        [
+          "Feature transformations",
+          "Available boundary shapes"
+        ],
+        [
+          "Regularization",
+          "Preference among fits"
+        ],
+        [
+          "Threshold",
+          "Decision made from a fixed probability"
+        ]
+      ],
+      "figure": "logistic-12-0.png",
+      "chart": "Both panels show the same ring-like data. Compare a raw-feature straight boundary with a curved one after feature expansion. Background regions are model decisions; dots are recorded labels.",
+      "caution": "The displayed accuracies are source simulation results, not guarantees or measurements from this application. Curved features can also overfit.",
+      "module": "logistic",
+      "width": 1416,
+      "height": 691
+    },
+    "logistic/workflow": {
+      "title": "Fit the probability model inside an honest workflow",
+      "pages": "13–16",
+      "story": "A useful classifier needs more than a convincing S-curve: define the prediction moment, split appropriately, fit preprocessing on training data, and evaluate the decisions and probabilities you will use.",
+      "predict": "Could good ranking coexist with badly exaggerated probabilities?",
+      "equation": "score → probability → thresholded action → measured outcome",
+      "explain": "For many classes, softmax divides each exponentiated score by the sum over classes. Those values sum to one, but still require evaluation.",
+      "headers": [
+        "Question",
+        "Evidence to inspect"
+      ],
+      "rows": [
+        [
+          "Who is ranked higher?",
+          "Ranking metrics"
+        ],
+        [
+          "How believable are probabilities?",
+          "Calibration and proper scoring rules"
+        ],
+        [
+          "Which actions are useful?",
+          "Threshold costs and constraints"
+        ]
+      ],
+      "figure": "logistic-13-0.png",
+      "chart": "The left bars are unrestricted class scores; the right bars are normalized softmax probabilities. Bar height changes scale and meaning; the class ordering is preserved.",
+      "caution": "The book’s class names and values are illustrative. Normalization is not calibration, and a prediction should not automatically authorize a consequential real-world action.",
+      "module": "logistic",
+      "width": 1546,
+      "height": 558
+    },
+    "logistic/limits": {
+      "title": "More hours changes modeled odds, not destiny",
+      "pages": "6–11",
+      "story": "In a logistic model, adding one unit to a feature adds its coefficient to log-odds. Exponentiating that coefficient gives the factor multiplying the modeled odds, holding other inputs fixed.",
+      "predict": "Does doubling the odds always double the probability?",
+      "equation": "odds = p/(1−p); one-unit odds multiplier = e^w",
+      "explain": "At p=0.5, odds are 1. Doubling them gives odds 2 and p=2/3, not probability 1.",
+      "headers": [
+        "Probability",
+        "Odds"
+      ],
+      "rows": [
+        [
+          "0.5",
+          "1"
+        ],
+        [
+          "2/3",
+          "2"
+        ],
+        [
+          "0.8",
+          "4"
+        ]
+      ],
+      "figure": "logistic-6-0.png",
+      "chart": "Compare the three panels: probabilities are bounded, odds are nonnegative, and log-odds extend across the number line. They encode the same probability in different coordinate systems.",
+      "caution": "Coefficients depend on feature units and the included covariates. Predictive association does not demonstrate that changing study hours would cause the modeled change for a particular student.",
+      "module": "logistic",
+      "width": 1704,
+      "height": 558
+    },
+    "knn/vote": {
+      "title": "Let nearby examples vote",
+      "pages": "4–5",
+      "story": "A new fruit sits at (4,4). Its nearest recorded neighbor is blue, but the next two are red. KNN predicts from selected nearby training observations instead of fitting a coefficient vector.",
+      "predict": "Will k=1 and k=3 give the same label?",
+      "equation": "uniform classification: count labels among the k nearest eligible rows",
+      "explain": "k is the number of neighbors consulted. Distances determine membership; the voting rule determines how those neighbors contribute.",
+      "headers": [
+        "k",
+        "Selected labels",
+        "Prediction"
+      ],
+      "rows": [
+        [
+          "1",
+          "Blue",
+          "Blue"
+        ],
+        [
+          "3",
+          "Blue, red, red",
+          "Red"
+        ],
+        [
+          "5",
+          "Blue, red, red, red, blue",
+          "Red"
+        ]
+      ],
+      "figure": "knn-4-0.png",
+      "chart": "The star is the new query. Dots are labeled observations, and dashed circles enclose different neighbor counts. Distances, not the colors alone, decide which dots enter a vote.",
+      "caution": "Resolve distance ties and label ties explicitly. Reusing training rows as their own nearest neighbors gives optimistic training performance, not independent evidence.",
+      "module": "knn",
+      "width": 835,
+      "height": 712
+    },
+    "knn/scale": {
+      "title": "Your units decide what “near” means",
+      "pages": "6–7",
+      "story": "Compare A=(1,2) with B=(4,6). Straight-line distance is 5; city-block distance is 7. With mixed feature units, one large numerical scale can dominate either calculation.",
+      "predict": "Would converting rupees to thousands of rupees change a raw Euclidean neighbor ranking?",
+      "equation": "Euclidean distance = √Σ(aⱼ−bⱼ)²",
+      "explain": "Subtract matching features, square the gaps, add, then take the square root. Scaling changes those contributions and therefore the model’s notion of similarity.",
+      "headers": [
+        "Gap component",
+        "Value"
+      ],
+      "rows": [
+        [
+          "Horizontal gap",
+          "3"
+        ],
+        [
+          "Vertical gap",
+          "4"
+        ],
+        [
+          "Euclidean",
+          "√(9+16)=5"
+        ],
+        [
+          "Manhattan",
+          "3+4=7"
+        ]
+      ],
+      "figure": "knn-6-0.png",
+      "chart": "The diagonal is the Euclidean path between the two labeled points. The horizontal and vertical segments form the Manhattan path. Both measure the same pair under different geometric assumptions.",
+      "caution": "Fit data-dependent scaling only on training rows. Standardization does not prove that all features deserve equal influence or that the chosen distance matches the task.",
+      "module": "knn",
+      "width": 943,
+      "height": 627
+    },
+    "knn/choose": {
+      "title": "A neighborhood can be too small or too broad",
+      "pages": "8–11",
+      "story": "One neighbor can copy a noisy label; a very large neighborhood can wash out a local pattern. Adding irrelevant features can also bury useful similarity in random distances.",
+      "predict": "Would perfect k=1 training accuracy settle the choice of k?",
+      "equation": "choose k using validation error, not self-neighbor training accuracy",
+      "explain": "Small neighborhoods are sensitive to individual rows. Broad neighborhoods smooth the rule but can underfit. The balance depends on data and distance design.",
+      "headers": [
+        "Choice",
+        "Possible behavior"
+      ],
+      "rows": [
+        [
+          "Small k",
+          "Detailed, unstable boundary"
+        ],
+        [
+          "Large k",
+          "Smoother, less local boundary"
+        ],
+        [
+          "Irrelevant dimensions",
+          "Distance can lose useful contrast"
+        ]
+      ],
+      "figure": "knn-8-0.png",
+      "chart": "Compare backgrounds across panels while keeping the same observations. The small-k boundary has tiny islands; larger k smooths them. Source train/test scores illustrate a simulation, not a tuning result for this playground.",
+      "caution": "Odd k avoids a simple unweighted two-class vote tie, not every tie problem. High dimension is a risk, not proof that every embedding-based nearest-neighbor task must fail.",
+      "module": "knn",
+      "width": 1888,
+      "height": 539
+    },
+    "knn/workflow": {
+      "title": "Votes, averages and weighted observations are different rules",
+      "pages": "12–15",
+      "story": "For a numerical target, neighbors contribute values rather than class labels. A uniform rule averages them; a distance-weighted rule gives closer observations larger contributions.",
+      "predict": "For targets 10 and 20 at distances 1 and 2, which prediction is closer to 10: the uniform mean or inverse-distance weighting?",
+      "equation": "weighted mean = Σ(weight × target) / Σweight",
+      "explain": "With inverse-distance weights 1 and 1/2, the result is (10+10)/1.5 ≈13.333; the uniform result is 15. This weights observations, not a linear model’s distance coefficient.",
+      "headers": [
+        "Rule",
+        "Prediction"
+      ],
+      "rows": [
+        [
+          "Uniform mean",
+          "15"
+        ],
+        [
+          "Inverse-distance mean",
+          "≈13.333"
+        ],
+        [
+          "Exact-distance match",
+          "Needs an explicit zero-distance policy"
+        ]
+      ],
+      "figure": "knn-12-0.png",
+      "chart": "The three panels use different k values for numerical predictions. Compare the jagged one-neighbor curve with the smoother middle curve and overly broad final curve. Dots are observed targets, not votes for classes.",
+      "caution": "This source illustration does not add a new live weighting mode. Use only the controls actually provided by the existing playground. Large stored datasets also create prediction-time and memory costs.",
+      "module": "knn",
+      "width": 1698,
+      "height": 539
+    },
+    "naive-bayes/evidence": {
+      "title": "Count evidence separately for each class",
+      "pages": "4–7",
+      "story": "Of 100 emails, 40 are spam and 60 are normal. “Free” appears in 30 spam and 6 normal messages. Seeing the word narrows attention to 36 messages, of which 30 are spam.",
+      "predict": "Why is the answer 30/36 rather than 30/40?",
+      "equation": "class score = prior × likelihood; posterior = score / sum of class scores",
+      "explain": "The prior is the class frequency before seeing the features. The likelihood describes features within a class. The normalized score is the model’s updated probability.",
+      "headers": [
+        "Class",
+        "Prior × word likelihood",
+        "Score"
+      ],
+      "rows": [
+        [
+          "Spam",
+          "0.4 × 0.75",
+          "0.30"
+        ],
+        [
+          "Normal",
+          "0.6 × 0.10",
+          "0.06"
+        ],
+        [
+          "Spam after “free”",
+          "0.30 / 0.36",
+          "≈0.8333"
+        ]
+      ],
+      "figure": "naive-bayes-4-0.png",
+      "chart": "Follow the tree from all messages to each class and then to word presence. The 30 spam and 6 normal word-containing messages share the posterior denominator.",
+      "caution": "For many features, Naive Bayes assumes conditional independence given the class. This is not a claim that words are independent overall. Its probability estimates still need calibration checks.",
+      "module": "naive-bayes",
+      "width": 1223,
+      "height": 601
+    },
+    "naive-bayes/smoothing": {
+      "title": "Unseen is not the same as impossible",
+      "pages": "8–9",
+      "story": "No normal training email contains “lottery.” A raw frequency estimate of zero would erase that class’s multiplied score, even if other words support it. Smoothing avoids this absolute veto.",
+      "predict": "Should one missing combination in a small sample establish impossibility?",
+      "equation": "binary-feature estimate = (present_count + α)/(class_count + 2α)",
+      "explain": "For a binary present/absent feature, α adds a pseudocount to each possible outcome. Multinomial token-count models instead normalize over vocabulary counts and vocabulary size.",
+      "headers": [
+        "Class",
+        "Raw lottery estimate",
+        "Binary estimate with α=1"
+      ],
+      "rows": [
+        [
+          "Normal",
+          "0/60=0",
+          "1/62≈0.0161"
+        ],
+        [
+          "Spam",
+          "10/40=0.25",
+          "11/42≈0.2619"
+        ]
+      ],
+      "figure": "naive-bayes-8-0.png",
+      "chart": "The left bars show raw per-class word-presence frequencies, including a zero. The right bars show smoothed estimates. Compare the same word within the same class, not unrelated bar heights.",
+      "caution": "The displayed binary denominator does not apply unchanged to multinomial word counts. A complete Bernoulli model also uses absent-feature evidence; multiplying only present-word scores is an illustrative shortcut.",
+      "module": "naive-bayes",
+      "width": 1584,
+      "height": 596
+    },
+    "naive-bayes/variants": {
+      "title": "Match the likelihood to the kind of measurement",
+      "pages": "10–11",
+      "story": "A word count, a present/absent flag and a continuous sensor reading contain different information. Naive Bayes variants use different within-class models for those measurements.",
+      "predict": "Does a bell-curve height for a continuous value equal the probability of that exact value?",
+      "equation": "log class score = log prior + sum of log likelihoods or densities",
+      "explain": "Logs turn products into sums and reduce underflow. A Gaussian density uses a class-specific mean and spread; densities must not be interpreted as point probabilities.",
+      "headers": [
+        "Variant",
+        "Feature model"
+      ],
+      "rows": [
+        [
+          "Multinomial",
+          "Nonnegative token counts"
+        ],
+        [
+          "Bernoulli",
+          "Binary presence and absence"
+        ],
+        [
+          "Gaussian",
+          "Continuous class-conditional densities"
+        ]
+      ],
+      "figure": "naive-bayes-11-0.png",
+      "chart": "Dots mark measured observations in two features; dashed ellipses summarize the Gaussian class models. The decision curve is where class scores tie. Different class spreads can produce a curved boundary.",
+      "caution": "Gaussian Naive Bayes assumes within-class feature independence and a density shape. Standardizing does not automatically make those assumptions true.",
+      "module": "naive-bayes",
+      "width": 1090,
+      "height": 751
+    },
+    "naive-bayes/limits": {
+      "title": "Repeated evidence can exaggerate confidence",
+      "pages": "12–14",
+      "story": "Copying the same word feature several times gives a conditional-independence model the same signal repeatedly. Its probability can become more extreme without adding new information.",
+      "predict": "Does a probability nearer one prove that the model has stronger independent evidence?",
+      "equation": "duplicated feature → duplicated contribution to log score",
+      "explain": "Classification, ranking and calibration are different evaluation questions. A model can classify some cases correctly while its probabilities are too confident.",
+      "headers": [
+        "Evidence copies",
+        "Illustrative spam probability"
+      ],
+      "rows": [
+        [
+          "1",
+          "≈0.833"
+        ],
+        [
+          "2",
+          "≈0.974"
+        ],
+        [
+          "3",
+          "≈0.996"
+        ]
+      ],
+      "figure": "naive-bayes-12-0.png",
+      "chart": "The horizontal axis counts duplicate copies of “free”; the vertical axis is the model’s spam probability. The curve rises because evidence is counted repeatedly, not because new emails were observed.",
+      "caution": "Ranking can change when different features are duplicated; it is not universally preserved. Compare on validation evidence and do not assume Naive Bayes is always miscalibrated or always inferior to logistic regression.",
+      "module": "naive-bayes",
+      "width": 1085,
+      "height": 610
+    },
+    "svm/margin": {
+      "title": "Leave room around a separating boundary",
+      "pages": "4–7",
+      "story": "Several lines can classify the same training dots correctly. A maximum-margin SVM prefers room between the boundary and the closest constrained points.",
+      "predict": "If two lines both fit every training label, what geometric difference could still matter?",
+      "equation": "score = w·x+b; full canonical margin width = 2/‖w‖",
+      "explain": "w determines the perpendicular direction and b the offset. The width formula uses the canonical scaling where support boundaries have scores −1 and +1.",
+      "headers": [
+        "Example",
+        "Score"
+      ],
+      "rows": [
+        [
+          "w=(0.5,0.5), b=−2 at (1,1)",
+          "−1"
+        ],
+        [
+          "Same rule at (3,3)",
+          "+1"
+        ],
+        [
+          "Full margin width",
+          "2√2≈2.8284"
+        ]
+      ],
+      "figure": "svm-7-0.png",
+      "chart": "The central line is the decision boundary; parallel dashed lines mark margins. Circled observations are support vectors. Measure gaps perpendicular to the lines, not horizontally or vertically.",
+      "caution": "A wider geometric margin does not establish fairness, safety or optimal population performance. This toy lending diagram is not evidence for real applicant decisions.",
+      "module": "svm",
+      "width": 1089,
+      "height": 747
+    },
+    "svm/soft": {
+      "title": "Charge for margin violations instead of demanding perfection",
+      "pages": "8–9",
+      "story": "Overlapping classes may not admit a clean separating street. A soft-margin objective permits violations and balances them against coefficient magnitude.",
+      "predict": "If C makes violations more expensive, which part of the objective receives greater emphasis?",
+      "equation": "objective = ‖w‖²/2 + C Σ max(0, 1−y×score)",
+      "explain": "Labels here are −1 and +1. The signed margin y×score is positive for correct-side predictions; hinge loss becomes zero only when that margin reaches at least 1.",
+      "headers": [
+        "Signed margin",
+        "Hinge loss"
+      ],
+      "rows": [
+        [
+          "2",
+          "0"
+        ],
+        [
+          "0.5",
+          "0.5"
+        ],
+        [
+          "−1",
+          "2"
+        ]
+      ],
+      "figure": "svm-9-0.png",
+      "chart": "The horizontal axis is signed margin, not probability. The hinge curve falls linearly to zero at margin 1. A correctly classified point can still incur a margin penalty.",
+      "caution": "Larger C is not a universal guarantee of fewer support vectors, better accuracy or a more curved boundary. A linear model remains linear in its chosen features.",
+      "module": "svm",
+      "width": 1144,
+      "height": 639
+    },
+    "svm/kernel": {
+      "title": "Similarity can represent a richer feature space",
+      "pages": "10–13",
+      "story": "On a number line, outer points at ±2 and ±3 cannot be separated from central points by one cut. Adding x² makes an outer-versus-inner distinction possible.",
+      "predict": "Where do x=−3 and x=3 land after squaring?",
+      "equation": "RBF similarity K(x,z) = exp(−γ‖x−z‖²)",
+      "explain": "γ, read “gamma,” controls how quickly similarity fades with distance. The kernel supplies similarities corresponding to a feature-space inner product.",
+      "headers": [
+        "γ at distance 1",
+        "Similarity"
+      ],
+      "rows": [
+        [
+          "0.5",
+          "≈0.6065"
+        ],
+        [
+          "2",
+          "≈0.1353"
+        ],
+        [
+          "8",
+          "≈0.000335"
+        ]
+      ],
+      "figure": "svm-12-0.png",
+      "chart": "Distance between two points runs horizontally and RBF similarity vertically. Larger gamma curves fall faster, so influence is more local. This is a similarity curve, not a calibrated class-probability curve.",
+      "caution": "A narrow similarity radius can produce complicated boundaries, but does not prove overfitting without evaluation. C, gamma and feature scaling interact.",
+      "module": "svm",
+      "width": 1026,
+      "height": 595
+    },
+    "svm/workflow": {
+      "title": "Scale and select the whole workflow inside training",
+      "pages": "12–15",
+      "story": "An RBF kernel compares distances, so changing feature units changes similarities. Scaling and tuning belong within each training fold, not before a final evaluation split.",
+      "predict": "Could a candidate exploit validation statistics through a scaler fitted on all rows?",
+      "equation": "training fold: fit scaler → fit SVM; validation fold: transform → score",
+      "explain": "Cross-validation compares the complete pipeline. Keep temporal or group structure when the prediction problem requires it.",
+      "headers": [
+        "Setting",
+        "Development decision"
+      ],
+      "rows": [
+        [
+          "Feature scales",
+          "Fit on training information"
+        ],
+        [
+          "C and gamma",
+          "Compare using appropriate validation"
+        ],
+        [
+          "Final metric",
+          "Match the intended task and cost"
+        ]
+      ],
+      "figure": "svm-12-1.png",
+      "chart": "All three panels use the same two-moon data with different gamma values. Background shapes become more local as gamma increases. Source scores illustrate one dataset, not a universal winning value.",
+      "caution": "Do not select gamma from the final-test labels shown in a source illustration. Kernel training and prediction costs also matter; direct class probabilities require additional modeling or calibration.",
+      "module": "svm",
+      "width": 1774,
+      "height": 577
+    },
+    "svm/limits": {
+      "title": "Compare models by their jobs, not their reputations",
+      "pages": "10–15",
+      "story": "A linear SVM, a kernel SVM and logistic regression can use related inputs while optimizing different objectives. A nonlinear kernel can solve some geometries that a raw linear boundary cannot.",
+      "predict": "Would a high decision score necessarily mean a 90% class probability?",
+      "equation": "decision score ≠ calibrated probability",
+      "explain": "Compare predictive quality, feature scaling, computation, memory and the kind of output needed. A model’s name does not establish which one wins.",
+      "headers": [
+        "Model",
+        "Core output or preference"
+      ],
+      "rows": [
+        [
+          "Linear SVM",
+          "Margin-based linear score"
+        ],
+        [
+          "Kernel SVM",
+          "Similarity-based decision score"
+        ],
+        [
+          "Logistic regression",
+          "Modeled class probability"
+        ]
+      ],
+      "figure": "svm-11-0.png",
+      "chart": "The left panel has a linear boundary; the right uses an RBF kernel for a ring-like pattern. Dots are labels and backgrounds are decisions. The source’s large accuracy difference depends on this constructed geometry.",
+      "caution": "A kernel model is not automatically more trustworthy. Support-vector influence on a fitted boundary is not causal feature importance or an explanation of the world.",
+      "module": "svm",
+      "width": 1456,
+      "height": 710
+    },
+    "decision-trees/rules": {
+      "title": "A prediction follows a path of questions",
+      "pages": "4–5",
+      "story": "A tree asks about a feature, follows one branch, and asks again until it reaches a leaf. Each new observation follows the same fitted routing rules.",
+      "predict": "Can two identical feature rows receive different deterministic predictions from the same tree?",
+      "equation": "if condition → branch; repeat until leaf",
+      "explain": "Internal nodes are questions; branches are their answers; leaves contain prediction rules. Growing a tree learns questions from training examples.",
+      "headers": [
+        "Part",
+        "Job"
+      ],
+      "rows": [
+        [
+          "Node",
+          "Test a supplied feature"
+        ],
+        [
+          "Branch",
+          "Route to a subgroup"
+        ],
+        [
+          "Leaf",
+          "Return a class or number"
+        ]
+      ],
+      "figure": "decision-trees-4-0.png",
+      "chart": "Read from the top downward. Each colored box asks a question or gives a leaf decision. The smallest mixed leaf cannot distinguish examples with identical supplied features.",
+      "caution": "The toy bank tree is illustrative, not a justified lending policy. A readable path does not establish fairness or causal explanation.",
+      "module": "decision-trees",
+      "width": 1282,
+      "height": 689
+    },
+    "decision-trees/regression": {
+      "title": "A numerical leaf makes a local prediction",
+      "pages": "12–13",
+      "story": "A regression tree partitions feature space, then predicts the mean target within each leaf when trained under squared error. Nearby inputs can fall on different sides of a split.",
+      "predict": "Why does a tree regression curve form flat steps rather than a smooth line?",
+      "equation": "leaf prediction = mean(training targets routed to that leaf)",
+      "explain": "Inside a leaf, the ordinary squared-error prediction is constant. More splits allow more distinct local means.",
+      "headers": [
+        "Leaf targets",
+        "Prediction"
+      ],
+      "rows": [
+        [
+          "[3,5,4]",
+          "4"
+        ],
+        [
+          "[9,11]",
+          "10"
+        ],
+        [
+          "Query in first leaf",
+          "4"
+        ]
+      ],
+      "figure": "decision-trees-12-0.png",
+      "chart": "Inputs are horizontal and target values vertical. Compare the flat segments at increasing depths: extra leaves capture more detail, eventually including noise around individual dots.",
+      "caution": "For ordinary mean-valued leaves, predictions stay within the training-target range. That restriction does not apply identically to every tree variant or to every boosted ensemble.",
+      "module": "decision-trees",
+      "width": 1698,
+      "height": 539
+    },
+    "decision-trees/purity": {
+      "title": "Choose a question by how much mixture it removes",
+      "pages": "6–7",
+      "story": "At the root of ten toy loans, six repaid and four defaulted. A useful split makes the children less mixed, weighted by how many examples each child contains.",
+      "predict": "Why not simply average two child impurities without accounting for their sizes?",
+      "equation": "Gini = 1−Σp_class²; gain = parent impurity − weighted child impurity",
+      "explain": "Each p is a class fraction within the node. Pure nodes have Gini zero; an evenly mixed binary node has Gini 0.5.",
+      "headers": [
+        "Candidate",
+        "Weighted child Gini",
+        "Gain from 0.48"
+      ],
+      "rows": [
+        [
+          "Income split",
+          "≈0.3167",
+          "≈0.1633"
+        ],
+        [
+          "Prior-default split",
+          "≈0.1714",
+          "≈0.3086"
+        ]
+      ],
+      "figure": "decision-trees-7-0.png",
+      "chart": "The bars compare the unsplit node with each candidate’s weighted impurity. Lower child impurity means a larger gain here. This scores a training partition; it does not measure independent predictive performance.",
+      "caution": "Greedy gain chooses the best immediate split among candidates. It need not find the globally best tree. Do not treat a chosen split as a causal discovery.",
+      "module": "decision-trees",
+      "width": 1085,
+      "height": 566
+    },
+    "decision-trees/depth": {
+      "title": "Extra questions can chase accidental details",
+      "pages": "8–11",
+      "story": "Deeper trees can isolate smaller groups and memorize noisy labels. A shallow tree can miss important structure. Depth and leaf-size limits control different aspects of complexity.",
+      "predict": "If training accuracy reaches 100%, what additional evidence do you need?",
+      "equation": "limit depth, require enough rows per leaf, or prune using development evidence",
+      "explain": "Pruning removes branches whose added fitting benefit does not justify complexity under the selected criterion.",
+      "headers": [
+        "Control",
+        "Effect"
+      ],
+      "rows": [
+        [
+          "Maximum depth",
+          "Limits questions along a path"
+        ],
+        [
+          "Minimum leaf size",
+          "Prevents very small terminal groups"
+        ],
+        [
+          "Pruning penalty",
+          "Trades fit against tree size"
+        ]
+      ],
+      "figure": "decision-trees-10-0.png",
+      "chart": "Depth runs horizontally; training and source test accuracy run vertically. Training rises steadily while held-out performance peaks earlier in this simulation. Use validation for selecting depth.",
+      "caution": "Training perfection is impossible when identical inputs have conflicting labels in a deterministic tree. More depth does not always increase useful information.",
+      "module": "decision-trees",
+      "width": 1161,
+      "height": 639
+    },
+    "decision-trees/workflow": {
+      "title": "Learn the splits from the permitted past",
+      "pages": "8–14",
+      "story": "A fitting algorithm tries feature thresholds, chooses an immediate impurity reduction, and repeats within each resulting group. The data split determines which rows may influence those questions.",
+      "predict": "Would using future outcomes to choose today’s first question leak information?",
+      "equation": "fit splits on training rows; apply the fixed tree to evaluation rows",
+      "explain": "Separate learned preprocessing, tree fitting and model selection from the final test. Standard numeric threshold trees do not require distance-based standardization.",
+      "headers": [
+        "Stage",
+        "What is learned"
+      ],
+      "rows": [
+        [
+          "Training",
+          "Questions and leaf predictions"
+        ],
+        [
+          "Validation",
+          "Depth, leaf size and other settings"
+        ],
+        [
+          "Prediction",
+          "Route a new supplied feature row"
+        ]
+      ],
+      "figure": "decision-trees-8-0.png",
+      "chart": "The dashed diagonal is a reference boundary; colored regions are tree decisions at different depths. Axis-aligned threshold splits approximate a diagonal with a staircase.",
+      "caution": "Categories and missing values need handling supported by the chosen implementation. Do not assume every tree library accepts raw strings or every missing-value pattern.",
+      "module": "decision-trees",
+      "width": 1698,
+      "height": 558
+    },
+    "decision-trees/limits": {
+      "title": "A readable rule can still be unstable",
+      "pages": "12–14",
+      "story": "Resampling training rows can change an early split and everything below it. A feature’s credited impurity reduction describes how this fitted tree used it, not why outcomes occur.",
+      "predict": "Would a different first split necessarily mean the underlying population changed?",
+      "equation": "importance summarizes a fitted model, not a causal effect",
+      "explain": "Use held-out checks, plausible perturbations and domain context when interpreting a tree. Compare correlated features as well as individual rankings.",
+      "headers": [
+        "Observation",
+        "Interpret with care"
+      ],
+      "rows": [
+        [
+          "Different resampled trees",
+          "Potential fitting instability"
+        ],
+        [
+          "High split importance",
+          "Model reliance, with selection biases"
+        ],
+        [
+          "Sharp boundary",
+          "A routing threshold, not necessarily a real-world discontinuity"
+        ]
+      ],
+      "figure": "decision-trees-13-0.png",
+      "chart": "Each panel fits a tree to a resample of the same source data. Compare the root threshold annotations and changed colored regions. Differences demonstrate sample sensitivity in this run.",
+      "caution": "A single tree is not always inferior to an ensemble. Select for the actual task, evidence, interpretability needs and operational limits.",
+      "module": "decision-trees",
+      "width": 1698,
+      "height": 558
+    },
+    "random-forests/diversity": {
+      "title": "A crowd helps when its mistakes differ",
+      "pages": "4–9",
+      "story": "Three independent voters each have a 70% chance of being correct. The majority is right when all three or exactly two are right: probability 0.784. Forest trees are not truly independent, but randomization can diversify their errors.",
+      "predict": "Would copying one tree a hundred times change its predictions?",
+      "equation": "P(majority correct) = 0.7³ + 3×0.7²×0.3 = 0.784",
+      "explain": "Bootstrap sampling varies training rows; random feature subsets vary split opportunities. Both encourage different trees rather than identical copies.",
+      "headers": [
+        "Voters",
+        "Accuracy under this independence model"
+      ],
+      "rows": [
+        [
+          "1",
+          "0.700"
+        ],
+        [
+          "3",
+          "0.784"
+        ],
+        [
+          "11",
+          "≈0.922"
+        ]
+      ],
+      "figure": "random-forests-4-0.png",
+      "chart": "Voter count runs horizontally and majority accuracy vertically. The curves assume independent voters with fixed individual accuracies. The rising shape depends on those assumptions.",
+      "caution": "Real forest errors are correlated, and a crowd can improve without perfect independence. A rounded value displayed as 1.000 is not a guarantee of certainty.",
+      "module": "random-forests",
+      "width": 1114,
+      "height": 639
+    },
+    "random-forests/average": {
+      "title": "Average the predictions, not the tree diagrams",
+      "pages": "6–9",
+      "story": "Several regression trees can make different numerical predictions for the same house. A forest combines them, often reducing the variability caused by individual fitted trees.",
+      "predict": "If three tree predictions are 200, 220 and 240, what is their uniform mean?",
+      "equation": "forest regression prediction = mean(tree predictions)",
+      "explain": "Averaging does not retrain an individual tree or erase every systematic error. How similarly the trees fluctuate determines how much averaging helps.",
+      "headers": [
+        "Tree",
+        "Prediction"
+      ],
+      "rows": [
+        [
+          "A",
+          "200"
+        ],
+        [
+          "B",
+          "220"
+        ],
+        [
+          "C",
+          "240"
+        ],
+        [
+          "Forest mean",
+          "220"
+        ]
+      ],
+      "figure": "random-forests-8-0.png",
+      "chart": "The horizontal axis is tree count on a log scale; vertical values show variance relative to one tree. Each line assumes a different pairwise correlation. Curves flatten at a correlation-dependent floor.",
+      "caution": "The displayed equal-variance, equal-correlation formula is an explanatory model, not a measured guarantee for this forest. Averaging cannot automatically remove bias or distribution shift.",
+      "module": "random-forests",
+      "width": 1134,
+      "height": 658
+    },
+    "random-forests/classification": {
+      "title": "Combine class evidence with an explicit aggregation rule",
+      "pages": "4–9",
+      "story": "For labels, an ensemble may vote or average per-tree class probabilities and then choose a class. These rules can disagree when leaf probabilities differ.",
+      "predict": "Would two barely positive trees always outweigh one very confident negative tree under probability averaging?",
+      "equation": "average class-1 probability = Σp_tree / number_of_trees",
+      "explain": "For probabilities 0.51, 0.51 and 0.01, the mean is about 0.3433. A hard-label majority is positive, but the mean probability is below 0.5.",
+      "headers": [
+        "Rule",
+        "Result for [0.51,0.51,0.01]"
+      ],
+      "rows": [
+        [
+          "Hard-label majority",
+          "Positive"
+        ],
+        [
+          "Mean probability",
+          "≈0.3433"
+        ],
+        [
+          "Threshold mean at 0.5",
+          "Negative"
+        ]
+      ],
+      "figure": "random-forests-9-0.png",
+      "chart": "The source bars compare one tree, bagging and random-feature forests on one simulation. They summarize an outcome, not the aggregation arithmetic; the table above makes that rule explicit.",
+      "caution": "Use the aggregation rule actually labelled in the playground. A forest’s mean probability also needs calibration evaluation; voting frequency is not automatically a trustworthy probability.",
+      "module": "random-forests",
+      "width": 1055,
+      "height": 620
+    },
+    "random-forests/oob": {
+      "title": "Left-out rows offer useful development evidence",
+      "pages": "6, 10–11",
+      "story": "Each bootstrap tree draws rows with replacement. Some original rows are omitted; predict each omitted row using only trees that did not train on it. This produces out-of-bag evidence.",
+      "predict": "Would repeatedly selecting settings using OOB accuracy leave it untouched as a final test?",
+      "equation": "P(a specific row omitted) = (1−1/n)^n → about 0.368",
+      "explain": "OOB reuses training-pool rows through a restricted prediction scheme. It can help estimate performance under suitable sampling assumptions.",
+      "headers": [
+        "Row role",
+        "Which trees may predict it for OOB?"
+      ],
+      "rows": [
+        [
+          "Included in a tree’s sample",
+          "Exclude that tree"
+        ],
+        [
+          "Omitted from a tree’s sample",
+          "That tree is eligible"
+        ],
+        [
+          "Repeated tuning on OOB",
+          "Development information is consumed"
+        ]
+      ],
+      "figure": "random-forests-6-0.png",
+      "chart": "The top row lists original IDs; the bottom is one with-replacement sample. Repeated IDs show repeated draws, while absent IDs are that tree’s OOB rows. The displayed sample is one random realization.",
+      "caution": "OOB is not a free independent final test. Grouped or temporal dependence can invalidate naive row resampling. Too few trees may leave rows with too little OOB evidence.",
+      "module": "random-forests",
+      "width": 1223,
+      "height": 455
+    },
+    "random-forests/limits": {
+      "title": "Importance and extrapolation need different checks",
+      "pages": "12–14",
+      "story": "An ordinary regression forest averages leaf means. It can model irregular relationships within observed data but will not continue a linear trend beyond it simply because the past points rise.",
+      "predict": "What happens when a query passes the largest training input into an unchanged terminal leaf?",
+      "equation": "permutation importance = evaluation score change after shuffling a feature",
+      "explain": "This measures reliance under a specified dataset and shuffling scheme. Correlated features can substitute for one another, obscuring individual rankings.",
+      "headers": [
+        "Concern",
+        "Evidence to inspect"
+      ],
+      "rows": [
+        [
+          "Feature reliance",
+          "Held-out permutation analysis"
+        ],
+        [
+          "Extrapolation",
+          "Behavior beyond observed ranges"
+        ],
+        [
+          "Operational cost",
+          "Memory and prediction latency"
+        ]
+      ],
+      "figure": "random-forests-13-0.png",
+      "chart": "The observed points end near x=10. The dashed line continues a linear trend, while the forest remains near its final leaf predictions. The simulation supplies a true continuation that real data may not reveal.",
+      "caution": "“More trees never worsens performance” is too strong for finite samples and metrics. More trees can stabilize an average without guaranteeing monotonic test accuracy or better extrapolation.",
+      "module": "random-forests",
+      "width": 1077,
+      "height": 610
+    },
+    "gradient-boosting/correction": {
+      "title": "Build the estimate as a sum of corrections",
+      "pages": "4–5",
+      "story": "Targets 3,5,4,9,11 have mean 6.4. Start there, then fit a small tree to the residuals instead of treating every new tree as an independent full prediction.",
+      "predict": "Which way should the estimate move for a target 11 currently predicted as 6.4?",
+      "equation": "new prediction = old prediction + η × correction_tree_output",
+      "explain": "η is the learning rate. A stump is a tree with one split; it gives every row in a leaf the same correction.",
+      "headers": [
+        "Group",
+        "Mean residual",
+        "Prediction after η=0.5"
+      ],
+      "rows": [
+        [
+          "First three targets",
+          "−2.4",
+          "5.2"
+        ],
+        [
+          "Last two targets",
+          "+3.6",
+          "8.2"
+        ]
+      ],
+      "figure": "gradient-boosting-5-0.png",
+      "chart": "Read the three panels left to right: constant prediction, one stump, two stumps. Vertical segments connect targets to predictions and shrink as these corrections improve the fit.",
+      "caution": "These numbers are a separate book example. A staged fit reduces this training error; it does not establish unseen-data improvement.",
+      "module": "gradient-boosting",
+      "width": 1774,
+      "height": 539
+    },
+    "gradient-boosting/squared": {
+      "title": "Residuals are gradients for a particular loss",
+      "pages": "4–7",
+      "story": "For half squared error, the negative derivative with respect to the current prediction is exactly the residual y−F. A fitted correction tree approximates those desired prediction changes.",
+      "predict": "Does the residual for one row equal the output of its whole leaf?",
+      "equation": "L=½(y−F)²; −∂L/∂F = y−F",
+      "explain": "The leaf averages residuals from its rows. That shared correction need not equal any one row’s individual residual.",
+      "headers": [
+        "Stage",
+        "Predictions for first / last groups",
+        "Training MSE"
+      ],
+      "rows": [
+        [
+          "Constant",
+          "6.4 / 6.4",
+          "9.44"
+        ],
+        [
+          "One half-step",
+          "5.2 / 8.2",
+          "2.96"
+        ],
+        [
+          "Second half-step",
+          "4.6 / 9.1",
+          "1.34"
+        ]
+      ],
+      "figure": "gradient-boosting-5-0.png",
+      "chart": "Dots are targets and horizontal segments the staged predictions. Compare residual lengths and the table’s MSE values. The repeated first split is a property of this small dataset, not a boosting requirement.",
+      "caution": "For full squared error the gradient includes a factor of two; normalization and learning-rate conventions matter. Other losses require their own derivatives or subgradients.",
+      "module": "gradient-boosting",
+      "width": 1774,
+      "height": 539
+    },
+    "gradient-boosting/classification": {
+      "title": "Correct a score before transforming it into a probability",
+      "pages": "6–8",
+      "story": "For binary log-loss, the boosted model can maintain a score F and turn it into probability p with a sigmoid. Its negative gradient is y−p.",
+      "predict": "For true label 1 and predicted probability 0.1, is the correction signal larger than when p=0.95?",
+      "equation": "p = sigmoid(F); negative score gradient = y−p",
+      "explain": "The correction tree acts on the score representation. Adding 0.2 to a score is not the same as adding 0.2 directly to its probability.",
+      "headers": [
+        "Truth y",
+        "Current p",
+        "y−p"
+      ],
+      "rows": [
+        [
+          "1",
+          "0.95",
+          "0.05"
+        ],
+        [
+          "1",
+          "0.50",
+          "0.50"
+        ],
+        [
+          "1",
+          "0.10",
+          "0.90"
+        ],
+        [
+          "0",
+          "0.05",
+          "−0.05"
+        ]
+      ],
+      "figure": "boosting-class-gradient.svg",
+      "chart": "Read left to right: a score near −2.1972 becomes probability 0.1 through the sigmoid. Comparing it with true label 1 gives a positive negative-gradient signal of 0.9. The correction belongs to score space; it is not permission to add 0.9 directly to the probability.",
+      "caution": "The diagram explains the binary log-loss derivative. It does not show an executed training step or prescribe a leaf-fitting rule; implementations can use different approximations and loss conventions.",
+      "module": "gradient-boosting",
+      "width": 1100,
+      "height": 330,
+      "figureOrigin": "adapted"
+    },
+    "gradient-boosting/stopping": {
+      "title": "The next training improvement may worsen validation",
+      "pages": "8–11",
+      "story": "Adding stages can keep reducing training loss after validation performance has stopped improving. Select the stopping point using development evidence and preserve the selected earlier model.",
+      "predict": "Why not simply keep the final stage after detecting that validation got worse?",
+      "equation": "F_M = F₀ + ηΣₘ₌₁ᴹ treeₘ",
+      "explain": "M is the number of correction stages. Both M and η affect flexibility; a smaller learning rate often needs more stages, without a universal fixed ratio.",
+      "headers": [
+        "Evidence",
+        "Use"
+      ],
+      "rows": [
+        [
+          "Training loss",
+          "Check fitting and optimization"
+        ],
+        [
+          "Validation loss",
+          "Select settings and checkpoint"
+        ],
+        [
+          "Final test",
+          "Assess the selected workflow"
+        ]
+      ],
+      "figure": "gradient-boosting-10-0.png",
+      "chart": "Stage count is horizontal and log-loss vertical. Training keeps falling; validation reaches a minimum then rises in this simulation. The annotated 67 stages is specific to this run.",
+      "caution": "Restore or retain the selected checkpoint. A finite validation minimum has uncertainty; patience and repeated searches also consume development information.",
+      "module": "gradient-boosting",
+      "width": 1144,
+      "height": 639
+    },
+    "gradient-boosting/workflow": {
+      "title": "Make early stopping respect the prediction problem",
+      "pages": "10–15",
+      "story": "Early stopping needs validation rows that represent deployment. Randomly holding out rows can still leak a person, an organization or a future time period into training.",
+      "predict": "Could an automatically chosen validation split ignore the group boundary you actually need?",
+      "equation": "define split → fit training-only transformations → monitor permitted validation",
+      "explain": "Match the split unit and ordering to the task. Record objective, learning rate, tree constraints, selected stage and evaluation procedure.",
+      "headers": [
+        "Choice",
+        "Question"
+      ],
+      "rows": [
+        [
+          "Split",
+          "Are related rows separated appropriately?"
+        ],
+        [
+          "Preprocessing",
+          "Was it fitted without validation statistics?"
+        ],
+        [
+          "Stopping",
+          "Which permitted metric selected the stage?"
+        ]
+      ],
+      "figure": "gradient-boosting-10-0.png",
+      "chart": "Use the two loss curves to locate the model-selection decision. The visual does not show how rows were split, so the curves alone cannot establish leakage-free evaluation.",
+      "caution": "Library early-stopping behavior differs. The source recipe is an illustration, not evidence that every pipeline preserves internal validation boundaries automatically.",
+      "module": "gradient-boosting",
+      "width": 1144,
+      "height": 639
+    },
+    "gradient-boosting/compare": {
+      "title": "Forests average; boosting adds dependent corrections",
+      "pages": "12–15",
+      "story": "A forest diversifies trees and aggregates them. Boosting trains each new tree in response to the current ensemble. Both can be useful; neither wins every problem.",
+      "predict": "Could a more elaborate model perform worse on the same held-out examples?",
+      "equation": "forest: aggregate parallel fits; boosting: sequentially update a combined fit",
+      "explain": "Compare complete workflows under the same data boundary, metric and operational constraints. Tuning effort is part of that comparison.",
+      "headers": [
+        "Question",
+        "Why it matters"
+      ],
+      "rows": [
+        [
+          "Training dependence",
+          "Changes fitting and parallelism"
+        ],
+        [
+          "Validation search",
+          "Consumes information and compute"
+        ],
+        [
+          "Prediction cost",
+          "Constrains deployment"
+        ]
+      ],
+      "figure": "gradient-boosting-12-0.png",
+      "chart": "The bars show accuracies for one tree, one forest and one boosted model in a particular source run. The small difference between the ensembles is not a universal ranking or a significance test.",
+      "caution": "Boosted regression outputs are sums of corrections and need not stay inside the training-target range. Nevertheless ordinary tree ensembles do not reliably continue an unseen trend like an explicit trend model.",
+      "module": "gradient-boosting",
+      "width": 1043,
+      "height": 605
+    },
+    "mlp/representation": {
+      "title": "A hidden layer can redraw the problem",
+      "pages": "4–7",
+      "story": "XOR is 1 when exactly one of two binary inputs is 1. Its positive corners cannot be separated from negative corners with one straight line. Two nonlinear helper units can transform the representation.",
+      "predict": "Can you draw one line separating opposite positive corners from the other two corners?",
+      "equation": "h₁=ReLU(x₁+x₂); h₂=ReLU(x₁+x₂−1); output=h₁−2h₂",
+      "explain": "ReLU returns zero for a negative input and otherwise returns that input. The hidden values become features for the next operation.",
+      "headers": [
+        "Input",
+        "[h₁,h₂]",
+        "Output"
+      ],
+      "rows": [
+        [
+          "[0,0]",
+          "[0,0]",
+          "0"
+        ],
+        [
+          "[1,0]",
+          "[1,0]",
+          "1"
+        ],
+        [
+          "[0,1]",
+          "[1,0]",
+          "1"
+        ],
+        [
+          "[1,1]",
+          "[2,1]",
+          "0"
+        ]
+      ],
+      "figure": "mlp-5-0.png",
+      "chart": "The left panel shows inseparable XOR corners; the middle plots transformed hidden values; the right shows how the units connect. Track the same inputs across representations.",
+      "caution": "This constructed solution demonstrates representation capacity, not a guarantee that training will discover those settings. Without nonlinear activations, composed affine layers remain affine.",
+      "module": "mlp",
+      "width": 1774,
+      "height": 558
+    },
+    "mlp/gradients": {
+      "title": "Trace every local response back to the weight",
+      "pages": "8–9",
+      "story": "One sigmoid neuron uses x=2, w=0.5, b=0 and target 1. Its output is about 0.7311. With half squared error, the gradient follows a chain from loss to output, score and weight.",
+      "predict": "If the output is too low and the input is positive, which direction should this weight move locally?",
+      "equation": "dL/dw = (a−y) × a(1−a) × x",
+      "explain": "a−y is loss sensitivity to output; a(1−a) is sigmoid sensitivity to score; x is score sensitivity to the weight. Multiplying gives about −0.10575.",
+      "headers": [
+        "Link",
+        "Approximate value"
+      ],
+      "rows": [
+        [
+          "Score wx+b",
+          "1"
+        ],
+        [
+          "Output sigmoid(score)",
+          "0.731059"
+        ],
+        [
+          "Half squared loss",
+          "0.036165"
+        ],
+        [
+          "Weight gradient",
+          "−0.105754"
+        ]
+      ],
+      "figure": "mlp-gradient.svg",
+      "chart": "Follow the forward values from left to right: supplied input and weight produce score 1, the sigmoid gives about 0.7311, and half squared error compares that output with target 1. The lower lines trace the backward sensitivities. Multiply all three local derivatives to obtain the weight gradient.",
+      "caution": "The half-squared-error chain here differs from the log-loss output derivative p−y. Backpropagation computes gradients; the optimizer applies updates. Read the objective named by the existing playground before comparing values.",
+      "module": "mlp",
+      "width": 1100,
+      "height": 330,
+      "figureOrigin": "adapted"
+    },
+    "mlp/capacity": {
+      "title": "More units buy flexibility, not automatic understanding",
+      "pages": "10–13",
+      "story": "A network with too few hidden units may miss a curved pattern. Extra width or depth can represent more possibilities, including accidental noise in a small training set.",
+      "predict": "Would more parameters necessarily improve performance on unseen cases?",
+      "equation": "parameters per dense layer = inputs×outputs + outputs",
+      "explain": "The final term counts biases. A 2→4→4→1 network has (8+4)+(16+4)+(4+1)=37 parameters.",
+      "headers": [
+        "Network",
+        "Parameter count"
+      ],
+      "rows": [
+        [
+          "2→1",
+          "3"
+        ],
+        [
+          "2→4→1",
+          "17"
+        ],
+        [
+          "2→4→4→1",
+          "37"
+        ]
+      ],
+      "figure": "mlp-10-0.png",
+      "chart": "Each panel uses a different hidden-layer width. Colored regions are learned decisions and dots are labeled observations. Compare curved boundaries and source evaluation scores, rather than assuming the widest panel must win.",
+      "caution": "Universal approximation results require conditions and concern representational existence on specified domains. They do not guarantee efficient training, small data requirements or generalization.",
+      "module": "mlp",
+      "width": 1850,
+      "height": 501
+    },
+    "mlp/workflow": {
+      "title": "Protect validation while you scale and stop",
+      "pages": "12–15",
+      "story": "A network can fit the training examples almost perfectly while becoming worse on validation cases. Scaling, early stopping and regularization must be part of a workflow with clear information boundaries.",
+      "predict": "If the final epoch has the best training loss but worse validation loss, which model should development retain?",
+      "equation": "training forward pass → loss → backward gradients → optimizer update",
+      "explain": "Use validation to select settings and stopping, then assess the fixed workflow on independent final evidence. Fit scaling only with permitted training information.",
+      "headers": [
+        "Phase",
+        "Role"
+      ],
+      "rows": [
+        [
+          "Forward",
+          "Compute predictions and loss"
+        ],
+        [
+          "Backward",
+          "Compute parameter gradients"
+        ],
+        [
+          "Update",
+          "Apply the optimizer rule"
+        ],
+        [
+          "Validation",
+          "Guide development choices"
+        ]
+      ],
+      "figure": "mlp-12-0.png",
+      "chart": "The left panel compares falling training loss with rising validation loss for an overfit source run. The right shows a highly irregular boundary around individual dots. Together they motivate checking both behavior and held-out loss.",
+      "caution": "A generic scaler pipeline may fit its scaler before a model’s internal early-stopping split. Strict internal isolation requires an explicit split and training-only preprocessing. The source example is not a verification of that boundary.",
+      "module": "mlp",
+      "width": 1736,
+      "height": 596
+    },
+    "mlp/limits": {
+      "title": "Learned features are not automatically human explanations",
+      "pages": "6–7, 14–15",
+      "story": "A forward pass transforms supplied measurements through weighted sums and activations. A hidden unit can be useful without having a stable human meaning such as “loyal customer.”",
+      "predict": "Does a large hidden activation prove which real-world factor caused a prediction?",
+      "equation": "a_next = activation(Wa + b)",
+      "explain": "W contains connections, b contains biases, and the activation supplies a nonlinear transformation. Track numerical contributions before assigning semantic names.",
+      "headers": [
+        "Example operation at input [1,2]",
+        "Result"
+      ],
+      "rows": [
+        [
+          "h₁=ReLU(1+2×2)",
+          "5"
+        ],
+        [
+          "h₂=ReLU(−1+2−1)",
+          "0"
+        ],
+        [
+          "Output sigmoid(5+2×0−1)",
+          "≈0.982014"
+        ]
+      ],
+      "figure": "mlp-7-0.png",
+      "chart": "Read left to right: two inputs, two hidden units, one output. Edge labels are weights; the node labels are computed activations for this particular input. A zero hidden value is not a permanently unused neuron.",
+      "caution": "A sigmoid output is only one network design. Prediction quality, calibration, distribution shift, cost and an appropriate simpler baseline remain separate checks.",
+      "module": "mlp",
+      "width": 1135,
+      "height": 469
+    },
+    "evaluation/moment": {
+      "title": "First ask what would be known at prediction time",
+      "pages": "10–11, 14",
+      "story": "A support team wants to predict which requests need escalation when they arrive. A resolution note written afterward would make a flattering predictor but would not exist at that moment.",
+      "predict": "Would a random row split make a future-only feature legitimate?",
+      "equation": "eligible feature = information available at the stated prediction moment",
+      "explain": "Define the population, target, unit of prediction and time boundary before splitting data or choosing metrics.",
+      "headers": [
+        "Information",
+        "Eligible at arrival?"
+      ],
+      "rows": [
+        [
+          "Initial request text",
+          "Potentially, with appropriate permissions"
+        ],
+        [
+          "Later resolution note",
+          "No"
+        ],
+        [
+          "Future customer outcome",
+          "Target or later evidence, not an input"
+        ]
+      ],
+      "figure": "evaluation-10-0.png",
+      "chart": "The three boxes separate training, validation and final test roles. Their proportions are illustrative. A picture of disjoint boxes does not prove the feature timestamps or related-entity boundaries were respected.",
+      "caution": "Leakage includes future information and related-row overlap, not just accidental access to test labels. Match temporal and grouped splits to the intended use.",
+      "module": "evaluation",
+      "width": 1253,
+      "height": 323
+    },
+    "evaluation/generalization": {
+      "title": "Evaluate the complete process on unseen cases",
+      "pages": "10–11",
+      "story": "A cross-validation round fits on several folds and evaluates on the held-out fold. Every learned transformation, including feature selection, must respect that boundary.",
+      "predict": "Would selecting the best features using all labels before cross-validation bias the result?",
+      "equation": "for each fold: fit on training partition; score on validation partition",
+      "explain": "A fold is a partition used to assess a candidate workflow. Cross-validation performance is development evidence when it is used to select settings.",
+      "headers": [
+        "Step",
+        "Where it belongs"
+      ],
+      "rows": [
+        [
+          "Scaler fit",
+          "Training portion only"
+        ],
+        [
+          "Feature selection",
+          "Training portion only"
+        ],
+        [
+          "Candidate comparison",
+          "Validation evidence"
+        ],
+        [
+          "Final assessment",
+          "Untouched appropriate test"
+        ]
+      ],
+      "figure": "evaluation-11-0.png",
+      "chart": "Each row is one fold round. Orange marks validation and teal training. A row that is validation in one round can be training in another; the within-round separation is what matters.",
+      "caution": "Fold scores are statistically dependent because training sets overlap. Their standard deviation is not automatically a confidence interval, and random folds do not solve temporal or group leakage.",
+      "module": "evaluation",
+      "width": 1135,
+      "height": 431
+    },
+    "evaluation/decisions": {
+      "title": "A high accuracy can miss the cases that matter",
+      "pages": "4–7",
+      "story": "Among 1,000 screening cases, ten are positive. Predicting negative for everyone gives 99% accuracy and zero recall. A useful comparison must consider what misses and false alarms cost.",
+      "predict": "Would a model with lower accuracy necessarily be less useful here?",
+      "equation": "precision = TP/(TP+FP); recall = TP/(TP+FN)",
+      "explain": "TP is a correctly flagged positive; FP is a false alarm; FN is a missed positive; TN is a correctly unflagged negative.",
+      "headers": [
+        "Count or metric",
+        "Source example"
+      ],
+      "rows": [
+        [
+          "TP / FN",
+          "8 / 2"
+        ],
+        [
+          "FP / TN",
+          "99 / 891"
+        ],
+        [
+          "Accuracy",
+          "899/1000 = 89.9%"
+        ],
+        [
+          "Precision",
+          "8/107 ≈7.48%"
+        ],
+        [
+          "Recall",
+          "8/10 = 80%"
+        ]
+      ],
+      "figure": "evaluation-6-0.png",
+      "chart": "Threshold is horizontal and metric values vertical. Follow precision, recall and F1 as distinct curves. This plotted sweep is a separate source dataset from the 1,000-case table.",
+      "caution": "Finding positives is not enough to establish real-world screening benefit. Costs, follow-up capacity, uncertainty and harms require evidence. Precision is undefined when no positive predictions are made.",
+      "module": "evaluation",
+      "width": 1077,
+      "height": 610
+    },
+    "evaluation/probability": {
+      "title": "Good ordering does not establish honest probabilities",
+      "pages": "8–13",
+      "story": "Three positives score 0.9,0.8,0.4 and three negatives 0.7,0.3,0.2. Eight of nine positive–negative pairs are correctly ordered. Those rankings do not tell us whether score 0.8 means an 80% event rate.",
+      "predict": "Could a monotonic rescaling preserve ranking but make probability estimates worse?",
+      "equation": "ROC-AUC = fraction of positive–negative wins, with half credit for ties",
+      "explain": "AUC concerns ranking. Calibration compares predicted probabilities with observed group frequencies. Proper scoring rules such as log-loss or Brier score assess probabilistic forecasts.",
+      "headers": [
+        "Question",
+        "Tool"
+      ],
+      "rows": [
+        [
+          "How are pairs ordered?",
+          "ROC-AUC"
+        ],
+        [
+          "How many flags are useful at different recall levels?",
+          "Precision–recall curve"
+        ],
+        [
+          "Do frequencies match stated probabilities?",
+          "Calibration analysis"
+        ]
+      ],
+      "figure": "evaluation-8-0.png",
+      "chart": "ROC plots false-positive rate horizontally and recall vertically; PR plots recall horizontally and precision vertically. The dashed PR baseline reflects prevalence in this source dataset. Average precision and trapezoidal PR area are not identical definitions.",
+      "caution": "Calibration plots need sufficient cases and uncertainty checks. A score is not necessarily a probability, and AUC can hide poor usefulness at the operating threshold.",
+      "module": "evaluation",
+      "width": 1622,
+      "height": 634
+    },
+    "evaluation/uncertainty": {
+      "title": "One score is an estimate, not a permanent property",
+      "pages": "10–11",
+      "story": "Changing which cases are held out changes the measured performance even for a fixed procedure. A larger estimate from one split might reflect sample composition rather than a better model.",
+      "predict": "Would repeatedly searching random seeds until a good score appears give an honest estimate?",
+      "equation": "evaluation estimate depends on sampled cases and the development process",
+      "explain": "Define a defensible split design, compare candidates on matched evidence, and report uncertainty appropriate to dependent rows and the sampling process.",
+      "headers": [
+        "Variation source",
+        "Investigate"
+      ],
+      "rows": [
+        [
+          "Different held-out cases",
+          "Sampling variability"
+        ],
+        [
+          "Repeated tuning",
+          "Selection optimism"
+        ],
+        [
+          "Different population",
+          "Distribution shift"
+        ]
+      ],
+      "figure": "evaluation-10-1.png",
+      "chart": "The histogram places estimated accuracy horizontally and run counts vertically. It compares estimates from a single source simulation under two procedures. The narrower distribution is not a universal guarantee for every dataset.",
+      "caution": "Reusing the same dataset across resampling rounds creates dependence. Do not convert the displayed fold spread directly into a confidence interval or imply this simulation was rerun here.",
+      "module": "evaluation",
+      "width": 1130,
+      "height": 610
+    },
+    "evaluation/report": {
+      "title": "A final result needs its baseline and its boundaries",
+      "pages": "12–14",
+      "story": "A regression error should retain its units; a classifier report should identify its threshold and positive class. Without those choices, an apparently precise score is difficult to interpret or reproduce.",
+      "predict": "Could two reports both say “error 5” while measuring very different quantities?",
+      "equation": "MAE = mean|y−ŷ|; RMSE = √mean((y−ŷ)²)",
+      "explain": "MAE and RMSE use target units, while MSE uses squared units. Specify evaluation cases, baseline, selected settings and remaining limitations.",
+      "headers": [
+        "Report item",
+        "Reason"
+      ],
+      "rows": [
+        [
+          "Population and prediction moment",
+          "Defines the claim"
+        ],
+        [
+          "Split and development procedure",
+          "Explains information access"
+        ],
+        [
+          "Metric, threshold and units",
+          "Makes the score interpretable"
+        ],
+        [
+          "Uncertainty and limits",
+          "Bounds what the result supports"
+        ]
+      ],
+      "figure": "evaluation-13-0.png",
+      "chart": "Compare the two fitted examples with and without an extreme point. MAE and RMSE respond differently; the source annotations describe that run. The outlier must be investigated before deciding whether it is an error or a valid rare case.",
+      "caution": "Standard R² uses variation around evaluated targets’ mean, not necessarily the training mean. Report a training-mean predictor separately when that is the relevant deployment baseline.",
+      "module": "evaluation",
+      "width": 1584,
+      "height": 558
+    }
+  },
+  "mapping": {
+    "linear": [
+      "problem",
+      "problem",
+      "errors",
+      "fit",
+      "features",
+      "workflow",
+      "diagnostics",
+      "workflow"
+    ],
+    "polynomial": [
+      "features",
+      "families",
+      "capacity",
+      "tails"
+    ],
+    "regularization": [
+      "need",
+      "ridge",
+      "lasso",
+      "elastic",
+      "select",
+      "interpret"
+    ],
+    "logistic": [
+      "probability",
+      "loss",
+      "threshold",
+      "geometry",
+      "workflow",
+      "limits"
+    ],
+    "knn": [
+      "vote",
+      "scale",
+      "choose",
+      "workflow"
+    ],
+    "naive-bayes": [
+      "evidence",
+      "smoothing",
+      "variants",
+      "limits"
+    ],
+    "svm": [
+      "margin",
+      "soft",
+      "kernel",
+      "workflow",
+      "limits"
+    ],
+    "decision-trees": [
+      "rules",
+      "regression",
+      "purity",
+      "depth",
+      "workflow",
+      "limits"
+    ],
+    "random-forests": [
+      "diversity",
+      "average",
+      "classification",
+      "oob",
+      "limits"
+    ],
+    "gradient-boosting": [
+      "correction",
+      "squared",
+      "classification",
+      "stopping",
+      "workflow",
+      "compare"
+    ],
+    "mlp": [
+      "representation",
+      "gradients",
+      "capacity",
+      "workflow",
+      "limits"
+    ],
+    "module": [
+      "moment",
+      "generalization",
+      "decisions",
+      "probability",
+      "uncertainty",
+      "report"
+    ],
+    "model-selection": [
+      "generalization",
+      "uncertainty",
+      "generalization",
+      "decisions",
+      "probability",
+      "report"
+    ]
+  }
+}

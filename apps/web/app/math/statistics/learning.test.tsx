@@ -19,7 +19,7 @@ function fill(incorrectKey?:string) {
 describe("Statistics teaching and evidence",()=>{
   it("opens seven lessons and keeps completion separate from mastery",async()=>{
     render(<StatisticsOverview/>);await screen.findByText(/Independent mastery not yet earned/);
-    expect(screen.getAllByRole("link",{name:/Understanding data/})).toHaveLength(2);
+    expect(screen.getAllByRole("link",{name:/Explore understanding data/})).toHaveLength(1);
     expect(screen.getByText(/28 deterministic items/)).toHaveTextContent("23 correct");
   });
   it("records an objective, retains other module storage and survives reload",async()=>{

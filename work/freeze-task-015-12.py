@@ -176,8 +176,9 @@ def e2_fixture() -> dict[str, object]:
         for event_index in range(4):
             tenure = 2.0 * group_index + 1.0 + event_index * 0.1
             charge = 40.0 + 5.0 * group_index + 2.0 * event_index
-            if group_index == 0 and event_index == 0:
-                charge += 0.000001
+            # Founder-approved V3: break both audited event-2 cutoff symmetries.
+            if event_index == 2 and group_index in (0, 6):
+                charge += 0.001
             calls = event_index + (group_index % 2)
             late = int((group_index + event_index) % 5 == 0)
             positive = int(event_index == 3 or (event_index == 2 and group_index % 3 == 0))
@@ -186,7 +187,7 @@ def e2_fixture() -> dict[str, object]:
             ids.append(f"E2-{group_index:02d}-{event_index:02d}")
     targets = [int(event_index == 3 or (event_index == 2 and group_index % 3 == 0)) for group_index in range(12) for event_index in range(4)]
     return {
-        "fixtureId": "MS-E2-GROUPED-CHURN-V2",
+        "fixtureId": "MS-E2-GROUPED-CHURN-V3",
         "problem": "fictional repeated-customer churn classification; group IDs are split metadata, never model features",
         "featureNames": ["tenure_months", "monthly_charge", "support_calls", "late_payment", "support_calls_proxy"],
         "targetName": "churn_90d",
@@ -762,7 +763,7 @@ def final_test_reference(fixture: dict[str, object], selected: dict[str, object]
     probabilities = estimator.predict_proba(x_test)[:, 1]
     applied = cost_metrics(y_test, probabilities, float(selected["threshold"]))
     return {
-        "referenceId": "TASK-015.12-MS-E2-FINAL-TEST-REFERENCE-V2",
+        "referenceId": "TASK-015.12-MS-E2-FINAL-TEST-REFERENCE-V3",
         "visibility": "sealed verification/reference output; release only after explicit model and threshold freeze",
         "fixtureId": fixture["fixtureId"],
         "testGroupIds": fixture["sealedTestGroups"],
@@ -846,10 +847,10 @@ def manifest_e2() -> tuple[dict[str, object], dict[str, object], dict[str, objec
         {"configId": "MS-E2-REJECT-SELECT-ON-TEST", "status": "rejected", "reasonCode": "selection.final-test-access", "message": "The final test is opened once after the choice is frozen; no retuning score is produced."},
     ]
     manifest = {
-        "manifestId": "TASK-015.12-MS-E2-V2",
+        "manifestId": "TASK-015.12-MS-E2-V3",
         "experimentId": "MS-E2",
         "title": "Selection and generalization",
-        "version": 2,
+        "version": 3,
         "objectives": ["MS02.O1", "MS02.O2", "MS02.O3", "MS02.O4", "MS03.O1", "MS03.O2", "MS03.O3", "MS03.O4", "MS04.O1", "MS04.O2", "MS04.O3", "MS05.O1", "MS05.O2", "MS05.O3", "MS06.O1", "MS06.O2", "MS06.O3"],
         "interaction": "Predict the valid search, selected candidate, threshold cost, outer-fold behavior, and final-test rule before revealing each development trace; the sealed final result is revealed only after a choice is frozen.",
         "fixture": public_fixture,
@@ -875,6 +876,8 @@ def manifest_e2() -> tuple[dict[str, object], dict[str, object], dict[str, objec
 
 
 def output_payloads() -> dict[str, bytes]:
+    if (platform.system(), platform.machine()) != ("Darwin", "arm64"):
+        raise RuntimeError("Task 015.12 canonical reference generation requires macOS ARM64; other platforms are not accepted for numerical freezing")
     if sys.version_info[:3] != (3, 13, 16):
         raise RuntimeError(f"approved CPython 3.13.16 required, found {sys.version.split()[0]}")
     expected_versions = {
@@ -897,7 +900,7 @@ def output_payloads() -> dict[str, bytes]:
         e2, sealed_e2, e2_internal = manifest_e2()
     scope_checksum = f"{scope_hash}  docs/TASK_015_12_BOUNDED_SPECIFICATION.md\n".encode("utf-8")
     report = {
-        "reportId": "TASK-015.12-REFERENCE-PARITY-V2",
+        "reportId": "TASK-015.12-REFERENCE-PARITY-V3",
         "status": "PASS",
         "environment": {
             "python": sys.version.split()[0],
@@ -950,9 +953,9 @@ def lock_payload(payloads: dict[str, bytes]) -> bytes:
     files["work/freeze-task-015-12.py"] = sha256(GENERATOR.read_bytes())
     files["docs/verification/multilayer-perceptrons/requirements-clean-verification.txt"] = sha256((ROOT / "docs/verification/multilayer-perceptrons/requirements-clean-verification.txt").read_bytes())
     return canonical({
-        "lockId": "TASK-015.12-MODEL-SELECTION-FREEZE-V2",
+        "lockId": "TASK-015.12-MODEL-SELECTION-FREEZE-V3",
         "schemaVersion": 1,
-        "manifestIds": ["TASK-015.12-MS-E1-V1", "TASK-015.12-MS-E2-V2"],
+        "manifestIds": ["TASK-015.12-MS-E1-V1", "TASK-015.12-MS-E2-V3"],
         "approvedBaselineCommit": "8b37d1e8c75a33a0ee2f73265294385a95549ebb",
         "configurationCounts": {"MS-E1": 20, "MS-E2": 11, "MS-E1-tested-model-configurations": 17, "MS-E2-rejections": 4},
         "pythonProfile": {"python": "3.13.16", "numpy": "2.5.4", "pandas": "3.0.6", "matplotlib": "3.11.2", "scikit-learn": "1.9.1", "scipy": "1.18.1", "threadpoolctl": "3.7.0"},

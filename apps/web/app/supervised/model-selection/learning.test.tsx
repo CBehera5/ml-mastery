@@ -1,3 +1,4 @@
+import {experimentGuide} from "../simple-experiment";
 // @vitest-environment jsdom
 import React from "react";
 import "@testing-library/jest-dom/vitest";
@@ -35,18 +36,17 @@ it("requires a prediction and rationale before revealing a frozen comparison sta
   vi.stubGlobal("fetch", mockFetch);
   render(<ModelSelectionLesson lesson={0}/>);
   await waitFor(() => expect(screen.getByText("What comparison evidence is valid?")).toBeInTheDocument());
-  const select = screen.getByRole("combobox", { name: "MS-E1 configuration" });
-  fireEvent.change(select, { target: { value: second } });
+  fireEvent.click(screen.getByRole("radio", { name: experimentGuide("model-selection",0).options[1].label }));
   await waitFor(() => expect(mockFetch).toHaveBeenCalledWith(expect.stringContaining(encodeURIComponent(second))));
-  fireEvent.change(screen.getByRole("combobox", { name: "Predict comparison outcome" }), { target: { value: "fair" } });
+  fireEvent.change(await screen.findByRole("combobox", { name: "Predict comparison outcome" }), { target: { value: "fair" } });
   fireEvent.change(screen.getByRole("combobox", { name: "Predict why this result is valid" }), { target: { value: "mechanism" } });
-  const reveal = screen.getByRole("button", { name: "Reveal reference outcome" });
+  const reveal = screen.getByRole("button", { name: "Show the result" });
   expect(reveal).toBeEnabled(); fireEvent.click(reveal);
   expect(await screen.findByText(/Your prediction matches the reference classification/)).toBeInTheDocument();
   expect(screen.getByText(/Sealed final-test targets and sidecar outputs are not sent to the browser/)).toBeInTheDocument();
 });
 
-it("shows objective-specific practice feedback and keeps independent assessment locked", async () => {
+it("shows practice feedback without awarding mastery and enables the independent assessment", async () => {
   render(<ModelSelectionLesson lesson={0}/>);
   await waitFor(() => expect(screen.getByRole("group", { name: "Objective reasoning and guided practice" })).toBeEnabled());
   const family = PRACTICE[0][0], accepted = family.accepted[0][0];
@@ -58,7 +58,26 @@ it("shows objective-specific practice feedback and keeps independent assessment 
   await waitFor(() => expect(screen.getByText(/Answer checked\. Compare your reasoning/)).toBeInTheDocument());
   expect(load(localStorage.getItem(STORAGE_KEY)).mastery).toBeNull();
   cleanup(); render(<ModelSelectionAssessment/>);
-  expect(screen.getByRole("alert")).toHaveTextContent("mastery remains unavailable");
-  expect(screen.getByRole("button", { name: "Review all 24 objective families" })).toBeDisabled();
+  expect(screen.queryByText(/mastery remains unavailable/)).not.toBeInTheDocument();
+  await waitFor(() => expect(screen.getByRole("button", { name: "Review all 24 objective families" })).toBeEnabled());
   expect(FORMS.flat()).toHaveLength(72); expect(LESSONS).toHaveLength(6);
+});
+
+it("requires confirmation, reports remediation, restores results and rotates retries without awarding blank-attempt mastery", async () => {
+  render(<ModelSelectionAssessment/>);
+  await waitFor(() => expect(screen.getByRole("button", { name: "Review all 24 objective families" })).toBeEnabled());
+  fireEvent.click(screen.getByRole("button", { name: "Review all 24 objective families" }));
+  const submit = screen.getByRole("button", { name: "Submit confirmed attempt" });
+  expect(submit).toBeDisabled();
+  fireEvent.click(screen.getByRole("checkbox", { name: /I reviewed the whole attempt/ }));
+  expect(submit).toBeEnabled();
+  fireEvent.click(submit);
+  expect(await screen.findByRole("heading", { name: "Not yet mastered: 0/24" })).toBeInTheDocument();
+  expect(screen.getAllByRole("link", { name: "Targeted lesson recall" })).toHaveLength(24);
+  expect(load(localStorage.getItem(STORAGE_KEY)).mastery).toBeNull();
+  cleanup(); render(<ModelSelectionAssessment/>);
+  expect(await screen.findByRole("heading", { name: "Not yet mastered: 0/24" })).toBeInTheDocument();
+  fireEvent.click(screen.getByRole("button", { name: "Retry next independent form" }));
+  expect(await screen.findByRole("heading", { name: "Form B" })).toBeInTheDocument();
+  expect(load(localStorage.getItem(STORAGE_KEY)).mastery).toBeNull();
 });

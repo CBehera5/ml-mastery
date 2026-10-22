@@ -1,0 +1,1465 @@
+{
+  "books": {
+    "algebra": "The Machinery of Change · Book 2",
+    "linear": "The Geometry of Data · Book 3",
+    "calculus": "The Calculus of Learning · Book 4",
+    "probability": "The Mathematics of Uncertainty · Book 5",
+    "statistics": "Signal and Noise · Book 6",
+    "optimization": "The Art of Finding the Best · Book 7"
+  },
+  "lessons": {
+    "algebra/variables": {
+      "title": "An equation turns a bill into a question",
+      "pages": "4–5",
+      "story": "A book costs ₹120 and each notebook costs ₹35. Your bill is ₹330. Instead of guessing notebook counts, give the unknown a name: n. The equation records the story; solving it finds a value that makes the story true.",
+      "predict": "Would six notebooks fit the bill? What must stay equal when you subtract the book price?",
+      "headers": [
+        "Story",
+        "Mathematical record"
+      ],
+      "rows": [
+        [
+          "Book plus notebooks",
+          "120 + 35n = 330"
+        ],
+        [
+          "Remove the fixed price",
+          "35n = 210"
+        ],
+        [
+          "Divide by the price per notebook",
+          "n = 6"
+        ],
+        [
+          "Check against the story",
+          "120 + 35 × 6 = 330"
+        ]
+      ],
+      "relationship": "The equals sign asserts that two expressions have the same value. n is an unknown count; 35 is a rate in rupees per notebook. More complex stories can use several variables or squared terms without changing what equality means.",
+      "ml": "A model also expresses a relationship: price = baseline + rate × quantity. In model fitting, observed quantities are supplied and parameters are estimated.",
+      "caution": "This book example and the delivery-price playground use different prices. Read the rule shown by each activity before calculating.",
+      "figure": "algebra-4-0.png",
+      "alt": "A balanced scale represents a ₹120 book and six ₹35 notebooks equalling ₹330.",
+      "module": "algebra",
+      "width": 1223,
+      "height": 572
+    },
+    "algebra/functions": {
+      "title": "One permitted input, one defined output",
+      "pages": "6–7",
+      "story": "A vending machine accepts a selection and follows a rule. A mathematical function does the same: each permitted input has exactly one output. Different inputs may share an output.",
+      "predict": "For f(x) = 2x + 1, what comes out when x is 3? Would one input producing two different outputs still define a function?",
+      "headers": [
+        "Input x",
+        "Rule",
+        "Output f(x)"
+      ],
+      "rows": [
+        [
+          "1",
+          "2 × 1 + 1",
+          "3"
+        ],
+        [
+          "3",
+          "2 × 3 + 1",
+          "7"
+        ],
+        [
+          "5",
+          "2 × 5 + 1",
+          "11"
+        ]
+      ],
+      "relationship": "Writing f(x) names the result of applying f to x; it does not mean f multiplied by x. The domain tells us which inputs the rule permits. 1/(x−2) excludes 2; a 40-seat bus also imposes whole-number passenger counts from 0 to 40.",
+      "ml": "Features enter a prediction function and a predicted value comes out. Check both the formal input constraints and whether the situation resembles the data used to develop the model.",
+      "caution": "A mathematically valid input is not automatically a reliable prediction. Training coverage and the formal domain are different ideas.",
+      "figure": "algebra-6-0.png",
+      "alt": "Inputs 1, 3 and 5 pass through f(x) = 2x + 1 to outputs 3, 7 and 11.",
+      "module": "algebra",
+      "width": 1223,
+      "height": 440
+    },
+    "algebra/graphs": {
+      "title": "See where two pricing stories cross",
+      "pages": "8–9",
+      "story": "QuickRide charges ₹50 plus ₹10 per kilometre. Steady charges ₹110 plus ₹7 per kilometre. A graph puts both rules on the same axes so you can see when the cheaper choice changes.",
+      "predict": "Which service is cheaper at 10 km? Could the answer reverse on a longer journey?",
+      "headers": [
+        "Distance km",
+        "QuickRide ₹",
+        "Steady ₹"
+      ],
+      "rows": [
+        [
+          "0",
+          "50",
+          "110"
+        ],
+        [
+          "10",
+          "150",
+          "180"
+        ],
+        [
+          "20",
+          "250",
+          "250"
+        ],
+        [
+          "30",
+          "350",
+          "320"
+        ]
+      ],
+      "relationship": "The intercept is the starting charge. The slope is the added cost per kilometre. Setting 50 + 10d = 110 + 7d gives d = 20: the crossing represents equal prices, not equal slopes.",
+      "ml": "A prediction line makes starting level and sensitivity visible. Scatter plots show pairs of observed measurements; a fitted curve is a model, not the observations themselves.",
+      "caution": "A line shows a constant rate. Curves, histograms and bar charts answer different questions; do not force every relationship into a line.",
+      "figure": "algebra-9-0.png",
+      "alt": "QuickRide starts lower but rises faster; the two lines cross at 20 km and ₹250.",
+      "module": "algebra",
+      "width": 1227,
+      "height": 642
+    },
+    "algebra/powers": {
+      "title": "Repeated growth leads to the number e",
+      "pages": "10–11",
+      "story": "Adding a fixed amount and multiplying by a fixed factor create very different futures. Now divide a 100% annual growth rate into smaller and smaller compounding intervals. The total approaches a finite limit rather than increasing without bound.",
+      "predict": "Starting with 1, which grows faster after six steps: adding 5 each time or doubling? Does compounding 100% more frequently make the final factor infinite?",
+      "headers": [
+        "Compounding intervals n",
+        "Growth factor (1 + 1/n)^n"
+      ],
+      "rows": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "2",
+          "2.25"
+        ],
+        [
+          "12",
+          "2.6130"
+        ],
+        [
+          "365",
+          "2.7146"
+        ],
+        [
+          "Limit as n grows",
+          "e ≈ 2.71828"
+        ]
+      ],
+      "relationship": "e is the limiting factor (1 + 1/n)^n as n grows. More generally, e^x is the exponential whose local rate of change equals its current value. That property makes it especially useful for describing continuous proportional change.",
+      "ml": "Natural exponentials appear in sigmoid probabilities and softmax. Their derivatives have a simple form, helping us trace how changing a parameter changes a loss.",
+      "caution": "A growth rate of 100% is an illustrative assumption. e is a mathematical constant, not an investment promise. The paper-folding example is an idealized thickness calculation.",
+      "figure": "algebra-11-0.png",
+      "alt": "More frequent compounding approaches e ≈ 2.71828; annual and monthly values lie below the limit.",
+      "module": "algebra",
+      "width": 1205,
+      "height": 611
+    },
+    "algebra/logarithms": {
+      "title": "Ask how many multiplications happened",
+      "pages": "12–14",
+      "story": "If a quantity doubles repeatedly, how many doublings reach a million? Exponentials tell you the result of growth; logarithms recover the exponent. About 19.93 doublings reach exactly a million, while 20 whole doublings first exceed it.",
+      "predict": "If 2³ = 8, what question does log₂(8) answer? Why should a confidently wrong probability have a large negative-log penalty?",
+      "headers": [
+        "Probability of the observed class p",
+        "−ln(p), approximately"
+      ],
+      "rows": [
+        [
+          "0.90",
+          "0.105"
+        ],
+        [
+          "0.50",
+          "0.693"
+        ],
+        [
+          "0.10",
+          "2.303"
+        ],
+        [
+          "0.01",
+          "4.605"
+        ]
+      ],
+      "relationship": "log_b(a) is the exponent needed to turn b into a. ln uses base e. For positive a and c, ln(ac) = ln(a) + ln(c), converting products into sums.",
+      "ml": "Log-likelihoods turn many tiny probability products into manageable sums. Negative log-loss penalizes assigning very little probability to what actually happened.",
+      "caution": "Real logarithms require positive arguments and a base greater than zero other than 1. The finite table excludes p = 0, where −ln(p) has no finite value.",
+      "figure": "algebra-14-0.png",
+      "alt": "The negative-log curve rises sharply as the probability assigned to the true class approaches zero.",
+      "module": "algebra",
+      "width": 1274,
+      "height": 609
+    },
+    "linear/vectors": {
+      "title": "A vector keeps measurements together",
+      "pages": "4–5",
+      "story": "Walking three steps east and four north gives one displacement: (3, 4). The pair preserves both components, while its length summarizes how far you are from the starting point.",
+      "predict": "If you double both components, what happens to direction and length?",
+      "headers": [
+        "Operation",
+        "Result",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "Length of (3, 4)",
+          "√(3² + 4²) = 5",
+          "Distance from the origin"
+        ],
+        [
+          "2 × (3, 4)",
+          "(6, 8)",
+          "Same direction, twice the length"
+        ],
+        [
+          "(3, 1) + (1, 2)",
+          "(4, 3)",
+          "Combine component by component"
+        ]
+      ],
+      "relationship": "Order matters: (3, 4) and (4, 3) represent different measurements. Vector operations act on matching components. Geometry helps you see the operations; feature names tell you what they mean.",
+      "ml": "A house can be represented by area, room count and age. Keep a consistent order and sensible scaling when comparing houses.",
+      "caution": "A feature vector mixes measurements with different units. Its raw Euclidean length is not automatically a meaningful similarity measure.",
+      "figure": "linear-4-0.png",
+      "alt": "Adding arrows combines displacements; the vector (3, 4) has horizontal component 3, vertical component 4 and length 5.",
+      "module": "linear",
+      "width": 1382,
+      "height": 633
+    },
+    "linear/dot": {
+      "title": "A weighted sum becomes a compatibility score",
+      "pages": "6–7",
+      "story": "Anaya rates two tastes (5, 1). Bilal rates them (4, 2), and Chitra (1, 5). Multiply matching ratings and add: this is a dot product.",
+      "predict": "Who has a larger dot product with Anaya? Could simply using bigger numbers change a score without changing direction?",
+      "headers": [
+        "Pair",
+        "Dot product",
+        "Cosine similarity, approximately"
+      ],
+      "rows": [
+        [
+          "Anaya and Bilal",
+          "5×4 + 1×2 = 22",
+          "0.965"
+        ],
+        [
+          "Anaya and Chitra",
+          "5×1 + 1×5 = 10",
+          "0.385"
+        ]
+      ],
+      "relationship": "a · b adds component-wise products. Its magnitude reflects both lengths and alignment. Dividing by both nonzero lengths produces cosine similarity, which isolates directional alignment.",
+      "ml": "Linear predictions are weighted sums of features. Dot products also appear in similarity search and attention scores, with context-specific scaling and interpretation.",
+      "caution": "Cosine is undefined for a zero vector. Orthogonal vectors are geometrically perpendicular; that alone does not establish statistical independence.",
+      "figure": "linear-6-0.png",
+      "alt": "Bilal’s taste vector points close to Anaya’s; Chitra’s points away. Raw dot product and normalized alignment are compared.",
+      "module": "linear",
+      "width": 1454,
+      "height": 643
+    },
+    "linear/matrix-vector": {
+      "title": "Make one prediction for every row",
+      "pages": "8–9",
+      "story": "Three students have measurements (5, 2), (3, 1) and (8, 4). With weights (4, 3), the same weighted rule can score every student at once.",
+      "predict": "Which numbers should be multiplied together for the second student?",
+      "headers": [
+        "Student row",
+        "Weighted calculation",
+        "Score"
+      ],
+      "rows": [
+        [
+          "(5, 2)",
+          "5×4 + 2×3",
+          "26"
+        ],
+        [
+          "(3, 1)",
+          "3×4 + 1×3",
+          "15"
+        ],
+        [
+          "(8, 4)",
+          "8×4 + 4×3",
+          "44"
+        ]
+      ],
+      "relationship": "A 3×2 matrix X times a two-component vector w produces three scores. Each output is one row’s dot product with the same weights. Dimensions explain why the operation fits.",
+      "ml": "A dataset can use rows for observations and columns for features. Xw computes predictions for all rows with one consistent model.",
+      "caution": "Rows and columns need named meanings. A compatible shape is necessary, but does not guarantee that the chosen features or model are useful.",
+      "figure": "linear-8-0.png",
+      "alt": "A three-row, two-column matrix times weights 4 and 3 produces scores 26, 15 and 44.",
+      "module": "linear",
+      "width": 1265,
+      "height": 499
+    },
+    "linear/matrix-matrix": {
+      "title": "Composition has a right-to-left order",
+      "pages": "10–12",
+      "story": "Stretching a shape and then rotating it need not produce the same result as rotating first. A matrix product packages a sequence of linear operations.",
+      "predict": "If B acts first and A second, should the composite be AB or BA?",
+      "headers": [
+        "Operation on (3, 2)",
+        "Result"
+      ],
+      "rows": [
+        [
+          "Stretch x by 2",
+          "(6, 2)"
+        ],
+        [
+          "Rotate 90° counterclockwise",
+          "(−2, 3)"
+        ],
+        [
+          "Shear x by y",
+          "(5, 2)"
+        ]
+      ],
+      "relationship": "ABx means A(Bx): the rightmost operation acts first. In general AB ≠ BA. The inner dimensions must agree, and each output entry is a row–column dot product.",
+      "ml": "Batched predictions and linear transformations use matrix products. A neural layer adds a bias and usually a nonlinearity; composition is more than a chain of matrix products alone.",
+      "caution": "The order convention here uses column vectors. Read the representation before transferring a formula into code that stores row vectors.",
+      "figure": "linear-11-0.png",
+      "alt": "Stretch then rotate and rotate then stretch put the same L-shaped figure in different locations.",
+      "module": "linear",
+      "width": 1315,
+      "height": 632
+    },
+    "linear/transform": {
+      "title": "A matrix moves a whole space",
+      "pages": "10–12",
+      "story": "Rather than move each point separately, describe what happens to the coordinate directions. A linear transformation applies that same rule everywhere.",
+      "predict": "Where will the point (3, 2) go if horizontal distances double but vertical distances stay fixed?",
+      "headers": [
+        "Transformation",
+        "Matrix rows",
+        "Image of (3, 2)"
+      ],
+      "rows": [
+        [
+          "Stretch",
+          "[2, 0] / [0, 1]",
+          "(6, 2)"
+        ],
+        [
+          "Quarter-turn",
+          "[0, −1] / [1, 0]",
+          "(−2, 3)"
+        ],
+        [
+          "Shear",
+          "[1, 1] / [0, 1]",
+          "(5, 2)"
+        ]
+      ],
+      "relationship": "The columns show where the basis vectors go. Linear maps preserve vector addition and scalar multiplication; translation needs an added offset.",
+      "ml": "Feature transformations can rotate, rescale or compress a representation before prediction. Scaling also changes the geometry an optimizer sees.",
+      "caution": "A visual transformation does not itself learn a better representation. Its usefulness depends on the problem and how it was selected.",
+      "figure": "linear-10-0.png",
+      "alt": "A unit-square figure is stretched, rotated and sheared by three different matrices.",
+      "module": "linear",
+      "width": 1309,
+      "height": 1354
+    },
+    "linear/span": {
+      "title": "Which directions can your measurements reach?",
+      "pages": "13–14",
+      "story": "Two direction vectors can cover a plane if neither is a multiple of the other. If they align, their combinations stay on one line: a dimension of information is missing.",
+      "predict": "Can two arrows pointing along the same line reconstruct every point in a plane?",
+      "headers": [
+        "Geometry",
+        "Reachable set",
+        "Information"
+      ],
+      "rows": [
+        [
+          "Two independent directions in 2D",
+          "Whole plane",
+          "Rank 2"
+        ],
+        [
+          "Two aligned directions in 2D",
+          "One line",
+          "Rank 1"
+        ],
+        [
+          "Both directions zero",
+          "Origin only",
+          "Rank 0"
+        ]
+      ],
+      "relationship": "Span is the set of all linear combinations. Rank counts independent output directions, rather than merely counting rows or columns.",
+      "ml": "Redundant features can make parameter estimates ambiguous. A higher number of columns does not guarantee more independent information.",
+      "caution": "Rank deficiency can yield no solution or many solutions to a system, depending on the target. It does not always mean there is no solution.",
+      "figure": "linear-13-0.png",
+      "alt": "Two intersecting equations have one common solution; parallel equations have none.",
+      "module": "linear",
+      "width": 1546,
+      "height": 633
+    },
+    "linear/inverse": {
+      "title": "Recover the inputs when information survives",
+      "pages": "13–14",
+      "story": "Two conditions, 2x + y = 11 and x + 3y = 18, describe the same pair of unknowns. Their crossing is (3, 5). An invertible transformation lets us recover that unique input.",
+      "predict": "Substitute (3, 5) into both conditions. Does satisfying just one equation solve the whole problem?",
+      "headers": [
+        "Check",
+        "Calculation",
+        "Result"
+      ],
+      "rows": [
+        [
+          "First condition",
+          "2×3 + 5",
+          "11"
+        ],
+        [
+          "Second condition",
+          "3 + 3×5",
+          "18"
+        ],
+        [
+          "Determinant",
+          "2×3 − 1×1",
+          "5"
+        ]
+      ],
+      "relationship": "For A = [[2,1],[1,3]], det(A)=5 and A⁻¹ = (1/5)[[3,−1],[−1,2]]. A nonzero determinant makes this square system invertible.",
+      "ml": "Solving systems underlies estimation and transformations. Numerical libraries usually solve a system directly rather than explicitly constructing an inverse.",
+      "caution": "A small determinant alone is not a scale-independent conditioning test. Rectangular least-squares problems need different tools.",
+      "figure": "linear-13-0.png",
+      "alt": "The lines 2x + y = 11 and x + 3y = 18 intersect at (3, 5).",
+      "module": "linear",
+      "width": 1546,
+      "height": 633
+    },
+    "linear/eigen": {
+      "title": "Find directions a transformation does not turn",
+      "pages": "15–18",
+      "story": "Most arrows change direction under a transformation. Some stay on their original line: only their length or orientation changes. Those special directions are eigenvector directions.",
+      "predict": "For A = [[2,1],[1,2]], what happens to (1,1)? What about (1,−1)?",
+      "headers": [
+        "Input v",
+        "Av",
+        "Eigenvalue λ"
+      ],
+      "rows": [
+        [
+          "(1, 1)",
+          "(3, 3)",
+          "3"
+        ],
+        [
+          "(1, −1)",
+          "(1, −1)",
+          "1"
+        ]
+      ],
+      "relationship": "Av = λv says a nonzero vector v remains on its own line. A negative λ reverses orientation; λ = 0 collapses that vector to zero.",
+      "ml": "For a centered dataset, eigenvectors of its symmetric covariance matrix identify principal directions. PCA can retain high-variance directions while discarding others.",
+      "caution": "The ellipse-axis picture applies to this symmetric example. An arbitrary real matrix need not have a full set of real eigenvectors. PCA preserves variance, not necessarily predictive usefulness.",
+      "figure": "linear-15-0.png",
+      "alt": "For a symmetric matrix, diagonal eigenvector directions stretch by factors 3 and 1, turning a circle into an ellipse.",
+      "module": "linear",
+      "width": 895,
+      "height": 792
+    },
+    "calculus/why": {
+      "title": "A speedometer asks about one moment",
+      "pages": "4–6",
+      "story": "A falling ball follows d(t) = 5t² metres. Between t=1 and t=2 it covers 15 metres, but that average does not tell us its speed at exactly t=1. Shrink the interval to discover a local rate.",
+      "predict": "As the interval after one second shrinks, will the average speed approach 15, 10 or zero?",
+      "headers": [
+        "Interval h seconds",
+        "Average speed [d(1+h)−d(1)]/h m/s"
+      ],
+      "rows": [
+        [
+          "1",
+          "15"
+        ],
+        [
+          "0.5",
+          "12.5"
+        ],
+        [
+          "0.1",
+          "10.5"
+        ],
+        [
+          "0.01",
+          "10.05"
+        ],
+        [
+          "Limit as h approaches 0",
+          "10"
+        ]
+      ],
+      "relationship": "The derivative is the limit of average rates as a nonzero interval shrinks, when that limit exists. For d = 5t², d′ = 10t. At one second, speed is 10 m/s.",
+      "ml": "A derivative measures local sensitivity: how a prediction or loss responds to a small input or parameter change.",
+      "caution": "The existing car playground uses t² rather than 5t². Its derivative is 2t. The reasoning transfers; the numerical speeds differ.",
+      "figure": "calculus-5-0.png",
+      "alt": "For d = 5t², secants from t=1 approach the tangent slope 10 m/s as their intervals shrink.",
+      "module": "calculus",
+      "width": 1245,
+      "height": 683
+    },
+    "calculus/secants": {
+      "title": "A tangent is the limit of nearby comparisons",
+      "pages": "4–6",
+      "story": "A secant compares two distinct points. As the second point approaches the first, its slope may approach a limiting value. A tangent represents that local direction.",
+      "predict": "Why can we shrink h toward zero but not substitute zero directly into a difference quotient?",
+      "headers": [
+        "For f(x)=x² at x=1",
+        "Slope"
+      ],
+      "rows": [
+        [
+          "h = 1",
+          "(4−1)/1 = 3"
+        ],
+        [
+          "h = 0.1",
+          "(1.21−1)/0.1 = 2.1"
+        ],
+        [
+          "h = 0.01",
+          "(1.0201−1)/0.01 = 2.01"
+        ],
+        [
+          "Derivative",
+          "2"
+        ]
+      ],
+      "relationship": "[f(x+h)−f(x)]/h divides output change by input change. A corner may give different limits from opposite sides, so a derivative need not exist everywhere.",
+      "ml": "Finite differences estimate gradients and help check implemented derivatives, but very small steps can magnify floating-point error.",
+      "caution": "A tangent is defined by local limiting direction. It may cross the curve elsewhere; “touches at only one point” is not a general definition.",
+      "figure": "calculus-6-0.png",
+      "alt": "A tangent follows local slope while a secant connects separated points on the curve.",
+      "module": "calculus",
+      "width": 1217,
+      "height": 1014
+    },
+    "calculus/rules": {
+      "title": "Differentiate a chain one link at a time",
+      "pages": "7–8",
+      "story": "For y = (3x+1)², the outer square responds to the inner value, and the inner value responds to x. Both responses matter.",
+      "predict": "At x=1, would 2(3x+1) alone account for the inner rule changing three times as fast?",
+      "headers": [
+        "Link",
+        "Local derivative at x=1"
+      ],
+      "rows": [
+        [
+          "Inner u = 3x + 1",
+          "du/dx = 3"
+        ],
+        [
+          "Outer y = u²",
+          "dy/du = 2u = 8"
+        ],
+        [
+          "Whole chain",
+          "dy/dx = 8 × 3 = 24"
+        ]
+      ],
+      "relationship": "The chain rule multiplies local rates: dy/dx = (dy/du)(du/dx). Sum and constant-multiple rules let us differentiate a larger expression one piece at a time.",
+      "ml": "Backpropagation applies the chain rule through a computational graph. Each local operation contributes a derivative to the parameter’s final effect on loss.",
+      "caution": "Classical ReLU has no derivative at zero. Software uses a specified convention there; do not mistake that convention for smoothness.",
+      "figure": "calculus-8-0.png",
+      "alt": "The inner rule multiplies sensitivity by 3 and the outer square by 8; together their derivative at x=1 is 24.",
+      "module": "calculus",
+      "width": 1253,
+      "height": 484
+    },
+    "calculus/practice": {
+      "title": "A flat slope needs a second question",
+      "pages": "9–10",
+      "story": "A tea stall models revenue as R(p) = 200p − 10p² for prices between 0 and 20. Revenue rises, reaches a top, then falls. A zero derivative identifies a candidate, not automatically a maximum.",
+      "predict": "Could zero slope mean a valley or a temporary flat point instead of a peak?",
+      "headers": [
+        "Price p",
+        "Revenue R(p)",
+        "Derivative R′(p)"
+      ],
+      "rows": [
+        [
+          "5",
+          "750",
+          "100"
+        ],
+        [
+          "10",
+          "1000",
+          "0"
+        ],
+        [
+          "15",
+          "750",
+          "−100"
+        ]
+      ],
+      "relationship": "R′(p) = 200 − 20p is zero at p=10. Here R″ = −20 confirms downward curvature, and checking the allowed endpoints completes the comparison.",
+      "ml": "Optimization asks whether a stationary point is useful and whether boundaries or other candidates matter. A zero gradient alone does not establish a good solution.",
+      "caution": "x³ has zero slope at zero without a local maximum or minimum. The tea rule is a simplified demand assumption, not a business forecast.",
+      "figure": "calculus-9-0.png",
+      "alt": "Revenue peaks at price 10 with value 1000; its derivative changes from positive to negative.",
+      "module": "calculus",
+      "width": 1287,
+      "height": 668
+    },
+    "calculus/lab": {
+      "title": "A gradient gathers several sensitivities",
+      "pages": "11–15",
+      "story": "For f(x,y) = x² + 2y², changing x and changing y can affect the same output differently. A partial derivative isolates one coordinate while holding the other fixed.",
+      "predict": "At (3,2), which coordinate has the larger local sensitivity? What happens if both coordinates move against their derivatives?",
+      "headers": [
+        "At (3,2)",
+        "Calculation",
+        "Value"
+      ],
+      "rows": [
+        [
+          "∂f/∂x",
+          "2x",
+          "6"
+        ],
+        [
+          "∂f/∂y",
+          "4y",
+          "8"
+        ],
+        [
+          "Gradient",
+          "[6, 8]",
+          "Length 10"
+        ],
+        [
+          "One step with η=0.15",
+          "(3,2) − 0.15(6,8)",
+          "(2.1,0.8)"
+        ]
+      ],
+      "relationship": "The gradient collects partial derivatives. A descent step subtracts a scaled gradient using the same pre-update point for every component.",
+      "ml": "Training repeatedly predicts, measures loss, computes a gradient and updates parameters. Step size matters: a large step can overshoot instead of improving the objective.",
+      "caution": "This book surface uses 2y²; the multivariable playground uses 3y². Steepest direction is local and depends on the coordinate scale and chosen geometry.",
+      "figure": "calculus-15-0.png",
+      "alt": "Gradient-descent steps cross elliptical contours toward the minimum of x² + 2y².",
+      "module": "calculus",
+      "width": 934,
+      "height": 780
+    },
+    "calculus/debug": {
+      "title": "Trace a prediction forward and its error backward",
+      "pages": "18–19",
+      "story": "A single neuron uses x=2, w=0.5 and b=0. Its score z=wx+b is 1; the sigmoid probability is about 0.731. For a true label of 1, negative log-loss is about 0.313.",
+      "predict": "If the model is not confident enough in the true class, should increasing this positive weight raise or lower its loss locally?",
+      "headers": [
+        "Quantity",
+        "Calculation",
+        "Approximate value"
+      ],
+      "rows": [
+        [
+          "Probability p",
+          "1/(1+e^(−1))",
+          "0.731059"
+        ],
+        [
+          "Score gradient",
+          "p − 1",
+          "−0.268941"
+        ],
+        [
+          "Weight gradient",
+          "(p−1) × 2",
+          "−0.537883"
+        ],
+        [
+          "Updated weight, η=0.5",
+          "0.5 − 0.5(−0.537883)",
+          "0.768941"
+        ],
+        [
+          "Updated bias, same step",
+          "0 − 0.5(−0.268941)",
+          "0.134471"
+        ]
+      ],
+      "relationship": "The output error travels backward through each local relationship. The same original prediction supplies both gradients; do not recompute one midway through the update.",
+      "ml": "This scalar walkthrough connects sigmoid, log-loss and chain rule. It is a reading example; the existing debug activity deliberately uses squared error and a different rule.",
+      "caution": "A matching update direction is not proof of understanding. Explain the sign, the input multiplier and what was held fixed.",
+      "figure": "calculus-18-0.png",
+      "alt": "Forward operations produce a sigmoid prediction and log-loss; backward sensitivities return through the score to weight and bias.",
+      "module": "calculus",
+      "width": 1282,
+      "height": 630
+    },
+    "calculus/integrals": {
+      "title": "Accumulation is the other half of change",
+      "pages": "16–17",
+      "story": "If speed is v(t)=10t metres per second, how far do you travel from 0 to 3 seconds? Thin time slices turn speed into small distances. Adding them approaches the area under the curve.",
+      "predict": "Why do left-end rectangles underestimate this increasing speed while right-end rectangles overestimate it?",
+      "headers": [
+        "Number of equal slices",
+        "Left sum metres",
+        "Right sum metres"
+      ],
+      "rows": [
+        [
+          "3",
+          "30",
+          "60"
+        ],
+        [
+          "6",
+          "37.5",
+          "52.5"
+        ],
+        [
+          "30",
+          "43.5",
+          "46.5"
+        ],
+        [
+          "300",
+          "44.85",
+          "45.15"
+        ],
+        [
+          "Limit",
+          "45",
+          "45"
+        ]
+      ],
+      "relationship": "The definite integral ∫₀³ 10t dt = 45 measures accumulated distance. Differentiating the accumulated quantity recovers its rate; recovering position also needs an initial position.",
+      "ml": "A probability density is not a probability at one point: area over an interval gives probability. Integration also expresses expectations of continuous quantities.",
+      "caution": "This is an introductory, unscored reading extension. It adds no integral solver or completion requirement. Negative velocity would contribute signed displacement.",
+      "figure": "calculus-16-0.png",
+      "alt": "Rectangles under a rising speed curve approach the triangular area 45; differentiating 5t² recovers speed 10t.",
+      "module": "calculus",
+      "width": 1546,
+      "height": 634
+    },
+    "probability/understanding": {
+      "title": "Count the possibilities before trusting a hunch",
+      "pages": "4–6",
+      "story": "Two fair dice have 36 equally likely ordered outcomes. A total of 7 can occur in six different ways, while a total of 2 has only one. The sum is not uniformly distributed even though each die is fair.",
+      "predict": "Are totals 2 and 7 equally likely simply because both are possible?",
+      "headers": [
+        "Event",
+        "Favourable ordered outcomes",
+        "Probability"
+      ],
+      "rows": [
+        [
+          "Total 2",
+          "1",
+          "1/36"
+        ],
+        [
+          "Total 7",
+          "6",
+          "6/36 = 1/6"
+        ],
+        [
+          "Total 12",
+          "1",
+          "1/36"
+        ]
+      ],
+      "relationship": "Probability compares an event with a specified sample space. “Equally likely” needs a reason, such as fair independent dice, rather than being an automatic property of possibilities.",
+      "ml": "Probability provides a language for uncertainty. A model score needs interpretation and validation before you call it a reliable probability.",
+      "caution": "Long-run frequencies stabilize under suitable sampling conditions. More samples do not automatically remove selection bias or make a model calibrated.",
+      "figure": "probability-4-0.png",
+      "alt": "A six-by-six ordered dice grid highlights the six combinations summing to 7.",
+      "module": "probability",
+      "width": 806,
+      "height": 805
+    },
+    "probability/multiple-events": {
+      "title": "AND and OR answer different questions",
+      "pages": "7–8",
+      "story": "Suppose passing exam A has probability 0.8 and passing B has probability 0.7. If the outcomes are independent, both passes have probability 0.56, while at least one pass has probability 0.94.",
+      "predict": "Why would adding 0.8 and 0.7 double-count some students?",
+      "headers": [
+        "Event under independence",
+        "Calculation",
+        "Probability"
+      ],
+      "rows": [
+        [
+          "Pass both",
+          "0.8 × 0.7",
+          "0.56"
+        ],
+        [
+          "Pass at least one",
+          "0.8 + 0.7 − 0.56",
+          "0.94"
+        ],
+        [
+          "Pass neither",
+          "0.2 × 0.3",
+          "0.06"
+        ]
+      ],
+      "relationship": "P(A or B) = P(A)+P(B)−P(A and B). Multiplying marginal probabilities for an intersection additionally requires independence.",
+      "ml": "Combining signals often requires dependence assumptions. Naive Bayes assumes features are conditionally independent given the class, not independent in the population overall.",
+      "caution": "A shared disruption could affect both exams, breaking independence. The current event playground uses message counts rather than these exam probabilities.",
+      "figure": "probability-7-0.png",
+      "alt": "The overlap represents both passes, while the union includes either pass and counts the overlap once.",
+      "module": "probability",
+      "width": 1524,
+      "height": 596
+    },
+    "probability/conditional": {
+      "title": "Change the denominator when evidence arrives",
+      "pages": "9–10",
+      "story": "Among 1,000 emails, 200 are spam and 800 genuine. “Free” appears in 60% of spam and 5% of genuine messages. Once you see “free,” the relevant population becomes the 160 messages containing it.",
+      "predict": "Should the denominator still be all 1,000 messages after you know the message contains “free”?",
+      "headers": [
+        "Group",
+        "Contains “free”",
+        "Does not contain it"
+      ],
+      "rows": [
+        [
+          "200 spam",
+          "120",
+          "80"
+        ],
+        [
+          "800 genuine",
+          "40",
+          "760"
+        ],
+        [
+          "All messages",
+          "160",
+          "840"
+        ]
+      ],
+      "relationship": "P(spam | free) = 120/160 = 0.75. Conditioning restricts the set of cases; it does not reverse the direction of the original 60% statement.",
+      "ml": "Evaluate a diagnostic signal within the population to which it is applied. A signal’s false positives can dominate when the target condition is rare.",
+      "caution": "P(free | spam) and P(spam | free) are different. This book example is separate from the playground’s message counts.",
+      "figure": "probability-9-0.png",
+      "alt": "Of 160 messages containing “free,” 120 are spam and 40 are genuine; the conditional spam probability is 75%.",
+      "module": "probability",
+      "width": 1257,
+      "height": 586
+    },
+    "probability/bayes": {
+      "title": "Combine a prior with a signal’s strength",
+      "pages": "9–10",
+      "story": "Among 1,000 emails, 200 are spam. “Free” appears in 60% of spam and 5% of the 800 genuine emails: 120 + 40 = 160 messages. Start with the 20% spam prior, multiply by the 60% likelihood of “free” in spam, then divide by the overall 16% frequency of “free.”",
+      "predict": "If spam became much rarer but the signal rates stayed fixed, would seeing “free” still imply a 75% spam probability?",
+      "headers": [
+        "Term",
+        "Value",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "Prior P(spam)",
+          "0.20",
+          "Before reading the word"
+        ],
+        [
+          "Likelihood P(free given spam)",
+          "0.60",
+          "Signal within spam"
+        ],
+        [
+          "Evidence P(free)",
+          "0.16",
+          "Signal in all messages"
+        ],
+        [
+          "Posterior",
+          "0.20 × 0.60 / 0.16 = 0.75",
+          "After the signal"
+        ]
+      ],
+      "relationship": "Bayes’ rule updates a prior by accounting for how likely the evidence is under each possibility. A strong-looking signal is incomplete without its base rate.",
+      "ml": "Spam classification, medical screening and model comparison all need careful distinctions between a likelihood and an updated probability.",
+      "caution": "The existing diagnostic playground defaults to a 10% false-positive rate; the book’s medical example uses 9%. Those produce different posterior probabilities.",
+      "figure": "probability-9-0.png",
+      "alt": "A prior population splits into spam and genuine messages before the word signal narrows the population.",
+      "module": "probability",
+      "width": 1257,
+      "height": 586
+    },
+    "probability/distributions": {
+      "title": "A distribution describes more than its average",
+      "pages": "11–14",
+      "story": "A fair die has mean 3.5 even though it can never show 3.5. A distribution assigns probabilities to possible values; its mean summarizes the balance point and its variance summarizes spread.",
+      "predict": "Can two distributions share a mean while placing their probability in very different places?",
+      "headers": [
+        "Quantity",
+        "Fair die",
+        "Ten independent fair coins, heads count"
+      ],
+      "rows": [
+        [
+          "Mean",
+          "3.5",
+          "5"
+        ],
+        [
+          "Variance",
+          "35/12 ≈ 2.9167",
+          "2.5"
+        ],
+        [
+          "Standard deviation",
+          "≈1.7078",
+          "≈1.5811"
+        ]
+      ],
+      "relationship": "A random variable maps outcomes to numerical values. Discrete distributions assign point probabilities; continuous densities assign probability through area over intervals.",
+      "ml": "Noise, labels and predictions require distributional assumptions. A normal model can be useful without claiming that every real dataset is bell-shaped.",
+      "caution": "The central limit theorem concerns suitably scaled averages under conditions such as independence and finite variance. It does not make the original observations normal.",
+      "figure": "probability-11-0.png",
+      "alt": "Die faces have equal probabilities but binomial coin-count probabilities concentrate near five heads.",
+      "module": "probability",
+      "width": 1529,
+      "height": 615
+    },
+    "probability/ml": {
+      "title": "Turn probability into a learning signal",
+      "pages": "15–17",
+      "story": "Seven heads and three tails support a coin-bias estimate of 0.7 under an independent Bernoulli model. Instead of multiplying ten tiny factors, add their logarithms.",
+      "predict": "Which model should assign more probability to this data: p=0.5 or p=0.7? Does a 0.8 prediction guarantee the next event?",
+      "headers": [
+        "Candidate p",
+        "Log-likelihood 7 ln(p) + 3 ln(1−p), approximately"
+      ],
+      "rows": [
+        [
+          "0.5",
+          "−6.9315"
+        ],
+        [
+          "0.7",
+          "−6.1086"
+        ],
+        [
+          "0.9",
+          "−7.6453"
+        ]
+      ],
+      "relationship": "Maximizing likelihood means selecting settings that assign high probability to the observed data under a specified model. Negative log-likelihood converts that objective into a loss to minimize.",
+      "ml": "Softmax converts scores into positive values summing to one. Calibration asks whether groups of similarly scored predictions match observed frequencies.",
+      "caution": "Normalization alone does not establish calibration. Not all ML algorithms are probabilistic, and not all training objectives are maximum likelihood.",
+      "figure": "probability-16-0.png",
+      "alt": "For seven heads and three tails, the likelihood and log-likelihood both peak at p=0.7.",
+      "module": "probability",
+      "width": 1559,
+      "height": 596
+    },
+    "statistics/data": {
+      "title": "Choose a picture that answers your question",
+      "pages": "4–5",
+      "story": "Nine salaries, in thousands of rupees, are 25, 28, 30, 32, 35, 38, 40, 45 and 400. A single list conceals how far the founder’s salary sits from the rest. A suitable chart makes that difference visible.",
+      "predict": "Would a bar chart of categories answer the same question as a histogram of salary values?",
+      "headers": [
+        "Chart",
+        "Use it to see"
+      ],
+      "rows": [
+        [
+          "Histogram",
+          "Distribution of numerical values"
+        ],
+        [
+          "Scatter plot",
+          "Association between paired measurements"
+        ],
+        [
+          "Box plot",
+          "Median, quartiles and potential outliers"
+        ],
+        [
+          "Bar chart",
+          "Counts or values across categories"
+        ]
+      ],
+      "relationship": "Data type and question determine the representation. Label units and scales so the reader can distinguish an observed measurement from a calculated summary.",
+      "ml": "Before training a model, inspect missing values, unusual observations, distributions and relationships. A plot can expose a problem that a single metric conceals.",
+      "caution": "An outlier is a reason to investigate, not automatic permission to delete an inconvenient observation.",
+      "figure": "statistics-5-0.png",
+      "alt": "Four examples distinguish histograms, scatter plots, box plots and categorical bar charts.",
+      "module": "statistics",
+      "width": 1508,
+      "height": 1052
+    },
+    "statistics/center": {
+      "title": "A typical value depends on the question",
+      "pages": "4–5",
+      "story": "The founder’s salary raises the nine-person mean to about ₹74,778, while the middle salary is ₹35,000. Both calculations are correct; they summarize different aspects of the same group.",
+      "predict": "Which summary would better describe the salary a middle-ranked employee receives?",
+      "headers": [
+        "Group",
+        "Mean, thousand ₹",
+        "Median, thousand ₹"
+      ],
+      "rows": [
+        [
+          "All nine salaries",
+          "74.7778",
+          "35"
+        ],
+        [
+          "Without the founder",
+          "34.125",
+          "33.5"
+        ]
+      ],
+      "relationship": "The mean balances every numerical value. The median identifies the middle of the ordered data and is less sensitive to extreme magnitudes. Neither replaces the distribution.",
+      "ml": "Squared-error models target a conditional mean; absolute-error objectives target a conditional median under standard conditions. The loss helps determine what “best prediction” means.",
+      "caution": "Do not remove the founder merely to obtain a nicer average. Define the population and report the choice.",
+      "figure": "statistics-4-0.png",
+      "alt": "Eight salaries cluster near 25–45 thousand, while one lies at 400 thousand; mean and median fall in different places.",
+      "module": "statistics",
+      "width": 1345,
+      "height": 537
+    },
+    "statistics/spread": {
+      "title": "The average cannot tell you the risk",
+      "pages": "4–5",
+      "story": "Two groups can share a mean while one clusters tightly and the other varies widely. Squaring deviations makes negative and positive differences contribute positively to spread.",
+      "predict": "What information disappears if you report only a mean and omit the spread?",
+      "headers": [
+        "Measure",
+        "Calculation idea",
+        "Units"
+      ],
+      "rows": [
+        [
+          "Variance",
+          "Average squared deviation",
+          "Squared measurement units"
+        ],
+        [
+          "Standard deviation",
+          "Square root of variance",
+          "Original units"
+        ],
+        [
+          "Sample variance",
+          "Divide squared deviations by n−1",
+          "Squared measurement units"
+        ]
+      ],
+      "relationship": "Population variance divides by N for the full specified population. A conventional sample-variance estimator divides by n−1 when estimating a population variance from a sample.",
+      "ml": "Feature scaling and error analysis depend on spread. A few large residuals can dominate squared error even if most predictions are close.",
+      "caution": "The book’s salary SD near 122 thousand uses the sample convention; the playground’s default variance convention is labelled separately. Compare like with like.",
+      "figure": "statistics-4-0.png",
+      "alt": "The isolated founder salary illustrates how an extreme value affects both average and spread.",
+      "module": "statistics",
+      "width": 1345,
+      "height": 537
+    },
+    "statistics/distributions": {
+      "title": "Separate individual variation from average variation",
+      "pages": "6–9",
+      "story": "Individual marks can vary substantially, while repeated averages of random samples vary less. With population SD 12 and n=36 independent observations, the standard error of the sample mean is 2.",
+      "predict": "To halve the standard error, do you need twice as many observations or four times as many?",
+      "headers": [
+        "Sample size n",
+        "SE = 12/√n"
+      ],
+      "rows": [
+        [
+          "9",
+          "4"
+        ],
+        [
+          "36",
+          "2"
+        ],
+        [
+          "144",
+          "1"
+        ]
+      ],
+      "relationship": "Standard deviation describes individual spread. Standard error describes how an estimator varies across repeated samples. Under suitable conditions, averages can have an approximately normal sampling distribution.",
+      "ml": "Uncertainty about an estimated model metric differs from the variation among individual examples. Confidence intervals describe a procedure’s uncertainty, not a guarantee for each case.",
+      "caution": "A normal approximation requires justification. A 95% confidence interval is not an interval containing 95% of individual observations.",
+      "figure": "statistics-6-0.png",
+      "alt": "Individual student marks have a broad distribution; averages of repeated samples form a much narrower distribution.",
+      "module": "statistics",
+      "width": 1546,
+      "height": 577
+    },
+    "statistics/relationships": {
+      "title": "A pattern can predict without explaining a cause",
+      "pages": "12–14",
+      "story": "Study hours and marks may rise together, but the fitted relationship alone does not show that adding an hour will cause a particular increase for every student. Background factors may influence both.",
+      "predict": "Could ice-cream sales and drownings move together because both respond to hot weather?",
+      "headers": [
+        "Question",
+        "Appropriate interpretation"
+      ],
+      "rows": [
+        [
+          "Do two measurements vary together?",
+          "Association"
+        ],
+        [
+          "Can one help predict the other?",
+          "Predictive relationship to validate"
+        ],
+        [
+          "Would an intervention change the outcome?",
+          "Causal question requiring additional evidence"
+        ]
+      ],
+      "relationship": "Correlation summarizes linear association. Regression describes a fitted conditional relationship. Neither automatically identifies an intervention’s effect.",
+      "ml": "A predictive feature can be useful without being a safe lever to change. Compare out-of-sample performance and examine confounding and leakage.",
+      "caution": "The book’s fitted marks line and reported correlation are illustrative; its raw dataset is not supplied for independent reproduction. The playground has its own explicit dataset and causal scenarios.",
+      "figure": "statistics-13-0.png",
+      "alt": "Hot weather influences both ice-cream sales and swimming-related drowning exposure, creating a confounded association.",
+      "module": "statistics",
+      "width": 1135,
+      "height": 469
+    },
+    "statistics/sampling": {
+      "title": "More data reduces variation, not every bias",
+      "pages": "6–11",
+      "story": "Surveying only students in the library at midnight can give a precise answer about an unrepresentative group. Random variation and systematic selection bias are different problems.",
+      "predict": "Would collecting ten times as many responses from the same biased location solve the sampling problem?",
+      "headers": [
+        "Evidence",
+        "What it can establish",
+        "What it cannot establish alone"
+      ],
+      "rows": [
+        [
+          "Larger random sample",
+          "Lower sampling variability",
+          "Absence of systematic bias"
+        ],
+        [
+          "Approximate 95% interval",
+          "Long-run coverage under assumptions",
+          "95% probability for a fixed parameter after sampling"
+        ],
+        [
+          "Small p-value",
+          "Data are unusual under a specified null model",
+          "Probability the null hypothesis is true"
+        ]
+      ],
+      "relationship": "For mean 62, known population SD 12 and n=36, an approximate normal interval is 62 ± 1.96×2 = [58.08, 65.92]. If population SD is unknown, an appropriate t procedure may be needed.",
+      "ml": "A/B tests need a valid design, independent experimental units and prespecified analysis. Statistical significance and practical usefulness answer different questions.",
+      "caution": "For 100/1000 versus 120/1000 independent conversions, a pooled two-sided normal test gives z≈1.429 and p≈0.153. This is not the probability the observed improvement is a fluke.",
+      "figure": "statistics-8-0.png",
+      "alt": "Repeatedly constructed confidence intervals vary; most cover the fixed population mean, while some miss it.",
+      "module": "statistics",
+      "width": 1135,
+      "height": 777
+    },
+    "statistics/ml": {
+      "title": "Judge predictions with the errors that matter",
+      "pages": "15–17",
+      "story": "A spam classifier faces 1,000 messages: 80 true positives, 20 missed spam, 30 false alarms and 870 true negatives. Its 95% accuracy hides two very different kinds of error.",
+      "predict": "If blocking a genuine message is costly, is accuracy alone enough to choose the model?",
+      "headers": [
+        "Metric",
+        "Calculation",
+        "Value"
+      ],
+      "rows": [
+        [
+          "Accuracy",
+          "(80+870)/1000",
+          "95%"
+        ],
+        [
+          "Precision",
+          "80/(80+30)",
+          "72.7%"
+        ],
+        [
+          "Recall",
+          "80/(80+20)",
+          "80%"
+        ],
+        [
+          "F1",
+          "2×80/(2×80+30+20)",
+          "76.2%"
+        ]
+      ],
+      "relationship": "Precision asks how many flagged cases were correct; recall asks how many actual positives were found. Threshold choice changes the trade-off.",
+      "ml": "Fit on training data, select settings on validation data, and reserve a final test set for the final evaluation. Cross-validation supports development without making the final test a tuning tool.",
+      "caution": "The book’s polynomial comparison uses “test” while discussing model selection. Here that development role is validation. A train–evaluation gap can reflect overfitting, distribution shift or other split problems.",
+      "figure": "statistics-16-1.png",
+      "alt": "A confusion matrix separates 80 correct spam flags, 20 misses, 30 false alarms and 870 correct genuine predictions.",
+      "module": "statistics",
+      "width": 1402,
+      "height": 543
+    },
+    "optimization/objectives": {
+      "title": "Best is meaningless until you name the objective",
+      "pages": "4–5",
+      "story": "A bakery earns ₹60 per cake and ₹40 per tart. Flour allows 2x+y≤16 and oven time allows x+y≤10. The goal is not simply to make more items, but to maximize profit within both limits.",
+      "predict": "Could a profitable combination still be impossible because it exceeds a resource limit?",
+      "headers": [
+        "Feasible corner (cakes, tarts)",
+        "Profit 60x + 40y"
+      ],
+      "rows": [
+        [
+          "(0, 0)",
+          "0"
+        ],
+        [
+          "(8, 0)",
+          "480"
+        ],
+        [
+          "(0, 10)",
+          "400"
+        ],
+        [
+          "(6, 4)",
+          "520"
+        ]
+      ],
+      "relationship": "An objective ranks choices; constraints define which choices are allowed. In this linear example, comparing feasible corners identifies the maximum of ₹520 at (6,4).",
+      "ml": "Training minimizes an explicit loss, often with penalties or constraints. Business value and training loss are related design choices, not interchangeable quantities.",
+      "caution": "For real products, counts must be whole numbers. This example’s best corner already has integer coordinates. General constrained problems need not be solved by this simple corner comparison.",
+      "figure": "optimization-5-0.png",
+      "alt": "Flour and oven constraints bound a feasible region; the highest-profit shown corner is six cakes and four tarts.",
+      "module": "optimization",
+      "width": 1106,
+      "height": 800
+    },
+    "optimization/updates": {
+      "title": "Use the slope to choose a small next move",
+      "pages": "8–10",
+      "story": "A gradient tells you how an objective changes locally. Subtracting a scaled gradient proposes a move toward lower loss, but a step that is too large can jump across a valley and increase the loss.",
+      "predict": "On L(w)=(w−3)², starting at w=1, what does a learning rate of 0.1 do?",
+      "headers": [
+        "Quantity",
+        "Calculation",
+        "Value"
+      ],
+      "rows": [
+        [
+          "Initial loss",
+          "(1−3)²",
+          "4"
+        ],
+        [
+          "Gradient",
+          "2(1−3)",
+          "−4"
+        ],
+        [
+          "Updated weight",
+          "1 − 0.1(−4)",
+          "1.4"
+        ],
+        [
+          "New loss",
+          "(1.4−3)²",
+          "2.56"
+        ]
+      ],
+      "relationship": "The update w_new = w_old − η∇L uses the gradient at the old point. The learning rate η sets the scale of the move. Local improvement is not a proof of global convergence.",
+      "ml": "Batch methods use a full dataset gradient; stochastic and mini-batch methods estimate it from selected examples. Momentum carries a moving velocity; Adam tracks gradient moments.",
+      "caution": "The current playground implements its labelled update rule, not momentum or Adam. Their book descriptions are an introductory comparison, not new optimizer functionality.",
+      "figure": "optimization-8-0.png",
+      "alt": "Gradient descent zigzags in a narrow valley; a momentum illustration follows a smoother trajectory under the book’s chosen settings.",
+      "module": "optimization",
+      "width": 1584,
+      "height": 634
+    },
+    "optimization/geometry": {
+      "title": "The landscape explains why some paths are difficult",
+      "pages": "6–7",
+      "story": "A bowl, a saddle and a landscape with several valleys can all have flat points. Their shapes determine what a gradient can tell you and how much a local solution promises.",
+      "predict": "Does zero gradient guarantee a minimum? Does convexity always mean exactly one minimum?",
+      "headers": [
+        "Landscape",
+        "Interpretation"
+      ],
+      "rows": [
+        [
+          "Convex objective",
+          "Every local minimum is global, if a minimum exists"
+        ],
+        [
+          "Strictly convex objective",
+          "At most one minimizer"
+        ],
+        [
+          "Saddle",
+          "Some directions rise while others fall"
+        ],
+        [
+          "Nonconvex objective",
+          "Different local minima may have different values"
+        ]
+      ],
+      "relationship": "Curvature describes how slope changes. Narrow valleys have very different sensitivities across directions; a step suitable for a shallow direction may overshoot in a steep one.",
+      "ml": "Feature scaling and parameterization affect training geometry. Convexity is useful, but convergence still requires appropriate assumptions and step choices.",
+      "caution": "The book overstates uniqueness for convex functions. A constant function is convex and has many minimizers; even a convex objective need not attain a minimum.",
+      "figure": "optimization-7-0.png",
+      "alt": "A saddle rises in one coordinate direction and falls in the other, despite a zero gradient at its centre.",
+      "module": "optimization",
+      "width": 823,
+      "height": 747
+    },
+    "optimization/stability": {
+      "title": "A faster-looking step can be the wrong step",
+      "pages": "8–12",
+      "story": "Repeated updates can converge, oscillate or diverge. Compare the objective values along the path rather than judging a method by a single large movement.",
+      "predict": "If successive losses grow, would simply running more iterations repair the update rule?",
+      "headers": [
+        "Method or setting",
+        "What it uses",
+        "Important limitation"
+      ],
+      "rows": [
+        [
+          "Small gradient step",
+          "Local first derivative",
+          "May progress slowly"
+        ],
+        [
+          "Large gradient step",
+          "Same direction, larger move",
+          "Can overshoot or diverge"
+        ],
+        [
+          "Newton step",
+          "First and second derivatives",
+          "Can fail with zero or unsuitable curvature"
+        ]
+      ],
+      "relationship": "For a quadratic, a suitable Newton step can reach its stationary point exactly. Root finding instead uses x_new=x−f(x)/f′(x); these are related but different tasks.",
+      "ml": "Schedules, momentum and curvature-aware methods change how updates behave. Choose and validate them for the objective rather than treating one method as universally best.",
+      "caution": "Newton and adaptive optimizers are reading extensions here. The existing finite trace establishes what happened for its stated settings, not a universal convergence guarantee.",
+      "figure": "optimization-11-0.png",
+      "alt": "Newton root-finding uses the tangent to x²−2 at x=2 to propose x=1.5, then approaches √2.",
+      "module": "optimization",
+      "width": 1136,
+      "height": 668
+    },
+    "optimization/regularization": {
+      "title": "Change what counts as a good fit",
+      "pages": "13–14",
+      "story": "A data loss prefers w=3. Adding λw² penalizes large weights, so the best total objective may move away from the best data-only fit. Regularization is a deliberate trade-off.",
+      "predict": "With λ=1, should the new optimum remain 3, become zero, or sit between them?",
+      "headers": [
+        "Penalty λ",
+        "Optimum w=3/(1+λ)"
+      ],
+      "rows": [
+        [
+          "0",
+          "3"
+        ],
+        [
+          "0.5",
+          "2"
+        ],
+        [
+          "1",
+          "1.5"
+        ],
+        [
+          "3",
+          "0.75"
+        ]
+      ],
+      "relationship": "For (w−3)²+λw², set 2(w−3)+2λw=0. The resulting optimum balances fit and penalty rather than minimizing either term separately.",
+      "ml": "L2 penalties shrink weights; L1 penalties can encourage exact zeros. Use validation to assess whether a penalty improves generalization.",
+      "caution": "Scaling affects penalties. L1 does not guarantee selection of the truly relevant features, and adaptive weight decay is not generally identical to adding an L2 loss term.",
+      "figure": "optimization-13-0.png",
+      "alt": "As the L2 penalty grows, the optimal weight for this scalar problem shrinks from 3 toward zero.",
+      "module": "optimization",
+      "width": 1085,
+      "height": 629
+    },
+    "optimization/responsible": {
+      "title": "Select a model without peeking at its final exam",
+      "pages": "15–17",
+      "story": "A model can keep improving on training data while validation loss rises. Early stopping chooses a development checkpoint; the final test set must stay out of that decision.",
+      "predict": "If you repeatedly select settings using final-test results, is that set still an independent final check?",
+      "headers": [
+        "Observation",
+        "Investigate before acting"
+      ],
+      "rows": [
+        [
+          "NaN or infinite loss",
+          "Input values, arithmetic and step size"
+        ],
+        [
+          "Little training progress",
+          "Gradients, scaling, objective and rate"
+        ],
+        [
+          "Training improves, validation worsens",
+          "Potential overfitting, split quality or distribution shift"
+        ],
+        [
+          "Cannot fit a tiny clean batch",
+          "Implementation and data issues"
+        ]
+      ],
+      "relationship": "Hyperparameter search and early stopping are model-selection procedures. Compare on validation evidence, preserve the chosen checkpoint, then use the held-out test for final evaluation.",
+      "ml": "A useful training run is reproducible: record data split, preprocessing, settings and random seeds where relevant. Metric improvements need a meaningful evaluation context.",
+      "caution": "The plotted best epoch is an illustrative book run, not a universal stopping point or a result from this playground. Diagnose symptoms rather than blindly increasing or decreasing the learning rate.",
+      "figure": "optimization-16-0.png",
+      "alt": "Training loss keeps falling while validation loss bottoms out near epoch 18 and rises afterward; early stopping restores the development checkpoint.",
+      "module": "optimization",
+      "width": 1203,
+      "height": 610
+    },
+    "algebra/transformations": {
+      "title": "Order changes the answer",
+      "pages": "15–17",
+      "story": "A ₹1,000 item gets a ₹100 discount and an 18% tax. Applying the discount first gives a different total from taxing first. A chain of simple rules is a new rule—and its order matters.",
+      "predict": "Would the same two operations necessarily give the same result in either order?",
+      "headers": [
+        "Order",
+        "Calculation",
+        "Final price ₹"
+      ],
+      "rows": [
+        [
+          "Discount then tax",
+          "(1000 − 100) × 1.18",
+          "1062"
+        ],
+        [
+          "Tax then discount",
+          "1000 × 1.18 − 100",
+          "1080"
+        ]
+      ],
+      "relationship": "g(f(x)) means apply f first, then g. Transformations change a graph systematically: f(x)+k moves it vertically; f(x−h) moves it right by h.",
+      "ml": "A preprocessing step followed by a model is a composition. Neural networks compose matrix operations and nonlinear activations; those nonlinearities prevent the whole network collapsing to one matrix product.",
+      "caution": "Changing preprocessing order can change predictions. A quadratic shifted right by 3 uses (x−3)², not (x+3)².",
+      "figure": "algebra-16-0.png",
+      "alt": "Discount then tax produces ₹1,062, while tax then discount produces ₹1,080.",
+      "module": "algebra",
+      "width": 1253,
+      "height": 528
+    }
+  }
+}

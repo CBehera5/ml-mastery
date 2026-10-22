@@ -1,0 +1,18 @@
+{
+  "scope": "Design only, not implemented",
+  "baseline": "c3c9e6ac04170014cc46ae9bc85cb3724c532c36",
+  "protectedGitDiffExit": 0,
+  "documentationLinksAndImageFiles": "PASS",
+  "screenWireframes": 12,
+  "overviewSheets": 2,
+  "independentDesignOracle": "24 bounded runs / 264 state visits, exact Fraction arithmetic versus existing runtime",
+  "maximumAbsoluteDifference": 1.5347723092418164e-12,
+  "applicationTestsPerformed": false,
+  "accessibilityAcceptanceClaimed": false,
+  "masteryOrAccountChanges": false,
+  "mergeOrDeployment": false,
+  "references": {
+    "ML Mastery Interactive Learning Journey-1.png": "28089219744fca688f353b834a76262961ec5bcdc90fd17c4c7dcda858155cd1",
+    "ML Mastery Learning Journey Interface-2.png": "6fbe9ced379bc9c8e0563bf25191f50f7eb2a0a378dc09b0da4cc7cbc303c2bc"
+  }
+}

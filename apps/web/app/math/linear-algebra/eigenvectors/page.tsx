@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import {editorialMetadata} from "../../../experience/editorial-metadata";
 import { GeometryLearning } from "../geometry-learning";
-export const metadata: Metadata = { title: "Eigenvector intuition | ML Math Lab" };
+export const metadata = editorialMetadata("/math/linear-algebra/eigenvectors");
 export default function EigenvectorsPage() { return <GeometryLearning lesson="eigenvectors" />; }

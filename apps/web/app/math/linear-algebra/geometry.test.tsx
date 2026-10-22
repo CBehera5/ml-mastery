@@ -52,7 +52,7 @@ describe("geometry lessons and module assessment v2", () => {
     render(<GeometryLearning lesson="transformations" />); await ready();
     const span = within(screen.getByRole("region", { name: GEOMETRY_CONTENT.span.title }));
     fireEvent.change(span.getByRole("slider", { name: "Span coefficient c2" }), { target: { value: 2 } });
-    expect(span.getByRole("img")).toHaveAccessibleName(/input \[1, 2\] to \[5, 0\]/);
+    expect(span.getByRole("img", {name: /^A maps the grid and vector/})).toHaveAccessibleName(/input \[1, 2\] to \[5, 0\]/);
     expect(span.getAllByRole("status").some(node => node.textContent?.includes("span only a line"))).toBe(true);
     const inverse = within(screen.getByRole("region", { name: GEOMETRY_CONTENT.inverse.title }));
     fireEvent.change(inverse.getByRole("combobox", { name: "Transformation A" }), { target: { value: "near" } });

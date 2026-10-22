@@ -1,0 +1,1264 @@
+{
+  "polynomial": [
+    {
+      "lab": 0,
+      "title": "Can a squared size make the rule bend?",
+      "label": "Shape of the rule",
+      "help": "A straight-line model uses size. A curved model can also use size \u00d7 size. Both are fitted to the same houses, so their learned coefficients and baselines can differ. Compare the shapes and the predictions.",
+      "fixed": "Keep the training houses and new house-size index 2 fixed. These are two previously fitted models, not a change to one coefficient.",
+      "options": [
+        {
+          "id": "PR-E1.p1.d1.x2.reference",
+          "label": "Straight line: use size"
+        },
+        {
+          "id": "PR-E1.p1.d2.x2.reference",
+          "label": "Curve: use size and squared size"
+        }
+      ],
+      "control": "degree"
+    },
+    {
+      "lab": 0,
+      "title": "What if size and room count work together?",
+      "label": "Measurements the model can use",
+      "help": "An interaction multiplies two inputs so the effect of one can depend on the other. Let a describe size and b describe rooms. These are simplified indices: a=2 and b=3, so their interaction is 2 \u00d7 3 = 6.",
+      "fixed": "Keep the inputs [2,3] and baseline 1 fixed. The original size and room coefficients stay 2 and 1. Extra columns use supplied coefficients; these two rules are illustrations, not fitted models.",
+      "options": [
+        {
+          "id": "PR-E1.p2.d1.x2.reference",
+          "label": "Use size and rooms separately"
+        },
+        {
+          "id": "PR-E1.p2.d2.x2.reference",
+          "label": "Also use squares and size \u00d7 rooms"
+        }
+      ],
+      "control": "degree"
+    },
+    {
+      "lab": 1,
+      "title": "Does a more flexible curve predict new houses better?",
+      "label": "Curve complexity",
+      "help": "Degree is the highest input power. A higher degree can bend more. Check the error on training houses and on separate development houses.",
+      "fixed": "Use the same houses, query size 0.4, and no coefficient penalty. Development error guides selection.",
+      "options": [
+        {
+          "id": "PR-E2.d1.none.fold-local.q0.4.development",
+          "label": "Degree 1: straight"
+        },
+        {
+          "id": "PR-E2.d3.none.fold-local.q0.4.development",
+          "label": "Degree 3: more flexible"
+        },
+        {
+          "id": "PR-E2.d9.none.fold-local.q0.4.development",
+          "label": "Degree 9: very flexible"
+        }
+      ],
+      "control": "degree"
+    },
+    {
+      "lab": 1,
+      "title": "Can we trust the curve outside the sizes it has seen?",
+      "label": "House-size index",
+      "help": "Interpolation means predicting inside the observed range. Extrapolation means going beyond it. A numerical answer alone does not establish reliability.",
+      "fixed": "Keep the degree-3 model fixed; training sizes span \u22121 to 1.",
+      "options": [
+        {
+          "id": "PR-E2.d3.none.fold-local.q0.4.development",
+          "label": "0.4: inside the observed range"
+        },
+        {
+          "id": "PR-E2.d3.none.fold-local.q1.5.development",
+          "label": "1.5: outside the observed range"
+        }
+      ],
+      "control": "query"
+    }
+  ],
+  "regularization": [
+    {
+      "lab": 0,
+      "title": "Can a penalty restrain the model?",
+      "label": "Penalty strength (alpha)",
+      "help": "Alpha controls how much large coefficients are discouraged. Larger values apply a stronger penalty. Watch the coefficients and held-out error; stronger is not always better.",
+      "fixed": "Use the same housing rows, model family and training-only scaling.",
+      "options": [
+        {
+          "id": "RG-E1.RG.housing.original.v1.ridge.a0.1.q1.training-only",
+          "label": "0.1: light penalty"
+        },
+        {
+          "id": "RG-E1.RG.housing.original.v1.ridge.a1.q1.training-only",
+          "label": "1: medium penalty"
+        },
+        {
+          "id": "RG-E1.RG.housing.original.v1.ridge.a10.q1.training-only",
+          "label": "10: strong penalty"
+        }
+      ],
+      "control": "alpha"
+    },
+    {
+      "lab": 0,
+      "title": "How strongly should Ridge shrink coefficients?",
+      "label": "Penalty strength (alpha)",
+      "help": "Alpha controls how much large coefficients are discouraged. Larger values apply a stronger penalty. Watch the coefficients and held-out error; stronger is not always better.",
+      "fixed": "Use the same housing rows, model family and training-only scaling.",
+      "options": [
+        {
+          "id": "RG-E1.RG.housing.original.v1.ridge.a0.1.q1.training-only",
+          "label": "0.1: light penalty"
+        },
+        {
+          "id": "RG-E1.RG.housing.original.v1.ridge.a1.q1.training-only",
+          "label": "1: medium penalty"
+        },
+        {
+          "id": "RG-E1.RG.housing.original.v1.ridge.a10.q1.training-only",
+          "label": "10: strong penalty"
+        }
+      ],
+      "control": "alpha"
+    },
+    {
+      "lab": 0,
+      "title": "Can Lasso set a coefficient to zero?",
+      "label": "Penalty strength (alpha)",
+      "help": "Alpha controls how much large coefficients are discouraged. Larger values apply a stronger penalty. Watch the coefficients and held-out error; stronger is not always better.",
+      "fixed": "Use the same housing rows, model family and training-only scaling.",
+      "options": [
+        {
+          "id": "RG-E1.RG.housing.original.v1.lasso.a0.1.q1.training-only",
+          "label": "0.1: light penalty"
+        },
+        {
+          "id": "RG-E1.RG.housing.original.v1.lasso.a1.q1.training-only",
+          "label": "1: medium penalty"
+        },
+        {
+          "id": "RG-E1.RG.housing.original.v1.lasso.a10.q1.training-only",
+          "label": "10: strong penalty"
+        }
+      ],
+      "control": "alpha"
+    },
+    {
+      "lab": 1,
+      "title": "How does Elastic Net combine two penalties?",
+      "label": "Share of the Lasso penalty",
+      "help": "Elastic Net mixes Ridge shrinkage with Lasso sparsity. Raising this share moves the mixture toward Lasso; total penalty strength stays fixed.",
+      "fixed": "Keep alpha at 0.1 and use the same housing data.",
+      "options": [
+        {
+          "id": "RG-E2.RG.housing.original.v1.elastic-net.a0.1.q0.25.training-only",
+          "label": "25% Lasso"
+        },
+        {
+          "id": "RG-E2.RG.housing.original.v1.elastic-net.a0.1.q0.5.training-only",
+          "label": "50% Lasso"
+        },
+        {
+          "id": "RG-E2.RG.housing.original.v1.elastic-net.a0.1.q0.75.training-only",
+          "label": "75% Lasso"
+        }
+      ],
+      "control": "l1_ratio"
+    },
+    {
+      "lab": 1,
+      "title": "Which rows may teach the scaler?",
+      "label": "Rows used to learn scaling",
+      "help": "A scaler learns averages and spreads. Letting it inspect validation rows leaks information into the workflow before the model is evaluated.",
+      "fixed": "Keep the model, penalty and housing data fixed.",
+      "options": [
+        {
+          "id": "RG-E2.RG.housing.original.v1.elastic-net.a0.1.q0.25.training-only",
+          "label": "Training rows only"
+        },
+        {
+          "id": "RG-E2.RG.housing.original.v1.elastic-net.a0.1.q0.25.global-development-invalid",
+          "label": "Training and validation rows"
+        }
+      ],
+      "control": "scale_provenance"
+    },
+    {
+      "lab": 1,
+      "title": "Does a smaller coefficient make a better prediction?",
+      "label": "Penalty strength",
+      "help": "Compare prediction error as well as coefficient size. A small coefficient is a model result, not proof that a feature has no real-world effect.",
+      "fixed": "Keep the penalty mixture at 50% Lasso and the data fixed.",
+      "options": [
+        {
+          "id": "RG-E2.RG.housing.original.v1.elastic-net.a0.1.q0.5.training-only",
+          "label": "0.1: light penalty"
+        },
+        {
+          "id": "RG-E2.RG.housing.original.v1.elastic-net.a1.q0.5.training-only",
+          "label": "1: stronger penalty"
+        }
+      ],
+      "control": "alpha"
+    }
+  ],
+  "logistic": [
+    {
+      "lab": 0,
+      "title": "How does a score become a probability?",
+      "label": "Signal coefficient",
+      "help": "The coefficient multiplies the same customer signal. The probability conversion is curved, so doubling the score does not double the probability.",
+      "fixed": "Keep the signal at about 1.099 and the observed cancellation label at 1.",
+      "options": [
+        {
+          "id": "LG-E1.LG.authored.w1.positive-ln3.y1.v1",
+          "label": "1: original coefficient"
+        },
+        {
+          "id": "LG-E1.LG.authored.w2.positive-ln3.y1.v1",
+          "label": "2: doubled coefficient"
+        }
+      ],
+      "control": "coefficient"
+    },
+    {
+      "lab": 0,
+      "title": "Does a more confident correct prediction reduce loss?",
+      "label": "Signal coefficient",
+      "help": "Log loss measures the cost of assigning little probability to the observed outcome. Compare the probabilities and loss for the same customer.",
+      "fixed": "Keep the customer and observed label 1 fixed.",
+      "options": [
+        {
+          "id": "LG-E1.LG.authored.w1.positive-ln3.y1.v1",
+          "label": "1: original coefficient"
+        },
+        {
+          "id": "LG-E1.LG.authored.w2.positive-ln3.y1.v1",
+          "label": "2: doubled coefficient"
+        }
+      ],
+      "control": "coefficient"
+    },
+    {
+      "lab": 1,
+      "title": "When should a probability trigger an action?",
+      "label": "Decision threshold",
+      "help": "Predict cancellation when its probability reaches the threshold. Raising the threshold changes actions, not the probabilities or fitted model.",
+      "fixed": "Keep all customer probabilities, labels and costs fixed.",
+      "options": [
+        {
+          "id": "LG-E2.moderate.t0.5.fn1",
+          "label": "0.5: act at 50%"
+        },
+        {
+          "id": "LG-E2.moderate.t0.6.fn1",
+          "label": "0.6: act at 60%"
+        }
+      ],
+      "control": "threshold"
+    },
+    {
+      "lab": 0,
+      "title": "What does regularization change?",
+      "label": "Inverse penalty strength (C)",
+      "help": "Smaller C means a stronger coefficient penalty. Compare fitted probabilities without changing the training rows.",
+      "fixed": "Use the same fitting workflow and the same development customer.",
+      "options": [
+        {
+          "id": "LG-E1.fit.C0.1.q1",
+          "label": "0.1: stronger penalty"
+        },
+        {
+          "id": "LG-E1.fit.C1.q1",
+          "label": "1: medium penalty"
+        },
+        {
+          "id": "LG-E1.fit.C10.q1",
+          "label": "10: weaker penalty"
+        }
+      ],
+      "control": "C"
+    },
+    {
+      "lab": 1,
+      "title": "How does the cost of a missed cancellation change?",
+      "label": "Cost of a missed cancellation",
+      "help": "Changing a mistake cost changes the cost calculation. It does not refit probabilities or automatically change the decision threshold.",
+      "fixed": "Keep the probabilities, labels, threshold 0.5 and false-alarm cost 1 fixed.",
+      "options": [
+        {
+          "id": "LG-E2.moderate.t0.5.fn1",
+          "label": "1 cost unit"
+        },
+        {
+          "id": "LG-E2.moderate.t0.5.fn5",
+          "label": "5 cost units"
+        }
+      ],
+      "control": "false_negative_cost"
+    },
+    {
+      "lab": 1,
+      "title": "Can a good score hide expensive mistakes?",
+      "label": "Cost of a missed cancellation",
+      "help": "Changing a mistake cost changes the cost calculation. It does not refit probabilities or automatically change the decision threshold.",
+      "fixed": "Keep the probabilities, labels, threshold 0.5 and false-alarm cost 1 fixed.",
+      "options": [
+        {
+          "id": "LG-E2.moderate.t0.5.fn1",
+          "label": "1 cost unit"
+        },
+        {
+          "id": "LG-E2.moderate.t0.5.fn5",
+          "label": "5 cost units"
+        }
+      ],
+      "control": "false_negative_cost"
+    }
+  ],
+  "knn": [
+    {
+      "lab": 0,
+      "title": "Can several neighbours overrule the nearest one?",
+      "label": "Neighbours consulted (k)",
+      "help": "KNN finds similar past customers, then lets their labels vote. k is how many neighbours get a vote.",
+      "fixed": "Keep the customer, distances and equal voting weights fixed.",
+      "options": [
+        {
+          "id": "kn.clean.v1.q0.k1.uniform.raw",
+          "label": "1 neighbour"
+        },
+        {
+          "id": "kn.clean.v1.q0.k3.uniform.raw",
+          "label": "3 neighbours"
+        },
+        {
+          "id": "kn.clean.v1.q0.k5.uniform.raw",
+          "label": "5 neighbours"
+        }
+      ],
+      "control": "k"
+    },
+    {
+      "lab": 1,
+      "title": "Do measurement units change who looks close?",
+      "label": "Put measurements on comparable scales",
+      "help": "A feature measured in large numbers can dominate distance. Scaling changes how distances are calculated, not the customer labels.",
+      "fixed": "Keep the customer, training rows and k=3 fixed.",
+      "options": [
+        {
+          "id": "kn.units.v1.q0.k3.uniform.raw",
+          "label": "Use original units"
+        },
+        {
+          "id": "kn.units.v1.q0.k3.uniform.scaled",
+          "label": "Scale using training rows"
+        }
+      ],
+      "control": "scaled"
+    },
+    {
+      "lab": 0,
+      "title": "Does consulting more neighbours help with noise?",
+      "label": "Neighbours consulted (k)",
+      "help": "Compare the votes in the same noisy sample. Neither a very small nor a very large k is guaranteed to work best on new customers.",
+      "fixed": "Keep the noisy sample and query fixed.",
+      "options": [
+        {
+          "id": "kn.noisy.v1.q0.k1.uniform.raw",
+          "label": "1 neighbour"
+        },
+        {
+          "id": "kn.noisy.v1.q0.k3.uniform.raw",
+          "label": "3 neighbours"
+        },
+        {
+          "id": "kn.noisy.v1.q0.k5.uniform.raw",
+          "label": "5 neighbours"
+        }
+      ],
+      "control": "k"
+    },
+    {
+      "lab": 1,
+      "title": "Can a new customer get a different vote?",
+      "label": "Customer to predict",
+      "help": "Each query is a new customer. The training examples and scaling stay fixed; only the customer being predicted changes.",
+      "fixed": "Keep k=3, training-only scaling and equal vote weights fixed.",
+      "options": [
+        {
+          "id": "kn.units.v1.q0.k3.uniform.scaled",
+          "label": "First customer"
+        },
+        {
+          "id": "kn.units.v1.q1.k3.uniform.scaled",
+          "label": "Second customer"
+        }
+      ],
+      "control": "query"
+    }
+  ],
+  "naive-bayes": [
+    {
+      "lab": 0,
+      "title": "How does a starting belief affect a prediction?",
+      "label": "Starting class probabilities",
+      "help": "A prior is the class probability before reading the document. Compare the training class balance with a supplied 70% prior for the Good class.",
+      "fixed": "Keep the same document, word counts and smoothing 0.5.",
+      "options": [
+        {
+          "id": "NB-E1.count.a0.5.empirical.q0.v1",
+          "label": "Use training class balance"
+        },
+        {
+          "id": "NB-E1.count.a0.5.good70.q0.v1",
+          "label": "Start with 70% Good"
+        }
+      ],
+      "control": "prior_mode"
+    },
+    {
+      "lab": 0,
+      "title": "How can smoothing handle rare words?",
+      "label": "Smoothing strength (alpha)",
+      "help": "Smoothing adds a small amount to word counts so an unseen word need not erase all support for a class.",
+      "fixed": "Keep the document and class prior fixed.",
+      "options": [
+        {
+          "id": "NB-E1.count.a0.5.empirical.q0.v1",
+          "label": "0.5: light smoothing"
+        },
+        {
+          "id": "NB-E1.count.a1.0.empirical.q0.v1",
+          "label": "1: moderate smoothing"
+        },
+        {
+          "id": "NB-E1.count.a2.0.empirical.q0.v1",
+          "label": "2: stronger smoothing"
+        }
+      ],
+      "control": "alpha"
+    },
+    {
+      "lab": 1,
+      "title": "How do numeric measurements become class evidence?",
+      "label": "Variance smoothing",
+      "help": "Gaussian Naive Bayes describes each class using a mean and spread. Variance smoothing stabilises very small spreads; it can also change the prediction.",
+      "fixed": "Keep the numeric observation, features and class prior fixed.",
+      "options": [
+        {
+          "id": "NB-E2.gaussian.base.v1e-09.empirical.q0.v1",
+          "label": "Very small: 0.000000001"
+        },
+        {
+          "id": "NB-E2.gaussian.base.v0.1.empirical.q0.v1",
+          "label": "Larger: 0.1"
+        }
+      ],
+      "control": "var_smoothing"
+    },
+    {
+      "lab": 1,
+      "title": "Can repeated evidence create false confidence?",
+      "label": "Include a copied measurement",
+      "help": "A copied feature repeats information. Naive Bayes can count it again because it treats features as conditionally independent.",
+      "fixed": "Keep the same observation, class prior and smoothing.",
+      "options": [
+        {
+          "id": "NB-E2.gaussian.base.v1e-09.empirical.q0.v1",
+          "label": "Original measurements"
+        },
+        {
+          "id": "NB-E2.gaussian.duplicate.v1e-09.empirical.q0.v1",
+          "label": "Copy the first measurement"
+        }
+      ],
+      "control": "duplicate_first_feature"
+    }
+  ],
+  "svm": [
+    {
+      "lab": 0,
+      "title": "What happens when a decision boundary moves?",
+      "label": "Boundary position",
+      "help": "A boundary separates the two predicted classes. Moving its intercept changes which side some points fall on. These supplied boundaries are illustrations, not refitted models.",
+      "fixed": "Keep the points and boundary direction fixed.",
+      "options": [
+        {
+          "id": "sv-e1.manual.reference.v1",
+          "label": "Boundary at its original position"
+        },
+        {
+          "id": "sv-e1.manual.move-right.v1",
+          "label": "Move the boundary to the right"
+        }
+      ],
+      "control": "comparison"
+    },
+    {
+      "lab": 0,
+      "title": "How much should the model resist training mistakes?",
+      "label": "Mistake penalty (C)",
+      "help": "A larger C penalises training margin violations more strongly. Compare the boundary and support points rather than assuming a perfect fit.",
+      "fixed": "Keep the same noisy points and linear kernel.",
+      "options": [
+        {
+          "id": "sv.linear.noisy.v1.linear.C-0.1.gamma-1.0.raw.weights-none",
+          "label": "0.1: lower penalty"
+        },
+        {
+          "id": "sv.linear.noisy.v1.linear.C-1.0.gamma-1.0.raw.weights-none",
+          "label": "1: medium penalty"
+        },
+        {
+          "id": "sv.linear.noisy.v1.linear.C-10.0.gamma-1.0.raw.weights-none",
+          "label": "10: higher penalty"
+        }
+      ],
+      "control": "C"
+    },
+    {
+      "lab": 1,
+      "title": "How local should an RBF boundary be?",
+      "label": "Influence locality (gamma)",
+      "help": "RBF compares similarity by distance. Larger gamma makes each point\u2019s influence more local and may create a more intricate boundary.",
+      "fixed": "Keep C=1, the training points and training-only scaling fixed.",
+      "options": [
+        {
+          "id": "sv.rbf.clean.v1.rbf.C-1.0.gamma-0.1.scaled.weights-none",
+          "label": "0.1: broad influence"
+        },
+        {
+          "id": "sv.rbf.clean.v1.rbf.C-1.0.gamma-1.0.scaled.weights-none",
+          "label": "1: more local"
+        },
+        {
+          "id": "sv.rbf.clean.v1.rbf.C-1.0.gamma-4.0.scaled.weights-none",
+          "label": "4: very local"
+        }
+      ],
+      "control": "gamma"
+    },
+    {
+      "lab": 1,
+      "title": "Why scale features before comparing distances?",
+      "label": "Feature scaling",
+      "help": "Scaling learns means and spreads from training rows. It changes the distances seen by the RBF model.",
+      "fixed": "Keep the points, C=1 and gamma=1 fixed.",
+      "options": [
+        {
+          "id": "sv.rbf.clean.v1.rbf.C-1.0.gamma-1.0.raw.weights-none",
+          "label": "Original feature units"
+        },
+        {
+          "id": "sv.rbf.clean.v1.rbf.C-1.0.gamma-1.0.scaled.weights-none",
+          "label": "Training-only standardisation"
+        }
+      ],
+      "control": "scaling"
+    },
+    {
+      "lab": 0,
+      "title": "Does fitting training points more strongly guarantee reliability?",
+      "label": "Mistake penalty (C)",
+      "help": "A stronger training penalty can change the boundary. It does not establish accuracy for future customers or a causal relationship.",
+      "fixed": "Keep the same noisy points and linear model family.",
+      "options": [
+        {
+          "id": "sv.linear.noisy.v1.linear.C-0.1.gamma-1.0.raw.weights-none",
+          "label": "0.1: lower penalty"
+        },
+        {
+          "id": "sv.linear.noisy.v1.linear.C-10.0.gamma-1.0.raw.weights-none",
+          "label": "10: higher penalty"
+        }
+      ],
+      "control": "C"
+    }
+  ],
+  "decision-trees": [
+    {
+      "lab": 0,
+      "title": "How does one question divide the data?",
+      "label": "Split threshold",
+      "help": "Send values at or below the threshold left; send larger values right. Each resulting group supplies its own prediction. This tests a supplied split, not a claim it is the best split.",
+      "fixed": "Keep the rows and the first input feature fixed.",
+      "options": [
+        {
+          "id": "DT-E1.dt.regression.base.v1.manual.f0.t2.0",
+          "label": "At or below 2"
+        },
+        {
+          "id": "DT-E1.dt.regression.base.v1.manual.f0.t4.0",
+          "label": "At or below 4"
+        },
+        {
+          "id": "DT-E1.dt.regression.base.v1.manual.f0.t6.0",
+          "label": "At or below 6"
+        }
+      ],
+      "control": "threshold"
+    },
+    {
+      "lab": 0,
+      "title": "What changes when the tree can ask more questions?",
+      "label": "Maximum tree depth",
+      "help": "Depth limits the number of decisions along a path. A deeper tree can make finer groups, but may follow noise.",
+      "fixed": "Keep the rows, fitting procedure and minimum leaf size 1 fixed.",
+      "options": [
+        {
+          "id": "DT-E1.dt.regression.base.v1.depth1.leaf1.a0.v1",
+          "label": "1 decision level"
+        },
+        {
+          "id": "DT-E1.dt.regression.base.v1.depth2.leaf1.a0.v1",
+          "label": "2 decision levels"
+        },
+        {
+          "id": "DT-E1.dt.regression.base.v1.depth3.leaf1.a0.v1",
+          "label": "3 decision levels"
+        }
+      ],
+      "control": "max_depth"
+    },
+    {
+      "lab": 1,
+      "title": "How does one question divide the data?",
+      "label": "Split threshold",
+      "help": "Send values at or below the threshold left; send larger values right. Each resulting group supplies its own prediction. This tests a supplied split, not a claim it is the best split.",
+      "fixed": "Keep the rows and the first input feature fixed.",
+      "options": [
+        {
+          "id": "DT-E2.dt.classification.base.v1.manual.f0.t2.0",
+          "label": "At or below 2"
+        },
+        {
+          "id": "DT-E2.dt.classification.base.v1.manual.f0.t4.0",
+          "label": "At or below 4"
+        },
+        {
+          "id": "DT-E2.dt.classification.base.v1.manual.f0.t6.0",
+          "label": "At or below 6"
+        }
+      ],
+      "control": "threshold"
+    },
+    {
+      "lab": 0,
+      "title": "What changes when the tree can ask more questions?",
+      "label": "Maximum tree depth",
+      "help": "Depth limits the number of decisions along a path. A deeper tree can make finer groups, but may follow noise.",
+      "fixed": "Keep the rows, fitting procedure and minimum leaf size 1 fixed.",
+      "options": [
+        {
+          "id": "DT-E1.dt.regression.base.v1.depth1.leaf1.a0.v1",
+          "label": "1 decision level"
+        },
+        {
+          "id": "DT-E1.dt.regression.base.v1.depth2.leaf1.a0.v1",
+          "label": "2 decision levels"
+        },
+        {
+          "id": "DT-E1.dt.regression.base.v1.depth3.leaf1.a0.v1",
+          "label": "3 decision levels"
+        }
+      ],
+      "control": "max_depth"
+    },
+    {
+      "lab": 1,
+      "title": "Should a leaf be allowed to rely on one example?",
+      "label": "Minimum examples in a leaf",
+      "help": "Larger leaves must combine more observations. Compare the predictions without confusing a small training error with future reliability.",
+      "fixed": "Keep the same training data and maximum depth 2.",
+      "options": [
+        {
+          "id": "DT-E2.dt.classification.base.v1.depth2.leaf1.a0.v1",
+          "label": "At least 1 example"
+        },
+        {
+          "id": "DT-E2.dt.classification.base.v1.depth2.leaf2.a0.v1",
+          "label": "At least 2 examples"
+        }
+      ],
+      "control": "min_samples_leaf"
+    },
+    {
+      "lab": 1,
+      "title": "What changes when the tree can ask more questions?",
+      "label": "Maximum tree depth",
+      "help": "Depth limits the number of decisions along a path. A deeper tree can make finer groups, but may follow noise.",
+      "fixed": "Keep the rows, fitting procedure and minimum leaf size 1 fixed.",
+      "options": [
+        {
+          "id": "DT-E2.dt.classification.base.v1.depth1.leaf1.a0.v1",
+          "label": "1 decision level"
+        },
+        {
+          "id": "DT-E2.dt.classification.base.v1.depth2.leaf1.a0.v1",
+          "label": "2 decision levels"
+        },
+        {
+          "id": "DT-E2.dt.classification.base.v1.depth3.leaf1.a0.v1",
+          "label": "3 decision levels"
+        }
+      ],
+      "control": "max_depth"
+    }
+  ],
+  "random-forests": [
+    {
+      "lab": 0,
+      "title": "What changes when several trees combine predictions?",
+      "label": "Number of trees",
+      "help": "A forest averages regression predictions or class probabilities from different trees. More trees do not guarantee better predictions on every new row.",
+      "fixed": "Keep the data, depth 1, one candidate feature per split and random seed fixed.",
+      "options": [
+        {
+          "id": "RF-E1.rf.regression.base.v1.trees1.depth1.features1",
+          "label": "1 tree"
+        },
+        {
+          "id": "RF-E1.rf.regression.base.v1.trees3.depth1.features1",
+          "label": "3 trees"
+        },
+        {
+          "id": "RF-E1.rf.regression.base.v1.trees7.depth1.features1",
+          "label": "7 trees"
+        }
+      ],
+      "control": "n_estimators"
+    },
+    {
+      "lab": 0,
+      "title": "What changes when several trees combine predictions?",
+      "label": "Number of trees",
+      "help": "A forest averages regression predictions or class probabilities from different trees. More trees do not guarantee better predictions on every new row.",
+      "fixed": "Keep the data, depth 1, one candidate feature per split and random seed fixed.",
+      "options": [
+        {
+          "id": "RF-E1.rf.regression.base.v1.trees1.depth1.features1",
+          "label": "1 tree"
+        },
+        {
+          "id": "RF-E1.rf.regression.base.v1.trees3.depth1.features1",
+          "label": "3 trees"
+        },
+        {
+          "id": "RF-E1.rf.regression.base.v1.trees7.depth1.features1",
+          "label": "7 trees"
+        }
+      ],
+      "control": "n_estimators"
+    },
+    {
+      "lab": 1,
+      "title": "What changes when several trees combine predictions?",
+      "label": "Number of trees",
+      "help": "A forest averages regression predictions or class probabilities from different trees. More trees do not guarantee better predictions on every new row.",
+      "fixed": "Keep the data, depth 1, one candidate feature per split and random seed fixed.",
+      "options": [
+        {
+          "id": "RF-E2.rf.classification.base.v1.trees1.depth1.features1",
+          "label": "1 tree"
+        },
+        {
+          "id": "RF-E2.rf.classification.base.v1.trees3.depth1.features1",
+          "label": "3 trees"
+        },
+        {
+          "id": "RF-E2.rf.classification.base.v1.trees7.depth1.features1",
+          "label": "7 trees"
+        }
+      ],
+      "control": "n_estimators"
+    },
+    {
+      "lab": 0,
+      "title": "What changes when several trees combine predictions?",
+      "label": "Number of trees",
+      "help": "A forest averages regression predictions or class probabilities from different trees. More trees do not guarantee better predictions on every new row.",
+      "fixed": "Keep the data, depth 1, one candidate feature per split and random seed fixed.",
+      "options": [
+        {
+          "id": "RF-E1.rf.regression.base.v1.trees1.depth1.features1",
+          "label": "1 tree"
+        },
+        {
+          "id": "RF-E1.rf.regression.base.v1.trees3.depth1.features1",
+          "label": "3 trees"
+        },
+        {
+          "id": "RF-E1.rf.regression.base.v1.trees7.depth1.features1",
+          "label": "7 trees"
+        }
+      ],
+      "control": "n_estimators"
+    },
+    {
+      "lab": 1,
+      "title": "Does changing candidate features change the forest?",
+      "label": "Features considered at each split",
+      "help": "Randomly offering fewer features makes trees explore different questions. Feature importance describes this fitted model, not real-world causation.",
+      "fixed": "Keep three trees, depth 2, the data and random seed fixed.",
+      "options": [
+        {
+          "id": "RF-E2.rf.classification.base.v1.trees3.depth2.features1",
+          "label": "1 candidate feature"
+        },
+        {
+          "id": "RF-E2.rf.classification.base.v1.trees3.depth2.features2",
+          "label": "2 candidate features"
+        }
+      ],
+      "control": "max_features"
+    }
+  ],
+  "gradient-boosting": [
+    {
+      "lab": 0,
+      "title": "Can another small correction improve the prediction?",
+      "label": "Number of correction stages",
+      "help": "Boosting adds trees in sequence. Compare training and development loss; more stages can reduce training loss without improving new-data performance.",
+      "fixed": "Keep the data, tree settings and learning rate 0.1 fixed.",
+      "options": [
+        {
+          "id": "gb.regression.clean.v1.eta-0.1.budget-1",
+          "label": "1 correction stage"
+        },
+        {
+          "id": "gb.regression.clean.v1.eta-0.1.budget-2",
+          "label": "2 correction stages"
+        },
+        {
+          "id": "gb.regression.clean.v1.eta-0.1.budget-4",
+          "label": "4 correction stages"
+        }
+      ],
+      "control": "estimator_budget"
+    },
+    {
+      "lab": 0,
+      "title": "How much of each correction should we apply?",
+      "label": "Learning rate",
+      "help": "Each tree proposes a correction to the current model. The learning rate scales that correction before it is added.",
+      "fixed": "Keep the data, tree settings and two correction stages fixed.",
+      "options": [
+        {
+          "id": "gb.regression.clean.v1.eta-0.1.budget-2",
+          "label": "0.1: small corrections"
+        },
+        {
+          "id": "gb.regression.clean.v1.eta-0.5.budget-2",
+          "label": "0.5: larger corrections"
+        }
+      ],
+      "control": "learning_rate"
+    },
+    {
+      "lab": 1,
+      "title": "Can another small correction improve the prediction?",
+      "label": "Number of correction stages",
+      "help": "Boosting adds trees in sequence. Compare training and development loss; more stages can reduce training loss without improving new-data performance.",
+      "fixed": "Keep the data, tree settings and learning rate 0.1 fixed.",
+      "options": [
+        {
+          "id": "gb.classification.clean.v1.eta-0.1.budget-1",
+          "label": "1 correction stage"
+        },
+        {
+          "id": "gb.classification.clean.v1.eta-0.1.budget-2",
+          "label": "2 correction stages"
+        },
+        {
+          "id": "gb.classification.clean.v1.eta-0.1.budget-4",
+          "label": "4 correction stages"
+        }
+      ],
+      "control": "estimator_budget"
+    },
+    {
+      "lab": 0,
+      "title": "Can another small correction improve the prediction?",
+      "label": "Number of correction stages",
+      "help": "Boosting adds trees in sequence. Compare training and development loss; more stages can reduce training loss without improving new-data performance.",
+      "fixed": "Keep the data, tree settings and learning rate 0.1 fixed.",
+      "options": [
+        {
+          "id": "gb.regression.clean.v1.eta-0.1.budget-1",
+          "label": "1 correction stage"
+        },
+        {
+          "id": "gb.regression.clean.v1.eta-0.1.budget-2",
+          "label": "2 correction stages"
+        },
+        {
+          "id": "gb.regression.clean.v1.eta-0.1.budget-4",
+          "label": "4 correction stages"
+        }
+      ],
+      "control": "estimator_budget"
+    },
+    {
+      "lab": 1,
+      "title": "Can another small correction improve the prediction?",
+      "label": "Number of correction stages",
+      "help": "Boosting adds trees in sequence. Compare training and development loss; more stages can reduce training loss without improving new-data performance.",
+      "fixed": "Keep the data, tree settings and learning rate 0.1 fixed.",
+      "options": [
+        {
+          "id": "gb.classification.clean.v1.eta-0.1.budget-1",
+          "label": "1 correction stage"
+        },
+        {
+          "id": "gb.classification.clean.v1.eta-0.1.budget-2",
+          "label": "2 correction stages"
+        },
+        {
+          "id": "gb.classification.clean.v1.eta-0.1.budget-4",
+          "label": "4 correction stages"
+        }
+      ],
+      "control": "estimator_budget"
+    },
+    {
+      "lab": 0,
+      "title": "Can another small correction improve the prediction?",
+      "label": "Number of correction stages",
+      "help": "Boosting adds trees in sequence. Compare training and development loss; more stages can reduce training loss without improving new-data performance.",
+      "fixed": "Keep the data, tree settings and learning rate 0.1 fixed.",
+      "options": [
+        {
+          "id": "gb.regression.clean.v1.eta-0.1.budget-1",
+          "label": "1 correction stage"
+        },
+        {
+          "id": "gb.regression.clean.v1.eta-0.1.budget-2",
+          "label": "2 correction stages"
+        },
+        {
+          "id": "gb.regression.clean.v1.eta-0.1.budget-4",
+          "label": "4 correction stages"
+        }
+      ],
+      "control": "estimator_budget"
+    }
+  ],
+  "mlp": [
+    {
+      "lab": 0,
+      "title": "What does an activation change?",
+      "label": "Hidden-unit activation",
+      "help": "An activation transforms a weighted sum before the next layer uses it. ReLU keeps positive sums and replaces negative ones with zero. These are supplied weights, not new training.",
+      "fixed": "Keep one hidden unit, the input and weights fixed.",
+      "options": [
+        {
+          "id": "nn-e1.manual.h1.identity.base.v1",
+          "label": "Pass the weighted sum through unchanged"
+        },
+        {
+          "id": "nn-e1.manual.h1.relu.base.v1",
+          "label": "Apply ReLU: replace negative sums with zero"
+        }
+      ],
+      "control": "comparison"
+    },
+    {
+      "lab": 1,
+      "title": "How big should one learning step be?",
+      "label": "Learning rate",
+      "help": "The learning rate scales the gradient update. A bigger step need not reduce loss more; it can overshoot.",
+      "fixed": "Keep the starting weights, observation, logistic activation and zero penalty fixed.",
+      "options": [
+        {
+          "id": "nn-e2.step.logistic.eta-0.1.alpha-0.0.smooth.v1",
+          "label": "Learning rate 0.1"
+        },
+        {
+          "id": "nn-e2.step.logistic.eta-3.0.alpha-0.0.smooth.v1",
+          "label": "Learning rate 3"
+        }
+      ],
+      "control": "comparison"
+    },
+    {
+      "lab": 0,
+      "title": "What does a wider hidden layer add?",
+      "label": "Hidden-layer width",
+      "help": "Each hidden unit computes its own transformed weighted sum. Adding a unit increases capacity; it does not guarantee a better model. The supplied network weights also differ between these examples.",
+      "fixed": "Keep the same input and ReLU activation; compare two supplied architectures, not a one-weight intervention.",
+      "options": [
+        {
+          "id": "nn-e1.manual.h1.relu.base.v1",
+          "label": "1 hidden unit"
+        },
+        {
+          "id": "nn-e1.manual.h2.relu.base.v1",
+          "label": "2 hidden units"
+        }
+      ],
+      "control": "comparison"
+    },
+    {
+      "lab": 1,
+      "title": "Should training continue?",
+      "label": "Training duration",
+      "help": "An epoch is one pass through training data. Compare training and validation loss before deciding which checkpoint to keep.",
+      "fixed": "Keep the data, activation, learning rate 0.05 and penalty zero fixed.",
+      "options": [
+        {
+          "id": "nn-e2.nn.training.logistic.eta-0.05.alpha-0.0.v1.epoch-8",
+          "label": "8 training epochs"
+        },
+        {
+          "id": "nn-e2.nn.training.logistic.eta-0.05.alpha-0.0.v1.epoch-32",
+          "label": "32 training epochs"
+        }
+      ],
+      "control": "comparison"
+    },
+    {
+      "lab": 0,
+      "title": "Can a penalty help a network generalise?",
+      "label": "Coefficient penalty",
+      "help": "A penalty discourages large weights. Compare validation results; smaller weights alone do not prove a better future model.",
+      "fixed": "Keep the data, ReLU activation, learning rate 0.05 and 32 epochs fixed.",
+      "options": [
+        {
+          "id": "nn-e1.nn.training.relu.eta-0.05.alpha-0.0.v1.epoch-32",
+          "label": "No coefficient penalty"
+        },
+        {
+          "id": "nn-e1.nn.training.relu.eta-0.05.alpha-0.4.v1.epoch-32",
+          "label": "Penalty strength 0.4"
+        }
+      ],
+      "control": "comparison"
+    }
+  ],
+  "module": [
+    {
+      "lab": 0,
+      "title": "Could this input be known when we predict?",
+      "label": "When the feature becomes available",
+      "help": "Future information can make an evaluation look excellent while making the model unusable at prediction time.",
+      "fixed": "Keep the housing rows and holdout split fixed.",
+      "options": [
+        {
+          "id": "EV-E1.split.housing-units.available.holdout",
+          "label": "Use information available at prediction time"
+        },
+        {
+          "id": "EV-E1.split.housing-units.future.holdout",
+          "label": "Use information recorded after the prediction"
+        }
+      ],
+      "control": "comparison"
+    },
+    {
+      "lab": 0,
+      "title": "Are we evaluating on genuinely separate examples?",
+      "label": "Evaluation split",
+      "help": "If the same rows appear in both sets, the validation score no longer measures performance on unfamiliar examples.",
+      "fixed": "Keep the housing data and available features fixed.",
+      "options": [
+        {
+          "id": "EV-E1.split.housing-units.available.holdout",
+          "label": "Separate training and validation rows"
+        },
+        {
+          "id": "EV-E1.split.housing-units.available.overlap",
+          "label": "Reuse rows across training and validation"
+        }
+      ],
+      "control": "comparison"
+    },
+    {
+      "lab": 1,
+      "title": "How does a threshold turn scores into decisions?",
+      "label": "Decision threshold",
+      "help": "A higher threshold requires more confidence before predicting the positive class. Probabilities and ranking stay fixed; decisions and mistake counts may change.",
+      "fixed": "Use the same balanced set of observed labels and supplied probabilities.",
+      "options": [
+        {
+          "id": "EV-E2.balanced.t0_5",
+          "label": "0.5: predict positive at 50%"
+        },
+        {
+          "id": "EV-E2.balanced.t0_75",
+          "label": "0.75: predict positive at 75%"
+        }
+      ],
+      "control": "threshold"
+    },
+    {
+      "lab": 1,
+      "title": "How does a threshold turn scores into decisions?",
+      "label": "Decision threshold",
+      "help": "A higher threshold requires more confidence before predicting the positive class. Probabilities and ranking stay fixed; decisions and mistake counts may change.",
+      "fixed": "Use the same balanced set of observed labels and supplied probabilities.",
+      "options": [
+        {
+          "id": "EV-E2.balanced.t0_5",
+          "label": "0.5: predict positive at 50%"
+        },
+        {
+          "id": "EV-E2.balanced.t0_75",
+          "label": "0.75: predict positive at 75%"
+        }
+      ],
+      "control": "threshold"
+    },
+    {
+      "lab": 0,
+      "title": "Can a model fit too little or too much?",
+      "label": "Model flexibility",
+      "help": "Compare training and development errors. Too little flexibility may miss a pattern; too much may follow noise.",
+      "fixed": "Keep the data and development-based selection rule fixed.",
+      "options": [
+        {
+          "id": "EV-E1.capacity.low.development",
+          "label": "Low flexibility"
+        },
+        {
+          "id": "EV-E1.capacity.middle.development",
+          "label": "Medium flexibility"
+        },
+        {
+          "id": "EV-E1.capacity.high.development",
+          "label": "High flexibility"
+        }
+      ],
+      "control": "comparison"
+    },
+    {
+      "lab": 0,
+      "title": "Could this input be known when we predict?",
+      "label": "When the feature becomes available",
+      "help": "Future information can make an evaluation look excellent while making the model unusable at prediction time.",
+      "fixed": "Keep the housing rows and holdout split fixed.",
+      "options": [
+        {
+          "id": "EV-E1.split.housing-units.available.holdout",
+          "label": "Use information available at prediction time"
+        },
+        {
+          "id": "EV-E1.split.housing-units.future.holdout",
+          "label": "Use information recorded after the prediction"
+        }
+      ],
+      "control": "comparison"
+    }
+  ],
+  "model-selection": [
+    {
+      "lab": 0,
+      "title": "Does the model improve on a simple baseline?",
+      "label": "Prediction rule",
+      "help": "A baseline is a simple rule to beat. Compare the same validation rows with the same error metric.",
+      "fixed": "Keep the housing task and declared evaluation rows fixed.",
+      "options": [
+        {
+          "id": "MS-E1-REGRESSION-MEAN-BASELINE",
+          "label": "Predict the training mean"
+        },
+        {
+          "id": "MS-E1-REGRESSION-MULTIPLE-LINEAR",
+          "label": "Use multiple linear regression"
+        }
+      ],
+      "control": "comparison"
+    },
+    {
+      "lab": 0,
+      "title": "Does extra flexibility help on the same validation houses?",
+      "label": "Model family",
+      "help": "Compare a straight-line model with one that includes squared and interaction inputs. Read the validation result, not just the training fit.",
+      "fixed": "Keep the prediction task and evaluation rows fixed; model capacity changes.",
+      "options": [
+        {
+          "id": "MS-E1-REGRESSION-MULTIPLE-LINEAR",
+          "label": "Straight-line model"
+        },
+        {
+          "id": "MS-E1-REGRESSION-POLYNOMIAL-DEGREE-2",
+          "label": "Degree-2 polynomial model"
+        }
+      ],
+      "control": "comparison"
+    },
+    {
+      "lab": 0,
+      "title": "Are these two scores comparable?",
+      "label": "Rows being compared",
+      "help": "Two scores cannot fairly rank models when they use different examples. A matching row count is not enough.",
+      "fixed": "Keep the regression task and scoring objective fixed.",
+      "options": [
+        {
+          "id": "MS-E1-REGRESSION-MULTIPLE-LINEAR",
+          "label": "Compare the agreed validation rows"
+        },
+        {
+          "id": "MS-E1-REJECT-MISMATCHED-VALIDATION-ROWS",
+          "label": "Compare scores from different validation rows"
+        }
+      ],
+      "control": "comparison"
+    },
+    {
+      "lab": 1,
+      "title": "Which data may guide a decision threshold?",
+      "label": "Information used for selection",
+      "help": "Development results guide choices. Final-test data should estimate performance after choices are frozen.",
+      "fixed": "Compare selection policies; this is a workflow contrast, not a fitted parameter change.",
+      "options": [
+        {
+          "id": "MS-E2-DEVELOPMENT-THRESHOLD-COST-LEGAL",
+          "label": "Choose the threshold using development data"
+        },
+        {
+          "id": "MS-E2-REJECT-SELECT-ON-TEST",
+          "label": "Choose using final-test feedback"
+        }
+      ],
+      "control": "comparison"
+    },
+    {
+      "lab": 1,
+      "title": "Can related examples leak across the split?",
+      "label": "Group separation",
+      "help": "Different rows can still describe the same customer or group. Keeping groups separate tests transfer to unfamiliar groups.",
+      "fixed": "Compare validation policies on the declared grouped task; no test targets are exposed.",
+      "options": [
+        {
+          "id": "MS-E2-NESTED-GROUPED-CV-LEGAL",
+          "label": "Keep related groups separate"
+        },
+        {
+          "id": "MS-E2-REJECT-ROW-WISE-SPLIT-GROUP-OVERLAP",
+          "label": "Let related groups appear on both sides"
+        }
+      ],
+      "control": "comparison"
+    },
+    {
+      "lab": 1,
+      "title": "When is it time to open the final test?",
+      "label": "Workflow stage",
+      "help": "Development is for choosing. The final test is for a one-time evaluation of a frozen choice, not another tuning round.",
+      "fixed": "No final-test targets or scores are shown in this playground.",
+      "options": [
+        {
+          "id": "MS-E2-GRID-SEARCH-DEV-LEGAL",
+          "label": "Make choices using development results"
+        },
+        {
+          "id": "MS-E2-FINAL-TEST-EVALUATION-ONCE",
+          "label": "Freeze choices before final evaluation"
+        }
+      ],
+      "control": "comparison"
+    }
+  ]
+}

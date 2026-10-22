@@ -52,6 +52,14 @@ describe("independent mastery learner experience",()=>{
   localStorage.setItem(key,JSON.stringify(canonical));localStorage.setItem(MASTERY_DRAFT_KEY,JSON.stringify({...newDraft(),phase:"submitted",responses:answers,attemptId:"recorded",submittedAt:"2026-10-15T00:00:00Z"}));render(<MasteryLesson/>);expect(screen.getByRole("button",{name:"Review responses before submitting"})).toBeInTheDocument();expect(screen.queryByRole("table",{name:"Performance by competency"})).not.toBeInTheDocument();
  });
  it("provides accessible groups, named progress and history, and honest storage failure feedback",()=>{
-  vi.spyOn(Storage.prototype,"setItem").mockImplementation(()=>{throw new Error("unavailable")});render(<MasteryLesson/>);expect(screen.getAllByRole("group")).toHaveLength(24);expect(screen.getByRole("progressbar")).toHaveAccessibleName("Responses entered: 0 of 24");expect(screen.getByRole("alert")).toHaveTextContent("cannot be saved reliably");expect(screen.getByRole("button",{name:"Review responses before submitting"})).toBeEnabled();
+  vi.spyOn(Storage.prototype,"setItem").mockImplementation(()=>{throw new Error("unavailable")});render(<MasteryLesson/>);expect(screen.getAllByRole("group").filter(group=>group.tagName==="FIELDSET")).toHaveLength(24);expect(screen.getByRole("progressbar")).toHaveAccessibleName("Responses entered: 0 of 24");expect(screen.getByRole("alert")).toHaveTextContent("cannot be saved reliably");expect(screen.getByRole("button",{name:"Review responses before submitting"})).toBeEnabled();
  });
+});
+
+it("offers unanswered question navigation without submitting or changing assessment policy",()=>{
+ render(<MasteryLesson/>);
+ const nav=screen.getByRole("navigation",{name:"Assessment question navigator"});
+ expect(within(nav).getAllByRole("link")).toHaveLength(24);
+ expect(within(nav).getByRole("link",{name:"Q01: unanswered"})).toHaveAttribute("href","#mastery-q01");
+ expect(screen.queryByRole("button",{name:"Submit assessment"})).not.toBeInTheDocument();
 });

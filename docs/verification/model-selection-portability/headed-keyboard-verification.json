@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "sourceBuildCommit": "59e84ec9c99a48e07803a3a7b8f91bf9129a289d",
+  "environment": "Local macOS ARM64, headed ChatGPT in-app browser, production Next build at 127.0.0.1:3031",
+  "method": "Accessibility-native key input: focus selector and Down opens popup, Down selects next, Return commits; no selectOption or DOM mutation used",
+  "experiments": [
+    {
+      "id": "MS-E1",
+      "before": "MS-E1-REGRESSION-MEAN-BASELINE",
+      "after": "MS-E1-REGRESSION-MULTIPLE-LINEAR",
+      "reloadRestoresSelection": true
+    },
+    {
+      "id": "MS-E2",
+      "before": "MS-E2-NESTED-GROUPED-CV-LEGAL",
+      "after": "MS-E2-GRID-SEARCH-DEV-LEGAL",
+      "reloadRestoresSelection": true
+    }
+  ],
+  "evidence": [
+    "canonical-headed-e1.ax.txt",
+    "canonical-headed-e1.png",
+    "canonical-headed-e2.ax.txt",
+    "canonical-headed-e2-restored.ax.txt",
+    "ML-Mastery-Native-Keyboard-Check.png"
+  ],
+  "limits": "AX inspection/native key input is not a screen-reader test. Headless CI checks Tab focus and functional selection separately."
+}

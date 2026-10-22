@@ -1,6 +1,6 @@
 import { bounded, bytes, canonical, gradeFamily, keys, record, validDraftAnswer, type Answer, type Family } from "../../python/foundation/contracts";
 import type { StoragePort } from "../../python/foundation/progress";
-import { ASSESSMENT, configFor, CONTENT, FIXTURES, FORMS, LABS, MASTERY_AVAILABLE, OBJECTIVES, POLICY, PRACTICE, PREDICTIONS, EXPLANATIONS, response, score, SCOPE } from "./catalog";
+import { ASSESSMENT, LEGACY_ASSESSMENT, LEGACY_FORMS, configFor, CONTENT, FIXTURES, FORMS, LABS, MASTERY_AVAILABLE, OBJECTIVES, POLICY, PRACTICE, PREDICTIONS, EXPLANATIONS, response, score, SCOPE } from "./catalog";
 import { LESSONS } from "./teaching";
 
 export const STORAGE_KEY = "ml-math-lab:supervised:logistic:full:v1";
@@ -78,17 +78,18 @@ export function retry(state: State, id: string): State {
 const identity = (value: unknown): value is string => typeof value === "string" && /^[a-zA-Z0-9_-]{1,128}$/.test(value);
 const integer = (value: unknown, max: number): value is number => typeof value === "number" && Number.isInteger(value) && value >= 0 && value <= max;
 function validSummary(value: unknown): value is Summary {
-  if (!record(value) || !keys(value, ["id", "form", "at", "assessment", "score", "outcomes", "critical", "passed"]) || !identity(value.id) || !integer(value.form, 2) || typeof value.at !== "string" || !Number.isFinite(Date.parse(value.at)) || value.assessment !== ASSESSMENT || !Array.isArray(value.outcomes) || value.outcomes.length !== 24 || !value.outcomes.every(item => typeof item === "boolean")) return false;
+  if (!record(value) || !keys(value, ["id", "form", "at", "assessment", "score", "outcomes", "critical", "passed"]) || !identity(value.id) || !integer(value.form, 2) || typeof value.at !== "string" || !Number.isFinite(Date.parse(value.at)) || ![ASSESSMENT, LEGACY_ASSESSMENT].includes(value.assessment as string) || !Array.isArray(value.outcomes) || value.outcomes.length !== 24 || !value.outcomes.every(item => typeof item === "boolean")) return false;
   const critical = OBJECTIVES.filter((_, index) => index % 4 === 1 && !(value.outcomes as boolean[])[index]);
   const count = value.outcomes.filter(Boolean).length;
   return value.score === count && canonical(value.critical) === canonical(critical) && value.passed === (count >= 20 && critical.length === 0);
 }
-function validDraft(value: unknown): value is Draft {
-  if (!record(value) || !keys(value, ["id", "form", "phase", "answers", "result"]) || !identity(value.id) || !integer(value.form, 2) || !["active", "review", "results"].includes(value.phase as string) || !Array.isArray(value.answers) || value.answers.length !== 24 || !value.answers.every((raw, index) => validPacked(raw, FORMS[value.form as number][index]))) return false;
+function validDraft(value: unknown, legacy = false): value is Draft {
+  const forms = legacy || record(value) && record(value.result) && value.result.assessment === LEGACY_ASSESSMENT ? LEGACY_FORMS : FORMS;
+  if (!record(value) || !keys(value, ["id", "form", "phase", "answers", "result"]) || !identity(value.id) || !integer(value.form, 2) || !["active", "review", "results"].includes(value.phase as string) || !Array.isArray(value.answers) || value.answers.length !== 24 || !value.answers.every((raw, index) => validPacked(raw, forms[value.form as number][index]))) return false;
   if (value.phase !== "results") return value.result === null;
   if (!validSummary(value.result) || value.result.id !== value.id || value.result.form !== value.form) return false;
   try {
-    const result = score(value.form, value.answers.map(raw => unpack(raw as string)));
+    const result = score(value.form, value.answers.map(raw => unpack(raw as string)), forms);
     return canonical(result) === canonical({ score: value.result.score, outcomes: value.result.outcomes, critical: value.result.critical, passed: value.result.passed });
   } catch { return false; }
 }
@@ -96,9 +97,9 @@ function validCredit(value: unknown, lab: number): value is Credit {
   if (!record(value) || !keys(value, ["from", "config", "prediction", "reason"]) || typeof value.from !== "string" || typeof value.config !== "string" || value.from === value.config || !PREDICTIONS.includes(value.prediction as string)) return false;
   try { configFor(lab, value.from); return value.reason === configFor(lab, value.config).expected.reason; } catch { return false; }
 }
-export function validateState(value: unknown): value is State {
+export function validateState(value: unknown, legacy = false): value is State {
   try {
-    if (!bounded(value, 262144) || !record(value) || !keys(value, ["schema", "scope", "content", "policy", "assessment", "fixtures", "revision", "practice", "labs", "transfers", "draft", "latest", "history", "mastery"]) || value.schema !== 1 || value.scope !== SCOPE || value.content !== CONTENT || value.policy !== POLICY || value.assessment !== ASSESSMENT || value.fixtures !== FIXTURES || !integer(value.revision, 1e9) || !Array.isArray(value.practice) || value.practice.length !== 24 || !Array.isArray(value.labs) || value.labs.length !== 2 || !Array.isArray(value.transfers) || value.transfers.length !== 6 || !value.transfers.every(item => ["", "boundary", "shortcut"].includes(item)) || !validDraft(value.draft) || !(value.latest === null || validDraft(value.latest) && value.latest.phase === "results") || !Array.isArray(value.history) || value.history.length > 20 || !value.history.every(validSummary) || !(value.mastery === null || validSummary(value.mastery) && value.mastery.passed)) return false;
+    if (!bounded(value, 262144) || !record(value) || !keys(value, ["schema", "scope", "content", "policy", "assessment", "fixtures", "revision", "practice", "labs", "transfers", "draft", "latest", "history", "mastery"]) || value.schema !== 1 || value.scope !== SCOPE || value.content !== CONTENT || value.policy !== POLICY || value.assessment !== (legacy ? LEGACY_ASSESSMENT : ASSESSMENT) || value.fixtures !== FIXTURES || !integer(value.revision, 1e9) || !Array.isArray(value.practice) || value.practice.length !== 24 || !Array.isArray(value.labs) || value.labs.length !== 2 || !Array.isArray(value.transfers) || value.transfers.length !== 6 || !value.transfers.every(item => ["", "boundary", "shortcut"].includes(item)) || !validDraft(value.draft, legacy) || !(value.latest === null || validDraft(value.latest) && value.latest.phase === "results") || !Array.isArray(value.history) || value.history.length > 20 || !value.history.every(validSummary) || !(value.mastery === null || validSummary(value.mastery) && value.mastery.passed)) return false;
     if (!value.practice.every((item, index) => {
       if (!record(item) || !keys(item, ["variant", "counts", "cycle", "answers", "proof", "last", "reviewed", "recall"]) || !integer(item.variant, 1) || !Array.isArray(item.counts) || item.counts.length !== 2 || !item.counts.every(count => integer(count, 2)) || !integer(item.cycle, 1e6) || !validPacked(item.answers, PRACTICE[item.variant][index]) || ![null, true, false].includes(item.last as null) || typeof item.reviewed !== "boolean" || !["", "boundary", "shortcut"].includes(item.recall as string)) return false;
       if (item.proof === null) return item.last !== true;
@@ -129,7 +130,13 @@ export function load(raw: string | null): State {
   if (raw === null) return emptyState();
   if (bytes(raw) > 262144) throw Error("Unsupported Logistic storage size.");
   const parsed: unknown = JSON.parse(raw);
-  if (!validateState(parsed) || canonical(parsed) !== raw) throw Error("Unsupported Logistic version or encoding; preserve original bytes.");
+  const legacy = record(parsed) && parsed.assessment === LEGACY_ASSESSMENT;
+  if (!validateState(parsed, legacy) || canonical(parsed) !== raw) throw Error("Unsupported Logistic version or encoding; preserve original bytes.");
+  if (legacy) {
+    let suffix = 0;
+    while (parsed.history.some(item => item.id === `v2-${parsed.revision}-${suffix}`) || parsed.mastery?.id === `v2-${parsed.revision}-${suffix}`) suffix++;
+    return { ...parsed, assessment: ASSESSMENT, draft: newDraft(`v2-${parsed.revision}-${suffix}`, 0) };
+  }
   return parsed.draft.phase === "review" ? { ...parsed, draft: { ...parsed.draft, phase: "active" } } : parsed;
 }
 export class ModuleStore {
@@ -140,7 +147,16 @@ export class ModuleStore {
   private raw: string | null = null;
   constructor(public storage: StoragePort) {}
   hydrate() {
-    try { this.raw = this.storage.getItem(STORAGE_KEY); this.state = load(this.raw); }
+    try {
+      this.raw = this.storage.getItem(STORAGE_KEY); this.state = load(this.raw);
+      if (this.raw !== null && (JSON.parse(this.raw) as State).assessment === LEGACY_ASSESSMENT) {
+        const archiveKey = `${STORAGE_KEY}:assessment-v1-archive:${this.state.revision}`;
+        const prior = this.storage.getItem(archiveKey);
+        if (prior !== null && prior !== this.raw) throw Error("Existing historical archive differs; preserve both versions.");
+        if (prior === null) this.storage.setItem(archiveKey, this.raw);
+        this.warning = "Assessment version 2 starts a fresh attempt. Earlier results remain labeled version 1; the complete earlier saved state, including any unfinished attempt, is archived unchanged on this device.";
+      }
+    }
     catch { this.writable = false; this.warning = "Earlier Logistic storage is unsupported or unavailable. It is preserved; this visit is in memory only, not saved."; }
     this.loaded = true;
     return this.state;

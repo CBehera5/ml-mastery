@@ -2,6 +2,11 @@ name: Task 015.12 Independent Verification
 
 on:
   workflow_dispatch:
+    inputs:
+      portability_only:
+        description: Audit the proposed fixture without freezing or running acceptance
+        type: boolean
+        default: false
   push:
     branches: [main]
 
@@ -18,7 +23,36 @@ env:
   TASK01512_EVIDENCE: ${{ github.workspace }}/.task01512-evidence
 
 jobs:
+  portability:
+    name: Canonical macOS ARM64 KNN ranking audit
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: 3.13.16
+      - name: Install the approved numerical profile
+        run: python -m pip install --disable-pip-version-check -r docs/verification/multilayer-perceptrons/requirements-clean-verification.txt
+      - name: Audit all KNN candidates and partitions without writing frozen files
+        env:
+          MPLCONFIGDIR: ${{ runner.temp }}/matplotlib
+          OMP_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+          VECLIB_MAXIMUM_THREADS: "1"
+        run: python work/audit-ms-e2-portability.py --fixture proposal --expect docs/verification/model-selection-portability/proposal-expectation.json --out .task01512-evidence/portability
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: task-015-12-portability-macos-15-${{ github.run_id }}
+          path: .task01512-evidence/portability/
+          include-hidden-files: true
+          retention-days: 14
   frontend:
+    if: github.event.inputs.portability_only != 'true'
     name: Frontend tests, typecheck and production build
     runs-on: macos-15
     timeout-minutes: 90
@@ -68,6 +102,8 @@ jobs:
           include-hidden-files: true
 
   numerical-python:
+    if: github.event.inputs.portability_only != 'true'
+    needs: [portability]
     name: Python regressions, frozen references and fresh notebook kernels
     runs-on: macos-15
     timeout-minutes: 90
@@ -108,16 +144,7 @@ jobs:
           NUMEXPR_NUM_THREADS: "1"
         run: |
           set -euo pipefail
-          if PYTHONPATH=python MPLCONFIGDIR="$MPLCONFIGDIR" LOKY_MAX_CPU_COUNT=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 python work/freeze-task-015-12.py --check > "$TASK01512_EVIDENCE/frozen-reference-check.log" 2>&1; then
-            cat "$TASK01512_EVIDENCE/frozen-reference-check.log"
-          else
-            cat "$TASK01512_EVIDENCE/frozen-reference-check.log"
-            PYTHONPATH=python MPLCONFIGDIR="$MPLCONFIGDIR" LOKY_MAX_CPU_COUNT=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 python work/freeze-task-015-12.py --freeze 2>&1 | tee "$TASK01512_EVIDENCE/regenerated-freeze.log"
-            git diff -- docs/verification/model-selection > "$TASK01512_EVIDENCE/regenerated-freeze.diff"
-            cat "$TASK01512_EVIDENCE/regenerated-freeze.diff" >> "$TASK01512_EVIDENCE/frozen-reference-check.log"
-            git restore --worktree -- docs/verification/model-selection
-            exit 1
-          fi
+          PYTHONPATH=python MPLCONFIGDIR="$MPLCONFIGDIR" LOKY_MAX_CPU_COUNT=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 python work/freeze-task-015-12.py --check 2>&1 | tee "$TASK01512_EVIDENCE/frozen-reference-check.log"
       - name: Execute notebook twice in fresh kernels
         timeout-minutes: 25
         env:
@@ -134,6 +161,7 @@ jobs:
           include-hidden-files: true
 
   browser:
+    if: github.event.inputs.portability_only != 'true'
     name: Production preview, experiment, keyboard and 320px browser checks
     runs-on: macos-15
     needs: [frontend]
@@ -172,6 +200,9 @@ jobs:
           done
           test "$ready" = 1
           PLAYWRIGHT_PACKAGE_DIR="$RUNNER_TEMP/playwright/node_modules/playwright" MODEL_SELECTION_PREVIEW_URL="http://127.0.0.1:3030" node work/task-015-12-browser-smoke.cjs 2>&1 | tee "$TASK01512_EVIDENCE/browser-smoke.log"
+          PLAYWRIGHT_PACKAGE_DIR="$RUNNER_TEMP/playwright/node_modules/playwright" PHASE21_PREVIEW_URL="http://127.0.0.1:3030" PHASE21_EVIDENCE="$TASK01512_EVIDENCE" node work/phase-2-1-browser-smoke.cjs 2>&1 | tee "$TASK01512_EVIDENCE/phase21-browser-smoke.log"
+          PLAYWRIGHT_PACKAGE_DIR="$RUNNER_TEMP/playwright/node_modules/playwright" PHASE21_PREVIEW_URL="http://127.0.0.1:3030" PHASE21_EVIDENCE="$TASK01512_EVIDENCE" node work/phase-3-2a-browser-smoke.cjs 2>&1 | tee "$TASK01512_EVIDENCE/phase32-browser-smoke.log"
+          PLAYWRIGHT_PACKAGE_DIR="$RUNNER_TEMP/playwright/node_modules/playwright" PHASE21_PREVIEW_URL="http://127.0.0.1:3030" PHASE21_EVIDENCE="$TASK01512_EVIDENCE" node work/phase-3-2b-browser-smoke.cjs 2>&1 | tee "$TASK01512_EVIDENCE/phase32b-browser-smoke.log"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: always()
         with:

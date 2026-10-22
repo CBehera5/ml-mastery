@@ -1,10 +1,11 @@
+import {experimentGuide} from "../simple-experiment";
 // @vitest-environment jsdom
 import React from "react";
 import "@testing-library/jest-dom/vitest";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
-import { EvaluationAssessment, EvaluationLesson, EvaluationOverview } from "./learning";
-import { FORMS, MASTERY_AVAILABLE, PRACTICE } from "./catalog";
+import { EvaluationAssessment, EvaluationLesson, EvaluationOverview, Graphic, Values } from "./learning";
+import { configurations, FORMS, MASTERY_AVAILABLE, PRACTICE } from "./catalog";
 import { canonical } from "../../python/foundation/contracts";
 import { emptyState, load, serialize, STORAGE_KEY } from "./model";
 beforeEach(() => { localStorage.clear(); });
@@ -34,28 +35,27 @@ it("stores only full-EV practice and preserves prototype and prior module bytes"
   keys.forEach(key => expect(localStorage.getItem(key)).toBe("earlier-evidence"));
   expect(writes.mock.calls.every(([key]) => key === STORAGE_KEY)).toBe(true);
 });
-it("requires prediction, handles wrong predictions, clears stale reveals and renders endpoint alternatives", async () => {
-  await open(3);
-  const config = screen.getByRole("combobox", { name: "Experiment configuration" });
-  fireEvent.change(config, { target: { value: "EV-E2.endpoints.t0" } });
-  expect(screen.getByRole("button", { name: "Reveal frozen outcome" })).toBeDisabled();
-  fireEvent.change(screen.getByRole("combobox", { name: "Your prediction" }), { target: { value: "I expect valid information or better detection/error" } });
-  fireEvent.click(screen.getByRole("button", { name: "Reveal frozen outcome" }));
-  expect(screen.getAllByText("positive infinity").length).toBeGreaterThan(0);
-  expect(screen.getByText(/Selected ROC point: false-positive rate/)).toBeInTheDocument();
-  expect(screen.getByRole("table", { name: /Actual rows, predicted columns/ })).toBeInTheDocument();
-  fireEvent.change(screen.getByRole("combobox", { name: "Supported explanation" }), { target: { value: "threshold-not-retraining" } });
-  fireEvent.click(screen.getByRole("button", { name: "Check experiment explanation" }));
-  expect(screen.getByText("Meaningful interaction demonstrated; not independent mastery.")).toBeInTheDocument();
-  fireEvent.change(config, { target: { value: "EV-E2.no-positives.t1" } });
-  expect(screen.queryByRole("combobox", { name: "Supported explanation" })).not.toBeInTheDocument();
-  expect(screen.getByRole("combobox", { name: "Your prediction" })).toHaveValue("");
-  fireEvent.change(screen.getByRole("combobox", { name: "Your prediction" }), { target: { value: "I expect an undefined or divergent metric" } });
-  fireEvent.click(screen.getByRole("button", { name: "Reveal frozen outcome" }));
-  expect(screen.getAllByText("undefined").length).toBeGreaterThan(0);
-  expect(screen.getByText(/no finite ROC point is drawn/)).toBeInTheDocument();
-  expect(load(localStorage.getItem(STORAGE_KEY)).labs[1].credit).not.toBeNull();
+it("requires prediction, clears stale results, and preserves endpoint rendering separately from the setting control",async()=>{
+ await open(3);const guide=experimentGuide("module",3);
+ fireEvent.click(screen.getByRole("radio",{name:guide.options[1].label}));
+ expect(screen.getByRole("button",{name:"Show the result"})).toBeDisabled();
+ fireEvent.change(screen.getByRole("combobox",{name:"Your prediction"}),{target:{value:"I expect valid information or better detection/error"}});
+ fireEvent.click(screen.getByRole("button",{name:"Show the result"}));
+ expect(screen.getByRole("table",{name:/Actual rows, predicted columns/})).toBeInTheDocument();
+ fireEvent.change(screen.getByRole("combobox",{name:"Supported explanation"}),{target:{value:"threshold-not-retraining"}});
+ fireEvent.click(screen.getByRole("button",{name:"Check my explanation"}));
+ expect(load(localStorage.getItem(STORAGE_KEY)).labs[1].credit).not.toBeNull();
+ fireEvent.click(screen.getByRole("radio",{name:guide.options[0].label}));
+ expect(screen.queryByRole("combobox",{name:"Supported explanation"})).not.toBeInTheDocument();
+ expect(screen.getByRole("combobox",{name:"Your prediction"})).toHaveValue("");
+ cleanup();render(<Graphic lab={1} config={configurations(1).find(c=>c.id==="EV-E2.endpoints.t0")!}/>);render(<Values value={configurations(1).find(c=>c.id==="EV-E2.endpoints.t0")!.expected} label="Endpoint numerical evidence"/>);
+ expect(screen.getAllByText("positive infinity").length).toBeGreaterThan(0);
+ expect(screen.getByText(/Selected ROC point: false-positive rate/)).toBeInTheDocument();
+ cleanup();render(<Graphic lab={1} config={configurations(1).find(c=>c.id==="EV-E2.no-positives.t1")!}/>);render(<Values value={configurations(1).find(c=>c.id==="EV-E2.no-positives.t1")!.expected} label="Missing-positive numerical evidence"/>);
+ expect(screen.getAllByText("undefined").length).toBeGreaterThan(0);
+ expect(screen.getByText(/no finite ROC point is drawn/)).toBeInTheDocument();
 });
+
 it("warns and preserves corrupt storage while still allowing in-memory practice", async () => {
   localStorage.setItem(STORAGE_KEY, "foreign-record"); await open();
   expect(screen.getByRole("alert")).toHaveTextContent("in memory only");

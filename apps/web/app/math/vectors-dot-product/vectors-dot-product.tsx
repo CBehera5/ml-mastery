@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { dotProductTrace } from "@mlmath/runtime";
-import { BetaNav } from "../../components/beta-nav";
+import { PublicNav } from "../../landing/public-nav";
+import { LinearPath } from "../linear-algebra/journey";
 import { useLessonProgress } from "../lesson-progress";
 import { CoreLearning } from "../linear-algebra/core-learning";
 
@@ -51,8 +52,8 @@ export function VectorsDotProductLesson() {
   };
 
   return <main className="math-lesson-page la-page">{storageError&&<p role="alert">Lesson progress is unavailable or unsupported. Existing data is preserved; changes stay in memory until you explicitly reset this lesson.</p>}<a className="la-skip" href="#linear-algebra-content">Skip to lesson content</a>
-    <BetaNav status="Math foundation · Lesson 01" />
-    <header className="math-lesson-hero"><div><p className="eyebrow">Math intuition pathway</p><h1>Vectors turn many features into <em>one prediction.</em></h1><p>Discover why machine learning represents a house as a vector—and how a dot product combines those values with learned importance.</p></div><div className="lesson-meta panel"><span>LESSON OUTCOME</span><strong>Explain, calculate, code, and debug a dot product.</strong><p>About 12 minutes · No prerequisites</p></div></header>
+    <PublicNav active="Math"/><LinearPath current={0}/>
+    <header className="math-lesson-hero"><div><p className="eyebrow">Math intuition pathway</p><h1>Vectors turn many features into <em>one prediction.</em></h1><p>Discover why machine learning represents a house as a vector—and how a dot product combines those values with learned importance.</p></div><div className="lesson-meta panel"><span>LESSON OUTCOME</span><strong>Explain, calculate, code, and debug a dot product.</strong><p>Ordered values and basic multiplication</p></div></header>
 
     <CoreLearning lesson="vectors" />
     <h2 id="existing-house-lab">Existing five-stage house lab</h2>

@@ -480,3 +480,54 @@ footer { max-width:1480px; margin:2.5rem auto 0; padding-top:1.4rem; border-top:
 .integration-page .la-table { width:100%; table-layout:fixed; }
 .integration-page button { white-space:normal; margin:.4rem; }
 .integration-page :focus-visible { outline:3px solid #16794b; outline-offset:3px; }
+
+/* Linear Regression learning-experience refinement. Scoped to this module. */
+.regression-page input[type="radio"],.regression-page input[type="checkbox"] { display:inline-block; width:1.1rem; height:1.1rem; flex:0 0 1.1rem; margin:.15rem 0 0; padding:0; accent-color:var(--teal); }
+.regression-page label:has(>input[type="radio"]),.regression-page label:has(>input[type="checkbox"]) { display:flex; align-items:flex-start; justify-content:flex-start; gap:.65rem; line-height:1.6; padding:.55rem 0; font-size:1rem; }
+.regression-page textarea { display:block; width:100%; min-height:6rem; margin:.5rem 0 1rem; padding:.8rem; border:1px solid var(--line); border-radius:9px; font:inherit; resize:vertical; }
+.regression-lesson-hero { margin:1.5rem auto; grid-template-columns:minmax(0,1fr) minmax(230px,.5fr); gap:1.5rem; }
+.regression-lesson-hero h1 { font-size:clamp(2rem,3.4vw,3rem); line-height:1.12; margin:.5rem 0; }
+.regression-outcome strong { font-size:1.05rem; }
+.regression-page .why-story { grid-template-columns:1fr; }
+.regression-page .why-story:has(.why-vocabulary) { grid-template-columns:1.25fr .75fr; }
+.regression-page .why-story p:not(.eyebrow),.regression-page .why-suitability p,.regression-page .implementation-step>p:not(.eyebrow),.regression-page .project-stage>p,.regression-page .mastery-question-text { font-size:1rem; line-height:1.75; max-width:72ch; }
+.regression-page summary { cursor:pointer; font-weight:700; padding:.65rem 0; }
+.regression-page details { min-width:0; }
+.regression-page [id] { scroll-margin-top:1rem; }
+.regression-page .python-code { font-size:.9rem; }
+.regression-page .equation-explorer { border:1px solid var(--line); border-radius:12px; padding:1rem; }
+.regression-page .regression-lab>section { display:grid; gap:.65rem; }
+.regression-page .mastery-progress { position:sticky; top:0; z-index:2; background:var(--surface); padding:.8rem; border:1px solid var(--line); }
+.regression-page .assessment-question-nav { display:flex; flex-wrap:wrap; gap:.5rem; }
+.regression-page .assessment-question-nav p { flex-basis:100%; }
+.regression-page .assessment-question-nav a { padding:.5rem; border:1px solid var(--line); border-radius:6px; color:var(--teal-dark); }
+.regression-page .project-stage[hidden] { display:none; }
+@media(max-width:900px){.regression-lesson-hero{grid-template-columns:1fr}.regression-outcome{padding:.8rem}.regression-page .why-story:has(.why-vocabulary){grid-template-columns:1fr}}
+
+.regression-page .lesson-section-nav { display:flex; flex-wrap:wrap; gap:.5rem 1rem; padding:.7rem 0; border-block:1px solid var(--line); font-size:.9rem; }
+.regression-page .lesson-section-nav a { color:var(--teal-dark); }
+.regression-page .project-bridge nav a[aria-current="step"] { font-weight:800; text-decoration-thickness:3px; }
+
+.regression-page .mastery-assessment fieldset[id] { scroll-margin-top:8rem; }
+
+/* Existing V1 algorithm paths: presentation only, without changing Python foundations. */
+.algorithm-path { font-size:1rem; }
+.algorithm-path .module-breadcrumb { display:flex; flex-wrap:wrap; gap:.5rem; margin:.6rem 0; }
+.algorithm-path .module-index { margin:.5rem 0 1rem; border:1px solid #687b99; border-radius:8px; padding:.5rem .8rem; }
+.algorithm-path .module-index summary,.algorithm-path .algorithm-recall summary { cursor:pointer; font-weight:700; padding:.4rem 0; }
+.algorithm-path .module-index nav { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin:.6rem 0; }
+.algorithm-path .module-index nav a { padding:.45rem; }
+.algorithm-path .algorithm-section-nav { padding:.8rem 0; border-block:1px solid #687b99; }
+.algorithm-path .algorithm-recall { padding:.6rem 1rem; border-left:3px solid #9fcfff; }
+.algorithm-path .algorithm-experiment { border:0; padding:0; min-width:0; }
+.algorithm-path .algorithm-experiment>legend { padding:.5rem 0; font-weight:700; }
+.algorithm-path .worked-example-note { border-left:3px solid #ffd47a; padding:.7rem 1rem; }
+.algorithm-path :is(#lesson-context,#experiment,#lesson-mathematics,#lesson-python,#lesson-practice) { scroll-margin-top:1rem; }
+.algorithm-path label:has(>input[type="radio"]),.algorithm-path label:has(>input[type="checkbox"]) { display:flex; align-items:flex-start; gap:.65rem; }
+.algorithm-path input[type="radio"],.algorithm-path input[type="checkbox"] { display:inline-block; flex:0 0 20px; width:20px; height:20px; margin:.2rem 0 0; padding:0; }
+.algorithm-path p { max-width:78ch; }
+@media(max-width:600px){.algorithm-path .module-index nav{grid-template-columns:1fr}}
+
+/* Math choice controls must not inherit full-width text-input sizing. */
+:is(.algebra-page,.la-page,.derivatives-topic,.integration-page) input:is([type=radio],[type=checkbox]) { display:inline-block; width:1.1rem; height:1.1rem; min-width:1.1rem; flex:0 0 1.1rem; padding:0; margin:.25rem 0 0; accent-color:var(--teal); }
+:is(.algebra-page,.la-page,.derivatives-topic,.integration-page) label:has(>input:is([type=radio],[type=checkbox])) { display:flex; align-items:flex-start; justify-content:flex-start; gap:.65rem; min-width:0; font-size:1rem; line-height:1.6; }

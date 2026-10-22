@@ -1,3 +1,4 @@
+import {editorialMetadata} from "../../experience/editorial-metadata";
 import { ModelSelectionOverview } from "./learning";
-export const metadata = { title: "Model Selection & Comparison | ML Mastery" };
+export const metadata = editorialMetadata("/supervised/model-selection");
 export default function Page() { return <ModelSelectionOverview/>; }

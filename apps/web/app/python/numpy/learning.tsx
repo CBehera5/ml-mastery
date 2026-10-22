@@ -1,12 +1,17 @@
 "use client";
+import {EquationReader} from "../../experience/equation-literacy/equation-reader";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { BetaNav } from "../../components/beta-nav";
+import { PublicNav } from "../../landing/public-nav";
+import {PathwayFooter} from "../../experience/pathway";
+import shared from "../../experience/pathway.module.css";
+import {PythonCards,PythonReflection,PythonNext,lessonRoute} from "../journey-components";
+import {PYTHON_JOURNEYS} from "../journey";
 import { AnswerInput } from "../foundation/learning";
 import { validResponse, type Answer, type Family } from "../foundation/contracts";
 import { Outcome } from "./outcome";
 import { CONCEPT_NOTES } from "./teaching";
-import styles from "../foundation/lesson.module.css";
+import styles from "../journey.module.css";
 import { ACTIVITIES, ACTIVITY_REASONS, activityPredictions, ASSESSMENT, INDEPENDENT_FORMS, LESSONS, MASTERY_AVAILABLE, PRACTICE_FORMS, referenceCase as workedCase } from "./catalog";
 import { alternate, changeActivity, checkActivity, confirmAttempt, emptyState, familyResponse, lessonComplete, MASTERY, ModuleStore, practiceSubmit, recover, resetLesson, retry, type State } from "./model";
 
@@ -33,18 +38,15 @@ function useModule() {
   }
   return { store, state, setState, loaded, message, setMessage, act };
 }
-function Nav() {
-  return <nav aria-label="NumPy navigation"><Link href="/python/numpy">NumPy overview</Link>{LESSONS.map((lesson, index) => <Link key={lesson.slug} href={`/python/numpy/${lesson.slug}`}>{lesson.slug.toUpperCase()}</Link>)}<Link href="/python/numpy/mastery">Independent assessment</Link></nav>;
-}
-function Frame({ children, message, title }: { children: React.ReactNode; message: string; title: string }) {
-  return <main className={styles.page}><BetaNav status="Python NumPy"/><a href="#numpy-content">Skip to NumPy content</a><Nav/><header id="numpy-content"><h1>{title}</h1></header>{message && <p role="alert">{message}</p>}{children}</main>;
-}
+function Nav({current}:{current?:number}) {return <details className={styles.navigation}><summary>Module learning path</summary><nav aria-label="NumPy navigation"><Link href="/python/numpy">Module overview</Link><ol>{LESSONS.map((item,index)=><li key={item.slug}><Link aria-current={current===index?"page":undefined} href={lessonRoute("numpy",item.slug)}>{item.title}</Link></li>)}</ol><Link href="/python/numpy/mastery">Independent assessment</Link></nav></details>;}
+function Frame({children,message,title,overview=false,lesson}:{children:React.ReactNode;message:string;title:string;overview?:boolean;lesson?:number}){return <div className={shared.page}><main className={styles.page}><a className={shared.skip} href="#numpy-content">Skip to lesson content</a><PublicNav active="Python"/><p><Link href="/python">← Python learning path</Link></p>{!overview&&<Nav current={lesson}/>}<header id="numpy-content" tabIndex={-1}><p className={styles.eyebrow}>Python · numpy</p><h1>{title}</h1></header>{message&&<p role="alert">{message}</p>}{children}<PathwayFooter/></main></div>;}
+
 export function NumPyOverview() {
   const module = useModule();
   const [reset, setReset] = useState(false);
-  return <Frame title="Python NumPy for machine learning" message={module.message}><p>Six lessons connect arrays, labeled axes, deliberate broadcasting, ordered vectorized predictions and honest reductions. There is no hosted Python execution. Prior Mathematics remains available through recall links; lesson order is recommended, not a navigation lock.</p>
+  return <Frame overview title="Python NumPy for machine learning" message={module.message}><p>Six lessons connect arrays, labeled axes, deliberate broadcasting, ordered vectorized predictions and honest reductions. There is no hosted Python execution. Prior Mathematics remains available through recall links; lesson order is recommended, not a navigation lock.</p>
     <p role="status">{!module.loaded ? "Loading NumPy progress…" : module.state.evidence.objectives[MASTERY]?.mastered ? "NumPy mastery previously earned for this assessment version." : "NumPy mastery not yet earned. Lesson completion does not award it."}</p>
-    <ol>{LESSONS.map((lesson, index) => <li key={lesson.slug}><Link href={`/python/numpy/${lesson.slug}`}>{lesson.slug.toUpperCase()} — {lesson.title}</Link><p>{lesson.motivation} · {lessonComplete(module.state, index) ? "Lesson completed" : "Lesson not completed"}</p></li>)}</ol>
+    <PythonCards module="numpy" lessons={LESSONS}/><details><summary>Lesson completion records</summary><ul>{LESSONS.map((item,index)=><li key={item.slug}>{item.title}: {lessonComplete(module.state,index)?"Lesson completed":"Lesson not completed"}</li>)}</ul></details>
     <section className={styles.card}><h2>Independent demonstration</h2><p>24 objective families per form; 20/24 plus all six critical gates in the same confirmed attempt. Three complete forms rotate on unlimited retries. Both decision and reasoning must pass each critical gate. Only independently correct objectives in a passing attempt receive mastery.</p><Link href="/python/numpy/mastery">Open independent assessment</Link><p>{MASTERY_AVAILABLE ? "Complete assessment verification released for this version." : "Mastery remains unavailable until the full version passes verification."}</p></section>
     <section className={styles.card}><h2>Notebook and scope</h2><a href="/notebooks/python-numpy.ipynb" download>Download the reproducible NumPy notebook</a><p>Trusted local code and embedded fictional records only. Notebook execution/download never grants platform mastery. Genuine Colab, screen-reader and browser-zoom verification remain open.</p></section>
     <section className={styles.card}><h2>Reset only this module</h2><label><input type="checkbox" checked={reset} onChange={event => setReset(event.target.checked)}/>Confirm removing this NumPy module's practice, assessment history and mastery. Essentials, Math and Regression remain untouched.</label><button disabled={!module.loaded || !reset} onClick={() => {
@@ -87,25 +89,28 @@ function Lab({ lesson, module }: { lesson: number; module: ReturnType<typeof use
 export function NumPyLesson({ lesson }: { lesson: number }) {
   const module = useModule(), content = LESSONS[lesson];
   const [reset, setReset] = useState(false);
-  return <Frame title={`${content.slug.toUpperCase()} — ${content.title}`} message={module.message}>
+  return <Frame lesson={lesson} title={PYTHON_JOURNEYS["numpy"][lesson][0]} message={module.message}>
+    <p className={styles.eyebrow}>Lesson {lesson+1} of {LESSONS.length} · {content.title}</p><p>{content.motivation}</p><nav className={styles.local} aria-label="In this Python lesson"><a href="#experiment">Explore</a><a href="#lesson-explain">Understand</a><a href="#lesson-practice">Code and practice</a><a href="#lesson-transfer">Reflect</a><a href="#lesson-next">Next step</a></nav>
     <p role="status">{!module.loaded ? "Loading local progress…" : lessonComplete(module.state, lesson) ? "Lesson completed. Independent module mastery is separate." : "Lesson in progress; four correct practice families and a meaningful explained experiment are required."}</p>
-    <p>Prerequisite recall: {content.prerequisites} <Link href="/math/algebra-functions">Algebra functions</Link> · <Link href="/math/vectors-dot-product">Vectors and dot products</Link> · <Link href="/math/statistics">Statistics</Link>. Direct entry is allowed.</p>
-    <section className={styles.card}><h2>Why this exists</h2><p>{content.motivation}</p><p><strong>Mathematical intuition:</strong> {content.math}</p><p><strong>Terminology:</strong> {content.terms}</p><p><strong>Worked starting point:</strong> {content.worked}</p><p><strong>Now change the conditions:</strong> {content.progression}</p><p><strong>Common misconception:</strong> {content.misconception}</p></section>
+    <details><summary>Need a quick refresher?</summary><p>Prerequisite recall: {content.prerequisites} <Link href="/math/algebra-functions">Algebra functions</Link> · <Link href="/math/vectors-dot-product">Vectors and dot products</Link> · <Link href="/math/statistics">Statistics</Link>. Direct entry is allowed.</p></details>
+    <aside className={styles.discovery}><h2>Predict, then explore</h2><p>{content.progression}</p><p>Read the shown Python, predict the outcome, then reveal it. Change one configuration and explain the difference. These activities use authored reference cases; they do not execute your code in the browser.</p></aside><fieldset disabled={!module.loaded}><legend>Explore one controlled change</legend><Lab lesson={lesson} module={module}/></fieldset>
+    <section id="lesson-explain" className={styles.card}><h2>Why this exists</h2><p>{content.motivation}</p><p><strong>Mathematical intuition:</strong> {content.math}</p><p><strong>Terminology:</strong> {content.terms}</p><p><strong>Worked starting point:</strong> {content.worked}</p><p><strong>Now change the conditions:</strong> {content.progression}</p><p><strong>Common misconception:</strong> {content.misconception}</p></section>
     <p>Normalized traces explicitly include each array’s shape, dtype and ordered values. true/false mean Python True/False. A missing tag denotes NaN; a nonfinite tag is not a valid numeric answer. Shape (m,) is not (m,1). These are structured reference outcomes, not exact NumPy print formatting.</p>
     <section className={styles.card}><h2>Build the mental model before tracing syntax</h2>{CONCEPT_NOTES[lesson].map(paragraph => <p key={paragraph}>{paragraph}</p>)}</section>
-    <fieldset disabled={!module.loaded}><legend>NumPy teaching and guided practice</legend>
+    <fieldset id="lesson-practice" disabled={!module.loaded}><legend>NumPy teaching and guided practice</legend>
       {content.objectives.map((objective, offset) => {
         const work = workedCase(lesson, offset);
         return <section key={objective.id}><div className={styles.card}><h2>{objective.id}: {objective.outcome}</h2>
           <p>{work.reason}</p>
           <h3>Worked numerical / coordinate example</h3><pre tabIndex={0} aria-label={`${objective.id} worked Python`}><code>{work.code}</code></pre><Outcome value={work.expected} label={`${objective.id} worked outcome`}/><p>{work.reason}</p><p>Misconception: {work.misconception} {objective.remediation}</p>
-          <p><strong>ML application:</strong> {content.motivation} Use this check to justify the data/result before passing it into a model, not merely to recognize syntax.</p><p><strong>Success means:</strong> {objective.assessment}</p>
+          <p><strong>Success means:</strong> {objective.assessment}</p>
         </div><PracticePanel index={lesson * 4 + offset} module={module}/></section>;
       })}
-      <Lab lesson={lesson} module={module}/>
+
       <section className={styles.card}><h2>Scoped lesson reset</h2><label><input type="checkbox" checked={reset} onChange={event => setReset(event.target.checked)}/>Confirm clearing only this lesson's practice/drafts/activity. Independent assessment history and earned mastery will remain.</label><button disabled={!reset} onClick={() => { module.act(state => resetLesson(state, lesson, true, now())); setReset(false); }}>Reset lesson practice only</button></section>
     </fieldset>
     <p><Link href="/python/numpy/mastery">Independent assessment</Link> · <a href="/notebooks/python-numpy.ipynb" download>NumPy notebook</a>. Neither lesson completion nor notebook use awards mastery.</p>
+    <PythonReflection module="numpy" lesson={lesson} reference={content.misconception}/><details><summary>Read a larger ML expression</summary><EquationReader key={content.slug} module="python-numpy"/></details><PythonNext module="numpy" lesson={lesson} lessons={LESSONS}/>
   </Frame>;
 }
 export function NumPyAssessment() {

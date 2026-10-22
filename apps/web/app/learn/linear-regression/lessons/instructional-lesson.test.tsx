@@ -27,12 +27,13 @@ describe.each(INSTRUCTIONAL_IDS)("%s instructional evidence",id=>{
   const original=recordObjectiveCompletion(markLessonState(createEmptyEvidence("linear-regression.v1"),"linear-regression.implementation","completed",[],"2026-10-15T00:00:00Z"),"existing-objective","existing-evidence","2026-10-15T00:00:00Z");
   localStorage.setItem(key,JSON.stringify(original));localStorage.setItem("derivatives-progress","preserve-me");
   const view=render(<RegressionLabRouter lessonId={id}/>);
+  if(id==="equation")fireEvent.click(screen.getByRole("button",{name:"Review explanation and free exploration"}));
   expect(screen.getByRole("heading",{name:"Mathematical reasoning"})).toBeInTheDocument();
   expect(screen.getByRole("heading",{name:"Mathematical symbol key"})).toBeInTheDocument();
   answerAll(id);
-  expect(screen.queryByRole("heading",{name:"Lesson outcome demonstrated"})).not.toBeInTheDocument();
+  expect(screen.queryByRole("heading",{name:id==="equation"?"Existing lesson checks complete":"Lesson outcome demonstrated"})).not.toBeInTheDocument();
   explore(id);
-  await waitFor(()=>expect(screen.getByRole("heading",{name:"Lesson outcome demonstrated"})).toBeInTheDocument());
+  await waitFor(()=>expect(screen.getByRole("heading",{name:id==="equation"?"Existing lesson checks complete":"Lesson outcome demonstrated"})).toBeInTheDocument());
   const stored=JSON.parse(localStorage.getItem(key)!);
   expect(stored.lessons[`linear-regression.${id}`].state).toBe("completed");
   instructionalObjectiveIds(id).forEach(objective=>{expect(stored.objectives[objective].completed).toBe(true);expect(stored.objectives[objective].mastered).toBe(false)});
@@ -40,10 +41,10 @@ describe.each(INSTRUCTIONAL_IDS)("%s instructional evidence",id=>{
   expect(stored.lessons["linear-regression.implementation"]).toEqual(original.lessons["linear-regression.implementation"]);
   expect(localStorage.getItem("derivatives-progress")).toBe("preserve-me");
   view.unmount();render(<RegressionLabRouter lessonId={id}/>);
-  await waitFor(()=>expect(screen.getByRole("heading",{name:"Lesson outcome demonstrated"})).toBeInTheDocument());
+  await waitFor(()=>expect(screen.getByRole("heading",{name:id==="equation"?"Existing lesson checks complete":"Lesson outcome demonstrated"})).toBeInTheDocument());
  });
  it("rejects incorrect answers with remediation and does not complete on opening or exploration alone",()=>{
-  localStorage.setItem(key,"broken json");render(<RegressionLabRouter lessonId={id}/>);explore(id);
+  localStorage.setItem(key,"broken json");render(<RegressionLabRouter lessonId={id}/>);if(id==="equation")fireEvent.click(screen.getByRole("button",{name:"Review explanation and free exploration"}));explore(id);
   const exercise=INSTRUCTIONS[id].checks[0],field=screen.getByRole("group",{name:`1. ${exercise.prompt}`});
   if(exercise.kind==="numerical")fireEvent.change(within(field).getByRole("spinbutton"),{target:{value:"999"}});
   else fireEvent.click(within(field).getByRole("radio",{name:exercise.options.find(option=>option.id!==exercise.expectedOptionId)!.label}));
@@ -72,4 +73,57 @@ describe("instructional exercise contracts and accessibility",()=>{
   fireEvent.click(screen.getByRole("button",{name:"Step"}));
   expect(within(table).getAllByRole("row")[2]).toHaveAttribute("aria-current","step");
  });
+});
+
+
+describe("equation-only staged learning and preserved evidence",()=>{
+ it("introduces formal notation only after discovery and keeps transfer ephemeral",async()=>{
+  render(<RegressionLabRouter lessonId="equation"/>);
+  expect(screen.queryByRole("heading",{name:"Mathematical reasoning"})).not.toBeInTheDocument();expect(screen.queryByRole("heading",{name:"The same rule in Python"})).not.toBeInTheDocument();
+  fireEvent.click(screen.getByRole("radio",{name:"Not sure"}));fireEvent.click(screen.getByRole("button",{name:"Try coefficient 46"}));
+  expect(screen.queryByRole("heading",{name:"Mathematical reasoning"})).not.toBeInTheDocument();
+  fireEvent.click(screen.getByRole("button",{name:"Compare coefficient and baseline"}));fireEvent.click(screen.getByRole("button",{name:"Connect the discovery to mathematics and Python"}));
+  expect(screen.getByRole("heading",{name:"Mathematical reasoning"})).toBeInTheDocument();expect(screen.getByText(/coefficient_k_per_thousand_sqft = 42.0/)).toBeInTheDocument();expect(screen.getByText(/Separate additional practice/)).toBeInTheDocument();
+  await waitFor(()=>expect(JSON.parse(localStorage.getItem(key)!).objectives["linear-regression.equation.experiment"].completed).toBe(true));
+  const before=localStorage.getItem(key);fireEvent.change(screen.getByRole("textbox",{name:"Your energy explanation"}),{target:{value:"Half a kWh less per square metre over twelve square metres"}});fireEvent.click(screen.getByRole("button",{name:"Reveal energy comparison"}));expect(screen.getByText(/44 to 38 kWh/)).toBeInTheDocument();expect(localStorage.getItem(key)).toBe(before);
+  fireEvent.click(screen.getByRole("button",{name:"Replay discovery"}));expect(localStorage.getItem(key)).toBe(before);
+ });
+});
+
+
+it("preserves assessed history and mastery across equation review, reset and transfer",async()=>{
+ const date="2026-10-15T00:00:00Z";
+ const seed=markLessonState(createEmptyEvidence("linear-regression.v1"),"linear-regression.equation","assessed",["historic-objective"],date);
+ seed.objectives["historic-objective"]={completed:true,mastered:true,evidenceIds:["historical-assessment"],updatedAt:date};
+ seed.masteryEvidence=[{id:"historical-assessment",objectiveId:"historic-objective",sourceType:"assessment",sourceId:"linear-regression.mastery.v1",level:3,awardedAt:date}];
+ seed.assessmentAttempts=[{id:"historical-attempt",assessmentId:"linear-regression.mastery.v1",variantId:"v01",score:24,maxScore:24,objectiveIds:["historic-objective"],submittedAt:date}];
+ seed.projectMilestones=[{projectId:"other-project",milestoneId:"milestone",completed:true,evidenceId:"project-evidence",updatedAt:date}];
+ localStorage.setItem(key,JSON.stringify(seed));render(<RegressionLabRouter lessonId="equation"/>);
+ await waitFor(()=>expect(screen.getByRole("heading",{name:"Existing lesson checks complete"})).toBeInTheDocument());
+ fireEvent.click(screen.getByRole("button",{name:"Review explanation and free exploration"}));fireEvent.click(screen.getByRole("button",{name:"Reset parameters"}));fireEvent.click(screen.getByRole("button",{name:"Reveal energy comparison"}));fireEvent.click(screen.getByRole("button",{name:"Replay discovery"}));
+ const stored=JSON.parse(localStorage.getItem(key)!);
+ expect(stored.lessons["linear-regression.equation"].state).toBe("assessed");expect(stored.objectives).toEqual(seed.objectives);expect(stored.masteryEvidence).toEqual(seed.masteryEvidence);expect(stored.assessmentAttempts).toEqual(seed.assessmentAttempts);expect(stored.projectMilestones).toEqual(seed.projectMilestones);
+});
+
+
+it("places mathematics and practice before optional exploration and transfer after practice",()=>{
+ render(<RegressionLabRouter lessonId="equation"/>);
+ expect(screen.queryByText(/ŷ = wx/)).not.toBeInTheDocument();
+ fireEvent.click(screen.getByRole("button",{name:"Review explanation and free exploration"}));
+ const math=screen.getByRole("heading",{name:"Mathematical reasoning"}),practice=screen.getByRole("heading",{name:"Guided exercises and misconception checks"}),transfer=screen.getByRole("heading",{name:"Try a new context: energy use (unscored)"}),exploreHeading=screen.getByRole("heading",{name:"Free exploration: weight tilts; bias lifts"});
+ expect(math.compareDocumentPosition(practice)&Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+ expect(practice.compareDocumentPosition(transfer)&Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+ expect(transfer.compareDocumentPosition(exploreHeading)&Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+ expect(document.activeElement).toBe(math);
+});
+
+
+it("explicitly introduces the equation, multiplication and prediction notation after discovery",()=>{
+ render(<RegressionLabRouter lessonId="equation"/>);
+ expect(screen.queryByRole("heading",{name:"From the estimating rule to the equation"})).not.toBeInTheDocument();
+ fireEvent.click(screen.getByRole("button",{name:"Review explanation and free exploration"}));
+ expect(screen.getByRole("heading",{name:"From the estimating rule to the equation"})).toBeInTheDocument();
+ expect(screen.getByText("ŷ = w × x + b",{exact:true})).toBeInTheDocument();
+ expect(screen.getByText("245 = 42 × 2.5 + 140",{exact:true})).toBeInTheDocument();
+ expect(screen.getByText(/Here we use the hat to distinguish an estimate from the recorded value/)).toBeInTheDocument();
 });

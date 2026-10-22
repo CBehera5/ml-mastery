@@ -1,3 +1,4 @@
+import {experimentGuide} from "../simple-experiment";
 // @vitest-environment jsdom
 import React from "react";
 import "@testing-library/jest-dom/vitest";
@@ -18,11 +19,11 @@ it("restores mean practice without granting mastery or modifying earlier evidenc
  expect(practice.getByRole("status")).toHaveTextContent("Correct.");expect(load(localStorage.getItem(STORAGE_KEY)).mastery).toBeNull();prior.forEach(key=>expect(localStorage.getItem(key)).toBe("earlier-evidence"));cleanup();await open(1);expect(screen.getByRole("region",{name:"Practice RF02.O1"})).toHaveTextContent("Practice demonstrated");
 });
 for(const lab of [0,1])it(`lab${lab} requires prediction,changes and a supported explanation;shows OOB missingness`,async()=>{
- await open(lab===0?0:2);expect(screen.getByRole("button",{name:"Reveal frozen outcome"})).toBeDisabled();const config=configurations(lab)[1];
- fireEvent.change(screen.getByRole("combobox",{name:"Experiment configuration"}),{target:{value:config.id}});fireEvent.change(screen.getByRole("combobox",{name:"Your prediction"}),{target:{value:config.predictionOptions[0].id}});fireEvent.change(screen.getByRole("combobox",{name:"Predicted reason"}),{target:{value:"causal"}});fireEvent.click(screen.getByRole("button",{name:"Reveal frozen outcome"}));
+ await open(lab===0?0:2);expect(screen.getByRole("button",{name:"Show the result"})).toBeDisabled();const config=configurations(lab).find(c=>c.id===experimentGuide("random-forests",lab===0?0:2).options[1].id)!;
+ fireEvent.click(screen.getByRole("radio",{name:experimentGuide("random-forests",lab===0?0:2).options[1].label}));fireEvent.change(screen.getByRole("combobox",{name:"Your prediction"}),{target:{value:config.predictionOptions[0].id}});fireEvent.change(screen.getByRole("combobox",{name:"Predicted reason"}),{target:{value:"causal"}});fireEvent.click(screen.getByRole("button",{name:"Show the result"}));
  expect(screen.getByRole("table",{name:"First-query tree outputs and ensemble"})).toBeInTheDocument();expect(screen.getByRole("table",{name:"OOB contributing trees and mathematical predictions"})).toBeInTheDocument();expect(screen.getByText(/No contributing tree means unavailable/)).toBeInTheDocument();
  expect(within(screen.getByRole("table",{name:"Saved tree node conditions and predictions"})).getAllByRole("row")[1]).toHaveTextContent("8");
  expect(screen.getByRole("table",{name:"Saved tree node conditions and predictions"})).toHaveStyle({minWidth:"520px"});
- fireEvent.change(screen.getByRole("combobox",{name:"Supported explanation"}),{target:{value:config.reasonId}});fireEvent.click(screen.getByRole("button",{name:"Check experiment explanation"}));expect(screen.getByText("Meaningful interaction demonstrated; not independent mastery.")).toBeInTheDocument();
+ fireEvent.change(screen.getByRole("combobox",{name:"Supported explanation"}),{target:{value:config.reasonId}});fireEvent.click(screen.getByRole("button",{name:"Check my explanation"}));expect(screen.getByText("Meaningful interaction demonstrated; not independent mastery.")).toBeInTheDocument();
 });
 it("keeps completion separate from the independent assessment",()=>{render(<RandomForestsOverview/>);expect(screen.getByText(/16\/20 families/)).toBeInTheDocument();cleanup();render(<RandomForestsAssessment/>);expect(screen.getByText(/20 objectives; at least16/)).toBeInTheDocument();});

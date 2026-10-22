@@ -1,3 +1,4 @@
+import {experimentGuide} from "../simple-experiment";
 // @vitest-environment jsdom
 import React from "react";
 import "@testing-library/jest-dom/vitest";
@@ -31,13 +32,14 @@ it("requires prediction and a reason before revealing a frozen experiment state"
   vi.stubGlobal("fetch", mockFetch);
   render(<MlpLesson lesson={0}/>);
   await waitFor(() => expect(screen.getByText("Predict the probability and class.")).toBeInTheDocument());
-  expect(screen.getByRole("button", { name: "Reveal reference outcome" })).toBeDisabled();
+  expect(screen.getByRole("button", { name: "Show the result" })).toBeDisabled();
   fireEvent.change(screen.getByRole("combobox", { name: "Predict before reveal" }), { target: { value: "forward" } });
   fireEvent.change(screen.getByRole("combobox", { name: "Predict why" }), { target: { value: "mechanism" } });
-  expect(screen.getByRole("button", { name: "Reveal reference outcome" })).toBeEnabled();
-  fireEvent.click(screen.getByRole("button", { name: "Reveal reference outcome" }));
+  expect(screen.getByRole("button", { name: "Show the result" })).toBeEnabled();
+  fireEvent.click(screen.getByRole("button", { name: "Show the result" }));
   expect(await screen.findByText(/Prediction matched the reference/)).toBeInTheDocument();
-  expect(screen.getByText(/Test observations are deliberately absent/)).toBeInTheDocument();
+  expect(screen.queryByLabelText("Trusted numerical MLP reference values")).not.toBeInTheDocument();
+  expect(document.body.textContent).not.toContain("nn-e1.manual.h1.identity.base.v1");
   expect(mockFetch).toHaveBeenCalledWith(expect.stringContaining("nn-e1.manual.h1.identity.base.v1"));
 });
 

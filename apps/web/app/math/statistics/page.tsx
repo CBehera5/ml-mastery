@@ -1,3 +1,4 @@
+import {editorialMetadata} from "../../experience/editorial-metadata";
 import { StatisticsOverview } from "./learning";
-export const metadata = { title: "Statistics Foundations | ML Math Lab" };
+export const metadata = editorialMetadata("/math/statistics");
 export default function Page() { return <StatisticsOverview/>; }

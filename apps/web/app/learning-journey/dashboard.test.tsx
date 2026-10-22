@@ -4,18 +4,18 @@ import { afterEach, expect, it, vi } from "vitest";
 import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { LearningJourney } from "./dashboard";
 import { readJourneyProgress, type JourneyProgress } from "./progress";
-import Home from "../page";
+import JourneyPage from "../journey/page";
 vi.mock("./progress", async original => ({ ...await original<typeof import("./progress")>(), readJourneyProgress: vi.fn() }));
 const read = vi.mocked(readJourneyProgress);
 afterEach(() => { cleanup(); vi.restoreAllMocks(); });
-it("renders the root dashboard, distinct loading/empty states and one prominent Start action", async () => {
+it("renders the journey dashboard, distinct loading/empty states and one prominent Start action", async () => {
   read.mockResolvedValue({ scopes: [], warnings: [] });
-  render(<Home />);
+  render(<JourneyPage />);
   expect(screen.getByRole("heading", { name: /Build understanding/ })).toBeInTheDocument();
   const start = await screen.findByRole("link", { name: /Start Learning/ });
   expect(start).toHaveAttribute("href", "/math/algebra-functions/variables");
   expect(screen.queryByRole("link", { name: /Continue Learning/ })).not.toBeInTheDocument();
-  expect(screen.getByRole("list", { name: "Learning roadmap" }).children).toHaveLength(5);
+  expect(screen.getByRole("list", { name: "Learning roadmap" }).children).toHaveLength(4);
   expect(screen.queryByRole("link", { name: "Project Studio" })).not.toBeInTheDocument();
   expect(screen.queryByRole("link", { name: /Deployment/ })).not.toBeInTheDocument();
 });
@@ -25,7 +25,7 @@ it("resumes validated work and exposes mastery as separate evidence, never write
   const write = vi.spyOn(Storage.prototype, "setItem");
   render(<LearningJourney />);
   expect(await screen.findByRole("link", { name: /Continue Learning/ })).toHaveAttribute("href", "/python/pandas/d02");
-  expect(screen.getByRole("button", { name: "Python for ML" })).toHaveAttribute("aria-pressed", "true");
+  expect(screen.getByRole("button", { name: "Python Lab" })).toHaveAttribute("aria-pressed", "true");
   fireEvent.click(screen.getByText("View saved module states"));
   expect(screen.getByText("Mastery not yet demonstrated")).toBeInTheDocument();
   fireEvent.click(screen.getByText("Choose a different starting point"));
@@ -36,8 +36,8 @@ it("resumes validated work and exposes mastery as separate evidence, never write
 it("offers available stages, reversible existing-content modes and five concept connections", async () => {
   read.mockResolvedValue({ scopes: [], warnings: [] }); render(<LearningJourney />);
   await screen.findByRole("link", { name: /Start Learning/ });
-  fireEvent.click(screen.getByRole("button", { name: "Python for ML" }));
-  const detail = screen.getByRole("region", { name: "Python for ML: implemented content" });
+  fireEvent.click(screen.getByRole("button", { name: "Python Lab" }));
+  const detail = screen.getByRole("region", { name: "Python Lab: implemented content" });
   expect(within(detail).getAllByRole("link")).toHaveLength(6);
   fireEvent.click(screen.getByText("Choose a different starting point"));
   fireEvent.click(screen.getByRole("radio", { name: /focused refresher/ }));
@@ -59,7 +59,7 @@ it("sends the logo home and keeps Beta Guide, experiments and challenges in sema
   read.mockResolvedValue({ scopes: [], warnings: [] }); render(<LearningJourney />);
   await screen.findByRole("link", { name: /Start Learning/ });
   const nav = screen.getByRole("navigation", { name: "Learning navigation" });
-  expect(within(nav).getByRole("link", { name: "ML Math Lab" })).toHaveAttribute("href", "/");
+  expect(within(nav).getByRole("link", { name: "ML Mastery" })).toHaveAttribute("href", "/journey");
   fireEvent.click(within(nav).getByText("Help", { selector: "summary" }));
   expect(within(nav).getByRole("link", { name: /Beta guide/ })).toHaveAttribute("href", "/beta");
   fireEvent.keyDown(within(nav).getByRole("link", { name: /Beta guide/ }), { key: "Escape" });

@@ -6,7 +6,7 @@ describe("Task 015.12 frozen experiment endpoint", () => {
   it("serves only reviewed configurations and strips sealed test targets and outcomes", async () => {
     for (const [lab, id, manifestId, version] of [
       [0, "MS-E1-REGRESSION-MEAN-BASELINE", "TASK-015.12-MS-E1-V1", 1],
-      [1, "MS-E2-FINAL-TEST-EVALUATION-ONCE", "TASK-015.12-MS-E2-V2", 2],
+      [1, "MS-E2-FINAL-TEST-EVALUATION-ONCE", "TASK-015.12-MS-E2-V3", 3],
     ] as const) {
       const response = await GET(new Request(`http://local/api?lab=${lab}&id=${id}`));
       expect(response.status).toBe(200);
