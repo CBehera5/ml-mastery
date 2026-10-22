@@ -6,9 +6,11 @@ import { OBJECTIVE_CODE } from "../optimization/objectives-python";
 import { GeometryPlayground, RegularizationPlayground, ResponsiblePlayground, StabilityPlayground, UpdatesPlayground } from "./optimization-labs";
 import { FunctionsPlayground, GraphsPlayground, LogarithmsPlayground, PowersPlayground, TransformationsPlayground, VariablesPlayground } from "./algebra-labs";
 import { FN_CODE, GR_CODE, LOG_CODE, POW_CODE, TR_CODE, VAR_CODE } from "./algebra-code";
+import { GradientCheckPlayground, RulesPlayground, SecantsPlayground, StepSizePlayground } from "./calc-labs";
+import { DBG_CODE, RULE_CODE, SEC_CODE, STEP_CODE } from "./calc-code";
 import { GEOMETRY_CODE, REG_CODE, RESP_CODE, STABILITY_CODE, UPDATES_CODE } from "./optimization-code";
 
-export type Extra = { Playground?: ComponentType; code?: CodeLabConfig; moreLabel?: string };
+export type Extra = { Playground?: ComponentType<{ onDone?: () => void }>; code?: CodeLabConfig; moreLabel?: string };
 /** One entry per lesson, keyed `module/slug`. A lesson page renders its playground first and its code cell after the reflection. */
 export const EXTRAS: Record<string, Extra> = {
   "optimization/objectives": { Playground: LossPlayground, code: OBJECTIVE_CODE, moreLabel: "More landscapes: narrow bowl, saddle and double well" },
@@ -26,6 +28,12 @@ Object.assign(EXTRAS, {
   "algebra/logarithms": { Playground: LogarithmsPlayground, code: LOG_CODE, moreLabel: "The general function explorer" },
   "algebra/transformations": { Playground: TransformationsPlayground, code: TR_CODE, moreLabel: "The general function explorer" },
 });
+Object.assign(EXTRAS, {
+  "calculus/secants": { Playground: SecantsPlayground, code: SEC_CODE, moreLabel: "The original secant explorer" },
+  "calculus/rules": { Playground: RulesPlayground, code: RULE_CODE, moreLabel: "The rule cards and the worked example" },
+  "calculus/lab": { Playground: StepSizePlayground, code: STEP_CODE, moreLabel: "The original three-views lab" },
+  "calculus/debug": { Playground: GradientCheckPlayground, code: DBG_CODE, moreLabel: "The original debugging walk-through" },
+});
 export const extraFor = (module: string, slug: string): Extra | undefined => EXTRAS[`${module}/${slug}`];
-export function LessonPlayground({ module, slug }: { module: string; slug: string }) { const P = extraFor(module, slug)?.Playground; return P ? <P /> : null; }
-export function LessonCode({ module, slug }: { module: string; slug: string }) { const c = extraFor(module, slug)?.code; return c ? <CodeLabSection config={c} /> : null; }
+export function LessonPlayground({ module, slug, onDone }: { module: string; slug: string; onDone?: () => void }) { const P = extraFor(module, slug)?.Playground; return P ? <P onDone={onDone} /> : null; }
+export function LessonCode({ module, slug }: { module: string; slug: string }) { const c = extraFor(module, slug)?.code; return c ? <CodeLabSection key={c.id} config={c} /> : null; }
