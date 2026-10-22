@@ -4,7 +4,7 @@ import type { PythonRuntime } from "../../components/live-python/client";
 import type { CellPreset } from "../../components/live-python/live-python-cell";
 
 export const OBJECTIVE_STARTER = `areas  = [1.0, 1.8, 2.5, 3.2, 4.0, 4.8]      # thousand ft²
-prices = [178, 213, 246, 278, 316, 349]      # $ thousand
+prices = [178, 213, 246, 278, 316, 349]      # ₹ lakh
 w, b = 10.0, 100.0                            # the orange dot's starting spot
 
 def loss(w, b):

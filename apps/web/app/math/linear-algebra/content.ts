@@ -15,7 +15,7 @@ export const CONTENT: Record<Topic, { title: string; why: string; definition: st
     symbols: "u=[u₁,u₂] and v=[v₁,v₂]: ordered vectors; subscripts label components. c: a scalar. u+v=[u₁+v₁,u₂+v₂]. cu=[cu₁,cu₂]. ‖u‖=√(u₁²+u₂²). For nonzero u, u/‖u‖ is its unit direction.",
     worked: "For u=[3,4], v=[−1,2], u+v=[2,6], 2u=[6,8] and ‖u‖=√(9+16)=5. The unit direction is [0.6,0.8]. With c=−1, −u=[−3,−4] has the same length and the opposite direction.",
     misconception: "The magnitude is not generally the sum of components: [3,4] has length 5, not 7. A scalar is different from a length-one vector in shape-sensitive code.",
-    application: "Feature vectors represent one example. Geometric distance needs comparable coordinates: mixing square metres, bedrooms and raw dollars without scaling can make a norm misleading. Our arrow experiment uses coordinates in the same arbitrary unit, not raw house features.",
+    application: "Feature vectors represent one example. Geometric distance needs comparable coordinates: mixing square metres, bedrooms and raw rupees without scaling can make a norm misleading. Our arrow experiment uses coordinates in the same arbitrary unit, not raw house features.",
     recall: "Square each coordinate, add, then take a square root. A negative number squared is positive. Review Algebra variables and powers if these operations are unfamiliar.",
   },
   dot: {

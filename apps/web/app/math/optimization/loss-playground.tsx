@@ -77,7 +77,7 @@ export function LossPlayground() {
             <circle cx={sx(w)} cy={sy(b)} r="8" fill="#e36c28" stroke="#fff" strokeWidth="2.5" style={{ cursor: "grab" }} />
             {[0, 30, 60, 90].map((v) => <text key={`wx${v}`} x={sx(v)} y={MAP.H - MAP.B + 15} textAnchor="middle" fontSize="11" fill="#16211c">{v}</text>)}
             {[60, 100, 140, 180].map((v) => <text key={`by${v}`} x={MAP.L - 6} y={sy(v) + 4} textAnchor="end" fontSize="11" fill="#16211c">{v}</text>)}
-            <text x={MAP.L + (MAP.W - MAP.L - MAP.R) / 2} y={MAP.H - 8} textAnchor="middle" fontSize="12" fill="#16211c">slope w ($ thousand per thousand ft²)</text>
+            <text x={MAP.L + (MAP.W - MAP.L - MAP.R) / 2} y={MAP.H - 8} textAnchor="middle" fontSize="12" fill="#16211c">slope w (₹ lakh per thousand ft²)</text>
             <text x={12} y={MAP.T + (MAP.H - MAP.T - MAP.B) / 2} textAnchor="middle" fontSize="12" fill="#16211c" transform={`rotate(-90 12 ${MAP.T + (MAP.H - MAP.T - MAP.B) / 2})`}>baseline b</text>
           </svg>
           <figcaption>Light is a small loss, dark is a large one. The black arrow points <em>downhill</em>.</figcaption>
@@ -92,7 +92,7 @@ export function LossPlayground() {
             {[1, 2, 3, 4, 5].map((v) => <text key={`px${v}`} x={px(v)} y={P.H - P.B + 14} textAnchor="middle" fontSize="10.5" fill="#16211c">{v}</text>)}
             {[100, 200, 300, 400].map((v) => <text key={`py${v}`} x={P.L - 5} y={py(v) + 4} textAnchor="end" fontSize="10.5" fill="#16211c">{v}</text>)}
             <text x={(P.L + P.W - P.R) / 2} y={P.H - 8} textAnchor="middle" fontSize="11.5" fill="#16211c">area (thousand ft²)</text>
-            <text x={11} y={(P.T + P.H - P.B) / 2} textAnchor="middle" fontSize="11.5" fill="#16211c" transform={`rotate(-90 11 ${(P.T + P.H - P.B) / 2})`}>price ($ thousand)</text>
+            <text x={11} y={(P.T + P.H - P.B) / 2} textAnchor="middle" fontSize="11.5" fill="#16211c" transform={`rotate(-90 11 ${(P.T + P.H - P.B) / 2})`}>price (₹ lakh)</text>
           </svg>
           <figcaption>Orange sticks are the misses. The loss is their average <em>squared</em> length.</figcaption>
         </figure>

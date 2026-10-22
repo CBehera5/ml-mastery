@@ -15,7 +15,7 @@ export function TrainingStepPlayground({ onDone }: Done) {
   const s = modelingScenario(2, 10, w, 50, rate), row = s.evaluation.rows[0], g = s.update.gradient, after = s.update.after.rows[0].prediction;
   const go = (n: number) => { setStage(n); onDone?.(); };
   const text = [
-    <>Each feature is multiplied by its own weight and the bias is added once: <code>ŷ = {fmt(w, 0)}×2 + (−2)×10 + 50 = {fmt(row.prediction, 1)}</code> thousand dollars. This is a dot product, the same one you wrote in Linear Algebra.</>,
+    <>Each feature is multiplied by its own weight and the bias is added once: <code>ŷ = {fmt(w, 0)}×2 + (−2)×10 + 50 = {fmt(row.prediction, 1)}</code> ₹ lakh. This is a dot product, the same one you wrote in Linear Algebra.</>,
     <>The target is 250. The residual is prediction minus target: <code>{fmt(row.prediction, 1)} − 250 = {fmt(row.residual, 1)}</code>. Squaring it gives the loss, <code>{fmt(row.residual ** 2, 1)}</code>. A negative residual means the model is too low.</>,
     <>Calculus asks how the loss changes if a weight moves. By the chain rule the slope for each weight is <code>2 × residual × feature</code>: area weight {fmt(g.weightGradients[0], 1)}, age weight {fmt(g.weightGradients[1], 1)}, bias {fmt(g.biasGradient, 1)}. Negative slopes mean increasing that weight lowers the loss.</>,
     <>Optimization moves every parameter a small step against its slope: <code>new = old − rate × slope</code>, using the <em>original</em> slopes for all of them. With rate {rate}, the area weight becomes {fmt(s.update.updatedParameters.weights[0], 3)}.</>,
@@ -27,7 +27,7 @@ export function TrainingStepPlayground({ onDone }: Done) {
       note="Every stage is a tool from a different Math subject. Models are built by chaining them: algebra for the rule, linear algebra for many inputs, calculus for slopes, optimization for the step, and statistics and probability for asking whether the result can be trusted.">
       <Grid>
         <Figure caption={text[stage]}>
-          <Chart label={`Target 250; prediction before ${fmt(row.prediction, 1)} and after one step ${fmt(after, 1)}`} xDomain={[200, 260]} yDomain={[0, 1]} xTicks={[200, 220, 240, 260]} yTicks={[]} xLabel="price (thousand dollars)" yLabel="" width={460} height={170}>
+          <Chart label={`Target 250; prediction before ${fmt(row.prediction, 1)} and after one step ${fmt(after, 1)}`} xDomain={[200, 260]} yDomain={[0, 1]} xTicks={[200, 220, 240, 260]} yTicks={[]} xLabel="price (₹ lakh)" yLabel="" width={460} height={170}>
             {(sx, sy) => <>
               <line x1={sx(250)} x2={sx(250)} y1={sy(0.05)} y2={sy(0.95)} stroke={C.b} strokeWidth="3" /><text x={sx(250)} y={sy(0.97) + 12} textAnchor="middle" fontSize="12" fill={C.b} fontWeight="700">target 250</text>
               <circle cx={sx(row.prediction)} cy={sy(0.5)} r="9" fill={C.a} /><text x={sx(row.prediction)} y={sy(0.5) + 26} textAnchor="middle" fontSize="12" fill={C.a}>before</text>

@@ -32,11 +32,11 @@ describe("Book-aligned Math readings",()=>{
   cleanup();render(<BookOpening module="algebra" lesson="variables"/>);fireEvent.click(screen.getByRole("button",{name:/not sure/}));expect(screen.getByRole("status").textContent).toContain("No guess yet");
  });
  it("distinguishes reading extensions from assessed functionality",()=>{
-  render(<BookExplanation module="calculus" lesson="integrals"/>);expect(screen.getByText(/adds no integral solver or completion requirement/)).toBeTruthy();
+  render(<BookExplanation module="calculus" lesson="integrals"/>);expect(screen.getByText(/no integral solver is needed/)).toBeTruthy();
  });
  it("keeps probability directions, convexity and final-test selection qualified",()=>{
   expect(content.lessons['probability/bayes'].caution).toContain('10%');
-  expect(content.lessons['optimization/geometry'].caution).toContain('many minimizers');
+  expect(content.lessons['optimization/geometry'].caution).toContain("every point minimizes it");
   expect(content.lessons['statistics/ml'].ml).toContain('reserve a final test');
  });
 });

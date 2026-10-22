@@ -39,3 +39,16 @@ Rubric: story opener, a prediction before the reveal, a visual that carries mean
 
 ## Not assessed in this pass
 Quality of the assessment questions, the Python, Algorithms and Foundation sections, mobile layout of every lesson, and real screen-reader behaviour.
+
+## Status update (22 Oct 2026)
+| Gap | Status |
+|---|---|
+| 1 No runnable Python | Done: a playground and a Python cell on all 37 lessons plus the capstone |
+| 2 Story and playground mismatch | Largely done; remaining differences are called out in one-line cautions |
+| 3 Reused labs | Done: one playground per lesson |
+| 4 Static or coarse visuals | Mostly done: draggable vectors, matrices, histograms, loss map; Calculus Why and Mastery unchanged |
+| 5 Non-interactive predictions | Done |
+| 6 Compliance-style copy | Done in this pass; see MATH_CONTENT_REVIEW.md |
+| 7 Data dumps by default | Done: tables sit behind a disclosure |
+| 8 Inconsistent templates | Open |
+| 9 Navigation drift | Soft-merged with a banner; redirect is a one-line decision |
