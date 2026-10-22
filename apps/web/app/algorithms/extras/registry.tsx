@@ -9,6 +9,8 @@ import { COLUMNS_CODE, CURVE_CODE, DEGREE_CODE, LIMITS_CODE as POLY_LIMITS_CODE 
 import { ColumnsPlayground, CurvePlayground, DegreePlayground, LimitsPlayground as PolyLimitsPlayground } from "../polynomial/playground/poly-labs";
 import { ELASTIC_CODE, INTERP_CODE, LASSO_CODE, RIDGE_CODE, SAFE_CODE, WHY_CODE } from "../regularization/playground/reg-code";
 import { ElasticPlayground, InterpretPlayground, LassoPlayground, RidgePlayground, SafePlayground, WhyPlayground } from "../regularization/playground/reg-labs";
+import { CONF_CODE as LG_CONF_CODE, FLOW_CODE, GEO_CODE, LOSS_CODE, SIG_CODE, THR_CODE } from "../logistic/playground/lg-code";
+import { BoundaryPlayground, ConfidencePlayground as LgConfidencePlayground, LeakPlayground, LossPlayground, SigmoidPlayground, ThresholdPlayground } from "../logistic/playground/lg-labs";
 
 export type AlgoExtra = { Playground?: ComponentType; code?: CodeLabConfig };
 /** One entry per lesson, keyed `module/lessonIndex` (zero-based). A lesson page shows its playground before the formal experiment and its code cell in the Python section. */
@@ -31,6 +33,12 @@ export const ALGO_EXTRAS: Record<string, AlgoExtra> = {
   "regularization/3": { Playground: ElasticPlayground, code: ELASTIC_CODE },
   "regularization/4": { Playground: SafePlayground, code: SAFE_CODE },
   "regularization/5": { Playground: InterpretPlayground, code: INTERP_CODE },
+  "logistic/0": { Playground: SigmoidPlayground, code: SIG_CODE },
+  "logistic/1": { Playground: LossPlayground, code: LOSS_CODE },
+  "logistic/2": { Playground: ThresholdPlayground, code: THR_CODE },
+  "logistic/3": { Playground: BoundaryPlayground, code: GEO_CODE },
+  "logistic/4": { Playground: LeakPlayground, code: FLOW_CODE },
+  "logistic/5": { Playground: LgConfidencePlayground, code: LG_CONF_CODE },
 };
 export const algoExtra = (module: string, lesson: number): AlgoExtra | undefined => ALGO_EXTRAS[`${module}/${lesson}`];
 export const hasAlgoCode = (module: string, lesson: number) => Boolean(algoExtra(module, lesson)?.code);
