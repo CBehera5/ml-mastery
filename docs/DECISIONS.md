@@ -1,5 +1,20 @@
 # Decisions
 
+## ADR-015: Run learner Python in the browser (pilot, Linear Regression lesson 4)
+
+**Status:** Proposed — pending founder approval. Pilot branch only; no merge or deployment.
+
+Lessons showed trusted static Python and sent learners to Colab to run anything. The pilot adds an **editable, runnable** Python cell (Pyodide in a web worker) to the Linear Regression "How Gradient Descent Learns" lesson. This changes the earlier "no hosted learner execution" boundary, so it is recorded here for explicit approval.
+
+- **Client-only.** Code runs in the learner's browser; nothing is sent to any server. The Pyodide core is self-hosted under `/pyodide` (copied from `node_modules` by `scripts/sync-pyodide.mjs`; not committed), so there is no CDN dependency.
+- **Unscored.** The cell does not read or write learner evidence, progress, mastery or assessments. Existing exercises, objective IDs, gates, thresholds and numerical references are unchanged.
+- **Verified against the existing maths.** Tests run the real lesson code in real Python and require the solution to match `regressionTrainingTrace` (same weights, bias and 21 loss values) to the test tolerance.
+- **Safe failure.** Runs time out after 8 s (the worker is terminated and restarted), errors are shown in plain language with the learner's line number, and output is capped.
+- **Accessibility.** Labelled editor, no Tab trap (Ctrl/Cmd+Enter runs), status in a polite live region, chart has a text equivalent, and the `prefers-reduced-motion` rule is honoured.
+- **Cost.** About 14 MB of static files, fetched only when a learner first presses Run, then cached.
+
+Not yet covered: genuine screen-reader speech, real 200%/400% zoom and Safari/Firefox runs remain open release obligations, as for the rest of the platform.
+
 ## ADR-014: Keep dataset regression separate from the linear-neuron contract
 
 **Status:** Accepted

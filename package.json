@@ -5,15 +5,17 @@
   "scripts": {
     "build": "npm run build:math && npm run build:web",
     "build:math": "tsc -p packages/math-runtime/tsconfig.json",
-    "build:web": "next build apps/web",
-    "dev": "next dev apps/web",
+    "build:web": "npm run sync:pyodide && next build apps/web",
+    "dev": "npm run sync:pyodide && next dev apps/web",
     "test": "vitest run",
     "test:web": "vitest run apps/web",
     "test:ts": "vitest run packages/math-runtime/tests",
-    "typecheck": "tsc -p packages/math-runtime/tsconfig.json --noEmit && tsc -p apps/web/tsconfig.json --noEmit"
+    "typecheck": "tsc -p packages/math-runtime/tsconfig.json --noEmit && tsc -p apps/web/tsconfig.json --noEmit",
+    "sync:pyodide": "node scripts/sync-pyodide.mjs"
   },
   "dependencies": {
     "next": "^16.0.0",
+    "pyodide": "314.0.7",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
