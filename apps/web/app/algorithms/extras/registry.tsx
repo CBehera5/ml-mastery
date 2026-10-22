@@ -15,6 +15,8 @@ import { ALIGN_CODE, DEPTH_CODE, GINI_CODE, PART_CODE, RULE_CODE, SPLIT_CODE } f
 import { AlignPlayground, DepthPlayground, GiniPlayground, PartitionPlayground, RulePlayground, SplitPlayground } from "../decision-trees/playground/dt-labs";
 import { AVG_CODE, BAG_CODE, IMP_CODE, OOB_CODE, VOTE_CODE as RF_VOTE_CODE } from "../random-forests/playground/rf-code";
 import { AveragePlayground, BagPlayground, ImportancePlayground, OobPlayground, VotePlayground } from "../random-forests/playground/rf-labs";
+import { CMP_CODE, LOG_CODE, SEQ_CODE, SQ_CODE, STOP_CODE, TRANS_CODE } from "../gradient-boosting/playground/gb-code";
+import { ComparePlayground, LeakTransformPlayground, LogLossPlayground as GbLogLossPlayground, SequentialPlayground, SquaredPlayground, StopPlayground } from "../gradient-boosting/playground/gb-labs";
 
 export type AlgoExtra = { Playground?: ComponentType; code?: CodeLabConfig };
 /** One entry per lesson, keyed `module/lessonIndex` (zero-based). A lesson page shows its playground before the formal experiment and its code cell in the Python section. */
@@ -48,6 +50,12 @@ export const ALGO_EXTRAS: Record<string, AlgoExtra> = {
   "random-forests/2": { Playground: VotePlayground, code: RF_VOTE_CODE },
   "random-forests/3": { Playground: OobPlayground, code: OOB_CODE },
   "random-forests/4": { Playground: ImportancePlayground, code: IMP_CODE },
+  "gradient-boosting/0": { Playground: SequentialPlayground, code: SEQ_CODE },
+  "gradient-boosting/1": { Playground: SquaredPlayground, code: SQ_CODE },
+  "gradient-boosting/2": { Playground: GbLogLossPlayground, code: LOG_CODE },
+  "gradient-boosting/3": { Playground: StopPlayground, code: STOP_CODE },
+  "gradient-boosting/4": { Playground: LeakTransformPlayground, code: TRANS_CODE },
+  "gradient-boosting/5": { Playground: ComparePlayground, code: CMP_CODE },
   "logistic/0": { Playground: SigmoidPlayground, code: SIG_CODE },
   "logistic/1": { Playground: LossPlayground, code: LOSS_CODE },
   "logistic/2": { Playground: ThresholdPlayground, code: THR_CODE },
