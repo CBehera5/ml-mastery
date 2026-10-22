@@ -1,0 +1,28 @@
+.deep{margin:1.5rem 0;color:#1b302a;font-size:1.05rem;line-height:1.8;max-width:46rem}
+.deep header{border-bottom:2px solid #21685f;padding-bottom:1rem;margin-bottom:1rem}
+.meta,.kicker{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#526861;margin:0}
+.deep h3{font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.2;margin:.3rem 0 .8rem}
+.deep nav ol{display:flex;flex-wrap:wrap;gap:.4rem .9rem;list-style:none;padding:0;margin:0;font-size:.9rem}
+.deep nav a{color:#21685f}
+.sec{margin:2.4rem 0;scroll-margin-top:5rem}
+.sec h4{font-size:1.4rem;line-height:1.3;margin:.2rem 0 .8rem}
+.sec p{margin:.8rem 0}
+.eq{background:#f2f1e8;border-radius:.7rem;padding:.9rem 1.2rem;margin:1rem 0;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1rem;line-height:1.9;overflow-x:auto}
+.eq small{display:block;font-family:inherit;color:#50615a;font-size:.85rem;line-height:1.5;margin-top:.3rem;font-style:italic}
+.tableWrap{max-width:100%;overflow:auto;border:1px solid #d3d8cb;border-radius:.6rem;margin:1.1rem 0}
+.tableWrap:focus-visible{outline:3px solid #a95312;outline-offset:3px}
+.tableWrap table{border-collapse:collapse;width:100%;font-size:.95rem;line-height:1.5}
+.tableWrap caption{text-align:left;padding:.8rem 1rem;font-weight:700;background:#f2f1e8}
+.tableWrap th,.tableWrap td{padding:.65rem 1rem;border:1px solid #d3d8cb;text-align:left}
+.tableWrap thead th{background:#253c50;color:#fff}
+.tableWrap tbody tr:nth-child(even){background:#f7f6ef}
+.callout{border-left:4px solid;border-radius:0 .7rem .7rem 0;padding:.9rem 1.2rem;margin:1.3rem 0}
+.callout p{margin:.3rem 0 0}
+.idea{background:#eaf4ed;border-color:#287b6b}
+.warn{background:#fff2df;border-color:#c86818}
+.ml{background:#f0edf8;border-color:#7866a6}
+.code{margin:1.2rem 0}
+.code figcaption{font-size:.85rem;color:#50615a;margin-bottom:.3rem}
+.code pre{background:#14241f;color:#e6f2ec;border-radius:.7rem;padding:1rem 1.2rem;overflow-x:auto;font-size:.9rem;line-height:1.6;margin:0}
+.code pre.out{background:#1f3a31;margin-top:2px;color:#b7e4cf}
+.steps{padding-left:1.4rem}.steps li{margin:.6rem 0}
