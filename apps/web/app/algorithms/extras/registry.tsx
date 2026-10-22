@@ -19,6 +19,8 @@ import { CMP_CODE, LOG_CODE, SEQ_CODE, SQ_CODE, STOP_CODE, TRANS_CODE } from "..
 import { ComparePlayground, LeakTransformPlayground, LogLossPlayground as GbLogLossPlayground, SequentialPlayground, SquaredPlayground, StopPlayground } from "../gradient-boosting/playground/gb-labs";
 import { LIM_CODE as SV_LIM_CODE, MARG_CODE as SV_MARG_CODE, RBF_CODE as SV_RBF_CODE, SCALE_CODE as SV_SCALE_CODE, SOFT_CODE as SV_SOFT_CODE } from "../svm/playground/sv-code";
 import { LimitsPlayground as SvLimitsPlayground, MarginPlayground as SvMarginPlayground, RbfPlayground as SvRbfPlayground, ScalePlayground as SvScalePlayground, SoftMarginPlayground as SvSoftMarginPlayground } from "../svm/playground/sv-labs";
+import { EV1_CODE, EV2_CODE, EV3_CODE, EV4_CODE, EV5_CODE, EV6_CODE } from "../module/playground/ev-code";
+import { CapacityPlayground, ConfusionPlayground, ErrorPlayground, HonestPlayground, MomentPlayground, ProbabilityPlayground } from "../module/playground/ev-labs";
 
 export type AlgoExtra = { Playground?: ComponentType; code?: CodeLabConfig };
 /** One entry per lesson, keyed `module/lessonIndex` (zero-based). A lesson page shows its playground before the formal experiment and its code cell in the Python section. */
@@ -63,6 +65,12 @@ export const ALGO_EXTRAS: Record<string, AlgoExtra> = {
   "svm/2": { Playground: SvRbfPlayground, code: SV_RBF_CODE },
   "svm/3": { Playground: SvScalePlayground, code: SV_SCALE_CODE },
   "svm/4": { Playground: SvLimitsPlayground, code: SV_LIM_CODE },
+  "evaluation/0": { Playground: MomentPlayground, code: EV1_CODE },
+  "evaluation/1": { Playground: ErrorPlayground, code: EV2_CODE },
+  "evaluation/2": { Playground: ConfusionPlayground, code: EV3_CODE },
+  "evaluation/3": { Playground: ProbabilityPlayground, code: EV4_CODE },
+  "evaluation/4": { Playground: CapacityPlayground, code: EV5_CODE },
+  "evaluation/5": { Playground: HonestPlayground, code: EV6_CODE },
   "logistic/0": { Playground: SigmoidPlayground, code: SIG_CODE },
   "logistic/1": { Playground: LossPlayground, code: LOSS_CODE },
   "logistic/2": { Playground: ThresholdPlayground, code: THR_CODE },
