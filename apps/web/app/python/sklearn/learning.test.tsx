@@ -37,7 +37,7 @@ it("teaches all five lessons and completes practice/activity without mastery, re
       const definition = PRACTICE_FORMS[0][lesson * 4 + offset];
       const region = screen.getByRole("region", { name: `Practice ${definition.objective}` });
       answer(region, definition);
-      fireEvent.click(within(region).getByRole("button", { name: `Check ${definition.objective}` }));
+      fireEvent.click(within(region).getByRole("button", { name: "Check my answer" }));
     }
     const config = ACTIVITIES[lesson][1];
     fireEvent.change(screen.getByRole("combobox", { name: "Experiment configuration" }), { target: { value: config.id } });

@@ -65,29 +65,30 @@ function TransferPanel({ module }: { module: ReturnType<typeof useModule> }) {
 export function EssentialsOverview() {
   const module = useModule();
   const [reset, setReset] = useState(false);
-  return <Frame overview title="Python Essentials for machine learning" message={module.message}><p>Eight lessons connect values, ordered records, reliable transformations and small validated programs. There is no hosted Python execution. Prior Mathematics remains available through recall links; lesson order is recommended, not a navigation lock.</p>
+  return <Frame overview title="Python Essentials for machine learning" message={module.message}><p>Eight lessons connect values, ordered records, reliable transformations and small validated programs.</p>
     <p role="status">{!module.loaded ? "Loading Essentials progress…" : module.state.evidence.objectives[MASTERY]?.mastered ? "Essentials mastery previously earned for this assessment version." : "Essentials mastery not yet earned. Lesson completion does not award it."}</p>
     <PythonCards module="essentials" lessons={LESSONS}/><details><summary>Lesson completion records</summary><ul>{LESSONS.map((item,index)=><li key={item.slug}>{item.title}: {lessonComplete(module.state,index)?"Lesson completed":"Lesson not completed"}</li>)}</ul></details>
     <section className={styles.card}><h2>Independent demonstration</h2><p>32 objective families per form; 26/32 plus all eight critical gates in the same confirmed attempt. Three complete forms rotate on unlimited retries. Both decision and reasoning must pass each critical gate. Only independently correct objectives in a passing attempt receive mastery.</p><Link href="/python/essentials/mastery">Open independent assessment</Link><p>{MASTERY_AVAILABLE ? "Complete assessment verification released for this version." : "Mastery remains unavailable until the full version passes verification."}</p></section>
     <TransferPanel module={module}/>
-    <section className={styles.card}><h2>Notebook and scope</h2><a href="/notebooks/python-essentials.ipynb" download>Download the reproducible Essentials notebook</a><p>Trusted local code and embedded fictional records only. Notebook execution/download never grants platform mastery. Genuine Colab, screen-reader and browser-zoom verification remain open.</p></section>
+    <section className={styles.card}><h2>Notebook and scope</h2><a href="/notebooks/python-essentials.ipynb" download>Download the reproducible Essentials notebook</a><p>Trusted local code and embedded fictional records only.</p></section>
     <section className={styles.card}><h2>Reset only this module</h2><label><input type="checkbox" checked={reset} onChange={event => setReset(event.target.checked)}/>Confirm removing this v2 module's practice, assessment history and mastery. Original P01, Math and Regression remain untouched.</label><button disabled={!module.loaded || !reset} onClick={() => {
       try { module.setState(module.store.reset(true)); module.setMessage(module.store.warning); setReset(false); } catch { module.setMessage("Module reset failed; original records are preserved."); }
     }}>Reset Essentials v2 only</button></section>
   </Frame>;
 }
+const outcomeOf = (id: string) => LESSONS.flatMap(item => item.objectives).find(item => item.id === id)?.outcome ?? id;
 function PracticePanel({ index, module }: { index: number; module: ReturnType<typeof useModule> }) {
   const state = module.state, entry = state.practice[index], definition = PRACTICE_FORMS[entry.variant][index];
   const exhausted = entry.counts.every(count => count === 2);
   const work = workedCase(Math.floor(index / 4), index % 4);
-  return <section className={styles.card} aria-label={`Practice ${definition.objective}`}><h3>{definition.objective}{definition.critical ? " — critical decision and reasoning" : ""}</h3>
+  return <section className={styles.card} aria-label={`Practice ${definition.objective}`}><h3>{outcomeOf(definition.objective)}{definition.critical ? " — critical decision and reasoning" : ""}</h3>
     <p>{entry.passed ? "Practice demonstrated — not independent mastery." : "Practice not demonstrated."} Variant {entry.variant ? "B" : "A"} · valid submissions {entry.counts[entry.variant]}/2 · review cycle {entry.cycle >= 1e6 ? "1000000+" : entry.cycle + 1}.</p>
     <p>{definition.prompt}</p><pre><code>{definition.code}</code></pre>
     {definition.atoms.map((atom, position) => <AnswerInput key={atom.id} atom={atom} answer={entry.answers[position]} name={`practice-${index}-${atom.id}`} change={answer => module.act(current => ({ ...current, practice: current.practice.map((item, offset) => offset === index ? { ...item, answers: item.answers.map((value, atomIndex) => atomIndex === position ? answer : value), last: null } : item) }))}/>)}
-    <button disabled={entry.counts[entry.variant] >= 2} onClick={() => module.act(current => practiceSubmit(current, index, now()))}>Check {definition.objective}</button>
+    <button disabled={entry.counts[entry.variant] >= 2} onClick={() => module.act(current => practiceSubmit(current, index, now()))}>Check my answer</button>
     <p role="status">{entry.last === null ? "" : entry.last ? `Correct. ${definition.explanation}` : `Not yet. ${definition.remediation}`}</p>
     {entry.counts[entry.variant] >= 2 && <p><strong>Worked correction:</strong> {definition.explanation} Accepted response: {JSON.stringify(definition.accepted[0])}. Use the changed case before a new cycle.</p>}
-    {!exhausted && <button onClick={() => module.act(current => alternate(current, index))}>Alternate {definition.objective} practice</button>}
+    {!exhausted && <button onClick={() => module.act(current => alternate(current, index))}>Try a different version</button>}
     {exhausted && <div><h4>Targeted remediation and changed-case recall</h4><p>{definition.remediation}</p>
       {index < 4 ? <><p>{REMEDIATION[index].worked}</p><p>{REMEDIATION[index].prompt}</p></> : <><pre><code>{work!.code}</code></pre><p>Predict this changed worked case after reviewing its state trace. {work!.reason}</p></>}
       <label><input type="checkbox" checked={entry.reviewed} onChange={event => module.act(current => ({ ...current, practice: current.practice.map((item, offset) => offset === index ? { ...item, reviewed: event.target.checked } : item) }))}/>I reviewed this objective's contrast.</label>
@@ -122,7 +123,7 @@ export function EssentialsLesson({ lesson }: { lesson: number }) {
     <fieldset id="lesson-practice" disabled={!module.loaded}><legend>Essentials teaching and guided practice</legend>
       {content.objectives.map((objective, offset) => {
         const work = workedCase(lesson, offset);
-        return <section key={objective.id}><div className={styles.card}><h2>{objective.id}: {objective.outcome}</h2>
+        return <section key={objective.id}><div className={styles.card}><h2>{objective.outcome}</h2>
           {objective.introductory && <p>Introductory recognition only; no advanced class design or inheritance requirement.</p>}
           <p>{work?.reason ?? PRACTICE_FORMS[0][offset].explanation}</p>
           {work ? <><h3>Worked numerical / state example</h3><pre><code>{work.code}</code></pre><p>Reference outcome/error: {JSON.stringify(work.expected)}.</p><p>Misconception contrast: {JSON.stringify(work.wrong)} is not this program's outcome. {objective.remediation}</p></> : <><h3>Worked P01 reference</h3><pre><code>{PRACTICE_FORMS[0][offset].code}</code></pre><ul>{workedResponses(PRACTICE_FORMS[0][offset]).map(response => <li key={response}>{response}</li>)}</ul></>}
@@ -156,7 +157,7 @@ export function EssentialsAssessment() {
       <label><input type="checkbox" checked={confirmed} onChange={event => setConfirmed(event.target.checked)}/>I reviewed the full attempt and confirm submission, including any unanswered items.</label>
       <button disabled={!confirmed || invalid > 0 || !MASTERY_AVAILABLE} onClick={() => { module.act(state => confirmAttempt(state, confirmed, now())); setConfirmed(false); heading.current?.focus(); }}>Submit confirmed attempt</button></section>}
     {draft.phase === "results" && draft.result && <section><h2 ref={heading} tabIndex={-1}>{draft.result.passed ? "Mastery demonstrated" : "Not yet mastered"}: {draft.result.score}/32</h2><p>Threshold 26/32 AND every critical gate. Failed critical objectives: {draft.result.critical.join(", ") || "none"}. Previous mastery is never erased by a later failed attempt.</p>
-      {definitions.map((definition, index) => <section key={definition.id} className={styles.card}><h3>{definition.objective}: {draft.result!.outcomes[index] ? "correct" : "not yet"}</h3><p>{draft.result!.outcomes[index] ? definition.explanation : definition.remediation}</p>{!draft.result!.outcomes[index] && <><p><strong>Worked correction:</strong> {definition.explanation}</p><p>Reference response: {workedResponses(definition).join(" · ")}</p><p>Compare the changed worked case in the linked lesson before retrying; the next form is a new full attempt, not a combination with this one.</p></>}<Link href={index < 4 ? "/python/essentials/p01/module" : `/python/essentials/${LESSONS[Math.floor(index / 4)].slug}`}>Targeted lesson recall</Link></section>)}
+      {definitions.map((definition, index) => <section key={definition.id} className={styles.card}><h3>{outcomeOf(definition.objective)}: {draft.result!.outcomes[index] ? "correct" : "not yet"}</h3><p>{draft.result!.outcomes[index] ? definition.explanation : definition.remediation}</p>{!draft.result!.outcomes[index] && <><p><strong>Worked correction:</strong> {definition.explanation}</p><p>Reference response: {workedResponses(definition).join(" · ")}</p><p>Compare the changed worked case in the linked lesson before retrying; the next form is a new full attempt, not a combination with this one.</p></>}<Link href={index < 4 ? "/python/essentials/p01/module" : `/python/essentials/${LESSONS[Math.floor(index / 4)].slug}`}>Targeted lesson recall</Link></section>)}
       <button onClick={() => module.act(state => retry(state, crypto.randomUUID()))}>Retry next independent form</button></section>}
     <section className={styles.card}><h2>Saved attempt summaries</h2><p>Latest 20 compact summaries; only the latest full submitted response is retained. Finite forms and client-visible answers are not high-stakes proctoring or unrestricted-code certification.</p><ol>{module.state.history.map(item => <li key={item.id}>{item.at}: form {["A", "B", "C"][item.form]}, {item.score}/32, {item.passed ? "passed all gates" : `not passed; critical failures ${item.critical.join(", ") || "none"}`}; {ASSESSMENT}</li>)}</ol></section>
   </Frame>;
