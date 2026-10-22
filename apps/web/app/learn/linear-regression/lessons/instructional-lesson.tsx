@@ -7,7 +7,7 @@ import { INSTRUCTIONS, INSTRUCTIONAL_OUTCOMES, instructionalObjectiveIds, type I
 const key=evidenceStorageKey("linear-regression");
 const now=()=>new Date().toISOString();
 
-export function InstructionalLesson({id,children}:{id:InstructionalId;children:ReactNode|((explore:()=>void, reveal:(value:boolean)=>void, explanation:ReactNode)=>ReactNode)}) {
+export function InstructionalLesson({id,children,before,after}:{id:InstructionalId;children:ReactNode|((explore:()=>void, reveal:(value:boolean)=>void, explanation:ReactNode)=>ReactNode);before?:ReactNode;after?:ReactNode}) {
  const [discovered,setDiscovered]=useState(false),[transferAnswer,setTransferAnswer]=useState(""),[transferRevealed,setTransferRevealed]=useState(false);
  const showExplanation=id!=="equation"||discovered;
  useEffect(()=>{if(discovered)document.getElementById("equation-reasoning")?.focus()},[discovered]);
@@ -54,6 +54,7 @@ residual_k = estimate_k - recorded_price_k`}</code></pre><p>Assignment (=) names
   </>}
  </>;
  return <div className="why-regression-lesson" style={id==="equation"?{minWidth:0,overflowWrap:"anywhere"}:undefined}>
+  {before}
 
   <section id="lesson-context" className="why-story"><div><h2>Problem and motivation</h2><p>{content.motivation}</p><h3>Build the intuition</h3><p>{content.intuition}</p></div></section>
   <details className="why-objectives"><summary>What you will learn</summary><h2>{content.title}</h2><ul>{INSTRUCTIONAL_OUTCOMES[id].map(outcome=><li key={outcome}>{outcome}</li>)}</ul></details>
@@ -63,6 +64,7 @@ residual_k = estimate_k - recorded_price_k`}</code></pre><p>Assignment (=) names
    <div onChangeCapture={event=>{if(id==="equation")return;const element=event.target;if(element instanceof HTMLInputElement&&(element.type==="range"||element.type==="number")&&element.value!==""&&Number.isFinite(Number(element.value)))explore()}} onClickCapture={event=>{if(id==="equation")return;const button=(event.target as HTMLElement).closest("button");if(button&&!button.disabled&&(button.textContent==="Step"||button.getAttribute("aria-pressed")==="false"))explore()}}>{typeof children==="function"?children(explore,value=>{setDiscovered(value);if(!value){setTransferAnswer("");setTransferRevealed(false)}},lessonContent):children}</div>
   </section>
   {id!=="equation"&&lessonContent}
+  {after}
   <section className={`why-summary ${complete?"complete":""}`} aria-live="polite"><h2>{complete?(id==="equation"?"Existing lesson checks complete":"Lesson outcome demonstrated"):"Build the evidence"}</h2><p>{content.checks.filter(check=>check.objectiveIds.every(objective=>evidence.objectives[objective]?.completed)).length} of {content.checks.length} checks complete. {explored?"Experiment recorded.":"Experiment interaction still required."}</p><p>Completion records these objectives locally; it does not award mastery. Independent mastery will require unfamiliar examples and critical-objective evidence in the later assessment.</p>{storageError&&<p role="alert">Browser storage is unavailable. Progress works in this visit but cannot be saved reliably.</p>}</section>
  </div>;
 }
