@@ -2,10 +2,10 @@
 import type { CodeLabConfig } from "../../learn/linear-regression/lessons/code-lab-section";
 import { CHECK_PRELUDE, preset, swap } from "./helpers";
 
-const FAIL = `except Exception as exc:
+export const FAIL = `except Exception as exc:
     results.append({"name": "Your functions run", "passed": False, "hint": str(exc)})
 `;
-const cfg = (id: string, title: string, intro: string, cellTitle: string, starter: string, edits: [string, string][], checks: string, bridge: CodeLabConfig["bridge"], presets: CodeLabConfig["cell"]["presets"], q: [string, string], footer: string): CodeLabConfig => ({
+export const cfg = (id: string, title: string, intro: string, cellTitle: string, starter: string, edits: [string, string][], checks: string, bridge: CodeLabConfig["bridge"], presets: CodeLabConfig["cell"]["presets"], q: [string, string], footer: string): CodeLabConfig => ({
   id, title, intro: <p>{intro}</p>, bridge,
   cell: { title: cellTitle, starter, solution: swap(starter, edits), checks, expose: [], presets },
   reflections: [{ question: <>{q[0]}</>, answer: <>{q[1]}</> }], footer: <>{footer}</>,

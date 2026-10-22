@@ -10,6 +10,8 @@ import { GradientCheckPlayground, RulesPlayground, SecantsPlayground, StepSizePl
 import { DBG_CODE, RULE_CODE, SEC_CODE, STEP_CODE } from "./calc-code";
 import { DotPlayground, EigenPlayground, InversePlayground, MatMulPlayground, MatVecPlayground, SpanPlayground, TransformPlayground, VectorsPlayground } from "./la-labs";
 import { LA_DOT, LA_EG, LA_IN, LA_MM, LA_MV, LA_SP, LA_TR, LA_VEC } from "./la-code";
+import { BayesPlayground, BinomialPlayground, ConditionalPlayground, EventsPlayground, GridPlayground, ThresholdPlayground } from "./prob-labs";
+import { PR_BY, PR_BN, PR_CD, PR_EV, PR_GR, PR_TH } from "./prob-code";
 import { GEOMETRY_CODE, REG_CODE, RESP_CODE, STABILITY_CODE, UPDATES_CODE } from "./optimization-code";
 
 export type Extra = { Playground?: ComponentType<{ onDone?: () => void }>; code?: CodeLabConfig; moreLabel?: string };
@@ -45,6 +47,14 @@ Object.assign(EXTRAS, {
   "linear/span": { Playground: SpanPlayground, code: LA_SP, moreLabel: "The original span explorer" },
   "linear/inverse": { Playground: InversePlayground, code: LA_IN, moreLabel: "The original inverse explorer" },
   "linear/eigen": { Playground: EigenPlayground, code: LA_EG, moreLabel: "The original eigenvector explorer" },
+});
+Object.assign(EXTRAS, {
+  "probability/understanding": { Playground: EventsPlayground, code: PR_EV, moreLabel: "The original events lab" },
+  "probability/multiple-events": { Playground: GridPlayground, code: PR_GR, moreLabel: "The original events lab" },
+  "probability/conditional": { Playground: ConditionalPlayground, code: PR_CD, moreLabel: "The original events lab" },
+  "probability/bayes": { Playground: BayesPlayground, code: PR_BY, moreLabel: "The original Bayes lab" },
+  "probability/distributions": { Playground: BinomialPlayground, code: PR_BN, moreLabel: "The original distributions lab" },
+  "probability/ml": { Playground: ThresholdPlayground, code: PR_TH, moreLabel: "The original threshold lab" },
 });
 export const extraFor = (module: string, slug: string): Extra | undefined => EXTRAS[`${module}/${slug}`];
 export function LessonPlayground({ module, slug, onDone }: { module: string; slug: string; onDone?: () => void }) { const P = extraFor(module, slug)?.Playground; return P ? <P onDone={onDone} /> : null; }
