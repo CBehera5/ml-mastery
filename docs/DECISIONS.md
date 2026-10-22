@@ -88,3 +88,9 @@ Each lesson step maps to a concrete interaction state—running a pass, changing
 ## ADR-008: Valid edits update the preview reactively
 
 Valid parameter drafts immediately produce a fresh runtime trace, while the explicit forward action confirms the experiment for the lesson. Invalid drafts hide the previous trace entirely, preventing stale values from appearing current.
+
+## ADR-016 — Interactive, unscored prediction in book-derived Math readings
+Status: Proposed — pending founder approval (change made at founder direction, 22 Oct 2026).
+Context: `BookOpening` previously had no controls; a test asserted no button or textbox in the reading.
+Decision: "Pause and predict" now takes a typed guess (locked or skipped) before the explorer. The guess lives in component state only: it is never stored, graded, or sent to evidence/mastery.
+Consequences: the old no-controls assertion is replaced by tests for lock, skip and the disabled state. Mastery semantics are unchanged.

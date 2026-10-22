@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import {describe,it,expect} from "vitest";
-import {render,screen,cleanup} from "@testing-library/react";
+import {render,screen,cleanup,fireEvent} from "@testing-library/react";
 import {afterEach} from "vitest";
 import {existsSync} from "node:fs";
 import path from "node:path";
@@ -22,7 +22,14 @@ describe("Book-aligned Math readings",()=>{
   expect(existsSync(path.join(process.cwd(),"apps/web/public/math-books",reading.figure))).toBe(true);
   render(<><BookOpening module={module} lesson={lesson}/><BookExplanation module={module} lesson={lesson}/></>);
   expect(screen.getByRole("img",{name:reading.alt})).toBeTruthy();expect(screen.getByRole("table")).toBeTruthy();expect(screen.getByText("Pause and predict")).toBeTruthy();expect(screen.getByRole("region",{name:`${reading.title}: worked comparison`}).getAttribute("tabindex")).toBe("0");
-  expect(screen.queryByRole("button")).toBeNull();expect(screen.queryByRole("textbox")).toBeNull();
+  expect(screen.queryByText(/displayed inputs/)).toBeNull();
+ });
+ it("asks for a guess before the explorer, never scores it, and lets the learner skip",()=>{
+  render(<BookOpening module="algebra" lesson="variables"/>);
+  const lock=screen.getByRole("button",{name:"Lock in my guess"}) as HTMLButtonElement;expect(lock.disabled).toBe(true);
+  fireEvent.change(screen.getByRole("textbox",{name:"Your guess, in a few words"}),{target:{value:"Yes, six fit"}});expect(lock.disabled).toBe(false);
+  fireEvent.click(lock);expect(screen.getByRole("status").textContent).toContain("Your guess: Yes, six fit");
+  cleanup();render(<BookOpening module="algebra" lesson="variables"/>);fireEvent.click(screen.getByRole("button",{name:/not sure/}));expect(screen.getByRole("status").textContent).toContain("No guess yet");
  });
  it("distinguishes reading extensions from assessed functionality",()=>{
   render(<BookExplanation module="calculus" lesson="integrals"/>);expect(screen.getByText(/adds no integral solver or completion requirement/)).toBeTruthy();
