@@ -8,7 +8,7 @@
 .readout div{background:#f4f2e8;border-radius:.6rem;padding:.6rem .8rem}
 .readout dt{font-size:.75rem;color:#50615a}.readout dd{margin:.15rem 0 0;font-size:1.2rem;font-weight:700;color:#16211c;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 .actions{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin-top:.8rem}
-.primary,.secondary{width:auto;flex:0 0 auto;display:inline-block;padding:.6rem 1rem;border-radius:.6rem;font:inherit;font-weight:700;cursor:pointer}
+.primary,.secondary{width:auto;flex:0 1 auto;max-width:100%;white-space:normal;display:inline-block;padding:.6rem 1rem;border-radius:.6rem;font:inherit;font-weight:700;cursor:pointer}
 .primary{background:#1f7568;color:#fff;border:2px solid #1f7568}.secondary{background:#fffdf8;color:#16211c;border:2px solid #b9c4bb}
 .primary:focus-visible,.secondary:focus-visible{outline:3px solid #16211c;outline-offset:2px}
 .note{font-size:.85rem;color:#50615a;margin:.8rem 0 0}

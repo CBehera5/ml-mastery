@@ -12,6 +12,8 @@ import { DotPlayground, EigenPlayground, InversePlayground, MatMulPlayground, Ma
 import { LA_DOT, LA_EG, LA_IN, LA_MM, LA_MV, LA_SP, LA_TR, LA_VEC } from "./la-code";
 import { BayesPlayground, BinomialPlayground, ConditionalPlayground, EventsPlayground, GridPlayground, ThresholdPlayground } from "./prob-labs";
 import { PR_BY, PR_BN, PR_CD, PR_EV, PR_GR, PR_TH } from "./prob-code";
+import { AccuracyPlayground, CenterPlayground, CorrelationPlayground, DataPlayground, HistogramPlayground, SamplingPlayground, SpreadPlayground } from "./stat-labs";
+import { ST_CE, ST_DA, ST_HI, ST_ML, ST_RE, ST_SA, ST_SP } from "./stat-code";
 import { GEOMETRY_CODE, REG_CODE, RESP_CODE, STABILITY_CODE, UPDATES_CODE } from "./optimization-code";
 
 export type Extra = { Playground?: ComponentType<{ onDone?: () => void }>; code?: CodeLabConfig; moreLabel?: string };
@@ -55,6 +57,15 @@ Object.assign(EXTRAS, {
   "probability/bayes": { Playground: BayesPlayground, code: PR_BY, moreLabel: "The original Bayes lab" },
   "probability/distributions": { Playground: BinomialPlayground, code: PR_BN, moreLabel: "The original distributions lab" },
   "probability/ml": { Playground: ThresholdPlayground, code: PR_TH, moreLabel: "The original threshold lab" },
+});
+Object.assign(EXTRAS, {
+  "statistics/data": { Playground: DataPlayground, code: ST_DA, moreLabel: "The original summary lab" },
+  "statistics/center": { Playground: CenterPlayground, code: ST_CE, moreLabel: "The original summary lab" },
+  "statistics/spread": { Playground: SpreadPlayground, code: ST_SP, moreLabel: "The original summary lab" },
+  "statistics/distributions": { Playground: HistogramPlayground, code: ST_HI, moreLabel: "The original summary lab" },
+  "statistics/relationships": { Playground: CorrelationPlayground, code: ST_RE, moreLabel: "The original relationships lab" },
+  "statistics/sampling": { Playground: SamplingPlayground, code: ST_SA, moreLabel: "The original sampling lab" },
+  "statistics/ml": { Playground: AccuracyPlayground, code: ST_ML, moreLabel: "The original ML lab" },
 });
 export const extraFor = (module: string, slug: string): Extra | undefined => EXTRAS[`${module}/${slug}`];
 export function LessonPlayground({ module, slug, onDone }: { module: string; slug: string; onDone?: () => void }) { const P = extraFor(module, slug)?.Playground; return P ? <P onDone={onDone} /> : null; }
