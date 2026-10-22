@@ -14,6 +14,7 @@ import { BayesPlayground, BinomialPlayground, ConditionalPlayground, EventsPlayg
 import { PR_BY, PR_BN, PR_CD, PR_EV, PR_GR, PR_TH } from "./prob-code";
 import { AccuracyPlayground, CenterPlayground, CorrelationPlayground, DataPlayground, HistogramPlayground, SamplingPlayground, SpreadPlayground } from "./stat-labs";
 import { ST_CE, ST_DA, ST_HI, ST_ML, ST_RE, ST_SA, ST_SP } from "./stat-code";
+import { CAP_CODE, TrainingStepPlayground } from "./capstone";
 import { GEOMETRY_CODE, REG_CODE, RESP_CODE, STABILITY_CODE, UPDATES_CODE } from "./optimization-code";
 
 export type Extra = { Playground?: ComponentType<{ onDone?: () => void }>; code?: CodeLabConfig; moreLabel?: string };
@@ -67,6 +68,7 @@ Object.assign(EXTRAS, {
   "statistics/sampling": { Playground: SamplingPlayground, code: ST_SA, moreLabel: "The original sampling lab" },
   "statistics/ml": { Playground: AccuracyPlayground, code: ST_ML, moreLabel: "The original ML lab" },
 });
+Object.assign(EXTRAS, { "integration/capstone": { Playground: TrainingStepPlayground, code: CAP_CODE } });
 export const extraFor = (module: string, slug: string): Extra | undefined => EXTRAS[`${module}/${slug}`];
 export function LessonPlayground({ module, slug, onDone }: { module: string; slug: string; onDone?: () => void }) { const P = extraFor(module, slug)?.Playground; return P ? <P onDone={onDone} /> : null; }
 export function LessonCode({ module, slug }: { module: string; slug: string }) { const c = extraFor(module, slug)?.code; return c ? <CodeLabSection key={c.id} config={c} /> : null; }
