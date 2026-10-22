@@ -7,6 +7,8 @@ import { CONF_CODE, EVIDENCE_CODE, GAUSS_CODE, SMOOTH_CODE } from "../naive-baye
 import { ConfidencePlayground, DensityPlayground, EvidencePlayground, SmoothingPlayground } from "../naive-bayes/playground/nb-labs";
 import { COLUMNS_CODE, CURVE_CODE, DEGREE_CODE, LIMITS_CODE as POLY_LIMITS_CODE } from "../polynomial/playground/poly-code";
 import { ColumnsPlayground, CurvePlayground, DegreePlayground, LimitsPlayground as PolyLimitsPlayground } from "../polynomial/playground/poly-labs";
+import { ELASTIC_CODE, INTERP_CODE, LASSO_CODE, RIDGE_CODE, SAFE_CODE, WHY_CODE } from "../regularization/playground/reg-code";
+import { ElasticPlayground, InterpretPlayground, LassoPlayground, RidgePlayground, SafePlayground, WhyPlayground } from "../regularization/playground/reg-labs";
 
 export type AlgoExtra = { Playground?: ComponentType; code?: CodeLabConfig };
 /** One entry per lesson, keyed `module/lessonIndex` (zero-based). A lesson page shows its playground before the formal experiment and its code cell in the Python section. */
@@ -23,6 +25,12 @@ export const ALGO_EXTRAS: Record<string, AlgoExtra> = {
   "polynomial/1": { Playground: ColumnsPlayground, code: COLUMNS_CODE },
   "polynomial/2": { Playground: DegreePlayground, code: DEGREE_CODE },
   "polynomial/3": { Playground: PolyLimitsPlayground, code: POLY_LIMITS_CODE },
+  "regularization/0": { Playground: WhyPlayground, code: WHY_CODE },
+  "regularization/1": { Playground: RidgePlayground, code: RIDGE_CODE },
+  "regularization/2": { Playground: LassoPlayground, code: LASSO_CODE },
+  "regularization/3": { Playground: ElasticPlayground, code: ELASTIC_CODE },
+  "regularization/4": { Playground: SafePlayground, code: SAFE_CODE },
+  "regularization/5": { Playground: InterpretPlayground, code: INTERP_CODE },
 };
 export const algoExtra = (module: string, lesson: number): AlgoExtra | undefined => ALGO_EXTRAS[`${module}/${lesson}`];
 export const hasAlgoCode = (module: string, lesson: number) => Boolean(algoExtra(module, lesson)?.code);
