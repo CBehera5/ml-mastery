@@ -16,7 +16,7 @@ export function EventsPlayground({ onDone }: Done) {
   const toggle = (f: number) => { setEvent((e) => (e.includes(f) ? e.filter((x) => x !== f) : [...e, f].sort())); setCounts(Array(6).fill(0)); onDone?.(); };
   const p = pEvent(event);
   return (
-    <Playground id="pr-ev" title="Pick an event, then roll to check it" intro={<>A fair die has 6 equally likely outcomes. An <em>event</em> is any group of outcomes you care about. Click faces to build one. Its probability is <strong>favourable ÷ total</strong>. Then roll the die and see whether the long-run share agrees.</>}
+    <Playground id="pr-ev" title="Pick an event, then roll to check it" intro={<>A fair die has 6 equally likely outcomes. Click faces to build an <em>event</em>, any group of outcomes you care about. Its probability is <strong>favourable ÷ total</strong>; then roll to see whether the long-run share agrees.</>}
       actions={<><Btn onClick={() => roll(1)}>Roll 1</Btn><Btn onClick={() => roll(10)}>Roll 10</Btn><Btn onClick={() => roll(100)}>Roll 100</Btn><Btn onClick={() => roll(1000)}>Roll 1000</Btn><Btn onClick={() => setCounts(Array(6).fill(0))}>Clear rolls</Btn></>}
       note="A few rolls can be far from the probability, and that is normal. Probability describes what happens in the long run, not what the next roll will do.">
       <Grid>
@@ -64,13 +64,13 @@ export function ConditionalPlayground({ onDone }: Done) {
   const inGroup = (g: string) => cond === "all" || (cond === "studied" ? g[0] === "s" : g[0] === "r");
   const choose = (c: "all" | "studied" | "rest") => { setCond(c); onDone?.(); };
   return (
-    <Playground id="pr-cond" title="Change the condition, change the denominator" intro={<>200 students: 80 studied for a test and 120 did not. Each dot is one student. <em>Teal</em> passed, <em>grey</em> failed. “Given that…” means we only look at one group, so that group becomes the new total.</>}
+    <Playground id="pr-cond" title="Change the condition, change the denominator" intro={<>200 students: 80 studied for a test and 120 did not. Each dot is one student: solid dots passed, hollow dots failed. “Given that…” means we only look at one group, so that group becomes the new total.</>}
       actions={<><Btn onClick={() => choose("all")}>Everyone</Btn><Btn onClick={() => choose("studied")}>Given: studied</Btn><Btn onClick={() => choose("rest")}>Given: did not study</Btn></>}
       note={`P(pass | studied) = ${S.studiedPass}/${t.studied} = ${pct(S.studiedPass / t.studied, 0)}, but P(pass | did not study) = ${S.restPass}/${t.rest} = ${pct(S.restPass / t.rest, 0)}. The numerator is a count of passes; the denominator is only the group you were told about.`}>
       <Grid>
         <Figure caption={cond === "all" ? "Looking at all 200 students." : `Looking only at the ${group} students who ${cond === "studied" ? "studied" : "did not study"}. The rest are faded.`}>
           <div role="img" aria-label={`${group} students in view, ${pass} passed`} style={{ display: "grid", gridTemplateColumns: "repeat(20, 1fr)", gap: 4, maxWidth: 460 }}>
-            {people.map((g, i) => <span key={i} style={{ aspectRatio: "1", borderRadius: "50%", background: g[1] === "p" ? C.b : "#9aa39d", opacity: inGroup(g) ? 1 : 0.15, outline: g[0] === "s" ? `2px solid ${C.a}` : "none", outlineOffset: -1 }} />)}
+            {people.map((g, i) => <span key={i} style={{ aspectRatio: "1", borderRadius: "50%", background: g[1] === "p" ? C.b : "transparent", border: g[1] === "p" ? "none" : "2px solid #7d8680", boxSizing: "border-box", opacity: inGroup(g) ? 1 : 0.15, outline: g[0] === "s" ? `2px solid ${C.a}` : "none", outlineOffset: -1 }} />)}
           </div>
           <p style={{ fontSize: 12 }}>Orange ring: studied.</p>
         </Figure>

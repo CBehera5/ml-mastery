@@ -22,7 +22,7 @@ export function TrainingStepPlayground({ onDone }: Done) {
     <>The new prediction is {fmt(after, 2)}, closer to 250 than {fmt(row.prediction, 1)}, and the loss falls from {fmt(row.residual ** 2, 1)} to {fmt(s.update.after.metrics.mse, 2)}. The gradient check {s.check.passed ? "agrees" : "disagrees"} with a measured slope. One step is not convergence, and one house is not a validated model.</>,
   ];
   return (
-    <Playground id="cap-step" title="Walk through one training step" intro={<>Five subjects meet in one small calculation: a house with area 2 (thousand sq ft) and age 10, a target price of 250, and a model with an area weight, an age weight of −2 and a bias of 50. Step through it, then change the area weight or the learning rate and see which numbers move.</>}
+    <Playground id="cap-step" title="Walk through one training step" intro={<>A house has area 2 (thousand sq ft) and age 10, and it sold for 250. A model guesses the price from an area weight, an age weight of −2 and a bias of 50. Step through one training update, then change the area weight or the learning rate.</>}
       actions={<>{STAGES.map((t, i) => <Btn key={t} primary={i === stage} onClick={() => go(i)}>{t}</Btn>)}</>}
       note="Every stage is a tool from a different Math subject. Models are built by chaining them: algebra for the rule, linear algebra for many inputs, calculus for slopes, optimization for the step, and statistics and probability for asking whether the result can be trusted.">
       <Grid>

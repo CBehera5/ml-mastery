@@ -12,9 +12,9 @@ export function SecantsPlayground({ onDone }: Done) {
   const s = secant(sqr, x, h), t = 2 * x, w = Math.max(2 * h, 0.04), y0 = sqr(x), pad = Math.max(Math.abs(t), 1) * w * 1.3;
   const move = (v: number) => { setH(v); if (v <= 0.05) onDone?.(); };
   return (
-    <Playground id="calc-sec" title="Slide the second point towards the first" intro={<>For <code>f(x) = x²</code>, a secant joins the point at <code>x</code> to a second point <code>h</code> further right. Its slope is the <em>average</em> change over that gap. Shrink <code>h</code> and watch what the slope settles on. <code>h</code> can get close to zero but never reach it: dividing by zero is undefined.</>}
+    <Playground id="calc-sec" title="Slide the second point towards the first" intro={<>For <code>f(x) = x²</code>, a secant joins the point at <code>x</code> to a second point <code>h</code> further right. Its slope is the <em>average</em> change over that gap. Shrink <code>h</code> and watch what the slope settles on.</>}
       actions={<><Btn onClick={() => move(1)}>h = 1</Btn><Btn onClick={() => move(0.5)}>h = 0.5</Btn><Btn onClick={() => move(0.1)}>h = 0.1</Btn><Btn onClick={() => move(0.01)}>h = 0.01</Btn></>}
-      note="Zoom in far enough and any smooth curve looks like a straight line. That line is the tangent, and its slope is the derivative.">
+      note="Zoom in far enough and any smooth curve looks like a straight line. That line is the tangent, and its slope is the derivative. The gap h can get close to zero but never reach it, because dividing by zero is undefined.">
       <Grid>
         <Figure caption="Left: the curve with its secant (orange) and tangent (dashed). Right: the same point, zoomed in.">
           <Chart label={`Curve x squared with a secant from x = ${x} to x = ${fmt(x + h, 2)}, slope ${fmt(s, 3)}`} xDomain={[-1, 5]} yDomain={[-1, 25]} xTicks={[-1, 0, 1, 2, 3, 4, 5]} yTicks={[0, 5, 10, 15, 20, 25]} xLabel="x" yLabel="f(x) = x²" width={300} height={260}>
@@ -52,7 +52,7 @@ export function RulesPlayground({ onDone }: Done) {
   const agree = (v: number) => gap(v) < 1e-4 * Math.max(1, Math.abs(measured));
   const pick = (t: "rule" | "tempting") => { setTrust(t); if (t === "rule" && agree(ruleV)) onDone?.(); };
   return (
-    <Playground id="calc-rules" title="Which formula survives a measurement?" intro={<>Every derivative rule is compressed reasoning, and each has a tempting wrong version. Choose a function, then compare two candidate answers against a measured slope (a tiny step either side of <code>x</code>). The measurement does not know any rules, so it cannot be fooled by one.</>}
+    <Playground id="calc-rules" title="Which formula survives a measurement?" intro={<>Every derivative rule has a tempting wrong version. Pick a function and compare two candidate answers with a measured slope (a tiny step either side of <code>x</code>). The measurement knows no rules, so it cannot be fooled.</>}
       note={<><strong>{c.name}.</strong> {c.why}</>}>
       <Grid>
         <Figure caption={`The measured slope of ${c.label} at x = ${fmt(x, 2)} is ${fmt(measured, 3)}.`}>

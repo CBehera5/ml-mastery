@@ -93,7 +93,7 @@ export function HistogramPlayground({ onDone }: Done) {
   return (
     <Playground id="st-hist" title="Choose the bin width" intro={<>Thirty exam scores. A histogram counts how many fall in each bin, so the bin width is a choice, and it changes the shape you see. Try very narrow and very wide bins.</>}
       actions={<><Btn onClick={() => move(2)}>Too narrow (2)</Btn><Btn onClick={() => move(10)}>Reasonable (10)</Btn><Btn onClick={() => move(40)}>Too wide (40)</Btn></>}
-      note="Narrow bins show noise and gaps; wide bins hide structure. The five-number summary below does not depend on any bin choice, which is why box plots are a useful companion. A value beyond 1.5 × IQR from the quartiles is flagged as a possible outlier, not automatically a mistake.">
+      note="Narrow bins show noise and gaps; wide bins hide structure. The five-number summary below does not depend on any bin choice. A value beyond 1.5 × IQR from the quartiles is flagged as a possible outlier, not automatically a mistake.">
       <Grid>
         <Figure caption={`Bins of width ${w}, starting at 30. The dashed lines mark the quartiles.`}>
           <Chart label={`Histogram of 30 exam scores in bins of width ${w}`} xDomain={[30, 30 + h.length * w]} yDomain={[0, Math.max(...h) * 1.2]} xTicks={Array.from({ length: Math.min(h.length + 1, 9) }, (_, i) => 30 + Math.round((i * h.length) / Math.min(h.length, 8)) * w).filter((x, i, a) => a.indexOf(x) === i && x <= 30 + h.length * w)} yTicks={[]} xLabel="score" yLabel="students" width={480} height={240}>
@@ -142,7 +142,7 @@ export function SamplingPlayground({ onDone }: Done) {
   const bins = 16, lo = 40, hi = 110, h = Array(bins).fill(0); means.forEach((m) => { const k = Math.min(bins - 1, Math.max(0, Math.floor(((m - lo) / (hi - lo)) * bins))); h[k]++; });
   const se = standardError(POP_SD, n);
   return (
-    <Playground id="st-samp" title="Draw many samples, watch the averages" intro={<>The population is skewed: most houses are cheap and a few are very expensive (true mean ₹{POP_MEAN} lakh, standard deviation ₹{POP_SD} lakh). Take a sample of <code>n</code> houses, record its mean, and repeat 300 times. The histogram of those means is the <em>sampling distribution</em>.</>}
+    <Playground id="st-samp" title="Draw many samples, watch the averages" intro={<>Prices are skewed: most houses are cheap and a few are very expensive (true mean ₹{POP_MEAN} lakh, standard deviation ₹{POP_SD} lakh). Take a sample of <code>n</code> houses, record its mean, and repeat 300 times. Those means form the <em>sampling distribution</em>.</>}
       actions={<><Btn primary onClick={draw}>Draw 300 samples</Btn><Btn onClick={() => { setMeans([]); }}>Clear</Btn></>}
       note="Even though individual prices are skewed, the sample means pile up in a bell shape around the true mean, and the pile gets narrower as n grows. Its spread, the standard error, is σ/√n: to halve it you need four times the data.">
       <Grid>

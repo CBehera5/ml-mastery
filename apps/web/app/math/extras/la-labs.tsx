@@ -82,7 +82,7 @@ export function MatVecPlayground({ onDone }: Done) {
   const out = matVec(HOUSES, w), r = HOUSES[row];
   const set = (x: [number, number]) => { setW(x); onDone?.(); };
   return (
-    <Playground id="la-mv" title="Score every house with one weight vector" intro={<>Each row of the table is one house: area (hundreds of sq ft) and bedrooms. The weights say how many ₹ lakh each unit is worth. A matrix times a vector is just the dot product of <em>every row</em> with the weights, all at once.</>}
+    <Playground id="la-mv" title="Score every house with one weight vector" intro={<>Each row is one house: area (hundreds of sq ft) and bedrooms. The weights say how many ₹ lakh each unit adds to the price. A matrix times a vector is the dot product of <em>every row</em> with the weights, all at once.</>}
       actions={<>{HOUSES.map((_, i) => <Btn key={i} onClick={() => setRow(i)}>Show house {i + 1}</Btn>)}</>}
       note={<>House {row + 1}: {fmt(r[0], 1)} × {fmt(w[0], 0)} + {r[1]} × {fmt(w[1], 0)} = {fmt(out[row], 1)}. Three rows, one rule: that is why a 3×2 table times a 2-long vector gives 3 predictions.</>}>
       <Grid>

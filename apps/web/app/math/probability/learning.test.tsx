@@ -34,7 +34,7 @@ describe("Probability learning experience",()=>{
     expect(screen.getByRole("button",{name:"Record experiment reflection"})).toBeDisabled();
     fireEvent.click(screen.getByRole("button",{name:"Independent population"}));
     fireEvent.click(screen.getByRole("button",{name:"Record experiment reflection"}));
-    await screen.findByText(/Experiment recorded/);
+    await screen.findByText(/Saved\. Answer the four checks/);
   });
   it("requires review and explicit confirmation; records failed attempts and alternate retry",async()=>{
     render(<ProbabilityAssessment/>);
