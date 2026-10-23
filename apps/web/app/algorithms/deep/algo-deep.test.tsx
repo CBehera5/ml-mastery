@@ -1,0 +1,18 @@
+// @vitest-environment jsdom
+import {describe,it,expect,afterEach} from "vitest";
+import {render,screen,cleanup} from "@testing-library/react";
+import {AlgoDeep,hasAlgoDeep} from "./algo-deep";
+import {KNN_DEEP} from "./knn";
+import {LESSONS} from "../knn/teaching";
+afterEach(cleanup);
+describe("Algorithms long-form lessons",()=>{
+ it("KNN has one reading per lesson, in the same order",()=>{expect(KNN_DEEP.length).toBe(LESSONS.length);for(let i=0;i<LESSONS.length;i++)expect(hasAlgoDeep("knn",i)).toBe(true)});
+ for(let i=0;i<KNN_DEEP.length;i++)it(`knn lesson ${i+1} renders seven sections, a check and runnable code`,()=>{
+  render(<AlgoDeep module="knn" lesson={i}/>);
+  expect(KNN_DEEP[i].sections.length).toBe(7);
+  for(const s of KNN_DEEP[i].sections)expect(screen.getByRole("heading",{name:s.title})).toBeTruthy();
+  expect(screen.getByText("Check yourself")).toBeTruthy();
+  expect(document.querySelectorAll("pre").length).toBeGreaterThanOrEqual(2);
+ });
+ it("renders nothing for a lesson without a reading",()=>{const {container}=render(<AlgoDeep module="knn" lesson={99}/>);expect(container.innerHTML).toBe("")});
+});
