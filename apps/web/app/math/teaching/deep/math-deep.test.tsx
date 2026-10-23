@@ -4,7 +4,7 @@ import {render,screen,cleanup} from "@testing-library/react";
 import {MathDeep,MATH_DEEP,hasMathDeep} from "./math-deep";
 afterEach(cleanup);
 /** How many lessons each Math module has a reading for. */
-const EXPECTED:Record<string,number>={"algebra-functions":6,};
+const EXPECTED:Record<string,number>={"probability":6,"algebra-functions":6,};
 describe("Math long-form lessons",()=>{
  for(const [module,readings] of Object.entries(MATH_DEEP)){
   it(`${module}: one reading per lesson, in order`,()=>{
