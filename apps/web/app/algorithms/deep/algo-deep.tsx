@@ -1,4 +1,6 @@
+import Link from "next/link";
 import {DeepRead,type DeepLesson} from "../../math/teaching/deep-read";
+import {PLAYBOOKS} from "./playbooks";
 import {KNN_DEEP} from "./knn";
 import {NAIVE_BAYES_DEEP} from "./naive-bayes";
 import {POLYNOMIAL_DEEP} from "./polynomial";
@@ -17,5 +19,6 @@ export const hasAlgoDeep=(module:string,lesson:number)=>Boolean(ALGO_DEEP[module
 /** The long-form, story-led reading for one Algorithms lesson (absent lessons render nothing). */
 export function AlgoDeep({module,lesson}:{module:string;lesson:number}){
  const item=ALGO_DEEP[module]?.[lesson];
- return item?<DeepRead lesson={item}/>:null;
+ if(!item)return null;
+ return <><DeepRead lesson={item}/>{PLAYBOOKS[module]?<p style={{margin:"1.5rem 0"}}><strong>Want to implement it?</strong> <Link href={`/algorithms/${module}/playbook`}>Open the step-by-step playbook</Link> · <Link href="/algorithms/choose-a-model">How to choose a model</Link></p>:null}</>;
 }
