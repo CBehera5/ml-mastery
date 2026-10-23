@@ -4,7 +4,7 @@ import {render,screen,cleanup} from "@testing-library/react";
 import {PyDeep,PY_DEEP,hasPyDeep} from "./py-deep";
 afterEach(cleanup);
 /** Lessons per Python module: it must match each module's catalog. */
-const EXPECTED:Record<string,number>={"essentials":8,};
+const EXPECTED:Record<string,number>={"numpy":6,"essentials":8,};
 describe("Python long-form lessons",()=>{
  for(const [module,readings] of Object.entries(PY_DEEP)){
   it(`${module}: one reading per lesson, in order`,()=>{
