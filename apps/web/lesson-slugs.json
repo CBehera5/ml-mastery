@@ -1,0 +1,398 @@
+[
+ {
+  "old": "/algorithms/decision-trees/dt01",
+  "new": "/algorithms/decision-trees/partition-feature-space"
+ },
+ {
+  "old": "/algorithms/decision-trees/dt02",
+  "new": "/algorithms/decision-trees/regression-leaves"
+ },
+ {
+  "old": "/algorithms/decision-trees/dt03",
+  "new": "/algorithms/decision-trees/classification-leaves"
+ },
+ {
+  "old": "/algorithms/decision-trees/dt04",
+  "new": "/algorithms/decision-trees/depth-and-stability"
+ },
+ {
+  "old": "/algorithms/decision-trees/dt05",
+  "new": "/algorithms/decision-trees/fit-safely"
+ },
+ {
+  "old": "/algorithms/decision-trees/dt06",
+  "new": "/algorithms/decision-trees/explain-rules-and-limits"
+ },
+ {
+  "old": "/algorithms/gradient-boosting/gb01",
+  "new": "/algorithms/gradient-boosting/sequential-correction"
+ },
+ {
+  "old": "/algorithms/gradient-boosting/gb02",
+  "new": "/algorithms/gradient-boosting/squared-error-regression"
+ },
+ {
+  "old": "/algorithms/gradient-boosting/gb03",
+  "new": "/algorithms/gradient-boosting/classification-loss"
+ },
+ {
+  "old": "/algorithms/gradient-boosting/gb04",
+  "new": "/algorithms/gradient-boosting/stage-count-and-stopping"
+ },
+ {
+  "old": "/algorithms/gradient-boosting/gb05",
+  "new": "/algorithms/gradient-boosting/workflow-and-leakage"
+ },
+ {
+  "old": "/algorithms/gradient-boosting/gb06",
+  "new": "/algorithms/gradient-boosting/compare-and-diagnose"
+ },
+ {
+  "old": "/algorithms/knn/kn01",
+  "new": "/algorithms/knn/vote-among-neighbors"
+ },
+ {
+  "old": "/algorithms/knn/kn02",
+  "new": "/algorithms/knn/scale-defines-closeness"
+ },
+ {
+  "old": "/algorithms/knn/kn03",
+  "new": "/algorithms/knn/choose-k"
+ },
+ {
+  "old": "/algorithms/knn/kn04",
+  "new": "/algorithms/knn/workflow-and-limits"
+ },
+ {
+  "old": "/algorithms/logistic/lg01",
+  "new": "/algorithms/logistic/score-to-probability"
+ },
+ {
+  "old": "/algorithms/logistic/lg02",
+  "new": "/algorithms/logistic/log-loss"
+ },
+ {
+  "old": "/algorithms/logistic/lg03",
+  "new": "/algorithms/logistic/thresholds-and-imbalance"
+ },
+ {
+  "old": "/algorithms/logistic/lg04",
+  "new": "/algorithms/logistic/regularization-and-geometry"
+ },
+ {
+  "old": "/algorithms/logistic/lg05",
+  "new": "/algorithms/logistic/trusted-workflow"
+ },
+ {
+  "old": "/algorithms/logistic/lg06",
+  "new": "/algorithms/logistic/explain-limits"
+ },
+ {
+  "old": "/algorithms/mlp/nn01",
+  "new": "/algorithms/mlp/beyond-one-neuron"
+ },
+ {
+  "old": "/algorithms/mlp/nn02",
+  "new": "/algorithms/mlp/learn-through-gradients"
+ },
+ {
+  "old": "/algorithms/mlp/nn03",
+  "new": "/algorithms/mlp/capacity-and-regularization"
+ },
+ {
+  "old": "/algorithms/mlp/nn04",
+  "new": "/algorithms/mlp/reproducible-workflow"
+ },
+ {
+  "old": "/algorithms/mlp/nn05",
+  "new": "/algorithms/mlp/interpretation-and-limits"
+ },
+ {
+  "old": "/algorithms/model-selection/ms01",
+  "new": "/algorithms/model-selection/compare-models-fairly"
+ },
+ {
+  "old": "/algorithms/model-selection/ms02",
+  "new": "/algorithms/model-selection/search-consumes-information"
+ },
+ {
+  "old": "/algorithms/model-selection/ms03",
+  "new": "/algorithms/model-selection/nested-validation"
+ },
+ {
+  "old": "/algorithms/model-selection/ms04",
+  "new": "/algorithms/model-selection/imbalance-and-cost"
+ },
+ {
+  "old": "/algorithms/model-selection/ms05",
+  "new": "/algorithms/model-selection/interpret-responsibly"
+ },
+ {
+  "old": "/algorithms/model-selection/ms06",
+  "new": "/algorithms/model-selection/reproducible-decision"
+ },
+ {
+  "old": "/algorithms/naive-bayes/nb01",
+  "new": "/algorithms/naive-bayes/combine-class-evidence"
+ },
+ {
+  "old": "/algorithms/naive-bayes/nb02",
+  "new": "/algorithms/naive-bayes/counts-and-smoothing"
+ },
+ {
+  "old": "/algorithms/naive-bayes/nb03",
+  "new": "/algorithms/naive-bayes/continuous-likelihoods"
+ },
+ {
+  "old": "/algorithms/naive-bayes/nb04",
+  "new": "/algorithms/naive-bayes/probabilistic-shortcuts"
+ },
+ {
+  "old": "/algorithms/polynomial/pr01",
+  "new": "/algorithms/polynomial/curves-from-features"
+ },
+ {
+  "old": "/algorithms/polynomial/pr02",
+  "new": "/algorithms/polynomial/interactions-and-capacity"
+ },
+ {
+  "old": "/algorithms/polynomial/pr03",
+  "new": "/algorithms/polynomial/degree-and-regularization"
+ },
+ {
+  "old": "/algorithms/polynomial/pr04",
+  "new": "/algorithms/polynomial/limits-and-alternatives"
+ },
+ {
+  "old": "/algorithms/random-forests/rf01",
+  "new": "/algorithms/random-forests/diversity-before-averaging"
+ },
+ {
+  "old": "/algorithms/random-forests/rf02",
+  "new": "/algorithms/random-forests/regression-aggregation"
+ },
+ {
+  "old": "/algorithms/random-forests/rf03",
+  "new": "/algorithms/random-forests/classification-aggregation"
+ },
+ {
+  "old": "/algorithms/random-forests/rf04",
+  "new": "/algorithms/random-forests/oob-and-validation"
+ },
+ {
+  "old": "/algorithms/random-forests/rf05",
+  "new": "/algorithms/random-forests/importance-and-comparison"
+ },
+ {
+  "old": "/algorithms/regularization/rg01",
+  "new": "/algorithms/regularization/why-penalize"
+ },
+ {
+  "old": "/algorithms/regularization/rg02",
+  "new": "/algorithms/regularization/ridge"
+ },
+ {
+  "old": "/algorithms/regularization/rg03",
+  "new": "/algorithms/regularization/lasso"
+ },
+ {
+  "old": "/algorithms/regularization/rg04",
+  "new": "/algorithms/regularization/elastic-net"
+ },
+ {
+  "old": "/algorithms/regularization/rg05",
+  "new": "/algorithms/regularization/safe-fitting-and-selection"
+ },
+ {
+  "old": "/algorithms/regularization/rg06",
+  "new": "/algorithms/regularization/interpretation-and-comparison"
+ },
+ {
+  "old": "/algorithms/svm/sv01",
+  "new": "/algorithms/svm/margin-geometry"
+ },
+ {
+  "old": "/algorithms/svm/sv02",
+  "new": "/algorithms/svm/soft-margins-and-c"
+ },
+ {
+  "old": "/algorithms/svm/sv03",
+  "new": "/algorithms/svm/rbf-locality"
+ },
+ {
+  "old": "/algorithms/svm/sv04",
+  "new": "/algorithms/svm/safe-scaled-workflow"
+ },
+ {
+  "old": "/algorithms/svm/sv05",
+  "new": "/algorithms/svm/limits-and-comparison"
+ },
+ {
+  "old": "/python/essentials/p01/module",
+  "new": "/python/essentials/values-names-operators"
+ },
+ {
+  "old": "/python/essentials/p02",
+  "new": "/python/essentials/collections-and-mutation"
+ },
+ {
+  "old": "/python/essentials/p03",
+  "new": "/python/essentials/conditions-and-missing-values"
+ },
+ {
+  "old": "/python/essentials/p04",
+  "new": "/python/essentials/loops-and-aggregations"
+ },
+ {
+  "old": "/python/essentials/p05",
+  "new": "/python/essentials/functions-as-contracts"
+ },
+ {
+  "old": "/python/essentials/p06",
+  "new": "/python/essentials/comprehensions"
+ },
+ {
+  "old": "/python/essentials/p07",
+  "new": "/python/essentials/debugging-and-imports"
+ },
+ {
+  "old": "/python/essentials/p08",
+  "new": "/python/essentials/reproducible-programs"
+ },
+ {
+  "old": "/python/numpy/n01",
+  "new": "/python/numpy/arrays-and-shape"
+ },
+ {
+  "old": "/python/numpy/n02",
+  "new": "/python/numpy/indexing-masks-views"
+ },
+ {
+  "old": "/python/numpy/n03",
+  "new": "/python/numpy/broadcasting"
+ },
+ {
+  "old": "/python/numpy/n04",
+  "new": "/python/numpy/vectorized-predictions"
+ },
+ {
+  "old": "/python/numpy/n05",
+  "new": "/python/numpy/matrix-multiplication"
+ },
+ {
+  "old": "/python/numpy/n06",
+  "new": "/python/numpy/reductions-and-numeric-limits"
+ },
+ {
+  "old": "/python/pandas/d01",
+  "new": "/python/pandas/series-and-dataframes"
+ },
+ {
+  "old": "/python/pandas/d02",
+  "new": "/python/pandas/selecting-and-filtering"
+ },
+ {
+  "old": "/python/pandas/d03",
+  "new": "/python/pandas/missing-values"
+ },
+ {
+  "old": "/python/pandas/d04",
+  "new": "/python/pandas/grouping-and-aggregation"
+ },
+ {
+  "old": "/python/pandas/d05",
+  "new": "/python/pandas/joins"
+ },
+ {
+  "old": "/python/pandas/d06",
+  "new": "/python/pandas/dataset-audit"
+ },
+ {
+  "old": "/python/preparation/t01",
+  "new": "/python/preparation/split-first"
+ },
+ {
+  "old": "/python/preparation/t02",
+  "new": "/python/preparation/fit-missing-rules-on-train"
+ },
+ {
+  "old": "/python/preparation/t03",
+  "new": "/python/preparation/categorical-encoding"
+ },
+ {
+  "old": "/python/preparation/t04",
+  "new": "/python/preparation/scaling"
+ },
+ {
+  "old": "/python/preparation/t05",
+  "new": "/python/preparation/pipelines-without-leakage"
+ },
+ {
+  "old": "/python/preparation/t06",
+  "new": "/python/preparation/outliers-and-reports"
+ },
+ {
+  "old": "/python/sklearn/s01",
+  "new": "/python/sklearn/estimator-lifecycle"
+ },
+ {
+  "old": "/python/sklearn/s02",
+  "new": "/python/sklearn/baselines-and-metrics"
+ },
+ {
+  "old": "/python/sklearn/s03",
+  "new": "/python/sklearn/cross-validation"
+ },
+ {
+  "old": "/python/sklearn/s04",
+  "new": "/python/sklearn/train-fitted-pipeline"
+ },
+ {
+  "old": "/python/sklearn/s05",
+  "new": "/python/sklearn/compare-models"
+ },
+ {
+  "old": "/python/visualization/v01",
+  "new": "/python/visualization/figures-and-axes"
+ },
+ {
+  "old": "/python/visualization/v02",
+  "new": "/python/visualization/histograms"
+ },
+ {
+  "old": "/python/visualization/v03",
+  "new": "/python/visualization/scatterplots"
+ },
+ {
+  "old": "/python/visualization/v04",
+  "new": "/python/visualization/box-plots"
+ },
+ {
+  "old": "/python/visualization/v05",
+  "new": "/python/visualization/misleading-charts"
+ },
+ {
+  "old": "/algorithms/evaluation/lessons/ev01",
+  "new": "/algorithms/evaluation/prediction-moment"
+ },
+ {
+  "old": "/algorithms/evaluation/lessons/ev02",
+  "new": "/algorithms/evaluation/estimate-generalization"
+ },
+ {
+  "old": "/algorithms/evaluation/lessons/ev03",
+  "new": "/algorithms/evaluation/classification-costs"
+ },
+ {
+  "old": "/algorithms/evaluation/lessons/ev04",
+  "new": "/algorithms/evaluation/probabilities-vs-ranking"
+ },
+ {
+  "old": "/algorithms/evaluation/lessons/ev05",
+  "new": "/algorithms/evaluation/bias-variance-uncertainty"
+ },
+ {
+  "old": "/algorithms/evaluation/lessons/ev06",
+  "new": "/algorithms/evaluation/honest-report"
+ }
+]
