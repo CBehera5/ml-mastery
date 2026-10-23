@@ -11,7 +11,7 @@
     "id": "visualization-teaching.v1",
     "provenance": "Original fictional fixed teaching values; no real personal records.",
     "permission": "Project-authored educational examples; no credentials or uploads.",
-    "units": "House area in hundreds of square metres; prediction in thousands of dollars; other fixtures label their own units.",
+    "units": "House area in hundreds of square metres; prediction in ₹ lakh; other fixtures label their own units.",
     "limitations": "Small constructed samples illustrate conventions, not population inference or causal identification.",
     "sha256": "5dcc6027011d2da7f2cda9e33d4015de7b36f656d8f7ab96fcda121181e8847b",
     "author_sha256": "b2797f0402631f4bb1bcecc52450b4b7c04ca623a0bb906d977ef3231a2fab64",
@@ -26,7 +26,7 @@
       "progression": "Plot ordered predictions, then swap axes/units or an unordered customer sequence.",
       "terms": "Figure, Axes, plot, title, x/y label, units, legend, scale.",
       "math": "Functions, coordinates and feature/target units.",
-      "worked": "With area [1,2,3], age held at 10, weights [100,−2] and bias 50, predictions are [130,230,330] ($k). Labeling the price axis dollars rather than $k changes the communicated meaning.",
+      "worked": "With area [1,2,3], age held at 10, weights [100,−2] and bias 50, predictions are [130,230,330] (₹ lakh). Labeling the price axis rupees rather than ₹ lakh changes the communicated meaning.",
       "misconception": "An unlabeled line is not self-explanatory; the code variable name is not an axis label.",
       "objectives": [
         {
@@ -248,7 +248,7 @@
     {
       "objective": "V01.O1",
       "amount": 0,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([1, 2, 3], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'canvas': type(fig).__name__, 'coordinate_system': type(ax).__name__, 'method_owner': 'Axes', 'points': list(zip(area, price))}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([1, 2, 3], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'canvas': type(fig).__name__, 'coordinate_system': type(ax).__name__, 'method_owner': 'Axes', 'points': list(zip(area, price))}",
       "expected": {
         "canvas": "Figure",
         "coordinate_system": "Axes",
@@ -273,7 +273,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             0.9,
             3.1
@@ -317,7 +317,7 @@
     {
       "objective": "V01.O1",
       "amount": 1,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([2, 3, 4], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'canvas': type(fig).__name__, 'coordinate_system': type(ax).__name__, 'method_owner': 'Axes', 'points': list(zip(area, price))}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([2, 3, 4], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'canvas': type(fig).__name__, 'coordinate_system': type(ax).__name__, 'method_owner': 'Axes', 'points': list(zip(area, price))}",
       "expected": {
         "canvas": "Figure",
         "coordinate_system": "Axes",
@@ -342,7 +342,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             1.9,
             4.1
@@ -386,7 +386,7 @@
     {
       "objective": "V01.O1",
       "amount": 2,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([3, 4, 5], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'canvas': type(fig).__name__, 'coordinate_system': type(ax).__name__, 'method_owner': 'Axes', 'points': list(zip(area, price))}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([3, 4, 5], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'canvas': type(fig).__name__, 'coordinate_system': type(ax).__name__, 'method_owner': 'Axes', 'points': list(zip(area, price))}",
       "expected": {
         "canvas": "Figure",
         "coordinate_system": "Axes",
@@ -411,7 +411,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             2.9,
             5.1
@@ -455,7 +455,7 @@
     {
       "objective": "V01.O1",
       "amount": 3,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([4, 5, 6], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'canvas': type(fig).__name__, 'coordinate_system': type(ax).__name__, 'method_owner': 'Axes', 'points': list(zip(area, price))}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([4, 5, 6], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'canvas': type(fig).__name__, 'coordinate_system': type(ax).__name__, 'method_owner': 'Axes', 'points': list(zip(area, price))}",
       "expected": {
         "canvas": "Figure",
         "coordinate_system": "Axes",
@@ -480,7 +480,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             3.9,
             6.1
@@ -524,7 +524,7 @@
     {
       "objective": "V01.O1",
       "amount": 4,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([5, 6, 7], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'canvas': type(fig).__name__, 'coordinate_system': type(ax).__name__, 'method_owner': 'Axes', 'points': list(zip(area, price))}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([5, 6, 7], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'canvas': type(fig).__name__, 'coordinate_system': type(ax).__name__, 'method_owner': 'Axes', 'points': list(zip(area, price))}",
       "expected": {
         "canvas": "Figure",
         "coordinate_system": "Axes",
@@ -549,7 +549,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             4.9,
             7.1
@@ -593,7 +593,7 @@
     {
       "objective": "V01.O1",
       "amount": 5,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([6, 7, 8], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'canvas': type(fig).__name__, 'coordinate_system': type(ax).__name__, 'method_owner': 'Axes', 'points': list(zip(area, price))}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([6, 7, 8], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'canvas': type(fig).__name__, 'coordinate_system': type(ax).__name__, 'method_owner': 'Axes', 'points': list(zip(area, price))}",
       "expected": {
         "canvas": "Figure",
         "coordinate_system": "Axes",
@@ -618,7 +618,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             5.9,
             8.1
@@ -662,7 +662,7 @@
     {
       "objective": "V01.O2",
       "amount": 0,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([1, 2, 3], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'x': area, 'y': price, 'x_units': 'hundreds of square metres', 'y_units': 'thousands of dollars', 'series': 'predicted price; age fixed at 10'}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([1, 2, 3], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'x': area, 'y': price, 'x_units': 'hundreds of square metres', 'y_units': '₹ lakh', 'series': 'predicted price; age fixed at 10'}",
       "expected": {
         "x": [
           1,
@@ -675,7 +675,7 @@
           330
         ],
         "x_units": "hundreds of square metres",
-        "y_units": "thousands of dollars",
+        "y_units": "₹ lakh",
         "series": "predicted price; age fixed at 10"
       },
       "charts": [
@@ -683,7 +683,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             0.9,
             3.1
@@ -719,15 +719,15 @@
           "density": false
         }
       ],
-      "reason": "Map area to x and predicted price in thousands of dollars to y. These are predictions with age held fixed, not measured sale prices or a fitted causal effect.",
-      "misconception": "A price measured in thousands can be labeled dollars without changing meaning.",
+      "reason": "Map area to x and predicted price in ₹ lakh to y. These are predictions with age held fixed, not measured sale prices or a fitted causal effect.",
+      "misconception": "A price measured in lakh can be labeled rupees without changing meaning.",
       "mode": "worked",
       "variant": 0
     },
     {
       "objective": "V01.O2",
       "amount": 1,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([2, 3, 4], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'x': area, 'y': price, 'x_units': 'hundreds of square metres', 'y_units': 'thousands of dollars', 'series': 'predicted price; age fixed at 10'}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([2, 3, 4], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'x': area, 'y': price, 'x_units': 'hundreds of square metres', 'y_units': '₹ lakh', 'series': 'predicted price; age fixed at 10'}",
       "expected": {
         "x": [
           2,
@@ -740,7 +740,7 @@
           430
         ],
         "x_units": "hundreds of square metres",
-        "y_units": "thousands of dollars",
+        "y_units": "₹ lakh",
         "series": "predicted price; age fixed at 10"
       },
       "charts": [
@@ -748,7 +748,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             1.9,
             4.1
@@ -784,15 +784,15 @@
           "density": false
         }
       ],
-      "reason": "Map area to x and predicted price in thousands of dollars to y. These are predictions with age held fixed, not measured sale prices or a fitted causal effect.",
-      "misconception": "A price measured in thousands can be labeled dollars without changing meaning.",
+      "reason": "Map area to x and predicted price in ₹ lakh to y. These are predictions with age held fixed, not measured sale prices or a fitted causal effect.",
+      "misconception": "A price measured in lakh can be labeled rupees without changing meaning.",
       "mode": "practice",
       "variant": 0
     },
     {
       "objective": "V01.O2",
       "amount": 2,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([3, 4, 5], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'x': area, 'y': price, 'x_units': 'hundreds of square metres', 'y_units': 'thousands of dollars', 'series': 'predicted price; age fixed at 10'}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([3, 4, 5], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'x': area, 'y': price, 'x_units': 'hundreds of square metres', 'y_units': '₹ lakh', 'series': 'predicted price; age fixed at 10'}",
       "expected": {
         "x": [
           3,
@@ -805,7 +805,7 @@
           530
         ],
         "x_units": "hundreds of square metres",
-        "y_units": "thousands of dollars",
+        "y_units": "₹ lakh",
         "series": "predicted price; age fixed at 10"
       },
       "charts": [
@@ -813,7 +813,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             2.9,
             5.1
@@ -849,15 +849,15 @@
           "density": false
         }
       ],
-      "reason": "Map area to x and predicted price in thousands of dollars to y. These are predictions with age held fixed, not measured sale prices or a fitted causal effect.",
-      "misconception": "A price measured in thousands can be labeled dollars without changing meaning.",
+      "reason": "Map area to x and predicted price in ₹ lakh to y. These are predictions with age held fixed, not measured sale prices or a fitted causal effect.",
+      "misconception": "A price measured in lakh can be labeled rupees without changing meaning.",
       "mode": "practice",
       "variant": 1
     },
     {
       "objective": "V01.O2",
       "amount": 3,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([4, 5, 6], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'x': area, 'y': price, 'x_units': 'hundreds of square metres', 'y_units': 'thousands of dollars', 'series': 'predicted price; age fixed at 10'}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([4, 5, 6], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'x': area, 'y': price, 'x_units': 'hundreds of square metres', 'y_units': '₹ lakh', 'series': 'predicted price; age fixed at 10'}",
       "expected": {
         "x": [
           4,
@@ -870,7 +870,7 @@
           630
         ],
         "x_units": "hundreds of square metres",
-        "y_units": "thousands of dollars",
+        "y_units": "₹ lakh",
         "series": "predicted price; age fixed at 10"
       },
       "charts": [
@@ -878,7 +878,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             3.9,
             6.1
@@ -914,15 +914,15 @@
           "density": false
         }
       ],
-      "reason": "Map area to x and predicted price in thousands of dollars to y. These are predictions with age held fixed, not measured sale prices or a fitted causal effect.",
-      "misconception": "A price measured in thousands can be labeled dollars without changing meaning.",
+      "reason": "Map area to x and predicted price in ₹ lakh to y. These are predictions with age held fixed, not measured sale prices or a fitted causal effect.",
+      "misconception": "A price measured in lakh can be labeled rupees without changing meaning.",
       "mode": "mastery",
       "variant": 0
     },
     {
       "objective": "V01.O2",
       "amount": 4,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([5, 6, 7], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'x': area, 'y': price, 'x_units': 'hundreds of square metres', 'y_units': 'thousands of dollars', 'series': 'predicted price; age fixed at 10'}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([5, 6, 7], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'x': area, 'y': price, 'x_units': 'hundreds of square metres', 'y_units': '₹ lakh', 'series': 'predicted price; age fixed at 10'}",
       "expected": {
         "x": [
           5,
@@ -935,7 +935,7 @@
           730
         ],
         "x_units": "hundreds of square metres",
-        "y_units": "thousands of dollars",
+        "y_units": "₹ lakh",
         "series": "predicted price; age fixed at 10"
       },
       "charts": [
@@ -943,7 +943,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             4.9,
             7.1
@@ -979,15 +979,15 @@
           "density": false
         }
       ],
-      "reason": "Map area to x and predicted price in thousands of dollars to y. These are predictions with age held fixed, not measured sale prices or a fitted causal effect.",
-      "misconception": "A price measured in thousands can be labeled dollars without changing meaning.",
+      "reason": "Map area to x and predicted price in ₹ lakh to y. These are predictions with age held fixed, not measured sale prices or a fitted causal effect.",
+      "misconception": "A price measured in lakh can be labeled rupees without changing meaning.",
       "mode": "mastery",
       "variant": 1
     },
     {
       "objective": "V01.O2",
       "amount": 5,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([6, 7, 8], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'x': area, 'y': price, 'x_units': 'hundreds of square metres', 'y_units': 'thousands of dollars', 'series': 'predicted price; age fixed at 10'}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([6, 7, 8], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'x': area, 'y': price, 'x_units': 'hundreds of square metres', 'y_units': '₹ lakh', 'series': 'predicted price; age fixed at 10'}",
       "expected": {
         "x": [
           6,
@@ -1000,7 +1000,7 @@
           830
         ],
         "x_units": "hundreds of square metres",
-        "y_units": "thousands of dollars",
+        "y_units": "₹ lakh",
         "series": "predicted price; age fixed at 10"
       },
       "charts": [
@@ -1008,7 +1008,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             5.9,
             8.1
@@ -1044,15 +1044,15 @@
           "density": false
         }
       ],
-      "reason": "Map area to x and predicted price in thousands of dollars to y. These are predictions with age held fixed, not measured sale prices or a fitted causal effect.",
-      "misconception": "A price measured in thousands can be labeled dollars without changing meaning.",
+      "reason": "Map area to x and predicted price in ₹ lakh to y. These are predictions with age held fixed, not measured sale prices or a fitted causal effect.",
+      "misconception": "A price measured in lakh can be labeled rupees without changing meaning.",
       "mode": "mastery",
       "variant": 2
     },
     {
       "objective": "V01.O3",
       "amount": 0,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([1, 2, 3], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\ncustomer_order = ['H2', 'H3', 'H1']\nresult = {'ordered_area': area, 'predictions': price, 'customer_order': customer_order, 'customer_line_justified': False}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([1, 2, 3], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\ncustomer_order = ['H2', 'H3', 'H1']\nresult = {'ordered_area': area, 'predictions': price, 'customer_order': customer_order, 'customer_line_justified': False}",
       "expected": {
         "ordered_area": [
           1,
@@ -1076,7 +1076,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             0.9,
             3.1
@@ -1120,7 +1120,7 @@
     {
       "objective": "V01.O3",
       "amount": 1,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([2, 3, 4], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\ncustomer_order = ['H3', 'H1', 'H2']\nresult = {'ordered_area': area, 'predictions': price, 'customer_order': customer_order, 'customer_line_justified': False}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([2, 3, 4], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\ncustomer_order = ['H3', 'H1', 'H2']\nresult = {'ordered_area': area, 'predictions': price, 'customer_order': customer_order, 'customer_line_justified': False}",
       "expected": {
         "ordered_area": [
           2,
@@ -1144,7 +1144,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             1.9,
             4.1
@@ -1188,7 +1188,7 @@
     {
       "objective": "V01.O3",
       "amount": 2,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([3, 4, 5], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\ncustomer_order = ['H2', 'H3', 'H1']\nresult = {'ordered_area': area, 'predictions': price, 'customer_order': customer_order, 'customer_line_justified': False}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([3, 4, 5], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\ncustomer_order = ['H2', 'H3', 'H1']\nresult = {'ordered_area': area, 'predictions': price, 'customer_order': customer_order, 'customer_line_justified': False}",
       "expected": {
         "ordered_area": [
           3,
@@ -1212,7 +1212,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             2.9,
             5.1
@@ -1256,7 +1256,7 @@
     {
       "objective": "V01.O3",
       "amount": 3,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([4, 5, 6], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\ncustomer_order = ['H3', 'H1', 'H2']\nresult = {'ordered_area': area, 'predictions': price, 'customer_order': customer_order, 'customer_line_justified': False}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([4, 5, 6], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\ncustomer_order = ['H3', 'H1', 'H2']\nresult = {'ordered_area': area, 'predictions': price, 'customer_order': customer_order, 'customer_line_justified': False}",
       "expected": {
         "ordered_area": [
           4,
@@ -1280,7 +1280,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             3.9,
             6.1
@@ -1324,7 +1324,7 @@
     {
       "objective": "V01.O3",
       "amount": 4,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([5, 6, 7], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\ncustomer_order = ['H2', 'H3', 'H1']\nresult = {'ordered_area': area, 'predictions': price, 'customer_order': customer_order, 'customer_line_justified': False}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([5, 6, 7], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\ncustomer_order = ['H2', 'H3', 'H1']\nresult = {'ordered_area': area, 'predictions': price, 'customer_order': customer_order, 'customer_line_justified': False}",
       "expected": {
         "ordered_area": [
           5,
@@ -1348,7 +1348,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             4.9,
             7.1
@@ -1392,7 +1392,7 @@
     {
       "objective": "V01.O3",
       "amount": 5,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([6, 7, 8], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\ncustomer_order = ['H3', 'H1', 'H2']\nresult = {'ordered_area': area, 'predictions': price, 'customer_order': customer_order, 'customer_line_justified': False}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([6, 7, 8], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\ncustomer_order = ['H3', 'H1', 'H2']\nresult = {'ordered_area': area, 'predictions': price, 'customer_order': customer_order, 'customer_line_justified': False}",
       "expected": {
         "ordered_area": [
           6,
@@ -1416,7 +1416,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             5.9,
             8.1
@@ -1460,7 +1460,7 @@
     {
       "objective": "V01.O4",
       "amount": 0,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([1, 2, 3], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nax.plot(area, price + 20, marker='^', linestyle='--', label='Alternative supplied prediction')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'names': [line.get_label() for line in ax.lines], 'markers': [line.get_marker() for line in ax.lines], 'coordinate_table': list(zip(area, price, price + 20))}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([1, 2, 3], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nax.plot(area, price + 20, marker='^', linestyle='--', label='Alternative supplied prediction')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'names': [line.get_label() for line in ax.lines], 'markers': [line.get_marker() for line in ax.lines], 'coordinate_table': list(zip(area, price, price + 20))}",
       "expected": {
         "names": [
           "Prediction; age=10",
@@ -1493,7 +1493,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             0.9,
             3.1
@@ -1557,7 +1557,7 @@
     {
       "objective": "V01.O4",
       "amount": 1,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([2, 3, 4], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nax.plot(area, price + 20, marker='^', linestyle='--', label='Alternative supplied prediction')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'names': [line.get_label() for line in ax.lines], 'markers': [line.get_marker() for line in ax.lines], 'coordinate_table': list(zip(area, price, price + 20))}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([2, 3, 4], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nax.plot(area, price + 20, marker='^', linestyle='--', label='Alternative supplied prediction')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'names': [line.get_label() for line in ax.lines], 'markers': [line.get_marker() for line in ax.lines], 'coordinate_table': list(zip(area, price, price + 20))}",
       "expected": {
         "names": [
           "Prediction; age=10",
@@ -1590,7 +1590,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             1.9,
             4.1
@@ -1654,7 +1654,7 @@
     {
       "objective": "V01.O4",
       "amount": 2,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([3, 4, 5], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nax.plot(area, price + 20, marker='^', linestyle='--', label='Alternative supplied prediction')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'names': [line.get_label() for line in ax.lines], 'markers': [line.get_marker() for line in ax.lines], 'coordinate_table': list(zip(area, price, price + 20))}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([3, 4, 5], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nax.plot(area, price + 20, marker='^', linestyle='--', label='Alternative supplied prediction')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'names': [line.get_label() for line in ax.lines], 'markers': [line.get_marker() for line in ax.lines], 'coordinate_table': list(zip(area, price, price + 20))}",
       "expected": {
         "names": [
           "Prediction; age=10",
@@ -1687,7 +1687,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             2.9,
             5.1
@@ -1751,7 +1751,7 @@
     {
       "objective": "V01.O4",
       "amount": 3,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([4, 5, 6], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nax.plot(area, price + 20, marker='^', linestyle='--', label='Alternative supplied prediction')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'names': [line.get_label() for line in ax.lines], 'markers': [line.get_marker() for line in ax.lines], 'coordinate_table': list(zip(area, price, price + 20))}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([4, 5, 6], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nax.plot(area, price + 20, marker='^', linestyle='--', label='Alternative supplied prediction')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'names': [line.get_label() for line in ax.lines], 'markers': [line.get_marker() for line in ax.lines], 'coordinate_table': list(zip(area, price, price + 20))}",
       "expected": {
         "names": [
           "Prediction; age=10",
@@ -1784,7 +1784,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             3.9,
             6.1
@@ -1848,7 +1848,7 @@
     {
       "objective": "V01.O4",
       "amount": 4,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([5, 6, 7], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nax.plot(area, price + 20, marker='^', linestyle='--', label='Alternative supplied prediction')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'names': [line.get_label() for line in ax.lines], 'markers': [line.get_marker() for line in ax.lines], 'coordinate_table': list(zip(area, price, price + 20))}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([5, 6, 7], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nax.plot(area, price + 20, marker='^', linestyle='--', label='Alternative supplied prediction')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'names': [line.get_label() for line in ax.lines], 'markers': [line.get_marker() for line in ax.lines], 'coordinate_table': list(zip(area, price, price + 20))}",
       "expected": {
         "names": [
           "Prediction; age=10",
@@ -1881,7 +1881,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             4.9,
             7.1
@@ -1945,7 +1945,7 @@
     {
       "objective": "V01.O4",
       "amount": 5,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([6, 7, 8], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nax.plot(area, price + 20, marker='^', linestyle='--', label='Alternative supplied prediction')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'names': [line.get_label() for line in ax.lines], 'markers': [line.get_marker() for line in ax.lines], 'coordinate_table': list(zip(area, price, price + 20))}",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([6, 7, 8], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nax.plot(area, price + 20, marker='^', linestyle='--', label='Alternative supplied prediction')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'names': [line.get_label() for line in ax.lines], 'markers': [line.get_marker() for line in ax.lines], 'coordinate_table': list(zip(area, price, price + 20))}",
       "expected": {
         "names": [
           "Prediction; age=10",
@@ -1978,7 +1978,7 @@
           "type": "line",
           "title": "Ordered prediction slice",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             5.9,
             8.1
@@ -8432,14 +8432,14 @@
     {
       "objective": "V05.O1",
       "amount": 0,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([100, 102], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(99, 103))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 112))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['safe_repairs'] = ['common disclosed scale + absolute-unit claim', 'disclosed zoom + absolute-unit claim']",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([100, 102], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(99, 103))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 112))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['safe_repairs'] = ['common disclosed scale + absolute-unit claim', 'disclosed zoom + absolute-unit claim']",
       "expected": {
         "values": [
           100,
           102
         ],
         "absolute_difference": 2,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           99,
           103
@@ -8459,7 +8459,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -8495,7 +8495,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -8536,14 +8536,14 @@
     {
       "objective": "V05.O1",
       "amount": 1,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([110, 113], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(109, 114))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 123))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['safe_repairs'] = ['common disclosed scale + absolute-unit claim', 'disclosed zoom + absolute-unit claim']",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([110, 113], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(109, 114))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 123))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['safe_repairs'] = ['common disclosed scale + absolute-unit claim', 'disclosed zoom + absolute-unit claim']",
       "expected": {
         "values": [
           110,
           113
         ],
         "absolute_difference": 3,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           109,
           114
@@ -8563,7 +8563,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -8599,7 +8599,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -8640,14 +8640,14 @@
     {
       "objective": "V05.O1",
       "amount": 2,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([120, 124], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(119, 125))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 134))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['safe_repairs'] = ['common disclosed scale + absolute-unit claim', 'disclosed zoom + absolute-unit claim']",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([120, 124], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(119, 125))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 134))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['safe_repairs'] = ['common disclosed scale + absolute-unit claim', 'disclosed zoom + absolute-unit claim']",
       "expected": {
         "values": [
           120,
           124
         ],
         "absolute_difference": 4,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           119,
           125
@@ -8667,7 +8667,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -8703,7 +8703,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -8744,14 +8744,14 @@
     {
       "objective": "V05.O1",
       "amount": 3,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([130, 135], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(129, 136))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 145))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['safe_repairs'] = ['common disclosed scale + absolute-unit claim', 'disclosed zoom + absolute-unit claim']",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([130, 135], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(129, 136))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 145))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['safe_repairs'] = ['common disclosed scale + absolute-unit claim', 'disclosed zoom + absolute-unit claim']",
       "expected": {
         "values": [
           130,
           135
         ],
         "absolute_difference": 5,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           129,
           136
@@ -8771,7 +8771,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -8807,7 +8807,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -8848,14 +8848,14 @@
     {
       "objective": "V05.O1",
       "amount": 4,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([140, 146], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(139, 147))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 156))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['safe_repairs'] = ['common disclosed scale + absolute-unit claim', 'disclosed zoom + absolute-unit claim']",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([140, 146], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(139, 147))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 156))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['safe_repairs'] = ['common disclosed scale + absolute-unit claim', 'disclosed zoom + absolute-unit claim']",
       "expected": {
         "values": [
           140,
           146
         ],
         "absolute_difference": 6,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           139,
           147
@@ -8875,7 +8875,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -8911,7 +8911,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -8952,14 +8952,14 @@
     {
       "objective": "V05.O1",
       "amount": 5,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([150, 157], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(149, 158))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 167))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['safe_repairs'] = ['common disclosed scale + absolute-unit claim', 'disclosed zoom + absolute-unit claim']",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([150, 157], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(149, 158))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 167))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['safe_repairs'] = ['common disclosed scale + absolute-unit claim', 'disclosed zoom + absolute-unit claim']",
       "expected": {
         "values": [
           150,
           157
         ],
         "absolute_difference": 7,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           149,
           158
@@ -8979,7 +8979,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9015,7 +9015,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9056,14 +9056,14 @@
     {
       "objective": "V05.O2",
       "amount": 0,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([100, 102], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(99, 103))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 112))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['question'] = 'Ordered supplied prediction slice'\nresult['chart_choice'] = 'line'",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([100, 102], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(99, 103))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 112))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['question'] = 'Ordered supplied prediction slice'\nresult['chart_choice'] = 'line'",
       "expected": {
         "values": [
           100,
           102
         ],
         "absolute_difference": 2,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           99,
           103
@@ -9081,7 +9081,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9117,7 +9117,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9158,14 +9158,14 @@
     {
       "objective": "V05.O2",
       "amount": 1,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([110, 113], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(109, 114))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 123))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['question'] = 'Paired house area and price'\nresult['chart_choice'] = 'scatter'",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([110, 113], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(109, 114))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 123))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['question'] = 'Paired house area and price'\nresult['chart_choice'] = 'scatter'",
       "expected": {
         "values": [
           110,
           113
         ],
         "absolute_difference": 3,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           109,
           114
@@ -9183,7 +9183,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9219,7 +9219,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9260,14 +9260,14 @@
     {
       "objective": "V05.O2",
       "amount": 2,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([120, 124], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(119, 125))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 134))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['question'] = 'Distribution of one age feature'\nresult['chart_choice'] = 'histogram'",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([120, 124], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(119, 125))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 134))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['question'] = 'Distribution of one age feature'\nresult['chart_choice'] = 'histogram'",
       "expected": {
         "values": [
           120,
           124
         ],
         "absolute_difference": 4,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           119,
           125
@@ -9285,7 +9285,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9321,7 +9321,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9362,14 +9362,14 @@
     {
       "objective": "V05.O2",
       "amount": 3,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([130, 135], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(129, 136))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 145))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['question'] = 'Compare convention-defined group spread'\nresult['chart_choice'] = 'box'",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([130, 135], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(129, 136))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 145))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['question'] = 'Compare convention-defined group spread'\nresult['chart_choice'] = 'box'",
       "expected": {
         "values": [
           130,
           135
         ],
         "absolute_difference": 5,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           129,
           136
@@ -9387,7 +9387,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9423,7 +9423,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9464,14 +9464,14 @@
     {
       "objective": "V05.O2",
       "amount": 4,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([140, 146], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(139, 147))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 156))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['question'] = 'Ordered supplied prediction slice'\nresult['chart_choice'] = 'line'",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([140, 146], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(139, 147))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 156))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['question'] = 'Ordered supplied prediction slice'\nresult['chart_choice'] = 'line'",
       "expected": {
         "values": [
           140,
           146
         ],
         "absolute_difference": 6,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           139,
           147
@@ -9489,7 +9489,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9525,7 +9525,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9566,14 +9566,14 @@
     {
       "objective": "V05.O2",
       "amount": 5,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([150, 157], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(149, 158))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 167))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['question'] = 'Paired house area and price'\nresult['chart_choice'] = 'scatter'",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([150, 157], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(149, 158))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 167))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['question'] = 'Paired house area and price'\nresult['chart_choice'] = 'scatter'",
       "expected": {
         "values": [
           150,
           157
         ],
         "absolute_difference": 7,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           149,
           158
@@ -9591,7 +9591,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9627,7 +9627,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9668,14 +9668,14 @@
     {
       "objective": "V05.O3",
       "amount": 0,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([100, 102], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(99, 103))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 112))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['displayed_ids'] = ['H1', 'H2']\nresult['unseen_performance_established'] = False",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([100, 102], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(99, 103))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 112))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['displayed_ids'] = ['H1', 'H2']\nresult['unseen_performance_established'] = False",
       "expected": {
         "values": [
           100,
           102
         ],
         "absolute_difference": 2,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           99,
           103
@@ -9696,7 +9696,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9732,7 +9732,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9773,14 +9773,14 @@
     {
       "objective": "V05.O3",
       "amount": 1,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([110, 113], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(109, 114))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 123))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['displayed_ids'] = ['H2', 'H3']\nresult['unseen_performance_established'] = False",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([110, 113], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(109, 114))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 123))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['displayed_ids'] = ['H2', 'H3']\nresult['unseen_performance_established'] = False",
       "expected": {
         "values": [
           110,
           113
         ],
         "absolute_difference": 3,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           109,
           114
@@ -9801,7 +9801,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9837,7 +9837,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9878,14 +9878,14 @@
     {
       "objective": "V05.O3",
       "amount": 2,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([120, 124], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(119, 125))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 134))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['displayed_ids'] = ['H3', 'H4']\nresult['unseen_performance_established'] = False",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([120, 124], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(119, 125))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 134))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['displayed_ids'] = ['H3', 'H4']\nresult['unseen_performance_established'] = False",
       "expected": {
         "values": [
           120,
           124
         ],
         "absolute_difference": 4,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           119,
           125
@@ -9906,7 +9906,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9942,7 +9942,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -9983,14 +9983,14 @@
     {
       "objective": "V05.O3",
       "amount": 3,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([130, 135], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(129, 136))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 145))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['displayed_ids'] = ['H4', 'H5']\nresult['unseen_performance_established'] = False",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([130, 135], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(129, 136))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 145))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['displayed_ids'] = ['H4', 'H5']\nresult['unseen_performance_established'] = False",
       "expected": {
         "values": [
           130,
           135
         ],
         "absolute_difference": 5,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           129,
           136
@@ -10011,7 +10011,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10047,7 +10047,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10088,14 +10088,14 @@
     {
       "objective": "V05.O3",
       "amount": 4,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([140, 146], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(139, 147))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 156))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['displayed_ids'] = ['H5', 'H6']\nresult['unseen_performance_established'] = False",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([140, 146], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(139, 147))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 156))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['displayed_ids'] = ['H5', 'H6']\nresult['unseen_performance_established'] = False",
       "expected": {
         "values": [
           140,
           146
         ],
         "absolute_difference": 6,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           139,
           147
@@ -10116,7 +10116,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10152,7 +10152,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10193,14 +10193,14 @@
     {
       "objective": "V05.O3",
       "amount": 5,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([150, 157], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(149, 158))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 167))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['displayed_ids'] = ['H6', 'H7']\nresult['unseen_performance_established'] = False",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([150, 157], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(149, 158))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 167))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['displayed_ids'] = ['H6', 'H7']\nresult['unseen_performance_established'] = False",
       "expected": {
         "values": [
           150,
           157
         ],
         "absolute_difference": 7,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           149,
           158
@@ -10221,7 +10221,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10257,7 +10257,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10298,14 +10298,14 @@
     {
       "objective": "V05.O4",
       "amount": 0,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([100, 102], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(99, 103))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 112))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['depth'] = 'introductory'\nresult['next_step'] = 'Predeclare a claim and validate later; selected exploratory patterns are not proof.'",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([100, 102], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(99, 103))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 112))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['depth'] = 'introductory'\nresult['next_step'] = 'Predeclare a claim and validate later; selected exploratory patterns are not proof.'",
       "expected": {
         "values": [
           100,
           102
         ],
         "absolute_difference": 2,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           99,
           103
@@ -10323,7 +10323,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10359,7 +10359,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10400,14 +10400,14 @@
     {
       "objective": "V05.O4",
       "amount": 1,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([110, 113], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(109, 114))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 123))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['depth'] = 'introductory'\nresult['next_step'] = 'Predeclare a claim and validate later; selected exploratory patterns are not proof.'",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([110, 113], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(109, 114))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 123))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['depth'] = 'introductory'\nresult['next_step'] = 'Predeclare a claim and validate later; selected exploratory patterns are not proof.'",
       "expected": {
         "values": [
           110,
           113
         ],
         "absolute_difference": 3,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           109,
           114
@@ -10425,7 +10425,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10461,7 +10461,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10502,14 +10502,14 @@
     {
       "objective": "V05.O4",
       "amount": 2,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([120, 124], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(119, 125))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 134))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['depth'] = 'introductory'\nresult['next_step'] = 'Predeclare a claim and validate later; selected exploratory patterns are not proof.'",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([120, 124], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(119, 125))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 134))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['depth'] = 'introductory'\nresult['next_step'] = 'Predeclare a claim and validate later; selected exploratory patterns are not proof.'",
       "expected": {
         "values": [
           120,
           124
         ],
         "absolute_difference": 4,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           119,
           125
@@ -10527,7 +10527,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10563,7 +10563,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10604,14 +10604,14 @@
     {
       "objective": "V05.O4",
       "amount": 3,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([130, 135], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(129, 136))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 145))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['depth'] = 'introductory'\nresult['next_step'] = 'Predeclare a claim and validate later; selected exploratory patterns are not proof.'",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([130, 135], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(129, 136))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 145))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['depth'] = 'introductory'\nresult['next_step'] = 'Predeclare a claim and validate later; selected exploratory patterns are not proof.'",
       "expected": {
         "values": [
           130,
           135
         ],
         "absolute_difference": 5,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           129,
           136
@@ -10629,7 +10629,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10665,7 +10665,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10706,14 +10706,14 @@
     {
       "objective": "V05.O4",
       "amount": 4,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([140, 146], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(139, 147))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 156))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['depth'] = 'introductory'\nresult['next_step'] = 'Predeclare a claim and validate later; selected exploratory patterns are not proof.'",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([140, 146], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(139, 147))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 156))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['depth'] = 'introductory'\nresult['next_step'] = 'Predeclare a claim and validate later; selected exploratory patterns are not proof.'",
       "expected": {
         "values": [
           140,
           146
         ],
         "absolute_difference": 6,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           139,
           147
@@ -10731,7 +10731,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10767,7 +10767,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10808,14 +10808,14 @@
     {
       "objective": "V05.O4",
       "amount": 5,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([150, 157], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (thousands of dollars)', title='Disclosed zoom', ylim=(149, 158))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 167))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': 'thousands of dollars', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['depth'] = 'introductory'\nresult['next_step'] = 'Predeclare a claim and validate later; selected exploratory patterns are not proof.'",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\nvalues = np.array([150, 157], dtype=float)\nax.plot([1, 2], values, marker='o', label='Supplied measurement')\nax.set(xlabel='Ordered measurement', ylabel='Price (₹ lakh)', title='Disclosed zoom', ylim=(149, 158))\nax.legend()\nzoom = chart_spec(ax, 'line')\nax.set(title='Common baseline comparison', ylim=(0, 167))\ncharts = [zoom, chart_spec(ax, 'line')]\nresult = {'values': values, 'absolute_difference': float(values[1] - values[0]), 'units': '₹ lakh', 'zoom_limits': zoom['ylim'], 'common_limits': charts[1]['ylim'], 'same_data': True}\nresult['depth'] = 'introductory'\nresult['next_step'] = 'Predeclare a claim and validate later; selected exploratory patterns are not proof.'",
       "expected": {
         "values": [
           150,
           157
         ],
         "absolute_difference": 7,
-        "units": "thousands of dollars",
+        "units": "₹ lakh",
         "zoom_limits": [
           149,
           158
@@ -10833,7 +10833,7 @@
           "type": "line",
           "title": "Disclosed zoom",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10869,7 +10869,7 @@
           "type": "line",
           "title": "Common baseline comparison",
           "xlabel": "Ordered measurement",
-          "ylabel": "Price (thousands of dollars)",
+          "ylabel": "Price (₹ lakh)",
           "xlim": [
             0.95,
             2.05
@@ -10910,7 +10910,7 @@
     {
       "objective": "V01.O2",
       "amount": 6,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([1, 2, 3], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'x': area, 'y': price, 'x_units': 'hundreds of square metres', 'y_units': 'thousands of dollars', 'series': 'predicted price; age fixed at 10'}\nax.clear()\nax.plot(price, area, marker='o', label='Prediction; coordinates wrongly swapped')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Teaching error: swapped coordinates')\ncharts = [chart_spec(ax, 'line')]\nresult['plotted_x'] = price; result['plotted_y'] = area\nresult['repair'] = 'Restore area as x and price in thousands as y; labels must describe the actual coordinates.'",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([1, 2, 3], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'x': area, 'y': price, 'x_units': 'hundreds of square metres', 'y_units': '₹ lakh', 'series': 'predicted price; age fixed at 10'}\nax.clear()\nax.plot(price, area, marker='o', label='Prediction; coordinates wrongly swapped')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Teaching error: swapped coordinates')\ncharts = [chart_spec(ax, 'line')]\nresult['plotted_x'] = price; result['plotted_y'] = area\nresult['repair'] = 'Restore area as x and price in thousands as y; labels must describe the actual coordinates.'",
       "expected": {
         "x": [
           1,
@@ -10923,7 +10923,7 @@
           330
         ],
         "x_units": "hundreds of square metres",
-        "y_units": "thousands of dollars",
+        "y_units": "₹ lakh",
         "series": "predicted price; age fixed at 10",
         "plotted_x": [
           130,
@@ -10942,7 +10942,7 @@
           "type": "line",
           "title": "Teaching error: swapped coordinates",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (thousands of dollars)",
+          "ylabel": "Predicted price (₹ lakh)",
           "xlim": [
             120,
             340
@@ -10978,15 +10978,15 @@
           "density": false
         }
       ],
-      "reason": "Map area to x and predicted price in thousands of dollars to y. These are predictions with age held fixed, not measured sale prices or a fitted causal effect.",
-      "misconception": "A price measured in thousands can be labeled dollars without changing meaning.",
+      "reason": "Map area to x and predicted price in ₹ lakh to y. These are predictions with age held fixed, not measured sale prices or a fitted causal effect.",
+      "misconception": "A price measured in lakh can be labeled rupees without changing meaning.",
       "mode": "experiment",
       "variant": 0
     },
     {
       "objective": "V01.O2",
       "amount": 7,
-      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([1, 2, 3], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (thousands of dollars)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'x': area, 'y': price, 'x_units': 'hundreds of square metres', 'y_units': 'thousands of dollars', 'series': 'predicted price; age fixed at 10'}\nax.set(ylabel='Predicted price (dollars)', title='Teaching error: incorrect price units')\ncharts = [chart_spec(ax, 'line')]\nresult['communicated_units'] = 'dollars (incorrect for these numeric values)'\nresult['repair'] = 'Relabel thousands of dollars; converting to dollars instead requires multiplying every price by 1000.'",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.cbook import boxplot_stats\nfig, ax = plt.subplots()\narea = np.array([1, 2, 3], dtype=float)\nprice = 100 * area - 2 * 10 + 50\nax.plot(area, price, marker='o', linestyle='-', label='Prediction; age=10')\nax.set(xlabel='Area (hundreds of square metres)', ylabel='Predicted price (₹ lakh)', title='Ordered prediction slice')\nax.legend()\ncharts = [chart_spec(ax, 'line')]\nresult = {'x': area, 'y': price, 'x_units': 'hundreds of square metres', 'y_units': '₹ lakh', 'series': 'predicted price; age fixed at 10'}\nax.set(ylabel='Predicted price (rupees)', title='Teaching error: incorrect price units')\ncharts = [chart_spec(ax, 'line')]\nresult['communicated_units'] = 'rupees (incorrect for these numeric values)'\nresult['repair'] = 'Relabel ₹ lakh; converting to rupees instead requires multiplying every price by 100000.'",
       "expected": {
         "x": [
           1,
@@ -10999,17 +10999,17 @@
           330
         ],
         "x_units": "hundreds of square metres",
-        "y_units": "thousands of dollars",
+        "y_units": "₹ lakh",
         "series": "predicted price; age fixed at 10",
-        "communicated_units": "dollars (incorrect for these numeric values)",
-        "repair": "Relabel thousands of dollars; converting to dollars instead requires multiplying every price by 1000."
+        "communicated_units": "rupees (incorrect for these numeric values)",
+        "repair": "Relabel ₹ lakh; converting to rupees instead requires multiplying every price by 100000."
       },
       "charts": [
         {
           "type": "line",
           "title": "Teaching error: incorrect price units",
           "xlabel": "Area (hundreds of square metres)",
-          "ylabel": "Predicted price (dollars)",
+          "ylabel": "Predicted price (rupees)",
           "xlim": [
             0.9,
             3.1
@@ -11045,8 +11045,8 @@
           "density": false
         }
       ],
-      "reason": "Map area to x and predicted price in thousands of dollars to y. These are predictions with age held fixed, not measured sale prices or a fitted causal effect.",
-      "misconception": "A price measured in thousands can be labeled dollars without changing meaning.",
+      "reason": "Map area to x and predicted price in ₹ lakh to y. These are predictions with age held fixed, not measured sale prices or a fitted causal effect.",
+      "misconception": "A price measured in lakh can be labeled rupees without changing meaning.",
       "mode": "experiment",
       "variant": 1
     }

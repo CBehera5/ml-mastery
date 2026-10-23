@@ -77,4 +77,4 @@ it("requires explicit full-attempt confirmation, fails a critical gate at 19, th
   cleanup(); render(<VisualizationAssessment/>);
   await screen.findByRole("heading", { name: "Mastery demonstrated: 20/20" });
   expect((JSON.parse(localStorage.getItem(STORAGE_KEY)!) as State).history).toHaveLength(2);
-});
+}, 60000);

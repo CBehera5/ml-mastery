@@ -11,7 +11,7 @@
       "progression": "Change numeric area to text and explain why repetition is not a prediction.",
       "terms": "assignment, int, float, str, bool, expression, operator, precedence.",
       "math": "Variables and function evaluation; numbers carry feature/target units.",
-      "worked": "area=2; weight=100; bias=50; prediction=area*weight+bias gives 250 ($k); '2'*3 gives '222', not 6.",
+      "worked": "area=2; weight=100; bias=50; prediction=area*weight+bias gives 250 (₹ lakh); '2'*3 gives '222', not 6.",
       "misconception": "Assignment is not algebraic equality; a numeric-looking string is not a number.",
       "objectives": [
         {

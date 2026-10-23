@@ -89,7 +89,7 @@ export function PythonP01() {
       <p>Suppose area is measured in hundreds of square metres. A simple model assigns a weight of 100 ₹ lakh per area unit and a baseline price of 50 ₹ lakh.</p>
       <p><strong>Prediction = area × weight + bias.</strong> Area is the measured feature; weight converts one area unit to price; bias is the baseline. <code>₹ lakh</code> means ₹ lakh. This is the same <Link href="/math/algebra-functions/variables">weighted-sum idea from Algebra</Link>, not a new law of house prices.</p>
       <pre><code>{"area = 2\nweight = 100\nbias = 50\nprediction = area * weight + bias"}</code></pre>
-      <ol><li>Substitute numeric values: 2 × 100 + 50.</li><li>Multiplication happens before addition: 200 + 50 = 250.</li><li>Area units cancel the weight's per-area unit, leaving 250 (₹ lakh), or $250,000.</li></ol>
+      <ol><li>Substitute numeric values: 2 × 100 + 50.</li><li>Multiplication happens before addition: 200 + 50 = 250.</li><li>Area units cancel the weight's per-area unit, leaving 250 (₹ lakh), or ₹2.5 crore.</li></ol>
       <p><strong>Changed case:</strong> area 4 gives 450 (₹ lakh). Doubling the area does not double the full prediction because the bias is added only once.</p>
       <p><strong>Misconception:</strong> <code>'2' * 3</code> gives <code>'222'</code>. Repeating text is not numerical multiplication, and it has no numeric price units. Python's valid operation can still be the wrong ML reasoning.</p>
     </section>

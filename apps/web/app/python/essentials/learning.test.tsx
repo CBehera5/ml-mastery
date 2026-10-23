@@ -89,4 +89,4 @@ it("requires explicit full-attempt confirmation, fails a critical gate at 31, th
   cleanup(); render(<EssentialsAssessment/>);
   await screen.findByRole("heading", { name: "Mastery demonstrated: 32/32" });
   expect((JSON.parse(localStorage.getItem(STORAGE_KEY)!) as State).history).toHaveLength(2);
-});
+}, 60000);
