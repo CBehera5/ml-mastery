@@ -1,5 +1,6 @@
 import styles from "./deep-read.module.css";
 import {DeepCheck} from "./deep-check";
+import {LivePythonCell} from "../../components/live-python/live-python-cell";
 export type DeepBlock =
  | {kind:"p";text:string}
  | {kind:"eq";lines:string[];note?:string}
@@ -17,7 +18,7 @@ function Block({b}:{b:DeepBlock}){
   case "eq":return <div className={styles.eq}>{b.lines.map(l=><div key={l}>{l}</div>)}{b.note&&<small>{b.note}</small>}</div>;
   case "table":return <div className={styles.tableWrap} tabIndex={0} role="region" aria-label={b.caption}><table><caption>{b.caption}</caption><thead><tr>{b.headers.map(h=><th key={h} scope="col">{h}</th>)}</tr></thead><tbody>{b.rows.map(r=><tr key={r.join("|")}>{r.map((c,i)=>i===0?<th key={i} scope="row">{c}</th>:<td key={i}>{c}</td>)}</tr>)}</tbody></table></div>;
   case "callout":return <aside className={`${styles.callout} ${styles[b.tone]}`}><strong>{b.title}</strong><p>{b.text}</p></aside>;
-  case "code":return <figure className={styles.code}><figcaption>{b.caption}</figcaption><pre><code>{b.code}</code></pre>{b.output&&<pre className={styles.out} aria-label="Output"><code>{b.output}</code></pre>}</figure>;
+  case "code":return <figure className={styles.code}><figcaption>{b.caption}</figcaption><pre><code>{b.code}</code></pre>{b.output&&<pre className={styles.out} aria-label="Output"><code>{b.output}</code></pre>}<details className={styles.try}><summary>Edit and run this code in your browser</summary><LivePythonCell title={b.caption} starter={b.code}/></details></figure>;
   case "check":return <DeepCheck question={b.question} options={b.options} answer={b.answer} why={b.why}/>;
   case "steps":return <ol className={styles.steps}>{b.items.map(i=><li key={i}>{i}</li>)}</ol>;
  }

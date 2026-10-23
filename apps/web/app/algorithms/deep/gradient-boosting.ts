@@ -417,7 +417,7 @@ export const GRADIENT_BOOSTING_DEEP:DeepLesson[]=[
     "blocks": [
      {
       "kind": "p",
-      "text": "Each new stage nudges scores. It is the log loss, not accuracy, that tells you how well the probabilities are calibrated. In a simulation with 2,000 customers (1,000 to train, 1,000 to check), log loss fell from 0.593 after 1 stage to 0.498 at 20 stages, then crept back up to 0.540 by 300."
+      "text": "Each new stage nudges scores. It is the log loss, not accuracy, that tells you how well the probabilities are calibrated. In a simulation with 2,000 customers (1,000 to train, 1,000 to check), log loss fell from 0.593 after 1 stage to 0.498 at 20 stages, then crept back up to 0.539 by 300."
      },
      {
       "kind": "callout",
@@ -493,7 +493,7 @@ export const GRADIENT_BOOSTING_DEEP:DeepLesson[]=[
       "kind": "code",
       "caption": "A hand-fitted first step, then staged log loss",
       "code": "import numpy as np\nfrom sklearn.ensemble import GradientBoostingClassifier\nfrom sklearn.metrics import log_loss, accuracy_score\n\n# one boosting step by hand: five customers, start from the base rate\ny = np.array([1, 0, 0, 0, 0])\np0 = y.mean()\nF0 = np.log(p0 / (1 - p0))\nprint(\"base rate\", p0, \"-> starting log-odds\", round(F0, 3))\nprint(\"residuals y - p:\", np.round(y - p0, 2))\n\nrng = np.random.default_rng(8)\nn = 2000\ntenure = rng.uniform(1, 48, n)\ncalls = rng.poisson(2, n)\nbill = rng.uniform(200, 2000, n)\nlogit = -0.8 - 0.06 * tenure + 0.5 * calls + 0.0005 * (bill - 1000) + 0.04 * (tenure < 10) * calls * 10\ny = (rng.random(n) < 1 / (1 + np.exp(-logit))).astype(int)\nX = np.column_stack([tenure, calls, bill])\ntr, te = slice(0, 1000), slice(1000, None)\n\nmodel = GradientBoostingClassifier(n_estimators=300, learning_rate=0.1, max_depth=2, random_state=0).fit(X[tr], y[tr])\nstages = list(model.staged_predict_proba(X[te]))\nfor k in [1, 5, 20, 100, 300]:\n    p = stages[k - 1][:, 1]\n    print(\"stages\", str(k).rjust(3), \"log loss\", round(log_loss(y[te], p), 3), \"accuracy\", round(accuracy_score(y[te], p > 0.5), 3))",
-      "output": "base rate 0.2 -> starting log-odds -1.386\nresiduals y - p: [ 0.8 -0.2 -0.2 -0.2 -0.2]\nstages   1 log loss 0.593 accuracy 0.705\nstages   5 log loss 0.55 accuracy 0.75\nstages  20 log loss 0.498 accuracy 0.775\nstages 100 log loss 0.5 accuracy 0.769\nstages 300 log loss 0.54 accuracy 0.748"
+      "output": "base rate 0.2 -> starting log-odds -1.386\nresiduals y - p: [ 0.8 -0.2 -0.2 -0.2 -0.2]\nstages   1 log loss 0.593 accuracy 0.705\nstages   5 log loss 0.55 accuracy 0.75\nstages  20 log loss 0.498 accuracy 0.775\nstages 100 log loss 0.5 accuracy 0.769\nstages 300 log loss 0.539 accuracy 0.749"
      },
      {
       "kind": "callout",
@@ -567,19 +567,19 @@ export const GRADIENT_BOOSTING_DEEP:DeepLesson[]=[
         "0.5",
         "6",
         "2.09",
-        "2.92"
+        "2.918"
        ],
        [
         "0.1",
         "64",
         "2.042",
-        "2.628"
+        "2.627"
        ],
        [
         "0.02",
-        "368",
+        "335",
         "2.051",
-        "2.199"
+        "2.2"
        ]
       ]
      },
@@ -613,11 +613,11 @@ export const GRADIENT_BOOSTING_DEEP:DeepLesson[]=[
     "blocks": [
      {
       "kind": "p",
-      "text": "Example 1, the cost of overshooting. At learning rate 0.5 the best stage is 6 and by stage 1,000 the validation MSE is 2.92, about 40 percent worse than the best 2.09. The model has memorised noise."
+      "text": "Example 1, the cost of overshooting. At learning rate 0.5 the best stage is 6 and by stage 1,000 the validation MSE is 2.918, about 40 percent worse than the best 2.09. The model has memorised noise."
      },
      {
       "kind": "p",
-      "text": "Example 2, the forgiving version. At 0.02 the best is 368 stages with MSE 2.051, and running all 1,000 only costs 0.15 extra. If you pick the stage count a little wrong, little is lost."
+      "text": "Example 2, the forgiving version. At 0.02 the best is 335 stages with MSE 2.051, and running all 1,000 only costs 0.15 extra. If you pick the stage count a little wrong, little is lost."
      },
      {
       "kind": "callout",
@@ -672,7 +672,7 @@ export const GRADIENT_BOOSTING_DEEP:DeepLesson[]=[
       "kind": "code",
       "caption": "Staged validation error at three learning rates, and early stopping",
       "code": "import numpy as np\nfrom sklearn.ensemble import GradientBoostingRegressor\nfrom sklearn.metrics import mean_squared_error\n\nrng = np.random.default_rng(5)\nn = 900\nX = rng.uniform(0, 10, size=(n, 2))\ny = 3 * np.sin(X[:, 0]) + 0.5 * X[:, 1] + rng.normal(0, 1.2, n)\ntr, va = slice(0, 450), slice(450, None)\n\nprint(\"learning rate | best number of stages | best validation MSE | validation MSE at 1000 stages\")\nfor lr in [0.5, 0.1, 0.02]:\n    m = GradientBoostingRegressor(n_estimators=1000, learning_rate=lr, max_depth=3, random_state=0).fit(X[tr], y[tr])\n    curve = [mean_squared_error(y[va], p) for p in m.staged_predict(X[va])]\n    best = int(np.argmin(curve)) + 1\n    print(str(lr).ljust(13), \"|\", str(best).rjust(6), \"|\", round(min(curve), 3), \"|\", round(curve[-1], 3))\n\nearly = GradientBoostingRegressor(n_estimators=1000, learning_rate=0.1, max_depth=3, validation_fraction=0.2, n_iter_no_change=20, random_state=0).fit(X[tr], y[tr])\nprint(\"early stopping used\", early.n_estimators_, \"stages out of 1000\")",
-      "output": "learning rate | best number of stages | best validation MSE | validation MSE at 1000 stages\n0.5           |      6 | 2.09 | 2.92\n0.1           |     64 | 2.042 | 2.628\n0.02          |    368 | 2.051 | 2.199\nearly stopping used 78 stages out of 1000"
+      "output": "learning rate | best number of stages | best validation MSE | validation MSE at 1000 stages\n0.5           |      6 | 2.09 | 2.918\n0.1           |     64 | 2.042 | 2.627\n0.02          |    335 | 2.051 | 2.2\nearly stopping used 78 stages out of 1000"
      },
      {
       "kind": "callout",

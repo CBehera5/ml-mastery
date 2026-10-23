@@ -31,3 +31,7 @@
 .deep{width:100%;max-width:46rem;overflow-wrap:anywhere}
 .deep .tableWrap table{min-width:0}
 .deep pre{max-width:100%;white-space:pre;overflow-x:auto}
+
+.try{margin-top:.6rem}
+.try>summary{cursor:pointer;font-size:.9rem;color:#0f5c46;font-weight:600;padding:.3rem 0}
+.try>summary:focus-visible{outline:3px solid #a95312;outline-offset:3px}

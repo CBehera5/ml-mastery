@@ -39,7 +39,7 @@ export function LivePythonCell({ title, starter, expose, checks, solution, prese
 
   const execute = useCallback(async (source: string, withChecks: boolean) => {
     const ticket = ++latest.current;
-    setStatus({ kind: "running", label: everRan ? (withChecks ? "Checking your code…" : "Running…") : "Starting Python — the first run downloads about 14 MB, then it is cached…" });
+    setStatus({ kind: "running", label: everRan ? (withChecks ? "Checking your code…" : "Running…") : "Starting Python — the first run loads the runtime (and NumPy, pandas or scikit-learn if you import them), then it is cached…" });
     const request: RunRequest = { code: source, expose, checks: withChecks ? checks : undefined };
     try {
       const out = await (runtime ?? sharedPythonRuntime()).run(request);

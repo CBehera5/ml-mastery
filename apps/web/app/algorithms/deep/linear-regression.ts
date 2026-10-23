@@ -275,7 +275,7 @@ export const LINEAR_REGRESSION_DEEP:DeepLesson[]=[
     "blocks": [
      {
       "kind": "p",
-      "text": "Example 1, a prediction. For a 75 sq m flat: 0.806 × 75 + (−6.82) = 53.62 lakh."
+      "text": "Example 1, a prediction. For a 75 sq m flat: 0.806 × 75 + (−6.82) = 53.63 lakh."
      },
      {
       "kind": "p",
@@ -334,7 +334,7 @@ export const LINEAR_REGRESSION_DEEP:DeepLesson[]=[
       "kind": "code",
       "caption": "Predict by hand and score three candidate rules",
       "code": "import numpy as np\n\narea = np.array([40, 50, 60, 70, 80, 90, 100, 110], float)\nprice = np.array([30, 34, 36, 52, 55, 58, 80, 84], float)\nw, b = np.polyfit(area, price, 1)\n\nx = 75\nprint(\"by hand: w * x + b =\", round(w, 4), \"*\", x, \"+\", round(b, 3), \"=\", round(w * x + b, 2))\nprint(\"each extra sq m adds\", round(w * 100, 1), \"thousand rupees (w =\", round(w, 3), \"lakh per sq m)\")\nprint(\"a flat of zero area is predicted at\", round(b, 2), \"lakh -> the intercept is a baseline, not a real flat\")\nfor guess_w, guess_b in [(0.5, 0), (0.8, -8), (round(w, 2), round(b, 1))]:\n    err = np.mean((price - (guess_w * area + guess_b)) ** 2)\n    print(\"rule\", guess_w, \"x area +\", guess_b, \"-> mean squared error\", round(err, 1))",
-      "output": "by hand: w * x + b = 0.806 * 75 + -6.821 = 53.62\neach extra sq m adds 80.6 thousand rupees (w = 0.806 lakh per sq m)\na flat of zero area is predicted at -6.82 lakh -> the intercept is a baseline, not a real flat\nrule 0.5 x area + 0 -> mean squared error 330.1\nrule 0.8 x area + -8 -> mean squared error 23.6\nrule 0.81 x area + -6.8 -> mean squared error 21.1"
+      "output": "by hand: w * x + b = 0.806 * 75 + -6.821 = 53.63\neach extra sq m adds 80.6 thousand rupees (w = 0.806 lakh per sq m)\na flat of zero area is predicted at -6.82 lakh -> the intercept is a baseline, not a real flat\nrule 0.5 x area + 0 -> mean squared error 330.1\nrule 0.8 x area + -8 -> mean squared error 23.6\nrule 0.81 x area + -6.8 -> mean squared error 21.1"
      },
      {
       "kind": "callout",

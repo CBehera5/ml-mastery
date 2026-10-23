@@ -1,10 +1,12 @@
 # Driver for the in-browser Python cells. Loaded by lesson-worker.mjs (browser) and
 # by engine.test.ts (Node) so both run exactly the same code.
-import json, sys, io, traceback, contextlib
+import json, sys, io, traceback, contextlib, warnings
 
 def __lesson_run(code, expose, checks):
     out = {"stdout": "", "error": None, "values": {}, "checks": None}
-    ns = {"__name__": "__lesson__"}
+    # Pyodide's threadpoolctl shim emits a harmless deprecation warning when scikit-learn is imported.
+    warnings.filterwarnings("ignore", message=r".*as_object_map.*")
+    ns = {"__name__": "__main__"}
     buf = io.StringIO()
 
     def friendly(exc, filename):
