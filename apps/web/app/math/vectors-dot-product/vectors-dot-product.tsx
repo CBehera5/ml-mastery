@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import {MathDeep} from "../teaching/deep/math-deep";
 import { useMemo, useState } from "react";
 import { dotProductTrace } from "@mlmath/runtime";
 import { PublicNav } from "../../landing/public-nav";
@@ -56,7 +57,7 @@ export function VectorsDotProductLesson() {
     <header className="math-lesson-hero"><div><p className="eyebrow">Math intuition pathway</p><h1>Vectors turn many features into <em>one prediction.</em></h1><p>Discover why machine learning represents a house as a vector—and how a dot product combines those values with learned importance.</p></div><div className="lesson-meta panel"><span>LESSON OUTCOME</span><strong>Explain, calculate, code, and debug a dot product.</strong><p>Ordered values and basic multiplication</p></div></header>
 
     <CoreLearning lesson="vectors" />
-    <h2 id="existing-house-lab">Existing five-stage house lab</h2>
+    <MathDeep module="vectors-dot-product" lesson={0}/><h2 id="existing-house-lab">Existing five-stage house lab</h2>
     <p>These five flags are historical completion only. Copying code does not add new understanding or mastery evidence.</p>
     {inputError && <p role="alert">{inputError}</p>}
     <nav className="math-stage-nav" aria-label="Lesson stages">{STAGES.map((label, index) => <button key={label} onClick={() => setStage(index)} className={`${stage === index ? "current" : ""} ${progress[index] ? "complete":""}`} aria-current={stage === index ? "step" : undefined}><b>{progress[index] ? "✓" : index + 1}</b><span>{label}</span></button>)}</nav>
