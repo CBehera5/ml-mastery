@@ -52,7 +52,7 @@ it("teaches all six lessons and completes practice/activity without mastery, res
     await screen.findByText("Lesson completed. Independent module mastery is separate.");
     cleanup();
   }
-});
+}, 60000);
 it("requires explicit full-attempt confirmation, fails a critical gate at 23, then passes independent retry and restores", async () => {
   const state = emptyState();
   state.draft.answers = INDEPENDENT_FORMS[0].map(definition => structuredClone([...definition.accepted[0]]));

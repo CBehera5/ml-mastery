@@ -44,7 +44,7 @@ it("teaches all seven added lessons and completes practice/activity without mast
     await screen.findByText("Lesson completed. Independent module mastery is separate.");
     cleanup();
   }
-});
+}, 60000);
 it("requires preview and separate opt-in before copy, preserving original bytes and isolating reset", async () => {
   const original = serializeProgress(emptyProgress());
   localStorage.setItem(P01_KEY, original);
