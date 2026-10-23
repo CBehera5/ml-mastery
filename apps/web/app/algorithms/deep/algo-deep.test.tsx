@@ -2,12 +2,13 @@
 import {describe,it,expect,afterEach} from "vitest";
 import {render,screen,cleanup} from "@testing-library/react";
 import {AlgoDeep,ALGO_DEEP,hasAlgoDeep} from "./algo-deep";
+import {REGRESSION_LESSONS} from "../linear-regression/curriculum";
 afterEach(cleanup);
 const teaching=import.meta.glob("../*/teaching.ts",{eager:true}) as Record<string,{LESSONS:readonly unknown[]}>;
 describe("Algorithms long-form lessons",()=>{
  for(const [module,readings] of Object.entries(ALGO_DEEP)){
   it(`${module}: one reading per lesson, in order`,()=>{
-   const lessons=teaching[`../${module}/teaching.ts`]?.LESSONS;
+   const lessons=module==="linear-regression"?REGRESSION_LESSONS.filter(l=>l.type!=="project"&&l.type!=="assessment"):teaching[`../${module}/teaching.ts`]?.LESSONS;
    expect(lessons,`teaching.ts for ${module}`).toBeDefined();
    expect(readings.length).toBe(lessons.length);
    readings.forEach((_,i)=>expect(hasAlgoDeep(module,i)).toBe(true));
