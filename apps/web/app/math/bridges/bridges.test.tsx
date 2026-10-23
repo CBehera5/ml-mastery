@@ -28,5 +28,5 @@ describe("bridge lessons",()=>{
   expect(b.lesson.sections.length).toBe(7);expect(screen.getAllByRole("table").length).toBeGreaterThanOrEqual(1);expect(document.querySelectorAll("pre").length).toBeGreaterThanOrEqual(2);
   expect(screen.getByText("Check yourself")).toBeTruthy();
  });
- it("check gives feedback",()=>{render(<DeepRead lesson={BRIDGES[0].lesson}/>);fireEvent.click(screen.getByLabelText(/L2 = 7/));expect(screen.getByRole("status").textContent).toMatch(/Not quite/);fireEvent.click(screen.getByLabelText(/L2 = 5, and L1 = 7/));expect(screen.getByRole("status").textContent).toMatch(/Right/)});
+ it("check gives feedback",()=>{render(<DeepRead lesson={BRIDGES[0].lesson}/>);fireEvent.click(screen.getByLabelText(/L2 = 7/));expect(screen.getAllByRole("status").map(e=>e.textContent).join(" ")).toMatch(/Not quite/);fireEvent.click(screen.getByLabelText(/L2 = 5, and L1 = 7/));expect(screen.getAllByRole("status").map(e=>e.textContent).join(" ")).toMatch(/Right/)});
 });

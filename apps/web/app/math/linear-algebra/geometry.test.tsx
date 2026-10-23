@@ -25,7 +25,7 @@ function submitModule() {
   fireEvent.click(screen.getByRole("checkbox")); fireEvent.click(screen.getByRole("button", { name: "Submit module assessment" }));
 }
 /** The new playgrounds add their own live readouts (<dl>); these tests target the original explorers' status paragraphs. */
-const legacyStatus = (scope: { getAllByRole: (role: string) => HTMLElement[] }) => scope.getAllByRole("status").filter(node => node.tagName !== "DL")[0];
+const legacyStatus = (scope: { getAllByRole: (role: string) => HTMLElement[] }) => scope.getAllByRole("status").filter(node => node.tagName !== "DL" && !node.hasAttribute("data-live-status"))[0];
 describe("geometry lessons and module assessment v2", () => {
   it.each(["transformations", "eigenvectors"] as GeometryLesson[])("completes %s only after concept exploration and checks; preserves prior state", async lesson => {
     const core = emptyCore(); core.objectives[CORE_MASTERY] = { completed: true, mastered: true, evidenceIds: ["existing-core-pass"], updatedAt: "2026-10-15T12:00:00Z" };

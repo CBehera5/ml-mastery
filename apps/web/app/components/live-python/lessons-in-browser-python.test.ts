@@ -8,6 +8,7 @@ import { PY_DEEP } from "../../python/deep/py-deep";
 import { MATH_DEEP } from "../../math/teaching/deep/math-deep";
 import { ALGO_DEEP } from "../../algorithms/deep/algo-deep";
 import { PLAYBOOKS } from "../../algorithms/deep/playbooks";
+import { FOUNDATION_LESSONS } from "../../math/foundations/foundation-lessons";
 import { CHOOSE_GUIDE } from "../../algorithms/deep/choose-guide";
 import type { DeepLesson } from "../../math/teaching/deep-read";
 
@@ -16,7 +17,7 @@ import type { DeepLesson } from "../../math/teaching/deep-read";
 const root = fileURLToPath(new URL("../../../../../", import.meta.url));
 type Case = { id: string; code: string; output: string };
 const cases: Case[] = [];
-const registries: [string, Record<string, DeepLesson[]>][] = [["py", PY_DEEP], ["math", MATH_DEEP], ["algo", ALGO_DEEP], ["playbook", Object.fromEntries(Object.entries(PLAYBOOKS).map(([k, v]) => [k, [v]])) as Record<string, DeepLesson[]>], ["choose", { guide: [CHOOSE_GUIDE] }]];
+const registries: [string, Record<string, DeepLesson[]>][] = [["py", PY_DEEP], ["math", MATH_DEEP], ["algo", ALGO_DEEP], ["playbook", Object.fromEntries(Object.entries(PLAYBOOKS).map(([k, v]) => [k, [v]])) as Record<string, DeepLesson[]>], ["choose", { guide: [CHOOSE_GUIDE] }], ["foundation", Object.fromEntries(Object.entries(FOUNDATION_LESSONS).map(([k, v]) => [k, [v]]))]];
 for (const [name, reg] of registries)
   for (const [mod, lessons] of Object.entries(reg))
     lessons.forEach((l, li) => l.sections.forEach((s) => s.blocks.forEach((b, bi) => {

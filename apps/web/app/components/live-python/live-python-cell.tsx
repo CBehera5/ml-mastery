@@ -101,7 +101,7 @@ export function LivePythonCell({ title, starter, expose, checks, solution, prese
         <button type="button" className={styles.link} onClick={() => { setCode(starter); setResult(null); setChecked(null); }} disabled={busy}>Reset to starter</button>
       </div>
 
-      <div role="status" aria-live="polite" className={styles.status}>
+      <div role="status" data-live-status="" aria-live="polite" className={styles.status}>
         {status.kind === "running" && <p className={styles.running}>{status.label}</p>}
         {status.kind === "error" && <p className={styles.fail}>{status.message}</p>}
         {status.kind === "idle" && result?.error && <p className={styles.fail}><strong>Python stopped with an error.</strong> {result.error}</p>}
