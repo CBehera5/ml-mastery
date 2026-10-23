@@ -258,7 +258,7 @@ export const FOUNDATION_LESSONS:Record<string,DeepLesson>={
        ],
        "yDomain": [
         0,
-        164.19787461180817
+        394.0748990683396
        ],
        "xDomain": [
         -2,
