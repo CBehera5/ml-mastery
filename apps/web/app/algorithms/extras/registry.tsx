@@ -11,6 +11,20 @@ import { ELASTIC_CODE, INTERP_CODE, LASSO_CODE, RIDGE_CODE, SAFE_CODE, WHY_CODE 
 import { ElasticPlayground, InterpretPlayground, LassoPlayground, RidgePlayground, SafePlayground, WhyPlayground } from "../regularization/playground/reg-labs";
 import { CONF_CODE as LG_CONF_CODE, FLOW_CODE, GEO_CODE, LOSS_CODE, SIG_CODE, THR_CODE } from "../logistic/playground/lg-code";
 import { BoundaryPlayground, ConfidencePlayground as LgConfidencePlayground, LeakPlayground, LossPlayground, SigmoidPlayground, ThresholdPlayground } from "../logistic/playground/lg-labs";
+import { ALIGN_CODE, DEPTH_CODE, GINI_CODE, PART_CODE, RULE_CODE, SPLIT_CODE } from "../decision-trees/playground/dt-code";
+import { AlignPlayground, DepthPlayground, GiniPlayground, PartitionPlayground, RulePlayground, SplitPlayground } from "../decision-trees/playground/dt-labs";
+import { AVG_CODE, BAG_CODE, IMP_CODE, OOB_CODE, VOTE_CODE as RF_VOTE_CODE } from "../random-forests/playground/rf-code";
+import { AveragePlayground, BagPlayground, ImportancePlayground, OobPlayground, VotePlayground } from "../random-forests/playground/rf-labs";
+import { CMP_CODE, LOG_CODE, SEQ_CODE, SQ_CODE, STOP_CODE, TRANS_CODE } from "../gradient-boosting/playground/gb-code";
+import { ComparePlayground, LeakTransformPlayground, LogLossPlayground as GbLogLossPlayground, SequentialPlayground, SquaredPlayground, StopPlayground } from "../gradient-boosting/playground/gb-labs";
+import { LIM_CODE as SV_LIM_CODE, MARG_CODE as SV_MARG_CODE, RBF_CODE as SV_RBF_CODE, SCALE_CODE as SV_SCALE_CODE, SOFT_CODE as SV_SOFT_CODE } from "../svm/playground/sv-code";
+import { LimitsPlayground as SvLimitsPlayground, MarginPlayground as SvMarginPlayground, RbfPlayground as SvRbfPlayground, ScalePlayground as SvScalePlayground, SoftMarginPlayground as SvSoftMarginPlayground } from "../svm/playground/sv-labs";
+import { EV1_CODE, EV2_CODE, EV3_CODE, EV4_CODE, EV5_CODE, EV6_CODE } from "../module/playground/ev-code";
+import { CapacityPlayground, ConfusionPlayground, ErrorPlayground, HonestPlayground, MomentPlayground, ProbabilityPlayground } from "../module/playground/ev-labs";
+import { MS1_CODE, MS2_CODE, MS3_CODE, MS4_CODE, MS5_CODE, MS6_CODE } from "../model-selection/playground/ms-code";
+import { CostPlayground, DecidePlayground, FairPlayground, NestedPlayground, ReliancePlayground, SearchPlayground } from "../model-selection/playground/ms-labs";
+import { NN1_CODE, NN2_CODE, NN3_CODE, NN4_CODE, NN5_CODE } from "../mlp/playground/nn-code";
+import { CapacityNnPlayground, DescentPlayground, NeuronPlayground, SafePlayground as NnSafePlayground, WorthPlayground } from "../mlp/playground/nn-labs";
 
 export type AlgoExtra = { Playground?: ComponentType; code?: CodeLabConfig };
 /** One entry per lesson, keyed `module/lessonIndex` (zero-based). A lesson page shows its playground before the formal experiment and its code cell in the Python section. */
@@ -33,6 +47,45 @@ export const ALGO_EXTRAS: Record<string, AlgoExtra> = {
   "regularization/3": { Playground: ElasticPlayground, code: ELASTIC_CODE },
   "regularization/4": { Playground: SafePlayground, code: SAFE_CODE },
   "regularization/5": { Playground: InterpretPlayground, code: INTERP_CODE },
+  "decision-trees/0": { Playground: PartitionPlayground, code: PART_CODE },
+  "decision-trees/1": { Playground: SplitPlayground, code: SPLIT_CODE },
+  "decision-trees/2": { Playground: GiniPlayground, code: GINI_CODE },
+  "decision-trees/3": { Playground: DepthPlayground, code: DEPTH_CODE },
+  "decision-trees/4": { Playground: AlignPlayground, code: ALIGN_CODE },
+  "decision-trees/5": { Playground: RulePlayground, code: RULE_CODE },
+  "random-forests/0": { Playground: BagPlayground, code: BAG_CODE },
+  "random-forests/1": { Playground: AveragePlayground, code: AVG_CODE },
+  "random-forests/2": { Playground: VotePlayground, code: RF_VOTE_CODE },
+  "random-forests/3": { Playground: OobPlayground, code: OOB_CODE },
+  "random-forests/4": { Playground: ImportancePlayground, code: IMP_CODE },
+  "gradient-boosting/0": { Playground: SequentialPlayground, code: SEQ_CODE },
+  "gradient-boosting/1": { Playground: SquaredPlayground, code: SQ_CODE },
+  "gradient-boosting/2": { Playground: GbLogLossPlayground, code: LOG_CODE },
+  "gradient-boosting/3": { Playground: StopPlayground, code: STOP_CODE },
+  "gradient-boosting/4": { Playground: LeakTransformPlayground, code: TRANS_CODE },
+  "gradient-boosting/5": { Playground: ComparePlayground, code: CMP_CODE },
+            "svm/0": { Playground: SvMarginPlayground, code: SV_MARG_CODE },
+  "svm/1": { Playground: SvSoftMarginPlayground, code: SV_SOFT_CODE },
+  "svm/2": { Playground: SvRbfPlayground, code: SV_RBF_CODE },
+  "svm/3": { Playground: SvScalePlayground, code: SV_SCALE_CODE },
+  "svm/4": { Playground: SvLimitsPlayground, code: SV_LIM_CODE },
+  "evaluation/0": { Playground: MomentPlayground, code: EV1_CODE },
+  "evaluation/1": { Playground: ErrorPlayground, code: EV2_CODE },
+  "evaluation/2": { Playground: ConfusionPlayground, code: EV3_CODE },
+  "evaluation/3": { Playground: ProbabilityPlayground, code: EV4_CODE },
+  "evaluation/4": { Playground: CapacityPlayground, code: EV5_CODE },
+  "evaluation/5": { Playground: HonestPlayground, code: EV6_CODE },
+  "model-selection/0": { Playground: FairPlayground, code: MS1_CODE },
+  "model-selection/1": { Playground: SearchPlayground, code: MS2_CODE },
+  "model-selection/2": { Playground: NestedPlayground, code: MS3_CODE },
+  "model-selection/3": { Playground: CostPlayground, code: MS4_CODE },
+  "model-selection/4": { Playground: ReliancePlayground, code: MS5_CODE },
+  "model-selection/5": { Playground: DecidePlayground, code: MS6_CODE },
+  "mlp/0": { Playground: NeuronPlayground, code: NN1_CODE },
+  "mlp/1": { Playground: DescentPlayground, code: NN2_CODE },
+  "mlp/2": { Playground: CapacityNnPlayground, code: NN3_CODE },
+  "mlp/3": { Playground: NnSafePlayground, code: NN4_CODE },
+  "mlp/4": { Playground: WorthPlayground, code: NN5_CODE },
   "logistic/0": { Playground: SigmoidPlayground, code: SIG_CODE },
   "logistic/1": { Playground: LossPlayground, code: LOSS_CODE },
   "logistic/2": { Playground: ThresholdPlayground, code: THR_CODE },

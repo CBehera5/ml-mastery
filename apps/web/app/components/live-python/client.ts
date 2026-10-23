@@ -2,6 +2,8 @@ import type { RunRequest, RunResult } from "./engine";
 
 type WorkerOut =
   | { type: "ready" }
+  | { type: "loading" }
+  | { type: "running" }
   | { type: "result"; id: number; result: RunResult }
   | { type: "fatal"; id?: number; message: string };
 
@@ -40,18 +42,26 @@ export class WorkerPythonRuntime implements PythonRuntime {
     const worker = this.worker ?? this.start();
     const id = this.nextId++;
     return new Promise<RunResult>((resolve, reject) => {
-      const limit = this.booted ? RUN_TIMEOUT_MS : BOOT_TIMEOUT_MS;
-      const timer = setTimeout(() => {
-        cleanup();
-        const wasBooted = this.booted;
-        this.stop();
-        reject(new PythonUnavailableError(wasBooted
-          ? `Your code ran for more than ${RUN_TIMEOUT_MS / 1000} seconds, so Python was stopped. Look for a loop that never ends, then run again.`
-          : "Python took too long to start. Check your connection and try again."));
-      }, limit);
+      let timer: ReturnType<typeof setTimeout>;
+      // Booting Python and loading NumPy / pandas / scikit-learn get the long limit;
+      // only the learner's own code gets the short one.
+      const arm = (limit: number) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          cleanup();
+          const wasBooted = this.booted && limit === RUN_TIMEOUT_MS;
+          this.stop();
+          reject(new PythonUnavailableError(wasBooted
+            ? `Your code ran for more than ${RUN_TIMEOUT_MS / 1000} seconds, so Python was stopped. Look for a loop that never ends, then run again.`
+            : "Python took too long to start. Check your connection and try again."));
+        }, limit);
+      };
+      arm(this.booted ? RUN_TIMEOUT_MS : BOOT_TIMEOUT_MS);
       const onMessage = (event: MessageEvent<WorkerOut>) => {
         const message = event.data;
         if (message.type === "ready") { this.booted = true; return; }
+        if (message.type === "loading") { arm(BOOT_TIMEOUT_MS); return; }
+        if (message.type === "running") { arm(RUN_TIMEOUT_MS); return; }
         if (message.type === "fatal" && (message.id === undefined || message.id === id)) {
           cleanup(); this.stop();
           reject(new PythonUnavailableError(`Python could not start: ${message.message}`));

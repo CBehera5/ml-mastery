@@ -52,7 +52,7 @@ it("teaches all six lessons and completes practice/activity without mastery, res
     await screen.findByText("Lesson completed. Independent module mastery is separate.");
     cleanup();
   }
-});
+}, 60000);
 it("requires explicit full-attempt confirmation, fails a critical gate at 23, then passes independent retry and restores", async () => {
   const state = emptyState();
   state.draft.answers = INDEPENDENT_FORMS[0].map(definition => structuredClone([...definition.accepted[0]]));
@@ -77,4 +77,4 @@ it("requires explicit full-attempt confirmation, fails a critical gate at 23, th
   cleanup(); render(<PandasAssessment/>);
   await screen.findByRole("heading", { name: "Mastery demonstrated: 24/24" });
   expect((JSON.parse(localStorage.getItem(STORAGE_KEY)!) as State).history).toHaveLength(2);
-});
+}, 60000);

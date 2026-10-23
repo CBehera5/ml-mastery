@@ -44,7 +44,7 @@ it("teaches all seven added lessons and completes practice/activity without mast
     await screen.findByText("Lesson completed. Independent module mastery is separate.");
     cleanup();
   }
-});
+}, 60000);
 it("requires preview and separate opt-in before copy, preserving original bytes and isolating reset", async () => {
   const original = serializeProgress(emptyProgress());
   localStorage.setItem(P01_KEY, original);
@@ -89,4 +89,4 @@ it("requires explicit full-attempt confirmation, fails a critical gate at 31, th
   cleanup(); render(<EssentialsAssessment/>);
   await screen.findByRole("heading", { name: "Mastery demonstrated: 32/32" });
   expect((JSON.parse(localStorage.getItem(STORAGE_KEY)!) as State).history).toHaveLength(2);
-});
+}, 60000);

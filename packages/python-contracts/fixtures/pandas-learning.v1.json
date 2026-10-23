@@ -13,8 +13,8 @@
       "area": "area units",
       "age": "nullable years",
       "neighborhood": "label",
-      "price": "target $k",
-      "future_price": "quarantined future $k",
+      "price": "target ₹ lakh",
+      "future_price": "quarantined future ₹ lakh",
       "listed_on": "ISO date"
     },
     "train_ids": [

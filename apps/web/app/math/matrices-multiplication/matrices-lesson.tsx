@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import {MathDeep} from "../teaching/deep/math-deep";
 import { useMemo, useState } from "react";
 import { matrixMatrixTrace, matrixVectorTrace } from "@mlmath/runtime";
 import { PublicNav } from "../../landing/public-nav";
@@ -33,7 +34,7 @@ export function MatricesLesson(){
  return <main className="math-lesson-page matrix-page la-page">{storageError&&<p role="alert">Lesson progress is unavailable or unsupported. Existing data is preserved; changes stay in memory until you explicitly reset this lesson.</p>}<a className="la-skip" href="#linear-algebra-content">Skip to lesson content</a><PublicNav active="Math"/><LinearPath current={1}/>
   <header className="math-lesson-hero"><div><p className="eyebrow">Math intuition pathway</p><h1>One matrix. <em>Many predictions.</em></h1><p>We know how to score one house with a dot product. How can we predict 1,000 houses efficiently?</p><Link className="refresher-link" href="/math/vectors-dot-product">← Review vectors & dot products</Link></div><div className="lesson-meta panel"><span>LESSON OUTCOME</span><strong>Organize examples, multiply compatible shapes, and debug a matrix contract.</strong><p>Builds on vectors and dot products</p></div></header>
   <CoreLearning lesson="matrices" />
-  <h2 id="existing-house-lab">Existing five-stage house lab</h2>
+  <MathDeep module="matrices-multiplication" lesson={0}/><h2 id="existing-house-lab">Existing five-stage house lab</h2>
   <p>Historical stage flags remain separate from new objective evidence. Reset below affects only these five flags.</p>
   {inputError&&<p role="alert">{inputError}</p>}
   <nav className="math-stage-nav" aria-label="Matrix lesson stages">{STAGES.map((label,i)=><button key={label} onClick={()=>setStage(i)} className={`${stage===i?"current":""} ${progress[i]?"complete":""}`} aria-current={stage===i?"step":undefined}><b>{progress[i]?"✓":i+1}</b><span>{label}</span></button>)}</nav>

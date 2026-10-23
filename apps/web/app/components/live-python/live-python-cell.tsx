@@ -39,7 +39,7 @@ export function LivePythonCell({ title, starter, expose, checks, solution, prese
 
   const execute = useCallback(async (source: string, withChecks: boolean) => {
     const ticket = ++latest.current;
-    setStatus({ kind: "running", label: everRan ? (withChecks ? "Checking your code…" : "Running…") : "Starting Python — the first run downloads about 14 MB, then it is cached…" });
+    setStatus({ kind: "running", label: everRan ? (withChecks ? "Checking your code…" : "Running…") : "Starting Python — the first run loads the runtime (and NumPy, pandas or scikit-learn if you import them), then it is cached…" });
     const request: RunRequest = { code: source, expose, checks: withChecks ? checks : undefined };
     try {
       const out = await (runtime ?? sharedPythonRuntime()).run(request);
@@ -101,7 +101,7 @@ export function LivePythonCell({ title, starter, expose, checks, solution, prese
         <button type="button" className={styles.link} onClick={() => { setCode(starter); setResult(null); setChecked(null); }} disabled={busy}>Reset to starter</button>
       </div>
 
-      <div role="status" aria-live="polite" className={styles.status}>
+      <div role="status" data-live-status="" aria-live="polite" className={styles.status}>
         {status.kind === "running" && <p className={styles.running}>{status.label}</p>}
         {status.kind === "error" && <p className={styles.fail}>{status.message}</p>}
         {status.kind === "idle" && result?.error && <p className={styles.fail}><strong>Python stopped with an error.</strong> {result.error}</p>}

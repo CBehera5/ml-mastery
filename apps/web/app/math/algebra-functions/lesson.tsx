@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import {MathDeep} from "../teaching/deep/math-deep";
 import {BookOpening,BookExplanation} from "../teaching/book-lesson";
 import {useState} from "react";
 import {EquationReader} from "../../experience/equation-literacy/equation-reader";
@@ -25,7 +26,7 @@ export function AlgebraLesson({id}:{id:LessonId}){const c=LESSONS[id],j=JOURNEY[
     <p className={styles.connection}>{j.connection}</p><BookOpening module="algebra" lesson={id}/>
     <details><summary>Need a quick refresher?</summary><p>{c.recall}</p>{index>0&&<Link href={href(LESSON_IDS[index-1])}>Review {LESSONS[LESSON_IDS[index-1]].title} →</Link>}</details>
   </section>
-  <section id="lesson-explore" tabIndex={-1}>
+  <MathDeep module="algebra-functions" lesson={index}/><section id="lesson-explore" tabIndex={-1}>
     <h3>Predict, then explore</h3><p className={styles.challenge}><strong>Before changing anything:</strong> {j.challenge}</p><p>{j.controls}</p>
     {id==="variables"&&<details><summary>Try a quick prediction</summary><VariablesDiscovery/></details>}
     <div onChange={()=>{if(loaded&&!activity)setEvidence(old=>recordActivity(old,id,new Date().toISOString()))}} onClick={event=>{if((event.target as HTMLElement).closest("button")&&loaded&&!activity)setEvidence(old=>recordActivity(old,id,new Date().toISOString()))}}><LessonPlayground module="algebra" slug={id}/></div>
