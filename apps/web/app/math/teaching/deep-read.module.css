@@ -35,3 +35,13 @@
 .try{margin-top:.6rem}
 .try>summary{cursor:pointer;font-size:.9rem;color:#0f5c46;font-weight:600;padding:.3rem 0}
 .try>summary:focus-visible{outline:3px solid #a95312;outline-offset:3px}
+.fig{margin:1.4rem 0}
+.figTitle{font-weight:700;font-size:.95rem;margin-bottom:.4rem}
+.fig svg{width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:.3rem 1.1rem;list-style:none;padding:0;margin:.5rem 0 0;font-size:.85rem}
+.legend li{display:flex;align-items:center;gap:.4rem}
+.figData{margin-top:.5rem;font-size:.88rem}
+.figData>summary{cursor:pointer;color:#0f5c46;font-weight:600}
+.figData>summary:focus-visible{outline:3px solid #a95312;outline-offset:3px}
+.figData table{border-collapse:collapse;margin-top:.5rem;display:block;max-width:100%;overflow:auto}
+.figData th,.figData td{border:1px solid #d3d8cb;padding:.3rem .7rem;text-align:left}

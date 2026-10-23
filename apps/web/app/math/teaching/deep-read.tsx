@@ -1,5 +1,6 @@
 import styles from "./deep-read.module.css";
 import {DeepCheck} from "./deep-check";
+import {DeepFigure,type DeepFigureSpec} from "./deep-figure";
 import {LivePythonCell} from "../../components/live-python/live-python-cell";
 export type DeepBlock =
  | {kind:"p";text:string}
@@ -8,6 +9,7 @@ export type DeepBlock =
  | {kind:"callout";tone:"idea"|"warn"|"ml";title:string;text:string}
  | {kind:"code";caption:string;code:string;output?:string}
  | {kind:"steps";items:string[]}
+ | {kind:"figure";spec:DeepFigureSpec}
  | {kind:"check";question:string;options:string[];answer:number;why:string};
 export type DeepSection={id:string;kicker:string;title:string;blocks:DeepBlock[]};
 export type DeepLesson={title:string;minutes:number;sections:DeepSection[]};
@@ -20,6 +22,7 @@ function Block({b}:{b:DeepBlock}){
   case "callout":return <aside className={`${styles.callout} ${styles[b.tone]}`}><strong>{b.title}</strong><p>{b.text}</p></aside>;
   case "code":return <figure className={styles.code}><figcaption>{b.caption}</figcaption><pre><code>{b.code}</code></pre>{b.output&&<pre className={styles.out} aria-label="Output"><code>{b.output}</code></pre>}<details className={styles.try}><summary>Edit and run this code in your browser</summary><LivePythonCell title={b.caption} starter={b.code}/></details></figure>;
   case "check":return <DeepCheck question={b.question} options={b.options} answer={b.answer} why={b.why}/>;
+  case "figure":return <DeepFigure spec={b.spec}/>;
   case "steps":return <ol className={styles.steps}>{b.items.map(i=><li key={i}>{i}</li>)}</ol>;
  }
 }

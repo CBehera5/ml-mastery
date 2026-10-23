@@ -28,6 +28,13 @@ self.onmessage = async (event) => {
     // Load NumPy / pandas / scikit-learn (self-hosted wheels) only when the code imports them.
     self.postMessage({ type: "loading" });
     await pyodide.loadPackagesFromImports(request.code);
+    // Importing scikit-learn alone takes seconds in WebAssembly. Do the learner's import lines now,
+    // under the long start-up limit, so the short run limit only has to cover their own code.
+    const importLines = String(request.code).split("\n").filter((line) => /^(import\s+\w|from\s+[\w.]+\s+import\s)/.test(line));
+    if (importLines.length) {
+      pyodide.globals.set("__import_block", importLines.join("\n"));
+      try { pyodide.runPython("try:\n    exec(compile(__import_block, '<imports>', 'exec'), {})\nexcept BaseException:\n    pass"); } catch { /* the real run reports any import problem */ }
+    }
     self.postMessage({ type: "running" });
     const raw = run(request.code, request.expose ?? [], request.checks ?? null);
     self.postMessage({ type: "result", id, result: JSON.parse(raw) });
